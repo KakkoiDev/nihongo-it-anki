@@ -149,3 +149,103 @@ VPN経由で接続してください。,Connect via VPN.,VPN,VPN経由【けい�
 ファイアウォールルールを確認してください。,Check the firewall rules.,ファイアウォール,ファイアウォールルールを確認【かくにん】してください。,Firewall
 セキュリティグループを更新してください。,Update the security group.,セキュリティグループ,セキュリティグループを更新【こうしん】してください。,Security group
 リソースはプライベートVPCにあります。,Resources are in a private VPC.,VPC,リソースはプライベートVPCにあります。,VPC
+EC2インスタンスで実行しています。,We run on EC2 instances.,EC2,EC2インスタンスで実行【じっこう】しています。,AWS compute
+ファイルをS3に保存してください。,Store files in S3.,S3,ファイルをS3に保存【ほぞん】してください。,AWS storage
+サーバーレスにはLambdaを使ってください。,Use Lambda for serverless.,Lambda,サーバーレスにはLambdaを使【つか】ってください。,AWS serverless
+データベースはRDS上にあります。,The database is on RDS.,RDS,データベースはRDS上【じょう】にあります。,AWS database
+NoSQLにはDynamoDBを使ってください。,Use DynamoDB for NoSQL.,DynamoDB,NoSQLにはDynamoDBを使【つか】ってください。,AWS NoSQL
+RedisにはElastiCacheを使ってください。,Use ElastiCache for Redis.,ElastiCache,RedisにはElastiCacheを使【つか】ってください。,AWS cache
+CloudFront経由でアセットを配信してください。,Serve assets via CloudFront.,CloudFront,CloudFront経由【けいゆ】でアセットを配信【はいしん】してください。,AWS CDN
+Route 53でDNSを設定してください。,Configure DNS in Route 53.,Route 53,Route 53でDNSを設定【せってい】してください。,AWS DNS
+LambdaをAPI Gatewayの後ろに置いてください。,Put the Lambda behind API Gateway.,API Gateway,LambdaをAPI Gatewayの後【うし】ろに置【お】いてください。,AWS API
+メッセージキューにはSQSを使ってください。,Use SQS for message queues.,SQS,メッセージキューにはSQSを使【つか】ってください。,AWS queue
+SNS経由で通知を送信してください。,Send notifications via SNS.,SNS,SNS経由【けいゆ】で通知【つうち】を送信【そうしん】してください。,AWS notifications
+コンテナをECSにデプロイしています。,We deploy containers to ECS.,ECS,コンテナをECSにデプロイしています。,AWS containers
+マネージドKubernetesにはEKSを使ってください。,Use EKS for managed Kubernetes.,EKS,マネージドKubernetesにはEKSを使【つか】ってください。,AWS Kubernetes
+Fargateサーバーレスで実行してください。,Run on Fargate serverless.,Fargate,Fargateサーバーレスで実行【じっこう】してください。,AWS serverless containers
+このためにIAMロールを作成してください。,Create an IAM role for this.,IAM,このためにIAMロールを作成【さくせい】してください。,AWS identity
+適切なIAMポリシーを付与してください。,Attach the right IAM policy.,ポリシー,適切【てきせつ】なIAMポリシーを付与【ふよ】してください。,AWS policy
+アクセスのためにロールを引き受けてください。,Assume the role for access.,ロール,アクセスのためにロールを引【ひ】き受【う】けてください。,AWS role
+S3にアクセスするには権限が必要です。,You need permission to access S3.,権限,S3にアクセスするには権限【けんげん】が必要【ひつよう】です。,AWS permission
+ログはCloudWatchで確認してください。,Check CloudWatch for logs.,CloudWatch,ログはCloudWatchで確認【かくにん】してください。,AWS logging
+CloudWatchアラームを設定してください。,Set up CloudWatch alarms.,アラーム,CloudWatchアラームを設定【せってい】してください。,AWS alarm
+カスタムメトリクスを追跡してください。,Track custom metrics.,メトリクス,カスタムメトリクスを追跡【ついせき】してください。,AWS metrics
+CloudWatchでロググループを探してください。,Find the log group in CloudWatch.,ロググループ,CloudWatchでロググループを探【さが】してください。,AWS log group
+トレーシングにはX-Rayを使ってください。,Use X-Ray for tracing.,X-Ray,トレーシングにはX-Rayを使【つか】ってください。,AWS tracing
+トラフィックはALBを通ります。,Traffic goes through the ALB.,ALB,トラフィックはALBを通【とお】ります。,AWS load balancer
+TCPトラフィックにはNLBを使ってください。,Use NLB for TCP traffic.,NLB,TCPトラフィックにはNLBを使【つか】ってください。,AWS network LB
+ターゲットグループにインスタンスを登録してください。,Register instances in target group.,ターゲットグループ,ターゲットグループにインスタンスを登録【とうろく】してください。,AWS target group
+ヘルスチェックエンドポイントを設定してください。,Configure the health check endpoint.,ヘルスチェック,ヘルスチェックエンドポイントを設定【せってい】してください。,AWS health check
+複数のAZにデプロイしてください。,Deploy across multiple AZs.,アベイラビリティゾーン,複数【ふくすう】のAZにデプロイしてください。,AWS availability zone
+これはどのリージョンにありますか？,Which region is this in?,リージョン,これはどのリージョンにありますか？,AWS region
+プライベートサブネットに配置してください。,Put it in the private subnet.,サブネット,プライベートサブネットに配置【はいち】してください。,AWS subnet
+NATゲートウェイ経由でルーティングしてください。,Route through NAT gateway.,NATゲートウェイ,NATゲートウェイ経由【けいゆ】でルーティングしてください。,AWS NAT
+インターネットゲートウェイを接続してください。,Attach an internet gateway.,インターネットゲートウェイ,インターネットゲートウェイを接続【せつぞく】してください。,AWS internet gateway
+EBSボリュームを接続してください。,Attach an EBS volume.,EBS,EBSボリュームを接続【せつぞく】してください。,AWS storage
+変更前にスナップショットを取ってください。,Take a snapshot before changes.,スナップショット,変更【へんこう】前【まえ】にスナップショットを取【と】ってください。,AWS snapshot
+このインスタンスからAMIを作成してください。,Create an AMI from this instance.,AMI,このインスタンスからAMIを作成【さくせい】してください。,AWS image
+シークレットはSecrets Managerに保存してください。,Store secrets in Secrets Manager.,Secrets Manager,シークレットはSecrets Managerに保存【ほぞん】してください。,AWS secrets
+設定にはParameter Storeを使ってください。,Use Parameter Store for configs.,パラメータストア,設定【せってい】にはParameter Storeを使【つか】ってください。,AWS config
+KMSで暗号化してください。,Encrypt with KMS.,KMS,KMSで暗号化【あんごうか】してください。,AWS encryption
+ユーザー認証にはCognitoを使ってください。,Use Cognito for user auth.,Cognito,ユーザー認証【にんしょう】にはCognitoを使【つか】ってください。,AWS auth
+Step Functionsでオーケストレーションしてください。,Orchestrate with Step Functions.,Step Functions,Step Functionsでオーケストレーションしてください。,AWS workflow
+EventBridge経由でLambdaをトリガーしてください。,Trigger Lambda via EventBridge.,EventBridge,EventBridge経由【けいゆ】でLambdaをトリガーしてください。,AWS events
+Kinesis経由でデータをストリーミングしてください。,Stream data through Kinesis.,Kinesis,Kinesis経由【けいゆ】でデータをストリーミングしてください。,AWS streaming
+データウェアハウスにはRedshiftを使ってください。,Use Redshift for data warehouse.,Redshift,データウェアハウスにはRedshiftを使【つか】ってください。,AWS data warehouse
+AthenaでS3データをクエリしてください。,Query S3 data with Athena.,Athena,AthenaでS3データをクエリしてください。,AWS query
+ETLジョブにはGlueを使ってください。,Use Glue for ETL jobs.,Glue,ETLジョブにはGlueを使【つか】ってください。,AWS ETL
+CodeBuildでビルドしてください。,Build with CodeBuild.,CodeBuild,CodeBuildでビルドしてください。,AWS build
+CodeDeployでデプロイしてください。,Deploy with CodeDeploy.,CodeDeploy,CodeDeployでデプロイしてください。,AWS deploy
+CI/CD用にCodePipelineを設定してください。,Set up CodePipeline for CI/CD.,CodePipeline,CI/CD用【よう】にCodePipelineを設定【せってい】してください。,AWS pipeline
+監査ログはCloudTrailで確認してください。,Check CloudTrail for audit logs.,CloudTrail,監査【かんさ】ログはCloudTrailで確認【かくにん】してください。,AWS audit
+Cost Explorerでコストを確認してください。,Review costs in Cost Explorer.,Cost Explorer,Cost Explorerでコストを確認【かくにん】してください。,AWS cost
+パフォーマンスを改善する必要があります。,We need to improve performance.,パフォーマンス,パフォーマンスを改善【かいぜん】する必要【ひつよう】があります。,Performance
+このクエリを最適化してください。,Optimize this query.,最適化,このクエリを最適化【さいてきか】してください。,Optimization
+ページの読み込みが遅いです。,The page load is slow.,遅い,ページの読【よ】み込【こ】みが遅【おそ】いです。,Slow
+APIを速くしてください。,Make the API fast.,速い,APIを速【はや】くしてください。,Fast
+レイテンシーを削減してください。,Reduce the latency.,レイテンシー,レイテンシーを削減【さくげん】してください。,Latency
+レスポンスタイムは200ms以下にしてください。,Response time should be under 200ms.,レスポンスタイム,レスポンスタイムは200ms以下【いか】にしてください。,Response time
+スループットを向上させてください。,Increase throughput.,スループット,スループットを向上【こうじょう】させてください。,Throughput
+データベースがボトルネックです。,The database is the bottleneck.,ボトルネック,データベースがボトルネックです。,Bottleneck
+問題を見つけるためにコードをプロファイルしてください。,Profile the code to find issues.,プロファイル,問題【もんだい】を見【み】つけるためにコードをプロファイルしてください。,Profile
+変更前後でベンチマークを実行してください。,Run benchmarks before and after.,ベンチマーク,変更【へんこう】前後【ぜんご】でベンチマークを実行【じっこう】してください。,Benchmark
+このメトリクスを追跡してください。,Track this metric.,メトリクス,このメトリクスを追跡【ついせき】してください。,Metric
+モニタリングダッシュボードを確認してください。,Check the monitoring dashboard.,ダッシュボード,モニタリングダッシュボードを確認【かくにん】してください。,Dashboard
+エラー用にアラートを設定してください。,Set up an alert for errors.,アラート,エラー用【よう】にアラートを設定【せってい】してください。,Alert
+閾値を超えたらアラートを出してください。,Alert when above threshold.,閾値,閾値【しきいち】を超【こ】えたらアラートを出【だ】してください。,Threshold
+サービスを注意深くモニターしてください。,Monitor the service closely.,モニター,サービスを注意深【ちゅういぶか】くモニターしてください。,Monitor
+可観測性を改善してください。,Improve observability.,可観測性,可観測性【かかんそくせい】を改善【かいぜん】してください。,Observability
+ロギングを追加してください。,Add more logging.,ロギング,ロギングを追加【ついか】してください。,Logging
+分散トレーシングを使ってください。,Use distributed tracing.,トレーシング,分散【ぶんさん】トレーシングを使【つか】ってください。,Tracing
+各リクエストはトレーススパンを作成します。,Each request creates a trace span.,スパン,各【かく】リクエストはトレーススパンを作成【さくせい】します。,Span
+ログでトレースIDを探してください。,Find the trace ID in logs.,トレースID,ログでトレースIDを探【さが】してください。,Trace ID
+インサイトのためにAPMを確認してください。,Check the APM for insights.,APM,インサイトのためにAPMを確認【かくにん】してください。,APM
+メトリクスをDatadogに送信してください。,Send metrics to Datadog.,Datadog,メトリクスをDatadogに送信【そうしん】してください。,Datadog
+APMにはNew Relicを使ってください。,Use New Relic for APM.,New Relic,APMにはNew Relicを使【つか】ってください。,New Relic
+Splunkでログを検索してください。,Search logs in Splunk.,Splunk,Splunkでログを検索【けんさく】してください。,Splunk
+Grafanaでダッシュボードを作成してください。,Build dashboards in Grafana.,Grafana,Grafanaでダッシュボードを作成【さくせい】してください。,Grafana
+Prometheusでメトリクスを収集してください。,Scrape metrics with Prometheus.,Prometheus,Prometheusでメトリクスを収集【しゅうしゅう】してください。,Prometheus
+ヘルスチェックが失敗しました。,The health check failed.,ヘルスチェック,ヘルスチェックが失敗【しっぱい】しました。,Health check
+99.9%のアップタイムを維持してください。,Maintain 99.9% uptime.,アップタイム,99.9%のアップタイムを維持【いじ】してください。,Uptime
+5分間のダウンタイムがありました。,We had 5 minutes of downtime.,ダウンタイム,5分間【ふんかん】のダウンタイムがありました。,Downtime
+99.9%のSLAがあります。,We have a 99.9% SLA.,SLA,99.9%のSLAがあります。,SLA
+サービスのSLOを定義してください。,Define SLOs for the service.,SLO,サービスのSLOを定義【ていぎ】してください。,SLO
+信頼性のためにSLIを追跡してください。,Track SLIs for reliability.,SLI,信頼性【しんらいせい】のためにSLIを追跡【ついせき】してください。,SLI
+エラー率が高すぎます。,The error rate is too high.,エラー率,エラー率【りつ】が高【たか】すぎます。,Error rate
+成功率が95%に低下しました。,Success rate dropped to 95%.,成功率,成功率【せいこうりつ】が95%に低下【ていか】しました。,Success rate
+P99レイテンシーは500msです。,P99 latency is 500ms.,パーセンタイル,P99レイテンシーは500msです。,P99
+99パーセンタイルを確認してください。,Look at the 99th percentile.,パーセンタイル,99パーセンタイルを確認【かくにん】してください。,Percentile
+平均レスポンスタイムは100msです。,Average response time is 100ms.,平均,平均【へいきん】レスポンスタイムは100msです。,Average
+トラフィックスパイクがありました。,There was a traffic spike.,スパイク,トラフィックスパイクがありました。,Spike
+昨夜インシデントがありました。,We had an incident last night.,インシデント,昨夜【さくや】インシデントがありました。,Incident
+障害は30分続きました。,The outage lasted 30 minutes.,障害,障害【しょうがい】は30分【ぷん】続【つづ】きました。,Outage
+インシデントのポストモーテムを書いてください。,Write a postmortem for the incident.,ポストモーテム,インシデントのポストモーテムを書【か】いてください。,Postmortem
+根本原因分析を行ってください。,Do a root cause analysis.,根本原因分析,根本【こんぽん】原因【げんいん】分析【ぶんせき】を行【おこな】ってください。,Root cause analysis
+今週はオンコールです。,I'm on-call this week.,オンコール,今週【こんしゅう】はオンコールです。,On-call
+午前3時にページングされました。,I got paged at 3am.,ページング,午前【ごぜん】3時【じ】にページングされました。,Paging
+シニアエンジニアにエスカレーションしてください。,Escalate to the senior engineer.,エスカレーション,シニアエンジニアにエスカレーションしてください。,Escalation
+ランブックに従ってください。,Follow the runbook.,ランブック,ランブックに従【したが】ってください。,Runbook
+インシデントプレイブックを確認してください。,Check the incident playbook.,プレイブック,インシデントプレイブックを確認【かくにん】してください。,Playbook
+問題を迅速に修復してください。,Remediate the issue quickly.,修復,問題【もんだい】を迅速【じんそく】に修復【しゅうふく】してください。,Remediate
+まず影響を軽減してください。,Mitigate the impact first.,軽減,まず影響【えいきょう】を軽減【けいげん】してください。,Mitigate
+復旧に2時間かかりました。,Recovery took 2 hours.,復旧,復旧【ふっきゅう】に2時間【じかん】かかりました。,Recover

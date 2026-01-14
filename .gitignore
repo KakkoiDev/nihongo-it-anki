@@ -1,0 +1,34 @@
+# Claude database symlinks
+MEMO.md
+TASK.md
+COACH.md
+LEARN.md
+
+# Backup files
+*.bak
+*.backup
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.uv/
+
+# uv
+.python-version
+
+# Audio output (large files)
+tier*-audio/
+
+# Anki output
+*.apkg
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
