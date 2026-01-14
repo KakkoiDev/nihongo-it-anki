@@ -8,19 +8,75 @@ Learn 1000 essential IT vocabulary words used in American tech companies, with n
 
 - **1000 vocabulary sentences** organized into 6 tiers by frequency
 - **Japanese audio** generated with Kokoro TTS (male voice)
-- **Anki-ready** decks with integrated audio playback
+- **2-card design** for comprehensive learning (comprehension + production)
 - **Progressive learning** - start with daily essentials, advance to specialized terms
 
 ## Tier Structure
 
-| Tier | Words | Focus |
-|------|-------|-------|
-| Tier 1 | 1-150 | Daily Essentials (communication, git, code actions) |
-| Tier 2 | 151-350 | High Frequency (agile, APIs, databases, testing) |
-| Tier 3 | 351-600 | Medium Frequency (code review, architecture, AWS, monitoring) |
-| Tier 4 | 601-800 | Specialized (security, debugging, documentation) |
-| Tier 5 | 801-900 | Communication & Soft Skills |
-| Tier 6 | 901-1000 | Presentations & Advanced |
+| Tier | Words | Count | Focus |
+|------|-------|-------|-------|
+| Tier 1 | 1-150 | 150 | Daily Essentials (communication, git, code actions) |
+| Tier 2 | 151-350 | 200 | High Frequency (agile, APIs, databases, testing) |
+| Tier 3 | 351-600 | 250 | Medium Frequency (code review, architecture, AWS, monitoring) |
+| Tier 4 | 601-800 | 200 | Specialized (security, debugging, documentation) |
+| Tier 5 | 801-900 | 100 | Communication & Soft Skills |
+| Tier 6 | 901-1000 | 100 | Presentations & Advanced |
+
+## Anki Card Design
+
+This deck uses a **2-card design** - each vocabulary item generates two cards for comprehensive learning:
+
+### Card A: Comprehension (Listening + Reading)
+
+```
+┌─────────────────────────────────────────────┐
+│ FRONT                                       │
+│                                             │
+│  [Audio auto-plays]                         │
+│  機能は完了しレビュー準備ができました。          │
+│  [Status]                                   │
+├─────────────────────────────────────────────┤
+│ BACK                                        │
+│                                             │
+│  The feature is done and ready for review.  │
+│  機能【きのう】は完了【かんりょう】し...         │
+│  Key: 完了 (completed)                       │
+└─────────────────────────────────────────────┘
+```
+
+**Purpose**: Train listening comprehension and kanji recognition. Audio plays first, then you read the Japanese and try to understand before flipping.
+
+### Card B: Production (English → Japanese)
+
+```
+┌─────────────────────────────────────────────┐
+│ FRONT                                       │
+│                                             │
+│  "The feature is done and ready for review."│
+│  How do you say this in Japanese?           │
+│  Hint: 機... (Status)                        │
+├─────────────────────────────────────────────┤
+│ BACK                                        │
+│                                             │
+│  機能は完了しレビュー準備ができました。          │
+│  [Audio plays]                              │
+│  機能【きのう】は完了【かんりょう】し...         │
+└─────────────────────────────────────────────┘
+```
+
+**Purpose**: Active recall - produce Japanese from English context. This is harder but builds speaking/writing ability.
+
+### Why 2-Card Design?
+
+| Card Type | Skill Trained | Difficulty |
+|-----------|--------------|------------|
+| Comprehension | Listening, Reading, Kanji recognition | Medium |
+| Production | Active recall, Speaking, Grammar | Hard |
+
+- **1000 notes → 2000 cards** total
+- Comprehension cards build passive understanding
+- Production cards build active language ability
+- Both are needed for real-world usage
 
 ## Prerequisites
 
@@ -53,31 +109,68 @@ cd nihongo-it-anki
 uv sync
 ```
 
+## Quick Start
+
+```bash
+# 1. Generate audio for tier 1 (takes ~40 minutes)
+uv run python scripts/generate_audio.py --tier 1
+
+# 2. Create Anki deck
+uv run python scripts/create_deck.py --tier 1
+
+# 3. Import nihongo-it-vocab-tier1.apkg into Anki
+```
+
 ## Usage
 
-### Generate Audio for a Single Tier
+### Generate Audio
+
+Audio files are not included in the repository (they're ~27MB per tier). Generate them locally:
 
 ```bash
+# Generate audio for a single tier
 uv run python scripts/generate_audio.py --tier 1
-```
 
-### Generate Audio for All Tiers
-
-```bash
+# Generate audio for all tiers (takes ~4 hours)
 uv run python scripts/generate_audio.py --all
+
+# Test with a few samples first
+uv run python scripts/sample.py
 ```
+
+**Audio Generation Details:**
+- **Model**: Kokoro-82M via [hexgrad/kokoro](https://github.com/hexgrad/kokoro)
+- **Voice**: `jm_kumo` (Japanese male)
+- **Format**: WAV 24kHz
+- **Speed**: ~8 seconds per sentence
+- **Output**: `tier{N}-audio/tier{N}_001.wav` ... `tier{N}_NNN.wav`
 
 ### Create Anki Deck
 
 ```bash
+# Create deck for a single tier
 uv run python scripts/create_deck.py --tier 1
+
+# Create decks for all tiers (separate .apkg files)
+uv run python scripts/create_deck.py --all
+
+# Create single combined deck with all tiers
+uv run python scripts/create_deck.py --combined
+
+# Create deck without audio (for testing)
+uv run python scripts/create_deck.py --tier 1 --no-audio
 ```
 
-### Generate Sample Audio
+**Output Files:**
+- `nihongo-it-vocab-tier1.apkg` - Single tier deck
+- `nihongo-it-vocab-complete.apkg` - Combined deck (with `--combined`)
 
-```bash
-uv run python scripts/sample.py
-```
+### Import into Anki
+
+1. Open Anki
+2. File → Import
+3. Select the `.apkg` file
+4. Cards and audio will be imported automatically
 
 ## Project Structure
 
@@ -97,39 +190,52 @@ nihongo-it-anki/
 │   ├── generate_audio.py                     # Audio generation script
 │   ├── create_deck.py                        # Anki deck creation
 │   └── sample.py                             # Generate sample audio
-└── tier*-audio/                              # Generated audio files (gitignored)
+├── tier*-audio/                              # Generated audio files (gitignored)
+└── *.apkg                                    # Generated Anki decks (gitignored)
 ```
 
 ## CSV Format
 
 Each tier CSV contains:
 
-| Column | Description |
-|--------|-------------|
-| Sentence | Japanese sentence |
-| Translation | English translation |
-| Cloze | Keyword for cloze deletion |
-| Pronunciation | Japanese with furigana (読み方) |
-| Note | Category/context |
+| Column | Description | Example |
+|--------|-------------|---------|
+| Sentence | Japanese sentence | 機能は完了しレビュー準備ができました。 |
+| Translation | English translation | The feature is done and ready for review. |
+| Cloze | Key vocabulary word | 完了 |
+| Pronunciation | Japanese with furigana | 機能【きのう】は完了【かんりょう】し... |
+| Note | Category/context | Status - completed |
 
-Example:
-```csv
-Sentence,Translation,Cloze,Pronunciation,Note
-PRは承認されました。,Your PR is approved.,承認,PRは承認【しょうにん】されました。,Approved
+## Audio Generation Technical Details
+
+The audio is generated using **Kokoro TTS**, a lightweight 82M parameter text-to-speech model.
+
+### Available Japanese Voices
+
+| Voice | Type | Quality |
+|-------|------|---------|
+| `jm_kumo` | Male | C- (default) |
+| `jf_alpha` | Female | C+ (best) |
+| `jf_gongitsune` | Female | C |
+| `jf_nezumi` | Female | C- |
+| `jf_tebukuro` | Female | C |
+
+To use a different voice, edit `scripts/generate_audio.py`:
+
+```python
+VOICE = 'jf_alpha'  # Change to female voice
 ```
 
-## Audio Generation
+### First-Time Setup
 
-Audio is generated using [Kokoro TTS](https://github.com/hexgrad/kokoro):
-- **Model**: Kokoro-82M (lightweight, high-quality)
-- **Voice**: Japanese male voice
-- **Format**: WAV (24kHz)
-- **License**: Apache 2.0
+The first audio generation downloads the Kokoro model (~500MB). Subsequent runs are faster.
 
-## Anki Card Format
+### Resource Usage
 
-**Front**: Japanese sentence + Audio
-**Back**: English translation + Pronunciation with furigana
+- **CPU**: High usage during generation (uses PyTorch)
+- **Memory**: ~3GB RAM
+- **Disk**: ~27MB per tier (WAV files)
+- **Time**: ~8 seconds per sentence, ~40 minutes per 150 sentences
 
 ## Development
 
@@ -144,12 +250,28 @@ uv add <package>
 uv sync
 ```
 
+## Customization
+
+### Change Voice
+
+Edit `VOICE` in `scripts/generate_audio.py` or `scripts/sample.py`.
+
+### Modify Card Styling
+
+Edit the CSS in `scripts/create_deck.py` in the `create_model()` function.
+
+### Add New Vocabulary
+
+1. Edit the appropriate `tier{N}-vocabulary.csv`
+2. Regenerate audio: `uv run python scripts/generate_audio.py --tier N`
+3. Recreate deck: `uv run python scripts/create_deck.py --tier N`
+
 ## License
 
 MIT
 
 ## Credits
 
-- [Kokoro TTS](https://github.com/hexgrad/kokoro) - Text-to-speech model
+- [Kokoro TTS](https://github.com/hexgrad/kokoro) - Text-to-speech model (Apache 2.0)
 - [genanki](https://github.com/kerrickstaley/genanki) - Anki deck generation
 - [uv](https://github.com/astral-sh/uv) - Python package manager
