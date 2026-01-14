@@ -1,0 +1,200 @@
+Sentence,Translation,Cloze,Pronunciation,Note
+今日はスタンドアップを15分に抑えましょう。,Let's keep standup to 15 minutes today.,スタンドアップ,今日【きょう】はスタンドアップを15分【ふん】に抑【おさ】えましょう。,Daily meeting
+現在のスプリントでこれを終わらせます。,We'll finish this in the current sprint.,スプリント,現在【げんざい】のスプリントでこれを終【お】わらせます。,Development cycle
+これを次のスプリントのバックログに追加してください。,Add this to the backlog for next sprint.,バックログ,これを次【つぎ】のスプリントのバックログに追加【ついか】してください。,Task queue
+このバグのチケットを作成してください。,Create a ticket for this bug.,チケット,このバグのチケットを作成【さくせい】してください。,Work item
+これを小さなタスクに分割してください。,Break this into smaller tasks.,タスク,これを小【ちい】さなタスクに分割【ぶんかつ】してください。,Work unit
+このユーザーストーリーにはもっと詳細が必要です。,This user story needs more details.,ストーリー,このユーザーストーリーにはもっと詳細【しょうさい】が必要【ひつよう】です。,Feature description
+これは認証エピックの一部です。,This is part of the authentication epic.,エピック,これは認証【にんしょう】エピックの一部【いちぶ】です。,Large feature
+これの優先度は何ですか？,What's the priority on this?,優先度,これの優先度【ゆうせんど】は何【なん】ですか？,Importance level
+これは優先度高です。最初にやってください。,This is high priority - do it first.,優先度高,これは優先度高【ゆうせんどたか】です。最初【さいしょ】にやってください。,Urgent
+これは優先度低です。後でできます。,"This is low priority, we can do it later.",優先度低,これは優先度低【ゆうせんどひく】です。後【あと】でできます。,Not urgent
+これはリリースのブロッカーです。,This is a blocker for the release.,ブロッカー,これはリリースのブロッカーです。,Critical obstacle
+デザイン仕様を待ってブロックされています。,I'm blocked waiting for design specs.,仕様,デザイン仕様【しよう】を待【ま】ってブロックされています。,Specification
+これでブロック解除を手伝ってもらえますか？,Can you help unblock me on this?,ブロック解除,これでブロック解除【かいじょ】を手伝【てつだ】ってもらえますか？,Remove obstacle
+このタスクはAPI作業に依存関係があります。,This task has a dependency on the API work.,依存関係,このタスクはAPI作業【さぎょう】に依存【いぞん】関係【かんけい】があります。,Dependency
+締め切りは来週末です。,The deadline is end of next week.,締め切り,締【し】め切【き】りは来週末【らいしゅうまつ】です。,Due date
+昨日最初のマイルストーンに達しました。,We hit the first milestone yesterday.,マイルストーン,昨日【きのう】最初【さいしょ】のマイルストーンに達【たっ】しました。,Key achievement
+このプロジェクトのスコープは何ですか？,What's the scope of this project?,スコープ,このプロジェクトのスコープは何【なん】ですか？,Project boundaries
+その機能は今のところスコープ外です。,That feature is out of scope for now.,スコープ外,その機能【きのう】は今【いま】のところスコープ外【がい】です。,Not included
+スコープクリープを避ける必要があります。,We need to avoid scope creep.,スコープクリープ,スコープクリープを避【さ】ける必要【ひつよう】があります。,Expanding requirements
+このタスクの見積もりは何ですか？,What's your estimate for this task?,見積もり,このタスクの見積【みつも】りは何【なん】ですか？,Time prediction
+これは5ストーリーポイントと見積もります。,I'd estimate this at 5 story points.,ストーリーポイント,これは5ストーリーポイントと見積【みつも】ります。,Effort measure
+私たちのチームのベロシティは約30ポイントです。,Our team velocity is about 30 points.,ベロシティ,私【わたし】たちのチームのベロシティは約【やく】30ポイントです。,Team speed
+今スプリントはキャパシティがありません。,We don't have capacity this sprint.,キャパシティ,今【いま】スプリントはキャパシティがありません。,Available resources
+今はこれに対する余裕がありません。,I don't have bandwidth for this right now.,余裕,今【いま】はこれに対【たい】する余裕【よゆう】がありません。,Available time
+ステークホルダーから承認を得てください。,Get approval from the stakeholders.,ステークホルダー,ステークホルダーから承認【しょうにん】を得【え】てください。,Interested party
+要件はまだ不明確です。,The requirements are still unclear.,要件,要件【ようけん】はまだ不明確【ふめいかく】です。,Project needs
+これの仕様を書いてもらえますか？,Can you write up a spec for this?,仕様,これの仕様【しよう】を書【か】いてもらえますか？,Specification
+このフェーズの成果物は何ですか？,What are the deliverables for this phase?,成果物,このフェーズの成果物【せいかぶつ】は何【なん】ですか？,Output
+このプロジェクトのタイムラインは何ですか？,What's the timeline for this project?,タイムライン,このプロジェクトのタイムラインは何【なん】ですか？,Schedule
+これは第3四半期のロードマップにあります。,This is on our Q3 roadmap.,ロードマップ,これは第【だい】3四半期【しはんき】のロードマップにあります。,Future plan
+プロジェクトのキックオフは月曜日です。,The project kickoff is on Monday.,キックオフ,プロジェクトのキックオフは月曜日【げつようび】です。,Start meeting
+レトロでこれについて話し合いましょう。,Let's discuss this in the retro.,レトロ,レトロでこれについて話【はな】し合【あ】いましょう。,Retrospective
+スプリントプランニングは明日の朝です。,Sprint planning is tomorrow morning.,プランニング,スプリントプランニングは明日【あした】の朝【あさ】です。,Task organization
+これらのチケットをグルーミングする必要があります。,We need to groom these tickets.,グルーミング,これらのチケットをグルーミングする必要【ひつよう】があります。,Ticket preparation
+バックログリファインメントは午後2時です。,Backlog refinement is at 2pm.,リファインメント,バックログリファインメントは午後【ごご】2時【じ】です。,Backlog review
+スプリント終了時に機能をデモします。,I'll demo the feature at the end of sprint.,デモ,スプリント終了【しゅうりょう】時【じ】に機能【きのう】をデモします。,Demonstration
+これについて簡単に同期しましょう。,Let's have a quick sync about this.,同期,これについて簡単【かんたん】に同期【どうき】しましょう。,Quick meeting
+1対1でこれについて話せますか？,Can we discuss this in our one-on-one?,1対1,1対【たい】1でこれについて話【はな】せますか？,Private meeting
+全体会議で発表されました。,It was announced at the all-hands.,全体会議,全体【ぜんたい】会議【かいぎ】で発表【はっぴょう】されました。,Company meeting
+Slackで非同期に処理しましょう。,Let's handle this async in Slack.,非同期,Slackで非同期【ひどうき】に処理【しょり】しましょう。,Not real-time
+今日は連続した会議があります。,I have back-to-back meetings today.,会議,今日【きょう】は連続【れんぞく】した会議【かいぎ】があります。,Meeting
+この会議のアジェンダは何ですか？,What's the agenda for this meeting?,アジェンダ,この会議【かいぎ】のアジェンダは何【なん】ですか？,Meeting topics
+私のアクションアイテムはドキュメントを更新することです。,My action item is to update the docs.,アクションアイテム,私【わたし】のアクションアイテムはドキュメントを更新【こうしん】することです。,Task assignment
+このタスクのオーナーは誰ですか？,Who's the owner of this task?,オーナー,このタスクのオーナーは誰【だれ】ですか？,Responsible person
+チケットを適切な人に割り当ててください。,Assign the ticket to the right person.,割り当てて,チケットを適切【てきせつ】な人【ひと】に割【わ】り当【あ】ててください。,Assign
+マイグレーションの状況はどうですか？,What's the status on the migration?,状況,マイグレーションの状況【じょうきょう】はどうですか？,Current state
+これまでのところ機能は良い進捗です。,Good progress on the feature so far.,進捗,これまでのところ機能【きのう】は良【よ】い進捗【しんちょく】です。,Advancement
+プロジェクトはリリースに向けて順調です。,The project is on track for release.,順調,プロジェクトはリリースに向【む】けて順調【じゅんちょう】です。,On track
+このマイルストーンはリスクがあります。,This milestone is at risk.,リスク,このマイルストーンはリスクがあります。,At risk
+APIはユーザーデータをJSONで返します。,The API returns user data as JSON.,API,APIはユーザーデータをJSONで返【かえ】します。,Application interface
+リストを取得するために/usersエンドポイントを呼び出してください。,Call the /users endpoint to get the list.,エンドポイント,リストを取得【しゅとく】するために/usersエンドポイントを呼【よ】び出【だ】してください。,API URL
+リクエストがタイムアウトしています。,The request is timing out.,リクエスト,リクエストがタイムアウトしています。,API call
+エラーについてレスポンスボディを確認してください。,Check the response body for errors.,レスポンス,エラーについてレスポンスボディを確認【かくにん】してください。,API reply
+データ取得にはGETを使用してください。,Use GET for retrieving data.,GET,データ取得【しゅとく】にはGETを使用【しよう】してください。,HTTP method
+新しいレコード作成にはPOSTを使用してください。,Use POST for creating new records.,POST,新【あたら】しいレコード作成【さくせい】にはPOSTを使用【しよう】してください。,HTTP method
+完全な更新にはPUTを使用してください。,Use PUT for full updates.,PUT,完全【かんぜん】な更新【こうしん】にはPUTを使用【しよう】してください。,HTTP method
+部分更新にはPATCHを使用してください。,Use PATCH for partial updates.,PATCH,部分【ぶぶん】更新【こうしん】にはPATCHを使用【しよう】してください。,HTTP method
+リソースを削除するためにDELETEを呼び出してください。,Call DELETE to remove the resource.,DELETE,リソースを削除【さくじょ】するためにDELETEを呼【よ】び出【だ】してください。,HTTP method
+認証トークンをヘッダーに追加してください。,Add the auth token to the header.,ヘッダー,認証【にんしょう】トークンをヘッダーに追加【ついか】してください。,Request metadata
+リクエストボディはJSONであるべきです。,The request body should be JSON.,ボディ,リクエストボディはJSONであるべきです。,Request content
+ペイロードが大きすぎます。,The payload is too large.,ペイロード,ペイロードが大【おお】きすぎます。,Data sent
+フィルターをクエリ文字列で渡してください。,Pass filters in the query string.,クエリ文字列,フィルターをクエリ文字列【もじれつ】で渡【わた】してください。,URL parameters
+ユーザーIDはパスパラメータです。,The user ID is a path parameter.,パスパラメータ,ユーザーIDはパスパラメータです。,URL variable
+404ステータスコードが返ってきています。,We're getting a 404 status code.,ステータスコード,404ステータスコードが返【かえ】ってきています。,HTTP response code
+APIは200 OKを返しました。,The API returned 200 OK.,200,APIは200 OKを返【かえ】しました。,Success response
+リソースが作成されたら201を返してください。,Return 201 when a resource is created.,201,リソースが作成【さくせい】されたら201を返【かえ】してください。,Created response
+バリデーションエラーには400を返してください。,Return 400 for validation errors.,400,バリデーションエラーには400を返【かえ】してください。,Client error
+401はトークンが無効であることを意味します。,401 means the token is invalid.,401,401はトークンが無効【むこう】であることを意味【いみ】します。,Auth error
+403は権限がないことを意味します。,403 means you don't have permission.,403,403は権限【けんげん】がないことを意味【いみ】します。,Permission error
+ユーザーが存在しない場合は404を返してください。,Return 404 if the user doesn't exist.,404,ユーザーが存在【そんざい】しない場合【ばあい】は404を返【かえ】してください。,Not found error
+ユーザーに500エラーが表示されています。,Users are seeing 500 errors.,500,ユーザーに500エラーが表示【ひょうじ】されています。,Server error
+リクエストは30秒後にタイムアウトしました。,The request timed out after 30 seconds.,タイムアウト,リクエストは30秒【びょう】後【ご】にタイムアウトしました。,Time limit exceeded
+指数バックオフでリクエストをリトライしてください。,Retry the request with exponential backoff.,リトライ,指数【しすう】バックオフでリクエストをリトライしてください。,Try again
+APIのレート制限に達しました。,We hit the API rate limit.,レート制限,APIのレート制限【せいげん】に達【たっ】しました。,Request limit
+レート制限を避けるためにリクエストをスロットルしてください。,Throttle requests to avoid rate limiting.,スロットル,レート制限【せいげん】を避【さ】けるためにリクエストをスロットルしてください。,Slow down
+これはRESTful APIです。,This is a RESTful API.,REST,これはRESTful APIです。,API architecture
+RESTからGraphQLに移行しています。,We're migrating from REST to GraphQL.,GraphQL,RESTからGraphQLに移行【いこう】しています。,Query language
+支払いイベント用にwebhookを設定してください。,Set up a webhook for payment events.,webhook,支払【しはら】いイベント用【よう】にwebhookを設定【せってい】してください。,Event notification
+設定でコールバックURLを設定してください。,Configure the callback URL in settings.,コールバックURL,設定【せってい】でコールバックURLを設定【せってい】してください。,Return URL
+認証が失敗しました。,The authentication failed.,認証,認証【にんしょう】が失敗【しっぱい】しました。,Identity verification
+データにアクセスする前に認可を確認してください。,Check authorization before accessing data.,認可,データにアクセスする前【まえ】に認可【にんか】を確認【かくにん】してください。,Permission check
+アクセストークンの有効期限が切れました。,The access token expired.,トークン,アクセストークンの有効【ゆうこう】期限【きげん】が切【き】れました。,Auth credential
+認証にはJWTを使用しています。,We use JWT for authentication.,JWT,認証【にんしょう】にはJWTを使用【しよう】しています。,Token format
+ソーシャルログイン用にOAuthを実装してください。,Implement OAuth for social login.,OAuth,ソーシャルログイン用【よう】にOAuthを実装【じっそう】してください。,Auth protocol
+APIキーを環境変数に保存してください。,Store the API key in environment variables.,環境変数,APIキーを環境【かんきょう】変数【へんすう】に保存【ほぞん】してください。,Environment variable
+シークレットをgitにコミットしないでください。,Never commit secrets to git.,シークレット,シークレットをgitにコミットしないでください。,Sensitive data
+認証情報を定期的にローテーションしてください。,Rotate the credentials regularly.,認証情報,認証【にんしょう】情報【じょうほう】を定期的【ていきてき】にローテーションしてください。,Auth info
+すべてのトラフィックはSSLを使用する必要があります。,All traffic must use SSL.,SSL,すべてのトラフィックはSSLを使用【しよう】する必要【ひつよう】があります。,Encryption
+本番では常にHTTPSを使用してください。,Always use HTTPS in production.,HTTPS,本番【ほんばん】では常【つね】にHTTPSを使用【しよう】してください。,Secure HTTP
+SSL証明書の有効期限が切れました。,The SSL certificate expired.,証明書,SSL証明書【しょうめいしょ】の有効【ゆうこう】期限【きげん】が切【き】れました。,Security credential
+ブラウザからCORSエラーが発生しています。,We have a CORS error from the browser.,CORS,ブラウザからCORSエラーが発生【はっせい】しています。,Cross-origin issue
+フロントエンドのオリジンを許可リストに追加してください。,Add the frontend origin to allowed list.,オリジン,フロントエンドのオリジンを許可【きょか】リストに追加【ついか】してください。,Request source
+APIのレイテンシーが高すぎます。,The API latency is too high.,レイテンシー,APIのレイテンシーが高【たか】すぎます。,Response delay
+これにはより高いスループットが必要です。,We need higher throughput for this.,スループット,これにはより高【たか】いスループットが必要【ひつよう】です。,Data rate
+十分な帯域幅があるか確認してください。,Check if we have enough bandwidth.,帯域幅,十分【じゅうぶん】な帯域幅【たいいきはば】があるか確認【かくにん】してください。,Network capacity
+DNSがまだ伝播していません。,The DNS hasn't propagated yet.,DNS,DNSがまだ伝播【でんぱ】していません。,Domain system
+このIPアドレスをホワイトリストに追加してください。,Whitelist this IP address.,IPアドレス,このIPアドレスをホワイトリストに追加【ついか】してください。,Network address
+サーバーはポート3000で動作しています。,The server runs on port 3000.,ポート,サーバーはポート3000で動作【どうさ】しています。,Network port
+リアルタイム用にWebSocket接続を開いてください。,Open a WebSocket connection for real-time.,WebSocket,リアルタイム用【よう】にWebSocket接続【せつぞく】を開【ひら】いてください。,Network connection
+データベースの動作が遅いです。,The database is running slow.,データベース,データベースの動作【どうさ】が遅【おそ】いです。,Data storage
+本番DBに慎重に接続してください。,Connect to the prod DB carefully.,本番,本番【ほんばん】DBに慎重【しんちょう】に接続【せつぞく】してください。,Production
+このクエリの実行に時間がかかりすぎます。,This query takes too long to execute.,クエリ,このクエリの実行【じっこう】に時間【じかん】がかかりすぎます。,Database request
+注文用に新しいテーブルを作成してください。,Create a new table for orders.,テーブル,注文【ちゅうもん】用【よう】に新【あたら】しいテーブルを作成【さくせい】してください。,Database table
+タイムスタンプ用に新しいカラムを追加してください。,Add a new column for timestamps.,カラム,タイムスタンプ用【よう】に新【あたら】しいカラムを追加【ついか】してください。,Table column
+テーブルには数百万の行があります。,The table has millions of rows.,行,テーブルには数百万【すうひゃくまん】の行【ぎょう】があります。,Table row
+テーブルに新しいレコードを挿入してください。,Insert a new record into the table.,挿入,テーブルに新【あたら】しいレコードを挿入【そうにゅう】してください。,Insert
+メールフィールドは一意であるべきです。,The email field should be unique.,一意,メールフィールドは一意【いちい】であるべきです。,Unique
+データベーススキーマを更新してください。,Update the database schema.,スキーマ,データベーススキーマを更新【こうしん】してください。,Data structure
+デプロイ前にマイグレーションを実行してください。,Run the migration before deploying.,マイグレーション,デプロイ前【まえ】にマイグレーションを実行【じっこう】してください。,Schema change
+失敗した場合はマイグレーションをロールバックしてください。,Rollback the migration if it fails.,ロールバック,失敗【しっぱい】した場合【ばあい】はマイグレーションをロールバックしてください。,Undo change
+テストデータでデータベースをシードしてください。,Seed the database with test data.,シード,テストデータでデータベースをシードしてください。,Initial data
+クエリを高速化するためにインデックスを追加してください。,Add an index to speed up queries.,インデックス,クエリを高速化【こうそくか】するためにインデックスを追加【ついか】してください。,Search optimization
+IDを主キーとして使用してください。,Use ID as the primary key.,主キー,IDを主【しゅ】キーとして使用【しよう】してください。,Primary key
+テーブルをリンクするために外部キーを追加してください。,Add a foreign key to link tables.,外部キー,テーブルをリンクするために外部【がいぶ】キーを追加【ついか】してください。,Foreign key
+ユーザーと注文の関係を定義してください。,Define the relationship between users and orders.,関係,ユーザーと注文【ちゅうもん】の関係【かんけい】を定義【ていぎ】してください。,Relationship
+ユーザーと投稿は一対多の関係です。,Users have a one-to-many with posts.,一対多,ユーザーと投稿【とうこう】は一対多【いちたいた】の関係【かんけい】です。,One-to-many
+タグと投稿は多対多の関係です。,Tags and posts have many-to-many.,多対多,タグと投稿【とうこう】は多対多【たたいた】の関係【かんけい】です。,Many-to-many
+ユーザーと注文テーブルをジョインしてください。,Join the users and orders tables.,ジョイン,ユーザーと注文【ちゅうもん】テーブルをジョインしてください。,Join
+すべてのユーザーを含めるために左結合を使用してください。,Use left join to include all users.,左結合,すべてのユーザーを含【ふく】めるために左【ひだり】結合【けつごう】を使用【しよう】してください。,Left join
+内部結合は一致しない行を除外します。,Inner join excludes non-matching rows.,内部結合,内部【ないぶ】結合【けつごう】は一致【いっち】しない行【ぎょう】を除外【じょがい】します。,Inner join
+必要なカラムのみをSELECTしてください。,SELECT only the columns you need.,SELECT,必要【ひつよう】なカラムのみをSELECTしてください。,SQL command
+新しいユーザーレコードをINSERTしてください。,INSERT the new user record.,INSERT,新【あたら】しいユーザーレコードをINSERTしてください。,SQL command
+ユーザーのメールアドレスをUPDATEしてください。,UPDATE the user's email address.,UPDATE,ユーザーのメールアドレスをUPDATEしてください。,SQL command
+容量を節約するために古いレコードをDELETEしてください。,DELETE old records to save space.,DELETE,容量【ようりょう】を節約【せつやく】するために古【ふる】いレコードをDELETEしてください。,SQL command
+フィルタリングするためにWHERE句を追加してください。,Add a WHERE clause to filter.,WHERE,フィルタリングするためにWHERE句【く】を追加【ついか】してください。,SQL clause
+created_atで降順にORDER BYしてください。,ORDER BY created_at descending.,ORDER BY,created_atで降順【こうじゅん】にORDER BYしてください。,SQL clause
+集計するためにuser_idでGROUP BYしてください。,GROUP BY user_id to aggregate.,GROUP BY,集計【しゅうけい】するためにuser_idでGROUP BYしてください。,SQL clause
+結果を100行にLIMITしてください。,LIMIT the results to 100 rows.,LIMIT,結果【けっか】を100行【ぎょう】にLIMITしてください。,SQL clause
+これをトランザクションでラップしてください。,Wrap this in a transaction.,トランザクション,これをトランザクションでラップしてください。,Atomic operation
+成功した場合はトランザクションをコミットしてください。,Commit the transaction if successful.,コミット,成功【せいこう】した場合【ばあい】はトランザクションをコミットしてください。,Save changes
+エラーが発生したらロールバックしてください。,Rollback on any error.,ロールバック,エラーが発生【はっせい】したらロールバックしてください。,Undo changes
+本番でデッドロックが発生しています。,We're seeing deadlocks in production.,デッドロック,本番【ほんばん】でデッドロックが発生【はっせい】しています。,Lock conflict
+行が別のクエリによってロックされています。,The row is locked by another query.,ロック,行【ぎょう】が別【べつ】のクエリによってロックされています。,Data lock
+コネクションプールのサイズを増やしてください。,Increase the connection pool size.,コネクションプール,コネクションプールのサイズを増【ふ】やしてください。,DB connections
+レポートにはレプリカから読み取ってください。,Read from the replica for reports.,レプリカ,レポートにはレプリカから読【よ】み取【と】ってください。,Copy database
+プライマリデータベースにのみ書き込んでください。,Write only to the primary database.,プライマリ,プライマリデータベースにのみ書【か】き込【こ】んでください。,Main database
+プライマリが停止したらレプリカにフェイルオーバーしてください。,Failover to the replica if primary dies.,フェイルオーバー,プライマリが停止【ていし】したらレプリカにフェイルオーバーしてください。,Backup switch
+マイグレーション前にバックアップを取ってください。,Take a backup before the migration.,バックアップ,マイグレーション前【まえ】にバックアップを取【と】ってください。,Data copy
+最新のバックアップからリストアしてください。,Restore from the latest backup.,リストア,最新【さいしん】のバックアップからリストアしてください。,Data recovery
+複雑なクエリには生のSQLを書いてください。,Write raw SQL for complex queries.,SQL,複雑【ふくざつ】なクエリには生【なま】のSQLを書【か】いてください。,Query language
+柔軟なスキーマにはNoSQLを使用してください。,Use NoSQL for flexible schemas.,NoSQL,柔軟【じゅうなん】なスキーマにはNoSQLを使用【しよう】してください。,Database type
+ORMはクエリを簡単にします。,The ORM makes queries easier.,ORM,ORMはクエリを簡単【かんたん】にします。,Object mapper
+Userモデルを定義してください。,Define a User model.,モデル,Userモデルを定義【ていぎ】してください。,Data model
+各テーブルにエンティティを作成してください。,Create an entity for each table.,エンティティ,各【かく】テーブルにエンティティを作成【さくせい】してください。,Data object
+データアクセスにはリポジトリパターンを使用してください。,Use the repository pattern for data access.,リポジトリ,データアクセスにはリポジトリパターンを使用【しよう】してください。,Data access pattern
+重複を避けるためにデータを正規化してください。,Normalize the data to avoid duplication.,正規化,重複【じゅうふく】を避【さ】けるためにデータを正規化【せいきか】してください。,Data organization
+読み取りパフォーマンス向上のために非正規化してください。,Denormalize for better read performance.,非正規化,読【よ】み取【と】りパフォーマンス向上【こうじょう】のために非正規化【ひせいきか】してください。,Data optimization
+スケールのためにシャーディングを実装してください。,Implement sharding for scale.,シャーディング,スケールのためにシャーディングを実装【じっそう】してください。,Data distribution
+テーブルを日付でパーティションしてください。,Partition the table by date.,パーティション,テーブルを日付【ひづけ】でパーティションしてください。,Data split
+この関数のテストを書いてください。,Write a test for this function.,テスト,この関数【かんすう】のテストを書【か】いてください。,Verification
+サービス層のユニットテストを追加してください。,Add unit tests for the service layer.,ユニットテスト,サービス層【そう】のユニットテストを追加【ついか】してください。,Component test
+結合テストは全体のフローを確認します。,Integration tests check the full flow.,結合テスト,結合【けつごう】テストは全体【ぜんたい】のフローを確認【かくにん】します。,System test
+E2Eテストは実際のユーザー行動をシミュレートします。,E2E tests simulate real user behavior.,E2Eテスト,E2Eテストは実際【じっさい】のユーザー行動【こうどう】をシミュレートします。,End-to-end test
+テストですべてのエッジケースをカバーしてください。,Cover all edge cases in your tests.,エッジケース,テストですべてのエッジケースをカバーしてください。,Test scenario
+マージ前に完全なテストスイートを実行してください。,Run the full test suite before merging.,テストスイート,マージ前【まえ】に完全【かんぜん】なテストスイートを実行【じっこう】してください。,Test collection
+アサーションが予期せず失敗しました。,The assertion failed unexpectedly.,アサーション,アサーションが予期【よき】せず失敗【しっぱい】しました。,Test check
+結果がtrueであることを期待します。,Expect the result to be true.,期待,結果【けっか】がtrueであることを期待【きたい】します。,Test assertion
+テストでAPIコールをモックしてください。,Mock the API call in tests.,モック,テストでAPIコールをモックしてください。,Fake object
+外部サービスにはスタブを使用してください。,Use a stub for the external service.,スタブ,外部【がいぶ】サービスにはスタブを使用【しよう】してください。,Fake implementation
+呼び出しを確認するために関数をスパイしてください。,Spy on the function to check calls.,スパイ,呼【よ】び出【だ】しを確認【かくにん】するために関数【かんすう】をスパイしてください。,Call tracker
+各テスト前にテストフィクスチャをロードしてください。,Load test fixtures before each test.,フィクスチャ,各【かく】テスト前【まえ】にテストフィクスチャをロードしてください。,Test data
+セットアップは各テスト前に実行されます。,Setup runs before each test.,セットアップ,セットアップは各【かく】テスト前【まえ】に実行【じっこう】されます。,Test preparation
+ティアダウンはテスト後にクリーンアップします。,Teardown cleans up after tests.,ティアダウン,ティアダウンはテスト後【ご】にクリーンアップします。,Test cleanup
+テストカバレッジは80%です。,Our test coverage is at 80%.,カバレッジ,テストカバレッジは80%です。,Code coverage
+50個すべてのテストが合格しました。,All 50 tests pass.,合格,50個【こ】すべてのテストが合格【ごうかく】しました。,Test success
+CIで3つのテストが失敗しています。,3 tests fail on the CI.,CI,CIで3つのテストが失敗【しっぱい】しています。,Continuous integration
+今のところこのテストをスキップしてください。,Skip this test for now.,スキップ,今【いま】のところこのテストをスキップしてください。,Test skip
+このテストは不安定です。修正してください。,"This test is flaky, fix it.",不安定,このテストは不安定【ふあんてい】です。修正【しゅうせい】してください。,Unreliable test
+このバグのリグレッションテストを追加してください。,Add a regression test for this bug.,リグレッションテスト,このバグのリグレッションテストを追加【ついか】してください。,Bug prevention test
+この機能にはTDDを使いましょう。,Let's use TDD for this feature.,TDD,この機能【きのう】にはTDDを使【つか】いましょう。,Test-driven development
+TDDには赤緑リファクタに従ってください。,Follow red-green-refactor for TDD.,赤緑リファクタ,TDDには赤【あか】緑【みどり】リファクタに従【したが】ってください。,TDD cycle
+デプロイ後にスモークテストを実行してください。,Run smoke tests after deploy.,スモークテスト,デプロイ後【ご】にスモークテストを実行【じっこう】してください。,Basic test
+まず簡単なサニティチェックをしてください。,Do a quick sanity check first.,サニティチェック,まず簡単【かんたん】なサニティチェックをしてください。,Basic verification
+まずハッピーパスをテストしてください。,Test the happy path first.,ハッピーパス,まずハッピーパスをテストしてください。,Normal flow
+エッジケースを忘れないでください。,Don't forget edge cases.,エッジケース,エッジケースを忘【わす】れないでください。,Boundary condition
+境界条件をテストしてください。,Test boundary conditions.,境界条件,境界【きょうかい】条件【じょうけん】をテストしてください。,Limit test
+エラー用のネガティブテストを追加してください。,Add negative tests for errors.,ネガティブテスト,エラー用【よう】のネガティブテストを追加【ついか】してください。,Error test
+ローンチ前に負荷テストを実行してください。,Run load tests before launch.,負荷テスト,ローンチ前【まえ】に負荷【ふか】テストを実行【じっこう】してください。,Performance test
+限界点を見つけるためにストレステストをしてください。,Stress test to find breaking points.,ストレステスト,限界点【げんかいてん】を見【み】つけるためにストレステストをしてください。,Limit test
+パフォーマンステストはレスポンス時間を確認します。,Performance tests check response times.,パフォーマンステスト,パフォーマンステストはレスポンス時間【じかん】を確認【かくにん】します。,Speed test
+リリース前にUIを手動テストしてください。,Manual test the UI before release.,手動テスト,リリース前【まえ】にUIを手動【しゅどう】テストしてください。,Human testing
+テストのためにQAに送ってください。,Send it to QA for testing.,QA,テストのためにQAに送【おく】ってください。,Quality assurance
+まずステージングでテストしてください。,Test on staging first.,ステージング,まずステージングでテストしてください。,Test environment
+本番でテストしないでください。,Never test in production.,本番,本番【ほんばん】でテストしないでください。,Live environment
+どの環境でテストしましたか？,Which environment did you test on?,環境,どの環境【かんきょう】でテストしましたか？,System setup
+CIはすべてのPRでテストを実行します。,The CI runs tests on every PR.,CI,CIはすべてのPRでテストを実行【じっこう】します。,Continuous integration
+パイプラインは今グリーンです。,The pipeline is green now.,パイプライン,パイプラインは今【いま】グリーンです。,Build process
+そのコミット後にビルドが壊れました。,The build broke after that commit.,ビルド,そのコミット後【ご】にビルドが壊【こわ】れました。,Compilation
+ビルドアーティファクトをダウンロードしてください。,Download the build artifacts.,アーティファクト,ビルドアーティファクトをダウンロードしてください。,Build output
+デバッグモードはより多くのログを表示します。,Debug mode shows more logs.,デバッグモード,デバッグモードはより多【おお】くのログを表示【ひょうじ】します。,Troubleshooting mode
+詳細モードでテストを実行してください。,Run tests in verbose mode.,詳細モード,詳細【しょうさい】モードでテストを実行【じっこう】してください。,Detailed output
+スナップショットテストを更新してください。,Update the snapshot tests.,スナップショット,スナップショットテストを更新【こうしん】してください。,UI test
+ゴールデンファイルと比較してください。,Compare against the golden file.,ゴールデンファイル,ゴールデンファイルと比較【ひかく】してください。,Reference file
+テストは決定論的でなければなりません。,Tests must be deterministic.,決定論的,テストは決定論的【けっていろんてき】でなければなりません。,Consistent results
+各テストは分離されるべきです。,Each test should be isolated.,分離,各【かく】テストは分離【ぶんり】されるべきです。,Independent
+速度のためにテストを並列実行してください。,Run tests in parallel for speed.,並列,速度【そくど】のためにテストを並列【へいれつ】実行【じっこう】してください。,Concurrent
+これらのテストは順次実行する必要があります。,These tests must run sequentially.,順次,これらのテストは順次【じゅんじ】実行【じっこう】する必要【ひつよう】があります。,In order
+不安定なテストを自動的にリトライしてください。,Retry flaky tests automatically.,自動的,不安定【ふあんてい】なテストを自動的【じどうてき】にリトライしてください。,Automatically
+テストレポートを生成してください。,Generate a test report.,レポート,テストレポートを生成【せいせい】してください。,Test summary

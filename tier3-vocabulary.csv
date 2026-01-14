@@ -1,0 +1,151 @@
+Sentence,Translation,Cloze,Pronunciation,Note
+問題なし！リリースOK。,LGTM! Ship it.,問題なし,問題【もんだい】なし！リリースOK。,Approval
+この変数の名前変更を検討してください。,Nit: consider renaming this variable.,検討,この変数【へんすう】の名前【なまえ】変更【へんこう】を検討【けんとう】してください。,Minor suggestion
+ここにコメントを追加してください。,Minor: add a comment here.,軽微,ここにコメントを追加【ついか】してください。,Minor issue
+これはメモリリークを引き起こします。,Major: this will cause a memory leak.,重大,これはメモリリークを引【ひ】き起【お】こします。,Major issue
+まずセキュリティの問題を修正してください。,Blocker: fix the security issue first.,セキュリティ,まずセキュリティの問題【もんだい】を修正【しゅうせい】してください。,Security issue
+配列の代わりにマップを使うことを提案します。,Suggestion: use a map instead of array.,提案,配列【はいれつ】の代【か】わりにマップを使【つか】うことを提案【ていあん】します。,Suggestion
+なぜこのアプローチを選んだのですか？,Question: why did you choose this approach?,アプローチ,なぜこのアプローチを選【えら】んだのですか？,Question
+パフォーマンスについて懸念があります。,I have a concern about performance.,懸念,パフォーマンスについて懸念【けねん】があります。,Concern
+ここで定数を使うことを検討してください。,Consider using a constant here.,定数,ここで定数【ていすう】を使【つか】うことを検討【けんとう】してください。,Suggestion
+代わりに再帰を使うこともできます。,Alternatively we could use recursion.,再帰,代【か】わりに再帰【さいき】を使【つか】うこともできます。,Alternative
+エラーハンドリングを追加してください。任意です。,Optional: add more error handling.,任意,エラーハンドリングを追加【ついか】してください。任意【にんい】です。,Optional
+この変更にはテストを追加してください。必須です。,Required: add tests for this change.,必須,この変更【へんこう】にはテストを追加【ついか】してください。必須【ひっす】です。,Required
+最新のコミットで対応しました。,Addressed in the latest commit.,対応,最新【さいしん】のコミットで対応【たいおう】しました。,Addressed
+解決済みとしてマークしました。,Marked as resolved.,解決済み,解決済【かいけつず】みとしてマークしました。,Resolved
+このコメントは古くなっています。,This comment is outdated.,古く,このコメントは古【ふる】くなっています。,Outdated
+このPRは古くなっています。更新してください。,"This PR is stale, please update.",古く,このPRは古【ふる】くなっています。更新【こうしん】してください。,Stale
+いくつかの変更を依頼しました。,I requested some changes.,変更を依頼,いくつかの変更【へんこう】を依頼【いらい】しました。,Changes requested
+PRは承認されました。,Your PR is approved.,承認,PRは承認【しょうにん】されました。,Approved
+CIが通ったらマージできます。,You can merge after CI passes.,マージ,CIが通【とお】ったらマージできます。,Merge
+スカッシュしてマージしてください。,Squash and merge please.,スカッシュ,スカッシュしてマージしてください。,Squash
+mainにリベースしてください。,Please rebase on main.,リベース,mainにリベースしてください。,Rebase
+まずマージコンフリクトを解決してください。,Resolve the merge conflicts first.,コンフリクト,まずマージコンフリクトを解決【かいけつ】してください。,Conflict
+差分がレビューしにくいです。,The diff is hard to review.,差分,差分【さぶん】がレビューしにくいです。,Diff
+このコードはとても読みやすいです。,This code is very readable.,読みやすい,このコードはとても読【よ】みやすいです。,Readable
+きれいな実装ですね。,Nice clean implementation.,きれい,きれいな実装【じっそう】ですね。,Clean
+エレガントな解決策ですね。,That's an elegant solution.,エレガント,エレガントな解決策【かいけつさく】ですね。,Elegant
+これは少しハッキーな感じがします。,This feels a bit hacky.,ハッキー,これは少【すこ】しハッキーな感【かん】じがします。,Hacky
+マジックナンバーを避けて定数を使ってください。,Avoid magic numbers use constants.,マジックナンバー,マジックナンバーを避【さ】けて定数【ていすう】を使【つか】ってください。,Magic number
+URLをハードコードしないでください。,Don't hardcode the URL.,ハードコード,URLをハードコードしないでください。,Hardcoded
+ここにコードの重複があります。,There's some code duplication here.,重複,ここにコードの重複【じゅうふく】があります。,Duplication
+これをDRYにしましょう。,Let's DRY this up.,DRY,これをDRYにしましょう。,Don't repeat yourself
+このメソッドのリファクタリングを検討してください。,Consider refactoring this method.,リファクタリング,このメソッドのリファクタリングを検討【けんとう】してください。,Refactor
+これを別の関数に抽出してください。,Extract this into a separate function.,抽出,これを別【べつ】の関数【かんすう】に抽出【ちゅうしゅつ】してください。,Extract
+この変数はインライン化できます。,You can inline this variable.,インライン,この変数【へんすう】はインライン化【か】できます。,Inline
+より説明的な名前にリネームしてください。,Rename to be more descriptive.,リネーム,より説明的【せつめいてき】な名前【なまえ】にリネームしてください。,Rename
+このロジックを簡略化できます。,We can simplify this logic.,簡略化,このロジックを簡略化【かんりゃくか】できます。,Simplify
+これが何をするか明確にしてもらえますか？,Can you clarify what this does?,明確に,これが何【なに】をするか明確【めいかく】にしてもらえますか？,Clarify
+この関数をドキュメント化してください。,Please document this function.,ドキュメント化,この関数【かんすう】をドキュメント化【か】してください。,Document
+理由を説明するコメントを追加してください。,Add a comment explaining why.,コメント,理由【りゆう】を説明【せつめい】するコメントを追加【ついか】してください。,Comment
+将来のクリーンアップのためにTODOを残してください。,Leave a TODO for future cleanup.,TODO,将来【しょうらい】のクリーンアップのためにTODOを残【のこ】してください。,TODO
+既知の問題にFIXMEを追加してください。,Add FIXME for known issues.,FIXME,既知【きち】の問題【もんだい】にFIXMEを追加【ついか】してください。,FIXME
+これは技術的負債を増やします。,This adds technical debt.,技術的負債,これは技術的【ぎじゅつてき】負債【ふさい】を増【ふ】やします。,Technical debt
+ここでのトレードオフは何ですか？,What's the tradeoff here?,トレードオフ,ここでのトレードオフは何【なん】ですか？,Tradeoff
+パフォーマンスの懸念はありますか？,Any performance concerns?,パフォーマンス,パフォーマンスの懸念【けねん】はありますか？,Performance
+セキュリティリスクはありますか？,Is there a security risk?,セキュリティリスク,セキュリティリスクはありますか？,Security
+エッジケースはどうですか？,What about edge cases?,エッジケース,エッジケースはどうですか？,Edge case
+ここにnullチェックを追加してください。,Add a null check here.,nullチェック,ここにnullチェックを追加【ついか】してください。,Null check
+エラーハンドリングを改善してください。,Improve error handling.,エラーハンドリング,エラーハンドリングを改善【かいぜん】してください。,Error handling
+これは型安全性を向上させます。,This improves type safety.,型安全性,これは型【かた】安全性【あんぜんせい】を向上【こうじょう】させます。,Type safety
+これはベストプラクティスに従っています。,This follows best practices.,ベストプラクティス,これはベストプラクティスに従【したが】っています。,Best practice
+まずアーキテクチャについて話し合いましょう。,Let's discuss the architecture first.,アーキテクチャ,まずアーキテクチャについて話【はな】し合【あ】いましょう。,Architecture
+設計にはもっと検討が必要です。,The design needs more thought.,設計,設計【せっけい】にはもっと検討【けんとう】が必要【ひつよう】です。,Design
+ここでリポジトリパターンを使ってください。,Use the repository pattern here.,パターン,ここでリポジトリパターンを使【つか】ってください。,Pattern
+これを小さなコンポーネントに分割してください。,Break this into smaller components.,コンポーネント,これを小【ちい】さなコンポーネントに分割【ぶんかつ】してください。,Component
+このロジック用にサービスを作成してください。,Create a service for this logic.,サービス,このロジック用【よう】にサービスを作成【さくせい】してください。,Service
+コントローラーはHTTPリクエストを処理します。,The controller handles HTTP requests.,コントローラー,コントローラーはHTTPリクエストを処理【しょり】します。,Controller
+認証用にミドルウェアを追加してください。,Add middleware for authentication.,ミドルウェア,認証【にんしょう】用【よう】にミドルウェアを追加【ついか】してください。,Middleware
+データアクセス層を分離してください。,Keep the data access layer separate.,レイヤー,データアクセス層【そう】を分離【ぶんり】してください。,Layer
+まずインターフェースを定義してください。,Define an interface first.,インターフェース,まずインターフェースを定義【ていぎ】してください。,Interface
+この抽象化は複雑すぎます。,This abstraction is too complex.,抽象化,この抽象化【ちゅうしょうか】は複雑【ふくざつ】すぎます。,Abstraction
+実装の詳細をカプセル化してください。,Encapsulate the implementation details.,カプセル化,実装【じっそう】の詳細【しょうさい】をカプセル化【か】してください。,Encapsulation
+継承より合成を優先してください。,Prefer composition over inheritance.,継承,継承【けいしょう】より合成【ごうせい】を優先【ゆうせん】してください。,Inheritance
+柔軟性のために合成を使ってください。,Use composition for flexibility.,合成,柔軟性【じゅうなんせい】のために合成【ごうせい】を使【つか】ってください。,Composition
+テストのために依存性注入を使ってください。,Use dependency injection for testing.,依存性注入,テストのために依存性【いぞんせい】注入【ちゅうにゅう】を使【つか】ってください。,Dependency injection
+これをシングルトンにしてください。,Make this a singleton.,シングルトン,これをシングルトンにしてください。,Singleton
+インスタンスを作成するためにファクトリーを使ってください。,Use a factory to create instances.,ファクトリー,インスタンスを作成【さくせい】するためにファクトリーを使【つか】ってください。,Factory
+オブザーバーパターンを実装してください。,Implement the observer pattern.,オブザーバー,オブザーバーパターンを実装【じっそう】してください。,Observer
+MVCアーキテクチャに従っています。,We follow MVC architecture.,MVC,MVCアーキテクチャに従【したが】っています。,Model-View-Controller
+マイクロサービスに移行しています。,We're migrating to microservices.,マイクロサービス,マイクロサービスに移行【いこう】しています。,Microservices
+モノリスは保守が難しいです。,The monolith is hard to maintain.,モノリス,モノリスは保守【ほしゅ】が難【むずか】しいです。,Monolith
+コードをモジュラーに保ってください。,Keep the code modular.,モジュラー,コードをモジュラーに保【たも】ってください。,Modular
+これはスケーラブルである必要があります。,This needs to be scalable.,スケーラブル,これはスケーラブルである必要【ひつよう】があります。,Scalable
+保守可能なコードを書いてください。,Write maintainable code.,保守可能,保守【ほしゅ】可能【かのう】なコードを書【か】いてください。,Maintainable
+将来のニーズのために拡張可能にしてください。,Make it extensible for future needs.,拡張可能,将来【しょうらい】のニーズのために拡張【かくちょう】可能【かのう】にしてください。,Extensible
+このコンポーネントは再利用可能です。,This component is reusable.,再利用可能,このコンポーネントは再利用【さいりよう】可能【かのう】です。,Reusable
+この設計はよりテスト可能です。,This design is more testable.,テスト可能,この設計【せっけい】はよりテスト可能【かのう】です。,Testable
+サービスを疎結合に保ってください。,Keep services loosely coupled.,疎結合,サービスを疎結合【そけつごう】に保【たも】ってください。,Loosely coupled
+これらのモジュールは密結合すぎます。,These modules are too tightly coupled.,密結合,これらのモジュールは密結合【みつけつごう】すぎます。,Tightly coupled
+高凝集度は良いことです。,High cohesion is good.,凝集度,高【たか】凝集度【ぎょうしゅうど】は良【よ】いことです。,Cohesion
+低結合度が望ましいです。,Low coupling is preferred.,結合度,低【ひく】結合度【けつごうど】が望【のぞ】ましいです。,Coupling
+関心の分離に従ってください。,Follow separation of concerns.,関心の分離,関心【かんしん】の分離【ぶんり】に従【したが】ってください。,Separation of concerns
+各クラスは単一責任を持ちます。,Each class has single responsibility.,単一責任,各【かく】クラスは単一【たんいつ】責任【せきにん】を持【も】ちます。,Single responsibility
+SOLID原則を適用してください。,Apply SOLID principles.,SOLID,SOLID原則【げんそく】を適用【てきよう】してください。,SOLID principles
+自分を繰り返さないでください。,Don't repeat yourself.,繰り返さない,自分【じぶん】を繰【く】り返【かえ】さないでください。,DRY
+シンプルに保ってください。,Keep it simple stupid.,シンプル,シンプルに保【たも】ってください。,KISS
+必要になるまで作らないでください。,You aren't gonna need it.,必要になるまで,必要【ひつよう】になるまで作【つく】らないでください。,YAGNI
+技術スタックは何ですか？,What's your tech stack?,技術スタック,技術【ぎじゅつ】スタックは何【なん】ですか？,Tech stack
+どのフレームワークを使っていますか？,Which framework do you use?,フレームワーク,どのフレームワークを使【つか】っていますか？,Framework
+既存のライブラリを使ってください。,Use an existing library.,ライブラリ,既存【きそん】のライブラリを使【つか】ってください。,Library
+公式SDKを使ってください。,Use the official SDK.,SDK,公式【こうしき】SDKを使【つか】ってください。,SDK
+API設計をレビューしましょう。,Let's review the API design.,API設計,API設計【せっけい】をレビューしましょう。,API design
+まずAPIコントラクトを定義してください。,Define the API contract first.,コントラクト,まずAPIコントラクトを定義【ていぎ】してください。,Contract
+APIバージョニングはどう処理していますか？,How do you handle API versioning?,バージョニング,APIバージョニングはどう処理【しょり】していますか？,Versioning
+この変更は後方互換性があります。,This change is backward compatible.,後方互換性,この変更【へんこう】は後方【こうほう】互換性【ごかんせい】があります。,Backward compatible
+これは破壊的変更です。,This is a breaking change.,破壊的変更,これは破壊的【はかいてき】変更【へんこう】です。,Breaking change
+古いエンドポイントを非推奨にしてください。,Deprecate the old endpoint.,非推奨,古【ふる】いエンドポイントを非推奨【ひすいしょう】にしてください。,Deprecate
+このAPIは来年サンセットします。,We'll sunset this API next year.,サンセット,このAPIは来年【らいねん】サンセットします。,Sunset
+マイグレーションを慎重に計画してください。,Plan the migration carefully.,計画,マイグレーションを慎重【しんちょう】に計画【けいかく】してください。,Plan
+これはレガシーコードです。,This is legacy code.,レガシー,これはレガシーコードです。,Legacy
+これはグリーンフィールドプロジェクトです。,This is a greenfield project.,グリーンフィールド,これはグリーンフィールドプロジェクトです。,Greenfield
+サーバーはAWSで動作しています。,The server is running on AWS.,サーバー,サーバーはAWSで動作【どうさ】しています。,Server
+クライアントはAPIリクエストを行います。,The client makes API requests.,クライアント,クライアントはAPIリクエストを行【おこな】います。,Client
+コンテナを使ってデプロイしてください。,Deploy using containers.,コンテナ,コンテナを使【つか】ってデプロイしてください。,Container
+このためにDockerfileを作成してください。,Create a Dockerfile for this.,Dockerfile,このためにDockerfileを作成【さくせい】してください。,Dockerfile
+新しいDockerイメージをビルドしてください。,Build a new Docker image.,イメージ,新【あたら】しいDockerイメージをビルドしてください。,Image
+Kubernetesで実行しています。,We run on Kubernetes.,Kubernetes,Kubernetesで実行【じっこう】しています。,Kubernetes
+K8sクラスターにデプロイしてください。,Deploy to K8s cluster.,K8s,K8sクラスターにデプロイしてください。,K8s
+ポッドがクラッシュし続けています。,The pod keeps crashing.,ポッド,ポッドがクラッシュし続【つづ】けています。,Pod
+クラスターにノードを追加してください。,Add more nodes to the cluster.,ノード,クラスターにノードを追加【ついか】してください。,Node
+クラスターは容量いっぱいです。,The cluster is at capacity.,クラスター,クラスターは容量【ようりょう】いっぱいです。,Cluster
+新しいデプロイメントを作成してください。,Create a new deployment.,デプロイメント,新【あたら】しいデプロイメントを作成【さくせい】してください。,Deployment
+ポッドをサービスとして公開してください。,Expose the pod as a service.,公開,ポッドをサービスとして公開【こうかい】してください。,Expose
+外部アクセス用にイングレスを設定してください。,Configure ingress for external access.,イングレス,外部【がいぶ】アクセス用【よう】にイングレスを設定【せってい】してください。,Ingress
+ステージング名前空間にデプロイしてください。,Deploy to the staging namespace.,名前空間,ステージング名前空間【なまえくうかん】にデプロイしてください。,Namespace
+設定をConfigMapに保存してください。,Store configs in a ConfigMap.,ConfigMap,設定【せってい】をConfigMapに保存【ほぞん】してください。,ConfigMap
+機密データはSecretsに保存してください。,Store sensitive data in Secrets.,Secrets,機密【きみつ】データはSecretsに保存【ほぞん】してください。,Secrets
+永続化のためにボリュームをマウントしてください。,Mount a volume for persistence.,ボリューム,永続化【えいぞくか】のためにボリュームをマウントしてください。,Volume
+自動デプロイ用にCI/CDを設定してください。,Set up CI/CD for automated deploys.,CI/CD,自動【じどう】デプロイ用【よう】にCI/CDを設定【せってい】してください。,CI/CD
+パイプラインがテストステージで失敗しました。,The pipeline failed at the test stage.,パイプライン,パイプラインがテストステージで失敗【しっぱい】しました。,Pipeline
+新しいビルドをトリガーしてください。,Trigger a new build.,トリガー,新【あたら】しいビルドをトリガーしてください。,Trigger
+ビルドアーティファクトを保存してください。,Store build artifacts.,アーティファクト,ビルドアーティファクトを保存【ほぞん】してください。,Artifact
+新しいリリースを作成してください。,Cut a new release.,リリース,新【あたら】しいリリースを作成【さくせい】してください。,Release
+ロールアウトを徐々に開始してください。,Start the rollout gradually.,ロールアウト,ロールアウトを徐々【じょじょ】に開始【かいし】してください。,Rollout
+前のバージョンにロールバックしてください。,Rollback to the previous version.,ロールバック,前【まえ】のバージョンにロールバックしてください。,Rollback
+ブルーグリーンデプロイメントを使ってください。,Use blue-green deployment.,ブルーグリーン,ブルーグリーンデプロイメントを使【つか】ってください。,Blue-green
+まずカナリアリリースをしてください。,Do a canary release first.,カナリア,まずカナリアリリースをしてください。,Canary
+フィーチャーフラグの後ろに隠してください。,Hide behind a feature flag.,フィーチャーフラグ,フィーチャーフラグの後【うし】ろに隠【かく】してください。,Feature flag
+ロードバランサーの後ろに置いてください。,Put it behind a load balancer.,ロードバランサー,ロードバランサーの後【うし】ろに置【お】いてください。,Load balancer
+トラフィックスパイク用にオートスケーリングを有効にしてください。,Enable auto-scaling for traffic spikes.,オートスケーリング,トラフィックスパイク用【よう】にオートスケーリングを有効【ゆうこう】にしてください。,Auto-scaling
+インスタンスを追加して水平スケーリングしてください。,Scale horizontally by adding instances.,水平スケーリング,インスタンスを追加【ついか】して水平【すいへい】スケーリングしてください。,Horizontal scaling
+リソースを増やして垂直スケーリングしてください。,Scale vertically with more resources.,垂直スケーリング,リソースを増【ふ】やして垂直【すいちょく】スケーリングしてください。,Vertical scaling
+インスタンスをもっと起動してください。,Spin up more instances.,インスタンス,インスタンスをもっと起動【きどう】してください。,Instance
+サーバープロビジョニングを自動化してください。,Automate server provisioning.,プロビジョニング,サーバープロビジョニングを自動化【じどうか】してください。,Provisioning
+インフラストラクチャをコードとして管理してください。,Manage infrastructure as code.,インフラストラクチャ,インフラストラクチャをコードとして管理【かんり】してください。,Infrastructure
+IaCにはTerraformを使っています。,We use Terraform for IaC.,Terraform,IaCにはTerraformを使【つか】っています。,Terraform
+新しいリソース用にTerraformを書いてください。,Write Terraform for the new resources.,リソース,新【あたら】しいリソース用【よう】にTerraformを書【か】いてください。,Resource
+AWSにはCloudFormationを使ってください。,Use CloudFormation for AWS.,CloudFormation,AWSにはCloudFormationを使【つか】ってください。,CloudFormation
+設定ファイルを更新してください。,Update the configuration file.,設定ファイル,設定【せってい】ファイルを更新【こうしん】してください。,Configuration
+環境変数として設定してください。,Set it as an environment variable.,環境変数,環境【かんきょう】変数【へんすう】として設定【せってい】してください。,Environment variable
+.envファイルを確認してください。,.envファイルを確認してください。,.env,.envファイルを確認【かくにん】してください。,Env file
+まずステージングにデプロイしてください。,Deploy to staging first.,ステージング,まずステージングにデプロイしてください。,Staging
+これは本番で動作しています。,This is running in production.,本番,これは本番【ほんばん】で動作【どうさ】しています。,Production
+開発環境を使ってください。,Use the development environment.,開発環境,開発【かいはつ】環境【かんきょう】を使【つか】ってください。,Development
+まずローカルで実行してください。,Run it locally first.,ローカル,まずローカルで実行【じっこう】してください。,Local
+リモートサーバーに接続してください。,Connect to the remote server.,リモート,リモートサーバーに接続【せつぞく】してください。,Remote
+サーバーにSSHしてください。,SSH into the server.,SSH,サーバーにSSHしてください。,SSH
+VPN経由で接続してください。,Connect via VPN.,VPN,VPN経由【けいゆ】で接続【せつぞく】してください。,VPN
+ファイアウォールルールを確認してください。,Check the firewall rules.,ファイアウォール,ファイアウォールルールを確認【かくにん】してください。,Firewall
+セキュリティグループを更新してください。,Update the security group.,セキュリティグループ,セキュリティグループを更新【こうしん】してください。,Security group
+リソースはプライベートVPCにあります。,Resources are in a private VPC.,VPC,リソースはプライベートVPCにあります。,VPC
