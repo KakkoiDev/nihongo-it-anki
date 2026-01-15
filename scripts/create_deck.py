@@ -49,6 +49,7 @@ def create_model() -> genanki.Model:
             {'name': 'Category'},       # Category/context
             {'name': 'Audio'},          # Audio file reference
             {'name': 'Hint'},           # First character hint
+            {'name': 'KeyMeaning'},     # English meaning of key word
         ],
         templates=[
             # Card A: Comprehension (Listening + Reading)
@@ -68,7 +69,7 @@ def create_model() -> genanki.Model:
 <hr id="answer">
 <div class="translation">{{Translation}}</div>
 <div class="pronunciation">{{Pronunciation}}</div>
-<div class="key-vocab">Key: <span class="vocab" title="{{Category}}">{{Cloze}}</span></div>
+<div class="key-vocab">Key: <span class="vocab">{{Cloze}}</span> ({{KeyMeaning}})</div>
 ''',
             },
             # Card B: Production (English → Japanese)
@@ -147,8 +148,6 @@ def create_model() -> genanki.Model:
 .vocab {
     font-weight: bold;
     color: #2196F3;
-    cursor: help;
-    border-bottom: 1px dotted #2196F3;
 }
 
 .prompt {
@@ -234,6 +233,7 @@ def create_deck(tier: int, include_audio: bool = True) -> tuple[genanki.Deck, li
                 row['Note'],
                 audio_ref,
                 hint,
+                row['KeyMeaning'],
             ],
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
         )
