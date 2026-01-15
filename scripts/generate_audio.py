@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Generate audio files for vocabulary sentences using Kokoro TTS."""
+"""Generate audio files for vocabulary sentences using Kokoro TTS.
+
+Uses the Pronunciation field with preprocessing to ensure accurate readings:
+- Extracts furigana: 昼食【ちゅうしょく】 → ちゅうしょく
+- Converts acronyms: API → エーピーアイ
+"""
 
 import argparse
 import csv
@@ -10,6 +15,8 @@ import numpy as np
 import soundfile as sf
 from kokoro import KPipeline
 
+from pronunciation import preprocess_for_tts
+
 # Project root
 ROOT = Path(__file__).parent.parent
 
@@ -19,8 +26,14 @@ ROOT = Path(__file__).parent.parent
 VOICE = 'jm_kumo'
 
 
-def generate_tier_audio(tier: int, voice: str = VOICE):
-    """Generate audio files for a specific tier."""
+def generate_tier_audio(tier: int, voice: str = VOICE, force: bool = False):
+    """Generate audio files for a specific tier.
+
+    Args:
+        tier: Tier number (1-6)
+        voice: Kokoro voice to use
+        force: If True, regenerate even if files exist
+    """
     csv_path = ROOT / f"tier{tier}-vocabulary.csv"
     output_dir = ROOT / f"tier{tier}-audio"
 
@@ -48,23 +61,25 @@ def generate_tier_audio(tier: int, voice: str = VOICE):
 
     # Generate audio for each sentence
     for idx, row in enumerate(sentences):
-        japanese = row['Sentence']
+        # Use Pronunciation field and preprocess for accurate TTS
+        pronunciation = row['Pronunciation']
+        tts_input = preprocess_for_tts(pronunciation)
         num = idx + 1
 
         # Output filename: tier1_001.wav, tier1_002.wav, etc.
         output_path = output_dir / f"tier{tier}_{num:03d}.wav"
 
-        # Skip if already exists
-        if output_path.exists():
+        # Skip if already exists (use --force to regenerate)
+        if output_path.exists() and not force:
             print(f"[{num}/{total}] Skipping (exists): {output_path.name}")
             continue
 
-        print(f"[{num}/{total}] {japanese[:40]}{'...' if len(japanese) > 40 else ''}")
+        print(f"[{num}/{total}] {tts_input[:50]}{'...' if len(tts_input) > 50 else ''}")
 
         try:
             # Generate audio
             audio_chunks = []
-            for gs, ps, audio in pipeline(japanese, voice=voice):
+            for gs, ps, audio in pipeline(tts_input, voice=voice):
                 audio_chunks.append(audio)
 
             # Concatenate audio chunks
@@ -95,14 +110,16 @@ def main():
                         help="Generate audio for all tiers")
     parser.add_argument("--voice", default=VOICE,
                         help=f"Voice to use (default: {VOICE})")
+    parser.add_argument("--force", action="store_true",
+                        help="Regenerate audio even if files exist")
 
     args = parser.parse_args()
 
     if args.all:
         for tier in range(1, 7):
-            generate_tier_audio(tier, args.voice)
+            generate_tier_audio(tier, args.voice, args.force)
     elif args.tier:
-        generate_tier_audio(args.tier, args.voice)
+        generate_tier_audio(args.tier, args.voice, args.force)
     else:
         parser.print_help()
         sys.exit(1)
