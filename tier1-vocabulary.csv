@@ -1,151 +1,151 @@
-Sentence,Translation,Cloze,Pronunciation,Note
-機能は完了しレビュー準備ができました。,The feature is done and ready for review.,完了,機能【きのう】は完了【かんりょう】しレビュー準備【じゅんび】ができました。,Status - completed
-今ログインのバグに取り組んでいます。,I'm working on the login bug right now.,取り組んで,今【いま】ログインのバグに取【と】り組【く】んでいます。,Status - in progress
-APIチームにブロックされています。,I'm blocked by the API team.,ブロック,APIチームにブロックされています。,Status - cannot proceed
-プロジェクトの更新をもらえますか？,Can you give us an update on the project?,更新,プロジェクトの更新【こうしん】をもらえますか？,Status report
-支払いフローに問題を見つけました。,We found an issue with the payment flow.,問題,支払【しはら】いフローに問題【もんだい】を見【み】つけました。,Problem/bug
-昼食前にこのバグを修正します。,I'll fix this bug before lunch.,修正,昼食【ちゅうしょく】前【まえ】にこのバグを修正【しゅうせい】します。,Repair/solve
-モバイルで動くか確認してもらえますか？,Can you check if this works on mobile?,確認,モバイルで動【うご】くか確認【かくにん】してもらえますか？,Verify/confirm
-PRはレビュー準備ができています。,The PR is ready for review.,準備,PRはレビュー準備【じゅんび】ができています。,Prepared/complete
-ステージングデータベースへのアクセスが必要です。,I need access to the staging database.,必要,ステージングデータベースへのアクセスが必要【ひつよう】です。,Require
-このコードを理解するのを手伝ってもらえますか？,Could you help me understand this code?,手伝って,このコードを理解【りかい】するのを手伝【てつだ】ってもらえますか？,Assist
-簡単な質問です。設定ファイルはどこですか？,Quick question - where is the config file?,質問,簡単【かんたん】な質問【しつもん】です。設定【せってい】ファイルはどこですか？,Inquiry
-素早いレビューありがとうございます！,Thanks for the quick review!,ありがとう,素早【すばや】いレビューありがとうございます！,Gratitude
-いいですね、そうしましょう。,"Sounds good, let's do that.",いいですね,いいですね、そうしましょう。,Agreement
-なるほど、説明ありがとうございます。,"That makes sense, thanks for explaining.",なるほど,なるほど、説明【せつめい】ありがとうございます。,Understanding
-了解、今から始めます。,"Got it, I'll start on that now.",了解,了解【りょうかい】、今【いま】から始【はじ】めます。,Acknowledged
-もちろん、それを手伝えます。,"Sure, I can help with that.",もちろん,もちろん、それを手伝【てつだ】えます。,Certainly
-すみません、会議に出られませんでした。,"Sorry, I missed the meeting.",すみません,すみません、会議【かいぎ】に出【で】られませんでした。,Apology
-実は、もっと良い方法があると思います。,"Actually, I think there's a better way.",実は,実【じつ】は、もっと良【よ】い方法【ほうほう】があると思【おも】います。,In fact
-おそらく2日かかるでしょう。,This will probably take two days.,おそらく,おそらく2日【ふつか】かかるでしょう。,Likely
-チームリードに聞いた方がいいかもしれません。,Maybe we should ask the team lead.,かもしれません,チームリードに聞【き】いた方【ほう】がいいかもしれません。,Perhaps
-ここには確実にもっとテストが必要です。,We definitely need more tests here.,確実に,ここには確実【かくじつ】にもっとテストが必要【ひつよう】です。,Certainly
-基本的に、APIからデータを取得します。,"Basically, it fetches data from the API.",基本的に,基本的【きほんてき】に、APIからデータを取得【しゅとく】します。,Fundamentally
-現在認証の問題をデバッグしています。,I'm currently debugging the auth issue.,現在,現在【げんざい】認証【にんしょう】の問題【もんだい】をデバッグしています。,At present
-ビルドはまだ実行中です。,The build is still running.,まだ,ビルドはまだ実行中【じっこうちゅう】です。,Still/yet
-すでに変更をプッシュしました。,I already pushed the changes.,すでに,すでに変更【へんこう】をプッシュしました。,Already
-テストはまだ終わっていません。,The tests haven't finished yet.,終わって,テストはまだ終【お】わっていません。,Finished
-すぐにこれを終わらせます。,I'll have this done soon.,すぐに,すぐにこれを終【お】わらせます。,Soon
-後でこれについて話せますか？,Can we discuss this later?,後で,後【あと】でこれについて話【はな】せますか？,Later
-今すぐこれをデプロイする必要があります。,We need to deploy this now.,今すぐ,今【いま】すぐこれをデプロイする必要【ひつよう】があります。,Right now
-今日中にできますか？,Can this be done today?,今日中,今日中【きょうじゅう】にできますか？,By today
-テスト後にこれらの変更をコミットします。,I'll commit these changes after testing.,コミット,テスト後【ご】にこれらの変更【へんこう】をコミットします。,Git - save changes
-ブランチをプッシュするのを忘れないでください。,Don't forget to push your branch.,プッシュ,ブランチをプッシュするのを忘【わす】れないでください。,Git - upload
-始める前に最新の変更をプルしてください。,Pull the latest changes before starting.,プル,始【はじ】める前【まえ】に最新【さいしん】の変更【へんこう】をプルしてください。,Git - download
-これをmainにマージしてもらえますか？,Can you merge this into main?,マージ,これをmainにマージしてもらえますか？,Git - combine
-この機能用に新しいブランチを作成してください。,Create a new branch for this feature.,ブランチ,この機能【きのう】用【よう】に新【あたら】しいブランチを作成【さくせい】してください。,Git - version line
-バグ修正のPRを開きました。,I opened a PR for the bug fix.,PR,バグ修正【しゅうせい】のPRを開【ひら】きました。,Pull request
-時間があるときにPRをレビューしてもらえますか？,Can you review my PR when you have time?,レビュー,時間【じかん】があるときにPRをレビューしてもらえますか？,Examine code
-1つの小さな変更後に承認します。,I'll approve it after one small change.,承認,1つの小【ちい】さな変更【へんこう】後【ご】に承認【しょうにん】します。,Approve
-解決が必要なマージコンフリクトがあります。,I have a merge conflict I need to resolve.,コンフリクト,解決【かいけつ】が必要【ひつよう】なマージコンフリクトがあります。,Git - clash
-コンフリクトを解決しました。再レビューお願いします。,"I resolved the conflicts, please re-review.",解決,コンフリクトを解決【かいけつ】しました。再【さい】レビューお願【ねが】いします。,Resolve
-マージ前にmainにリベースすべきです。,You should rebase on main before merging.,リベース,マージ前【まえ】にmainにリベースすべきです。,Git - replay commits
-テストするためにフィーチャーブランチをチェックアウトしてください。,Checkout the feature branch to test it.,チェックアウト,テストするためにフィーチャーブランチをチェックアウトしてください。,Git - switch branch
-まず変更をスタッシュさせてください。,Let me stash my changes first.,スタッシュ,まず変更【へんこう】をスタッシュさせてください。,Git - temporary save
-差分は小さく、20行だけです。,"The diff is small, just 20 lines.",差分,差分【さぶん】は小【ちい】さく、20行【ぎょう】だけです。,Git - difference
-これは直接mainに入れるべきです。,This should go directly to main.,直接,これは直接【ちょくせつ】mainに入【い】れるべきです。,Directly
-準備ができたらoriginにプッシュしてください。,Push to origin when you're ready.,準備ができたら,準備【じゅんび】ができたらoriginにプッシュしてください。,When ready
-リポジトリをクローンしてnpm installを実行してください。,Clone the repo and run npm install.,クローン,リポジトリをクローンしてnpm installを実行【じっこう】してください。,Git - copy repo
-リポジトリをフォークしてPRを提出してください。,Fork the repo and submit a PR.,フォーク,リポジトリをフォークしてPRを提出【ていしゅつ】してください。,Git - personal copy
-そのコミットをすぐにリバートする必要があります。,We need to revert that commit immediately.,リバート,そのコミットをすぐにリバートする必要【ひつよう】があります。,Git - undo
-その修正をリリースブランチにチェリーピックしてください。,Cherry-pick that fix to the release branch.,チェリーピック,その修正【しゅうせい】をリリースブランチにチェリーピックしてください。,Git - select commit
-マージ前にコミットをスカッシュしてください。,Squash your commits before merging.,スカッシュ,マージ前【まえ】にコミットをスカッシュしてください。,Git - combine commits
-このリリースをv2.0.0としてタグ付けしてください。,Tag this release as v2.0.0.,タグ,このリリースをv2.0.0としてタグ付【づ】けしてください。,Git - label version
-リリースは金曜日に予定されています。,The release is scheduled for Friday.,リリース,リリースは金曜日【きんようび】に予定【よてい】されています。,Deploy to production
-どのバージョンを実行していますか？,What version are you running?,バージョン,どのバージョンを実行【じっこう】していますか？,Software version
-リリース前にchangelogを更新してください。,Update the changelog before release.,更新,リリース前【まえ】にchangelogを更新【こうしん】してください。,Version history
-誰がこれを書いたか見るためにgit blameを使ってください。,Use git blame to see who wrote this.,書いた,誰【だれ】がこれを書【か】いたか見【み】るためにgit blameを使【つか】ってください。,Git - show author
-最近の変更についてgit logを確認してください。,Check the git log for recent changes.,最近,最近【さいきん】の変更【へんこう】についてgit logを確認【かくにん】してください。,Recent
-コミット履歴を見てください。,Look at the commit history.,履歴,コミット履歴【りれき】を見【み】てください。,History
-変更を破棄するためにHEADにリセットしてください。,Reset to HEAD to discard changes.,破棄,変更【へんこう】を破棄【はき】するためにHEADにリセットしてください。,Discard
-提出前にupstreamと同期してください。,Sync with upstream before submitting.,同期,提出【ていしゅつ】前【まえ】にupstreamと同期【どうき】してください。,Sync
-QA後に本番にデプロイします。,We'll deploy to production after QA.,デプロイ,QA後【ご】に本番【ほんばん】にデプロイします。,Deploy
-型エラーのためビルドが失敗しました。,The build failed due to a type error.,失敗,型【かた】エラーのためビルドが失敗【しっぱい】しました。,Failed
-プッシュ前にテストを実行してください。,Run the tests before pushing.,実行,プッシュ前【まえ】にテストを実行【じっこう】してください。,Execute
-ステージングでこれをテストしましたか？,Did you test this on staging?,テスト,ステージングでこれをテストしましたか？,Test
-午前中ずっとこれをデバッグしていました。,I spent all morning debugging this.,デバッグ,午前中【ごぜんちゅう】ずっとこれをデバッグしていました。,Debug
-明日新機能を実装します。,I'll implement the new feature tomorrow.,実装,明日【あした】新【しん】機能【きのう】を実装【じっそう】します。,Implement
-追加する前にこれをリファクタリングすべきです。,We should refactor this before adding more.,リファクタリング,追加【ついか】する前【まえ】にこれをリファクタリングすべきです。,Refactor
-このクエリを最適化する必要があります。,We need to optimize this query.,最適化,このクエリを最適化【さいてきか】する必要【ひつよう】があります。,Optimize
-これ用に新しいコンポーネントを作成してください。,Create a new component for this.,作成,これ用【よう】に新【あたら】しいコンポーネントを作成【さくせい】してください。,Create
-使われていないインポートを削除してください。,Delete the unused imports.,削除,使【つか】われていないインポートを削除【さくじょ】してください。,Delete
-ここにエラーハンドリングを追加してください。,Add error handling here.,追加,ここにエラーハンドリングを追加【ついか】してください。,Add
-console.log文を取り除いてください。,Remove the console.log statements.,取り除いて,console.log文【ぶん】を取【と】り除【のぞ】いてください。,Remove
-エンドポイントをPOSTを使うように変更してください。,Change the endpoint to use POST.,変更,エンドポイントをPOSTを使【つか】うように変更【へんこう】してください。,Change
-キャッシュを有効にするため設定を修正してください。,Modify the config to enable caching.,設定,キャッシュを有効【ゆうこう】にするため設定【せってい】を修正【しゅうせい】してください。,Configure
-依存関係を最新に更新してください。,Update the dependencies to latest.,依存関係,依存【いぞん】関係【かんけい】を最新【さいしん】に更新【こうしん】してください。,Dependencies
-不足しているパッケージをインストールしてください。,Install the missing package.,インストール,不足【ふそく】しているパッケージをインストールしてください。,Install
-utilsからユーティリティ関数をインポートしてください。,Import the utility function from utils.,インポート,utilsからユーティリティ関数【かんすう】をインポートしてください。,Import
-他のファイルが使えるようにこの関数をエクスポートしてください。,Export this function so other files can use it.,エクスポート,他【ほか】のファイルが使【つか】えるようにこの関数【かんすう】をエクスポートしてください。,Export
-ユーザーIDでAPIを呼び出してください。,Call the API with the user ID.,呼び出して,ユーザーIDでAPIを呼【よ】び出【だ】してください。,Call
-ユーザーが見つからない場合はnullを返してください。,Return null if the user is not found.,返して,ユーザーが見【み】つからない場合【ばあい】はnullを返【かえ】してください。,Return
-propsを子コンポーネントに渡してください。,Pass the props to the child component.,渡して,propsを子【こ】コンポーネントに渡【わた】してください。,Pass
-タイムアウトを30秒に設定してください。,Set the timeout to 30 seconds.,設定,タイムアウトを30秒【びょう】に設定【せってい】してください。,Set
-データベースからユーザーデータを取得してください。,Get the user data from the database.,取得,データベースからユーザーデータを取得【しゅとく】してください。,Get/retrieve
-コンポーネントがマウントされたときにデータをフェッチしてください。,Fetch the data when the component mounts.,フェッチ,コンポーネントがマウントされたときにデータをフェッチしてください。,Fetch
-認証トークン付きでリクエストを送信してください。,Send the request with the auth token.,送信,認証【にんしょう】トークン付【つ】きでリクエストを送信【そうしん】してください。,Send
-webhookを受信して処理してください。,Receive the webhook and process it.,受信,webhookを受信【じゅしん】して処理【しょり】してください。,Receive
-エラーを適切にハンドルしてください。,Handle the error gracefully.,ハンドル,エラーを適切【てきせつ】にハンドルしてください。,Handle
-JSONレスポンスをパースしてください。,Parse the JSON response.,パース,JSONレスポンスをパースしてください。,Parse
-保存前に入力を検証してください。,Validate the input before saving.,検証,保存【ほぞん】前【まえ】に入力【にゅうりょく】を検証【けんしょう】してください。,Validate
-日付をYYYY-MM-DD形式にフォーマットしてください。,Format the date as YYYY-MM-DD.,フォーマット,日付【ひづけ】をYYYY-MM-DD形式【けいしき】にフォーマットしてください。,Format
-チェックアウトフローにバグを見つけました。,I found a bug in the checkout flow.,バグ,チェックアウトフローにバグを見【み】つけました。,Bug
-ユーザーに500エラーが表示されています。,Users are seeing a 500 error.,エラー,ユーザーに500エラーが表示【ひょうじ】されています。,Error
-送信をタップするとアプリがクラッシュします。,The app crashes when you tap submit.,クラッシュ,送信【そうしん】をタップするとアプリがクラッシュします。,Crash
-この変更は既存の機能を壊すかもしれません。,This change might break existing features.,壊す,この変更【へんこう】は既存【きそん】の機能【きのう】を壊【こわ】すかもしれません。,Break
-Safariでログインが壊れています。,The login is broken on Safari.,壊れて,Safariでログインが壊【こわ】れています。,Broken
-並列実行するとテストが失敗します。,The tests fail when run in parallel.,失敗,並列【へいれつ】実行【じっこう】するとテストが失敗【しっぱい】します。,Fail
-デプロイが失敗しました。今ログを確認中です。,The deployment failed. Checking logs now.,確認中,デプロイが失敗【しっぱい】しました。今【いま】ログを確認中【かくにんちゅう】です。,Checking
-すべてのテストがローカルで通過します。,All tests pass locally.,通過,すべてのテストがローカルで通過【つうか】します。,Pass
-マイグレーションは成功しました。,The migration was a success.,成功,マイグレーションは成功【せいこう】しました。,Success
-あなたのマシンでこれは動きますか？,Does this work on your machine?,動きますか,あなたのマシンでこれは動【うご】きますか？,Work
-ユーザーがログアウトしているとこれは動きません。,This doesn't work when the user is logged out.,動きません,ユーザーがログアウトしているとこれは動【うご】きません。,Doesn't work
-データベース接続に問題があります。,There's an issue with the database connection.,接続,データベース接続【せつぞく】に問題【もんだい】があります。,Connection
-問題は認証ロジックにあります。,The problem is in the authentication logic.,認証,問題【もんだい】は認証【にんしょう】ロジックにあります。,Authentication
-原因はnullチェックの欠落でした。,The cause was a missing null check.,原因,原因【げんいん】はnullチェックの欠落【けつらく】でした。,Cause
-障害の根本原因を見つけました。,We found the root cause of the outage.,根本原因,障害【しょうがい】の根本【こんぽん】原因【げんいん】を見【み】つけました。,Root cause
-修正は簡単です。try-catchを追加するだけです。,The fix is simple - just add a try-catch.,簡単,修正【しゅうせい】は簡単【かんたん】です。try-catchを追加【ついか】するだけです。,Simple
-この重大なバグにホットフィックスが必要です。,We need a hotfix for this critical bug.,ホットフィックス,この重大【じゅうだい】なバグにホットフィックスが必要【ひつよう】です。,Hotfix
-セキュリティパッチをすぐに適用してください。,Apply the security patch immediately.,適用,セキュリティパッチをすぐに適用【てきよう】してください。,Apply
-適切に修正するまでの回避策があります。,There's a workaround until we fix it properly.,回避策,適切【てきせつ】に修正【しゅうせい】するまでの回避策【かいひさく】があります。,Workaround
-これは一時的な修正です。,This is a temporary fix.,一時的,これは一時的【いちじてき】な修正【しゅうせい】です。,Temporary
-恒久的な解決策が必要です。,We need a permanent solution.,恒久的,恒久的【こうきゅうてき】な解決策【かいけつさく】が必要【ひつよう】です。,Permanent
-これは先週のリリースからのリグレッションです。,This is a regression from last week's release.,リグレッション,これは先週【せんしゅう】のリリースからのリグレッションです。,Regression
-このテストは不安定です。通ったり通らなかったりします。,"This test is flaky - sometimes it passes, sometimes not.",不安定,このテストは不安定【ふあんてい】です。通【とお】ったり通【とお】らなかったりします。,Flaky
-エラーは断続的で再現が難しいです。,The error is intermittent and hard to reproduce.,再現,エラーは断続的【だんぞくてき】で再現【さいげん】が難【むずか】しいです。,Reproduce
-バグを再現できますか？,Can you reproduce the bug?,再現,バグを再現【さいげん】できますか？,Reproduce
-これを再現する手順は何ですか？,What are the steps to reproduce this?,手順,これを再現【さいげん】する手順【てじゅん】は何【なん】ですか？,Steps
-期待される動作はエラーを表示することです。,The expected behavior is to show an error.,期待される,期待【きたい】される動作【どうさ】はエラーを表示【ひょうじ】することです。,Expected
-実際の結果は空白の画面です。,The actual result is a blank screen.,実際,実際【じっさい】の結果【けっか】は空白【くうはく】の画面【がめん】です。,Actual
-今日この問題を調査します。,I'll investigate this issue today.,調査,今日【きょう】この問題【もんだい】を調査【ちょうさ】します。,Investigate
-なぜこれが失敗しているかトラブルシュートさせてください。,Let me troubleshoot why this is failing.,トラブルシュート,なぜこれが失敗【しっぱい】しているかトラブルシュートさせてください。,Troubleshoot
-コードはクリーンで読みやすく見えます。,The code looks clean and readable.,読みやすく,コードはクリーンで読【よ】みやすく見【み】えます。,Readable
-このコンポーネント用に新しいファイルを作成してください。,Create a new file for this component.,ファイル,このコンポーネント用【よう】に新【あたら】しいファイルを作成【さくせい】してください。,File
-componentsフォルダに入れてください。,Put it in the components folder.,フォルダ,componentsフォルダに入【い】れてください。,Folder
-この関数はユーザー認証を処理します。,This function handles user authentication.,関数,この関数【かんすう】はユーザー認証【にんしょう】を処理【しょり】します。,Function
-この変数をより説明的にリネームしてください。,Rename this variable to be more descriptive.,変数,この変数【へんすう】をより説明的【せつめいてき】にリネームしてください。,Variable
-これを上部で定数として定義してください。,Define this as a constant at the top.,定数,これを上部【じょうぶ】で定数【ていすう】として定義【ていぎ】してください。,Constant
-数値を文字列に変換してください。,Convert the number to a string.,文字列,数値【すうち】を文字列【もじれつ】に変換【へんかん】してください。,String
-IDは文字列ではなく数値であるべきです。,"The ID should be a number, not a string.",数値,IDは文字列【もじれつ】ではなく数値【すうち】であるべきです。,Number
-isActiveフラグにはbooleanを使ってください。,Use a boolean for the isActive flag.,boolean,isActiveフラグにはbooleanを使【つか】ってください。,Boolean
-ユーザーの配列をループしてください。,Loop through the array of users.,配列,ユーザーの配列【はいれつ】をループしてください。,Array
-レスポンスはJSONオブジェクトです。,The response is a JSON object.,オブジェクト,レスポンスはJSONオブジェクトです。,Object
-まず値がnullかどうか確認してください。,Check if the value is null first.,null,まず値【あたい】がnullかどうか確認【かくにん】してください。,Null
-プロパティはundefinedです。,The property is undefined.,undefined,プロパティはundefinedです。,Undefined
-このパラメータはどの型であるべきですか？,What type should this parameter be?,型,このパラメータはどの型【かた】であるべきですか？,Type
-サービス用に新しいクラスを作成してください。,Create a new class for the service.,クラス,サービス用【よう】に新【あたら】しいクラスを作成【さくせい】してください。,Class
-検証後にsaveメソッドを呼び出してください。,Call the save method after validation.,メソッド,検証【けんしょう】後【ご】にsaveメソッドを呼【よ】び出【だ】してください。,Method
-limit用にオプションのパラメータを追加してください。,Add an optional parameter for the limit.,パラメータ,limit用【よう】にオプションのパラメータを追加【ついか】してください。,Parameter
-ユーザーIDを引数として渡してください。,Pass the user ID as an argument.,引数,ユーザーIDを引数【ひきすう】として渡【わた】してください。,Argument
-この関数は何を返しますか？,What does this function return?,返しますか,この関数【かんすう】は何【なに】を返【かえ】しますか？,Return
-レスポンスを処理するためにコールバックを使ってください。,Use a callback to handle the response.,コールバック,レスポンスを処理【しょり】するためにコールバックを使【つか】ってください。,Callback
-この関数をasyncにしてください。,Make this function async.,async,この関数【かんすう】をasyncにしてください。,Async
-続行する前にAPIレスポンスをawaitしてください。,Await the API response before continuing.,await,続行【ぞっこう】する前【まえ】にAPIレスポンスをawaitしてください。,Await
-この関数はpromiseを返します。,The function returns a promise.,promise,この関数【かんすう】はpromiseを返【かえ】します。,Promise
-アイテムを反復するためにforループを使ってください。,Use a for loop to iterate through items.,ループ,アイテムを反復【はんぷく】するためにforループを使【つか】ってください。,Loop
-ユーザー権限を確認する条件を追加してください。,Add a condition to check user permissions.,条件,ユーザー権限【けんげん】を確認【かくにん】する条件【じょうけん】を追加【ついか】してください。,Condition
-両方のケースを処理するためにif/elseを使ってください。,Use if/else to handle both cases.,処理,両方【りょうほう】のケースを処理【しょり】するためにif/elseを使【つか】ってください。,Handle/process
-ファイルの上部でReactをインポートしてください。,Import React at the top of the file.,上部,ファイルの上部【じょうぶ】でReactをインポートしてください。,Top
-コンポーネントをdefaultとしてエクスポートしてください。,Export the component as default.,default,コンポーネントをdefaultとしてエクスポートしてください。,Default
-このモジュールはすべてのデータベース操作を処理します。,This module handles all database operations.,モジュール,このモジュールはすべてのデータベース操作【そうさ】を処理【しょり】します。,Module
-lodashパッケージをインストールしてください。,Install the lodash package.,パッケージ,lodashパッケージをインストールしてください。,Package
+Sentence,Translation,Cloze,Pronunciation,Note,KeyMeaning
+機能は完了しレビュー準備ができました。,The feature is done and ready for review.,完了,機能【きのう】は完了【かんりょう】しレビュー準備【じゅんび】ができました。,Status - completed,completed
+今ログインのバグに取り組んでいます。,I'm working on the login bug right now.,取り組んで,今【いま】ログインのバグに取【と】り組【く】んでいます。,Status - in progress,working on
+APIチームにブロックされています。,I'm blocked by the API team.,ブロック,APIチームにブロックされています。,Status - cannot proceed,blocked
+プロジェクトの更新をもらえますか？,Can you give us an update on the project?,更新,プロジェクトの更新【こうしん】をもらえますか？,Status report,update
+支払いフローに問題を見つけました。,We found an issue with the payment flow.,問題,支払【しはら】いフローに問題【もんだい】を見【み】つけました。,Problem/bug,problem/issue
+昼食前にこのバグを修正します。,I'll fix this bug before lunch.,修正,昼食【ちゅうしょく】前【まえ】にこのバグを修正【しゅうせい】します。,Repair/solve,fix
+モバイルで動くか確認してもらえますか？,Can you check if this works on mobile?,確認,モバイルで動【うご】くか確認【かくにん】してもらえますか？,Verify/confirm,confirm/check
+PRはレビュー準備ができています。,The PR is ready for review.,準備,PRはレビュー準備【じゅんび】ができています。,Prepared/complete,preparation
+ステージングデータベースへのアクセスが必要です。,I need access to the staging database.,必要,ステージングデータベースへのアクセスが必要【ひつよう】です。,Require,necessary/need
+このコードを理解するのを手伝ってもらえますか？,Could you help me understand this code?,手伝って,このコードを理解【りかい】するのを手伝【てつだ】ってもらえますか？,Assist,help
+簡単な質問です。設定ファイルはどこですか？,Quick question - where is the config file?,質問,簡単【かんたん】な質問【しつもん】です。設定【せってい】ファイルはどこですか？,Inquiry,question
+素早いレビューありがとうございます！,Thanks for the quick review!,ありがとう,素早【すばや】いレビューありがとうございます！,Gratitude,thank you
+いいですね、そうしましょう。,"Sounds good, let's do that.",いいですね,いいですね、そうしましょう。,Agreement,sounds good
+なるほど、説明ありがとうございます。,"That makes sense, thanks for explaining.",なるほど,なるほど、説明【せつめい】ありがとうございます。,Understanding,I see
+了解、今から始めます。,"Got it, I'll start on that now.",了解,了解【りょうかい】、今【いま】から始【はじ】めます。,Acknowledged,understood
+もちろん、それを手伝えます。,"Sure, I can help with that.",もちろん,もちろん、それを手伝【てつだ】えます。,Certainly,of course
+すみません、会議に出られませんでした。,"Sorry, I missed the meeting.",すみません,すみません、会議【かいぎ】に出【で】られませんでした。,Apology,sorry/excuse me
+実は、もっと良い方法があると思います。,"Actually, I think there's a better way.",実は,実【じつ】は、もっと良【よ】い方法【ほうほう】があると思【おも】います。,In fact,actually
+おそらく2日かかるでしょう。,This will probably take two days.,おそらく,おそらく2日【ふつか】かかるでしょう。,Likely,probably
+チームリードに聞いた方がいいかもしれません。,Maybe we should ask the team lead.,かもしれません,チームリードに聞【き】いた方【ほう】がいいかもしれません。,Perhaps,might/maybe
+ここには確実にもっとテストが必要です。,We definitely need more tests here.,確実に,ここには確実【かくじつ】にもっとテストが必要【ひつよう】です。,Certainly,definitely
+基本的に、APIからデータを取得します。,"Basically, it fetches data from the API.",基本的に,基本的【きほんてき】に、APIからデータを取得【しゅとく】します。,Fundamentally,basically
+現在認証の問題をデバッグしています。,I'm currently debugging the auth issue.,現在,現在【げんざい】認証【にんしょう】の問題【もんだい】をデバッグしています。,At present,currently
+ビルドはまだ実行中です。,The build is still running.,まだ,ビルドはまだ実行中【じっこうちゅう】です。,Still/yet,still/not yet
+すでに変更をプッシュしました。,I already pushed the changes.,すでに,すでに変更【へんこう】をプッシュしました。,Already,already
+テストはまだ終わっていません。,The tests haven't finished yet.,終わって,テストはまだ終【お】わっていません。,Finished,finished
+すぐにこれを終わらせます。,I'll have this done soon.,すぐに,すぐにこれを終【お】わらせます。,Soon,immediately/soon
+後でこれについて話せますか？,Can we discuss this later?,後で,後【あと】でこれについて話【はな】せますか？,Later,later
+今すぐこれをデプロイする必要があります。,We need to deploy this now.,今すぐ,今【いま】すぐこれをデプロイする必要【ひつよう】があります。,Right now,right now
+今日中にできますか？,Can this be done today?,今日中,今日中【きょうじゅう】にできますか？,By today,by today
+テスト後にこれらの変更をコミットします。,I'll commit these changes after testing.,コミット,テスト後【ご】にこれらの変更【へんこう】をコミットします。,Git - save changes,commit
+ブランチをプッシュするのを忘れないでください。,Don't forget to push your branch.,プッシュ,ブランチをプッシュするのを忘【わす】れないでください。,Git - upload,push
+始める前に最新の変更をプルしてください。,Pull the latest changes before starting.,プル,始【はじ】める前【まえ】に最新【さいしん】の変更【へんこう】をプルしてください。,Git - download,pull
+これをmainにマージしてもらえますか？,Can you merge this into main?,マージ,これをmainにマージしてもらえますか？,Git - combine,merge
+この機能用に新しいブランチを作成してください。,Create a new branch for this feature.,ブランチ,この機能【きのう】用【よう】に新【あたら】しいブランチを作成【さくせい】してください。,Git - version line,branch
+バグ修正のPRを開きました。,I opened a PR for the bug fix.,PR,バグ修正【しゅうせい】のPRを開【ひら】きました。,Pull request,PR
+時間があるときにPRをレビューしてもらえますか？,Can you review my PR when you have time?,レビュー,時間【じかん】があるときにPRをレビューしてもらえますか？,Examine code,review
+1つの小さな変更後に承認します。,I'll approve it after one small change.,承認,1つの小【ちい】さな変更【へんこう】後【ご】に承認【しょうにん】します。,Approve,approve
+解決が必要なマージコンフリクトがあります。,I have a merge conflict I need to resolve.,コンフリクト,解決【かいけつ】が必要【ひつよう】なマージコンフリクトがあります。,Git - clash,conflict
+コンフリクトを解決しました。再レビューお願いします。,"I resolved the conflicts, please re-review.",解決,コンフリクトを解決【かいけつ】しました。再【さい】レビューお願【ねが】いします。,Resolve,solve
+マージ前にmainにリベースすべきです。,You should rebase on main before merging.,リベース,マージ前【まえ】にmainにリベースすべきです。,Git - replay commits,rebase
+テストするためにフィーチャーブランチをチェックアウトしてください。,Checkout the feature branch to test it.,チェックアウト,テストするためにフィーチャーブランチをチェックアウトしてください。,Git - switch branch,check
+まず変更をスタッシュさせてください。,Let me stash my changes first.,スタッシュ,まず変更【へんこう】をスタッシュさせてください。,Git - temporary save,stash
+差分は小さく、20行だけです。,"The diff is small, just 20 lines.",差分,差分【さぶん】は小【ちい】さく、20行【ぎょう】だけです。,Git - difference,diff
+これは直接mainに入れるべきです。,This should go directly to main.,直接,これは直接【ちょくせつ】mainに入【い】れるべきです。,Directly,directly
+準備ができたらoriginにプッシュしてください。,Push to origin when you're ready.,準備ができたら,準備【じゅんび】ができたらoriginにプッシュしてください。,When ready,when ready
+リポジトリをクローンしてnpm installを実行してください。,Clone the repo and run npm install.,クローン,リポジトリをクローンしてnpm installを実行【じっこう】してください。,Git - copy repo,clone
+リポジトリをフォークしてPRを提出してください。,Fork the repo and submit a PR.,フォーク,リポジトリをフォークしてPRを提出【ていしゅつ】してください。,Git - personal copy,fork
+そのコミットをすぐにリバートする必要があります。,We need to revert that commit immediately.,リバート,そのコミットをすぐにリバートする必要【ひつよう】があります。,Git - undo,revert
+その修正をリリースブランチにチェリーピックしてください。,Cherry-pick that fix to the release branch.,チェリーピック,その修正【しゅうせい】をリリースブランチにチェリーピックしてください。,Git - select commit,pick
+マージ前にコミットをスカッシュしてください。,Squash your commits before merging.,スカッシュ,マージ前【まえ】にコミットをスカッシュしてください。,Git - combine commits,squash
+このリリースをv2.0.0としてタグ付けしてください。,Tag this release as v2.0.0.,タグ,このリリースをv2.0.0としてタグ付【づ】けしてください。,Git - label version,tag
+リリースは金曜日に予定されています。,The release is scheduled for Friday.,リリース,リリースは金曜日【きんようび】に予定【よてい】されています。,Deploy to production,release
+どのバージョンを実行していますか？,What version are you running?,バージョン,どのバージョンを実行【じっこう】していますか？,Software version,version
+リリース前にchangelogを更新してください。,Update the changelog before release.,更新,リリース前【まえ】にchangelogを更新【こうしん】してください。,Version history,update
+誰がこれを書いたか見るためにgit blameを使ってください。,Use git blame to see who wrote this.,書いた,誰【だれ】がこれを書【か】いたか見【み】るためにgit blameを使【つか】ってください。,Git - show author,wrote
+最近の変更についてgit logを確認してください。,Check the git log for recent changes.,最近,最近【さいきん】の変更【へんこう】についてgit logを確認【かくにん】してください。,Recent,recently
+コミット履歴を見てください。,Look at the commit history.,履歴,コミット履歴【りれき】を見【み】てください。,History,history
+変更を破棄するためにHEADにリセットしてください。,Reset to HEAD to discard changes.,破棄,変更【へんこう】を破棄【はき】するためにHEADにリセットしてください。,Discard,discard
+提出前にupstreamと同期してください。,Sync with upstream before submitting.,同期,提出【ていしゅつ】前【まえ】にupstreamと同期【どうき】してください。,Sync,sync
+QA後に本番にデプロイします。,We'll deploy to production after QA.,デプロイ,QA後【ご】に本番【ほんばん】にデプロイします。,Deploy,deploy
+型エラーのためビルドが失敗しました。,The build failed due to a type error.,失敗,型【かた】エラーのためビルドが失敗【しっぱい】しました。,Failed,failure
+プッシュ前にテストを実行してください。,Run the tests before pushing.,実行,プッシュ前【まえ】にテストを実行【じっこう】してください。,Execute,execute/run
+ステージングでこれをテストしましたか？,Did you test this on staging?,テスト,ステージングでこれをテストしましたか？,Test,test
+午前中ずっとこれをデバッグしていました。,I spent all morning debugging this.,デバッグ,午前中【ごぜんちゅう】ずっとこれをデバッグしていました。,Debug,debug
+明日新機能を実装します。,I'll implement the new feature tomorrow.,実装,明日【あした】新【しん】機能【きのう】を実装【じっそう】します。,Implement,implement
+追加する前にこれをリファクタリングすべきです。,We should refactor this before adding more.,リファクタリング,追加【ついか】する前【まえ】にこれをリファクタリングすべきです。,Refactor,refactoring
+このクエリを最適化する必要があります。,We need to optimize this query.,最適化,このクエリを最適化【さいてきか】する必要【ひつよう】があります。,Optimize,optimize
+これ用に新しいコンポーネントを作成してください。,Create a new component for this.,作成,これ用【よう】に新【あたら】しいコンポーネントを作成【さくせい】してください。,Create,create
+使われていないインポートを削除してください。,Delete the unused imports.,削除,使【つか】われていないインポートを削除【さくじょ】してください。,Delete,delete
+ここにエラーハンドリングを追加してください。,Add error handling here.,追加,ここにエラーハンドリングを追加【ついか】してください。,Add,add
+console.log文を取り除いてください。,Remove the console.log statements.,取り除いて,console.log文【ぶん】を取【と】り除【のぞ】いてください。,Remove,remove
+エンドポイントをPOSTを使うように変更してください。,Change the endpoint to use POST.,変更,エンドポイントをPOSTを使【つか】うように変更【へんこう】してください。,Change,change/modify
+キャッシュを有効にするため設定を修正してください。,Modify the config to enable caching.,設定,キャッシュを有効【ゆうこう】にするため設定【せってい】を修正【しゅうせい】してください。,Configure,configure/settings
+依存関係を最新に更新してください。,Update the dependencies to latest.,依存関係,依存【いぞん】関係【かんけい】を最新【さいしん】に更新【こうしん】してください。,Dependencies,dependency
+不足しているパッケージをインストールしてください。,Install the missing package.,インストール,不足【ふそく】しているパッケージをインストールしてください。,Install,install
+utilsからユーティリティ関数をインポートしてください。,Import the utility function from utils.,インポート,utilsからユーティリティ関数【かんすう】をインポートしてください。,Import,import
+他のファイルが使えるようにこの関数をエクスポートしてください。,Export this function so other files can use it.,エクスポート,他【ほか】のファイルが使【つか】えるようにこの関数【かんすう】をエクスポートしてください。,Export,export
+ユーザーIDでAPIを呼び出してください。,Call the API with the user ID.,呼び出して,ユーザーIDでAPIを呼【よ】び出【だ】してください。,Call,call/invoke
+ユーザーが見つからない場合はnullを返してください。,Return null if the user is not found.,返して,ユーザーが見【み】つからない場合【ばあい】はnullを返【かえ】してください。,Return,return
+propsを子コンポーネントに渡してください。,Pass the props to the child component.,渡して,propsを子【こ】コンポーネントに渡【わた】してください。,Pass,pass
+タイムアウトを30秒に設定してください。,Set the timeout to 30 seconds.,設定,タイムアウトを30秒【びょう】に設定【せってい】してください。,Set,configure/settings
+データベースからユーザーデータを取得してください。,Get the user data from the database.,取得,データベースからユーザーデータを取得【しゅとく】してください。,Get/retrieve,get/retrieve
+コンポーネントがマウントされたときにデータをフェッチしてください。,Fetch the data when the component mounts.,フェッチ,コンポーネントがマウントされたときにデータをフェッチしてください。,Fetch,fetch
+認証トークン付きでリクエストを送信してください。,Send the request with the auth token.,送信,認証【にんしょう】トークン付【つ】きでリクエストを送信【そうしん】してください。,Send,send
+webhookを受信して処理してください。,Receive the webhook and process it.,受信,webhookを受信【じゅしん】して処理【しょり】してください。,Receive,receive
+エラーを適切にハンドルしてください。,Handle the error gracefully.,ハンドル,エラーを適切【てきせつ】にハンドルしてください。,Handle,handle
+JSONレスポンスをパースしてください。,Parse the JSON response.,パース,JSONレスポンスをパースしてください。,Parse,parse
+保存前に入力を検証してください。,Validate the input before saving.,検証,保存【ほぞん】前【まえ】に入力【にゅうりょく】を検証【けんしょう】してください。,Validate,verification
+日付をYYYY-MM-DD形式にフォーマットしてください。,Format the date as YYYY-MM-DD.,フォーマット,日付【ひづけ】をYYYY-MM-DD形式【けいしき】にフォーマットしてください。,Format,format
+チェックアウトフローにバグを見つけました。,I found a bug in the checkout flow.,バグ,チェックアウトフローにバグを見【み】つけました。,Bug,bug
+ユーザーに500エラーが表示されています。,Users are seeing a 500 error.,エラー,ユーザーに500エラーが表示【ひょうじ】されています。,Error,error
+送信をタップするとアプリがクラッシュします。,The app crashes when you tap submit.,クラッシュ,送信【そうしん】をタップするとアプリがクラッシュします。,Crash,crash
+この変更は既存の機能を壊すかもしれません。,This change might break existing features.,壊す,この変更【へんこう】は既存【きそん】の機能【きのう】を壊【こわ】すかもしれません。,Break,break
+Safariでログインが壊れています。,The login is broken on Safari.,壊れて,Safariでログインが壊【こわ】れています。,Broken,broken
+並列実行するとテストが失敗します。,The tests fail when run in parallel.,失敗,並列【へいれつ】実行【じっこう】するとテストが失敗【しっぱい】します。,Fail,failure
+デプロイが失敗しました。今ログを確認中です。,The deployment failed. Checking logs now.,確認中,デプロイが失敗【しっぱい】しました。今【いま】ログを確認中【かくにんちゅう】です。,Checking,checking
+すべてのテストがローカルで通過します。,All tests pass locally.,通過,すべてのテストがローカルで通過【つうか】します。,Pass,pass through
+マイグレーションは成功しました。,The migration was a success.,成功,マイグレーションは成功【せいこう】しました。,Success,success
+あなたのマシンでこれは動きますか？,Does this work on your machine?,動きますか,あなたのマシンでこれは動【うご】きますか？,Work,does it work?
+ユーザーがログアウトしているとこれは動きません。,This doesn't work when the user is logged out.,動きません,ユーザーがログアウトしているとこれは動【うご】きません。,Doesn't work,not working
+データベース接続に問題があります。,There's an issue with the database connection.,接続,データベース接続【せつぞく】に問題【もんだい】があります。,Connection,connection
+問題は認証ロジックにあります。,The problem is in the authentication logic.,認証,問題【もんだい】は認証【にんしょう】ロジックにあります。,Authentication,authentication
+原因はnullチェックの欠落でした。,The cause was a missing null check.,原因,原因【げんいん】はnullチェックの欠落【けつらく】でした。,Cause,cause
+障害の根本原因を見つけました。,We found the root cause of the outage.,根本原因,障害【しょうがい】の根本【こんぽん】原因【げんいん】を見【み】つけました。,Root cause,root cause
+修正は簡単です。try-catchを追加するだけです。,The fix is simple - just add a try-catch.,簡単,修正【しゅうせい】は簡単【かんたん】です。try-catchを追加【ついか】するだけです。,Simple,simple/easy
+この重大なバグにホットフィックスが必要です。,We need a hotfix for this critical bug.,ホットフィックス,この重大【じゅうだい】なバグにホットフィックスが必要【ひつよう】です。,Hotfix,hotfix
+セキュリティパッチをすぐに適用してください。,Apply the security patch immediately.,適用,セキュリティパッチをすぐに適用【てきよう】してください。,Apply,apply
+適切に修正するまでの回避策があります。,There's a workaround until we fix it properly.,回避策,適切【てきせつ】に修正【しゅうせい】するまでの回避策【かいひさく】があります。,Workaround,workaround
+これは一時的な修正です。,This is a temporary fix.,一時的,これは一時的【いちじてき】な修正【しゅうせい】です。,Temporary,temporary
+恒久的な解決策が必要です。,We need a permanent solution.,恒久的,恒久的【こうきゅうてき】な解決策【かいけつさく】が必要【ひつよう】です。,Permanent,permanent
+これは先週のリリースからのリグレッションです。,This is a regression from last week's release.,リグレッション,これは先週【せんしゅう】のリリースからのリグレッションです。,Regression,regression
+このテストは不安定です。通ったり通らなかったりします。,"This test is flaky - sometimes it passes, sometimes not.",不安定,このテストは不安定【ふあんてい】です。通【とお】ったり通【とお】らなかったりします。,Flaky,unstable
+エラーは断続的で再現が難しいです。,The error is intermittent and hard to reproduce.,再現,エラーは断続的【だんぞくてき】で再現【さいげん】が難【むずか】しいです。,Reproduce,reproduce
+バグを再現できますか？,Can you reproduce the bug?,再現,バグを再現【さいげん】できますか？,Reproduce,reproduce
+これを再現する手順は何ですか？,What are the steps to reproduce this?,手順,これを再現【さいげん】する手順【てじゅん】は何【なん】ですか？,Steps,procedure
+期待される動作はエラーを表示することです。,The expected behavior is to show an error.,期待される,期待【きたい】される動作【どうさ】はエラーを表示【ひょうじ】することです。,Expected,expected
+実際の結果は空白の画面です。,The actual result is a blank screen.,実際,実際【じっさい】の結果【けっか】は空白【くうはく】の画面【がめん】です。,Actual,actually
+今日この問題を調査します。,I'll investigate this issue today.,調査,今日【きょう】この問題【もんだい】を調査【ちょうさ】します。,Investigate,investigate
+なぜこれが失敗しているかトラブルシュートさせてください。,Let me troubleshoot why this is failing.,トラブルシュート,なぜこれが失敗【しっぱい】しているかトラブルシュートさせてください。,Troubleshoot,trouble
+コードはクリーンで読みやすく見えます。,The code looks clean and readable.,読みやすく,コードはクリーンで読【よ】みやすく見【み】えます。,Readable,readable
+このコンポーネント用に新しいファイルを作成してください。,Create a new file for this component.,ファイル,このコンポーネント用【よう】に新【あたら】しいファイルを作成【さくせい】してください。,File,file
+componentsフォルダに入れてください。,Put it in the components folder.,フォルダ,componentsフォルダに入【い】れてください。,Folder,folder
+この関数はユーザー認証を処理します。,This function handles user authentication.,関数,この関数【かんすう】はユーザー認証【にんしょう】を処理【しょり】します。,Function,function
+この変数をより説明的にリネームしてください。,Rename this variable to be more descriptive.,変数,この変数【へんすう】をより説明的【せつめいてき】にリネームしてください。,Variable,variable
+これを上部で定数として定義してください。,Define this as a constant at the top.,定数,これを上部【じょうぶ】で定数【ていすう】として定義【ていぎ】してください。,Constant,constant
+数値を文字列に変換してください。,Convert the number to a string.,文字列,数値【すうち】を文字列【もじれつ】に変換【へんかん】してください。,String,string
+IDは文字列ではなく数値であるべきです。,"The ID should be a number, not a string.",数値,IDは文字列【もじれつ】ではなく数値【すうち】であるべきです。,Number,number
+isActiveフラグにはbooleanを使ってください。,Use a boolean for the isActive flag.,boolean,isActiveフラグにはbooleanを使【つか】ってください。,Boolean,boolean
+ユーザーの配列をループしてください。,Loop through the array of users.,配列,ユーザーの配列【はいれつ】をループしてください。,Array,array
+レスポンスはJSONオブジェクトです。,The response is a JSON object.,オブジェクト,レスポンスはJSONオブジェクトです。,Object,object
+まず値がnullかどうか確認してください。,Check if the value is null first.,null,まず値【あたい】がnullかどうか確認【かくにん】してください。,Null,null
+プロパティはundefinedです。,The property is undefined.,undefined,プロパティはundefinedです。,Undefined,undefined
+このパラメータはどの型であるべきですか？,What type should this parameter be?,型,このパラメータはどの型【かた】であるべきですか？,Type,type
+サービス用に新しいクラスを作成してください。,Create a new class for the service.,クラス,サービス用【よう】に新【あたら】しいクラスを作成【さくせい】してください。,Class,class
+検証後にsaveメソッドを呼び出してください。,Call the save method after validation.,メソッド,検証【けんしょう】後【ご】にsaveメソッドを呼【よ】び出【だ】してください。,Method,method
+limit用にオプションのパラメータを追加してください。,Add an optional parameter for the limit.,パラメータ,limit用【よう】にオプションのパラメータを追加【ついか】してください。,Parameter,parameter
+ユーザーIDを引数として渡してください。,Pass the user ID as an argument.,引数,ユーザーIDを引数【ひきすう】として渡【わた】してください。,Argument,argument
+この関数は何を返しますか？,What does this function return?,返しますか,この関数【かんすう】は何【なに】を返【かえ】しますか？,Return,will you return?
+レスポンスを処理するためにコールバックを使ってください。,Use a callback to handle the response.,コールバック,レスポンスを処理【しょり】するためにコールバックを使【つか】ってください。,Callback,callback
+この関数をasyncにしてください。,Make this function async.,async,この関数【かんすう】をasyncにしてください。,Async,async
+続行する前にAPIレスポンスをawaitしてください。,Await the API response before continuing.,await,続行【ぞっこう】する前【まえ】にAPIレスポンスをawaitしてください。,Await,await
+この関数はpromiseを返します。,The function returns a promise.,promise,この関数【かんすう】はpromiseを返【かえ】します。,Promise,promise
+アイテムを反復するためにforループを使ってください。,Use a for loop to iterate through items.,ループ,アイテムを反復【はんぷく】するためにforループを使【つか】ってください。,Loop,loop
+ユーザー権限を確認する条件を追加してください。,Add a condition to check user permissions.,条件,ユーザー権限【けんげん】を確認【かくにん】する条件【じょうけん】を追加【ついか】してください。,Condition,condition
+両方のケースを処理するためにif/elseを使ってください。,Use if/else to handle both cases.,処理,両方【りょうほう】のケースを処理【しょり】するためにif/elseを使【つか】ってください。,Handle/process,processing
+ファイルの上部でReactをインポートしてください。,Import React at the top of the file.,上部,ファイルの上部【じょうぶ】でReactをインポートしてください。,Top,upper
+コンポーネントをdefaultとしてエクスポートしてください。,Export the component as default.,default,コンポーネントをdefaultとしてエクスポートしてください。,Default,default
+このモジュールはすべてのデータベース操作を処理します。,This module handles all database operations.,モジュール,このモジュールはすべてのデータベース操作【そうさ】を処理【しょり】します。,Module,module
+lodashパッケージをインストールしてください。,Install the lodash package.,パッケージ,lodashパッケージをインストールしてください。,Package,package

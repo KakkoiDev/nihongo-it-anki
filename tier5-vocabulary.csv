@@ -1,101 +1,101 @@
-Sentence,Translation,Cloze,Pronunciation,Note
-そのアプローチに同意します。,I agree with that approach.,同意,そのアプローチに同意【どうい】します。,Agree
-丁重に異議を唱えます。,I respectfully disagree.,異議,丁重【ていちょう】に異議【いぎ】を唱【とな】えます。,Disagree
-まずこれを試すことを提案します。,I suggest we try this first.,提案,まずこれを試【ため】すことを提案【ていあん】します。,Suggest
-TypeScriptの使用を推奨します。,I recommend using TypeScript.,推奨,TypeScriptの使用【しよう】を推奨【すいしょう】します。,Recommend
-別の解決策を提案します。,I propose a different solution.,提案,別【べつ】の解決策【かいけつさく】を提案【ていあん】します。,Propose
-これについてどう思いますか？,What's your opinion on this?,意見,これについてどう思【おも】いますか？,Opinion
-このアプローチについて何か考えはありますか？,Any thoughts on this approach?,考え,このアプローチについて何【なに】か考【かんが】えはありますか？,Thought
-フィードバックに感謝します。,I appreciate your feedback.,フィードバック,フィードバックに感謝【かんしゃ】します。,Feedback
-パフォーマンスについて懸念があります。,My concern is performance.,懸念,パフォーマンスについて懸念【けねん】があります。,Concern
-これに問題があります。,I see an issue with this.,問題,これに問題【もんだい】があります。,Issue
-いい指摘ですね、考えていませんでした。,"Good point, I hadn't considered that.",指摘,いい指摘【してき】ですね、考【かんが】えていませんでした。,Point
-どういう意味か明確にしてもらえますか？,Can you clarify what you mean?,明確に,どういう意味【いみ】か明確【めいかく】にしてもらえますか？,Clarify
-それについて詳しく説明してもらえますか？,Could you elaborate on that?,詳しく,それについて詳【くわ】しく説明【せつめい】してもらえますか？,Elaborate
-私の理由を説明させてください。,Let me explain my reasoning.,説明,私【わたし】の理由【りゆう】を説明【せつめい】させてください。,Explain
-例を挙げてもらえますか？,Can you give me an example?,例,例【れい】を挙【あ】げてもらえますか？,Example
-背景を教えていただきありがとうございます。,Thanks for the context.,背景,背景【はいけい】を教【おし】えていただきありがとうございます。,Context
-少し背景情報を説明します。,Here's some background.,背景情報,少【すこ】し背景【はいけい】情報【じょうほう】を説明【せつめい】します。,Background
-簡単なまとめです。,Here's a quick summary.,まとめ,簡単【かんたん】なまとめです。,Summary
-話し合ったことを要約させてください。,Let me recap what we discussed.,要約,話【はな】し合【あ】ったことを要約【ようやく】させてください。,Recap
-結論として、私たちは...すべきです。,"In conclusion, we should...",結論,結論【けつろん】として、私【わたし】たちは...すべきです。,Conclusion
-最終決定は何ですか？,What's the final decision?,決定,最終【さいしゅう】決定【けってい】は何【なん】ですか？,Decision
-合意は取れましたか？,Do we have consensus?,合意,合意【ごうい】は取【と】れましたか？,Consensus
-まず整合性を取りましょう。,Let's get alignment first.,整合性,まず整合性【せいごうせい】を取【と】りましょう。,Alignment
-ここで妥協が必要です。,We need to compromise here.,妥協,ここで妥協【だきょう】が必要【ひつよう】です。,Compromise
-考慮すべきトレードオフがあります。,There's a tradeoff to consider.,トレードオフ,考慮【こうりょ】すべきトレードオフがあります。,Tradeoff
-代替案はありますか？,Is there an alternative?,代替案,代替案【だいたいあん】はありますか？,Alternative
-選択肢は何ですか？,What are our options?,選択肢,選択肢【せんたくし】は何【なん】ですか？,Option
-長所と短所について話し合いましょう。,Let's discuss pros and cons.,長所と短所,長所【ちょうしょ】と短所【たんしょ】について話【はな】し合【あ】いましょう。,Pros and cons
-主な利点は速度です。,The main advantage is speed.,利点,主【おも】な利点【りてん】は速度【そくど】です。,Advantage
-欠点は複雑さです。,The disadvantage is complexity.,欠点,欠点【けってん】は複雑【ふくざつ】さです。,Disadvantage
-利益は明らかです。,The benefit is clear.,利益,利益【りえき】は明【あき】らかです。,Benefit
-ここでのリスクは何ですか？,What's the risk here?,リスク,ここでのリスクは何【なん】ですか？,Risk
-ユーザーへの影響は何ですか？,What's the impact on users?,影響,ユーザーへの影響【えいきょう】は何【なん】ですか？,Impact
-これはスコープ内ですか？,Is this in scope?,スコープ,これはスコープ内【ない】ですか？,Scope
-優先度レベルは何ですか？,What's the priority level?,優先度,優先度【ゆうせんど】レベルは何【なん】ですか？,Priority
-これは緊急です。,This is urgent.,緊急,これは緊急【きんきゅう】です。,Urgent
-これは重要ですが緊急ではありません。,This is important but not urgent.,重要,これは重要【じゅうよう】ですが緊急【きんきゅう】ではありません。,Important
-これは修正が重大です。,This is critical to fix.,重大,これは修正【しゅうせい】が重大【じゅうだい】です。,Critical
-これはリリースのブロッカーです。,This is a blocker for release.,ブロッカー,これはリリースのブロッカーです。,Blocker
-それはあれば良いもので、必須ではありません。,"That's nice to have, not essential.",あれば良い,それはあれば良【よ】いもので、必須【ひっす】ではありません。,Nice to have
-これは必須の機能です。,This is a must have feature.,必須,これは必須【ひっす】の機能【きのう】です。,Must have
-これは厳しい要件ですか？,Is this a hard requirement?,要件,これは厳【きび】しい要件【ようけん】ですか？,Requirement
-私の前提は...です。,My assumption is that...,前提,私【わたし】の前提【ぜんてい】は...です。,Assumption
-時間の制約があります。,We have a time constraint.,制約,時間【じかん】の制約【せいやく】があります。,Constraint
-いくつかの制限があります。,There are some limitations.,制限,いくつかの制限【せいげん】があります。,Limitation
-チームXへの依存関係があります。,We have a dependency on team X.,依存関係,チームXへの依存【いぞん】関係【かんけい】があります。,Dependency
-タイムラインは何ですか？,What's the timeline?,タイムライン,タイムラインは何【なん】ですか？,Timeline
-締め切りは金曜日です。,The deadline is Friday.,締め切り,締【し】め切【き】りは金曜日【きんようび】です。,Deadline
-次のマイルストーンはいつですか？,When's the next milestone?,マイルストーン,次【つぎ】のマイルストーンはいつですか？,Milestone
-成果物は何ですか？,What are the deliverables?,成果物,成果物【せいかぶつ】は何【なん】ですか？,Deliverable
-参考までに、会議が移動しました。,"FYI, the meeting was moved.",参考までに,参考【さんこう】までに、会議【かいぎ】が移動【いどう】しました。,FYI
-できるだけ早くレビューしてください。,Please review ASAP.,できるだけ早く,できるだけ早【はや】くレビューしてください。,ASAP
-今日中にこれが必要です。,Need this by EOD.,今日中,今日中【きょうじゅう】にこれが必要【ひつよう】です。,EOD
-これのETAは何ですか？,What's the ETA on this?,ETA,これのETAは何【なん】ですか？,ETA
-日付は未定です。,The date is TBD.,未定,日付【ひづけ】は未定【みてい】です。,TBD
-要約すると、もっと時間が必要です。,"TL;DR: we need more time.",要約,要約【ようやく】すると、もっと時間【じかん】が必要【ひつよう】です。,TL;DR
-見逃した場合のために、録画はこちらです。,"ICYMI, here's the recording.",見逃した場合,見逃【みのが】した場合【ばあい】のために、録画【ろくが】はこちらです。,ICYMI
-私の知る限り、これは正しいです。,"AFAIK, this is correct.",私の知る限り,私【わたし】の知【し】る限【かぎ】り、これは正【ただ】しいです。,AFAIK
-私の意見では、待つべきです。,"IMO, we should wait.",私の意見では,私【わたし】の意見【いけん】では、待【ま】つべきです。,IMO
-ちなみに、その修正は素晴らしい仕事でした。,"BTW, great work on that fix.",ちなみに,ちなみに、その修正【しゅうせい】は素晴【すば】らしい仕事【しごと】でした。,BTW
-準備ができたら連絡します。,I'll ping you when it's ready.,連絡,準備【じゅんび】ができたら連絡【れんらく】します。,Ping
-チームリードを巻き込みます。,Let me loop in the team lead.,巻き込み,チームリードを巻【ま】き込【こ】みます。,Loop in
-事前通知です、午後3時にデプロイします。,"Heads up, deploy at 3pm.",事前通知,事前【じぜん】通知【つうち】です、午後【ごご】3時【じ】にデプロイします。,Heads up
-前回の話し合いについてフォローアップです。,Following up on our discussion.,フォローアップ,前回【ぜんかい】の話【はな】し合【あ】いについてフォローアップです。,Follow up
-明日また話しましょう。,Let's circle back tomorrow.,また話しましょう,明日【あした】また話【はな】しましょう。,Circle back
-今週連絡を取れますか？,Can we touch base this week?,連絡を取れますか,今週【こんしゅう】連絡【れんらく】を取【と】れますか？,Touch base
-進捗を確認しています。,Just checking in on progress.,確認,進捗【しんちょく】を確認【かくにん】しています。,Check in
-簡単な更新です。,Here's a quick update.,更新,簡単【かんたん】な更新【こうしん】です。,Update
-状況はどうですか？,What's the status?,状況,状況【じょうきょう】はどうですか？,Status
-今日は良い進捗がありました。,Good progress today.,進捗,今日【きょう】は良【よ】い進捗【しんちょく】がありました。,Progress
-報告するブロッカーはありますか？,Any blockers to report?,ブロッカー,報告【ほうこく】するブロッカーはありますか？,Blocker
-これで助けが必要です。,I need some help with this.,助け,これで助【たす】けが必要【ひつよう】です。,Help
-APIについて簡単な質問があります。,Quick question about the API.,質問,APIについて簡単【かんたん】な質問【しつもん】があります。,Question
-リクエストがあります。,I have a request.,リクエスト,リクエストがあります。,Request
-スタンドアップについてのリマインダーです。,Friendly reminder about standup.,リマインダー,スタンドアップについてのリマインダーです。,Reminder
-事前のお知らせです。,Just a heads up notice.,お知らせ,事前【じぜん】のお知【し】らせです。,Notice
-以下に重要なお知らせがあります。,Important announcement below.,お知らせ,以下【いか】に重要【じゅうよう】なお知【し】らせがあります。,Announcement
-スレッドで続けてください。,Continue in the thread.,スレッド,スレッドで続【つづ】けてください。,Thread
-適切なチャンネルに投稿してください。,Post in the right channel.,チャンネル,適切【てきせつ】なチャンネルに投稿【とうこう】してください。,Channel
-詳細はDMします。,I'll DM you the details.,DM,詳細【しょうさい】はDMします。,DM
-助けが必要なときはメンションしてください。,Mention me if you need help.,メンション,助【たす】けが必要【ひつよう】なときはメンションしてください。,Mention
-適切な人をタグしてください。,Tag the right people.,タグ,適切【てきせつ】な人【ひと】をタグしてください。,Tag
-同意なら絵文字でリアクトしてください。,React with emoji if you agree.,リアクト,同意【どうい】なら絵文字【えもじ】でリアクトしてください。,React
-受領を確認してください。,Please acknowledge receipt.,確認,受領【じゅりょう】を確認【かくにん】してください。,Acknowledge
-これが動作するか確認してもらえますか？,Can you confirm this works?,確認,これが動作【どうさ】するか確認【かくにん】してもらえますか？,Confirm
-準備ができたら承認してください。,Please approve when ready.,承認,準備【じゅんび】ができたら承認【しょうにん】してください。,Approve
-その会議は辞退する必要があります。,I need to decline that meeting.,辞退,その会議【かいぎ】は辞退【じたい】する必要【ひつよう】があります。,Decline
-リスケジュールできますか？,Can we reschedule?,リスケジュール,リスケジュールできますか？,Reschedule
-会議はキャンセルされました。,Meeting is cancelled.,キャンセル,会議【かいぎ】はキャンセルされました。,Cancel
-来週まで延期しましょう。,Let's postpone until next week.,延期,来週【らいしゅう】まで延期【えんき】しましょう。,Postpone
-午後2時に空いていますか？,Are you available at 2pm?,空いて,午後【ごご】2時【じ】に空【あ】いていますか？,Available
-午後3時まで忙しいです。,I'm busy until 3pm.,忙しい,午後【ごご】3時【じ】まで忙【いそが】しいです。,Busy
-来週の月曜日は休みです。,I'm OOO next Monday.,休み,来週【らいしゅう】の月曜日【げつようび】は休【やす】みです。,OOO
-金曜日に有給を取ります。,Taking PTO on Friday.,有給,金曜日【きんようび】に有給【ゆうきゅう】を取【と】ります。,PTO
-今日は在宅勤務です。,I'm WFH today.,在宅勤務,今日【きょう】は在宅【ざいたく】勤務【きんむ】です。,WFH
-今週はリモートで働いています。,Working remote this week.,リモート,今週【こんしゅう】はリモートで働【はたら】いています。,Remote
-どのタイムゾーンにいますか？,What timezone are you in?,タイムゾーン,どのタイムゾーンにいますか？,Timezone
-これは非同期で処理しましょう。,Let's handle this async.,非同期,これは非同期【ひどうき】で処理【しょり】しましょう。,Async
-簡単な同期コールが必要です。,Need a quick sync call.,同期,簡単【かんたん】な同期【どうき】コールが必要【ひつよう】です。,Sync
-会議を飛ばしてSlackを使ってください。,"Skip the meeting, use Slack.",会議,会議【かいぎ】を飛【と】ばしてSlackを使【つか】ってください。,Meeting
+Sentence,Translation,Cloze,Pronunciation,Note,KeyMeaning
+そのアプローチに同意します。,I agree with that approach.,同意,そのアプローチに同意【どうい】します。,Agree,agree
+丁重に異議を唱えます。,I respectfully disagree.,異議,丁重【ていちょう】に異議【いぎ】を唱【とな】えます。,Disagree,objection
+まずこれを試すことを提案します。,I suggest we try this first.,提案,まずこれを試【ため】すことを提案【ていあん】します。,Suggest,propose
+TypeScriptの使用を推奨します。,I recommend using TypeScript.,推奨,TypeScriptの使用【しよう】を推奨【すいしょう】します。,Recommend,recommended
+別の解決策を提案します。,I propose a different solution.,提案,別【べつ】の解決策【かいけつさく】を提案【ていあん】します。,Propose,propose
+これについてどう思いますか？,What's your opinion on this?,意見,これについてどう思【おも】いますか？,Opinion,opinion
+このアプローチについて何か考えはありますか？,Any thoughts on this approach?,考え,このアプローチについて何【なに】か考【かんが】えはありますか？,Thought,thought
+フィードバックに感謝します。,I appreciate your feedback.,フィードバック,フィードバックに感謝【かんしゃ】します。,Feedback,feedback
+パフォーマンスについて懸念があります。,My concern is performance.,懸念,パフォーマンスについて懸念【けねん】があります。,Concern,concern
+これに問題があります。,I see an issue with this.,問題,これに問題【もんだい】があります。,Issue,problem/issue
+いい指摘ですね、考えていませんでした。,"Good point, I hadn't considered that.",指摘,いい指摘【してき】ですね、考【かんが】えていませんでした。,Point,point out
+どういう意味か明確にしてもらえますか？,Can you clarify what you mean?,明確に,どういう意味【いみ】か明確【めいかく】にしてもらえますか？,Clarify,clear
+それについて詳しく説明してもらえますか？,Could you elaborate on that?,詳しく,それについて詳【くわ】しく説明【せつめい】してもらえますか？,Elaborate,in detail
+私の理由を説明させてください。,Let me explain my reasoning.,説明,私【わたし】の理由【りゆう】を説明【せつめい】させてください。,Explain,explain
+例を挙げてもらえますか？,Can you give me an example?,例,例【れい】を挙【あ】げてもらえますか？,Example,example
+背景を教えていただきありがとうございます。,Thanks for the context.,背景,背景【はいけい】を教【おし】えていただきありがとうございます。,Context,background
+少し背景情報を説明します。,Here's some background.,背景情報,少【すこ】し背景【はいけい】情報【じょうほう】を説明【せつめい】します。,Background,background info
+簡単なまとめです。,Here's a quick summary.,まとめ,簡単【かんたん】なまとめです。,Summary,summary
+話し合ったことを要約させてください。,Let me recap what we discussed.,要約,話【はな】し合【あ】ったことを要約【ようやく】させてください。,Recap,summarize
+結論として、私たちは...すべきです。,"In conclusion, we should...",結論,結論【けつろん】として、私【わたし】たちは...すべきです。,Conclusion,conclusion
+最終決定は何ですか？,What's the final decision?,決定,最終【さいしゅう】決定【けってい】は何【なん】ですか？,Decision,decide
+合意は取れましたか？,Do we have consensus?,合意,合意【ごうい】は取【と】れましたか？,Consensus,agreement
+まず整合性を取りましょう。,Let's get alignment first.,整合性,まず整合性【せいごうせい】を取【と】りましょう。,Alignment,consistency
+ここで妥協が必要です。,We need to compromise here.,妥協,ここで妥協【だきょう】が必要【ひつよう】です。,Compromise,compromise
+考慮すべきトレードオフがあります。,There's a tradeoff to consider.,トレードオフ,考慮【こうりょ】すべきトレードオフがあります。,Tradeoff,trade-off
+代替案はありますか？,Is there an alternative?,代替案,代替案【だいたいあん】はありますか？,Alternative,alternative
+選択肢は何ですか？,What are our options?,選択肢,選択肢【せんたくし】は何【なん】ですか？,Option,option
+長所と短所について話し合いましょう。,Let's discuss pros and cons.,長所と短所,長所【ちょうしょ】と短所【たんしょ】について話【はな】し合【あ】いましょう。,Pros and cons,pros and cons
+主な利点は速度です。,The main advantage is speed.,利点,主【おも】な利点【りてん】は速度【そくど】です。,Advantage,advantage
+欠点は複雑さです。,The disadvantage is complexity.,欠点,欠点【けってん】は複雑【ふくざつ】さです。,Disadvantage,drawback
+利益は明らかです。,The benefit is clear.,利益,利益【りえき】は明【あき】らかです。,Benefit,benefit
+ここでのリスクは何ですか？,What's the risk here?,リスク,ここでのリスクは何【なん】ですか？,Risk,risk
+ユーザーへの影響は何ですか？,What's the impact on users?,影響,ユーザーへの影響【えいきょう】は何【なん】ですか？,Impact,impact
+これはスコープ内ですか？,Is this in scope?,スコープ,これはスコープ内【ない】ですか？,Scope,scope
+優先度レベルは何ですか？,What's the priority level?,優先度,優先度【ゆうせんど】レベルは何【なん】ですか？,Priority,priority
+これは緊急です。,This is urgent.,緊急,これは緊急【きんきゅう】です。,Urgent,urgent
+これは重要ですが緊急ではありません。,This is important but not urgent.,重要,これは重要【じゅうよう】ですが緊急【きんきゅう】ではありません。,Important,important
+これは修正が重大です。,This is critical to fix.,重大,これは修正【しゅうせい】が重大【じゅうだい】です。,Critical,serious
+これはリリースのブロッカーです。,This is a blocker for release.,ブロッカー,これはリリースのブロッカーです。,Blocker,blocker
+それはあれば良いもので、必須ではありません。,"That's nice to have, not essential.",あれば良い,それはあれば良【よ】いもので、必須【ひっす】ではありません。,Nice to have,nice to have
+これは必須の機能です。,This is a must have feature.,必須,これは必須【ひっす】の機能【きのう】です。,Must have,required
+これは厳しい要件ですか？,Is this a hard requirement?,要件,これは厳【きび】しい要件【ようけん】ですか？,Requirement,requirement
+私の前提は...です。,My assumption is that...,前提,私【わたし】の前提【ぜんてい】は...です。,Assumption,prerequisite
+時間の制約があります。,We have a time constraint.,制約,時間【じかん】の制約【せいやく】があります。,Constraint,constraint
+いくつかの制限があります。,There are some limitations.,制限,いくつかの制限【せいげん】があります。,Limitation,limit/restriction
+チームXへの依存関係があります。,We have a dependency on team X.,依存関係,チームXへの依存【いぞん】関係【かんけい】があります。,Dependency,dependency
+タイムラインは何ですか？,What's the timeline?,タイムライン,タイムラインは何【なん】ですか？,Timeline,timeline
+締め切りは金曜日です。,The deadline is Friday.,締め切り,締【し】め切【き】りは金曜日【きんようび】です。,Deadline,deadline
+次のマイルストーンはいつですか？,When's the next milestone?,マイルストーン,次【つぎ】のマイルストーンはいつですか？,Milestone,milestone
+成果物は何ですか？,What are the deliverables?,成果物,成果物【せいかぶつ】は何【なん】ですか？,Deliverable,deliverable
+参考までに、会議が移動しました。,"FYI, the meeting was moved.",参考までに,参考【さんこう】までに、会議【かいぎ】が移動【いどう】しました。,FYI,FYI
+できるだけ早くレビューしてください。,Please review ASAP.,できるだけ早く,できるだけ早【はや】くレビューしてください。,ASAP,ASAP
+今日中にこれが必要です。,Need this by EOD.,今日中,今日中【きょうじゅう】にこれが必要【ひつよう】です。,EOD,by today
+これのETAは何ですか？,What's the ETA on this?,ETA,これのETAは何【なん】ですか？,ETA,ETA
+日付は未定です。,The date is TBD.,未定,日付【ひづけ】は未定【みてい】です。,TBD,TBD
+要約すると、もっと時間が必要です。,TL;DR: we need more time.,要約,要約【ようやく】すると、もっと時間【じかん】が必要【ひつよう】です。,TL;DR,summarize
+見逃した場合のために、録画はこちらです。,"ICYMI, here's the recording.",見逃した場合,見逃【みのが】した場合【ばあい】のために、録画【ろくが】はこちらです。,ICYMI,if you missed
+私の知る限り、これは正しいです。,"AFAIK, this is correct.",私の知る限り,私【わたし】の知【し】る限【かぎ】り、これは正【ただ】しいです。,AFAIK,AFAIK
+私の意見では、待つべきです。,"IMO, we should wait.",私の意見では,私【わたし】の意見【いけん】では、待【ま】つべきです。,IMO,IMO
+ちなみに、その修正は素晴らしい仕事でした。,"BTW, great work on that fix.",ちなみに,ちなみに、その修正【しゅうせい】は素晴【すば】らしい仕事【しごと】でした。,BTW,by the way
+準備ができたら連絡します。,I'll ping you when it's ready.,連絡,準備【じゅんび】ができたら連絡【れんらく】します。,Ping,contact
+チームリードを巻き込みます。,Let me loop in the team lead.,巻き込み,チームリードを巻【ま】き込【こ】みます。,Loop in,involve
+事前通知です、午後3時にデプロイします。,"Heads up, deploy at 3pm.",事前通知,事前【じぜん】通知【つうち】です、午後【ごご】3時【じ】にデプロイします。,Heads up,advance notice
+前回の話し合いについてフォローアップです。,Following up on our discussion.,フォローアップ,前回【ぜんかい】の話【はな】し合【あ】いについてフォローアップです。,Follow up,follow up
+明日また話しましょう。,Let's circle back tomorrow.,また話しましょう,明日【あした】また話【はな】しましょう。,Circle back,let's circle back
+今週連絡を取れますか？,Can we touch base this week?,連絡を取れますか,今週【こんしゅう】連絡【れんらく】を取【と】れますか？,Touch base,can you reach?
+進捗を確認しています。,Just checking in on progress.,確認,進捗【しんちょく】を確認【かくにん】しています。,Check in,confirm/check
+簡単な更新です。,Here's a quick update.,更新,簡単【かんたん】な更新【こうしん】です。,Update,update
+状況はどうですか？,What's the status?,状況,状況【じょうきょう】はどうですか？,Status,situation
+今日は良い進捗がありました。,Good progress today.,進捗,今日【きょう】は良【よ】い進捗【しんちょく】がありました。,Progress,progress
+報告するブロッカーはありますか？,Any blockers to report?,ブロッカー,報告【ほうこく】するブロッカーはありますか？,Blocker,blocker
+これで助けが必要です。,I need some help with this.,助け,これで助【たす】けが必要【ひつよう】です。,Help,help
+APIについて簡単な質問があります。,Quick question about the API.,質問,APIについて簡単【かんたん】な質問【しつもん】があります。,Question,question
+リクエストがあります。,I have a request.,リクエスト,リクエストがあります。,Request,request
+スタンドアップについてのリマインダーです。,Friendly reminder about standup.,リマインダー,スタンドアップについてのリマインダーです。,Reminder,reminder
+事前のお知らせです。,Just a heads up notice.,お知らせ,事前【じぜん】のお知【し】らせです。,Notice,heads up/notice
+以下に重要なお知らせがあります。,Important announcement below.,お知らせ,以下【いか】に重要【じゅうよう】なお知【し】らせがあります。,Announcement,heads up/notice
+スレッドで続けてください。,Continue in the thread.,スレッド,スレッドで続【つづ】けてください。,Thread,thread
+適切なチャンネルに投稿してください。,Post in the right channel.,チャンネル,適切【てきせつ】なチャンネルに投稿【とうこう】してください。,Channel,channel
+詳細はDMします。,I'll DM you the details.,DM,詳細【しょうさい】はDMします。,DM,DM (direct message)
+助けが必要なときはメンションしてください。,Mention me if you need help.,メンション,助【たす】けが必要【ひつよう】なときはメンションしてください。,Mention,mention
+適切な人をタグしてください。,Tag the right people.,タグ,適切【てきせつ】な人【ひと】をタグしてください。,Tag,tag
+同意なら絵文字でリアクトしてください。,React with emoji if you agree.,リアクト,同意【どうい】なら絵文字【えもじ】でリアクトしてください。,React,react
+受領を確認してください。,Please acknowledge receipt.,確認,受領【じゅりょう】を確認【かくにん】してください。,Acknowledge,confirm/check
+これが動作するか確認してもらえますか？,Can you confirm this works?,確認,これが動作【どうさ】するか確認【かくにん】してもらえますか？,Confirm,confirm/check
+準備ができたら承認してください。,Please approve when ready.,承認,準備【じゅんび】ができたら承認【しょうにん】してください。,Approve,approve
+その会議は辞退する必要があります。,I need to decline that meeting.,辞退,その会議【かいぎ】は辞退【じたい】する必要【ひつよう】があります。,Decline,decline
+リスケジュールできますか？,Can we reschedule?,リスケジュール,リスケジュールできますか？,Reschedule,reschedule
+会議はキャンセルされました。,Meeting is cancelled.,キャンセル,会議【かいぎ】はキャンセルされました。,Cancel,cancel
+来週まで延期しましょう。,Let's postpone until next week.,延期,来週【らいしゅう】まで延期【えんき】しましょう。,Postpone,postpone
+午後2時に空いていますか？,Are you available at 2pm?,空いて,午後【ごご】2時【じ】に空【あ】いていますか？,Available,available
+午後3時まで忙しいです。,I'm busy until 3pm.,忙しい,午後【ごご】3時【じ】まで忙【いそが】しいです。,Busy,busy
+来週の月曜日は休みです。,I'm OOO next Monday.,休み,来週【らいしゅう】の月曜日【げつようび】は休【やす】みです。,OOO,break/day off
+金曜日に有給を取ります。,Taking PTO on Friday.,有給,金曜日【きんようび】に有給【ゆうきゅう】を取【と】ります。,PTO,paid leave
+今日は在宅勤務です。,I'm WFH today.,在宅勤務,今日【きょう】は在宅【ざいたく】勤務【きんむ】です。,WFH,WFH
+今週はリモートで働いています。,Working remote this week.,リモート,今週【こんしゅう】はリモートで働【はたら】いています。,Remote,remote
+どのタイムゾーンにいますか？,What timezone are you in?,タイムゾーン,どのタイムゾーンにいますか？,Timezone,timezone
+これは非同期で処理しましょう。,Let's handle this async.,非同期,これは非同期【ひどうき】で処理【しょり】しましょう。,Async,asynchronous
+簡単な同期コールが必要です。,Need a quick sync call.,同期,簡単【かんたん】な同期【どうき】コールが必要【ひつよう】です。,Sync,sync
+会議を飛ばしてSlackを使ってください。,"Skip the meeting, use Slack.",会議,会議【かいぎ】を飛【と】ばしてSlackを使【つか】ってください。,Meeting,meeting
