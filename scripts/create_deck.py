@@ -68,7 +68,7 @@ def create_model() -> genanki.Model:
 <hr id="answer">
 <div class="translation">{{Translation}}</div>
 <div class="pronunciation">{{Pronunciation}}</div>
-<div class="key-vocab">Key: <span class="vocab">{{Cloze}}</span></div>
+<div class="key-vocab">Key: <span class="vocab" title="{{Category}}">{{Cloze}}</span></div>
 ''',
             },
             # Card B: Production (English → Japanese)
@@ -147,6 +147,8 @@ def create_model() -> genanki.Model:
 .vocab {
     font-weight: bold;
     color: #2196F3;
+    cursor: help;
+    border-bottom: 1px dotted #2196F3;
 }
 
 .prompt {
