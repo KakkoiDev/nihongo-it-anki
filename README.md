@@ -10,6 +10,8 @@ Learn 1000 essential IT vocabulary words used in American tech companies, with n
 - **Japanese audio** generated with Kokoro TTS (male voice)
 - **2-card design** for comprehensive learning (comprehension + production)
 - **Progressive learning** - start with daily essentials, advance to specialized terms
+- **Accurate pronunciation** - furigana-based TTS preprocessing for correct kanji readings
+- **Key vocabulary meanings** - each card shows the key word with its English translation
 
 ## Tier Structure
 
@@ -189,6 +191,8 @@ nihongo-it-anki/
 ├── scripts/
 │   ├── generate_audio.py                     # Audio generation script
 │   ├── create_deck.py                        # Anki deck creation
+│   ├── pronunciation.py                      # TTS pronunciation preprocessing
+│   ├── add_key_meanings.py                   # Generate KeyMeaning translations
 │   └── sample.py                             # Generate sample audio
 ├── tier*-audio/                              # Generated audio files (gitignored)
 └── *.apkg                                    # Generated Anki decks (gitignored)
@@ -205,10 +209,22 @@ Each tier CSV contains:
 | Cloze | Key vocabulary word | 完了 |
 | Pronunciation | Japanese with furigana | 機能【きのう】は完了【かんりょう】し... |
 | Note | Category/context | Status - completed |
+| KeyMeaning | English meaning of key word | completed |
 
 ## Audio Generation Technical Details
 
 The audio is generated using **Kokoro TTS**, a lightweight 82M parameter text-to-speech model.
+
+### Pronunciation Preprocessing
+
+TTS models often mispronounce kanji and English terms. This project uses a preprocessing pipeline to improve accuracy:
+
+1. **Furigana extraction**: `今日中【きょうじゅう】` → `きょうじゅう`
+2. **Number+kanji handling**: `2日【ふつか】` → `ふつか`
+3. **English acronym conversion**: `API` → `エーピーアイ`, `EC2` → `イーシーツー`
+4. **IT term pronunciation**: 150+ mapped terms (JSON → ジェイソン, AWS → エーダブリューエス)
+
+The Pronunciation column in CSVs contains furigana annotations like `今日中【きょうじゅう】にできますか？`. The TTS receives preprocessed hiragana for accurate readings.
 
 ### Available Japanese Voices
 
@@ -265,6 +281,17 @@ Edit the CSS in `scripts/create_deck.py` in the `create_model()` function.
 1. Edit the appropriate `tier{N}-vocabulary.csv`
 2. Regenerate audio: `uv run python scripts/generate_audio.py --tier N`
 3. Recreate deck: `uv run python scripts/create_deck.py --tier N`
+
+## Known Limitations
+
+### Particle Prosody
+
+Kokoro TTS sometimes attaches particles (を, に, が) to the following word instead of the preceding word. For example:
+
+- Expected: `今すぐこれを・デプロイする` (particle linked to これ)
+- Actual: `今すぐこれ・をデプロイする` (particle linked to デプロイ)
+
+This is a limitation of the TTS model's prosodic phrasing. Natural Japanese speech links particles to the preceding word, but neural TTS models don't always capture this. The audio is still comprehensible but may sound slightly unnatural to trained ears.
 
 ## License
 
