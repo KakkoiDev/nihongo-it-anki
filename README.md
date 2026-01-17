@@ -35,12 +35,12 @@ Import directly into Anki. No setup required.
 
 ## Build From Source
 
-Requires Python 3.13+, [uv](https://docs.astral.sh/uv/), and espeak-ng.
+Requires Python 3.13+, [uv](https://docs.astral.sh/uv/), espeak-ng, and ffmpeg.
 
 ```bash
-# Install espeak-ng
-sudo apt-get install espeak-ng  # Ubuntu/Debian
-brew install espeak              # macOS
+# Install dependencies
+sudo apt-get install espeak-ng ffmpeg  # Ubuntu/Debian
+brew install espeak ffmpeg              # macOS
 
 # Clone and setup
 git clone https://github.com/KakkoiDev/nihongo-it-anki.git

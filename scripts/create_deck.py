@@ -210,7 +210,7 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
 
     for idx, row in enumerate(sentences):
         num = idx + 1
-        audio_file = f"tier{tier}_{num:03d}.wav"
+        audio_file = f"tier{tier}_{num:03d}.mp3"
         audio_path = audio_dir / audio_file
 
         # Check if audio exists

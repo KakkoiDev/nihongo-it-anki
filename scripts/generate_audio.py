@@ -8,7 +8,9 @@ Uses the Pronunciation field with preprocessing to ensure accurate readings:
 
 import argparse
 import csv
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -74,8 +76,8 @@ def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False,
         tts_input = preprocess_for_tts(pronunciation)
         num = idx + 1
 
-        # Output filename: tier1_001.wav, tier1_002.wav, etc.
-        output_path = output_dir / f"tier{tier}_{num:03d}.wav"
+        # Output filename: tier1_001.mp3, tier1_002.mp3, etc.
+        output_path = output_dir / f"tier{tier}_{num:03d}.mp3"
 
         # Skip if already exists (use --force to regenerate)
         if output_path.exists() and not force:
@@ -96,8 +98,18 @@ def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False,
             else:
                 audio_data = np.concatenate(audio_chunks)
 
-            # Save audio file
-            sf.write(str(output_path), audio_data, 24000)
+            # Convert to MP3 via ffmpeg (AnkiWeb requires MP3)
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as tmp:
+                tmp_path = tmp.name
+                sf.write(tmp_path, audio_data, 24000)
+
+            subprocess.run([
+                'ffmpeg', '-y', '-i', tmp_path,
+                '-codec:a', 'libmp3lame', '-b:a', '128k',
+                str(output_path)
+            ], capture_output=True, check=True)
+
+            Path(tmp_path).unlink()  # Clean up temp file
 
         except Exception as e:
             print(f"    Error: {e}")
@@ -106,7 +118,7 @@ def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False,
     print(f"\nDone! Audio files saved to: {output_dir}")
 
     # Count generated files
-    generated = len(list(output_dir.glob("*.wav")))
+    generated = len(list(output_dir.glob("*.mp3")))
     print(f"Total files: {generated}/{total}")
 
 

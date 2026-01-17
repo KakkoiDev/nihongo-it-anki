@@ -154,7 +154,7 @@ def validate_audio(tier: int, row_count: int, result: ValidationResult, verbose:
         return
 
     for idx in range(1, row_count + 1):
-        audio_file = audio_dir / f"tier{tier}_{idx:03d}.wav"
+        audio_file = audio_dir / f"tier{tier}_{idx:03d}.mp3"
 
         if not audio_file.exists():
             result.add_error(f"Missing audio: {audio_file.name}")

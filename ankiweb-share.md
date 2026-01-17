@@ -42,14 +42,50 @@ Also available on GitHub: https://github.com/KakkoiDev/nihongo-it-anki/releases
 
 ## Tiers
 
-| Tier | Count | Level | Focus |
-|------|-------|-------|-------|
-| 1 | 150 | N5-N4 | Daily essentials, git, basic actions |
-| 2 | 200 | N4-N3 | Agile, APIs, databases, testing |
-| 3 | 250 | N3 | Code review, architecture, AWS |
-| 4 | 200 | N3-N2 | Security, debugging, documentation |
-| 5 | 100 | N2 | Communication, soft skills |
-| 6 | 100 | N2-N1 | Presentations, advanced topics |
+<table style="border-collapse: collapse; width: 100%;" border="1">
+  <tr>
+    <th>Tier</th>
+    <th>Count</th>
+    <th>Level</th>
+    <th>Focus</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>150</td>
+    <td>N5-N4</td>
+    <td>Daily essentials, git, basic actions</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>200</td>
+    <td>N4-N3</td>
+    <td>Agile, APIs, databases, testing</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>250</td>
+    <td>N3</td>
+    <td>Code review, architecture, AWS</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>200</td>
+    <td>N3-N2</td>
+    <td>Security, debugging, documentation</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>100</td>
+    <td>N2</td>
+    <td>Communication, soft skills</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>100</td>
+    <td>N2-N1</td>
+    <td>Presentations, advanced topics</td>
+  </tr>
+</table>
 
 ## Example Sentences
 
