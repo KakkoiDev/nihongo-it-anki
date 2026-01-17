@@ -50,8 +50,14 @@ uv sync
 # Generate audio (~2 hours for all tiers)
 uv run python scripts/generate_audio.py --all
 
+# Or generate with female voice
+uv run python scripts/generate_audio.py --all --female
+
 # Create deck
 uv run python scripts/create_deck.py --combined
+
+# Or create deck with female voice audio
+uv run python scripts/create_deck.py --combined --female
 ```
 
 ## Scripts
@@ -66,12 +72,17 @@ uv run python scripts/create_deck.py --combined
 
 ## Customization
 
-**Change voice** — Edit `VOICE` in `scripts/generate_audio.py`
+**Use female voice** — Add `--female` flag to commands
 
-| Voice | Type | Quality |
-|-------|------|---------|
+```bash
+uv run python scripts/generate_audio.py --all --female
+uv run python scripts/create_deck.py --combined --female
+```
+
+| Voice | Type | Flag |
+|-------|------|------|
 | `jm_kumo` | Male | Default |
-| `jf_alpha` | Female | Best |
+| `jf_alpha` | Female | `--female` |
 
 **Modify cards** — Edit CSS in `scripts/create_deck.py`
 

@@ -176,18 +176,19 @@ hr#answer {
     )
 
 
-def create_deck(tier: int, include_audio: bool = True) -> tuple[genanki.Deck, list[str]]:
+def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> tuple[genanki.Deck, list[str]]:
     """Create Anki deck for a specific tier.
 
     Args:
         tier: Tier number (1-6)
         include_audio: Whether to include audio files
+        female: If True, use audio from tier*-audio-female/ directory
 
     Returns:
         Tuple of (deck, list of media files)
     """
     csv_path = ROOT / f"tier{tier}-vocabulary.csv"
-    audio_dir = ROOT / f"tier{tier}-audio"
+    audio_dir = ROOT / f"tier{tier}-audio-female" if female else ROOT / f"tier{tier}-audio"
 
     if not csv_path.exists():
         print(f"Error: {csv_path} not found")
@@ -259,6 +260,8 @@ Examples:
                         help="Create decks for all tiers")
     parser.add_argument("--combined", action="store_true",
                         help="Create single combined deck with all tiers")
+    parser.add_argument("--female", action="store_true",
+                        help="Use female voice audio from tier*-audio-female/")
     parser.add_argument("--no-audio", action="store_true",
                         help="Create deck without audio files")
     parser.add_argument("--output", type=str,
@@ -271,24 +274,26 @@ Examples:
         sys.exit(1)
 
     include_audio = not args.no_audio
+    suffix = "-female" if args.female else ""
 
     if args.combined:
         # Create single deck with all tiers
-        print("Creating combined deck with all tiers...")
+        voice_label = " (Female)" if args.female else ""
+        print(f"Creating combined deck with all tiers{voice_label}...")
         combined_deck = genanki.Deck(
-            DECK_BASE_ID,
-            'Japanese IT Vocabulary - Complete'
+            DECK_BASE_ID + (100 if args.female else 0),
+            f'Japanese IT Vocabulary - Complete{voice_label}'
         )
         all_media = []
 
         for tier in range(1, 7):
-            deck, media_files = create_deck(tier, include_audio)
+            deck, media_files = create_deck(tier, include_audio, args.female)
             for note in deck.notes:
                 combined_deck.add_note(note)
             all_media.extend(media_files)
             print(f"  Added Tier {tier}: {len(deck.notes)} notes")
 
-        output = args.output or "nihongo-it-vocab-complete.apkg"
+        output = args.output or f"nihongo-it-vocab-complete{suffix}.apkg"
         package = genanki.Package(combined_deck)
         package.media_files = all_media
         package.write_to_file(output)
@@ -301,8 +306,8 @@ Examples:
     elif args.all:
         # Create separate deck for each tier
         for tier in range(1, 7):
-            deck, media_files = create_deck(tier, include_audio)
-            output = f"nihongo-it-vocab-tier{tier}.apkg"
+            deck, media_files = create_deck(tier, include_audio, args.female)
+            output = f"nihongo-it-vocab-tier{tier}{suffix}.apkg"
 
             package = genanki.Package(deck)
             package.media_files = media_files
@@ -312,8 +317,8 @@ Examples:
     else:
         # Single tier
         tier = args.tier
-        deck, media_files = create_deck(tier, include_audio)
-        output = args.output or f"nihongo-it-vocab-tier{tier}.apkg"
+        deck, media_files = create_deck(tier, include_audio, args.female)
+        output = args.output or f"nihongo-it-vocab-tier{tier}{suffix}.apkg"
 
         package = genanki.Package(deck)
         package.media_files = media_files

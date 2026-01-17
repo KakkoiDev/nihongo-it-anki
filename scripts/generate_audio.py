@@ -23,19 +23,27 @@ ROOT = Path(__file__).parent.parent
 # Japanese voice options:
 # - jf_alpha (female, best rated C+)
 # - jm_kumo (male, C-)
-VOICE = 'jm_kumo'
+VOICE_MALE = 'jm_kumo'
+VOICE_FEMALE = 'jf_alpha'
 
 
-def generate_tier_audio(tier: int, voice: str = VOICE, force: bool = False):
+def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False, female: bool = False):
     """Generate audio files for a specific tier.
 
     Args:
         tier: Tier number (1-6)
         voice: Kokoro voice to use
         force: If True, regenerate even if files exist
+        female: If True, use female voice and separate output directory
     """
     csv_path = ROOT / f"tier{tier}-vocabulary.csv"
-    output_dir = ROOT / f"tier{tier}-audio"
+
+    # Use separate directory for female voice
+    if female:
+        output_dir = ROOT / f"tier{tier}-audio-female"
+        voice = VOICE_FEMALE
+    else:
+        output_dir = ROOT / f"tier{tier}-audio"
 
     if not csv_path.exists():
         print(f"Error: {csv_path} not found")
@@ -108,8 +116,10 @@ def main():
                         help="Tier number to generate (1-6)")
     parser.add_argument("--all", action="store_true",
                         help="Generate audio for all tiers")
-    parser.add_argument("--voice", default=VOICE,
-                        help=f"Voice to use (default: {VOICE})")
+    parser.add_argument("--female", action="store_true",
+                        help="Use female voice (jf_alpha) and save to tier*-audio-female/")
+    parser.add_argument("--voice", default=VOICE_MALE,
+                        help=f"Voice to use (default: {VOICE_MALE})")
     parser.add_argument("--force", action="store_true",
                         help="Regenerate audio even if files exist")
 
@@ -117,9 +127,9 @@ def main():
 
     if args.all:
         for tier in range(1, 7):
-            generate_tier_audio(tier, args.voice, args.force)
+            generate_tier_audio(tier, args.voice, args.force, args.female)
     elif args.tier:
-        generate_tier_audio(args.tier, args.voice, args.force)
+        generate_tier_audio(args.tier, args.voice, args.force, args.female)
     else:
         parser.print_help()
         sys.exit(1)

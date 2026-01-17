@@ -144,9 +144,9 @@ def validate_key_meaning(rows: list[dict], result: ValidationResult, verbose: bo
         result.key_meaning_valid += 1
 
 
-def validate_audio(tier: int, row_count: int, result: ValidationResult, verbose: bool = False):
+def validate_audio(tier: int, row_count: int, result: ValidationResult, verbose: bool = False, female: bool = False):
     """Validate audio files exist and are not empty."""
-    audio_dir = ROOT / f"tier{tier}-audio"
+    audio_dir = ROOT / f"tier{tier}-audio-female" if female else ROOT / f"tier{tier}-audio"
     result.audio_total = row_count
 
     if not audio_dir.exists():
@@ -169,7 +169,7 @@ def validate_audio(tier: int, row_count: int, result: ValidationResult, verbose:
         result.audio_valid += 1
 
 
-def validate_tier(tier: int, check_audio: bool = False, verbose: bool = False) -> ValidationResult:
+def validate_tier(tier: int, check_audio: bool = False, verbose: bool = False, female: bool = False) -> ValidationResult:
     """Validate a single tier."""
     result = ValidationResult(tier)
     csv_path = ROOT / f"tier{tier}-vocabulary.csv"
@@ -187,7 +187,7 @@ def validate_tier(tier: int, check_audio: bool = False, verbose: bool = False) -
 
     # Step 4: Audio (optional)
     if check_audio:
-        validate_audio(tier, len(rows), result, verbose)
+        validate_audio(tier, len(rows), result, verbose, female)
 
     return result
 
@@ -250,6 +250,8 @@ Examples:
                         help="Validate specific tier only")
     parser.add_argument("--check-audio", action="store_true",
                         help="Also validate audio files")
+    parser.add_argument("--female", action="store_true",
+                        help="Validate female voice audio (tier*-audio-female/)")
     parser.add_argument("--verbose", "-v", action="store_true",
                         help="Show detailed errors and warnings")
 
@@ -258,13 +260,14 @@ Examples:
     # Determine tiers to validate
     tiers = [args.tier] if args.tier else range(1, 7)
 
+    voice_label = " (Female)" if args.female else ""
     print("=" * 50)
-    print("Vocabulary & Audio Validation")
+    print(f"Vocabulary & Audio Validation{voice_label}")
     print("=" * 50)
 
     all_results = []
     for tier in tiers:
-        result = validate_tier(tier, args.check_audio, args.verbose)
+        result = validate_tier(tier, args.check_audio, args.verbose, args.female)
         all_results.append(result)
         print_result(result, args.verbose)
 
