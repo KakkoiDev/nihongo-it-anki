@@ -1,8 +1,7 @@
-# Claude database symlinks
-MEMO.md
-TASK.md
-COACH.md
-LEARN.md
+# Markdown files (AI agent knowledge files)
+*.md
+!README.md
+!ankiweb-share.md
 
 # Backup files
 *.bak
