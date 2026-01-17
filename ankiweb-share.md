@@ -2,7 +2,7 @@
 
 ## Title
 ```
-Japanese IT/Software Engineering Vocabulary (1000 Sentences)
+Japanese IT/Software Engineering Vocabulary (1000 Sentences with Audio)
 ```
 
 ## Tags
@@ -12,7 +12,7 @@ japanese nihongo IT software engineering programming developer tech vocabulary j
 
 ## Support Page
 ```
-https://github.com/kakkoidev/nihongo-it-anki
+https://github.com/KakkoiDev/nihongo-it-anki
 ```
 
 ## Description
@@ -20,48 +20,36 @@ https://github.com/kakkoidev/nihongo-it-anki
 ```markdown
 # Japanese IT/Software Engineering Vocabulary
 
-Learn **1000 essential IT vocabulary sentences** used in American tech companies, with native Japanese audio.
+**1000 essential IT vocabulary sentences** used in American tech companies, with native Japanese audio.
+
+## Download
+
+Also available on GitHub: https://github.com/KakkoiDev/nihongo-it-anki/releases
 
 ## What's Included
 
-- **1000 vocabulary sentences** across 6 progressive tiers
-- **Native Japanese audio** (Kokoro TTS, male voice)
-- **2-card design** for comprehensive learning:
-  - **Comprehension Card**: Listen + Read Japanese → Understand English
-  - **Production Card**: See English → Produce Japanese
+- 1000 vocabulary sentences across 6 progressive tiers
+- 2000 cards (comprehension + production for each sentence)
+- Native Japanese audio (Kokoro TTS)
+- Furigana readings for all kanji
+- Key vocabulary with English meanings
 
-## Tier Structure
+## Card Types
 
-| Tier | Count | Focus |
-|------|-------|-------|
-| Tier 1 | 150 | Daily Essentials (git, code actions, communication) |
-| Tier 2 | 200 | High Frequency (agile, APIs, databases, testing) |
-| Tier 3 | 250 | Medium Frequency (code review, architecture, AWS) |
-| Tier 4 | 200 | Specialized (security, debugging, documentation) |
-| Tier 5 | 100 | Communication & Soft Skills |
-| Tier 6 | 100 | Presentations & Advanced Topics |
+**Comprehension** — Audio plays, read Japanese, reveal English translation
 
-## Card Format
+**Production** — See English, produce Japanese, check with audio
 
-### Comprehension Card (Front)
-- Audio auto-plays
-- Japanese sentence displayed
-- Category tag shown
+## Tiers
 
-### Comprehension Card (Back)
-- English translation
-- Japanese with furigana readings
-- Key vocabulary highlighted
-
-### Production Card (Front)
-- English sentence
-- "How do you say this in Japanese?"
-- Hint: First characters + category
-
-### Production Card (Back)
-- Full Japanese sentence
-- Audio plays
-- Furigana readings
+| Tier | Count | Level | Focus |
+|------|-------|-------|-------|
+| 1 | 150 | N5-N4 | Daily essentials, git, basic actions |
+| 2 | 200 | N4-N3 | Agile, APIs, databases, testing |
+| 3 | 250 | N3 | Code review, architecture, AWS |
+| 4 | 200 | N3-N2 | Security, debugging, documentation |
+| 5 | 100 | N2 | Communication, soft skills |
+| 6 | 100 | N2-N1 | Presentations, advanced topics |
 
 ## Example Sentences
 
@@ -76,10 +64,6 @@ Learn **1000 essential IT vocabulary sentences** used in American tech companies
 **Tier 3 - Architecture:**
 > このサービスは水平スケーリングをサポートしています。
 > *This service supports horizontal scaling.*
-
-**Tier 4 - Security:**
-> すべてのAPIエンドポイントに認証が必要です。
-> *All API endpoints require authentication.*
 
 ## Who Is This For?
 
@@ -96,10 +80,6 @@ Learn **1000 essential IT vocabulary sentences** used in American tech companies
 4. Study 10-20 new cards per day
 5. Progress through tiers as vocabulary builds
 
-## Audio Quality
-
-Generated using Kokoro TTS (82M parameter model) with Japanese male voice (jm_kumo). Audio is clear and natural-sounding.
-
 ## Tags in Deck
 
 Cards are tagged by tier and category for filtered study:
@@ -108,7 +88,8 @@ Cards are tagged by tier and category for filtered study:
 
 ## Source
 
-Open source project with scripts to regenerate audio and customize decks.
+Open source project. Generate your own deck with male or female voice:
+https://github.com/KakkoiDev/nihongo-it-anki
 
 ---
 
@@ -119,222 +100,12 @@ If you find this useful, please rate and comment!
 
 ---
 
-# Individual Tier Submissions (if splitting)
-
-If deck exceeds 250MB, submit tiers separately:
-
-## Tier 1
-
-**Title:**
-```
-Japanese IT Vocabulary - Tier 1: Daily Essentials (150)
-```
-
-**Tags:**
-```
-japanese nihongo IT software engineering programming vocabulary tier1 beginner git daily
-```
-
-**Description:**
-```markdown
-# Tier 1: Daily Essentials (150 sentences)
-
-The foundation of Japanese IT vocabulary - words and phrases you'll use every day.
-
-## Topics Covered
-- Git operations (commit, push, pull, merge, rebase)
-- Code actions (debug, refactor, deploy, test)
-- Status updates (done, blocked, in progress)
-- Basic communication (questions, confirmations)
-- Common requests and responses
-
-## Card Design
-- **Comprehension**: Audio + Japanese → English
-- **Production**: English → Japanese + Audio
-
-## Example Sentences
-- 機能は完了しレビュー準備ができました。(The feature is done and ready for review.)
-- PRはレビュー準備ができています。(The PR is ready for review.)
-- テストするためにフィーチャーブランチをチェックアウトしてください。(Checkout the feature branch to test.)
-
-**150 notes = 300 cards with audio**
-
-Part of the 1000-sentence Japanese IT Vocabulary series.
-```
-
-## Tier 2
-
-**Title:**
-```
-Japanese IT Vocabulary - Tier 2: High Frequency (200)
-```
-
-**Tags:**
-```
-japanese nihongo IT software engineering vocabulary tier2 agile API database testing scrum
-```
-
-**Description:**
-```markdown
-# Tier 2: High Frequency (200 sentences)
-
-Essential vocabulary for agile workflows, API development, and testing.
-
-## Topics Covered
-- Agile/Scrum terminology
-- API and endpoint discussions
-- Database operations
-- Testing and QA
-- Sprint planning and standups
-
-## Prerequisites
-Recommended: Complete Tier 1 first.
-
-**200 notes = 400 cards with audio**
-
-Part of the 1000-sentence Japanese IT Vocabulary series.
-```
-
-## Tier 3
-
-**Title:**
-```
-Japanese IT Vocabulary - Tier 3: Architecture & AWS (250)
-```
-
-**Tags:**
-```
-japanese nihongo IT software engineering vocabulary tier3 architecture AWS cloud monitoring
-```
-
-**Description:**
-```markdown
-# Tier 3: Medium Frequency (250 sentences)
-
-Architecture discussions, cloud services, and system design vocabulary.
-
-## Topics Covered
-- Code review language
-- System architecture
-- AWS and cloud services
-- Monitoring and observability
-- Performance optimization
-
-## Prerequisites
-Recommended: Complete Tiers 1-2 first.
-
-**250 notes = 500 cards with audio**
-
-Part of the 1000-sentence Japanese IT Vocabulary series.
-```
-
-## Tier 4
-
-**Title:**
-```
-Japanese IT Vocabulary - Tier 4: Security & Debugging (200)
-```
-
-**Tags:**
-```
-japanese nihongo IT software engineering vocabulary tier4 security debugging documentation
-```
-
-**Description:**
-```markdown
-# Tier 4: Specialized (200 sentences)
-
-Security, debugging, and documentation vocabulary for senior developers.
-
-## Topics Covered
-- Security concepts and authentication
-- Debugging and troubleshooting
-- Technical documentation
-- Error handling
-- System administration
-
-## Prerequisites
-Recommended: Complete Tiers 1-3 first.
-
-**200 notes = 400 cards with audio**
-
-Part of the 1000-sentence Japanese IT Vocabulary series.
-```
-
-## Tier 5
-
-**Title:**
-```
-Japanese IT Vocabulary - Tier 5: Soft Skills (100)
-```
-
-**Tags:**
-```
-japanese nihongo IT software engineering vocabulary tier5 communication meetings soft-skills
-```
-
-**Description:**
-```markdown
-# Tier 5: Communication & Soft Skills (100 sentences)
-
-Professional communication for meetings, feedback, and collaboration.
-
-## Topics Covered
-- Meeting facilitation
-- Giving and receiving feedback
-- Team collaboration
-- Project management
-- Professional etiquette
-
-## Prerequisites
-Recommended: Complete Tiers 1-4 first.
-
-**100 notes = 200 cards with audio**
-
-Part of the 1000-sentence Japanese IT Vocabulary series.
-```
-
-## Tier 6
-
-**Title:**
-```
-Japanese IT Vocabulary - Tier 6: Presentations (100)
-```
-
-**Tags:**
-```
-japanese nihongo IT software engineering vocabulary tier6 presentations advanced leadership
-```
-
-**Description:**
-```markdown
-# Tier 6: Presentations & Advanced (100 sentences)
-
-Advanced vocabulary for presentations, leadership, and technical discussions.
-
-## Topics Covered
-- Technical presentations
-- Stakeholder communication
-- Architecture proposals
-- Leadership language
-- Advanced technical concepts
-
-## Prerequisites
-Recommended: Complete Tiers 1-5 first.
-
-**100 notes = 200 cards with audio**
-
-Part of the 1000-sentence Japanese IT Vocabulary series.
-```
-
----
-
 # Checklist Before Submission
 
-- [ ] Generate audio for all tiers
-- [ ] Create .apkg file(s)
-- [ ] Verify file size < 250MB each
+- [x] Generate audio for all tiers
+- [x] Create .apkg file
+- [x] Verify file size (166 MB)
 - [ ] Test import in fresh Anki installation
 - [ ] Verify audio plays correctly
 - [ ] Check all 2000 cards render properly
-- [ ] Update GitHub repo URL
+- [x] GitHub release created
