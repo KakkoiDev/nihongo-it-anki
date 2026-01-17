@@ -1,0 +1,57 @@
+name: Content Issue
+description: Report a translation error, incorrect audio, or wrong pronunciation
+title: "[Content]: "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found an error in the deck content? Let us know!
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      options:
+        - Wrong translation
+        - Incorrect pronunciation/furigana
+        - Audio issue (wrong reading, unclear, etc.)
+        - Wrong KeyMeaning
+        - Other content issue
+    validations:
+      required: true
+
+  - type: input
+    id: tier
+    attributes:
+      label: Tier
+      description: Which tier is this in?
+      placeholder: "1-6"
+    validations:
+      required: true
+
+  - type: input
+    id: sentence
+    attributes:
+      label: Japanese Sentence
+      description: The sentence with the issue
+      placeholder: "機能は完了しレビュー準備ができました。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's Wrong?
+      description: Describe the error
+      placeholder: |
+        Current: ...
+        Should be: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source/Reference
+      description: Optional - link to dictionary or reference supporting the correction
