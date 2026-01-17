@@ -24,7 +24,7 @@ https://github.com/KakkoiDev/nihongo-it-anki
 
 ## Download
 
-Also available on GitHub: https://github.com/KakkoiDev/nihongo-it-anki/releases
+Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/releases">https://github.com/KakkoiDev/nihongo-it-anki/releases</a>
 
 ## What's Included
 
@@ -125,7 +125,7 @@ Cards are tagged by tier and category for filtered study:
 ## Source
 
 Open source project. Generate your own deck with male or female voice:
-https://github.com/KakkoiDev/nihongo-it-anki
+<a href="https://github.com/KakkoiDev/nihongo-it-anki">https://github.com/KakkoiDev/nihongo-it-anki</a>
 
 ---
 

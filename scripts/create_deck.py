@@ -277,30 +277,83 @@ Examples:
     suffix = "-female" if args.female else ""
 
     if args.combined:
-        # Create single deck with all tiers
+        # Create combined deck with subdecks for each tier
         voice_label = " (Female)" if args.female else ""
-        print(f"Creating combined deck with all tiers{voice_label}...")
-        combined_deck = genanki.Deck(
-            DECK_BASE_ID + (100 if args.female else 0),
-            f'Japanese IT Vocabulary - Complete{voice_label}'
-        )
+        print(f"Creating combined deck with tier subdecks{voice_label}...")
+
+        # Tier names for subdecks
+        tier_names = {
+            1: "Tier 1 - Foundational",
+            2: "Tier 2 - Basic Development",
+            3: "Tier 3 - Intermediate",
+            4: "Tier 4 - Advanced",
+            5: "Tier 5 - Communication",
+            6: "Tier 6 - Expert",
+        }
+
+        all_decks = []
         all_media = []
+        total_notes = 0
 
         for tier in range(1, 7):
-            deck, media_files = create_deck(tier, include_audio, args.female)
-            for note in deck.notes:
-                combined_deck.add_note(note)
+            # Create subdeck with :: notation
+            subdeck_name = f"Japanese IT Vocabulary{voice_label}::{tier_names[tier]}"
+            subdeck = genanki.Deck(
+                DECK_BASE_ID + tier + (100 if args.female else 0),
+                subdeck_name
+            )
+
+            _, media_files = create_deck(tier, include_audio, args.female)
+            csv_path = ROOT / f"tier{tier}-vocabulary.csv"
+            audio_dir = ROOT / f"tier{tier}-audio-female" if args.female else ROOT / f"tier{tier}-audio"
+
+            with open(csv_path, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                sentences = list(reader)
+
+            model = create_model()
+            for idx, row in enumerate(sentences):
+                num = idx + 1
+                audio_file = f"tier{tier}_{num:03d}.mp3"
+                audio_path = audio_dir / audio_file
+
+                if include_audio and audio_path.exists():
+                    audio_ref = f"[sound:{audio_file}]"
+                else:
+                    audio_ref = "[No audio]"
+
+                sentence = row['Sentence']
+                hint = sentence[:2] + "..." if len(sentence) > 2 else sentence
+
+                note = genanki.Note(
+                    model=model,
+                    fields=[
+                        row['Sentence'],
+                        row['Translation'],
+                        row['Cloze'],
+                        row['Pronunciation'],
+                        row['Note'],
+                        audio_ref,
+                        hint,
+                        row['KeyMeaning'],
+                    ],
+                    tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
+                )
+                subdeck.add_note(note)
+
+            all_decks.append(subdeck)
             all_media.extend(media_files)
-            print(f"  Added Tier {tier}: {len(deck.notes)} notes")
+            total_notes += len(sentences)
+            print(f"  Added {tier_names[tier]}: {len(sentences)} notes")
 
         output = args.output or f"nihongo-it-vocab-complete{suffix}.apkg"
-        package = genanki.Package(combined_deck)
+        package = genanki.Package(all_decks)
         package.media_files = all_media
         package.write_to_file(output)
 
         print(f"\nCreated: {output}")
-        print(f"Total notes: {len(combined_deck.notes)}")
-        print(f"Total cards: {len(combined_deck.notes) * 2} (2 cards per note)")
+        print(f"Total notes: {total_notes}")
+        print(f"Total cards: {total_notes * 2} (2 cards per note)")
         print(f"Media files: {len(all_media)}")
 
     elif args.all:
