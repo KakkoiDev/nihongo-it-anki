@@ -2,24 +2,22 @@
 
 ## Title
 ```
-Japanese IT/Software Engineering Vocabulary (1000 Sentences with Audio)
+Japanese IT/Software Engineering Vocabulary With Audio
 ```
 
 ## Tags
 ```
-japanese nihongo IT software engineering programming developer tech vocabulary jlpt business 日本語 プログラミング エンジニア
+japan japanese code dev program programming it tech audio
 ```
 
 ## Support Page
 ```
-https://github.com/KakkoiDev/nihongo-it-anki
+https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```
 
 ## Description
 
 ```markdown
-# Japanese IT/Software Engineering Vocabulary
-
 **1000 essential IT vocabulary sentences** used in American tech companies, with native Japanese audio.
 
 ## Download
@@ -133,15 +131,3 @@ Open source project. Generate your own deck with male or female voice:
 
 If you find this useful, please rate and comment!
 ```
-
----
-
-# Checklist Before Submission
-
-- [x] Generate audio for all tiers
-- [x] Create .apkg file
-- [x] Verify file size (58 MB)
-- [ ] Test import in fresh Anki installation
-- [ ] Verify audio plays correctly
-- [ ] Check all 2000 cards render properly
-- [x] GitHub release created
