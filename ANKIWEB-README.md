@@ -30,7 +30,7 @@ Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/
 
 - 1000 vocabulary sentences across 6 progressive tiers
 - 2000 cards (comprehension + production for each sentence)
-- Native Japanese audio (Kokoro TTS)
+- Native Japanese MP3 audio (Kokoro TTS)
 - Furigana readings for all kanji
 - Key vocabulary with English meanings
 - Verb conjugation tables (collapsible, N1-level coverage)
@@ -38,9 +38,9 @@ Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/
 
 ## Card Types
 
-**Comprehension** — Audio plays, read Japanese, reveal English translation + conjugation table
+**Comprehension** - Listen and read Japanese, reveal English translation + conjugation table
 
-**Production** — See English, produce Japanese, check with audio
+**Production** - See English, produce Japanese, verify with audio
 
 ## Features
 
@@ -116,19 +116,11 @@ Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/
 - Anyone learning technical Japanese for IT industry
 - JLPT learners wanting real-world tech vocabulary
 
-## Study Tips
-
-1. Start with Tier 1 (daily essentials)
-2. Master comprehension cards before production
-3. Use Anki's built-in audio replay (press 'r')
-4. Study 10-20 new cards per day
-5. Progress through tiers as vocabulary builds
-
 ## Tags in Deck
 
 Cards are tagged by tier and category for filtered study:
 - `tier1`, `tier2`, ... `tier6`
-- Categories: `git`, `Status`, `API`, `Database`, `Testing`, etc.
+- Categories: `Agile_Meeting`, `Database_Sql`, `Cloud_Kubernetes`, `Frontend_Ui`, etc.
 
 ## Source
 
@@ -137,7 +129,7 @@ Open source project. Generate your own deck with male or female voice:
 
 ---
 
-**Total: 1000 notes = 2000 cards**
+**Total: 1000 notes = 2000 cards + 1000 MP3 audio files**
 
 If you find this useful, please rate and comment!
 ```
