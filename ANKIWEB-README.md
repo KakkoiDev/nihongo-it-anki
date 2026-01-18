@@ -42,9 +42,21 @@ Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/
 
 ## Features
 
-**Dark Mode** — Automatically matches your system theme preference
+**IT Workplace Focus** - Real phrases used in American tech companies, not textbook examples
 
-**Verb Conjugation Tables** — Collapsible tables on comprehension cards showing all conjugation forms (dictionary, polite, negative, te-form, past, potential, passive, causative, conditional, volitional, imperative, keigo)
+**Full Sentences** - Learn vocabulary in context, not isolated words
+
+**100% Audio Coverage** - Every sentence has native MP3 audio (Kokoro TTS)
+
+**Two-Card Design** - Comprehension (listen/read) + Production (recall) for each sentence
+
+**Verb Conjugation Tables** - Collapsible N1-level tables on comprehension cards
+
+**Progressive Difficulty** - 6 tiers organized from N5 to N1
+
+**Dark Mode** - Automatically matches your system theme
+
+**Open Source** - Customize or regenerate with male/female voice options
 
 ## Tiers
 
