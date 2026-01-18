@@ -18,6 +18,8 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ## Description
 
 ```markdown
+<img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
+
 **1000 IT vocabulary sentences** with AI-generated Japanese audio (Kokoro TTS), furigana, and verb conjugation tables. Fully open source - use the same tools to build your own custom deck.
 
 ## Features
