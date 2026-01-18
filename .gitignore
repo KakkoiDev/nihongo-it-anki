@@ -1,7 +1,7 @@
 # Markdown files (AI agent knowledge files)
 *.md
 !README.md
-!ankiweb-share.md
+!ANKIWEB-README.md
 
 # Backup files
 *.bak
