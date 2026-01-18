@@ -1,5 +1,7 @@
 # nihongo-it-anki
 
+<img src="demo.png" alt="Anki deck demo" width="600">
+
 Japanese IT vocabulary for Anki. 1000 sentences with AI-generated audio. Open source - build your own deck with the same tools.
 
 ## Download
