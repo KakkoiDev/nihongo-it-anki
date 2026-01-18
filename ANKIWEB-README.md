@@ -22,7 +22,7 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 
 ## Features
 
-- **IT Workplace Focus** - Real phrases from American tech companies, not textbook examples
+- **IT Workplace Focus** - Natural sentences for software engineering contexts
 - **Full Sentences** - Learn vocabulary in context, not isolated words
 - **100% Audio** - AI-generated MP3 for every sentence (Kokoro TTS)
 - **Two-Card Design** - Comprehension + Production cards for each sentence
