@@ -50,6 +50,7 @@ def create_model() -> genanki.Model:
             {'name': 'Audio'},          # Audio file reference
             {'name': 'Hint'},           # First character hint
             {'name': 'KeyMeaning'},     # English meaning of key word
+            {'name': 'Conjugations'},   # HTML conjugation table
         ],
         templates=[
             # Card A: Comprehension (Listening + Reading)
@@ -70,6 +71,7 @@ def create_model() -> genanki.Model:
 <div class="translation">{{Translation}}</div>
 <div class="pronunciation">{{Pronunciation}}</div>
 <div class="key-vocab">Key: <span class="vocab">{{Cloze}}</span> ({{KeyMeaning}})</div>
+{{Conjugations}}
 ''',
             },
             # Card B: Production (English → Japanese)
@@ -172,6 +174,88 @@ hr#answer {
     border-top: 1px solid #ddd;
     margin: 20px 0;
 }
+
+/* Conjugation table styles */
+.conjugation-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.conjugation-section summary {
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    padding: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.conjugation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.conjugation-table th {
+    background: #e8e8e8;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+}
+
+.conjugation-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.conjugation-table td:first-child {
+    color: #666;
+    width: 45%;
+}
+
+.conjugation-table td:last-child {
+    font-weight: 500;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .card {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+    .card-type { color: #888; }
+    .sentence { color: #ffffff; }
+    .translation { color: #cccccc; }
+    .pronunciation { color: #aaaaaa; }
+    .category {
+        background: #333;
+        color: #aaa;
+    }
+    .key-vocab { color: #aaa; }
+    .vocab { color: #64b5f6; }
+    .prompt { color: #888; }
+    .hint { color: #999; }
+    hr#answer { border-top-color: #444; }
+    /* Conjugation table dark mode */
+    .conjugation-section summary {
+        background: #2a2a2a;
+        color: #aaa;
+    }
+    .conjugation-table th {
+        background: #333;
+        color: #ddd;
+    }
+    .conjugation-table td {
+        border-color: #444;
+        color: #ccc;
+    }
+    .conjugation-table td:first-child {
+        color: #888;
+    }
+}
 '''
     )
 
@@ -235,6 +319,7 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
                 audio_ref,
                 hint,
                 row['KeyMeaning'],
+                row.get('Conjugations', ''),
             ],
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
         )
@@ -336,6 +421,7 @@ Examples:
                         audio_ref,
                         hint,
                         row['KeyMeaning'],
+                        row.get('Conjugations', ''),
                     ],
                     tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
                 )

@@ -33,12 +33,20 @@ Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/
 - Native Japanese audio (Kokoro TTS)
 - Furigana readings for all kanji
 - Key vocabulary with English meanings
+- Verb conjugation tables (collapsible, N1-level coverage)
+- Dark mode support (automatic system theme detection)
 
 ## Card Types
 
-**Comprehension** — Audio plays, read Japanese, reveal English translation
+**Comprehension** — Audio plays, read Japanese, reveal English translation + conjugation table
 
 **Production** — See English, produce Japanese, check with audio
+
+## Features
+
+**Dark Mode** — Automatically matches your system theme preference
+
+**Verb Conjugation Tables** — Collapsible tables on comprehension cards showing all conjugation forms (dictionary, polite, negative, te-form, past, potential, passive, causative, conditional, volitional, imperative, keigo)
 
 ## Tiers
 

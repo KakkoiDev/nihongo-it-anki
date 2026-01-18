@@ -15,12 +15,24 @@ Import directly into Anki. No setup required.
 - Native Japanese audio (Kokoro TTS)
 - Furigana readings for all kanji
 - Key vocabulary with English meanings
+- Verb conjugation tables (collapsible, N1-level coverage)
+- Dark mode support (automatic system theme detection)
 
 ## Card Types
 
-**Comprehension** — Audio plays, read Japanese, reveal English translation
+**Comprehension** — Audio plays, read Japanese, reveal English translation + conjugation table
 
 **Production** — See English, produce Japanese, check with audio
+
+## Features
+
+**Dark Mode** — Automatically matches your system theme preference
+
+**Verb Conjugation Tables** — Collapsible tables on comprehension cards showing all conjugation forms:
+- Basic forms (dictionary, polite, negative, te-form, past)
+- Advanced forms (potential, passive, causative, conditional, volitional, imperative)
+- Keigo forms (respectful, humble)
+- Works for する verbs, godan/ichidan verbs, and い-adjectives
 
 ## Tiers
 
@@ -65,6 +77,7 @@ uv run python scripts/create_deck.py --combined --female
 | Script | Purpose |
 |--------|---------|
 | `generate_audio.py` | Generate TTS audio for sentences |
+| `generate_conjugations.py` | Generate verb/adjective conjugation tables |
 | `create_deck.py` | Create Anki .apkg files |
 | `validate.py` | Validate CSVs and audio files |
 | `pronunciation.py` | Furigana extraction, English→katakana |
