@@ -7,7 +7,7 @@ Japanese IT/Software Engineering Vocabulary With Audio
 
 ## Tags
 ```
-japan japanese code dev program programming it tech audio
+japanese jlpt vocab sentences audio it software programming
 ```
 
 ## Support Page
@@ -18,45 +18,19 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ## Description
 
 ```markdown
-**1000 essential IT vocabulary sentences** used in American tech companies, with native Japanese audio.
-
-## Download
-
-Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/releases">https://github.com/KakkoiDev/nihongo-it-anki/releases</a>
-
-## What's Included
-
-- 1000 vocabulary sentences across 6 progressive tiers
-- 2000 cards (comprehension + production for each sentence)
-- Native Japanese MP3 audio (Kokoro TTS)
-- Furigana readings for all kanji
-- Key vocabulary with English meanings
-- Verb conjugation tables (collapsible, N1-level coverage)
-- Dark mode support (automatic system theme detection)
-
-## Card Types
-
-**Comprehension** - Listen and read Japanese, reveal English translation + conjugation table
-
-**Production** - See English, produce Japanese, verify with audio
+**1000 IT vocabulary sentences** with native Japanese audio, furigana, and verb conjugation tables.
 
 ## Features
 
-**IT Workplace Focus** - Real phrases used in American tech companies, not textbook examples
-
-**Full Sentences** - Learn vocabulary in context, not isolated words
-
-**100% Audio Coverage** - Every sentence has native MP3 audio (Kokoro TTS)
-
-**Two-Card Design** - Comprehension (listen/read) + Production (recall) for each sentence
-
-**Verb Conjugation Tables** - Collapsible N1-level tables on comprehension cards
-
-**Progressive Difficulty** - 6 tiers organized from N5 to N1
-
-**Dark Mode** - Automatically matches your system theme
-
-**Open Source** - Customize or regenerate with male/female voice options
+- **IT Workplace Focus** - Real phrases from American tech companies, not textbook examples
+- **Full Sentences** - Learn vocabulary in context, not isolated words
+- **100% Audio** - Native MP3 audio for every sentence (Kokoro TTS)
+- **Two-Card Design** - Comprehension + Production cards for each sentence
+- **Verb Conjugation Tables** - Collapsible N1-level tables on answer side
+- **Furigana** - Readings for all kanji
+- **6 Progressive Tiers** - From N5 beginner to N1 advanced
+- **Dark Mode** - Matches your system theme
+- **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Customize or regenerate with male/female voice</a>
 
 ## Tiers
 
@@ -126,20 +100,9 @@ Also available on GitHub: <a href="https://github.com/KakkoiDev/nihongo-it-anki/
 - Anyone learning technical Japanese for IT industry
 - JLPT learners wanting real-world tech vocabulary
 
-## Tags in Deck
-
-Cards are tagged by tier and category for filtered study:
-- `tier1`, `tier2`, ... `tier6`
-- Categories: `Agile_Meeting`, `Database_Sql`, `Cloud_Kubernetes`, `Frontend_Ui`, etc.
-
-## Source
-
-Open source project. Generate your own deck with male or female voice:
-<a href="https://github.com/KakkoiDev/nihongo-it-anki">https://github.com/KakkoiDev/nihongo-it-anki</a>
-
 ---
 
-**Total: 1000 notes = 2000 cards + 1000 MP3 audio files**
+**Total: 1000 notes / 2000 cards / 1000 audio files**
 
 If you find this useful, please rate and comment!
 ```
