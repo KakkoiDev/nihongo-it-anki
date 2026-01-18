@@ -140,7 +140,7 @@ If you find this useful, please rate and comment!
 
 - [x] Generate audio for all tiers
 - [x] Create .apkg file
-- [x] Verify file size (166 MB)
+- [x] Verify file size (58 MB)
 - [ ] Test import in fresh Anki installation
 - [ ] Verify audio plays correctly
 - [ ] Check all 2000 cards render properly

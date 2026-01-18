@@ -4,7 +4,7 @@ Japanese IT vocabulary for Anki. 1000 sentences with native audio.
 
 ## Download
 
-**[nihongo-it-vocab-complete.apkg](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** (57 MB)
+**[nihongo-it-vocab-complete.apkg](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** (58 MB)
 
 Import directly into Anki. No setup required.
 
