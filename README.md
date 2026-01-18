@@ -1,6 +1,6 @@
 # nihongo-it-anki
 
-Japanese IT vocabulary for Anki. 1000 sentences with native audio.
+Japanese IT vocabulary for Anki. 1000 sentences with AI-generated audio. Open source - build your own deck with the same tools.
 
 ## Download
 
@@ -12,7 +12,7 @@ Import directly into Anki. No setup required.
 
 - 1000 IT vocabulary sentences across 6 difficulty tiers
 - 2000 cards (comprehension + production for each sentence)
-- Native Japanese audio (Kokoro TTS)
+- AI-generated Japanese audio (Kokoro TTS) - natural-sounding, fully open source
 - Furigana readings for all kanji
 - Key vocabulary with English meanings
 - Verb conjugation tables (collapsible, N1-level coverage)

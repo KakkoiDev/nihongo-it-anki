@@ -18,66 +18,28 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ## Description
 
 ```markdown
-**1000 IT vocabulary sentences** with native Japanese audio, furigana, and verb conjugation tables.
+**1000 IT vocabulary sentences** with AI-generated Japanese audio (Kokoro TTS), furigana, and verb conjugation tables. Fully open source - use the same tools to build your own custom deck.
 
 ## Features
 
 - **IT Workplace Focus** - Real phrases from American tech companies, not textbook examples
 - **Full Sentences** - Learn vocabulary in context, not isolated words
-- **100% Audio** - Native MP3 audio for every sentence (Kokoro TTS)
+- **100% Audio** - AI-generated MP3 for every sentence (Kokoro TTS)
 - **Two-Card Design** - Comprehension + Production cards for each sentence
 - **Verb Conjugation Tables** - Collapsible N1-level tables on answer side
 - **Furigana** - Readings for all kanji
 - **6 Progressive Tiers** - From N5 beginner to N1 advanced
 - **Dark Mode** - Matches your system theme
-- **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Customize or regenerate with male/female voice</a>
+- **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Build your own deck with the same tools</a>
 
 ## Tiers
 
-<table style="border-collapse: collapse; width: 100%;" border="1">
-  <tr>
-    <th>Tier</th>
-    <th>Count</th>
-    <th>Level</th>
-    <th>Focus</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>150</td>
-    <td>N5-N4</td>
-    <td>Daily essentials, git, basic actions</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>200</td>
-    <td>N4-N3</td>
-    <td>Agile, APIs, databases, testing</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>250</td>
-    <td>N3</td>
-    <td>Code review, architecture, AWS</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>200</td>
-    <td>N3-N2</td>
-    <td>Security, debugging, documentation</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>100</td>
-    <td>N2</td>
-    <td>Communication, soft skills</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>100</td>
-    <td>N2-N1</td>
-    <td>Presentations, advanced topics</td>
-  </tr>
-</table>
+- **Tier 1** (150 cards, N5-N4) - Daily essentials, git, basic actions
+- **Tier 2** (200 cards, N4-N3) - Agile, APIs, databases, testing
+- **Tier 3** (250 cards, N3) - Code review, architecture, AWS
+- **Tier 4** (200 cards, N3-N2) - Security, debugging, documentation
+- **Tier 5** (100 cards, N2) - Communication, soft skills
+- **Tier 6** (100 cards, N2-N1) - Presentations, advanced topics
 
 ## Example Sentences
 
@@ -99,8 +61,6 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 - Developers preparing for jobs at Japanese tech companies
 - Anyone learning technical Japanese for IT industry
 - JLPT learners wanting real-world tech vocabulary
-
----
 
 **Total: 1000 notes / 2000 cards / 1000 audio files**
 
