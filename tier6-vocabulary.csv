@@ -1,101 +1,101 @@
 Sentence,Translation,Cloze,Pronunciation,Note,KeyMeaning
-本日のアジェンダはこちらです。,Here's today's agenda.,アジェンダ,本日【ほんじつ】のアジェンダはこちらです。,Presentation - agenda,agenda
-概要をご説明します。,Let me give you an overview.,概要,概要【がいよう】をご説明【せつめい】します。,Presentation - overview,overview
-トピックの簡単な導入です。,Quick introduction to the topic.,導入,トピックの簡単【かんたん】な導入【どうにゅう】です。,Presentation - introduction,introduce
-まず背景についてお話します。,"First, some background.",背景,まず背景【はいけい】についてお話【はな】します。,Presentation - background,background
-文脈をお伝えすると...,To give you some context...,文脈,文脈【ぶんみゃく】をお伝【つた】えすると...,Presentation - context,context
-本日の目的は...です。,Our objective today is...,目的,本日【ほんじつ】の目的【もくてき】は...です。,Presentation - objective,purpose
-このプロジェクトの目標は...です。,The goal of this project is...,目標,このプロジェクトの目標【もくひょう】は...です。,Presentation - goal,goal
-範囲には...が含まれます。,The scope includes...,範囲,範囲【はんい】には...が含【ふく】まれます。,Presentation - scope,scope
-こちらがタイムラインです。,Here's the timeline.,タイムライン,こちらがタイムラインです。,Presentation - timeline,timeline
-このマイルストーンを達成しました。,We hit this milestone.,マイルストーン,このマイルストーンを達成【たっせい】しました。,Presentation - milestone,milestone
-ここまでの進捗をご報告します。,Here's our progress so far.,進捗,ここまでの進捗【しんちょく】をご報告【ほうこく】します。,Presentation - progress,progress
-現在の状態はグリーンです。,Current status is green.,状態,現在【げんざい】の状態【じょうたい】はグリーンです。,Presentation - status,state
-では簡単なデモをお見せします。,Now I'll show a quick demo.,デモ,では簡単【かんたん】なデモをお見【み】せします。,Presentation - demo,demo
-ウォークスルーをさせてください。,Let me do a walkthrough.,ウォークスルー,ウォークスルーをさせてください。,Presentation - walkthrough,walkthrough
-こちらがスクリーンショットです。,Here's a screenshot.,スクリーンショット,こちらがスクリーンショットです。,Presentation - screenshot,screenshot
-この図はフローを示しています。,This diagram shows the flow.,図,この図【ず】はフローを示【しめ】しています。,Presentation - diagram,diagram
-このチャートでお分かりのように...,As you can see in this chart...,チャート,このチャートでお分【わ】かりのように...,Presentation - chart,chart
-グラフは改善を示しています。,The graph shows improvement.,グラフ,グラフは改善【かいぜん】を示【しめ】しています。,Presentation - graph,graph
-こちらが主要なメトリクスです。,Here are the key metrics.,メトリクス,こちらが主要【しゅよう】なメトリクスです。,Presentation - metric,metrics
-データが示すところによると...,The data shows that...,データ,データが示【しめ】すところによると...,Presentation - data,data
-こちらが結果です。,Here are the results.,結果,こちらが結果【けっか】です。,Presentation - result,result
-私たちの主な発見は...でした。,Our main finding was...,発見,私【わたし】たちの主【おも】な発見【はっけん】は...でした。,Presentation - finding,discovery
-これからの重要な洞察は...,Key insight from this...,洞察,これからの重要【じゅうよう】な洞察【どうさつ】は...,Presentation - insight,insight
-学んだことには...が含まれます。,Lessons learned include...,学んだこと,学【まな】んだことには...が含【ふく】まれます。,Presentation - lesson learned,lessons learned
-重要な持ち帰りは...,Key takeaway is...,持ち帰り,重要【じゅうよう】な持【も】ち帰【かえ】りは...,Presentation - takeaway,takeaway
-私の推奨は...です。,My recommendation is...,推奨,私【わたし】の推奨【すいしょう】は...です。,Presentation - recommendation,recommended
-次のステップは...です。,Next steps are...,次のステップ,次【つぎ】のステップは...です。,Presentation - next steps,step
-本日のアクションアイテムは...,Action items from today...,アクションアイテム,本日【ほんじつ】のアクションアイテムは...,Presentation - action item,action item
-ここまでで質問はありますか？,Any questions so far?,質問,ここまでで質問【しつもん】はありますか？,Presentation - question,question
-フィードバックをいただけると嬉しいです。,I'd love your feedback.,フィードバック,フィードバックをいただけると嬉【うれ】しいです。,Presentation - feedback,feedback
-懸念点はありますか？,Any concerns?,懸念,懸念【けねん】点【てん】はありますか？,Presentation - concern,concern
-コメントや提案はありますか？,Comments or suggestions?,コメント,コメントや提案【ていあん】はありますか？,Presentation - comment,comment
-明確化を加えさせてください。,Let me add some clarification.,明確化,明確化【めいかくか】を加【くわ】えさせてください。,Presentation - clarification,clarify
-例えば...,For example...,例,例【たと】えば...,Presentation - example,example
-具体的にはこれは...を意味します。,"Specifically, this means...",具体的に,具体的【ぐたいてき】にはこれは...を意味【いみ】します。,Presentation - specifically,specifically
-言い換えると...,In other words...,言い換えると,言【い】い換【か】えると...,Presentation - in other words,paraphrase
-要約すると...,To summarize...,要約すると,要約【ようやく】すると...,Presentation - to summarize,in summary
-結論として...,In conclusion...,結論として,結論【けつろん】として...,Presentation - in conclusion,in conclusion
-次のトピックに移ります。,Moving on to the next topic.,次に移る,次【つぎ】のトピックに移【うつ】ります。,Presentation - moving on,move on
-そのポイントに戻ると...,Going back to that point...,戻る,そのポイントに戻【もど】ると...,Presentation - going back,return
-先ほど述べたように...,As I mentioned earlier...,先ほど述べたように,先【さき】ほど述【の】べたように...,Presentation - as I mentioned,as mentioned
-明確にすると...,To clarify...,明確にすると,明確【めいかく】にすると...,Presentation - to clarify,to clarify
-理由を説明させてください。,Let me explain why.,説明させてください,理由【りゆう】を説明【せつめい】させてください。,Presentation - let me explain,let me explain
-理由は...です。,The reason is...,理由は,理由【りゆう】は...です。,Presentation - the reason is,the reason is
-これは...を意味します。,This means that...,これは意味する,これは...を意味【いみ】します。,Presentation - this means,this means
-影響は重大です。,The impact is significant.,影響は,影響【えいきょう】は重大【じゅうだい】です。,Presentation - the impact is,impact
-主な利点は...です。,The main benefit is...,利点は,主【おも】な利点【りてん】は...です。,Presentation - the benefit is,advantage
-課題は...です。,The challenge is...,課題は,課題【かだい】は...です。,Presentation - the challenge is,issue
-解決策は...です。,The solution is...,解決策は,解決策【かいけつさく】は...です。,Presentation - the solution is,solution
-お時間をいただきありがとうございます。,Thank you for your time.,ありがとう,お時間【じかん】をいただきありがとうございます。,Presentation - thank you,thank you
-私たちのチームは成長しています。,Our team is growing.,チーム,私【わたし】たちのチームは成長【せいちょう】しています。,Career - team,team
-マネージャーに相談してください。,Talk to your manager.,マネージャー,マネージャーに相談【そうだん】してください。,Career - manager,manager
-テックリードが助けてくれます。,The tech lead can help.,リード,テックリードが助【たす】けてくれます。,Career - lead,lead/read
-シニアエンジニアに聞いてください。,Ask a senior engineer.,シニア,シニアエンジニアに聞【き】いてください。,Career - senior,senior
-まだジュニアデベロッパーです。,I'm still a junior dev.,ジュニア,まだジュニアデベロッパーです。,Career - junior,junior
-良いメンターを見つけてください。,Find a good mentor.,メンター,良【よ】いメンターを見【み】つけてください。,Career - mentor,mentor
-新入社員のメンティーがいます。,I'm mentoring a new hire.,メンティー,新入社員【しんにゅうしゃいん】のメンティーがいます。,Career - mentee,maintenance
-オンボーディングは2週間かかります。,Onboarding takes two weeks.,オンボーディング,オンボーディングは2週間【しゅうかん】かかります。,Career - onboarding,onboarding
-まだコードベースに立ち上がり中です。,Still ramping up on the codebase.,立ち上がり,まだコードベースに立【た】ち上【あ】がり中【ちゅう】です。,Career - ramp up,startup
-パフォーマンスレビューが近づいています。,Performance review is coming.,パフォーマンス,パフォーマンスレビューが近【ちか】づいています。,Career - performance,performance
-年次レビューは来月です。,My annual review is next month.,レビュー,年次【ねんじ】レビューは来月【らいげつ】です。,Career - review,review
-建設的なフィードバックを与えてください。,Give constructive feedback.,フィードバック,建設的【けんせつてき】なフィードバックを与【あた】えてください。,Career - feedback,feedback
-成長に集中してください。,Focus on your growth.,成長,成長【せいちょう】に集中【しゅうちゅう】してください。,Career - growth,grow
-新しいスキルを身につけてください。,Develop new skills.,スキル,新【あたら】しいスキルを身【み】につけてください。,Career - skill,skill
-自分の強みを活かしてください。,Play to your strengths.,強み,自分【じぶん】の強【つよ】みを活【い】かしてください。,Career - strength,strength
-弱みを改善してください。,Work on your weaknesses.,弱み,弱【よわ】みを改善【かいぜん】してください。,Career - weakness,weakness
-あなたの目標は何ですか？,What are your goals?,目標,あなたの目標【もくひょう】は何【なん】ですか？,Career - goal,goal
-明確な目標を設定してください。,Set clear objectives.,目標,明確【めいかく】な目標【もくひょう】を設定【せってい】してください。,Career - objective,goal
+本日のアジェンダはこちらです。,Here's today's agenda.,アジェンダ,本日【ほんじつ】のアジェンダはこちらです。,Presentation - Agenda,agenda
+概要をご説明します。,Let me give you an overview.,概要,概要【がいよう】をご説明【せつめい】します。,Presentation - Overview,overview
+トピックの簡単な導入です。,Quick introduction to the topic.,導入,トピックの簡単【かんたん】な導入【どうにゅう】です。,Presentation - Introduction,introduce
+まず背景についてお話します。,"First, some background.",背景,まず背景【はいけい】についてお話【はな】します。,Presentation - Background,background
+文脈をお伝えすると...,To give you some context...,文脈,文脈【ぶんみゃく】をお伝【つた】えすると...,Presentation - Context,context
+本日の目的は...です。,Our objective today is...,目的,本日【ほんじつ】の目的【もくてき】は...です。,Presentation - Objective,purpose
+このプロジェクトの目標は...です。,The goal of this project is...,目標,このプロジェクトの目標【もくひょう】は...です。,Presentation - Goal,goal
+範囲には...が含まれます。,The scope includes...,範囲,範囲【はんい】には...が含【ふく】まれます。,Presentation - Scope,scope
+こちらがタイムラインです。,Here's the timeline.,タイムライン,こちらがタイムラインです。,Presentation - Timeline,timeline
+このマイルストーンを達成しました。,We hit this milestone.,マイルストーン,このマイルストーンを達成【たっせい】しました。,Presentation - Milestone,milestone
+ここまでの進捗をご報告します。,Here's our progress so far.,進捗,ここまでの進捗【しんちょく】をご報告【ほうこく】します。,Presentation - Progress,progress
+現在の状態はグリーンです。,Current status is green.,状態,現在【げんざい】の状態【じょうたい】はグリーンです。,Presentation - Status,state
+では簡単なデモをお見せします。,Now I'll show a quick demo.,デモ,では簡単【かんたん】なデモをお見【み】せします。,Presentation - Demo,demo
+ウォークスルーをさせてください。,Let me do a walkthrough.,ウォークスルー,ウォークスルーをさせてください。,Presentation - Walkthrough,walkthrough
+こちらがスクリーンショットです。,Here's a screenshot.,スクリーンショット,こちらがスクリーンショットです。,Presentation - Visual,screenshot
+この図はフローを示しています。,This diagram shows the flow.,図,この図【ず】はフローを示【しめ】しています。,Presentation - Visual,diagram
+このチャートでお分かりのように...,As you can see in this chart...,チャート,このチャートでお分【わ】かりのように...,Presentation - Visual,chart
+グラフは改善を示しています。,The graph shows improvement.,グラフ,グラフは改善【かいぜん】を示【しめ】しています。,Presentation - Visual,graph
+こちらが主要なメトリクスです。,Here are the key metrics.,メトリクス,こちらが主要【しゅよう】なメトリクスです。,Presentation - Data,metrics
+データが示すところによると...,The data shows that...,データ,データが示【しめ】すところによると...,Presentation - Data,data
+こちらが結果です。,Here are the results.,結果,こちらが結果【けっか】です。,Presentation - Result,result
+私たちの主な発見は...でした。,Our main finding was...,発見,私【わたし】たちの主【おも】な発見【はっけん】は...でした。,Presentation - Finding,discovery
+これからの重要な洞察は...,Key insight from this...,洞察,これからの重要【じゅうよう】な洞察【どうさつ】は...,Presentation - Insight,insight
+学んだことには...が含まれます。,Lessons learned include...,学んだこと,学【まな】んだことには...が含【ふく】まれます。,Presentation - Lesson,lessons learned
+重要な持ち帰りは...,Key takeaway is...,持ち帰り,重要【じゅうよう】な持【も】ち帰【かえ】りは...,Presentation - Takeaway,takeaway
+私の推奨は...です。,My recommendation is...,推奨,私【わたし】の推奨【すいしょう】は...です。,Presentation - Recommendation,recommended
+次のステップは...です。,Next steps are...,次のステップ,次【つぎ】のステップは...です。,Presentation - Next Steps,step
+本日のアクションアイテムは...,Action items from today...,アクションアイテム,本日【ほんじつ】のアクションアイテムは...,Presentation - Action Item,action item
+ここまでで質問はありますか？,Any questions so far?,質問,ここまでで質問【しつもん】はありますか？,Presentation - Q&A,question
+フィードバックをいただけると嬉しいです。,I'd love your feedback.,フィードバック,フィードバックをいただけると嬉【うれ】しいです。,Presentation - Q&A,feedback
+懸念点はありますか？,Any concerns?,懸念,懸念【けねん】点【てん】はありますか？,Presentation - Q&A,concern
+コメントや提案はありますか？,Comments or suggestions?,コメント,コメントや提案【ていあん】はありますか？,Presentation - Q&A,comment
+明確化を加えさせてください。,Let me add some clarification.,明確化,明確化【めいかくか】を加【くわ】えさせてください。,Presentation - Transition,clarify
+例えば...,For example...,例,例【たと】えば...,Presentation - Example,example
+具体的にはこれは...を意味します。,"Specifically, this means...",具体的に,具体的【ぐたいてき】にはこれは...を意味【いみ】します。,Presentation - Transition,specifically
+言い換えると...,In other words...,言い換えると,言【い】い換【か】えると...,Presentation - Transition,paraphrase
+要約すると...,To summarize...,要約すると,要約【ようやく】すると...,Presentation - Closing,in summary
+結論として...,In conclusion...,結論として,結論【けつろん】として...,Presentation - Closing,in conclusion
+次のトピックに移ります。,Moving on to the next topic.,次に移る,次【つぎ】のトピックに移【うつ】ります。,Presentation - Transition,move on
+そのポイントに戻ると...,Going back to that point...,戻る,そのポイントに戻【もど】ると...,Presentation - Transition,return
+先ほど述べたように...,As I mentioned earlier...,先ほど述べたように,先【さき】ほど述【の】べたように...,Presentation - Transition,as mentioned
+明確にすると...,To clarify...,明確にすると,明確【めいかく】にすると...,Presentation - Transition,to clarify
+理由を説明させてください。,Let me explain why.,説明させてください,理由【りゆう】を説明【せつめい】させてください。,Presentation - Transition,let me explain
+理由は...です。,The reason is...,理由は,理由【りゆう】は...です。,Presentation - Explanation,the reason is
+これは...を意味します。,This means that...,これは意味する,これは...を意味【いみ】します。,Presentation - Explanation,this means
+影響は重大です。,The impact is significant.,影響は,影響【えいきょう】は重大【じゅうだい】です。,Presentation - Impact,impact
+主な利点は...です。,The main benefit is...,利点は,主【おも】な利点【りてん】は...です。,Presentation - Benefit,advantage
+課題は...です。,The challenge is...,課題は,課題【かだい】は...です。,Presentation - Challenge,issue
+解決策は...です。,The solution is...,解決策は,解決策【かいけつさく】は...です。,Presentation - Solution,solution
+お時間をいただきありがとうございます。,Thank you for your time.,ありがとう,お時間【じかん】をいただきありがとうございます。,Presentation - Closing,thank you
+私たちのチームは成長しています。,Our team is growing.,チーム,私【わたし】たちのチームは成長【せいちょう】しています。,Career - Team,team
+マネージャーに相談してください。,Talk to your manager.,マネージャー,マネージャーに相談【そうだん】してください。,Career - Manager,manager
+テックリードが助けてくれます。,The tech lead can help.,リード,テックリードが助【たす】けてくれます。,Career - Lead,lead/read
+シニアエンジニアに聞いてください。,Ask a senior engineer.,シニア,シニアエンジニアに聞【き】いてください。,Career - Senior,senior
+まだジュニアデベロッパーです。,I'm still a junior dev.,ジュニア,まだジュニアデベロッパーです。,Career - Junior,junior
+良いメンターを見つけてください。,Find a good mentor.,メンター,良【よ】いメンターを見【み】つけてください。,Career - Mentor,mentor
+新入社員のメンティーがいます。,I'm mentoring a new hire.,メンティー,新入社員【しんにゅうしゃいん】のメンティーがいます。,Career - Mentee,maintenance
+オンボーディングは2週間かかります。,Onboarding takes two weeks.,オンボーディング,オンボーディングは2週間【しゅうかん】かかります。,Career - Onboarding,onboarding
+まだコードベースに立ち上がり中です。,Still ramping up on the codebase.,立ち上がり,まだコードベースに立【た】ち上【あ】がり中【ちゅう】です。,Career - Onboarding,startup
+パフォーマンスレビューが近づいています。,Performance review is coming.,パフォーマンス,パフォーマンスレビューが近【ちか】づいています。,Career - Performance,performance
+年次レビューは来月です。,My annual review is next month.,レビュー,年次【ねんじ】レビューは来月【らいげつ】です。,Career - Review,review
+建設的なフィードバックを与えてください。,Give constructive feedback.,フィードバック,建設的【けんせつてき】なフィードバックを与【あた】えてください。,Career - Feedback,feedback
+成長に集中してください。,Focus on your growth.,成長,成長【せいちょう】に集中【しゅうちゅう】してください。,Career - Growth,grow
+新しいスキルを身につけてください。,Develop new skills.,スキル,新【あたら】しいスキルを身【み】につけてください。,Career - Skill,skill
+自分の強みを活かしてください。,Play to your strengths.,強み,自分【じぶん】の強【つよ】みを活【い】かしてください。,Career - Strength,strength
+弱みを改善してください。,Work on your weaknesses.,弱み,弱【よわ】みを改善【かいぜん】してください。,Career - Weakness,weakness
+あなたの目標は何ですか？,What are your goals?,目標,あなたの目標【もくひょう】は何【なん】ですか？,Career - Goal,goal
+明確な目標を設定してください。,Set clear objectives.,目標,明確【めいかく】な目標【もくひょう】を設定【せってい】してください。,Career - Objective,goal
 OKRを更新してください。,Update your OKRs.,OKR,OKRを更新【こうしん】してください。,Career - OKR,OKR
 KPIを追跡してください。,Track the KPIs.,KPI,KPIを追跡【ついせき】してください。,Career - KPI,KPI
-昇進に向けて頑張っています。,Working toward promotion.,昇進,昇進【しょうしん】に向【む】けて頑張【がんば】っています。,Career - promotion,promotion
-このロールはどのレベルですか？,What level is this role?,レベル,このロールはどのレベルですか？,Career - level,level
-役職はあまり重要ではありません。,Job title doesn't matter much.,タイトル,役職【やくしょく】はあまり重要【じゅうよう】ではありません。,Career - title,title
-責任をオーナーシップしてください。,Take ownership of responsibilities.,責任,責任【せきにん】をオーナーシップしてください。,Career - responsibility,responsibility
-このプロジェクトのオーナーシップを持ってください。,Take ownership of this project.,オーナーシップ,このプロジェクトのオーナーシップを持【も】ってください。,Career - ownership,ownership
-主導権を発揮してください。,Show initiative.,主導権,主導権【しゅどうけん】を発揮【はっき】してください。,Career - initiative,initiative
-問題に対して積極的になってください。,Be proactive about issues.,積極的,問題【もんだい】に対【たい】して積極的【せっきょくてき】になってください。,Career - proactive,proactive
-他のチームと協力してください。,Collaborate with other teams.,協力する,他【ほか】のチームと協力【きょうりょく】してください。,Career - collaborate,cooperate
-明確にコミュニケーションしてください。,Communicate clearly.,コミュニケーション,明確【めいかく】にコミュニケーションしてください。,Career - communicate,communication
-作業を文書化してください。,Document your work.,文書化,作業【さぎょう】を文書化【ぶんしょか】してください。,Career - document,document
-チームと知識を共有してください。,Share knowledge with the team.,共有する,チームと知識【ちしき】を共有【きょうゆう】してください。,Career - share,share
-常に学び続けてください。,Always keep learning.,学ぶ,常【つね】に学【まな】び続【つづ】けてください。,Career - learn,learn
-継続的に改善してください。,Continuously improve.,改善する,継続的【けいぞくてき】に改善【かいぜん】してください。,Career - improve,improve
-変化に素早く適応してください。,Adapt to change quickly.,適応する,変化【へんか】に素早【すばや】く適応【てきおう】してください。,Career - adapt,adapt
-優先順位に柔軟に対応してください。,Be flexible with priorities.,柔軟,優先順位【ゆうせんじゅんい】に柔軟【じゅうなん】に対応【たいおう】してください。,Career - flexible,flexible
-信頼できて一貫性を持ってください。,Be reliable and consistent.,信頼できる,信頼【しんらい】できて一貫性【いっかんせい】を持【も】ってください。,Career - reliable,reliable
-自分の仕事に責任を持ってください。,Be accountable for your work.,責任がある,自分【じぶん】の仕事【しごと】に責任【せきにん】を持【も】ってください。,Career - accountable,responsible
-ブロッカーについて透明性を持ってください。,Be transparent about blockers.,透明,ブロッカーについて透明【とうめい】性【せい】を持【も】ってください。,Career - transparent,transparent
-タイムラインについて正直になってください。,Be honest about timelines.,正直,タイムラインについて正直【しょうじき】になってください。,Career - honest,honestly
-異なる意見を尊重してください。,Respect different opinions.,尊重,異【こと】なる意見【いけん】を尊重【そんちょう】してください。,Career - respect,respect
-議論で包括的になってください。,Be inclusive in discussions.,包括的,議論【ぎろん】で包括的【ほうかつてき】になってください。,Career - inclusive,comprehensive
-チームメイトをサポートしてください。,Support your teammates.,サポート,チームメイトをサポートしてください。,Career - support,support
-いつでも助ける準備ができています。,Always willing to help.,助ける,いつでも助【たす】ける準備【じゅんび】ができています。,Career - help,help
-聞くことを恐れないでください。,Don't be afraid to ask.,聞く,聞【き】くことを恐【おそ】れないでください。,Career - ask,listen
-理解するために聞いてください。,Listen to understand.,聞く,理解【りかい】するために聞【き】いてください。,Career - listen,listen
-ユーザーに共感を示してください。,Show empathy to users.,共感,ユーザーに共感【きょうかん】を示【しめ】してください。,Career - empathy,empathy
-バグに忍耐を持ってください。,Have patience with bugs.,忍耐,バグに忍耐【にんたい】を持【も】ってください。,Career - patience,patience
-優先事項に集中してください。,Stay focused on priorities.,集中,優先事項【ゆうせんじこう】に集中【しゅうちゅう】してください。,Career - focus,concentrate
-ワークライフバランスを維持してください。,Maintain work-life balance.,バランス,ワークライフバランスを維持【いじ】してください。,Career - balance,balance
-あなたは成功します！,You will succeed!,成功する,あなたは成功【せいこう】します！,Career - succeed,succeed
+昇進に向けて頑張っています。,Working toward promotion.,昇進,昇進【しょうしん】に向【む】けて頑張【がんば】っています。,Career - Promotion,promotion
+このロールはどのレベルですか？,What level is this role?,レベル,このロールはどのレベルですか？,Career - Level,level
+役職はあまり重要ではありません。,Job title doesn't matter much.,タイトル,役職【やくしょく】はあまり重要【じゅうよう】ではありません。,Career - Title,title
+責任をオーナーシップしてください。,Take ownership of responsibilities.,責任,責任【せきにん】をオーナーシップしてください。,Career - Responsibility,responsibility
+このプロジェクトのオーナーシップを持ってください。,Take ownership of this project.,オーナーシップ,このプロジェクトのオーナーシップを持【も】ってください。,Career - Ownership,ownership
+主導権を発揮してください。,Show initiative.,主導権,主導権【しゅどうけん】を発揮【はっき】してください。,Career - Initiative,initiative
+問題に対して積極的になってください。,Be proactive about issues.,積極的,問題【もんだい】に対【たい】して積極的【せっきょくてき】になってください。,Career - Proactive,proactive
+他のチームと協力してください。,Collaborate with other teams.,協力する,他【ほか】のチームと協力【きょうりょく】してください。,Career - Collaboration,cooperate
+明確にコミュニケーションしてください。,Communicate clearly.,コミュニケーション,明確【めいかく】にコミュニケーションしてください。,Career - Communication,communication
+作業を文書化してください。,Document your work.,文書化,作業【さぎょう】を文書化【ぶんしょか】してください。,Career - Documentation,document
+チームと知識を共有してください。,Share knowledge with the team.,共有する,チームと知識【ちしき】を共有【きょうゆう】してください。,Career - Knowledge Sharing,share
+常に学び続けてください。,Always keep learning.,学ぶ,常【つね】に学【まな】び続【つづ】けてください。,Career - Learning,learn
+継続的に改善してください。,Continuously improve.,改善する,継続的【けいぞくてき】に改善【かいぜん】してください。,Career - Improvement,improve
+変化に素早く適応してください。,Adapt to change quickly.,適応する,変化【へんか】に素早【すばや】く適応【てきおう】してください。,Career - Adaptability,adapt
+優先順位に柔軟に対応してください。,Be flexible with priorities.,柔軟,優先順位【ゆうせんじゅんい】に柔軟【じゅうなん】に対応【たいおう】してください。,Career - Flexibility,flexible
+信頼できて一貫性を持ってください。,Be reliable and consistent.,信頼できる,信頼【しんらい】できて一貫性【いっかんせい】を持【も】ってください。,Career - Reliability,reliable
+自分の仕事に責任を持ってください。,Be accountable for your work.,責任がある,自分【じぶん】の仕事【しごと】に責任【せきにん】を持【も】ってください。,Career - Accountability,responsible
+ブロッカーについて透明性を持ってください。,Be transparent about blockers.,透明,ブロッカーについて透明【とうめい】性【せい】を持【も】ってください。,Career - Transparency,transparent
+タイムラインについて正直になってください。,Be honest about timelines.,正直,タイムラインについて正直【しょうじき】になってください。,Career - Honesty,honestly
+異なる意見を尊重してください。,Respect different opinions.,尊重,異【こと】なる意見【いけん】を尊重【そんちょう】してください。,Career - Respect,respect
+議論で包括的になってください。,Be inclusive in discussions.,包括的,議論【ぎろん】で包括的【ほうかつてき】になってください。,Career - Inclusion,comprehensive
+チームメイトをサポートしてください。,Support your teammates.,サポート,チームメイトをサポートしてください。,Career - Support,support
+いつでも助ける準備ができています。,Always willing to help.,助ける,いつでも助【たす】ける準備【じゅんび】ができています。,Career - Help,help
+聞くことを恐れないでください。,Don't be afraid to ask.,聞く,聞【き】くことを恐【おそ】れないでください。,Career - Communication,listen
+理解するために聞いてください。,Listen to understand.,聞く,理解【りかい】するために聞【き】いてください。,Career - Listening,listen
+ユーザーに共感を示してください。,Show empathy to users.,共感,ユーザーに共感【きょうかん】を示【しめ】してください。,Career - Empathy,empathy
+バグに忍耐を持ってください。,Have patience with bugs.,忍耐,バグに忍耐【にんたい】を持【も】ってください。,Career - Patience,patience
+優先事項に集中してください。,Stay focused on priorities.,集中,優先事項【ゆうせんじこう】に集中【しゅうちゅう】してください。,Career - Focus,concentrate
+ワークライフバランスを維持してください。,Maintain work-life balance.,バランス,ワークライフバランスを維持【いじ】してください。,Career - Balance,balance
+あなたは成功します！,You will succeed!,成功する,あなたは成功【せいこう】します！,Career - Success,succeed

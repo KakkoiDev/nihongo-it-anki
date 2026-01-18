@@ -1,251 +1,251 @@
 Sentence,Translation,Cloze,Pronunciation,Note,KeyMeaning
-問題なし！リリースOK。,LGTM! Ship it.,問題なし,問題【もんだい】なし！リリースOK。,Approval,no problem
-この変数の名前変更を検討してください。,Nit: consider renaming this variable.,検討,この変数【へんすう】の名前【なまえ】変更【へんこう】を検討【けんとう】してください。,Minor suggestion,consider
-ここにコメントを追加してください。,Minor: add a comment here.,軽微,ここにコメントを追加【ついか】してください。,Minor issue,minor
-これはメモリリークを引き起こします。,Major: this will cause a memory leak.,重大,これはメモリリークを引【ひ】き起【お】こします。,Major issue,serious
-まずセキュリティの問題を修正してください。,Blocker: fix the security issue first.,セキュリティ,まずセキュリティの問題【もんだい】を修正【しゅうせい】してください。,Security issue,security
-配列の代わりにマップを使うことを提案します。,Suggestion: use a map instead of array.,提案,配列【はいれつ】の代【か】わりにマップを使【つか】うことを提案【ていあん】します。,Suggestion,propose
-なぜこのアプローチを選んだのですか？,Question: why did you choose this approach?,アプローチ,なぜこのアプローチを選【えら】んだのですか？,Question,approach
-パフォーマンスについて懸念があります。,I have a concern about performance.,懸念,パフォーマンスについて懸念【けねん】があります。,Concern,concern
-ここで定数を使うことを検討してください。,Consider using a constant here.,定数,ここで定数【ていすう】を使【つか】うことを検討【けんとう】してください。,Suggestion,constant
-代わりに再帰を使うこともできます。,Alternatively we could use recursion.,再帰,代【か】わりに再帰【さいき】を使【つか】うこともできます。,Alternative,recursive
-エラーハンドリングを追加してください。任意です。,Optional: add more error handling.,任意,エラーハンドリングを追加【ついか】してください。任意【にんい】です。,Optional,optional
-この変更にはテストを追加してください。必須です。,Required: add tests for this change.,必須,この変更【へんこう】にはテストを追加【ついか】してください。必須【ひっす】です。,Required,required
-最新のコミットで対応しました。,Addressed in the latest commit.,対応,最新【さいしん】のコミットで対応【たいおう】しました。,Addressed,handle/respond
-解決済みとしてマークしました。,Marked as resolved.,解決済み,解決済【かいけつず】みとしてマークしました。,Resolved,resolved
-このコメントは古くなっています。,This comment is outdated.,古く,このコメントは古【ふる】くなっています。,Outdated,old
-このPRは古くなっています。更新してください。,"This PR is stale, please update.",古く,このPRは古【ふる】くなっています。更新【こうしん】してください。,Stale,old
-いくつかの変更を依頼しました。,I requested some changes.,変更を依頼,いくつかの変更【へんこう】を依頼【いらい】しました。,Changes requested,request change
-PRは承認されました。,Your PR is approved.,承認,PRは承認【しょうにん】されました。,Approved,approve
-CIが通ったらマージできます。,You can merge after CI passes.,マージ,CIが通【とお】ったらマージできます。,Merge,merge
-スカッシュしてマージしてください。,Squash and merge please.,スカッシュ,スカッシュしてマージしてください。,Squash,squash
-mainにリベースしてください。,Please rebase on main.,リベース,mainにリベースしてください。,Rebase,rebase
-まずマージコンフリクトを解決してください。,Resolve the merge conflicts first.,コンフリクト,まずマージコンフリクトを解決【かいけつ】してください。,Conflict,conflict
-差分がレビューしにくいです。,The diff is hard to review.,差分,差分【さぶん】がレビューしにくいです。,Diff,diff
-このコードはとても読みやすいです。,This code is very readable.,読みやすい,このコードはとても読【よ】みやすいです。,Readable,readable
-きれいな実装ですね。,Nice clean implementation.,きれい,きれいな実装【じっそう】ですね。,Clean,clean/nice
-エレガントな解決策ですね。,That's an elegant solution.,エレガント,エレガントな解決策【かいけつさく】ですね。,Elegant,elegant
-これは少しハッキーな感じがします。,This feels a bit hacky.,ハッキー,これは少【すこ】しハッキーな感【かん】じがします。,Hacky,hacky
-マジックナンバーを避けて定数を使ってください。,Avoid magic numbers use constants.,マジックナンバー,マジックナンバーを避【さ】けて定数【ていすう】を使【つか】ってください。,Magic number,magic number
-URLをハードコードしないでください。,Don't hardcode the URL.,ハードコード,URLをハードコードしないでください。,Hardcoded,hardcode
-ここにコードの重複があります。,There's some code duplication here.,重複,ここにコードの重複【じゅうふく】があります。,Duplication,duplicate
-これをDRYにしましょう。,Let's DRY this up.,DRY,これをDRYにしましょう。,Don't repeat yourself,DRY (don't repeat)
-このメソッドのリファクタリングを検討してください。,Consider refactoring this method.,リファクタリング,このメソッドのリファクタリングを検討【けんとう】してください。,Refactor,refactoring
-これを別の関数に抽出してください。,Extract this into a separate function.,抽出,これを別【べつ】の関数【かんすう】に抽出【ちゅうしゅつ】してください。,Extract,extract
-この変数はインライン化できます。,You can inline this variable.,インライン,この変数【へんすう】はインライン化【か】できます。,Inline,inline
-より説明的な名前にリネームしてください。,Rename to be more descriptive.,リネーム,より説明的【せつめいてき】な名前【なまえ】にリネームしてください。,Rename,rename
-このロジックを簡略化できます。,We can simplify this logic.,簡略化,このロジックを簡略化【かんりゃくか】できます。,Simplify,simplify
-これが何をするか明確にしてもらえますか？,Can you clarify what this does?,明確に,これが何【なに】をするか明確【めいかく】にしてもらえますか？,Clarify,clear
-この関数をドキュメント化してください。,Please document this function.,ドキュメント化,この関数【かんすう】をドキュメント化【か】してください。,Document,document
-理由を説明するコメントを追加してください。,Add a comment explaining why.,コメント,理由【りゆう】を説明【せつめい】するコメントを追加【ついか】してください。,Comment,comment
-将来のクリーンアップのためにTODOを残してください。,Leave a TODO for future cleanup.,TODO,将来【しょうらい】のクリーンアップのためにTODOを残【のこ】してください。,TODO,TODO
-既知の問題にFIXMEを追加してください。,Add FIXME for known issues.,FIXME,既知【きち】の問題【もんだい】にFIXMEを追加【ついか】してください。,FIXME,FIXME
-これは技術的負債を増やします。,This adds technical debt.,技術的負債,これは技術的【ぎじゅつてき】負債【ふさい】を増【ふ】やします。,Technical debt,tech debt
-ここでのトレードオフは何ですか？,What's the tradeoff here?,トレードオフ,ここでのトレードオフは何【なん】ですか？,Tradeoff,trade-off
-パフォーマンスの懸念はありますか？,Any performance concerns?,パフォーマンス,パフォーマンスの懸念【けねん】はありますか？,Performance,performance
-セキュリティリスクはありますか？,Is there a security risk?,セキュリティリスク,セキュリティリスクはありますか？,Security,risk
-エッジケースはどうですか？,What about edge cases?,エッジケース,エッジケースはどうですか？,Edge case,edge case
-ここにnullチェックを追加してください。,Add a null check here.,nullチェック,ここにnullチェックを追加【ついか】してください。,Null check,null check
-エラーハンドリングを改善してください。,Improve error handling.,エラーハンドリング,エラーハンドリングを改善【かいぜん】してください。,Error handling,error handling
-これは型安全性を向上させます。,This improves type safety.,型安全性,これは型【かた】安全性【あんぜんせい】を向上【こうじょう】させます。,Type safety,type safe
-これはベストプラクティスに従っています。,This follows best practices.,ベストプラクティス,これはベストプラクティスに従【したが】っています。,Best practice,best practice
-まずアーキテクチャについて話し合いましょう。,Let's discuss the architecture first.,アーキテクチャ,まずアーキテクチャについて話【はな】し合【あ】いましょう。,Architecture,architecture
-設計にはもっと検討が必要です。,The design needs more thought.,設計,設計【せっけい】にはもっと検討【けんとう】が必要【ひつよう】です。,Design,design
-ここでリポジトリパターンを使ってください。,Use the repository pattern here.,パターン,ここでリポジトリパターンを使【つか】ってください。,Pattern,pattern
-これを小さなコンポーネントに分割してください。,Break this into smaller components.,コンポーネント,これを小【ちい】さなコンポーネントに分割【ぶんかつ】してください。,Component,component
-このロジック用にサービスを作成してください。,Create a service for this logic.,サービス,このロジック用【よう】にサービスを作成【さくせい】してください。,Service,service
-コントローラーはHTTPリクエストを処理します。,The controller handles HTTP requests.,コントローラー,コントローラーはHTTPリクエストを処理【しょり】します。,Controller,controller
-認証用にミドルウェアを追加してください。,Add middleware for authentication.,ミドルウェア,認証【にんしょう】用【よう】にミドルウェアを追加【ついか】してください。,Middleware,middleware
-データアクセス層を分離してください。,Keep the data access layer separate.,レイヤー,データアクセス層【そう】を分離【ぶんり】してください。,Layer,layer
-まずインターフェースを定義してください。,Define an interface first.,インターフェース,まずインターフェースを定義【ていぎ】してください。,Interface,interface
-この抽象化は複雑すぎます。,This abstraction is too complex.,抽象化,この抽象化【ちゅうしょうか】は複雑【ふくざつ】すぎます。,Abstraction,abstraction
-実装の詳細をカプセル化してください。,Encapsulate the implementation details.,カプセル化,実装【じっそう】の詳細【しょうさい】をカプセル化【か】してください。,Encapsulation,encapsulation
-継承より合成を優先してください。,Prefer composition over inheritance.,継承,継承【けいしょう】より合成【ごうせい】を優先【ゆうせん】してください。,Inheritance,inherit
-柔軟性のために合成を使ってください。,Use composition for flexibility.,合成,柔軟性【じゅうなんせい】のために合成【ごうせい】を使【つか】ってください。,Composition,composition
-テストのために依存性注入を使ってください。,Use dependency injection for testing.,依存性注入,テストのために依存性【いぞんせい】注入【ちゅうにゅう】を使【つか】ってください。,Dependency injection,DI
-これをシングルトンにしてください。,Make this a singleton.,シングルトン,これをシングルトンにしてください。,Singleton,singleton
-インスタンスを作成するためにファクトリーを使ってください。,Use a factory to create instances.,ファクトリー,インスタンスを作成【さくせい】するためにファクトリーを使【つか】ってください。,Factory,factory
-オブザーバーパターンを実装してください。,Implement the observer pattern.,オブザーバー,オブザーバーパターンを実装【じっそう】してください。,Observer,observer
-MVCアーキテクチャに従っています。,We follow MVC architecture.,MVC,MVCアーキテクチャに従【したが】っています。,Model-View-Controller,MVC (pattern)
-マイクロサービスに移行しています。,We're migrating to microservices.,マイクロサービス,マイクロサービスに移行【いこう】しています。,Microservices,microservices
-モノリスは保守が難しいです。,The monolith is hard to maintain.,モノリス,モノリスは保守【ほしゅ】が難【むずか】しいです。,Monolith,monolith
-コードをモジュラーに保ってください。,Keep the code modular.,モジュラー,コードをモジュラーに保【たも】ってください。,Modular,modular
-これはスケーラブルである必要があります。,This needs to be scalable.,スケーラブル,これはスケーラブルである必要【ひつよう】があります。,Scalable,scalable
-保守可能なコードを書いてください。,Write maintainable code.,保守可能,保守【ほしゅ】可能【かのう】なコードを書【か】いてください。,Maintainable,maintainable
-将来のニーズのために拡張可能にしてください。,Make it extensible for future needs.,拡張可能,将来【しょうらい】のニーズのために拡張【かくちょう】可能【かのう】にしてください。,Extensible,extensible
-このコンポーネントは再利用可能です。,This component is reusable.,再利用可能,このコンポーネントは再利用【さいりよう】可能【かのう】です。,Reusable,reuse
-この設計はよりテスト可能です。,This design is more testable.,テスト可能,この設計【せっけい】はよりテスト可能【かのう】です。,Testable,test
-サービスを疎結合に保ってください。,Keep services loosely coupled.,疎結合,サービスを疎結合【そけつごう】に保【たも】ってください。,Loosely coupled,loose coupling
-これらのモジュールは密結合すぎます。,These modules are too tightly coupled.,密結合,これらのモジュールは密結合【みつけつごう】すぎます。,Tightly coupled,tight coupling
-高凝集度は良いことです。,High cohesion is good.,凝集度,高【たか】凝集度【ぎょうしゅうど】は良【よ】いことです。,Cohesion,cohesion
-低結合度が望ましいです。,Low coupling is preferred.,結合度,低【ひく】結合度【けつごうど】が望【のぞ】ましいです。,Coupling,coupling
-関心の分離に従ってください。,Follow separation of concerns.,関心の分離,関心【かんしん】の分離【ぶんり】に従【したが】ってください。,Separation of concerns,separation of concerns
-各クラスは単一責任を持ちます。,Each class has single responsibility.,単一責任,各【かく】クラスは単一【たんいつ】責任【せきにん】を持【も】ちます。,Single responsibility,single responsibility
-SOLID原則を適用してください。,Apply SOLID principles.,SOLID,SOLID原則【げんそく】を適用【てきよう】してください。,SOLID principles,SOLID (principles)
-自分を繰り返さないでください。,Don't repeat yourself.,繰り返さない,自分【じぶん】を繰【く】り返【かえ】さないでください。,DRY,don't repeat
-シンプルに保ってください。,Keep it simple stupid.,シンプル,シンプルに保【たも】ってください。,KISS,simple
-必要になるまで作らないでください。,You aren't gonna need it.,必要になるまで,必要【ひつよう】になるまで作【つく】らないでください。,YAGNI,until needed
-技術スタックは何ですか？,What's your tech stack?,技術スタック,技術【ぎじゅつ】スタックは何【なん】ですか？,Tech stack,stack
-どのフレームワークを使っていますか？,Which framework do you use?,フレームワーク,どのフレームワークを使【つか】っていますか？,Framework,framework
-既存のライブラリを使ってください。,Use an existing library.,ライブラリ,既存【きそん】のライブラリを使【つか】ってください。,Library,library
-公式SDKを使ってください。,Use the official SDK.,SDK,公式【こうしき】SDKを使【つか】ってください。,SDK,SDK
-API設計をレビューしましょう。,Let's review the API design.,API設計,API設計【せっけい】をレビューしましょう。,API design,API design
-まずAPIコントラクトを定義してください。,Define the API contract first.,コントラクト,まずAPIコントラクトを定義【ていぎ】してください。,Contract,contract
-APIバージョニングはどう処理していますか？,How do you handle API versioning?,バージョニング,APIバージョニングはどう処理【しょり】していますか？,Versioning,versioning
-この変更は後方互換性があります。,This change is backward compatible.,後方互換性,この変更【へんこう】は後方【こうほう】互換性【ごかんせい】があります。,Backward compatible,compatibility
-これは破壊的変更です。,This is a breaking change.,破壊的変更,これは破壊的【はかいてき】変更【へんこう】です。,Breaking change,breaking change
-古いエンドポイントを非推奨にしてください。,Deprecate the old endpoint.,非推奨,古【ふる】いエンドポイントを非推奨【ひすいしょう】にしてください。,Deprecate,deprecated
-このAPIは来年サンセットします。,We'll sunset this API next year.,サンセット,このAPIは来年【らいねん】サンセットします。,Sunset,sunset
-マイグレーションを慎重に計画してください。,Plan the migration carefully.,計画,マイグレーションを慎重【しんちょう】に計画【けいかく】してください。,Plan,plan
-これはレガシーコードです。,This is legacy code.,レガシー,これはレガシーコードです。,Legacy,legacy
-これはグリーンフィールドプロジェクトです。,This is a greenfield project.,グリーンフィールド,これはグリーンフィールドプロジェクトです。,Greenfield,greenfield
-サーバーはAWSで動作しています。,The server is running on AWS.,サーバー,サーバーはAWSで動作【どうさ】しています。,Server,server
-クライアントはAPIリクエストを行います。,The client makes API requests.,クライアント,クライアントはAPIリクエストを行【おこな】います。,Client,client
-コンテナを使ってデプロイしてください。,Deploy using containers.,コンテナ,コンテナを使【つか】ってデプロイしてください。,Container,container
-このためにDockerfileを作成してください。,Create a Dockerfile for this.,Dockerfile,このためにDockerfileを作成【さくせい】してください。,Dockerfile,Dockerfile
-新しいDockerイメージをビルドしてください。,Build a new Docker image.,イメージ,新【あたら】しいDockerイメージをビルドしてください。,Image,image
-Kubernetesで実行しています。,We run on Kubernetes.,Kubernetes,Kubernetesで実行【じっこう】しています。,Kubernetes,Kubernetes
-K8sクラスターにデプロイしてください。,Deploy to K8s cluster.,K8s,K8sクラスターにデプロイしてください。,K8s,K8s
-ポッドがクラッシュし続けています。,The pod keeps crashing.,ポッド,ポッドがクラッシュし続【つづ】けています。,Pod,pod
-クラスターにノードを追加してください。,Add more nodes to the cluster.,ノード,クラスターにノードを追加【ついか】してください。,Node,node
-クラスターは容量いっぱいです。,The cluster is at capacity.,クラスター,クラスターは容量【ようりょう】いっぱいです。,Cluster,cluster
-新しいデプロイメントを作成してください。,Create a new deployment.,デプロイメント,新【あたら】しいデプロイメントを作成【さくせい】してください。,Deployment,deployment
-ポッドをサービスとして公開してください。,Expose the pod as a service.,公開,ポッドをサービスとして公開【こうかい】してください。,Expose,public
-外部アクセス用にイングレスを設定してください。,Configure ingress for external access.,イングレス,外部【がいぶ】アクセス用【よう】にイングレスを設定【せってい】してください。,Ingress,ingress
-ステージング名前空間にデプロイしてください。,Deploy to the staging namespace.,名前空間,ステージング名前空間【なまえくうかん】にデプロイしてください。,Namespace,namespace
-設定をConfigMapに保存してください。,Store configs in a ConfigMap.,ConfigMap,設定【せってい】をConfigMapに保存【ほぞん】してください。,ConfigMap,ConfigMap
-機密データはSecretsに保存してください。,Store sensitive data in Secrets.,Secrets,機密【きみつ】データはSecretsに保存【ほぞん】してください。,Secrets,Secret
-永続化のためにボリュームをマウントしてください。,Mount a volume for persistence.,ボリューム,永続化【えいぞくか】のためにボリュームをマウントしてください。,Volume,volume
-自動デプロイ用にCI/CDを設定してください。,Set up CI/CD for automated deploys.,CI/CD,自動【じどう】デプロイ用【よう】にCI/CDを設定【せってい】してください。,CI/CD,CI/CD
-パイプラインがテストステージで失敗しました。,The pipeline failed at the test stage.,パイプライン,パイプラインがテストステージで失敗【しっぱい】しました。,Pipeline,pipeline
-新しいビルドをトリガーしてください。,Trigger a new build.,トリガー,新【あたら】しいビルドをトリガーしてください。,Trigger,trigger
-ビルドアーティファクトを保存してください。,Store build artifacts.,アーティファクト,ビルドアーティファクトを保存【ほぞん】してください。,Artifact,artifact
-新しいリリースを作成してください。,Cut a new release.,リリース,新【あたら】しいリリースを作成【さくせい】してください。,Release,release
-ロールアウトを徐々に開始してください。,Start the rollout gradually.,ロールアウト,ロールアウトを徐々【じょじょ】に開始【かいし】してください。,Rollout,rollout
-前のバージョンにロールバックしてください。,Rollback to the previous version.,ロールバック,前【まえ】のバージョンにロールバックしてください。,Rollback,rollback
-ブルーグリーンデプロイメントを使ってください。,Use blue-green deployment.,ブルーグリーン,ブルーグリーンデプロイメントを使【つか】ってください。,Blue-green,blue-green
-まずカナリアリリースをしてください。,Do a canary release first.,カナリア,まずカナリアリリースをしてください。,Canary,canary
-フィーチャーフラグの後ろに隠してください。,Hide behind a feature flag.,フィーチャーフラグ,フィーチャーフラグの後【うし】ろに隠【かく】してください。,Feature flag,flag
-ロードバランサーの後ろに置いてください。,Put it behind a load balancer.,ロードバランサー,ロードバランサーの後【うし】ろに置【お】いてください。,Load balancer,load balancer
-トラフィックスパイク用にオートスケーリングを有効にしてください。,Enable auto-scaling for traffic spikes.,オートスケーリング,トラフィックスパイク用【よう】にオートスケーリングを有効【ゆうこう】にしてください。,Auto-scaling,auto-scaling
-インスタンスを追加して水平スケーリングしてください。,Scale horizontally by adding instances.,水平スケーリング,インスタンスを追加【ついか】して水平【すいへい】スケーリングしてください。,Horizontal scaling,scaling
-リソースを増やして垂直スケーリングしてください。,Scale vertically with more resources.,垂直スケーリング,リソースを増【ふ】やして垂直【すいちょく】スケーリングしてください。,Vertical scaling,scaling
-インスタンスをもっと起動してください。,Spin up more instances.,インスタンス,インスタンスをもっと起動【きどう】してください。,Instance,instance
-サーバープロビジョニングを自動化してください。,Automate server provisioning.,プロビジョニング,サーバープロビジョニングを自動化【じどうか】してください。,Provisioning,provisioning
-インフラストラクチャをコードとして管理してください。,Manage infrastructure as code.,インフラストラクチャ,インフラストラクチャをコードとして管理【かんり】してください。,Infrastructure,infrastructure
-IaCにはTerraformを使っています。,We use Terraform for IaC.,Terraform,IaCにはTerraformを使【つか】っています。,Terraform,Terraform (IaC)
-新しいリソース用にTerraformを書いてください。,Write Terraform for the new resources.,リソース,新【あたら】しいリソース用【よう】にTerraformを書【か】いてください。,Resource,resource
-AWSにはCloudFormationを使ってください。,Use CloudFormation for AWS.,CloudFormation,AWSにはCloudFormationを使【つか】ってください。,CloudFormation,CloudFormation (IaC)
-設定ファイルを更新してください。,Update the configuration file.,設定ファイル,設定【せってい】ファイルを更新【こうしん】してください。,Configuration,config file
-環境変数として設定してください。,Set it as an environment variable.,環境変数,環境【かんきょう】変数【へんすう】として設定【せってい】してください。,Environment variable,env variable
-.envファイルを確認してください。,.envファイルを確認してください。,.env,.envファイルを確認【かくにん】してください。,Env file,.env (environment)
-まずステージングにデプロイしてください。,Deploy to staging first.,ステージング,まずステージングにデプロイしてください。,Staging,staging
-これは本番で動作しています。,This is running in production.,本番,これは本番【ほんばん】で動作【どうさ】しています。,Production,production
-開発環境を使ってください。,Use the development environment.,開発環境,開発【かいはつ】環境【かんきょう】を使【つか】ってください。,Development,dev environment
-まずローカルで実行してください。,Run it locally first.,ローカル,まずローカルで実行【じっこう】してください。,Local,local
-リモートサーバーに接続してください。,Connect to the remote server.,リモート,リモートサーバーに接続【せつぞく】してください。,Remote,remote
-サーバーにSSHしてください。,SSH into the server.,SSH,サーバーにSSHしてください。,SSH,SSH
-VPN経由で接続してください。,Connect via VPN.,VPN,VPN経由【けいゆ】で接続【せつぞく】してください。,VPN,VPN
-ファイアウォールルールを確認してください。,Check the firewall rules.,ファイアウォール,ファイアウォールルールを確認【かくにん】してください。,Firewall,firewall
-セキュリティグループを更新してください。,Update the security group.,セキュリティグループ,セキュリティグループを更新【こうしん】してください。,Security group,security group
-リソースはプライベートVPCにあります。,Resources are in a private VPC.,VPC,リソースはプライベートVPCにあります。,VPC,VPC (network)
-EC2インスタンスで実行しています。,We run on EC2 instances.,EC2,EC2インスタンスで実行【じっこう】しています。,AWS compute,EC2 (compute)
-ファイルをS3に保存してください。,Store files in S3.,S3,ファイルをS3に保存【ほぞん】してください。,AWS storage,S3 (storage)
-サーバーレスにはLambdaを使ってください。,Use Lambda for serverless.,Lambda,サーバーレスにはLambdaを使【つか】ってください。,AWS serverless,Lambda (serverless)
-データベースはRDS上にあります。,The database is on RDS.,RDS,データベースはRDS上【じょう】にあります。,AWS database,RDS (database)
-NoSQLにはDynamoDBを使ってください。,Use DynamoDB for NoSQL.,DynamoDB,NoSQLにはDynamoDBを使【つか】ってください。,AWS NoSQL,DynamoDB (NoSQL)
-RedisにはElastiCacheを使ってください。,Use ElastiCache for Redis.,ElastiCache,RedisにはElastiCacheを使【つか】ってください。,AWS cache,ElastiCache
-CloudFront経由でアセットを配信してください。,Serve assets via CloudFront.,CloudFront,CloudFront経由【けいゆ】でアセットを配信【はいしん】してください。,AWS CDN,CloudFront (CDN)
-Route 53でDNSを設定してください。,Configure DNS in Route 53.,Route 53,Route 53でDNSを設定【せってい】してください。,AWS DNS,Route 53
-LambdaをAPI Gatewayの後ろに置いてください。,Put the Lambda behind API Gateway.,API Gateway,LambdaをAPI Gatewayの後【うし】ろに置【お】いてください。,AWS API,API Gateway
-メッセージキューにはSQSを使ってください。,Use SQS for message queues.,SQS,メッセージキューにはSQSを使【つか】ってください。,AWS queue,SQS (queue)
-SNS経由で通知を送信してください。,Send notifications via SNS.,SNS,SNS経由【けいゆ】で通知【つうち】を送信【そうしん】してください。,AWS notifications,SNS (notifications)
-コンテナをECSにデプロイしています。,We deploy containers to ECS.,ECS,コンテナをECSにデプロイしています。,AWS containers,ECS (containers)
-マネージドKubernetesにはEKSを使ってください。,Use EKS for managed Kubernetes.,EKS,マネージドKubernetesにはEKSを使【つか】ってください。,AWS Kubernetes,EKS (Kubernetes)
-Fargateサーバーレスで実行してください。,Run on Fargate serverless.,Fargate,Fargateサーバーレスで実行【じっこう】してください。,AWS serverless containers,Fargate (serverless containers)
-このためにIAMロールを作成してください。,Create an IAM role for this.,IAM,このためにIAMロールを作成【さくせい】してください。,AWS identity,IAM (permissions)
-適切なIAMポリシーを付与してください。,Attach the right IAM policy.,ポリシー,適切【てきせつ】なIAMポリシーを付与【ふよ】してください。,AWS policy,policy
-アクセスのためにロールを引き受けてください。,Assume the role for access.,ロール,アクセスのためにロールを引【ひ】き受【う】けてください。,AWS role,role
-S3にアクセスするには権限が必要です。,You need permission to access S3.,権限,S3にアクセスするには権限【けんげん】が必要【ひつよう】です。,AWS permission,permission
-ログはCloudWatchで確認してください。,Check CloudWatch for logs.,CloudWatch,ログはCloudWatchで確認【かくにん】してください。,AWS logging,CloudWatch (monitoring)
-CloudWatchアラームを設定してください。,Set up CloudWatch alarms.,アラーム,CloudWatchアラームを設定【せってい】してください。,AWS alarm,alarm
-カスタムメトリクスを追跡してください。,Track custom metrics.,メトリクス,カスタムメトリクスを追跡【ついせき】してください。,AWS metrics,metrics
-CloudWatchでロググループを探してください。,Find the log group in CloudWatch.,ロググループ,CloudWatchでロググループを探【さが】してください。,AWS log group,loop
-トレーシングにはX-Rayを使ってください。,Use X-Ray for tracing.,X-Ray,トレーシングにはX-Rayを使【つか】ってください。,AWS tracing,X-Ray
-トラフィックはALBを通ります。,Traffic goes through the ALB.,ALB,トラフィックはALBを通【とお】ります。,AWS load balancer,ALB (load balancer)
-TCPトラフィックにはNLBを使ってください。,Use NLB for TCP traffic.,NLB,TCPトラフィックにはNLBを使【つか】ってください。,AWS network LB,NLB (network LB)
-ターゲットグループにインスタンスを登録してください。,Register instances in target group.,ターゲットグループ,ターゲットグループにインスタンスを登録【とうろく】してください。,AWS target group,loop
-ヘルスチェックエンドポイントを設定してください。,Configure the health check endpoint.,ヘルスチェック,ヘルスチェックエンドポイントを設定【せってい】してください。,AWS health check,health check
-複数のAZにデプロイしてください。,Deploy across multiple AZs.,アベイラビリティゾーン,複数【ふくすう】のAZにデプロイしてください。,AWS availability zone,availability zone
-これはどのリージョンにありますか？,Which region is this in?,リージョン,これはどのリージョンにありますか？,AWS region,region
-プライベートサブネットに配置してください。,Put it in the private subnet.,サブネット,プライベートサブネットに配置【はいち】してください。,AWS subnet,subnet
-NATゲートウェイ経由でルーティングしてください。,Route through NAT gateway.,NATゲートウェイ,NATゲートウェイ経由【けいゆ】でルーティングしてください。,AWS NAT,NAT gateway
-インターネットゲートウェイを接続してください。,Attach an internet gateway.,インターネットゲートウェイ,インターネットゲートウェイを接続【せつぞく】してください。,AWS internet gateway,gateway
-EBSボリュームを接続してください。,Attach an EBS volume.,EBS,EBSボリュームを接続【せつぞく】してください。,AWS storage,EBS (block storage)
-変更前にスナップショットを取ってください。,Take a snapshot before changes.,スナップショット,変更【へんこう】前【まえ】にスナップショットを取【と】ってください。,AWS snapshot,snapshot
-このインスタンスからAMIを作成してください。,Create an AMI from this instance.,AMI,このインスタンスからAMIを作成【さくせい】してください。,AWS image,AMI (image)
-シークレットはSecrets Managerに保存してください。,Store secrets in Secrets Manager.,Secrets Manager,シークレットはSecrets Managerに保存【ほぞん】してください。,AWS secrets,Secret
-設定にはParameter Storeを使ってください。,Use Parameter Store for configs.,パラメータストア,設定【せってい】にはParameter Storeを使【つか】ってください。,AWS config,parameter
-KMSで暗号化してください。,Encrypt with KMS.,KMS,KMSで暗号化【あんごうか】してください。,AWS encryption,KMS (encryption)
-ユーザー認証にはCognitoを使ってください。,Use Cognito for user auth.,Cognito,ユーザー認証【にんしょう】にはCognitoを使【つか】ってください。,AWS auth,Cognito (auth)
-Step Functionsでオーケストレーションしてください。,Orchestrate with Step Functions.,Step Functions,Step Functionsでオーケストレーションしてください。,AWS workflow,Step Functions
-EventBridge経由でLambdaをトリガーしてください。,Trigger Lambda via EventBridge.,EventBridge,EventBridge経由【けいゆ】でLambdaをトリガーしてください。,AWS events,EventBridge (events)
-Kinesis経由でデータをストリーミングしてください。,Stream data through Kinesis.,Kinesis,Kinesis経由【けいゆ】でデータをストリーミングしてください。,AWS streaming,Kinesis (streaming)
-データウェアハウスにはRedshiftを使ってください。,Use Redshift for data warehouse.,Redshift,データウェアハウスにはRedshiftを使【つか】ってください。,AWS data warehouse,Redshift (data warehouse)
-AthenaでS3データをクエリしてください。,Query S3 data with Athena.,Athena,AthenaでS3データをクエリしてください。,AWS query,Athena (query)
-ETLジョブにはGlueを使ってください。,Use Glue for ETL jobs.,Glue,ETLジョブにはGlueを使【つか】ってください。,AWS ETL,Glue (ETL)
-CodeBuildでビルドしてください。,Build with CodeBuild.,CodeBuild,CodeBuildでビルドしてください。,AWS build,CodeBuild
-CodeDeployでデプロイしてください。,Deploy with CodeDeploy.,CodeDeploy,CodeDeployでデプロイしてください。,AWS deploy,CodeDeploy
-CI/CD用にCodePipelineを設定してください。,Set up CodePipeline for CI/CD.,CodePipeline,CI/CD用【よう】にCodePipelineを設定【せってい】してください。,AWS pipeline,CodePipeline
-監査ログはCloudTrailで確認してください。,Check CloudTrail for audit logs.,CloudTrail,監査【かんさ】ログはCloudTrailで確認【かくにん】してください。,AWS audit,CloudTrail (audit)
-Cost Explorerでコストを確認してください。,Review costs in Cost Explorer.,Cost Explorer,Cost Explorerでコストを確認【かくにん】してください。,AWS cost,Cost Explorer
-パフォーマンスを改善する必要があります。,We need to improve performance.,パフォーマンス,パフォーマンスを改善【かいぜん】する必要【ひつよう】があります。,Performance,performance
-このクエリを最適化してください。,Optimize this query.,最適化,このクエリを最適化【さいてきか】してください。,Optimization,optimize
-ページの読み込みが遅いです。,The page load is slow.,遅い,ページの読【よ】み込【こ】みが遅【おそ】いです。,Slow,slow
-APIを速くしてください。,Make the API fast.,速い,APIを速【はや】くしてください。,Fast,fast
-レイテンシーを削減してください。,Reduce the latency.,レイテンシー,レイテンシーを削減【さくげん】してください。,Latency,latency
-レスポンスタイムは200ms以下にしてください。,Response time should be under 200ms.,レスポンスタイム,レスポンスタイムは200ms以下【いか】にしてください。,Response time,response time
-スループットを向上させてください。,Increase throughput.,スループット,スループットを向上【こうじょう】させてください。,Throughput,throughput
-データベースがボトルネックです。,The database is the bottleneck.,ボトルネック,データベースがボトルネックです。,Bottleneck,bottleneck
-問題を見つけるためにコードをプロファイルしてください。,Profile the code to find issues.,プロファイル,問題【もんだい】を見【み】つけるためにコードをプロファイルしてください。,Profile,profile
-変更前後でベンチマークを実行してください。,Run benchmarks before and after.,ベンチマーク,変更【へんこう】前後【ぜんご】でベンチマークを実行【じっこう】してください。,Benchmark,benchmark
-このメトリクスを追跡してください。,Track this metric.,メトリクス,このメトリクスを追跡【ついせき】してください。,Metric,metrics
-モニタリングダッシュボードを確認してください。,Check the monitoring dashboard.,ダッシュボード,モニタリングダッシュボードを確認【かくにん】してください。,Dashboard,dashboard
-エラー用にアラートを設定してください。,Set up an alert for errors.,アラート,エラー用【よう】にアラートを設定【せってい】してください。,Alert,alert
-閾値を超えたらアラートを出してください。,Alert when above threshold.,閾値,閾値【しきいち】を超【こ】えたらアラートを出【だ】してください。,Threshold,threshold
-サービスを注意深くモニターしてください。,Monitor the service closely.,モニター,サービスを注意深【ちゅういぶか】くモニターしてください。,Monitor,monitor
-可観測性を改善してください。,Improve observability.,可観測性,可観測性【かかんそくせい】を改善【かいぜん】してください。,Observability,observability
-ロギングを追加してください。,Add more logging.,ロギング,ロギングを追加【ついか】してください。,Logging,logging
-分散トレーシングを使ってください。,Use distributed tracing.,トレーシング,分散【ぶんさん】トレーシングを使【つか】ってください。,Tracing,tracing
-各リクエストはトレーススパンを作成します。,Each request creates a trace span.,スパン,各【かく】リクエストはトレーススパンを作成【さくせい】します。,Span,span
-ログでトレースIDを探してください。,Find the trace ID in logs.,トレースID,ログでトレースIDを探【さが】してください。,Trace ID,trace
-インサイトのためにAPMを確認してください。,Check the APM for insights.,APM,インサイトのためにAPMを確認【かくにん】してください。,APM,APM (performance)
-メトリクスをDatadogに送信してください。,Send metrics to Datadog.,Datadog,メトリクスをDatadogに送信【そうしん】してください。,Datadog,Datadog
-APMにはNew Relicを使ってください。,Use New Relic for APM.,New Relic,APMにはNew Relicを使【つか】ってください。,New Relic,New Relic
-Splunkでログを検索してください。,Search logs in Splunk.,Splunk,Splunkでログを検索【けんさく】してください。,Splunk,Splunk
-Grafanaでダッシュボードを作成してください。,Build dashboards in Grafana.,Grafana,Grafanaでダッシュボードを作成【さくせい】してください。,Grafana,Grafana
-Prometheusでメトリクスを収集してください。,Scrape metrics with Prometheus.,Prometheus,Prometheusでメトリクスを収集【しゅうしゅう】してください。,Prometheus,Prometheus
-ヘルスチェックが失敗しました。,The health check failed.,ヘルスチェック,ヘルスチェックが失敗【しっぱい】しました。,Health check,health check
-99.9%のアップタイムを維持してください。,Maintain 99.9% uptime.,アップタイム,99.9%のアップタイムを維持【いじ】してください。,Uptime,uptime
-5分間のダウンタイムがありました。,We had 5 minutes of downtime.,ダウンタイム,5分間【ふんかん】のダウンタイムがありました。,Downtime,downtime
-99.9%のSLAがあります。,We have a 99.9% SLA.,SLA,99.9%のSLAがあります。,SLA,SLA
-サービスのSLOを定義してください。,Define SLOs for the service.,SLO,サービスのSLOを定義【ていぎ】してください。,SLO,SLO
-信頼性のためにSLIを追跡してください。,Track SLIs for reliability.,SLI,信頼性【しんらいせい】のためにSLIを追跡【ついせき】してください。,SLI,SLI
-エラー率が高すぎます。,The error rate is too high.,エラー率,エラー率【りつ】が高【たか】すぎます。,Error rate,error
-成功率が95%に低下しました。,Success rate dropped to 95%.,成功率,成功率【せいこうりつ】が95%に低下【ていか】しました。,Success rate,success rate
-P99レイテンシーは500msです。,P99 latency is 500ms.,パーセンタイル,P99レイテンシーは500msです。,P99,percentile
-99パーセンタイルを確認してください。,Look at the 99th percentile.,パーセンタイル,99パーセンタイルを確認【かくにん】してください。,Percentile,percentile
-平均レスポンスタイムは100msです。,Average response time is 100ms.,平均,平均【へいきん】レスポンスタイムは100msです。,Average,average
-トラフィックスパイクがありました。,There was a traffic spike.,スパイク,トラフィックスパイクがありました。,Spike,spike
-昨夜インシデントがありました。,We had an incident last night.,インシデント,昨夜【さくや】インシデントがありました。,Incident,incident
-障害は30分続きました。,The outage lasted 30 minutes.,障害,障害【しょうがい】は30分【ぷん】続【つづ】きました。,Outage,incident/failure
-インシデントのポストモーテムを書いてください。,Write a postmortem for the incident.,ポストモーテム,インシデントのポストモーテムを書【か】いてください。,Postmortem,postmortem
-根本原因分析を行ってください。,Do a root cause analysis.,根本原因分析,根本【こんぽん】原因【げんいん】分析【ぶんせき】を行【おこな】ってください。,Root cause analysis,root cause
-今週はオンコールです。,I'm on-call this week.,オンコール,今週【こんしゅう】はオンコールです。,On-call,on-call
-午前3時にページングされました。,I got paged at 3am.,ページング,午前【ごぜん】3時【じ】にページングされました。,Paging,pagination
-シニアエンジニアにエスカレーションしてください。,Escalate to the senior engineer.,エスカレーション,シニアエンジニアにエスカレーションしてください。,Escalation,escalation
-ランブックに従ってください。,Follow the runbook.,ランブック,ランブックに従【したが】ってください。,Runbook,runbook
-インシデントプレイブックを確認してください。,Check the incident playbook.,プレイブック,インシデントプレイブックを確認【かくにん】してください。,Playbook,playbook
-問題を迅速に修復してください。,Remediate the issue quickly.,修復,問題【もんだい】を迅速【じんそく】に修復【しゅうふく】してください。,Remediate,repair
-まず影響を軽減してください。,Mitigate the impact first.,軽減,まず影響【えいきょう】を軽減【けいげん】してください。,Mitigate,reduce
-復旧に2時間かかりました。,Recovery took 2 hours.,復旧,復旧【ふっきゅう】に2時間【じかん】かかりました。,Recover,recovery
+問題なし！リリースOK。,LGTM! Ship it.,問題なし,問題【もんだい】なし！リリースOK。,Code Review - Approval,no problem
+この変数の名前変更を検討してください。,Nit: consider renaming this variable.,検討,この変数【へんすう】の名前【なまえ】変更【へんこう】を検討【けんとう】してください。,Code Review - Nit,consider
+ここにコメントを追加してください。,Minor: add a comment here.,軽微,ここにコメントを追加【ついか】してください。,Code Review - Minor,minor
+これはメモリリークを引き起こします。,Major: this will cause a memory leak.,重大,これはメモリリークを引【ひ】き起【お】こします。,Code Review - Major,serious
+まずセキュリティの問題を修正してください。,Blocker: fix the security issue first.,セキュリティ,まずセキュリティの問題【もんだい】を修正【しゅうせい】してください。,Code Review - Security,security
+配列の代わりにマップを使うことを提案します。,Suggestion: use a map instead of array.,提案,配列【はいれつ】の代【か】わりにマップを使【つか】うことを提案【ていあん】します。,Code Review - Suggestion,propose
+なぜこのアプローチを選んだのですか？,Question: why did you choose this approach?,アプローチ,なぜこのアプローチを選【えら】んだのですか？,Communication - Question,approach
+パフォーマンスについて懸念があります。,I have a concern about performance.,懸念,パフォーマンスについて懸念【けねん】があります。,Communication - Concern,concern
+ここで定数を使うことを検討してください。,Consider using a constant here.,定数,ここで定数【ていすう】を使【つか】うことを検討【けんとう】してください。,Code Review - Suggestion,constant
+代わりに再帰を使うこともできます。,Alternatively we could use recursion.,再帰,代【か】わりに再帰【さいき】を使【つか】うこともできます。,Code Review - Alternative,recursive
+エラーハンドリングを追加してください。任意です。,Optional: add more error handling.,任意,エラーハンドリングを追加【ついか】してください。任意【にんい】です。,Code Review - Optional,optional
+この変更にはテストを追加してください。必須です。,Required: add tests for this change.,必須,この変更【へんこう】にはテストを追加【ついか】してください。必須【ひっす】です。,Code Review - Required,required
+最新のコミットで対応しました。,Addressed in the latest commit.,対応,最新【さいしん】のコミットで対応【たいおう】しました。,Code Review - Addressed,handle/respond
+解決済みとしてマークしました。,Marked as resolved.,解決済み,解決済【かいけつず】みとしてマークしました。,Code Review - Resolved,resolved
+このコメントは古くなっています。,This comment is outdated.,古く,このコメントは古【ふる】くなっています。,Code Review - Outdated,old
+このPRは古くなっています。更新してください。,"This PR is stale, please update.",古く,このPRは古【ふる】くなっています。更新【こうしん】してください。,Code Review - Stale,old
+いくつかの変更を依頼しました。,I requested some changes.,変更を依頼,いくつかの変更【へんこう】を依頼【いらい】しました。,Code Review - Changes Requested,request change
+PRは承認されました。,Your PR is approved.,承認,PRは承認【しょうにん】されました。,Code Review - Approved,approve
+CIが通ったらマージできます。,You can merge after CI passes.,マージ,CIが通【とお】ったらマージできます。,Git - Merge,merge
+スカッシュしてマージしてください。,Squash and merge please.,スカッシュ,スカッシュしてマージしてください。,Git - Squash,squash
+mainにリベースしてください。,Please rebase on main.,リベース,mainにリベースしてください。,Git - Rebase,rebase
+まずマージコンフリクトを解決してください。,Resolve the merge conflicts first.,コンフリクト,まずマージコンフリクトを解決【かいけつ】してください。,Git - Conflict,conflict
+差分がレビューしにくいです。,The diff is hard to review.,差分,差分【さぶん】がレビューしにくいです。,Git - Diff,diff
+このコードはとても読みやすいです。,This code is very readable.,読みやすい,このコードはとても読【よ】みやすいです。,Code Quality - Readability,readable
+きれいな実装ですね。,Nice clean implementation.,きれい,きれいな実装【じっそう】ですね。,Data - Cleansing,clean/nice
+エレガントな解決策ですね。,That's an elegant solution.,エレガント,エレガントな解決策【かいけつさく】ですね。,Code Quality - Clean,elegant
+これは少しハッキーな感じがします。,This feels a bit hacky.,ハッキー,これは少【すこ】しハッキーな感【かん】じがします。,Code Quality - Technical Debt,hacky
+マジックナンバーを避けて定数を使ってください。,Avoid magic numbers use constants.,マジックナンバー,マジックナンバーを避【さ】けて定数【ていすう】を使【つか】ってください。,Code Quality - Anti-Pattern,magic number
+URLをハードコードしないでください。,Don't hardcode the URL.,ハードコード,URLをハードコードしないでください。,Code Quality - Anti-Pattern,hardcode
+ここにコードの重複があります。,There's some code duplication here.,重複,ここにコードの重複【じゅうふく】があります。,Code Quality - Dry,duplicate
+これをDRYにしましょう。,Let's DRY this up.,DRY,これをDRYにしましょう。,Code Quality - Dry,DRY (don't repeat)
+このメソッドのリファクタリングを検討してください。,Consider refactoring this method.,リファクタリング,このメソッドのリファクタリングを検討【けんとう】してください。,Code Quality - Refactoring,refactoring
+これを別の関数に抽出してください。,Extract this into a separate function.,抽出,これを別【べつ】の関数【かんすう】に抽出【ちゅうしゅつ】してください。,Data - Etl,extract
+この変数はインライン化できます。,You can inline this variable.,インライン,この変数【へんすう】はインライン化【か】できます。,Code Quality - Refactoring,inline
+より説明的な名前にリネームしてください。,Rename to be more descriptive.,リネーム,より説明的【せつめいてき】な名前【なまえ】にリネームしてください。,Code Quality - Refactoring,rename
+このロジックを簡略化できます。,We can simplify this logic.,簡略化,このロジックを簡略化【かんりゃくか】できます。,Code Quality - Refactoring,simplify
+これが何をするか明確にしてもらえますか？,Can you clarify what this does?,明確に,これが何【なに】をするか明確【めいかく】にしてもらえますか？,Communication - Clarification,clear
+この関数をドキュメント化してください。,Please document this function.,ドキュメント化,この関数【かんすう】をドキュメント化【か】してください。,Code Quality - Documentation,document
+理由を説明するコメントを追加してください。,Add a comment explaining why.,コメント,理由【りゆう】を説明【せつめい】するコメントを追加【ついか】してください。,Code Quality - Documentation,comment
+将来のクリーンアップのためにTODOを残してください。,Leave a TODO for future cleanup.,TODO,将来【しょうらい】のクリーンアップのためにTODOを残【のこ】してください。,Code Quality - Todo,TODO
+既知の問題にFIXMEを追加してください。,Add FIXME for known issues.,FIXME,既知【きち】の問題【もんだい】にFIXMEを追加【ついか】してください。,Code Quality - Fixme,FIXME
+これは技術的負債を増やします。,This adds technical debt.,技術的負債,これは技術的【ぎじゅつてき】負債【ふさい】を増【ふ】やします。,Code Quality - Technical Debt,tech debt
+ここでのトレードオフは何ですか？,What's the tradeoff here?,トレードオフ,ここでのトレードオフは何【なん】ですか？,Architecture - Tradeoff,trade-off
+パフォーマンスの懸念はありますか？,Any performance concerns?,パフォーマンス,パフォーマンスの懸念【けねん】はありますか？,Performance - General,performance
+セキュリティリスクはありますか？,Is there a security risk?,セキュリティリスク,セキュリティリスクはありますか？,Security - General,risk
+エッジケースはどうですか？,What about edge cases?,エッジケース,エッジケースはどうですか？,Testing - Edge Case,edge case
+ここにnullチェックを追加してください。,Add a null check here.,nullチェック,ここにnullチェックを追加【ついか】してください。,Code Quality - Validation,null check
+エラーハンドリングを改善してください。,Improve error handling.,エラーハンドリング,エラーハンドリングを改善【かいぜん】してください。,Code Quality - Error Handling,error handling
+これは型安全性を向上させます。,This improves type safety.,型安全性,これは型【かた】安全性【あんぜんせい】を向上【こうじょう】させます。,Code Quality - Type Safety,type safe
+これはベストプラクティスに従っています。,This follows best practices.,ベストプラクティス,これはベストプラクティスに従【したが】っています。,Code Quality - Best Practice,best practice
+まずアーキテクチャについて話し合いましょう。,Let's discuss the architecture first.,アーキテクチャ,まずアーキテクチャについて話【はな】し合【あ】いましょう。,Architecture - General,architecture
+設計にはもっと検討が必要です。,The design needs more thought.,設計,設計【せっけい】にはもっと検討【けんとう】が必要【ひつよう】です。,Architecture - Design,design
+ここでリポジトリパターンを使ってください。,Use the repository pattern here.,パターン,ここでリポジトリパターンを使【つか】ってください。,Architecture - Pattern,pattern
+これを小さなコンポーネントに分割してください。,Break this into smaller components.,コンポーネント,これを小【ちい】さなコンポーネントに分割【ぶんかつ】してください。,Architecture - Component,component
+このロジック用にサービスを作成してください。,Create a service for this logic.,サービス,このロジック用【よう】にサービスを作成【さくせい】してください。,Architecture - Service,service
+コントローラーはHTTPリクエストを処理します。,The controller handles HTTP requests.,コントローラー,コントローラーはHTTPリクエストを処理【しょり】します。,Architecture - Layer,controller
+認証用にミドルウェアを追加してください。,Add middleware for authentication.,ミドルウェア,認証【にんしょう】用【よう】にミドルウェアを追加【ついか】してください。,Architecture - Middleware,middleware
+データアクセス層を分離してください。,Keep the data access layer separate.,レイヤー,データアクセス層【そう】を分離【ぶんり】してください。,Architecture - Layer,layer
+まずインターフェースを定義してください。,Define an interface first.,インターフェース,まずインターフェースを定義【ていぎ】してください。,Architecture - Interface,interface
+この抽象化は複雑すぎます。,This abstraction is too complex.,抽象化,この抽象化【ちゅうしょうか】は複雑【ふくざつ】すぎます。,Architecture - Abstraction,abstraction
+実装の詳細をカプセル化してください。,Encapsulate the implementation details.,カプセル化,実装【じっそう】の詳細【しょうさい】をカプセル化【か】してください。,Architecture - Encapsulation,encapsulation
+継承より合成を優先してください。,Prefer composition over inheritance.,継承,継承【けいしょう】より合成【ごうせい】を優先【ゆうせん】してください。,Architecture - Inheritance,inherit
+柔軟性のために合成を使ってください。,Use composition for flexibility.,合成,柔軟性【じゅうなんせい】のために合成【ごうせい】を使【つか】ってください。,Architecture - Composition,composition
+テストのために依存性注入を使ってください。,Use dependency injection for testing.,依存性注入,テストのために依存性【いぞんせい】注入【ちゅうにゅう】を使【つか】ってください。,Architecture - Di,DI
+これをシングルトンにしてください。,Make this a singleton.,シングルトン,これをシングルトンにしてください。,Architecture - Pattern,singleton
+インスタンスを作成するためにファクトリーを使ってください。,Use a factory to create instances.,ファクトリー,インスタンスを作成【さくせい】するためにファクトリーを使【つか】ってください。,Architecture - Pattern,factory
+オブザーバーパターンを実装してください。,Implement the observer pattern.,オブザーバー,オブザーバーパターンを実装【じっそう】してください。,Architecture - Pattern,observer
+MVCアーキテクチャに従っています。,We follow MVC architecture.,MVC,MVCアーキテクチャに従【したが】っています。,Architecture - Mvc,MVC (pattern)
+マイクロサービスに移行しています。,We're migrating to microservices.,マイクロサービス,マイクロサービスに移行【いこう】しています。,Architecture - Microservices,microservices
+モノリスは保守が難しいです。,The monolith is hard to maintain.,モノリス,モノリスは保守【ほしゅ】が難【むずか】しいです。,Architecture - Monolith,monolith
+コードをモジュラーに保ってください。,Keep the code modular.,モジュラー,コードをモジュラーに保【たも】ってください。,Architecture - Modular,modular
+これはスケーラブルである必要があります。,This needs to be scalable.,スケーラブル,これはスケーラブルである必要【ひつよう】があります。,Architecture - Scalability,scalable
+保守可能なコードを書いてください。,Write maintainable code.,保守可能,保守【ほしゅ】可能【かのう】なコードを書【か】いてください。,Code Quality - Maintainability,maintainable
+将来のニーズのために拡張可能にしてください。,Make it extensible for future needs.,拡張可能,将来【しょうらい】のニーズのために拡張【かくちょう】可能【かのう】にしてください。,Architecture - Extensibility,extensible
+このコンポーネントは再利用可能です。,This component is reusable.,再利用可能,このコンポーネントは再利用【さいりよう】可能【かのう】です。,Architecture - Reusability,reuse
+この設計はよりテスト可能です。,This design is more testable.,テスト可能,この設計【せっけい】はよりテスト可能【かのう】です。,Architecture - Testability,test
+サービスを疎結合に保ってください。,Keep services loosely coupled.,疎結合,サービスを疎結合【そけつごう】に保【たも】ってください。,Architecture - Coupling,loose coupling
+これらのモジュールは密結合すぎます。,These modules are too tightly coupled.,密結合,これらのモジュールは密結合【みつけつごう】すぎます。,Architecture - Coupling,tight coupling
+高凝集度は良いことです。,High cohesion is good.,凝集度,高【たか】凝集度【ぎょうしゅうど】は良【よ】いことです。,Architecture - Cohesion,cohesion
+低結合度が望ましいです。,Low coupling is preferred.,結合度,低【ひく】結合度【けつごうど】が望【のぞ】ましいです。,Architecture - Coupling,coupling
+関心の分離に従ってください。,Follow separation of concerns.,関心の分離,関心【かんしん】の分離【ぶんり】に従【したが】ってください。,Architecture - Soc,separation of concerns
+各クラスは単一責任を持ちます。,Each class has single responsibility.,単一責任,各【かく】クラスは単一【たんいつ】責任【せきにん】を持【も】ちます。,Architecture - Solid,single responsibility
+SOLID原則を適用してください。,Apply SOLID principles.,SOLID,SOLID原則【げんそく】を適用【てきよう】してください。,Architecture - Solid,SOLID (principles)
+自分を繰り返さないでください。,Don't repeat yourself.,繰り返さない,自分【じぶん】を繰【く】り返【かえ】さないでください。,Code Quality - Dry,don't repeat
+シンプルに保ってください。,Keep it simple stupid.,シンプル,シンプルに保【たも】ってください。,Code Quality - Kiss,simple
+必要になるまで作らないでください。,You aren't gonna need it.,必要になるまで,必要【ひつよう】になるまで作【つく】らないでください。,Code Quality - Yagni,until needed
+技術スタックは何ですか？,What's your tech stack?,技術スタック,技術【ぎじゅつ】スタックは何【なん】ですか？,Architecture - Stack,stack
+どのフレームワークを使っていますか？,Which framework do you use?,フレームワーク,どのフレームワークを使【つか】っていますか？,Architecture - Framework,framework
+既存のライブラリを使ってください。,Use an existing library.,ライブラリ,既存【きそん】のライブラリを使【つか】ってください。,Architecture - Library,library
+公式SDKを使ってください。,Use the official SDK.,SDK,公式【こうしき】SDKを使【つか】ってください。,Architecture - Sdk,SDK
+API設計をレビューしましょう。,Let's review the API design.,API設計,API設計【せっけい】をレビューしましょう。,Api - Design,API design
+まずAPIコントラクトを定義してください。,Define the API contract first.,コントラクト,まずAPIコントラクトを定義【ていぎ】してください。,Api - Contract,contract
+APIバージョニングはどう処理していますか？,How do you handle API versioning?,バージョニング,APIバージョニングはどう処理【しょり】していますか？,Api - Versioning,versioning
+この変更は後方互換性があります。,This change is backward compatible.,後方互換性,この変更【へんこう】は後方【こうほう】互換性【ごかんせい】があります。,Api - Compatibility,compatibility
+これは破壊的変更です。,This is a breaking change.,破壊的変更,これは破壊的【はかいてき】変更【へんこう】です。,Api - Breaking Change,breaking change
+古いエンドポイントを非推奨にしてください。,Deprecate the old endpoint.,非推奨,古【ふる】いエンドポイントを非推奨【ひすいしょう】にしてください。,Api - Deprecation,deprecated
+このAPIは来年サンセットします。,We'll sunset this API next year.,サンセット,このAPIは来年【らいねん】サンセットします。,Api - Sunset,sunset
+マイグレーションを慎重に計画してください。,Plan the migration carefully.,計画,マイグレーションを慎重【しんちょう】に計画【けいかく】してください。,Workflow - Planning,plan
+これはレガシーコードです。,This is legacy code.,レガシー,これはレガシーコードです。,Architecture - Legacy,legacy
+これはグリーンフィールドプロジェクトです。,This is a greenfield project.,グリーンフィールド,これはグリーンフィールドプロジェクトです。,Architecture - Greenfield,greenfield
+サーバーはAWSで動作しています。,The server is running on AWS.,サーバー,サーバーはAWSで動作【どうさ】しています。,Infrastructure - Server,server
+クライアントはAPIリクエストを行います。,The client makes API requests.,クライアント,クライアントはAPIリクエストを行【おこな】います。,Infrastructure - Client,client
+コンテナを使ってデプロイしてください。,Deploy using containers.,コンテナ,コンテナを使【つか】ってデプロイしてください。,Cloud - Container,container
+このためにDockerfileを作成してください。,Create a Dockerfile for this.,Dockerfile,このためにDockerfileを作成【さくせい】してください。,Cloud - Docker,Dockerfile
+新しいDockerイメージをビルドしてください。,Build a new Docker image.,イメージ,新【あたら】しいDockerイメージをビルドしてください。,Cloud - Docker,image
+Kubernetesで実行しています。,We run on Kubernetes.,Kubernetes,Kubernetesで実行【じっこう】しています。,Cloud - Kubernetes,Kubernetes
+K8sクラスターにデプロイしてください。,Deploy to K8s cluster.,K8s,K8sクラスターにデプロイしてください。,Cloud - Kubernetes,K8s
+ポッドがクラッシュし続けています。,The pod keeps crashing.,ポッド,ポッドがクラッシュし続【つづ】けています。,Cloud - Kubernetes,pod
+クラスターにノードを追加してください。,Add more nodes to the cluster.,ノード,クラスターにノードを追加【ついか】してください。,Cloud - Kubernetes,node
+クラスターは容量いっぱいです。,The cluster is at capacity.,クラスター,クラスターは容量【ようりょう】いっぱいです。,Cloud - Kubernetes,cluster
+新しいデプロイメントを作成してください。,Create a new deployment.,デプロイメント,新【あたら】しいデプロイメントを作成【さくせい】してください。,Cloud - Kubernetes,deployment
+ポッドをサービスとして公開してください。,Expose the pod as a service.,公開,ポッドをサービスとして公開【こうかい】してください。,Cloud - Kubernetes,public
+外部アクセス用にイングレスを設定してください。,Configure ingress for external access.,イングレス,外部【がいぶ】アクセス用【よう】にイングレスを設定【せってい】してください。,Cloud - Kubernetes,ingress
+ステージング名前空間にデプロイしてください。,Deploy to the staging namespace.,名前空間,ステージング名前空間【なまえくうかん】にデプロイしてください。,Cloud - Kubernetes,namespace
+設定をConfigMapに保存してください。,Store configs in a ConfigMap.,ConfigMap,設定【せってい】をConfigMapに保存【ほぞん】してください。,Cloud - Kubernetes,ConfigMap
+機密データはSecretsに保存してください。,Store sensitive data in Secrets.,Secrets,機密【きみつ】データはSecretsに保存【ほぞん】してください。,Cloud - Kubernetes,Secret
+永続化のためにボリュームをマウントしてください。,Mount a volume for persistence.,ボリューム,永続化【えいぞくか】のためにボリュームをマウントしてください。,Cloud - Storage,volume
+自動デプロイ用にCI/CDを設定してください。,Set up CI/CD for automated deploys.,CI/CD,自動【じどう】デプロイ用【よう】にCI/CDを設定【せってい】してください。,Devops - Ci/Cd,CI/CD
+パイプラインがテストステージで失敗しました。,The pipeline failed at the test stage.,パイプライン,パイプラインがテストステージで失敗【しっぱい】しました。,Devops - Pipeline,pipeline
+新しいビルドをトリガーしてください。,Trigger a new build.,トリガー,新【あたら】しいビルドをトリガーしてください。,Devops - Trigger,trigger
+ビルドアーティファクトを保存してください。,Store build artifacts.,アーティファクト,ビルドアーティファクトを保存【ほぞん】してください。,Devops - Artifact,artifact
+新しいリリースを作成してください。,Cut a new release.,リリース,新【あたら】しいリリースを作成【さくせい】してください。,Devops - Release,release
+ロールアウトを徐々に開始してください。,Start the rollout gradually.,ロールアウト,ロールアウトを徐々【じょじょ】に開始【かいし】してください。,Devops - Rollout,rollout
+前のバージョンにロールバックしてください。,Rollback to the previous version.,ロールバック,前【まえ】のバージョンにロールバックしてください。,Devops - Rollback,rollback
+ブルーグリーンデプロイメントを使ってください。,Use blue-green deployment.,ブルーグリーン,ブルーグリーンデプロイメントを使【つか】ってください。,Devops - Blue-Green,blue-green
+まずカナリアリリースをしてください。,Do a canary release first.,カナリア,まずカナリアリリースをしてください。,Devops - Canary,canary
+フィーチャーフラグの後ろに隠してください。,Hide behind a feature flag.,フィーチャーフラグ,フィーチャーフラグの後【うし】ろに隠【かく】してください。,Devops - Feature Flag,flag
+ロードバランサーの後ろに置いてください。,Put it behind a load balancer.,ロードバランサー,ロードバランサーの後【うし】ろに置【お】いてください。,Infrastructure - Load Balancer,load balancer
+トラフィックスパイク用にオートスケーリングを有効にしてください。,Enable auto-scaling for traffic spikes.,オートスケーリング,トラフィックスパイク用【よう】にオートスケーリングを有効【ゆうこう】にしてください。,Infrastructure - Auto-Scaling,auto-scaling
+インスタンスを追加して水平スケーリングしてください。,Scale horizontally by adding instances.,水平スケーリング,インスタンスを追加【ついか】して水平【すいへい】スケーリングしてください。,Infrastructure - Scaling,scaling
+リソースを増やして垂直スケーリングしてください。,Scale vertically with more resources.,垂直スケーリング,リソースを増【ふ】やして垂直【すいちょく】スケーリングしてください。,Infrastructure - Scaling,scaling
+インスタンスをもっと起動してください。,Spin up more instances.,インスタンス,インスタンスをもっと起動【きどう】してください。,Infrastructure - Instance,instance
+サーバープロビジョニングを自動化してください。,Automate server provisioning.,プロビジョニング,サーバープロビジョニングを自動化【じどうか】してください。,Infrastructure - Provisioning,provisioning
+インフラストラクチャをコードとして管理してください。,Manage infrastructure as code.,インフラストラクチャ,インフラストラクチャをコードとして管理【かんり】してください。,Infrastructure - General,infrastructure
+IaCにはTerraformを使っています。,We use Terraform for IaC.,Terraform,IaCにはTerraformを使【つか】っています。,Infrastructure - Iac,Terraform (IaC)
+新しいリソース用にTerraformを書いてください。,Write Terraform for the new resources.,リソース,新【あたら】しいリソース用【よう】にTerraformを書【か】いてください。,Infrastructure - Resource,resource
+AWSにはCloudFormationを使ってください。,Use CloudFormation for AWS.,CloudFormation,AWSにはCloudFormationを使【つか】ってください。,Aws - Cloudformation,CloudFormation (IaC)
+設定ファイルを更新してください。,Update the configuration file.,設定ファイル,設定【せってい】ファイルを更新【こうしん】してください。,Infrastructure - Configuration,config file
+環境変数として設定してください。,Set it as an environment variable.,環境変数,環境【かんきょう】変数【へんすう】として設定【せってい】してください。,Infrastructure - Environment,env variable
+.envファイルを確認してください。,.envファイルを確認してください。,.env,.envファイルを確認【かくにん】してください。,Infrastructure - Environment,.env (environment)
+まずステージングにデプロイしてください。,Deploy to staging first.,ステージング,まずステージングにデプロイしてください。,Infrastructure - Staging,staging
+これは本番で動作しています。,This is running in production.,本番,これは本番【ほんばん】で動作【どうさ】しています。,Infrastructure - Production,production
+開発環境を使ってください。,Use the development environment.,開発環境,開発【かいはつ】環境【かんきょう】を使【つか】ってください。,Infrastructure - Development,dev environment
+まずローカルで実行してください。,Run it locally first.,ローカル,まずローカルで実行【じっこう】してください。,Infrastructure - Local,local
+リモートサーバーに接続してください。,Connect to the remote server.,リモート,リモートサーバーに接続【せつぞく】してください。,Infrastructure - Remote,remote
+サーバーにSSHしてください。,SSH into the server.,SSH,サーバーにSSHしてください。,Infrastructure - Ssh,SSH
+VPN経由で接続してください。,Connect via VPN.,VPN,VPN経由【けいゆ】で接続【せつぞく】してください。,Infrastructure - Vpn,VPN
+ファイアウォールルールを確認してください。,Check the firewall rules.,ファイアウォール,ファイアウォールルールを確認【かくにん】してください。,Infrastructure - Firewall,firewall
+セキュリティグループを更新してください。,Update the security group.,セキュリティグループ,セキュリティグループを更新【こうしん】してください。,Aws - Security Group,security group
+リソースはプライベートVPCにあります。,Resources are in a private VPC.,VPC,リソースはプライベートVPCにあります。,Aws - Vpc,VPC (network)
+EC2インスタンスで実行しています。,We run on EC2 instances.,EC2,EC2インスタンスで実行【じっこう】しています。,Aws - Compute,EC2 (compute)
+ファイルをS3に保存してください。,Store files in S3.,S3,ファイルをS3に保存【ほぞん】してください。,Aws - Storage,S3 (storage)
+サーバーレスにはLambdaを使ってください。,Use Lambda for serverless.,Lambda,サーバーレスにはLambdaを使【つか】ってください。,Aws - Lambda,Lambda (serverless)
+データベースはRDS上にあります。,The database is on RDS.,RDS,データベースはRDS上【じょう】にあります。,Aws - Rds,RDS (database)
+NoSQLにはDynamoDBを使ってください。,Use DynamoDB for NoSQL.,DynamoDB,NoSQLにはDynamoDBを使【つか】ってください。,Aws - Dynamodb,DynamoDB (NoSQL)
+RedisにはElastiCacheを使ってください。,Use ElastiCache for Redis.,ElastiCache,RedisにはElastiCacheを使【つか】ってください。,Aws - Elasticache,ElastiCache
+CloudFront経由でアセットを配信してください。,Serve assets via CloudFront.,CloudFront,CloudFront経由【けいゆ】でアセットを配信【はいしん】してください。,Aws - Cloudfront,CloudFront (CDN)
+Route 53でDNSを設定してください。,Configure DNS in Route 53.,Route 53,Route 53でDNSを設定【せってい】してください。,Aws - Route 53,Route 53
+LambdaをAPI Gatewayの後ろに置いてください。,Put the Lambda behind API Gateway.,API Gateway,LambdaをAPI Gatewayの後【うし】ろに置【お】いてください。,Aws - Api Gateway,API Gateway
+メッセージキューにはSQSを使ってください。,Use SQS for message queues.,SQS,メッセージキューにはSQSを使【つか】ってください。,Aws - Sqs,SQS (queue)
+SNS経由で通知を送信してください。,Send notifications via SNS.,SNS,SNS経由【けいゆ】で通知【つうち】を送信【そうしん】してください。,Aws - Sns,SNS (notifications)
+コンテナをECSにデプロイしています。,We deploy containers to ECS.,ECS,コンテナをECSにデプロイしています。,Aws - Ecs,ECS (containers)
+マネージドKubernetesにはEKSを使ってください。,Use EKS for managed Kubernetes.,EKS,マネージドKubernetesにはEKSを使【つか】ってください。,Aws - Eks,EKS (Kubernetes)
+Fargateサーバーレスで実行してください。,Run on Fargate serverless.,Fargate,Fargateサーバーレスで実行【じっこう】してください。,Aws - Fargate,Fargate (serverless containers)
+このためにIAMロールを作成してください。,Create an IAM role for this.,IAM,このためにIAMロールを作成【さくせい】してください。,Aws - Iam,IAM (permissions)
+適切なIAMポリシーを付与してください。,Attach the right IAM policy.,ポリシー,適切【てきせつ】なIAMポリシーを付与【ふよ】してください。,Aws - Iam,policy
+アクセスのためにロールを引き受けてください。,Assume the role for access.,ロール,アクセスのためにロールを引【ひ】き受【う】けてください。,Aws - Iam,role
+S3にアクセスするには権限が必要です。,You need permission to access S3.,権限,S3にアクセスするには権限【けんげん】が必要【ひつよう】です。,Aws - Iam,permission
+ログはCloudWatchで確認してください。,Check CloudWatch for logs.,CloudWatch,ログはCloudWatchで確認【かくにん】してください。,Aws - Cloudwatch,CloudWatch (monitoring)
+CloudWatchアラームを設定してください。,Set up CloudWatch alarms.,アラーム,CloudWatchアラームを設定【せってい】してください。,Aws - Cloudwatch,alarm
+カスタムメトリクスを追跡してください。,Track custom metrics.,メトリクス,カスタムメトリクスを追跡【ついせき】してください。,Aws - Cloudwatch,metrics
+CloudWatchでロググループを探してください。,Find the log group in CloudWatch.,ロググループ,CloudWatchでロググループを探【さが】してください。,Aws - Cloudwatch,loop
+トレーシングにはX-Rayを使ってください。,Use X-Ray for tracing.,X-Ray,トレーシングにはX-Rayを使【つか】ってください。,Aws - X-Ray,X-Ray
+トラフィックはALBを通ります。,Traffic goes through the ALB.,ALB,トラフィックはALBを通【とお】ります。,Aws - Alb,ALB (load balancer)
+TCPトラフィックにはNLBを使ってください。,Use NLB for TCP traffic.,NLB,TCPトラフィックにはNLBを使【つか】ってください。,Aws - Nlb,NLB (network LB)
+ターゲットグループにインスタンスを登録してください。,Register instances in target group.,ターゲットグループ,ターゲットグループにインスタンスを登録【とうろく】してください。,Aws - Alb,loop
+ヘルスチェックエンドポイントを設定してください。,Configure the health check endpoint.,ヘルスチェック,ヘルスチェックエンドポイントを設定【せってい】してください。,Aws - Health Check,health check
+複数のAZにデプロイしてください。,Deploy across multiple AZs.,アベイラビリティゾーン,複数【ふくすう】のAZにデプロイしてください。,Aws - Availability Zone,availability zone
+これはどのリージョンにありますか？,Which region is this in?,リージョン,これはどのリージョンにありますか？,Aws - Region,region
+プライベートサブネットに配置してください。,Put it in the private subnet.,サブネット,プライベートサブネットに配置【はいち】してください。,Aws - Vpc,subnet
+NATゲートウェイ経由でルーティングしてください。,Route through NAT gateway.,NATゲートウェイ,NATゲートウェイ経由【けいゆ】でルーティングしてください。,Aws - Nat Gateway,NAT gateway
+インターネットゲートウェイを接続してください。,Attach an internet gateway.,インターネットゲートウェイ,インターネットゲートウェイを接続【せつぞく】してください。,Aws - Internet Gateway,gateway
+EBSボリュームを接続してください。,Attach an EBS volume.,EBS,EBSボリュームを接続【せつぞく】してください。,Aws - Storage,EBS (block storage)
+変更前にスナップショットを取ってください。,Take a snapshot before changes.,スナップショット,変更【へんこう】前【まえ】にスナップショットを取【と】ってください。,Aws - Snapshot,snapshot
+このインスタンスからAMIを作成してください。,Create an AMI from this instance.,AMI,このインスタンスからAMIを作成【さくせい】してください。,Aws - Ami,AMI (image)
+シークレットはSecrets Managerに保存してください。,Store secrets in Secrets Manager.,Secrets Manager,シークレットはSecrets Managerに保存【ほぞん】してください。,Aws - Secrets Manager,Secret
+設定にはParameter Storeを使ってください。,Use Parameter Store for configs.,パラメータストア,設定【せってい】にはParameter Storeを使【つか】ってください。,Aws - Parameter Store,parameter
+KMSで暗号化してください。,Encrypt with KMS.,KMS,KMSで暗号化【あんごうか】してください。,Aws - Kms,KMS (encryption)
+ユーザー認証にはCognitoを使ってください。,Use Cognito for user auth.,Cognito,ユーザー認証【にんしょう】にはCognitoを使【つか】ってください。,Aws - Cognito,Cognito (auth)
+Step Functionsでオーケストレーションしてください。,Orchestrate with Step Functions.,Step Functions,Step Functionsでオーケストレーションしてください。,Aws - Step Functions,Step Functions
+EventBridge経由でLambdaをトリガーしてください。,Trigger Lambda via EventBridge.,EventBridge,EventBridge経由【けいゆ】でLambdaをトリガーしてください。,Aws - Eventbridge,EventBridge (events)
+Kinesis経由でデータをストリーミングしてください。,Stream data through Kinesis.,Kinesis,Kinesis経由【けいゆ】でデータをストリーミングしてください。,Aws - Kinesis,Kinesis (streaming)
+データウェアハウスにはRedshiftを使ってください。,Use Redshift for data warehouse.,Redshift,データウェアハウスにはRedshiftを使【つか】ってください。,Aws - Redshift,Redshift (data warehouse)
+AthenaでS3データをクエリしてください。,Query S3 data with Athena.,Athena,AthenaでS3データをクエリしてください。,Aws - Athena,Athena (query)
+ETLジョブにはGlueを使ってください。,Use Glue for ETL jobs.,Glue,ETLジョブにはGlueを使【つか】ってください。,Aws - Glue,Glue (ETL)
+CodeBuildでビルドしてください。,Build with CodeBuild.,CodeBuild,CodeBuildでビルドしてください。,Aws - Codebuild,CodeBuild
+CodeDeployでデプロイしてください。,Deploy with CodeDeploy.,CodeDeploy,CodeDeployでデプロイしてください。,Aws - Codedeploy,CodeDeploy
+CI/CD用にCodePipelineを設定してください。,Set up CodePipeline for CI/CD.,CodePipeline,CI/CD用【よう】にCodePipelineを設定【せってい】してください。,Aws - Codepipeline,CodePipeline
+監査ログはCloudTrailで確認してください。,Check CloudTrail for audit logs.,CloudTrail,監査【かんさ】ログはCloudTrailで確認【かくにん】してください。,Aws - Cloudtrail,CloudTrail (audit)
+Cost Explorerでコストを確認してください。,Review costs in Cost Explorer.,Cost Explorer,Cost Explorerでコストを確認【かくにん】してください。,Aws - Cost Explorer,Cost Explorer
+パフォーマンスを改善する必要があります。,We need to improve performance.,パフォーマンス,パフォーマンスを改善【かいぜん】する必要【ひつよう】があります。,Performance - General,performance
+このクエリを最適化してください。,Optimize this query.,最適化,このクエリを最適化【さいてきか】してください。,Performance - Optimization,optimize
+ページの読み込みが遅いです。,The page load is slow.,遅い,ページの読【よ】み込【こ】みが遅【おそ】いです。,Performance - Latency,slow
+APIを速くしてください。,Make the API fast.,速い,APIを速【はや】くしてください。,Performance - Optimization,fast
+レイテンシーを削減してください。,Reduce the latency.,レイテンシー,レイテンシーを削減【さくげん】してください。,Performance - Latency,latency
+レスポンスタイムは200ms以下にしてください。,Response time should be under 200ms.,レスポンスタイム,レスポンスタイムは200ms以下【いか】にしてください。,Performance - Latency,response time
+スループットを向上させてください。,Increase throughput.,スループット,スループットを向上【こうじょう】させてください。,Performance - Throughput,throughput
+データベースがボトルネックです。,The database is the bottleneck.,ボトルネック,データベースがボトルネックです。,Performance - Bottleneck,bottleneck
+問題を見つけるためにコードをプロファイルしてください。,Profile the code to find issues.,プロファイル,問題【もんだい】を見【み】つけるためにコードをプロファイルしてください。,Performance - Profiling,profile
+変更前後でベンチマークを実行してください。,Run benchmarks before and after.,ベンチマーク,変更【へんこう】前後【ぜんご】でベンチマークを実行【じっこう】してください。,Performance - Benchmark,benchmark
+このメトリクスを追跡してください。,Track this metric.,メトリクス,このメトリクスを追跡【ついせき】してください。,Monitoring - Metrics,metrics
+モニタリングダッシュボードを確認してください。,Check the monitoring dashboard.,ダッシュボード,モニタリングダッシュボードを確認【かくにん】してください。,Monitoring - Dashboard,dashboard
+エラー用にアラートを設定してください。,Set up an alert for errors.,アラート,エラー用【よう】にアラートを設定【せってい】してください。,Monitoring - Alert,alert
+閾値を超えたらアラートを出してください。,Alert when above threshold.,閾値,閾値【しきいち】を超【こ】えたらアラートを出【だ】してください。,Monitoring - Threshold,threshold
+サービスを注意深くモニターしてください。,Monitor the service closely.,モニター,サービスを注意深【ちゅういぶか】くモニターしてください。,Monitoring - General,monitor
+可観測性を改善してください。,Improve observability.,可観測性,可観測性【かかんそくせい】を改善【かいぜん】してください。,Monitoring - Observability,observability
+ロギングを追加してください。,Add more logging.,ロギング,ロギングを追加【ついか】してください。,Monitoring - Logging,logging
+分散トレーシングを使ってください。,Use distributed tracing.,トレーシング,分散【ぶんさん】トレーシングを使【つか】ってください。,Monitoring - Tracing,tracing
+各リクエストはトレーススパンを作成します。,Each request creates a trace span.,スパン,各【かく】リクエストはトレーススパンを作成【さくせい】します。,Monitoring - Tracing,span
+ログでトレースIDを探してください。,Find the trace ID in logs.,トレースID,ログでトレースIDを探【さが】してください。,Monitoring - Tracing,trace
+インサイトのためにAPMを確認してください。,Check the APM for insights.,APM,インサイトのためにAPMを確認【かくにん】してください。,Monitoring - Apm,APM (performance)
+メトリクスをDatadogに送信してください。,Send metrics to Datadog.,Datadog,メトリクスをDatadogに送信【そうしん】してください。,Monitoring - Datadog,Datadog
+APMにはNew Relicを使ってください。,Use New Relic for APM.,New Relic,APMにはNew Relicを使【つか】ってください。,Monitoring - New Relic,New Relic
+Splunkでログを検索してください。,Search logs in Splunk.,Splunk,Splunkでログを検索【けんさく】してください。,Monitoring - Splunk,Splunk
+Grafanaでダッシュボードを作成してください。,Build dashboards in Grafana.,Grafana,Grafanaでダッシュボードを作成【さくせい】してください。,Monitoring - Grafana,Grafana
+Prometheusでメトリクスを収集してください。,Scrape metrics with Prometheus.,Prometheus,Prometheusでメトリクスを収集【しゅうしゅう】してください。,Monitoring - Prometheus,Prometheus
+ヘルスチェックが失敗しました。,The health check failed.,ヘルスチェック,ヘルスチェックが失敗【しっぱい】しました。,Monitoring - Health Check,health check
+99.9%のアップタイムを維持してください。,Maintain 99.9% uptime.,アップタイム,99.9%のアップタイムを維持【いじ】してください。,Monitoring - Uptime,uptime
+5分間のダウンタイムがありました。,We had 5 minutes of downtime.,ダウンタイム,5分間【ふんかん】のダウンタイムがありました。,Monitoring - Downtime,downtime
+99.9%のSLAがあります。,We have a 99.9% SLA.,SLA,99.9%のSLAがあります。,Monitoring - Sla,SLA
+サービスのSLOを定義してください。,Define SLOs for the service.,SLO,サービスのSLOを定義【ていぎ】してください。,Monitoring - Slo,SLO
+信頼性のためにSLIを追跡してください。,Track SLIs for reliability.,SLI,信頼性【しんらいせい】のためにSLIを追跡【ついせき】してください。,Monitoring - Sli,SLI
+エラー率が高すぎます。,The error rate is too high.,エラー率,エラー率【りつ】が高【たか】すぎます。,Monitoring - Error Rate,error
+成功率が95%に低下しました。,Success rate dropped to 95%.,成功率,成功率【せいこうりつ】が95%に低下【ていか】しました。,Monitoring - Success Rate,success rate
+P99レイテンシーは500msです。,P99 latency is 500ms.,パーセンタイル,P99レイテンシーは500msです。,Monitoring - Percentile,percentile
+99パーセンタイルを確認してください。,Look at the 99th percentile.,パーセンタイル,99パーセンタイルを確認【かくにん】してください。,Monitoring - Percentile,percentile
+平均レスポンスタイムは100msです。,Average response time is 100ms.,平均,平均【へいきん】レスポンスタイムは100msです。,Monitoring - Average,average
+トラフィックスパイクがありました。,There was a traffic spike.,スパイク,トラフィックスパイクがありました。,Monitoring - Traffic,spike
+昨夜インシデントがありました。,We had an incident last night.,インシデント,昨夜【さくや】インシデントがありました。,Incident - General,incident
+障害は30分続きました。,The outage lasted 30 minutes.,障害,障害【しょうがい】は30分【ぷん】続【つづ】きました。,Incident - Outage,incident/failure
+インシデントのポストモーテムを書いてください。,Write a postmortem for the incident.,ポストモーテム,インシデントのポストモーテムを書【か】いてください。,Incident - Postmortem,postmortem
+根本原因分析を行ってください。,Do a root cause analysis.,根本原因分析,根本【こんぽん】原因【げんいん】分析【ぶんせき】を行【おこな】ってください。,Incident - Rca,root cause
+今週はオンコールです。,I'm on-call this week.,オンコール,今週【こんしゅう】はオンコールです。,Incident - On-Call,on-call
+午前3時にページングされました。,I got paged at 3am.,ページング,午前【ごぜん】3時【じ】にページングされました。,Incident - Paging,pagination
+シニアエンジニアにエスカレーションしてください。,Escalate to the senior engineer.,エスカレーション,シニアエンジニアにエスカレーションしてください。,Incident - Escalation,escalation
+ランブックに従ってください。,Follow the runbook.,ランブック,ランブックに従【したが】ってください。,Incident - Runbook,runbook
+インシデントプレイブックを確認してください。,Check the incident playbook.,プレイブック,インシデントプレイブックを確認【かくにん】してください。,Incident - Playbook,playbook
+問題を迅速に修復してください。,Remediate the issue quickly.,修復,問題【もんだい】を迅速【じんそく】に修復【しゅうふく】してください。,Incident - Remediation,repair
+まず影響を軽減してください。,Mitigate the impact first.,軽減,まず影響【えいきょう】を軽減【けいげん】してください。,Incident - Mitigation,reduce
+復旧に2時間かかりました。,Recovery took 2 hours.,復旧,復旧【ふっきゅう】に2時間【じかん】かかりました。,Incident - Recovery,recovery

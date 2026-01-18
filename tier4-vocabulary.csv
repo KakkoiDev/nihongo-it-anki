@@ -1,201 +1,201 @@
 Sentence,Translation,Cloze,Pronunciation,Note,KeyMeaning
-レスポンスを5分間キャッシュしてください。,Cache the response for 5 minutes.,キャッシュ,レスポンスを5分間【ふんかん】キャッシュしてください。,Cache,cache
-高いキャッシュヒット率は良いことです。,High cache hit rate is good.,キャッシュヒット,高【たか】いキャッシュヒット率【りつ】は良【よ】いことです。,Cache hit,cache
-キャッシュミス時はDBからフェッチしてください。,On cache miss fetch from DB.,キャッシュミス,キャッシュミス時【じ】はDBからフェッチしてください。,Cache miss,cache
-更新時にキャッシュを無効化してください。,Invalidate the cache on update.,無効化,更新【こうしん】時【じ】にキャッシュを無効化【むこうか】してください。,Invalidate,disable
-TTLを1時間に設定してください。,Set TTL to 1 hour.,TTL,TTLを1時間【じかん】に設定【せってい】してください。,Time to live,TTL
-キャッシュされたデータの有効期限が切れました。,The cached data expired.,有効期限,キャッシュされたデータの有効【ゆうこう】期限【きげん】が切【き】れました。,Expire,expiration
-キャッシュから古いエントリを削除してください。,Evict old entries from cache.,削除,キャッシュから古【ふる】いエントリを削除【さくじょ】してください。,Evict,delete
-キャッシュにはRedisを使ってください。,Use Redis for caching.,Redis,キャッシュにはRedisを使【つか】ってください。,Redis,Redis
-MemcachedはRedisよりシンプルです。,Memcached is simpler than Redis.,Memcached,MemcachedはRedisよりシンプルです。,Memcached,Memcached
-静的ファイルはCDNから配信してください。,Serve static files from CDN.,CDN,静的【せいてき】ファイルはCDNから配信【はいしん】してください。,CDN,CDN
-速度のためにエッジでキャッシュしてください。,Cache at the edge for speed.,エッジ,速度【そくど】のためにエッジでキャッシュしてください。,Edge,edge
-ローンチ前にキャッシュをウォームアップしてください。,Warm up the cache before launch.,ウォームアップ,ローンチ前【まえ】にキャッシュをウォームアップしてください。,Warm up,warm up
-コールドキャッシュは最初の読み込みを遅くします。,Cold cache causes slow first load.,コールド,コールドキャッシュは最初【さいしょ】の読【よ】み込【こ】みを遅【おそ】くします。,Cold,cold
-ストレージが不足しています。,We're running low on storage.,ストレージ,ストレージが不足【ふそく】しています。,Storage,storage
-画像はBlobとして保存してください。,Store images as blobs.,Blob,画像【がぞう】はBlobとして保存【ほぞん】してください。,Blob,Blob (binary)
-オブジェクトストレージにはS3を使ってください。,Use S3 for object storage.,オブジェクトストレージ,オブジェクトストレージにはS3を使【つか】ってください。,Object storage,storage
-ローカルファイルシステムに書き込んでください。,Write to the local file system.,ファイルシステム,ローカルファイルシステムに書【か】き込【こ】んでください。,File system,file system
-データには永続ストレージを使ってください。,Use persistent storage for data.,永続,データには永続【えいぞく】ストレージを使【つか】ってください。,Persistent,persistent
-コンテナストレージは一時的です。,Container storage is ephemeral.,一時的,コンテナストレージは一時的【いちじてき】です。,Ephemeral,temporary
-EBSはブロックストレージを提供します。,EBS provides block storage.,ブロックストレージ,EBSはブロックストレージを提供【ていきょう】します。,Block storage,blocked
-パフォーマンス向上のためにIOPSを増やしてください。,Increase IOPS for better performance.,IOPS,パフォーマンス向上【こうじょう】のためにIOPSを増【ふ】やしてください。,IOPS,IOPS
-ストレージスループットが制限されています。,Storage throughput is limited.,スループット,ストレージスループットが制限【せいげん】されています。,Throughput,throughput
-クロスリージョンレプリケーションを有効にしてください。,Enable cross-region replication.,レプリケーション,クロスリージョンレプリケーションを有効【ゆうこう】にしてください。,Replication,replication
-強い一貫性か結果整合性かを選んでください。,Strong consistency vs eventual.,一貫性,強【つよ】い一貫性【いっかんせい】か結果【けっか】整合性【せいごうせい】かを選【えら】んでください。,Consistency,consistency
-S3は結果整合性を持っています。,S3 has eventual consistency.,結果整合性,S3は結果【けっか】整合性【せいごうせい】を持【も】っています。,Eventual consistency,consistency
-S3は11ナインの耐久性を持っています。,S3 has 11 9s of durability.,耐久性,S3は11ナインの耐久性【たいきゅうせい】を持【も】っています。,Durability,durability
-高可用性のために設計してください。,Design for high availability.,高可用性,高【こう】可用性【かようせい】のために設計【せっけい】してください。,High availability,availability
-冗長性を組み込んでください。,Build in redundancy.,冗長性,冗長性【じょうちょうせい】を組【く】み込【こ】んでください。,Redundancy,redundancy
-毎日のバックアップをスケジュールしてください。,Schedule daily backups.,バックアップ,毎日【まいにち】のバックアップをスケジュールしてください。,Backup,backup
-バックアップからリストアしてください。,Restore from backup.,リストア,バックアップからリストアしてください。,Restore,store
-セキュリティは最優先事項です。,Security is our top priority.,セキュリティ,セキュリティは最【さい】優先【ゆうせん】事項【じこう】です。,Security,security
-セキュリティの脆弱性を見つけました。,We found a security vulnerability.,脆弱性,セキュリティの脆弱性【ぜいじゃくせい】を見【み】つけました。,Vulnerability,vulnerability
-誰かがエクスプロイトする前にパッチを当ててください。,Patch before someone exploits it.,エクスプロイト,誰【だれ】かがエクスプロイトする前【まえ】にパッチを当【あ】ててください。,Exploit,exploit
-攻撃の試みを検出しました。,We detected an attack attempt.,攻撃,攻撃【こうげき】の試【こころ】みを検出【けんしゅつ】しました。,Attack,attack
-データ侵害は発生していません。,No data breach occurred.,侵害,データ侵害【しんがい】は発生【はっせい】していません。,Breach,breach
-保存時にデータを暗号化してください。,Encrypt data at rest.,暗号化,保存【ほぞん】時【じ】にデータを暗号化【あんごうか】してください。,Encrypt,encryption
-サーバー側で復号化してください。,Decrypt on the server side.,復号化,サーバー側【がわ】で復号化【ふくごうか】してください。,Decrypt,decrypt
-AES暗号化を使ってください。,Use AES encryption.,暗号化,AES暗号化【あんごうか】を使【つか】ってください。,Encryption,encryption
-bcryptでパスワードをハッシュ化してください。,Hash passwords with bcrypt.,ハッシュ,bcryptでパスワードをハッシュ化【か】してください。,Hash,hash
-ハッシュにソルトを追加してください。,Add a salt to the hash.,ソルト,ハッシュにソルトを追加【ついか】してください。,Salt,salt
-TLS 1.3を使ってください。,Use TLS 1.3.,TLS,TLS 1.3を使【つか】ってください。,TLS,TLS
-常にHTTPSを使ってください。,Always use HTTPS.,HTTPS,常【つね】にHTTPSを使【つか】ってください。,HTTPS,HTTPS
-SSL証明書を更新してください。,Renew the SSL certificate.,証明書,SSL証明書【しょうめいしょ】を更新【こうしん】してください。,Certificate,certificate
-二要素認証を実装してください。,Implement two-factor authentication.,二要素認証,二【に】要素【ようそ】認証【にんしょう】を実装【じっそう】してください。,Two-factor auth,2FA
-このアクションの認可を確認してください。,Check authorization for this action.,認可,このアクションの認可【にんか】を確認【かくにん】してください。,Authorization,authorization
-ロールベースのアクセス制御を実装してください。,Implement role-based access control.,アクセス制御,ロールベースのアクセス制御【せいぎょ】を実装【じっそう】してください。,Access control,access control
-権限にはRBACを使ってください。,Use RBAC for permissions.,RBAC,権限【けんげん】にはRBACを使【つか】ってください。,RBAC,RBAC
-ユーザーには権限がありません。,Users don't have permission.,権限,ユーザーには権限【けんげん】がありません。,Permission,permission
-最小権限の原則を使ってください。,Use least privilege principle.,最小権限,最小【さいしょう】権限【けんげん】の原則【げんそく】を使【つか】ってください。,Least privilege,least privilege
-認証情報を定期的にローテーションしてください。,Rotate credentials regularly.,認証情報,認証【にんしょう】情報【じょうほう】を定期的【ていきてき】にローテーションしてください。,Credential,credentials
-トークンの有効期限が切れました。,The token is expired.,有効期限,トークンの有効【ゆうこう】期限【きげん】が切【き】れました。,Token,expiration
-ログアウト時にセッションを無効化してください。,Invalidate the session on logout.,セッション,ログアウト時【じ】にセッションを無効化【むこうか】してください。,Session,session
-トークンをCookieに保存してください。,Store the token in a cookie.,Cookie,トークンをCookieに保存【ほぞん】してください。,Cookie,Cookie
-XSSを防ぐために入力をサニタイズしてください。,Sanitize input to prevent XSS.,XSS,XSSを防【ふせ】ぐために入力【にゅうりょく】をサニタイズしてください。,XSS,XSS
-CSRF保護を追加してください。,Add CSRF protection.,CSRF,CSRF保護【ほご】を追加【ついか】してください。,CSRF,CSRF
-パラメータ化されたクエリを使ってください。,Use parameterized queries.,パラメータ化,パラメータ化【か】されたクエリを使【つか】ってください。,Parameterized,parameter
-コマンドインジェクションを防いでください。,Prevent command injection.,インジェクション,コマンドインジェクションを防【ふせ】いでください。,Injection,injection
-すべてのユーザー入力をサニタイズしてください。,Sanitize all user input.,サニタイズ,すべてのユーザー入力【にゅうりょく】をサニタイズしてください。,Sanitize,sanitize
-サーバーで入力を検証してください。,Validate input on the server.,検証,サーバーで入力【にゅうりょく】を検証【けんしょう】してください。,Validate,verification
-特殊文字をエスケープしてください。,Escape special characters.,エスケープ,特殊【とくしゅ】文字【もじ】をエスケープしてください。,Escape,escape
-許可値にはホワイトリストを使ってください。,Use a whitelist for allowed values.,ホワイトリスト,許可【きょか】値【ち】にはホワイトリストを使【つか】ってください。,Whitelist,whitelist
-既知の悪いIPをブラックリストに追加してください。,Blacklist known bad IPs.,ブラックリスト,既知【きち】の悪【わる】いIPをブラックリストに追加【ついか】してください。,Blacklist,list
-ファイアウォールルールを設定してください。,Configure the firewall rules.,ファイアウォール,ファイアウォールルールを設定【せってい】してください。,Firewall,firewall
-保護のためにWAFをデプロイしてください。,Deploy a WAF for protection.,WAF,保護【ほご】のためにWAFをデプロイしてください。,WAF,WAF (firewall)
-DDoS攻撃を受けています。,We're under DDoS attack.,DDoS,DDoS攻撃【こうげき】を受【う】けています。,DDoS,DDoS (attack)
-レート制限を実装してください。,Implement rate limiting.,レート制限,レート制限【せいげん】を実装【じっそう】してください。,Rate limiting,rate
-過度のリクエストをスロットルしてください。,Throttle excessive requests.,スロットル,過度【かど】のリクエストをスロットルしてください。,Throttle,slot
-監査ログを有効にしてください。,Enable audit logging.,監査,監査【かんさ】ログを有効【ゆうこう】にしてください。,Audit,audit
-コンプライアンス要件を満たしてください。,Meet compliance requirements.,コンプライアンス,コンプライアンス要件【ようけん】を満【み】たしてください。,Compliance,compliance
-GDPRコンプライアンスを確保してください。,Ensure GDPR compliance.,GDPR,GDPRコンプライアンスを確保【かくほ】してください。,GDPR,GDPR
-PCIコンプライアントです。,We're PCI compliant.,PCI,PCIコンプライアントです。,PCI,PCI
-SOC 2監査に合格してください。,Pass the SOC 2 audit.,SOC 2,SOC 2監査【かんさ】に合格【ごうかく】してください。,SOC 2,SOC 2
-ペネトレーションテストをスケジュールしてください。,Schedule a pen test.,ペネトレーションテスト,ペネトレーションテストをスケジュールしてください。,Pen test,test
-脆弱性スキャンを実行してください。,Run a vulnerability scan.,脆弱性スキャン,脆弱性【ぜいじゃくせい】スキャンを実行【じっこう】してください。,Vulnerability scan,vulnerability
-シークレットをログに記録しないでください。,Never log secrets.,シークレット,シークレットをログに記録【きろく】しないでください。,Secret,secret
-キーローテーションを実装してください。,Implement key rotation.,キーローテーション,キーローテーションを実装【じっそう】してください。,Key rotation,key rotation
-すべてのユーザーにMFAを有効にしてください。,Enable MFA for all users.,MFA,すべてのユーザーにMFAを有効【ゆうこう】にしてください。,MFA,MFA (multi-factor)
-OktaでSSOを使ってください。,Use SSO with Okta.,SSO,OktaでSSOを使【つか】ってください。,SSO,SSO (single sign-on)
-エンタープライズ向けにSAMLを統合してください。,Integrate SAML for enterprise.,SAML,エンタープライズ向【む】けにSAMLを統合【とうごう】してください。,SAML,SAML
-認証にはOAuth 2.0を使ってください。,Use OAuth 2.0 for auth.,OAuth,認証【にんしょう】にはOAuth 2.0を使【つか】ってください。,OAuth,OAuth
-フロントエンドで働いています。,I work on the frontend.,フロントエンド,フロントエンドで働【はたら】いています。,Frontend,frontend
-バックエンドチームが助けてくれます。,The backend team will help.,バックエンド,バックエンドチームが助【たす】けてくれます。,Backend,backend
-フルスタック開発者が必要です。,We need a fullstack developer.,フルスタック,フルスタック開発者【かいはつしゃ】が必要【ひつよう】です。,Fullstack,stack
-UIデザインを改善してください。,Improve the UI design.,UI,UIデザインを改善【かいぜん】してください。,UI,UI
-より良いUXに集中してください。,Focus on better UX.,UX,より良【よ】いUXに集中【しゅうちゅう】してください。,UX,UX
-再利用可能なコンポーネントを作成してください。,Create a reusable component.,コンポーネント,再利用【さいりよう】可能【かのう】なコンポーネントを作成【さくせい】してください。,Component,component
-propsでデータを渡してください。,Pass data via props.,props,propsでデータを渡【わた】してください。,Props,props
-コンポーネントのstateを管理してください。,Manage component state.,state,コンポーネントのstateを管理【かんり】してください。,State,state
-カスタムhookを使ってください。,Use a custom hook.,hook,カスタムhookを使【つか】ってください。,Hook,hook
-コンポーネントが再レンダリングされます。,The component re-renders.,レンダリング,コンポーネントが再【さい】レンダリングされます。,Render,rendering
-Reactは仮想DOMを使います。,React uses virtual DOM.,仮想DOM,Reactは仮想【かそう】DOMを使【つか】います。,Virtual DOM,DOM
-DOMを直接操作してください。,Manipulate the DOM directly.,DOM,DOMを直接【ちょくせつ】操作【そうさ】してください。,DOM,DOM
-クリックイベントを処理してください。,Handle the click event.,イベント,クリックイベントを処理【しょり】してください。,Event,event
-イベントリスナーを追加してください。,Add an event listener.,リスナー,イベントリスナーを追加【ついか】してください。,Listener,listener
-イベントハンドラーを書いてください。,Write an event handler.,ハンドラー,イベントハンドラーを書【か】いてください。,Handler,handler
-双方向データバインディングを使ってください。,Use two-way data binding.,バインディング,双方向【そうほうこう】データバインディングを使【つか】ってください。,Binding,binding
-ライフサイクルメソッドを使ってください。,Use lifecycle methods.,ライフサイクル,ライフサイクルメソッドを使【つか】ってください。,Lifecycle,lifecycle
-マウント時にデータをフェッチしてください。,Fetch data on mount.,マウント,マウント時【じ】にデータをフェッチしてください。,Mount,mount
-アンマウント時にクリーンアップしてください。,Clean up on unmount.,アンマウント,アンマウント時【じ】にクリーンアップしてください。,Unmount,unmount
-SEOにはSSRを使ってください。,Use SSR for SEO.,SSR,SEOにはSSRを使【つか】ってください。,SSR,SSR (server rendering)
-CSRは初回後より速く読み込みます。,CSR loads faster after initial.,CSR,CSRは初回【しょかい】後【ご】より速【はや】く読【よ】み込【こ】みます。,CSR,CSR (client rendering)
-ハイドレーションはクライアントで行われます。,Hydration happens on client.,ハイドレーション,ハイドレーションはクライアントで行【おこな】われます。,Hydration,hydration
-遅延読み込みを実装してください。,Implement lazy loading.,遅延読み込み,遅延【ちえん】読【よ】み込【こ】みを実装【じっそう】してください。,Lazy loading,load
-コード分割を使ってください。,Use code splitting.,コード分割,コード分割【ぶんかつ】を使【つか】ってください。,Code splitting,code splitting
-バンドルサイズが大きすぎます。,The bundle size is too large.,バンドル,バンドルサイズが大【おお】きすぎます。,Bundle,bundle
-本番用にJavaScriptを最小化してください。,Minify JavaScript for production.,最小化,本番【ほんばん】用【よう】にJavaScriptを最小化【さいしょうか】してください。,Minify,minimize
-TypeScriptをJSにトランスパイルしてください。,Transpile TypeScript to JS.,トランスパイル,TypeScriptをJSにトランスパイルしてください。,Transpile,transpile
-webpackを設定してください。,Configure webpack.,webpack,webpackを設定【せってい】してください。,webpack,webpack
-本番ビルドを実行してください。,Run the production build.,本番ビルド,本番【ほんばん】ビルドを実行【じっこう】してください。,Production build,build
-モバイル用にレスポンシブにしてください。,Make it responsive for mobile.,レスポンシブ,モバイル用【よう】にレスポンシブにしてください。,Responsive,responsive
-モバイルブレークポイントを追加してください。,Add a mobile breakpoint.,ブレークポイント,モバイルブレークポイントを追加【ついか】してください。,Breakpoint,breakpoint
-クリーンなCSSを書いてください。,Write clean CSS.,CSS,クリーンなCSSを書【か】いてください。,CSS,CSS
-レイアウトにはFlexboxを使ってください。,Use Flexbox for layout.,Flexbox,レイアウトにはFlexboxを使【つか】ってください。,Flexbox,Flexbox
-CSS Gridは強力です。,CSS Grid is powerful.,Grid,CSS Gridは強力【きょうりょく】です。,Grid,Grid
-控えめなアニメーションを追加してください。,Add a subtle animation.,アニメーション,控【ひか】えめなアニメーションを追加【ついか】してください。,Animation,animation
-スムーズなトランジションは見栄えが良いです。,Smooth transitions look better.,トランジション,スムーズなトランジションは見栄【みば】えが良【よ】いです。,Transition,transition
-アクセシビリティのコンプライアンスを確保してください。,Ensure accessibility compliance.,アクセシビリティ,アクセシビリティのコンプライアンスを確保【かくほ】してください。,Accessibility,accessibility
-Lighthouseでa11yをチェックしてください。,Check a11y with Lighthouse.,a11y,Lighthouseでa11yをチェックしてください。,a11y,a11y
-ARIAラベルを追加してください。,Add ARIA labels.,ARIA,ARIAラベルを追加【ついか】してください。,ARIA,ARIA (accessibility)
-SEO用に最適化してください。,Optimize for SEO.,SEO,SEO用【よう】に最適化【さいてきか】してください。,SEO,SEO
-共有用にメタタグを追加してください。,Add meta tags for sharing.,メタタグ,共有【きょうゆう】用【よう】にメタタグを追加【ついか】してください。,Meta tag,meta tag
-ビューポートを正しく設定してください。,Set the viewport correctly.,ビューポート,ビューポートを正【ただ】しく設定【せってい】してください。,Viewport,view
-アイコンは24ピクセルです。,The icon is 24 pixels.,ピクセル,アイコンは24ピクセルです。,Pixel,pixel
-フォーム入力を検証してください。,Validate the form input.,フォーム,フォーム入力【にゅうりょく】を検証【けんしょう】してください。,Form,form
-入力フィールドにスタイルを当ててください。,Style the input field.,入力フィールド,入力【にゅうりょく】フィールドにスタイルを当【あ】ててください。,Input field,field
-クライアント側の検証を追加してください。,Add client-side validation.,クライアント側,クライアント側【がわ】の検証【けんしょう】を追加【ついか】してください。,Client-side,client
-フォーム送信を処理してください。,Handle form submit.,送信,フォーム送信【そうしん】を処理【しょり】してください。,Submit,send
-確認モーダルを表示してください。,Show a confirmation modal.,モーダル,確認【かくにん】モーダルを表示【ひょうじ】してください。,Modal,modal
-成功トーストを表示してください。,Show a success toast.,トースト,成功【せいこう】トーストを表示【ひょうじ】してください。,Toast,toast
-通知を表示してください。,Display a notification.,通知,通知【つうち】を表示【ひょうじ】してください。,Notification,notification
-開発サーバーを起動してください。,Start the development server.,開発サーバー,開発【かいはつ】サーバーを起動【きどう】してください。,Development server,server
-REST APIを設計してください。,Design the REST API.,REST API,REST APIを設計【せっけい】してください。,REST API,API
-新しいエンドポイントを作成してください。,Create a new endpoint.,エンドポイント,新【あたら】しいエンドポイントを作成【さくせい】してください。,Endpoint,endpoint
-APIルートを定義してください。,Define the API routes.,ルート,APIルートを定義【ていぎ】してください。,Route,root
-Expressルーターを使ってください。,Use Express router.,ルーター,Expressルーターを使【つか】ってください。,Router,router
-ロジックをコントローラーに移動してください。,Move logic to the controller.,コントローラー,ロジックをコントローラーに移動【いどう】してください。,Controller,controller
-ユーザーサービスを作成してください。,Create a user service.,サービス,ユーザーサービスを作成【さくせい】してください。,Service,service
-データアクセスはリポジトリで行います。,Data access in repository.,リポジトリ,データアクセスはリポジトリで行【おこな】います。,Repository,repository
-Userモデルを定義してください。,Define the User model.,モデル,Userモデルを定義【ていぎ】してください。,Model,model
-データベースエンティティにマップしてください。,Map to database entity.,エンティティ,データベースエンティティにマップしてください。,Entity,entity
-リクエストにはDTOを使ってください。,Use DTOs for requests.,DTO,リクエストにはDTOを使【つか】ってください。,DTO,DTO (data transfer)
-認証ミドルウェアを追加してください。,Add auth middleware.,ミドルウェア,認証【にんしょう】ミドルウェアを追加【ついか】してください。,Middleware,middleware
-インターセプターでリクエストをログしてください。,Log requests with interceptor.,インターセプター,インターセプターでリクエストをログしてください。,Interceptor,interceptor
-認証にはガードを使ってください。,Use guards for auth.,ガード,認証【にんしょう】にはガードを使【つか】ってください。,Guard,guard
-ルートにはデコレーターを使ってください。,Use decorators for routes.,デコレーター,ルートにはデコレーターを使【つか】ってください。,Decorator,decorator
-サーバー側の検証を行ってください。,Server-side validation.,サーバー側,サーバー側【がわ】の検証【けんしょう】を行【おこな】ってください。,Server-side,server
-JSONシリアライゼーションを処理してください。,Handle JSON serialization.,シリアライゼーション,JSONシリアライゼーションを処理【しょり】してください。,Serialization,serialization
-リクエストボディをデシリアライズしてください。,Deserialize the request body.,デシリアライズ,リクエストボディをデシリアライズしてください。,Deserialize,deserialize
-ORMとしてPrismaを使ってください。,Use Prisma as ORM.,Prisma,ORMとしてPrismaを使【つか】ってください。,Prisma,Prisma
-クエリビルダーを使ってください。,Use the query builder.,クエリビルダー,クエリビルダーを使【つか】ってください。,Query builder,query
-生のSQLクエリを書いてください。,Write a raw SQL query.,生のSQL,生【なま】のSQLクエリを書【か】いてください。,Raw SQL,SQL
-データベース接続をプールしてください。,Pool database connections.,プール,データベース接続【せつぞく】をプールしてください。,Pool,pool
-コネクションプールを設定してください。,Configure connection pool.,コネクションプール,コネクションプールを設定【せってい】してください。,Connection pool,connection pool
-これにはトランザクションを使ってください。,Use a transaction for this.,トランザクション,これにはトランザクションを使【つか】ってください。,Transaction,transaction
-悲観的ロックを使ってください。,Use pessimistic locking.,悲観的ロック,悲観的【ひかんてき】ロックを使【つか】ってください。,Pessimistic locking,lock
-ジョブをキューに追加してください。,Add job to the queue.,キュー,ジョブをキューに追加【ついか】してください。,Queue,queue
-バックグラウンドワーカーで処理してください。,Process with background worker.,ワーカー,バックグラウンドワーカーで処理【しょり】してください。,Worker,worker
-非同期ジョブを作成してください。,Create an async job.,ジョブ,非同期【ひどうき】ジョブを作成【さくせい】してください。,Job,job
-cronスケジューラで実行してください。,Run with cron scheduler.,スケジューラ,cronスケジューラで実行【じっこう】してください。,Scheduler,scheduler
-cronジョブを設定してください。,Set up a cron job.,cron,cronジョブを設定【せってい】してください。,Cron,cron
-バッチで処理してください。,Process in batches.,バッチ,バッチで処理【しょり】してください。,Batch,batch
-ページネーションを実装してください。,Implement pagination.,ページネーション,ページネーションを実装【じっそう】してください。,Pagination,pagination
-カーソルページネーションを使ってください。,Use cursor pagination.,カーソル,カーソルページネーションを使【つか】ってください。,Cursor,cursor
-オフセットページネーションはシンプルです。,Offset pagination is simpler.,オフセット,オフセットページネーションはシンプルです。,Offset,offset
-結果を100件に制限してください。,Limit results to 100.,制限,結果【けっか】を100件【けん】に制限【せいげん】してください。,Limit,limit/restriction
-ステータスでフィルタリングしてください。,Filter by status.,フィルター,ステータスでフィルタリングしてください。,Filter,filter
-作成日でソートしてください。,Sort by created date.,ソート,作成【さくせい】日【び】でソートしてください。,Sort,sort
-全文検索を実装してください。,Implement full-text search.,全文検索,全文【ぜんぶん】検索【けんさく】を実装【じっそう】してください。,Full-text search,full-text search
-検索インデックスを追加してください。,Add a search index.,検索インデックス,検索【けんさく】インデックスを追加【ついか】してください。,Search index,index
-メトリクスを集計してください。,Aggregate the metrics.,集計,メトリクスを集計【しゅうけい】してください。,Aggregate,aggregate
-レコードの合計数をカウントしてください。,Count total records.,カウント,レコードの合計【ごうけい】数【すう】をカウントしてください。,Count,count
-注文金額を合計してください。,Sum the order amounts.,合計,注文【ちゅうもん】金額【きんがく】を合計【ごうけい】してください。,Sum,total
-平均評価を計算してください。,Calculate average rating.,平均,平均【へいきん】評価【ひょうか】を計算【けいさん】してください。,Average,average
-webhookを受信してください。,Receive webhooks.,webhook,webhookを受信【じゅしん】してください。,Webhook,webhook
-コールバックを処理してください。,Process the callback.,コールバック,コールバックを処理【しょり】してください。,Callback,callback
-イベントを発行してください。,Emit an event.,イベント,イベントを発行【はっこう】してください。,Event,event
-キューにパブリッシュしてください。,Publish to the queue.,パブリッシュ,キューにパブリッシュしてください。,Publish,publish
-イベントをサブスクライブしてください。,Subscribe to events.,サブスクライブ,イベントをサブスクライブしてください。,Subscribe,subscribe
-キューにメッセージを送信してください。,Send a message to queue.,メッセージ,キューにメッセージを送信【そうしん】してください。,Message,message
-ブローカーとしてRabbitMQを使ってください。,Use RabbitMQ as broker.,ブローカー,ブローカーとしてRabbitMQを使【つか】ってください。,Broker,broker
-ETLパイプラインを構築してください。,Build an ETL pipeline.,ETL,ETLパイプラインを構築【こうちく】してください。,ETL,ETL (data pipeline)
-ソースからデータを抽出してください。,Extract data from source.,抽出,ソースからデータを抽出【ちゅうしゅつ】してください。,Extract,extract
-データ形式を変換してください。,Transform the data format.,変換,データ形式【けいしき】を変換【へんかん】してください。,Transform,convert
-データウェアハウスにロードしてください。,Load into data warehouse.,ロード,データウェアハウスにロードしてください。,Load,load
-データパイプラインが失敗しました。,The data pipeline failed.,データパイプライン,データパイプラインが失敗【しっぱい】しました。,Data pipeline,pipeline
-データをストリームとして処理してください。,Process data as a stream.,ストリーム,データをストリームとして処理【しょり】してください。,Stream,stream
-夜間にバッチ処理をしてください。,Batch processing overnight.,バッチ処理,夜間【やかん】にバッチ処理【しょり】をしてください。,Batch processing,batch processing
-リアルタイムデータ処理を行ってください。,Real-time data processing.,リアルタイム,リアルタイムデータ処理【しょり】を行【おこな】ってください。,Real-time,real-time
-データウェアハウスにクエリしてください。,Query the data warehouse.,データウェアハウス,データウェアハウスにクエリしてください。,Data warehouse,data
-生データをデータレイクに保存してください。,Store raw data in lake.,データレイク,生【なま】データをデータレイクに保存【ほぞん】してください。,Data lake,data
-データスキーマを定義してください。,Define the data schema.,スキーマ,データスキーマを定義【ていぎ】してください。,Schema,schema
-Parquet形式を使ってください。,Use Parquet format.,Parquet,Parquet形式【けいしき】を使【つか】ってください。,Parquet,Parquet
-CSVにエクスポートしてください。,Export to CSV.,CSV,CSVにエクスポートしてください。,CSV,CSV
-JSONファイルをパースしてください。,Parse the JSON file.,JSON,JSONファイルをパースしてください。,JSON,JSON
-XMLをJSONに変換してください。,Convert XML to JSON.,XML,XMLをJSONに変換【へんかん】してください。,XML,XML
-データを正規化してください。,Normalize the data.,正規化,データを正規化【せいきか】してください。,Normalize,normalize
-クエリ用に非正規化してください。,Denormalize for queries.,非正規化,クエリ用【よう】に非正規化【ひせいきか】してください。,Denormalize,normalize
-レコードの重複を排除してください。,Dedup the records.,重複排除,レコードの重複【じゅうふく】を排除【はいじょ】してください。,Dedup,dedup
-データ品質を検証してください。,Validate data quality.,データ品質,データ品質【ひんしつ】を検証【けんしょう】してください。,Data quality,data
-データセットをクレンジングしてください。,Clean the dataset.,クレンジング,データセットをクレンジングしてください。,Clean,range
+レスポンスを5分間キャッシュしてください。,Cache the response for 5 minutes.,キャッシュ,レスポンスを5分間【ふんかん】キャッシュしてください。,Performance - Caching,cache
+高いキャッシュヒット率は良いことです。,High cache hit rate is good.,キャッシュヒット,高【たか】いキャッシュヒット率【りつ】は良【よ】いことです。,Performance - Caching,cache
+キャッシュミス時はDBからフェッチしてください。,On cache miss fetch from DB.,キャッシュミス,キャッシュミス時【じ】はDBからフェッチしてください。,Performance - Caching,cache
+更新時にキャッシュを無効化してください。,Invalidate the cache on update.,無効化,更新【こうしん】時【じ】にキャッシュを無効化【むこうか】してください。,Performance - Caching,disable
+TTLを1時間に設定してください。,Set TTL to 1 hour.,TTL,TTLを1時間【じかん】に設定【せってい】してください。,Performance - Caching,TTL
+キャッシュされたデータの有効期限が切れました。,The cached data expired.,有効期限,キャッシュされたデータの有効【ゆうこう】期限【きげん】が切【き】れました。,Performance - Caching,expiration
+キャッシュから古いエントリを削除してください。,Evict old entries from cache.,削除,キャッシュから古【ふる】いエントリを削除【さくじょ】してください。,Performance - Caching,delete
+キャッシュにはRedisを使ってください。,Use Redis for caching.,Redis,キャッシュにはRedisを使【つか】ってください。,Database - Redis,Redis
+MemcachedはRedisよりシンプルです。,Memcached is simpler than Redis.,Memcached,MemcachedはRedisよりシンプルです。,Database - Memcached,Memcached
+静的ファイルはCDNから配信してください。,Serve static files from CDN.,CDN,静的【せいてき】ファイルはCDNから配信【はいしん】してください。,Infrastructure - Cdn,CDN
+速度のためにエッジでキャッシュしてください。,Cache at the edge for speed.,エッジ,速度【そくど】のためにエッジでキャッシュしてください。,Infrastructure - Edge,edge
+ローンチ前にキャッシュをウォームアップしてください。,Warm up the cache before launch.,ウォームアップ,ローンチ前【まえ】にキャッシュをウォームアップしてください。,Performance - Caching,warm up
+コールドキャッシュは最初の読み込みを遅くします。,Cold cache causes slow first load.,コールド,コールドキャッシュは最初【さいしょ】の読【よ】み込【こ】みを遅【おそ】くします。,Performance - Caching,cold
+ストレージが不足しています。,We're running low on storage.,ストレージ,ストレージが不足【ふそく】しています。,Infrastructure - Storage,storage
+画像はBlobとして保存してください。,Store images as blobs.,Blob,画像【がぞう】はBlobとして保存【ほぞん】してください。,Infrastructure - Storage,Blob (binary)
+オブジェクトストレージにはS3を使ってください。,Use S3 for object storage.,オブジェクトストレージ,オブジェクトストレージにはS3を使【つか】ってください。,Infrastructure - Storage,storage
+ローカルファイルシステムに書き込んでください。,Write to the local file system.,ファイルシステム,ローカルファイルシステムに書【か】き込【こ】んでください。,Infrastructure - Storage,file system
+データには永続ストレージを使ってください。,Use persistent storage for data.,永続,データには永続【えいぞく】ストレージを使【つか】ってください。,Infrastructure - Storage,persistent
+コンテナストレージは一時的です。,Container storage is ephemeral.,一時的,コンテナストレージは一時的【いちじてき】です。,Infrastructure - Storage,temporary
+EBSはブロックストレージを提供します。,EBS provides block storage.,ブロックストレージ,EBSはブロックストレージを提供【ていきょう】します。,Infrastructure - Storage,blocked
+パフォーマンス向上のためにIOPSを増やしてください。,Increase IOPS for better performance.,IOPS,パフォーマンス向上【こうじょう】のためにIOPSを増【ふ】やしてください。,Performance - Iops,IOPS
+ストレージスループットが制限されています。,Storage throughput is limited.,スループット,ストレージスループットが制限【せいげん】されています。,Performance - Throughput,throughput
+クロスリージョンレプリケーションを有効にしてください。,Enable cross-region replication.,レプリケーション,クロスリージョンレプリケーションを有効【ゆうこう】にしてください。,Database - Replication,replication
+強い一貫性か結果整合性かを選んでください。,Strong consistency vs eventual.,一貫性,強【つよ】い一貫性【いっかんせい】か結果【けっか】整合性【せいごうせい】かを選【えら】んでください。,Database - Consistency,consistency
+S3は結果整合性を持っています。,S3 has eventual consistency.,結果整合性,S3は結果【けっか】整合性【せいごうせい】を持【も】っています。,Database - Consistency,consistency
+S3は11ナインの耐久性を持っています。,S3 has 11 9s of durability.,耐久性,S3は11ナインの耐久性【たいきゅうせい】を持【も】っています。,Infrastructure - Durability,durability
+高可用性のために設計してください。,Design for high availability.,高可用性,高【こう】可用性【かようせい】のために設計【せっけい】してください。,Infrastructure - Ha,availability
+冗長性を組み込んでください。,Build in redundancy.,冗長性,冗長性【じょうちょうせい】を組【く】み込【こ】んでください。,Infrastructure - Redundancy,redundancy
+毎日のバックアップをスケジュールしてください。,Schedule daily backups.,バックアップ,毎日【まいにち】のバックアップをスケジュールしてください。,Infrastructure - Backup,backup
+バックアップからリストアしてください。,Restore from backup.,リストア,バックアップからリストアしてください。,Infrastructure - Restore,store
+セキュリティは最優先事項です。,Security is our top priority.,セキュリティ,セキュリティは最【さい】優先【ゆうせん】事項【じこう】です。,Security - General,security
+セキュリティの脆弱性を見つけました。,We found a security vulnerability.,脆弱性,セキュリティの脆弱性【ぜいじゃくせい】を見【み】つけました。,Security - Vulnerability,vulnerability
+誰かがエクスプロイトする前にパッチを当ててください。,Patch before someone exploits it.,エクスプロイト,誰【だれ】かがエクスプロイトする前【まえ】にパッチを当【あ】ててください。,Security - Vulnerability,exploit
+攻撃の試みを検出しました。,We detected an attack attempt.,攻撃,攻撃【こうげき】の試【こころ】みを検出【けんしゅつ】しました。,Security - Attack,attack
+データ侵害は発生していません。,No data breach occurred.,侵害,データ侵害【しんがい】は発生【はっせい】していません。,Security - Breach,breach
+保存時にデータを暗号化してください。,Encrypt data at rest.,暗号化,保存【ほぞん】時【じ】にデータを暗号化【あんごうか】してください。,Security - Encryption,encryption
+サーバー側で復号化してください。,Decrypt on the server side.,復号化,サーバー側【がわ】で復号化【ふくごうか】してください。,Security - Encryption,decrypt
+AES暗号化を使ってください。,Use AES encryption.,暗号化,AES暗号化【あんごうか】を使【つか】ってください。,Security - Encryption,encryption
+bcryptでパスワードをハッシュ化してください。,Hash passwords with bcrypt.,ハッシュ,bcryptでパスワードをハッシュ化【か】してください。,Security - Hashing,hash
+ハッシュにソルトを追加してください。,Add a salt to the hash.,ソルト,ハッシュにソルトを追加【ついか】してください。,Security - Hashing,salt
+TLS 1.3を使ってください。,Use TLS 1.3.,TLS,TLS 1.3を使【つか】ってください。,Security - Tls,TLS
+常にHTTPSを使ってください。,Always use HTTPS.,HTTPS,常【つね】にHTTPSを使【つか】ってください。,Security - Https,HTTPS
+SSL証明書を更新してください。,Renew the SSL certificate.,証明書,SSL証明書【しょうめいしょ】を更新【こうしん】してください。,Security - Certificate,certificate
+二要素認証を実装してください。,Implement two-factor authentication.,二要素認証,二【に】要素【ようそ】認証【にんしょう】を実装【じっそう】してください。,Security - 2Fa,2FA
+このアクションの認可を確認してください。,Check authorization for this action.,認可,このアクションの認可【にんか】を確認【かくにん】してください。,Security - Authorization,authorization
+ロールベースのアクセス制御を実装してください。,Implement role-based access control.,アクセス制御,ロールベースのアクセス制御【せいぎょ】を実装【じっそう】してください。,Security - Access Control,access control
+権限にはRBACを使ってください。,Use RBAC for permissions.,RBAC,権限【けんげん】にはRBACを使【つか】ってください。,Security - Rbac,RBAC
+ユーザーには権限がありません。,Users don't have permission.,権限,ユーザーには権限【けんげん】がありません。,Security - Permission,permission
+最小権限の原則を使ってください。,Use least privilege principle.,最小権限,最小【さいしょう】権限【けんげん】の原則【げんそく】を使【つか】ってください。,Security - Least Privilege,least privilege
+認証情報を定期的にローテーションしてください。,Rotate credentials regularly.,認証情報,認証【にんしょう】情報【じょうほう】を定期的【ていきてき】にローテーションしてください。,Security - Credentials,credentials
+トークンの有効期限が切れました。,The token is expired.,有効期限,トークンの有効【ゆうこう】期限【きげん】が切【き】れました。,Security - Token,expiration
+ログアウト時にセッションを無効化してください。,Invalidate the session on logout.,セッション,ログアウト時【じ】にセッションを無効化【むこうか】してください。,Security - Session,session
+トークンをCookieに保存してください。,Store the token in a cookie.,Cookie,トークンをCookieに保存【ほぞん】してください。,Security - Cookie,Cookie
+XSSを防ぐために入力をサニタイズしてください。,Sanitize input to prevent XSS.,XSS,XSSを防【ふせ】ぐために入力【にゅうりょく】をサニタイズしてください。,Security - Xss,XSS
+CSRF保護を追加してください。,Add CSRF protection.,CSRF,CSRF保護【ほご】を追加【ついか】してください。,Security - Csrf,CSRF
+パラメータ化されたクエリを使ってください。,Use parameterized queries.,パラメータ化,パラメータ化【か】されたクエリを使【つか】ってください。,Security - Injection Prevention,parameter
+コマンドインジェクションを防いでください。,Prevent command injection.,インジェクション,コマンドインジェクションを防【ふせ】いでください。,Security - Injection,injection
+すべてのユーザー入力をサニタイズしてください。,Sanitize all user input.,サニタイズ,すべてのユーザー入力【にゅうりょく】をサニタイズしてください。,Security - Input Validation,sanitize
+サーバーで入力を検証してください。,Validate input on the server.,検証,サーバーで入力【にゅうりょく】を検証【けんしょう】してください。,Data - Validation,verification
+特殊文字をエスケープしてください。,Escape special characters.,エスケープ,特殊【とくしゅ】文字【もじ】をエスケープしてください。,Other - Escape,escape
+許可値にはホワイトリストを使ってください。,Use a whitelist for allowed values.,ホワイトリスト,許可【きょか】値【ち】にはホワイトリストを使【つか】ってください。,Security - Whitelist,whitelist
+既知の悪いIPをブラックリストに追加してください。,Blacklist known bad IPs.,ブラックリスト,既知【きち】の悪【わる】いIPをブラックリストに追加【ついか】してください。,Security - Blacklist,list
+ファイアウォールルールを設定してください。,Configure the firewall rules.,ファイアウォール,ファイアウォールルールを設定【せってい】してください。,Infrastructure - Firewall,firewall
+保護のためにWAFをデプロイしてください。,Deploy a WAF for protection.,WAF,保護【ほご】のためにWAFをデプロイしてください。,Security - Waf,WAF (firewall)
+DDoS攻撃を受けています。,We're under DDoS attack.,DDoS,DDoS攻撃【こうげき】を受【う】けています。,Security - Ddos,DDoS (attack)
+レート制限を実装してください。,Implement rate limiting.,レート制限,レート制限【せいげん】を実装【じっそう】してください。,Security - Rate Limiting,rate
+過度のリクエストをスロットルしてください。,Throttle excessive requests.,スロットル,過度【かど】のリクエストをスロットルしてください。,Security - Rate Limiting,slot
+監査ログを有効にしてください。,Enable audit logging.,監査,監査【かんさ】ログを有効【ゆうこう】にしてください。,Security - Audit,audit
+コンプライアンス要件を満たしてください。,Meet compliance requirements.,コンプライアンス,コンプライアンス要件【ようけん】を満【み】たしてください。,Security - Compliance,compliance
+GDPRコンプライアンスを確保してください。,Ensure GDPR compliance.,GDPR,GDPRコンプライアンスを確保【かくほ】してください。,Security - Compliance,GDPR
+PCIコンプライアントです。,We're PCI compliant.,PCI,PCIコンプライアントです。,Security - Compliance,PCI
+SOC 2監査に合格してください。,Pass the SOC 2 audit.,SOC 2,SOC 2監査【かんさ】に合格【ごうかく】してください。,Security - Compliance,SOC 2
+ペネトレーションテストをスケジュールしてください。,Schedule a pen test.,ペネトレーションテスト,ペネトレーションテストをスケジュールしてください。,Security - Pen Test,test
+脆弱性スキャンを実行してください。,Run a vulnerability scan.,脆弱性スキャン,脆弱性【ぜいじゃくせい】スキャンを実行【じっこう】してください。,Security - Scan,vulnerability
+シークレットをログに記録しないでください。,Never log secrets.,シークレット,シークレットをログに記録【きろく】しないでください。,Security - Secret,secret
+キーローテーションを実装してください。,Implement key rotation.,キーローテーション,キーローテーションを実装【じっそう】してください。,Security - Key Rotation,key rotation
+すべてのユーザーにMFAを有効にしてください。,Enable MFA for all users.,MFA,すべてのユーザーにMFAを有効【ゆうこう】にしてください。,Security - Mfa,MFA (multi-factor)
+OktaでSSOを使ってください。,Use SSO with Okta.,SSO,OktaでSSOを使【つか】ってください。,Security - Sso,SSO (single sign-on)
+エンタープライズ向けにSAMLを統合してください。,Integrate SAML for enterprise.,SAML,エンタープライズ向【む】けにSAMLを統合【とうごう】してください。,Security - Saml,SAML
+認証にはOAuth 2.0を使ってください。,Use OAuth 2.0 for auth.,OAuth,認証【にんしょう】にはOAuth 2.0を使【つか】ってください。,Security - Oauth,OAuth
+フロントエンドで働いています。,I work on the frontend.,フロントエンド,フロントエンドで働【はたら】いています。,Frontend - General,frontend
+バックエンドチームが助けてくれます。,The backend team will help.,バックエンド,バックエンドチームが助【たす】けてくれます。,Backend - General,backend
+フルスタック開発者が必要です。,We need a fullstack developer.,フルスタック,フルスタック開発者【かいはつしゃ】が必要【ひつよう】です。,Development - Fullstack,stack
+UIデザインを改善してください。,Improve the UI design.,UI,UIデザインを改善【かいぜん】してください。,Frontend - Ui,UI
+より良いUXに集中してください。,Focus on better UX.,UX,より良【よ】いUXに集中【しゅうちゅう】してください。,Frontend - Ux,UX
+再利用可能なコンポーネントを作成してください。,Create a reusable component.,コンポーネント,再利用【さいりよう】可能【かのう】なコンポーネントを作成【さくせい】してください。,Architecture - Component,component
+propsでデータを渡してください。,Pass data via props.,props,propsでデータを渡【わた】してください。,Frontend - React,props
+コンポーネントのstateを管理してください。,Manage component state.,state,コンポーネントのstateを管理【かんり】してください。,Frontend - React,state
+カスタムhookを使ってください。,Use a custom hook.,hook,カスタムhookを使【つか】ってください。,Frontend - React,hook
+コンポーネントが再レンダリングされます。,The component re-renders.,レンダリング,コンポーネントが再【さい】レンダリングされます。,Frontend - Rendering,rendering
+Reactは仮想DOMを使います。,React uses virtual DOM.,仮想DOM,Reactは仮想【かそう】DOMを使【つか】います。,Frontend - React,DOM
+DOMを直接操作してください。,Manipulate the DOM directly.,DOM,DOMを直接【ちょくせつ】操作【そうさ】してください。,Frontend - Dom,DOM
+クリックイベントを処理してください。,Handle the click event.,イベント,クリックイベントを処理【しょり】してください。,Frontend - Event,event
+イベントリスナーを追加してください。,Add an event listener.,リスナー,イベントリスナーを追加【ついか】してください。,Frontend - Event,listener
+イベントハンドラーを書いてください。,Write an event handler.,ハンドラー,イベントハンドラーを書【か】いてください。,Frontend - Event,handler
+双方向データバインディングを使ってください。,Use two-way data binding.,バインディング,双方向【そうほうこう】データバインディングを使【つか】ってください。,Frontend - Binding,binding
+ライフサイクルメソッドを使ってください。,Use lifecycle methods.,ライフサイクル,ライフサイクルメソッドを使【つか】ってください。,Frontend - Lifecycle,lifecycle
+マウント時にデータをフェッチしてください。,Fetch data on mount.,マウント,マウント時【じ】にデータをフェッチしてください。,Frontend - Lifecycle,mount
+アンマウント時にクリーンアップしてください。,Clean up on unmount.,アンマウント,アンマウント時【じ】にクリーンアップしてください。,Frontend - Lifecycle,unmount
+SEOにはSSRを使ってください。,Use SSR for SEO.,SSR,SEOにはSSRを使【つか】ってください。,Frontend - Ssr,SSR (server rendering)
+CSRは初回後より速く読み込みます。,CSR loads faster after initial.,CSR,CSRは初回【しょかい】後【ご】より速【はや】く読【よ】み込【こ】みます。,Frontend - Csr,CSR (client rendering)
+ハイドレーションはクライアントで行われます。,Hydration happens on client.,ハイドレーション,ハイドレーションはクライアントで行【おこな】われます。,Frontend - Hydration,hydration
+遅延読み込みを実装してください。,Implement lazy loading.,遅延読み込み,遅延【ちえん】読【よ】み込【こ】みを実装【じっそう】してください。,Frontend - Performance,load
+コード分割を使ってください。,Use code splitting.,コード分割,コード分割【ぶんかつ】を使【つか】ってください。,Frontend - Performance,code splitting
+バンドルサイズが大きすぎます。,The bundle size is too large.,バンドル,バンドルサイズが大【おお】きすぎます。,Frontend - Build,bundle
+本番用にJavaScriptを最小化してください。,Minify JavaScript for production.,最小化,本番【ほんばん】用【よう】にJavaScriptを最小化【さいしょうか】してください。,Frontend - Build,minimize
+TypeScriptをJSにトランスパイルしてください。,Transpile TypeScript to JS.,トランスパイル,TypeScriptをJSにトランスパイルしてください。,Frontend - Build,transpile
+webpackを設定してください。,Configure webpack.,webpack,webpackを設定【せってい】してください。,Frontend - Build,webpack
+本番ビルドを実行してください。,Run the production build.,本番ビルド,本番【ほんばん】ビルドを実行【じっこう】してください。,Frontend - Build,build
+モバイル用にレスポンシブにしてください。,Make it responsive for mobile.,レスポンシブ,モバイル用【よう】にレスポンシブにしてください。,Frontend - Responsive,responsive
+モバイルブレークポイントを追加してください。,Add a mobile breakpoint.,ブレークポイント,モバイルブレークポイントを追加【ついか】してください。,Frontend - Responsive,breakpoint
+クリーンなCSSを書いてください。,Write clean CSS.,CSS,クリーンなCSSを書【か】いてください。,Frontend - Css,CSS
+レイアウトにはFlexboxを使ってください。,Use Flexbox for layout.,Flexbox,レイアウトにはFlexboxを使【つか】ってください。,Frontend - Css,Flexbox
+CSS Gridは強力です。,CSS Grid is powerful.,Grid,CSS Gridは強力【きょうりょく】です。,Frontend - Css,Grid
+控えめなアニメーションを追加してください。,Add a subtle animation.,アニメーション,控【ひか】えめなアニメーションを追加【ついか】してください。,Frontend - Css,animation
+スムーズなトランジションは見栄えが良いです。,Smooth transitions look better.,トランジション,スムーズなトランジションは見栄【みば】えが良【よ】いです。,Frontend - Css,transition
+アクセシビリティのコンプライアンスを確保してください。,Ensure accessibility compliance.,アクセシビリティ,アクセシビリティのコンプライアンスを確保【かくほ】してください。,Frontend - Accessibility,accessibility
+Lighthouseでa11yをチェックしてください。,Check a11y with Lighthouse.,a11y,Lighthouseでa11yをチェックしてください。,Frontend - Accessibility,a11y
+ARIAラベルを追加してください。,Add ARIA labels.,ARIA,ARIAラベルを追加【ついか】してください。,Frontend - Accessibility,ARIA (accessibility)
+SEO用に最適化してください。,Optimize for SEO.,SEO,SEO用【よう】に最適化【さいてきか】してください。,Frontend - Seo,SEO
+共有用にメタタグを追加してください。,Add meta tags for sharing.,メタタグ,共有【きょうゆう】用【よう】にメタタグを追加【ついか】してください。,Frontend - Seo,meta tag
+ビューポートを正しく設定してください。,Set the viewport correctly.,ビューポート,ビューポートを正【ただ】しく設定【せってい】してください。,Frontend - Viewport,view
+アイコンは24ピクセルです。,The icon is 24 pixels.,ピクセル,アイコンは24ピクセルです。,Frontend - Ui,pixel
+フォーム入力を検証してください。,Validate the form input.,フォーム,フォーム入力【にゅうりょく】を検証【けんしょう】してください。,Frontend - Form,form
+入力フィールドにスタイルを当ててください。,Style the input field.,入力フィールド,入力【にゅうりょく】フィールドにスタイルを当【あ】ててください。,Frontend - Form,field
+クライアント側の検証を追加してください。,Add client-side validation.,クライアント側,クライアント側【がわ】の検証【けんしょう】を追加【ついか】してください。,Frontend - Client,client
+フォーム送信を処理してください。,Handle form submit.,送信,フォーム送信【そうしん】を処理【しょり】してください。,Frontend - Form,send
+確認モーダルを表示してください。,Show a confirmation modal.,モーダル,確認【かくにん】モーダルを表示【ひょうじ】してください。,Frontend - Ui,modal
+成功トーストを表示してください。,Show a success toast.,トースト,成功【せいこう】トーストを表示【ひょうじ】してください。,Frontend - Ui,toast
+通知を表示してください。,Display a notification.,通知,通知【つうち】を表示【ひょうじ】してください。,Frontend - Ui,notification
+開発サーバーを起動してください。,Start the development server.,開発サーバー,開発【かいはつ】サーバーを起動【きどう】してください。,Infrastructure - Development,server
+REST APIを設計してください。,Design the REST API.,REST API,REST APIを設計【せっけい】してください。,Api - Rest,API
+新しいエンドポイントを作成してください。,Create a new endpoint.,エンドポイント,新【あたら】しいエンドポイントを作成【さくせい】してください。,Api - Endpoint,endpoint
+APIルートを定義してください。,Define the API routes.,ルート,APIルートを定義【ていぎ】してください。,Backend - Routing,root
+Expressルーターを使ってください。,Use Express router.,ルーター,Expressルーターを使【つか】ってください。,Backend - Routing,router
+ロジックをコントローラーに移動してください。,Move logic to the controller.,コントローラー,ロジックをコントローラーに移動【いどう】してください。,Architecture - Layer,controller
+ユーザーサービスを作成してください。,Create a user service.,サービス,ユーザーサービスを作成【さくせい】してください。,Architecture - Service,service
+データアクセスはリポジトリで行います。,Data access in repository.,リポジトリ,データアクセスはリポジトリで行【おこな】います。,Backend - Repository,repository
+Userモデルを定義してください。,Define the User model.,モデル,Userモデルを定義【ていぎ】してください。,Backend - Model,model
+データベースエンティティにマップしてください。,Map to database entity.,エンティティ,データベースエンティティにマップしてください。,Backend - Entity,entity
+リクエストにはDTOを使ってください。,Use DTOs for requests.,DTO,リクエストにはDTOを使【つか】ってください。,Backend - Dto,DTO (data transfer)
+認証ミドルウェアを追加してください。,Add auth middleware.,ミドルウェア,認証【にんしょう】ミドルウェアを追加【ついか】してください。,Architecture - Middleware,middleware
+インターセプターでリクエストをログしてください。,Log requests with interceptor.,インターセプター,インターセプターでリクエストをログしてください。,Backend - Interceptor,interceptor
+認証にはガードを使ってください。,Use guards for auth.,ガード,認証【にんしょう】にはガードを使【つか】ってください。,Backend - Guard,guard
+ルートにはデコレーターを使ってください。,Use decorators for routes.,デコレーター,ルートにはデコレーターを使【つか】ってください。,Backend - Decorator,decorator
+サーバー側の検証を行ってください。,Server-side validation.,サーバー側,サーバー側【がわ】の検証【けんしょう】を行【おこな】ってください。,Backend - Server,server
+JSONシリアライゼーションを処理してください。,Handle JSON serialization.,シリアライゼーション,JSONシリアライゼーションを処理【しょり】してください。,Backend - Serialization,serialization
+リクエストボディをデシリアライズしてください。,Deserialize the request body.,デシリアライズ,リクエストボディをデシリアライズしてください。,Backend - Serialization,deserialize
+ORMとしてPrismaを使ってください。,Use Prisma as ORM.,Prisma,ORMとしてPrismaを使【つか】ってください。,Database - Orm,Prisma
+クエリビルダーを使ってください。,Use the query builder.,クエリビルダー,クエリビルダーを使【つか】ってください。,Database - Query Builder,query
+生のSQLクエリを書いてください。,Write a raw SQL query.,生のSQL,生【なま】のSQLクエリを書【か】いてください。,Database - Sql,SQL
+データベース接続をプールしてください。,Pool database connections.,プール,データベース接続【せつぞく】をプールしてください。,Database - Connection Pool,pool
+コネクションプールを設定してください。,Configure connection pool.,コネクションプール,コネクションプールを設定【せってい】してください。,Database - Connection Pool,connection pool
+これにはトランザクションを使ってください。,Use a transaction for this.,トランザクション,これにはトランザクションを使【つか】ってください。,Database - Transaction,transaction
+悲観的ロックを使ってください。,Use pessimistic locking.,悲観的ロック,悲観的【ひかんてき】ロックを使【つか】ってください。,Database - Lock,lock
+ジョブをキューに追加してください。,Add job to the queue.,キュー,ジョブをキューに追加【ついか】してください。,Backend - Queue,queue
+バックグラウンドワーカーで処理してください。,Process with background worker.,ワーカー,バックグラウンドワーカーで処理【しょり】してください。,Backend - Worker,worker
+非同期ジョブを作成してください。,Create an async job.,ジョブ,非同期【ひどうき】ジョブを作成【さくせい】してください。,Backend - Job,job
+cronスケジューラで実行してください。,Run with cron scheduler.,スケジューラ,cronスケジューラで実行【じっこう】してください。,Backend - Scheduler,scheduler
+cronジョブを設定してください。,Set up a cron job.,cron,cronジョブを設定【せってい】してください。,Backend - Cron,cron
+バッチで処理してください。,Process in batches.,バッチ,バッチで処理【しょり】してください。,Backend - Batch,batch
+ページネーションを実装してください。,Implement pagination.,ページネーション,ページネーションを実装【じっそう】してください。,Backend - Pagination,pagination
+カーソルページネーションを使ってください。,Use cursor pagination.,カーソル,カーソルページネーションを使【つか】ってください。,Backend - Pagination,cursor
+オフセットページネーションはシンプルです。,Offset pagination is simpler.,オフセット,オフセットページネーションはシンプルです。,Backend - Pagination,offset
+結果を100件に制限してください。,Limit results to 100.,制限,結果【けっか】を100件【けん】に制限【せいげん】してください。,Backend - Pagination,limit/restriction
+ステータスでフィルタリングしてください。,Filter by status.,フィルター,ステータスでフィルタリングしてください。,Backend - Query,filter
+作成日でソートしてください。,Sort by created date.,ソート,作成【さくせい】日【び】でソートしてください。,Backend - Query,sort
+全文検索を実装してください。,Implement full-text search.,全文検索,全文【ぜんぶん】検索【けんさく】を実装【じっそう】してください。,Backend - Search,full-text search
+検索インデックスを追加してください。,Add a search index.,検索インデックス,検索【けんさく】インデックスを追加【ついか】してください。,Backend - Search,index
+メトリクスを集計してください。,Aggregate the metrics.,集計,メトリクスを集計【しゅうけい】してください。,Backend - Aggregation,aggregate
+レコードの合計数をカウントしてください。,Count total records.,カウント,レコードの合計【ごうけい】数【すう】をカウントしてください。,Backend - Aggregation,count
+注文金額を合計してください。,Sum the order amounts.,合計,注文【ちゅうもん】金額【きんがく】を合計【ごうけい】してください。,Backend - Aggregation,total
+平均評価を計算してください。,Calculate average rating.,平均,平均【へいきん】評価【ひょうか】を計算【けいさん】してください。,Monitoring - Average,average
+webhookを受信してください。,Receive webhooks.,webhook,webhookを受信【じゅしん】してください。,Backend - Webhook,webhook
+コールバックを処理してください。,Process the callback.,コールバック,コールバックを処理【しょり】してください。,Development - Callback,callback
+イベントを発行してください。,Emit an event.,イベント,イベントを発行【はっこう】してください。,Frontend - Event,event
+キューにパブリッシュしてください。,Publish to the queue.,パブリッシュ,キューにパブリッシュしてください。,Backend - Pub/Sub,publish
+イベントをサブスクライブしてください。,Subscribe to events.,サブスクライブ,イベントをサブスクライブしてください。,Backend - Pub/Sub,subscribe
+キューにメッセージを送信してください。,Send a message to queue.,メッセージ,キューにメッセージを送信【そうしん】してください。,Backend - Messaging,message
+ブローカーとしてRabbitMQを使ってください。,Use RabbitMQ as broker.,ブローカー,ブローカーとしてRabbitMQを使【つか】ってください。,Backend - Messaging,broker
+ETLパイプラインを構築してください。,Build an ETL pipeline.,ETL,ETLパイプラインを構築【こうちく】してください。,Data - Etl,ETL (data pipeline)
+ソースからデータを抽出してください。,Extract data from source.,抽出,ソースからデータを抽出【ちゅうしゅつ】してください。,Data - Etl,extract
+データ形式を変換してください。,Transform the data format.,変換,データ形式【けいしき】を変換【へんかん】してください。,Data - Etl,convert
+データウェアハウスにロードしてください。,Load into data warehouse.,ロード,データウェアハウスにロードしてください。,Data - Etl,load
+データパイプラインが失敗しました。,The data pipeline failed.,データパイプライン,データパイプラインが失敗【しっぱい】しました。,Data - Pipeline,pipeline
+データをストリームとして処理してください。,Process data as a stream.,ストリーム,データをストリームとして処理【しょり】してください。,Data - Streaming,stream
+夜間にバッチ処理をしてください。,Batch processing overnight.,バッチ処理,夜間【やかん】にバッチ処理【しょり】をしてください。,Data - Batch,batch processing
+リアルタイムデータ処理を行ってください。,Real-time data processing.,リアルタイム,リアルタイムデータ処理【しょり】を行【おこな】ってください。,Data - Real-Time,real-time
+データウェアハウスにクエリしてください。,Query the data warehouse.,データウェアハウス,データウェアハウスにクエリしてください。,Data - Warehouse,data
+生データをデータレイクに保存してください。,Store raw data in lake.,データレイク,生【なま】データをデータレイクに保存【ほぞん】してください。,Data - Lake,data
+データスキーマを定義してください。,Define the data schema.,スキーマ,データスキーマを定義【ていぎ】してください。,Data - Schema,schema
+Parquet形式を使ってください。,Use Parquet format.,Parquet,Parquet形式【けいしき】を使【つか】ってください。,Data - Format,Parquet
+CSVにエクスポートしてください。,Export to CSV.,CSV,CSVにエクスポートしてください。,Data - Format,CSV
+JSONファイルをパースしてください。,Parse the JSON file.,JSON,JSONファイルをパースしてください。,Data - Format,JSON
+XMLをJSONに変換してください。,Convert XML to JSON.,XML,XMLをJSONに変換【へんかん】してください。,Data - Format,XML
+データを正規化してください。,Normalize the data.,正規化,データを正規化【せいきか】してください。,Data - Normalization,normalize
+クエリ用に非正規化してください。,Denormalize for queries.,非正規化,クエリ用【よう】に非正規化【ひせいきか】してください。,Data - Denormalization,normalize
+レコードの重複を排除してください。,Dedup the records.,重複排除,レコードの重複【じゅうふく】を排除【はいじょ】してください。,Data - Deduplication,dedup
+データ品質を検証してください。,Validate data quality.,データ品質,データ品質【ひんしつ】を検証【けんしょう】してください。,Data - Quality,data
+データセットをクレンジングしてください。,Clean the dataset.,クレンジング,データセットをクレンジングしてください。,Data - Cleansing,range
