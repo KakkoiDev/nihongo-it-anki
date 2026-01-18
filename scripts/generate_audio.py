@@ -8,13 +8,11 @@ Uses the Pronunciation field with preprocessing to ensure accurate readings:
 
 import argparse
 import csv
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
+import lameenc
 import numpy as np
-import soundfile as sf
 from kokoro import KPipeline
 
 from pronunciation import preprocess_for_tts
@@ -90,7 +88,8 @@ def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False,
             # Generate audio
             audio_chunks = []
             for gs, ps, audio in pipeline(tts_input, voice=voice):
-                audio_chunks.append(audio)
+                # Convert PyTorch tensor to numpy array
+                audio_chunks.append(audio.numpy() if hasattr(audio, 'numpy') else audio)
 
             # Concatenate audio chunks
             if len(audio_chunks) == 1:
@@ -98,18 +97,20 @@ def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False,
             else:
                 audio_data = np.concatenate(audio_chunks)
 
-            # Convert to MP3 via ffmpeg (AnkiWeb requires MP3)
-            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as tmp:
-                tmp_path = tmp.name
-                sf.write(tmp_path, audio_data, 24000)
+            # Convert float32 audio to int16 for MP3 encoding
+            audio_int16 = (audio_data * 32767).astype(np.int16)
 
-            subprocess.run([
-                'ffmpeg', '-y', '-i', tmp_path,
-                '-codec:a', 'libmp3lame', '-b:a', '128k',
-                str(output_path)
-            ], capture_output=True, check=True)
+            # Encode directly to MP3 using lameenc (no ffmpeg needed)
+            encoder = lameenc.Encoder()
+            encoder.set_bit_rate(128)
+            encoder.set_in_sample_rate(24000)
+            encoder.set_channels(1)
+            encoder.set_quality(2)  # 2 = high quality, 7 = fast
 
-            Path(tmp_path).unlink()  # Clean up temp file
+            mp3_data = encoder.encode(audio_int16.tobytes()) + encoder.flush()
+
+            with open(output_path, 'wb') as f:
+                f.write(mp3_data)
 
         except Exception as e:
             print(f"    Error: {e}")

@@ -9,6 +9,7 @@ dependencies = [
     "genanki>=0.13.1",
     "jaconv>=0.4.1",
     "kokoro>=0.9.4",
+    "lameenc>=1.8.0",
     "mojimoji>=0.0.13",
     "pyopenjtalk>=0.4.1",
     "soundfile>=0.13.1",

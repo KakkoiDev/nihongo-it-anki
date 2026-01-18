@@ -49,12 +49,12 @@ Japanese IT vocabulary for Anki. 1000 sentences with AI-generated audio. Open so
 
 ## Build From Source
 
-Requires Python 3.13+, [uv](https://docs.astral.sh/uv/), espeak-ng, and ffmpeg.
+Requires Python 3.13+, [uv](https://docs.astral.sh/uv/), and espeak-ng.
 
 ```bash
 # Install dependencies
-sudo apt-get install espeak-ng ffmpeg  # Ubuntu/Debian
-brew install espeak ffmpeg              # macOS
+sudo apt-get install espeak-ng  # Ubuntu/Debian
+brew install espeak             # macOS
 
 # Clone and setup
 git clone https://github.com/KakkoiDev/nihongo-it-anki.git
