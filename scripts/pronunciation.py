@@ -8,6 +8,23 @@ Handles:
 1. Furigana extraction: 昼食【ちゅうしょく】 → ちゅうしょく
 2. English acronyms: API → エーピーアイ
 3. Common IT terms: bug → バグ (already in Japanese, but ensures consistency)
+4. Particle pauses: を → を、 (for natural TTS rhythm)
+
+## TTS Pause Pattern Notes (from Kokoro TTS experiments)
+
+### Particles that need comma for natural pause:
+- を (object marker): ALWAYS add comma after (を → を、)
+  Scripted: を is always a particle, safe to auto-insert.
+
+- が (subject marker): NEEDS comma after for natural pause, BUT requires
+  LLM to determine if が is a particle vs. part of a word/grammar.
+  Example particle: "バグが発生" → "バグが、発生" (sounds natural)
+  Example non-particle: "ながら" (while) - don't insert comma
+
+### Particles that sound fine without comma:
+- は (topic marker): baseline sounds good
+- に (direction/time): baseline sounds good
+- で (location/means): baseline sounds good
 """
 
 import re
@@ -253,12 +270,31 @@ def convert_english_terms(text: str) -> str:
     return re.sub(pattern, convert_acronym, text)
 
 
+def insert_particle_pauses(text: str) -> str:
+    """Insert commas after particles for natural TTS pauses.
+
+    Based on Kokoro TTS experiments (see experiments/kokoro-pause-test/):
+    - を (object marker): Always insert comma - を is always a particle
+    - が (subject marker): Requires LLM - not handled here (see docstring notes)
+    """
+    # を is always the object marker particle in Japanese
+    # Insert comma after を unless already followed by punctuation
+    text = re.sub(r'を([^、。！？\s])', r'を、\1', text)
+
+    return text
+
+
 def preprocess_for_tts(pronunciation_field: str) -> str:
     """Full preprocessing pipeline for TTS input.
 
     1. Extract furigana readings
     2. Convert English terms to katakana
-    3. Clean up any remaining issues
+    3. Insert particle pauses (を → を、)
+    4. Clean up any remaining issues
+
+    Note: が (subject marker) also benefits from comma insertion but requires
+    LLM context to distinguish particle vs. non-particle usage. See module
+    docstring for details.
     """
     # Step 1: Extract furigana
     text = extract_furigana(pronunciation_field)
@@ -266,7 +302,10 @@ def preprocess_for_tts(pronunciation_field: str) -> str:
     # Step 2: Convert English terms
     text = convert_english_terms(text)
 
-    # Step 3: Clean up
+    # Step 3: Insert particle pauses for natural TTS rhythm
+    text = insert_particle_pauses(text)
+
+    # Step 4: Clean up
     # Remove any remaining brackets that might have been missed
     text = re.sub(r'【[^】]*】', '', text)
 
@@ -289,6 +328,10 @@ if __name__ == '__main__':
         'RESTful APIです。',
         'AWS Lambdaを使【つか】ってください。',
         'TypeScriptをJSにトランスパイルしてください。',
+        # Particle pause tests (を → を、)
+        'ハッピーパスをテストしてください。',
+        'データベースをバックアップしてください。',
+        'コードレビューをお願いします。',
     ]
 
     print("Pronunciation Preprocessing Test\n")

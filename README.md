@@ -105,7 +105,15 @@ uv run python scripts/create_deck.py --combined --female
 
 ## Known Limitations
 
-Kokoro TTS sometimes links particles (を, に, が) to the following word instead of the preceding word. Audio is comprehensible but may sound slightly unnatural.
+### TTS Particle Pauses
+
+Kokoro TTS sometimes links particles to the following word instead of the preceding word, making audio sound slightly unnatural. Mitigations:
+
+- **を (object marker)**: Automatically handled. A comma is inserted after を (`を、`) for natural pauses.
+- **が (subject marker)**: Requires manual comma insertion. When writing sentences, add a comma after が when it marks the subject (e.g., `バグが、発生しました` not `バグが発生しました`). This creates a natural pause in the TTS output.
+- **は, に, で**: Sound natural without modification.
+
+If using an LLM to generate sentences, instruct it to add commas after が when used as a subject marker particle.
 
 ## Credits
 
