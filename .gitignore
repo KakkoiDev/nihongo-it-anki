@@ -2,6 +2,7 @@
 *.md
 !README.md
 !ANKIWEB-README.md
+!experiments/**/*.md
 
 # Backup files
 *.bak
@@ -32,3 +33,4 @@ tier*-audio/
 .DS_Store
 Thumbs.db
 samples/
+experiments/kokoro-pause-test/audio/

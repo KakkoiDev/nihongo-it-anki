@@ -82,7 +82,9 @@ uv run python scripts/create_deck.py --combined --female
 | `generate_conjugations.py` | Generate verb/adjective conjugation tables |
 | `create_deck.py` | Create Anki .apkg files |
 | `validate.py` | Validate CSVs and audio files |
-| `pronunciation.py` | Furigana extraction, English→katakana |
+| `pronunciation.py` | Furigana extraction, English→katakana, を comma |
+| `fix_ga_commas.py` | Add commas after が subject marker |
+| `fix_adverb_commas.py` | Add commas after introductory adverbs |
 | `add_key_meanings.py` | Generate English meanings for key words |
 
 ## Customization
@@ -110,10 +112,15 @@ uv run python scripts/create_deck.py --combined --female
 Kokoro TTS sometimes links particles to the following word instead of the preceding word, making audio sound slightly unnatural. Mitigations:
 
 - **を (object marker)**: Automatically handled. A comma is inserted after を (`を、`) for natural pauses.
-- **が (subject marker)**: Requires manual comma insertion. When writing sentences, add a comma after が when it marks the subject (e.g., `バグが、発生しました` not `バグが発生しました`). This creates a natural pause in the TTS output.
+- **が (subject marker)**: Handled by `scripts/fix_ga_commas.py`. Automatically adds comma after が when used as subject marker (e.g., `バグが、発生しました`). Run this script after adding new sentences.
 - **は, に, で**: Sound natural without modification.
+- **Introductory adverbs** (まず, 次に, 例えば, etc.): Handled by `scripts/fix_adverb_commas.py`. Adds comma after sentence-initial adverbs for natural pauses.
 
-If using an LLM to generate sentences, instruct it to add commas after が when used as a subject marker particle.
+When adding new sentences, run:
+```bash
+uv run python scripts/fix_ga_commas.py --apply
+uv run python scripts/fix_adverb_commas.py --apply
+```
 
 ## Credits
 

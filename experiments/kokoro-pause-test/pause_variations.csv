@@ -1,0 +1,92 @@
+sentence_id,category,variation_id,pattern,target_word,original,modified,filename
+s01,A,01,baseline,を,まずハッピーパスをテストしてください。,まずハッピーパスをテストしてください。,s01_A01_baseline.mp3
+s01,A,02,comma_before,を,まずハッピーパスをテストしてください。,まずハッピーパス、をテストしてください。,s01_A02_comma_before.mp3
+s01,A,03,comma_after,を,まずハッピーパスをテストしてください。,まずハッピーパスを、テストしてください。,s01_A03_comma_after.mp3
+s01,A,04,space_half,を,まずハッピーパスをテストしてください。,まずハッピーパス を テストしてください。,s01_A04_space_half.mp3
+s01,A,05,space_full,を,まずハッピーパスをテストしてください。,まずハッピーパス　を　テストしてください。,s01_A05_space_full.mp3
+s01,A,06,period_after,を,まずハッピーパスをテストしてください。,まずハッピーパスを。テストしてください。,s01_A06_period_after.mp3
+s01,A,07,ellipsis_before,を,まずハッピーパスをテストしてください。,まずハッピーパス...をテストしてください。,s01_A07_ellipsis_before.mp3
+s01,A,08,ellipsis_after,を,まずハッピーパスをテストしてください。,まずハッピーパスを...テストしてください。,s01_A08_ellipsis_after.mp3
+s01,A,09,double_comma,を,まずハッピーパスをテストしてください。,まずハッピーパス、、をテストしてください。,s01_A09_double_comma.mp3
+s01,A,10,ssml_break,を,まずハッピーパスをテストしてください。,まずハッピーパス<break time="200ms"/>をテストしてください。,s01_A10_ssml_break.mp3
+s02,A,01,baseline,は,このバグはすぐに直してください。,このバグはすぐに直してください。,s02_A01_baseline.mp3
+s02,A,02,comma_before,は,このバグはすぐに直してください。,このバグ、はすぐに直してください。,s02_A02_comma_before.mp3
+s02,A,03,comma_after,は,このバグはすぐに直してください。,このバグは、すぐに直してください。,s02_A03_comma_after.mp3
+s02,A,04,space_half,は,このバグはすぐに直してください。,このバグ は すぐに直してください。,s02_A04_space_half.mp3
+s02,A,05,space_full,は,このバグはすぐに直してください。,このバグ　は　すぐに直してください。,s02_A05_space_full.mp3
+s02,A,06,period_after,は,このバグはすぐに直してください。,このバグは。すぐに直してください。,s02_A06_period_after.mp3
+s02,A,07,ellipsis_before,は,このバグはすぐに直してください。,このバグ...はすぐに直してください。,s02_A07_ellipsis_before.mp3
+s02,A,08,ellipsis_after,は,このバグはすぐに直してください。,このバグは...すぐに直してください。,s02_A08_ellipsis_after.mp3
+s02,A,09,double_comma,は,このバグはすぐに直してください。,このバグ、、はすぐに直してください。,s02_A09_double_comma.mp3
+s02,A,10,ssml_break,は,このバグはすぐに直してください。,このバグ<break time="200ms"/>はすぐに直してください。,s02_A10_ssml_break.mp3
+s03,A,01,baseline,が,プルリクエストがマージされました。,プルリクエストがマージされました。,s03_A01_baseline.mp3
+s03,A,02,comma_before,が,プルリクエストがマージされました。,プルリクエスト、がマージされました。,s03_A02_comma_before.mp3
+s03,A,03,comma_after,が,プルリクエストがマージされました。,プルリクエストが、マージされました。,s03_A03_comma_after.mp3
+s03,A,04,space_half,が,プルリクエストがマージされました。,プルリクエスト が マージされました。,s03_A04_space_half.mp3
+s03,A,05,space_full,が,プルリクエストがマージされました。,プルリクエスト　が　マージされました。,s03_A05_space_full.mp3
+s03,A,06,period_after,が,プルリクエストがマージされました。,プルリクエストが。マージされました。,s03_A06_period_after.mp3
+s03,A,07,ellipsis_before,が,プルリクエストがマージされました。,プルリクエスト...がマージされました。,s03_A07_ellipsis_before.mp3
+s03,A,08,ellipsis_after,が,プルリクエストがマージされました。,プルリクエストが...マージされました。,s03_A08_ellipsis_after.mp3
+s03,A,09,double_comma,が,プルリクエストがマージされました。,プルリクエスト、、がマージされました。,s03_A09_double_comma.mp3
+s03,A,10,ssml_break,が,プルリクエストがマージされました。,プルリクエスト<break time="200ms"/>がマージされました。,s03_A10_ssml_break.mp3
+s04,A,01,baseline,に,次にデータベースにレコードを追加します。,次にデータベースにレコードを追加します。,s04_A01_baseline.mp3
+s04,A,02,comma_before,に,次にデータベースにレコードを追加します。,次にデータベース、にレコードを追加します。,s04_A02_comma_before.mp3
+s04,A,03,comma_after,に,次にデータベースにレコードを追加します。,次にデータベースに、レコードを追加します。,s04_A03_comma_after.mp3
+s04,A,04,space_half,に,次にデータベースにレコードを追加します。,次にデータベース に レコードを追加します。,s04_A04_space_half.mp3
+s04,A,05,space_full,に,次にデータベースにレコードを追加します。,次にデータベース　に　レコードを追加します。,s04_A05_space_full.mp3
+s04,A,06,period_after,に,次にデータベースにレコードを追加します。,次にデータベースに。レコードを追加します。,s04_A06_period_after.mp3
+s04,A,07,ellipsis_before,に,次にデータベースにレコードを追加します。,次にデータベース...にレコードを追加します。,s04_A07_ellipsis_before.mp3
+s04,A,08,ellipsis_after,に,次にデータベースにレコードを追加します。,次にデータベースに...レコードを追加します。,s04_A08_ellipsis_after.mp3
+s04,A,09,double_comma,に,次にデータベースにレコードを追加します。,次にデータベース、、にレコードを追加します。,s04_A09_double_comma.mp3
+s04,A,10,ssml_break,に,次にデータベースにレコードを追加します。,次にデータベース<break time="200ms"/>にレコードを追加します。,s04_A10_ssml_break.mp3
+s05,A,01,baseline,で,ローカル環境でテストしてください。,ローカル環境でテストしてください。,s05_A01_baseline.mp3
+s05,A,02,comma_before,で,ローカル環境でテストしてください。,ローカル環境、でテストしてください。,s05_A02_comma_before.mp3
+s05,A,03,comma_after,で,ローカル環境でテストしてください。,ローカル環境で、テストしてください。,s05_A03_comma_after.mp3
+s05,A,04,space_half,で,ローカル環境でテストしてください。,ローカル環境 で テストしてください。,s05_A04_space_half.mp3
+s05,A,05,space_full,で,ローカル環境でテストしてください。,ローカル環境　で　テストしてください。,s05_A05_space_full.mp3
+s05,A,06,period_after,で,ローカル環境でテストしてください。,ローカル環境で。テストしてください。,s05_A06_period_after.mp3
+s05,A,07,ellipsis_before,で,ローカル環境でテストしてください。,ローカル環境...でテストしてください。,s05_A07_ellipsis_before.mp3
+s05,A,08,ellipsis_after,で,ローカル環境でテストしてください。,ローカル環境で...テストしてください。,s05_A08_ellipsis_after.mp3
+s05,A,09,double_comma,で,ローカル環境でテストしてください。,ローカル環境、、でテストしてください。,s05_A09_double_comma.mp3
+s05,A,10,ssml_break,で,ローカル環境でテストしてください。,ローカル環境<break time="200ms"/>でテストしてください。,s05_A10_ssml_break.mp3
+s01,B,01,baseline,まず,まずハッピーパスをテストしてください。,まずハッピーパスをテストしてください。,s01_B01_baseline.mp3
+s01,B,02,comma_after,まず,まずハッピーパスをテストしてください。,まず、ハッピーパスをテストしてください。,s01_B02_comma_after.mp3
+s01,B,03,space_half,まず,まずハッピーパスをテストしてください。,まず ハッピーパスをテストしてください。,s01_B03_space_half.mp3
+s01,B,04,space_full,まず,まずハッピーパスをテストしてください。,まず　ハッピーパスをテストしてください。,s01_B04_space_full.mp3
+s01,B,05,ellipsis_after,まず,まずハッピーパスをテストしてください。,まず...ハッピーパスをテストしてください。,s01_B05_ellipsis_after.mp3
+s01,B,06,ssml_break,まず,まずハッピーパスをテストしてください。,まず<break time="200ms"/>ハッピーパスをテストしてください。,s01_B06_ssml_break.mp3
+s02,B,01,baseline,すぐに,このバグはすぐに直してください。,このバグはすぐに直してください。,s02_B01_baseline.mp3
+s02,B,02,comma_after,すぐに,このバグはすぐに直してください。,このバグはすぐに、直してください。,s02_B02_comma_after.mp3
+s02,B,03,space_half,すぐに,このバグはすぐに直してください。,このバグはすぐに 直してください。,s02_B03_space_half.mp3
+s02,B,04,space_full,すぐに,このバグはすぐに直してください。,このバグはすぐに　直してください。,s02_B04_space_full.mp3
+s02,B,05,ellipsis_after,すぐに,このバグはすぐに直してください。,このバグはすぐに...直してください。,s02_B05_ellipsis_after.mp3
+s02,B,06,ssml_break,すぐに,このバグはすぐに直してください。,このバグはすぐに<break time="200ms"/>直してください。,s02_B06_ssml_break.mp3
+s04,B,01,baseline,次に,次にデータベースにレコードを追加します。,次にデータベースにレコードを追加します。,s04_B01_baseline.mp3
+s04,B,02,comma_after,次に,次にデータベースにレコードを追加します。,次に、データベースにレコードを追加します。,s04_B02_comma_after.mp3
+s04,B,03,space_half,次に,次にデータベースにレコードを追加します。,次に データベースにレコードを追加します。,s04_B03_space_half.mp3
+s04,B,04,space_full,次に,次にデータベースにレコードを追加します。,次に　データベースにレコードを追加します。,s04_B04_space_full.mp3
+s04,B,05,ellipsis_after,次に,次にデータベースにレコードを追加します。,次に...データベースにレコードを追加します。,s04_B05_ellipsis_after.mp3
+s04,B,06,ssml_break,次に,次にデータベースにレコードを追加します。,次に<break time="200ms"/>データベースにレコードを追加します。,s04_B06_ssml_break.mp3
+s06,C,01,baseline,っ,キャッシュをクリアしてください。,キャッシュをクリアしてください。,s06_C01_baseline.mp3
+s07,C,01,baseline,っ,バッチ処理がスタックしています。,バッチ処理がスタックしています。,s07_C01_baseline.mp3
+s08,C,01,baseline,っ,ホットフィックスをプッシュしました。,ホットフィックスをプッシュしました。,s08_C01_baseline.mp3
+s09,C,01,baseline,ー,サーバーがダウンしています。,サーバーがダウンしています。,s09_C01_baseline.mp3
+s09,D,01,baseline,ー,サーバーがダウンしています。,サーバーがダウンしています。,s09_D01_baseline.mp3
+s09,D,02,vowel_kana,ー,サーバーがダウンしています。,サアバアがダウンしています。,s09_D02_vowel_kana.mp3
+s09,D,03,small_vowel,ー,サーバーがダウンしています。,サァバァがダウンしています。,s09_D03_small_vowel.mp3
+s09,D,04,hiragana,ー,サーバーがダウンしています。,さーばーがダウンしています。,s09_D04_hiragana.mp3
+s09,D,05,hiragana_expanded,ー,サーバーがダウンしています。,さあばあがダウンしています。,s09_D05_hiragana_expanded.mp3
+s10,C,01,baseline,ー,コードレビューをお願いします。,コードレビューをお願いします。,s10_C01_baseline.mp3
+s10,D,01,baseline,ー,コードレビューをお願いします。,コードレビューをお願いします。,s10_D01_baseline.mp3
+s10,D,02,vowel_kana,ー,コードレビューをお願いします。,コオドレビュウをお願いします。,s10_D02_vowel_kana.mp3
+s10,D,03,small_vowel,ー,コードレビューをお願いします。,コォドレビュゥをお願いします。,s10_D03_small_vowel.mp3
+s10,D,04,hiragana,ー,コードレビューをお願いします。,こーどれびゅーをお願いします。,s10_D04_hiragana.mp3
+s10,D,05,hiragana_expanded,ー,コードレビューをお願いします。,こおどれびゅうをお願いします。,s10_D05_hiragana_expanded.mp3
+s11,C,01,baseline,ー,データベースをバックアップしてください。,データベースをバックアップしてください。,s11_C01_baseline.mp3
+s11,D,01,baseline,ー,データベースをバックアップしてください。,データベースをバックアップしてください。,s11_D01_baseline.mp3
+s11,D,02,vowel_kana,ー,データベースをバックアップしてください。,デエタベエスをバックアップしてください。,s11_D02_vowel_kana.mp3
+s11,D,03,small_vowel,ー,データベースをバックアップしてください。,デェタベェスをバックアップしてください。,s11_D03_small_vowel.mp3
+s11,D,04,hiragana,ー,データベースをバックアップしてください。,でーたべーすをバックアップしてください。,s11_D04_hiragana.mp3
+s11,D,05,hiragana_expanded,ー,データベースをバックアップしてください。,でえたべえすをバックアップしてください。,s11_D05_hiragana_expanded.mp3
+s12,C,01,baseline,エ,エラーメッセージを確認してください。,エラーメッセージを確認してください。,s12_C01_baseline.mp3
+s13,C,01,baseline,ア,アップデートをインストールしました。,アップデートをインストールしました。,s13_C01_baseline.mp3
