@@ -66,5 +66,13 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 
 **Total: 1000 notes / 2000 cards / 1000 audio files**
 
+## Changelog
+
+**v1.2.0** (Jan 2026)
+- Improved audio naturalness with better pause timing
+
+**v1.1.0** (Jan 2026)
+- Initial public release
+
 If you find this useful, please rate and comment!
 ```
