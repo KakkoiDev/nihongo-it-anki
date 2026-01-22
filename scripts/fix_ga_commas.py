@@ -92,9 +92,9 @@ def add_ga_commas(text: str) -> str:
 
 
 def process_csv(csv_path: Path, dry_run: bool = True) -> list[tuple[str, str]]:
-    """Process a CSV file and add が commas.
+    """Process a CSV file and add が commas to TTSPronunciation only.
 
-    Returns list of (original, modified) tuples for changed sentences.
+    Returns list of (original, modified) tuples for changed TTSPronunciation.
     """
     changes = []
     rows = []
@@ -103,18 +103,20 @@ def process_csv(csv_path: Path, dry_run: bool = True) -> list[tuple[str, str]]:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames
 
+        if 'TTSPronunciation' not in fieldnames:
+            print(f"  Warning: TTSPronunciation column not found in {csv_path.name}")
+            print(f"  Run add_tts_column.py first to add the column")
+            return []
+
         for row in reader:
-            original_sentence = row['Sentence']
-            original_pronunciation = row['Pronunciation']
+            original_tts = row['TTSPronunciation']
 
-            # Process both Sentence and Pronunciation fields
-            new_sentence = add_ga_commas(original_sentence)
-            new_pronunciation = add_ga_commas(original_pronunciation)
+            # Process only TTSPronunciation field (keep Sentence/Pronunciation clean)
+            new_tts = add_ga_commas(original_tts)
 
-            if new_sentence != original_sentence:
-                changes.append((original_sentence, new_sentence))
-                row['Sentence'] = new_sentence
-                row['Pronunciation'] = new_pronunciation
+            if new_tts != original_tts:
+                changes.append((original_tts, new_tts))
+                row['TTSPronunciation'] = new_tts
 
             rows.append(row)
 

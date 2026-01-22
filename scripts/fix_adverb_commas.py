@@ -61,30 +61,51 @@ ADVERBS = [
 ]
 
 
+def adverb_to_furigana_pattern(adverb: str) -> str:
+    """Convert adverb to non-capturing regex pattern that matches with optional furigana.
+
+    Example: 実は → 実(?:【[^】]+】)?は
+    This allows matching both 実は and 実【じつ】は
+    """
+    parts = []
+    for char in adverb:
+        # Each character can optionally be followed by furigana annotation (non-capturing)
+        parts.append(re.escape(char) + r'(?:【[^】]+】)?')
+    return ''.join(parts)
+
+
 def add_adverb_commas(text: str) -> str:
-    """Add commas after introductory adverbs in text."""
+    """Add commas after introductory adverbs in text.
+
+    Handles both plain text (実は) and furigana-annotated text (実【じつ】は).
+    """
     result = text
 
     for adverb in ADVERBS:
-        # Pattern: adverb at start of string or after certain punctuation,
-        # followed by non-punctuation (to avoid adding comma if already there)
-        # Also match after 。or space (new clause)
+        # Create pattern that matches adverb with optional furigana
+        furigana_pattern = adverb_to_furigana_pattern(adverb)
 
-        # At start of sentence
-        pattern = f'^{re.escape(adverb)}([^、。！？])'
-        result = re.sub(pattern, f'{adverb}、\\1', result)
+        # At start of sentence: capture adverb (with possible furigana), add comma
+        def add_comma_start(m):
+            return m.group(1) + '、' + m.group(2)
+
+        pattern = f'^({furigana_pattern})([^、。！？])'
+        result = re.sub(pattern, add_comma_start, result)
 
         # After period (new sentence in same field)
-        pattern = f'。{re.escape(adverb)}([^、。！？])'
-        result = re.sub(pattern, f'。{adverb}、\\1', result)
+        def add_comma_after_period(m):
+            return '。' + m.group(1) + '、' + m.group(2)
+
+        pattern = f'。({furigana_pattern})([^、。！？])'
+        result = re.sub(pattern, add_comma_after_period, result)
 
     return result
 
 
 def process_csv(csv_path: Path, dry_run: bool = True) -> list[tuple[str, str]]:
-    """Process a CSV file and add adverb commas.
+    """Process a CSV file and add adverb commas to TTSPronunciation only.
 
-    Returns list of (original, modified) tuples for changed sentences.
+    Returns list of (original, modified) tuples for changed TTSPronunciation.
     """
     changes = []
     rows = []
@@ -93,18 +114,20 @@ def process_csv(csv_path: Path, dry_run: bool = True) -> list[tuple[str, str]]:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames
 
+        if 'TTSPronunciation' not in fieldnames:
+            print(f"  Warning: TTSPronunciation column not found in {csv_path.name}")
+            print(f"  Run add_tts_column.py first to add the column")
+            return []
+
         for row in reader:
-            original_sentence = row['Sentence']
-            original_pronunciation = row['Pronunciation']
+            original_tts = row['TTSPronunciation']
 
-            # Process both Sentence and Pronunciation fields
-            new_sentence = add_adverb_commas(original_sentence)
-            new_pronunciation = add_adverb_commas(original_pronunciation)
+            # Process only TTSPronunciation field (keep Sentence/Pronunciation clean)
+            new_tts = add_adverb_commas(original_tts)
 
-            if new_sentence != original_sentence:
-                changes.append((original_sentence, new_sentence))
-                row['Sentence'] = new_sentence
-                row['Pronunciation'] = new_pronunciation
+            if new_tts != original_tts:
+                changes.append((original_tts, new_tts))
+                row['TTSPronunciation'] = new_tts
 
             rows.append(row)
 

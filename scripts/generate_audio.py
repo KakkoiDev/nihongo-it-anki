@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Generate audio files for vocabulary sentences using Kokoro TTS.
 
-Uses the Pronunciation field with preprocessing to ensure accurate readings:
+Uses the TTSPronunciation field with preprocessing to ensure accurate readings:
 - Extracts furigana: 昼食【ちゅうしょく】 → ちゅうしょく
 - Converts acronyms: API → エーピーアイ
+- Preserves TTS pause commas: が、, まず、, を、
 """
 
 import argparse
@@ -69,9 +70,9 @@ def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False,
 
     # Generate audio for each sentence
     for idx, row in enumerate(sentences):
-        # Use Pronunciation field and preprocess for accurate TTS
-        pronunciation = row['Pronunciation']
-        tts_input = preprocess_for_tts(pronunciation)
+        # Use TTSPronunciation field (has TTS pause commas) and preprocess for accurate TTS
+        tts_pronunciation = row['TTSPronunciation']
+        tts_input = preprocess_for_tts(tts_pronunciation)
         num = idx + 1
 
         # Output filename: tier1_001.mp3, tier1_002.mp3, etc.
