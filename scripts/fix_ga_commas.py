@@ -42,7 +42,9 @@ def should_add_comma_after_ga(sentence: str, ga_pos: int) -> bool:
         return False
 
     # Skip: 方がいい (ほうがいい) - が is part of grammar pattern
-    if before.endswith('方') or before.endswith('ほう'):
+    # Handle both plain text and furigana-annotated text
+    before_stripped = re.sub(r'【[^】]+】$', '', before)  # Remove trailing furigana
+    if before_stripped.endswith('方') or before_stripped.endswith('ほう'):
         return False
 
     # Skip: ながら (while doing)
