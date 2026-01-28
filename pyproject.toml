@@ -15,3 +15,8 @@ dependencies = [
     "soundfile>=0.13.1",
     "unidic-lite>=1.0.8",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
