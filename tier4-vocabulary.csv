@@ -185,7 +185,7 @@ ETLパイプラインを構築してください。,Build an ETL pipeline.,ETL,E
 データウェアハウスにロードしてください。,Load into data warehouse.,ロード,データウェアハウスにロードしてください。,データウェアハウスにロードしてください。,Data - Etl,load,
 データパイプラインが失敗しました。,The data pipeline failed.,データパイプライン,データパイプラインが失敗【しっぱい】しました。,データパイプラインが失敗【しっぱい】しました。,Data - Pipeline,pipeline,
 データをストリームとして処理してください。,Process data as a stream.,ストリーム,データをストリームとして処理【しょり】してください。,データをストリームとして処理【しょり】してください。,Data - Streaming,stream,
-夜間にバッチ処理をしてください。,Batch processing overnight.,バッチ処理,夜間【やかん】にバッチ処理【しょり】をしてください。,夜間【やかん】にバッチ処理【しょり】をしてください。,Data - Batch,batch processing,
+夜間にバッチ処理をしてください。,Batch processing overnight.,バッチ処理,夜間【やかん】にバッチ処理【しょり】をしてください。,夜間【やかん】に、バッチ処理【しょり】を、してください。,Data - Batch,batch processing,
 リアルタイムデータ処理を行ってください。,Real-time data processing.,リアルタイム,リアルタイムデータ処理【しょり】を行【おこな】ってください。,リアルタイムデータ処理【しょり】を行【おこな】ってください。,Data - Real-Time,real-time,
 データウェアハウスにクエリしてください。,Query the data warehouse.,データウェアハウス,データウェアハウスにクエリしてください。,データウェアハウスにクエリしてください。,Data - Warehouse,data,
 生データをデータレイクに保存してください。,Store raw data in lake.,データレイク,生【なま】データをデータレイクに保存【ほぞん】してください。,生【なま】データをデータレイクに保存【ほぞん】してください。,Data - Lake,data,

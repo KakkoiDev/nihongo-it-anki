@@ -86,6 +86,7 @@ uv run python scripts/create_deck.py --combined --female
 | `fix_ga_commas.py` | Add commas after が subject marker |
 | `fix_adverb_commas.py` | Add commas after introductory adverbs |
 | `add_key_meanings.py` | Generate English meanings for key words |
+| `test_tts.py` | Quick TTS test for specific sentences |
 
 ## Customization
 
@@ -113,14 +114,31 @@ Kokoro TTS sometimes links particles to the following word instead of the preced
 
 - **を (object marker)**: Automatically handled. A comma is inserted after を (`を、`) for natural pauses.
 - **が (subject marker)**: Handled by `scripts/fix_ga_commas.py`. Automatically adds comma after が when used as subject marker (e.g., `バグが、発生しました`). Run this script after adding new sentences.
-- **は, に, で**: Sound natural without modification.
+- **に...を (location + object)**: Handled by `scripts/fix_ni_wo_commas.py`. Adds comma after both particles in `[X]に[Y]を[verb]` patterns (e.g., `夜間に、バッチ処理を、してください`).
+- **は, で**: Sound natural without modification.
 - **Introductory adverbs** (まず, 次に, 例えば, etc.): Handled by `scripts/fix_adverb_commas.py`. Adds comma after sentence-initial adverbs for natural pauses.
 
 When adding new sentences, run:
 ```bash
 uv run python scripts/fix_ga_commas.py --apply
+uv run python scripts/fix_ni_wo_commas.py --apply
 uv run python scripts/fix_adverb_commas.py --apply
 ```
+
+### Testing TTS Changes
+
+Use `test_tts.py` to quickly test pronunciation changes without regenerating all audio:
+
+```bash
+# Test specific row(s) from a tier CSV
+uv run python scripts/test_tts.py --tier 1 --row 5
+uv run python scripts/test_tts.py --tier 1 --row 5,7,10
+
+# Test arbitrary text with furigana
+uv run python scripts/test_tts.py --text "問題【もんだい】を、見【み】つけました"
+```
+
+Output files are saved to the project root (`test_tier1_005.mp3` or `test_tts.mp3`).
 
 ## Credits
 
