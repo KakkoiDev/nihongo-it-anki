@@ -14,7 +14,7 @@ Japanese IT vocabulary for Anki. 1000 sentences with AI-generated audio. Open so
 
 - 1000 IT vocabulary sentences across 6 difficulty tiers
 - 2000 cards (comprehension + production for each sentence)
-- AI-generated Japanese audio (Kokoro TTS) - natural-sounding, fully open source
+- AI-generated Japanese audio (Microsoft Edge TTS) - natural-sounding neural voices
 - Furigana readings for all kanji
 - Key vocabulary with English meanings
 - Verb conjugation tables (collapsible, N1-level coverage)
@@ -49,19 +49,15 @@ Japanese IT vocabulary for Anki. 1000 sentences with AI-generated audio. Open so
 
 ## Build From Source
 
-Requires Python 3.13+, [uv](https://docs.astral.sh/uv/), and espeak-ng.
+Requires Python 3.13+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-# Install dependencies
-sudo apt-get install espeak-ng  # Ubuntu/Debian
-brew install espeak             # macOS
-
 # Clone and setup
 git clone https://github.com/KakkoiDev/nihongo-it-anki.git
 cd nihongo-it-anki
 uv sync
 
-# Generate audio (~2 hours for all tiers)
+# Generate audio
 uv run python scripts/generate_audio.py --all
 
 # Or generate with female voice
@@ -99,8 +95,8 @@ uv run python scripts/create_deck.py --combined --female
 
 | Voice | Type | Flag |
 |-------|------|------|
-| `jm_kumo` | Male | Default |
-| `jf_alpha` | Female | `--female` |
+| `ja-JP-KeitaNeural` | Male | Default |
+| `ja-JP-NanamiNeural` | Female | `--female` |
 
 **Modify cards** — Edit CSS in `scripts/create_deck.py`
 
@@ -110,7 +106,7 @@ uv run python scripts/create_deck.py --combined --female
 
 ### TTS Particle Pauses
 
-Kokoro TTS sometimes links particles to the following word instead of the preceding word, making audio sound slightly unnatural. Mitigations:
+TTS engines sometimes link particles to the following word instead of the preceding word, making audio sound slightly unnatural. Mitigations:
 
 - **を (object marker)**: Automatically handled. A comma is inserted after を (`を、`) for natural pauses.
 - **が (subject marker)**: Handled by `scripts/fix_ga_commas.py`. Automatically adds comma after が when used as subject marker (e.g., `バグが、発生しました`). Run this script after adding new sentences.
@@ -144,8 +140,8 @@ Output files are saved to the project root (`test_tier1_005.mp3` or `test_tts.mp
 
 ## Credits
 
-- [Kokoro TTS](https://github.com/hexgrad/kokoro) — Text-to-speech
-- [genanki](https://github.com/kerrickstaley/genanki) — Anki deck generation
+- [Edge TTS](https://github.com/rany2/edge-tts) - Text-to-speech (Microsoft Edge neural voices)
+- [genanki](https://github.com/kerrickstaley/genanki) - Anki deck generation
 
 ## License
 

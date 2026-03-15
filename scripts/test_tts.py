@@ -8,42 +8,40 @@ Usage:
 """
 
 import argparse
+import asyncio
 import csv
 import sys
 from pathlib import Path
 
-import lameenc
-import numpy as np
-from kokoro import KPipeline
+import edge_tts
 
 from pronunciation import preprocess_for_tts
 
 ROOT = Path(__file__).parent.parent
-VOICE = 'jm_kumo'
+VOICE = 'ja-JP-KeitaNeural'
+DELAY_BETWEEN_REQUESTS = 0.3
+MAX_RETRIES = 3
 
 
-def generate_single(pipeline, text: str, output_path: Path):
+async def generate_single(text: str, output_path: Path):
     """Generate audio for a single text."""
     tts_input = preprocess_for_tts(text)
     print(f"  TTS input: {tts_input}")
 
-    audio_chunks = []
-    for gs, ps, audio in pipeline(tts_input, voice=VOICE):
-        audio_chunks.append(audio.numpy() if hasattr(audio, 'numpy') else audio)
-
-    audio_data = np.concatenate(audio_chunks) if len(audio_chunks) > 1 else audio_chunks[0]
-    audio_int16 = (audio_data * 32767).astype(np.int16)
-
-    encoder = lameenc.Encoder()
-    encoder.set_bit_rate(128)
-    encoder.set_in_sample_rate(24000)
-    encoder.set_channels(1)
-    encoder.set_quality(2)
-
-    with open(output_path, 'wb') as f:
-        f.write(encoder.encode(audio_int16.tobytes()) + encoder.flush())
-
-    print(f"  Saved: {output_path}")
+    for attempt in range(MAX_RETRIES):
+        try:
+            communicate = edge_tts.Communicate(tts_input, VOICE)
+            await communicate.save(str(output_path))
+            await asyncio.sleep(DELAY_BETWEEN_REQUESTS)
+            print(f"  Saved: {output_path}")
+            return
+        except Exception as e:
+            if attempt < MAX_RETRIES - 1:
+                wait = 2 ** (attempt + 1)
+                print(f"    retry in {wait}s ({e})")
+                await asyncio.sleep(wait)
+            else:
+                raise
 
 
 def main():
@@ -61,11 +59,8 @@ def main():
         parser.print_help()
         sys.exit(1)
 
-    print("Initializing Kokoro TTS...")
-    pipeline = KPipeline(lang_code='j')
-
     if args.text:
-        generate_single(pipeline, args.text, Path("test_tts.mp3"))
+        asyncio.run(generate_single(args.text, Path("test_tts.mp3")))
     else:
         csv_path = ROOT / f"tier{args.tier}-vocabulary.csv"
         with open(csv_path, 'r', encoding='utf-8') as f:
@@ -80,7 +75,7 @@ def main():
             row = sentences[row_num - 1]
             print(f"\nRow {row_num}: {row['Sentence']}")
             output_path = Path(f"test_tier{args.tier}_{row_num:03d}.mp3")
-            generate_single(pipeline, row['TTSPronunciation'], output_path)
+            asyncio.run(generate_single(row['TTSPronunciation'], output_path))
 
 
 if __name__ == "__main__":
