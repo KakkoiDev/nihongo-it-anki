@@ -112,7 +112,9 @@ def get_word_info(word: str) -> dict:
         pos3 = token.feature.pos3 if hasattr(token.feature, 'pos3') else ''
         pos4 = token.feature.pos4 if hasattr(token.feature, 'pos4') else ''
         if 'サ変可能' in str(pos2) or 'サ変可能' in str(pos3) or 'サ変可能' in str(pos4):
-            return {'type': 'suru_verb', 'base': lemma + 'する', 'stem': lemma}
+            # Only conjugate if the word IS the single noun (not a compound like 影響範囲)
+            if len(tokens) == 1:
+                return {'type': 'suru_verb', 'base': lemma + 'する', 'stem': lemma}
         return {'type': 'noun', 'base': lemma, 'stem': ''}
 
     return {'type': 'other', 'base': word, 'stem': ''}

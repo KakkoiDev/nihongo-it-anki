@@ -23,7 +23,8 @@ ROOT = Path(__file__).parent.parent
 tagger = fugashi.Tagger()
 
 # Small kana that combine with the preceding character to form one mora
-SMALL_KANA = set('ぁぃぅぇぉゃゅょっゎァィゥェォャュョッヮ')
+# Note: っ/ッ (geminate) is its OWN mora, not a combiner
+SMALL_KANA = set('ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ')
 
 
 def kata_to_hira(text: str) -> str:
