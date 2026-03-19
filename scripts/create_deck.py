@@ -26,7 +26,7 @@ ROOT = Path(__file__).parent.parent
 
 # Stable IDs for Anki (generated once, keep consistent)
 # These ensure deck identity persists across regenerations
-MODEL_ID = 1607392320  # v2.0 - 3-card model
+MODEL_ID = 1607392321  # v2.1 - added PitchAccent field
 DECK_BASE_ID = 2059400110  # Random but stable
 
 
@@ -64,6 +64,7 @@ def create_model() -> genanki.Model:
             {'name': 'Audio'},          # Audio file reference
             {'name': 'Hint'},           # Kept for compatibility (unused)
             {'name': 'KeyMeaning'},     # English meaning of key word
+            {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
             {'name': 'Conjugations'},   # HTML conjugation table
         ],
         templates=[
@@ -81,7 +82,7 @@ def create_model() -> genanki.Model:
 <hr id="answer">
 <div class="translation">{{Translation}}</div>
 <div class="pronunciation">{{Pronunciation}}</div>
-<div class="key-vocab">Key: <span class="vocab">{{Cloze}}</span> ({{KeyMeaning}})</div>
+<div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
 {{Conjugations}}
 ''',
             },
@@ -98,7 +99,7 @@ def create_model() -> genanki.Model:
 <hr id="answer">
 <div class="pronunciation">{{Pronunciation}}</div>
 <div class="translation">{{Translation}}</div>
-<div class="key-vocab">Key: <span class="vocab">{{Cloze}}</span> ({{KeyMeaning}})</div>
+<div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
 {{Conjugations}}
 ''',
             },
@@ -295,6 +296,9 @@ hr#answer {
     font-weight: 500;
 }
 
+.pitch-h { color: #4caf50; }  /* green = high mora */
+.pitch-l { color: #f44336; }  /* red = low mora */
+
 .te-compounds {
     margin-top: 10px;
     text-align: left;
@@ -327,6 +331,8 @@ hr#answer {
     .vocab { color: #64b5f6; }
     .cloze-answer { color: #64b5f6; }
     .prompt { color: #888; }
+    .pitch-h { color: #81c784; }
+    .pitch-l { color: #e57373; }
     .blank { border-bottom-color: #aaa; }
     hr#answer { border-top-color: #444; }
     ruby rt { color: #aaa; }
@@ -413,6 +419,7 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
                 audio_ref,
                 hint,
                 row['KeyMeaning'],
+                row.get('PitchAccent', ''),
                 row.get('Conjugations', ''),
             ],
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
@@ -517,6 +524,7 @@ Examples:
                         audio_ref,
                         hint,
                         row['KeyMeaning'],
+                        row.get('PitchAccent', ''),
                         row.get('Conjugations', ''),
                     ],
                     tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
