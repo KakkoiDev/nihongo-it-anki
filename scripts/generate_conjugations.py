@@ -380,7 +380,7 @@ def main():
     """Process all tier CSV files."""
     print("Generating conjugation tables...")
 
-    for tier in range(1, 7):
+    for tier in range(1, 9):
         process_csv(tier)
 
     print("\nDone! Run create_deck.py to rebuild the deck with conjugations.")

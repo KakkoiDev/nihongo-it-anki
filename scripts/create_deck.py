@@ -468,13 +468,15 @@ Examples:
             4: "Tier 4 - Advanced",
             5: "Tier 5 - Communication",
             6: "Tier 6 - Expert",
+            7: "Tier 7 - Job Interview",
+            8: "Tier 8 - Problem Solving",
         }
 
         all_decks = []
         all_media = []
         total_notes = 0
 
-        for tier in range(1, 7):
+        for tier in range(1, 9):
             # Create subdeck with :: notation
             subdeck_name = f"Japanese IT Vocabulary{voice_label}::{tier_names[tier]}"
             subdeck = genanki.Deck(
@@ -538,7 +540,7 @@ Examples:
 
     elif args.all:
         # Create separate deck for each tier
-        for tier in range(1, 7):
+        for tier in range(1, 9):
             deck, media_files = create_deck(tier, include_audio, args.female)
             output = f"nihongo-it-vocab-tier{tier}{suffix}.apkg"
 
