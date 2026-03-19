@@ -103,8 +103,8 @@ async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = 
 
 def main():
     parser = argparse.ArgumentParser(description="Generate audio for vocabulary tiers")
-    parser.add_argument("--tier", type=int, choices=[1, 2, 3, 4, 5, 6],
-                        help="Tier number to generate (1-6)")
+    parser.add_argument("--tier", type=int, choices=list(range(1, 9)),
+                        help="Tier number to generate (1-8)")
     parser.add_argument("--all", action="store_true",
                         help="Generate audio for all tiers")
     parser.add_argument("--female", action="store_true",
@@ -117,7 +117,7 @@ def main():
     args = parser.parse_args()
 
     if args.all:
-        for tier in range(1, 7):
+        for tier in range(1, 9):
             asyncio.run(generate_tier_audio(tier, args.voice, args.force, args.female))
     elif args.tier:
         asyncio.run(generate_tier_audio(args.tier, args.voice, args.force, args.female))
