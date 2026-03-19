@@ -26,7 +26,7 @@ ROOT = Path(__file__).parent.parent
 
 # Stable IDs for Anki (generated once, keep consistent)
 # These ensure deck identity persists across regenerations
-MODEL_ID = 1607392321  # v2.1 - added PitchAccent field
+MODEL_ID = 1607392322  # v2.2 - added Register field
 DECK_BASE_ID = 2059400110  # Random but stable
 
 
@@ -63,6 +63,7 @@ def create_model() -> genanki.Model:
             {'name': 'Category'},       # Category/context
             {'name': 'Audio'},          # Audio file reference
             {'name': 'Hint'},           # Kept for compatibility (unused)
+            {'name': 'Register'},       # Speech register: casual/polite/formal/keigo
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
             {'name': 'Conjugations'},   # HTML conjugation table
@@ -73,7 +74,7 @@ def create_model() -> genanki.Model:
                 'name': 'Listening',
                 'qfmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
-<div class="category">{{Category}}</div>
+<div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 ''',
                 'afmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
@@ -91,7 +92,7 @@ def create_model() -> genanki.Model:
                 'name': 'Reading',
                 'qfmt': '''<div class="card-type">Reading</div>
 <div class="sentence">{{Sentence}}</div>
-<div class="category">{{Category}}</div>
+<div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 ''',
                 'afmt': '''<div class="card-type">Reading</div>
 <div class="sentence">{{Sentence}}</div>
@@ -296,6 +297,23 @@ hr#answer {
     font-weight: 500;
 }
 
+.register {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.register-casual  { background: #e0e0e0; color: #555; }
+.register-polite  { background: #e3f2fd; color: #1565c0; }
+.register-formal  { background: #fff3e0; color: #e65100; }
+.register-keigo   { background: #f3e5f5; color: #6a1b9a; }
+
 .pitch-h { color: #4caf50; }  /* green = high mora */
 .pitch-l { color: #f44336; }  /* red = low mora */
 
@@ -331,6 +349,10 @@ hr#answer {
     .vocab { color: #64b5f6; }
     .cloze-answer { color: #64b5f6; }
     .prompt { color: #888; }
+    .register-casual  { background: #333; color: #aaa; }
+    .register-polite  { background: #1a2a3a; color: #64b5f6; }
+    .register-formal  { background: #2a1f0e; color: #ffb74d; }
+    .register-keigo   { background: #2a1a2a; color: #ce93d8; }
     .pitch-h { color: #81c784; }
     .pitch-l { color: #e57373; }
     .blank { border-bottom-color: #aaa; }
@@ -418,6 +440,7 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
                 row['Note'],
                 audio_ref,
                 hint,
+                row.get('Register', ''),
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
                 row.get('Conjugations', ''),
@@ -523,6 +546,7 @@ Examples:
                         row['Note'],
                         audio_ref,
                         hint,
+                        row.get('Register', ''),
                         row['KeyMeaning'],
                         row.get('PitchAccent', ''),
                         row.get('Conjugations', ''),
