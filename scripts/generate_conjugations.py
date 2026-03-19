@@ -293,15 +293,13 @@ def generate_conjugation_html(word: str, conjugations: dict, word_type: str) -> 
             parts.append(f'<tr><td>{form_name}</td><td>{form_value}</td></tr>')
 
     parts.append('</table>')
-    parts.append('</details>')
 
-    # Te-form compound reference (verbs only)
+    # Te-form compound reference (verbs only, inside same details block)
     verb_types = {'suru_verb', 'godan_verb', 'ichidan_verb', 'kuru_verb'}
     if word_type in verb_types:
         parts.append(
-            '<details class="te-compounds">'
-            '<summary>て形 compound patterns</summary>'
-            '<table class="conjugation-table">'
+            '<table class="conjugation-table te-table">'
+            '<tr><th colspan="2">て形 Compounds</th></tr>'
             '<tr><td>～てください</td><td>Please do (request)</td></tr>'
             '<tr><td>～ています</td><td>Ongoing / resultant state</td></tr>'
             '<tr><td>～ておく</td><td>Do in advance</td></tr>'
@@ -309,8 +307,9 @@ def generate_conjugation_html(word: str, conjugations: dict, word_type: str) -> 
             '<tr><td>～てしまう</td><td>Completed (sometimes regrettable)</td></tr>'
             '<tr><td>～てもらう</td><td>Have someone do</td></tr>'
             '</table>'
-            '</details>'
         )
+
+    parts.append('</details>')
 
     # Join without newlines for CSV compatibility
     return ''.join(parts)

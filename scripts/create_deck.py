@@ -78,11 +78,10 @@ def create_model() -> genanki.Model:
 ''',
                 'afmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
-<div class="sentence">{{Sentence}}</div>
+<div class="sentence">{{Pronunciation}}</div>
 <div class="category">{{Category}}</div>
 <hr id="answer">
 <div class="translation">{{Translation}}</div>
-<div class="pronunciation">{{Pronunciation}}</div>
 <div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
 {{Conjugations}}
 ''',
@@ -95,10 +94,9 @@ def create_model() -> genanki.Model:
 <div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 ''',
                 'afmt': '''<div class="card-type">Reading</div>
-<div class="sentence">{{Sentence}}</div>
+<div class="sentence">{{Pronunciation}}</div>
 <div class="category">{{Category}}</div>
 <hr id="answer">
-<div class="pronunciation">{{Pronunciation}}</div>
 <div class="translation">{{Translation}}</div>
 <div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
 {{Conjugations}}
