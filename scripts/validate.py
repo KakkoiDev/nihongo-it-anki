@@ -21,7 +21,7 @@ ROOT = Path(__file__).parent.parent
 REQUIRED_COLUMNS = {'Sentence', 'Translation', 'Cloze', 'Pronunciation', 'Note', 'KeyMeaning'}
 
 # Expected row counts per tier
-TIER_SIZES = {1: 150, 2: 200, 3: 250, 4: 200, 5: 100, 6: 100}
+TIER_SIZES = {1: 150, 2: 200, 3: 250, 4: 200, 5: 100, 6: 115, 7: 30, 8: 30}
 
 # Hiragana range for validating furigana readings
 HIRAGANA_PATTERN = re.compile(r'^[\u3040-\u309F\u30A0-\u30FFー・]+$')
@@ -246,7 +246,7 @@ Examples:
   uv run python scripts/validate.py --verbose    # Show all errors/warnings
         """
     )
-    parser.add_argument("--tier", type=int, choices=[1, 2, 3, 4, 5, 6],
+    parser.add_argument("--tier", type=int, choices=list(range(1, 9)),
                         help="Validate specific tier only")
     parser.add_argument("--check-audio", action="store_true",
                         help="Also validate audio files")
@@ -258,7 +258,7 @@ Examples:
     args = parser.parse_args()
 
     # Determine tiers to validate
-    tiers = [args.tier] if args.tier else range(1, 7)
+    tiers = [args.tier] if args.tier else range(1, 9)
 
     voice_label = " (Female)" if args.female else ""
     print("=" * 50)

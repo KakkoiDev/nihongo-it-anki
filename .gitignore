@@ -21,6 +21,7 @@ venv/
 
 # Audio output (large files)
 tier*-audio/
+test_*.mp3
 
 # Anki output
 *.apkg

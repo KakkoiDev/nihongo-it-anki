@@ -146,7 +146,7 @@ def create_model() -> genanki.Model:
                 'afmt': '''{{#Conjugations}}<div class="card-type">Keigo</div>
 <div class="translation">{{Translation}}</div>
 <hr id="answer">
-<div class="sentence">{{Sentence}}</div>
+<div class="sentence">{{Pronunciation}}</div>
 {{Conjugations}}
 {{/Conjugations}}
 ''',
@@ -315,20 +315,6 @@ hr#answer {
 .pitch-h { color: #4caf50; }  /* green = high mora */
 .pitch-l { color: #f44336; }  /* red = low mora */
 
-.te-compounds {
-    margin-top: 10px;
-    text-align: left;
-}
-
-.te-compounds summary {
-    cursor: pointer;
-    font-size: 13px;
-    color: #888;
-    padding: 6px;
-    background: #f8f8f8;
-    border-radius: 4px;
-}
-
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     .card {
@@ -359,10 +345,6 @@ hr#answer {
     .conjugation-section summary {
         background: #2a2a2a;
         color: #aaa;
-    }
-    .te-compounds summary {
-        background: #2a2a2a;
-        color: #999;
     }
     .conjugation-table th {
         background: #333;
