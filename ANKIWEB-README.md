@@ -20,28 +20,36 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```markdown
 <img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
 
-**1000 IT vocabulary sentences** with AI-generated Japanese audio (Kokoro TTS), furigana, and verb conjugation tables. Fully open source - use the same tools to build your own custom deck.
+**1075 IT vocabulary sentences** with AI-generated Japanese audio (Microsoft Edge TTS), furigana with pitch accent coloring, verb conjugation tables, and 4 card types designed for real workplace skill building. Fully open source.
+
+## Card Types
+
+- **Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings and standups.
+- **Reading** - Japanese text front. No audio. Trains reading for Slack, PRs, and documentation.
+- **Vocabulary Cloze** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
+- **Keigo Drill** - Humble form prompt (verbs only). Builds formal register for presentations and client meetings.
 
 ## Features
 
-- **IT Workplace Focus** - Natural sentences for software engineering contexts
-- **Full Sentences** - Learn vocabulary in context, not isolated words
-- **100% Audio** - AI-generated MP3 for every sentence (Kokoro TTS)
-- **Two-Card Design** - Comprehension + Production cards for each sentence
-- **Verb Conjugation Tables** - Collapsible N1-level tables on answer side
-- **Furigana** - Readings for all kanji
-- **6 Progressive Tiers** - From N5 beginner to N1 advanced
-- **Dark Mode** - Matches your system theme
+- **Pitch Accent** - Green (high) / red (low) coloring on key word furigana. Learn correct Tokyo accent from the start.
+- **Register Badges** - Each card shows polite/keigo badge so you know when to use each sentence.
+- **IT-Optimized Conjugations** - 11 forms that matter at work. Includes ている progressive (critical for standups), polite ません/ました, and keigo forms. Removed: causative, imperative, and other forms you won't use in an office.
+- **Te-form Compound Reference** - Collapsible reference showing common patterns (ておく, ていただく, てしまう, etc.)
+- **Furigana** - Ruby text readings for all kanji on answer cards.
+- **100% Audio** - Neural TTS for every sentence (Microsoft Edge ja-JP-KeitaNeural).
+- **Dark Mode** - Automatic system theme detection.
 - **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Build your own deck with the same tools</a>
 
-## Tiers
+## 8 Tiers
 
-- **Tier 1** (150 cards, N5-N4) - Daily essentials, git, basic actions
-- **Tier 2** (200 cards, N4-N3) - Agile, APIs, databases, testing
-- **Tier 3** (250 cards, N3) - Code review, architecture, AWS
-- **Tier 4** (200 cards, N3-N2) - Security, debugging, documentation
-- **Tier 5** (100 cards, N2) - Communication, soft skills
-- **Tier 6** (100 cards, N2-N1) - Presentations, advanced topics
+- **Tier 1** (150 sentences) - Daily essentials, git, basic actions
+- **Tier 2** (200 sentences) - Agile, APIs, databases, testing
+- **Tier 3** (250 sentences) - Code review, architecture, AWS
+- **Tier 4** (200 sentences) - Security, debugging, documentation
+- **Tier 5** (100 sentences) - Communication, soft skills
+- **Tier 6** (115 sentences) - Presentations (including formal keigo openings/closings)
+- **Tier 7** (30 sentences) - Job interview (full keigo register: self-intro, skills, achievements, motivation, questions)
+- **Tier 8** (30 sentences) - Problem-solving discussions (investigation, hypothesis, tradeoffs, post-mortem)
 
 ## Example Sentences
 
@@ -49,24 +57,36 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 > 機能は完了しレビュー準備ができました。
 > *The feature is done and ready for review.*
 
-**Tier 2 - Agile/APIs:**
-> 次のスプリントでこれを優先しましょう。
-> *Let's prioritize this for the next sprint.*
+**Tier 7 - Job Interview (keigo):**
+> 御社の技術スタックと私のスキルが合致しており即戦力として貢献できると考えております。
+> *My skills align with your tech stack and I believe I can contribute immediately.*
 
-**Tier 3 - Architecture:**
-> このサービスは水平スケーリングをサポートしています。
-> *This service supports horizontal scaling.*
+**Tier 8 - Problem Solving:**
+> メモリリークが発生していると考えられます。
+> *It is thought that a memory leak is occurring.*
 
 ## Who Is This For?
 
 - Software engineers working with Japanese teams
 - Developers preparing for jobs at Japanese tech companies
 - Anyone learning technical Japanese for IT industry
-- JLPT learners wanting real-world tech vocabulary
+- Engineers who need keigo for presentations, interviews, and client meetings
 
-**Total: 1000 notes / 2000 cards / 1000 audio files**
+**Total: 1075 notes / 3225+ cards / 1075 audio files**
 
 ## Changelog
+
+**v2.0.0** (Mar 2026)
+- New 4-card architecture: Listening, Reading, Vocabulary Cloze, Keigo Drill
+- Pitch accent display with green/red furigana coloring
+- Register badges (polite/keigo) on card fronts
+- Conjugation tables redesigned: added ている progressive, polite ません/ました forms, te-form compound reference
+- Removed 5 low-value conjugation forms (causative, imperative, etc.)
+- New Tier 7: Job Interview (30 keigo sentences)
+- New Tier 8: Problem-Solving Discussion (30 sentences)
+- 15 formal presentation sentences added to Tier 6
+- Switched TTS to Microsoft Edge TTS (KeitaNeural) for better prosody
+- Full audio regeneration with improved pronunciation pipeline
 
 **v1.2.0** (Jan 2026)
 - Improved audio naturalness with better pause timing

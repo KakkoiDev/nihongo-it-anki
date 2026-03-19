@@ -2,50 +2,59 @@
 
 <img src="demo.png" alt="Anki deck demo" width="600">
 
-Japanese IT vocabulary for Anki. 1000 sentences with AI-generated audio. Open source - build your own deck with the same tools.
+Japanese IT vocabulary for Anki. 1075 sentences with AI-generated audio, pitch accent coloring, and 4 card types designed for real workplace skill building. Open source.
 
 ## Download
 
 **[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install directly from Anki app
 
-**[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** (58 MB) - manual download
+**[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** - manual download
 
 ## What's Included
 
-- 1000 IT vocabulary sentences across 6 difficulty tiers
-- 2000 cards (comprehension + production for each sentence)
-- AI-generated Japanese audio (Microsoft Edge TTS) - natural-sounding neural voices
+- 1075 IT vocabulary sentences across 8 tiers
+- 3225+ cards (Listening + Reading + Vocabulary Cloze + Keigo Drill)
+- AI-generated Japanese audio (Microsoft Edge TTS KeitaNeural)
+- Pitch accent display with green (high) / red (low) furigana coloring
+- Register badges (polite/keigo) on card fronts
+- IT-optimized verb conjugation tables with te-form compound reference
 - Furigana readings for all kanji
-- Key vocabulary with English meanings
-- Verb conjugation tables (collapsible, N1-level coverage)
-- Dark mode support (automatic system theme detection)
+- Dark mode support
 
 ## Card Types
 
-**Comprehension** — Audio plays, read Japanese, reveal English translation + conjugation table
+**Listening** - Audio-only front. Forces pure listening comprehension for meetings and standups.
 
-**Production** — See English, produce Japanese, check with audio
+**Reading** - Japanese text front, no audio. Trains reading for Slack, PRs, and documentation.
+
+**Vocabulary Cloze** - Key word blanked in sentence with English hint. Tests one word at a time.
+
+**Keigo Drill** - Humble form prompt (verbs only). Builds formal register for presentations and client meetings.
 
 ## Features
 
-**Dark Mode** — Automatically matches your system theme preference
+**Pitch Accent** - Green/red coloring on key word furigana shows Tokyo dialect accent pattern. Type 0 (flat), type 1 (atamadaka), and nakadaka patterns displayed.
 
-**Verb Conjugation Tables** — Collapsible tables on comprehension cards showing all conjugation forms:
-- Basic forms (dictionary, polite, negative, te-form, past)
-- Advanced forms (potential, passive, causative, conditional, volitional, imperative)
-- Keigo forms (respectful, humble)
-- Works for する verbs, godan/ichidan verbs, and い-adjectives
+**Register Badges** - Each card shows polite or keigo badge so you know when to use each sentence.
+
+**IT-Optimized Conjugations** - 11 forms that matter at work:
+- Daily speech: dictionary, polite, polite negative, te-form, polite past, progressive (ている)
+- Work patterns: potential, passive, conditional, volitional, should
+- Keigo: respectful, humble
+- Te-form compound reference (ておく, ていただく, てしまう, etc.)
 
 ## Tiers
 
-| Tier | Count | Level | Focus |
-|------|-------|-------|-------|
-| 1 | 150 | N5-N4 | Daily essentials, git, basic actions |
-| 2 | 200 | N4-N3 | Agile, APIs, databases, testing |
-| 3 | 250 | N3 | Code review, architecture, AWS |
-| 4 | 200 | N3-N2 | Security, debugging, documentation |
-| 5 | 100 | N2 | Communication, soft skills |
-| 6 | 100 | N2-N1 | Presentations, advanced topics |
+| Tier | Count | Focus |
+|------|-------|-------|
+| 1 | 150 | Daily essentials, git, basic actions |
+| 2 | 200 | Agile, APIs, databases, testing |
+| 3 | 250 | Code review, architecture, AWS |
+| 4 | 200 | Security, debugging, documentation |
+| 5 | 100 | Communication, soft skills |
+| 6 | 115 | Presentations (including formal keigo) |
+| 7 | 30 | Job interview (full keigo register) |
+| 8 | 30 | Problem-solving discussions |
 
 ## Build From Source
 
@@ -76,9 +85,10 @@ uv run python scripts/create_deck.py --combined --female
 |--------|---------|
 | `generate_audio.py` | Generate TTS audio for sentences |
 | `generate_conjugations.py` | Generate verb/adjective conjugation tables |
+| `generate_pitch_accent.py` | Generate pitch accent data from UniDic |
 | `create_deck.py` | Create Anki .apkg files |
 | `validate.py` | Validate CSVs and audio files |
-| `pronunciation.py` | Furigana extraction, English→katakana conversion |
+| `pronunciation.py` | Furigana extraction, English-to-katakana conversion |
 | `add_key_meanings.py` | Generate English meanings for key words |
 | `test_tts.py` | Quick TTS test for specific sentences |
 
