@@ -124,20 +124,16 @@ def conjugate_suru_verb(stem: str) -> dict:
         'basic': {
             'Dictionary 辞書形': f'{stem}する',
             'Polite ます形': f'{stem}します',
-            'Negative ない形': f'{stem}しない',
+            'Polite Negative ません形': f'{stem}しません',
             'Te-form て形': f'{stem}して',
-            'Past た形': f'{stem}した',
+            'Polite Past ました形': f'{stem}しました',
+            'Progressive ている形': f'{stem}しています',
         },
         'advanced': {
             'Potential 可能形': f'{stem}できる',
             'Passive 受身形': f'{stem}される',
-            'Causative 使役形': f'{stem}させる',
-            'Caus-Pass 使役受身': f'{stem}させられる',
-            'Conditional 仮定形': f'{stem}すれば',
             'Conditional たら形': f'{stem}したら',
             'Volitional 意向形': f'{stem}しよう',
-            'Imperative 命令形': f'{stem}しろ',
-            'Want to たい形': f'{stem}したい',
             'Should べき形': f'{stem}すべき',
         },
         'keigo': {
@@ -178,20 +174,16 @@ def conjugate_godan_verb(base: str) -> dict:
         'basic': {
             'Dictionary 辞書形': base,
             'Polite ます形': f'{stem}{e["i"]}ます',
-            'Negative ない形': f'{stem}{e["a"]}ない',
+            'Polite Negative ません形': f'{stem}{e["i"]}ません',
             'Te-form て形': f'{stem}{e["te"]}',
-            'Past た形': f'{stem}{e["ta"]}',
+            'Polite Past ました形': f'{stem}{e["i"]}ました',
+            'Progressive ている形': f'{stem}{e["te"]}います',
         },
         'advanced': {
             'Potential 可能形': f'{stem}{e["e"]}る',
             'Passive 受身形': f'{stem}{e["a"]}れる',
-            'Causative 使役形': f'{stem}{e["a"]}せる',
-            'Caus-Pass 使役受身': f'{stem}{e["a"]}せられる',
-            'Conditional 仮定形': f'{stem}{e["e"]}ば',
             'Conditional たら形': f'{stem}{e["ta"]}ら',
             'Volitional 意向形': f'{stem}{e["o"]}う',
-            'Imperative 命令形': f'{stem}{e["e"]}',
-            'Want to たい形': f'{stem}{e["i"]}たい',
             'Should べき形': f'{base}べき',
         },
         'keigo': {
@@ -210,20 +202,16 @@ def conjugate_ichidan_verb(base: str, stem: str) -> dict:
         'basic': {
             'Dictionary 辞書形': f'{stem}る',
             'Polite ます形': f'{stem}ます',
-            'Negative ない形': f'{stem}ない',
+            'Polite Negative ません形': f'{stem}ません',
             'Te-form て形': f'{stem}て',
-            'Past た形': f'{stem}た',
+            'Polite Past ました形': f'{stem}ました',
+            'Progressive ている形': f'{stem}ています',
         },
         'advanced': {
             'Potential 可能形': f'{stem}られる',
             'Passive 受身形': f'{stem}られる',
-            'Causative 使役形': f'{stem}させる',
-            'Caus-Pass 使役受身': f'{stem}させられる',
-            'Conditional 仮定形': f'{stem}れば',
             'Conditional たら形': f'{stem}たら',
             'Volitional 意向形': f'{stem}よう',
-            'Imperative 命令形': f'{stem}ろ',
-            'Want to たい形': f'{stem}たい',
             'Should べき形': f'{stem}るべき',
         },
         'keigo': {
@@ -239,20 +227,16 @@ def conjugate_kuru_verb() -> dict:
         'basic': {
             'Dictionary 辞書形': '来る',
             'Polite ます形': '来ます',
-            'Negative ない形': '来ない',
+            'Polite Negative ません形': '来ません',
             'Te-form て形': '来て',
-            'Past た形': '来た',
+            'Polite Past ました形': '来ました',
+            'Progressive ている形': '来ています',
         },
         'advanced': {
             'Potential 可能形': '来られる',
             'Passive 受身形': '来られる',
-            'Causative 使役形': '来させる',
-            'Caus-Pass 使役受身': '来させられる',
-            'Conditional 仮定形': '来れば',
             'Conditional たら形': '来たら',
             'Volitional 意向形': '来よう',
-            'Imperative 命令形': '来い',
-            'Want to たい形': '来たい',
             'Should べき形': '来るべき',
         },
         'keigo': {
@@ -308,6 +292,23 @@ def generate_conjugation_html(word: str, conjugations: dict, word_type: str) -> 
 
     parts.append('</table>')
     parts.append('</details>')
+
+    # Te-form compound reference (verbs only)
+    verb_types = {'suru_verb', 'godan_verb', 'ichidan_verb', 'kuru_verb'}
+    if word_type in verb_types:
+        parts.append(
+            '<details class="te-compounds">'
+            '<summary>て形 compound patterns</summary>'
+            '<table class="conjugation-table">'
+            '<tr><td>～てください</td><td>Please do (request)</td></tr>'
+            '<tr><td>～ています</td><td>Ongoing / resultant state</td></tr>'
+            '<tr><td>～ておく</td><td>Do in advance</td></tr>'
+            '<tr><td>～ていただく</td><td>Receive the favor of (humble request)</td></tr>'
+            '<tr><td>～てしまう</td><td>Completed (sometimes regrettable)</td></tr>'
+            '<tr><td>～てもらう</td><td>Have someone do</td></tr>'
+            '</table>'
+            '</details>'
+        )
 
     # Join without newlines for CSV compatibility
     return ''.join(parts)

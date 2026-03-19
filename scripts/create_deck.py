@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Create Anki deck from vocabulary CSV and audio files.
 
-This script generates Anki decks with a 2-card design:
-- Card A (Comprehension): Audio + Japanese → English + Furigana
-- Card B (Production): English → Japanese + Audio + Furigana
+This script generates Anki decks with a 3-card design:
+- Card 1 (Listening): Audio only → Japanese + Furigana + English
+- Card 2 (Reading): Japanese text → Furigana + English + Conjugations
+- Card 3 (Vocabulary): Blanked sentence → Full sentence + Audio + Conjugations
+- Card 4 (Keigo): English situation → Conjugations (verbs only)
 
 Prerequisites:
 - Audio files must be generated first: uv run python scripts/generate_audio.py --tier N
@@ -13,6 +15,7 @@ import argparse
 import csv
 import hashlib
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -23,8 +26,17 @@ ROOT = Path(__file__).parent.parent
 
 # Stable IDs for Anki (generated once, keep consistent)
 # These ensure deck identity persists across regenerations
-MODEL_ID = 1607392319  # Random but stable
+MODEL_ID = 1607392320  # v2.0 - 3-card model
 DECK_BASE_ID = 2059400110  # Random but stable
+
+
+def to_ruby_html(text: str) -> str:
+    """Convert 漢字【かんじ】 to <ruby>漢字<rt>かんじ</rt></ruby>."""
+    return re.sub(
+        r'([\u4e00-\u9fff\u3400-\u4dbf]+)【([^】]+)】',
+        r'<ruby>\1<rt>\2</rt></ruby>',
+        text,
+    )
 
 
 def get_deck_id(tier: int) -> int:
@@ -33,14 +45,16 @@ def get_deck_id(tier: int) -> int:
 
 
 def create_model() -> genanki.Model:
-    """Create the 2-card Anki model.
+    """Create the 3-card Anki model.
 
-    Card A (Comprehension): Audio + Japanese → English + Furigana + Key vocab
-    Card B (Production): English + Hint → Japanese + Audio + Furigana
+    Card 1 (Listening): Audio only → Japanese + Furigana + English + Conjugations
+    Card 2 (Reading): Japanese text → Furigana + English + Conjugations
+    Card 3 (Vocabulary): Blanked sentence + English → Full sentence + Audio + Conjugations
+    Card 4 (Keigo): English situation → Conjugation table (verbs only)
     """
     return genanki.Model(
         MODEL_ID,
-        'Japanese IT Vocabulary (2-Card)',
+        'Japanese IT Vocabulary (3-Card)',
         fields=[
             {'name': 'Sentence'},       # Japanese sentence
             {'name': 'Translation'},    # English translation
@@ -48,22 +62,19 @@ def create_model() -> genanki.Model:
             {'name': 'Pronunciation'},  # Japanese with furigana
             {'name': 'Category'},       # Category/context
             {'name': 'Audio'},          # Audio file reference
-            {'name': 'Hint'},           # First character hint
+            {'name': 'Hint'},           # Kept for compatibility (unused)
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'Conjugations'},   # HTML conjugation table
         ],
         templates=[
-            # Card A: Comprehension (Listening + Reading)
+            # Card 1: Listening (audio-only front)
             {
-                'name': 'Comprehension',
-                'qfmt': '''
-<div class="card-type">Comprehension</div>
+                'name': 'Listening',
+                'qfmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
-<div class="sentence">{{Sentence}}</div>
 <div class="category">{{Category}}</div>
 ''',
-                'afmt': '''
-<div class="card-type">Comprehension</div>
+                'afmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
 <div class="sentence">{{Sentence}}</div>
 <div class="category">{{Category}}</div>
@@ -74,22 +85,70 @@ def create_model() -> genanki.Model:
 {{Conjugations}}
 ''',
             },
-            # Card B: Production (English → Japanese)
+            # Card 2: Reading (text-only front, no audio)
             {
-                'name': 'Production',
-                'qfmt': '''
-<div class="card-type">Production</div>
-<div class="translation">{{Translation}}</div>
-<div class="prompt">How do you say this in Japanese?</div>
-<div class="hint">Hint: {{Hint}} ({{Category}})</div>
+                'name': 'Reading',
+                'qfmt': '''<div class="card-type">Reading</div>
+<div class="sentence">{{Sentence}}</div>
+<div class="category">{{Category}}</div>
 ''',
-                'afmt': '''
-<div class="card-type">Production</div>
+                'afmt': '''<div class="card-type">Reading</div>
+<div class="sentence">{{Sentence}}</div>
+<div class="category">{{Category}}</div>
+<hr id="answer">
+<div class="pronunciation">{{Pronunciation}}</div>
+<div class="translation">{{Translation}}</div>
+<div class="key-vocab">Key: <span class="vocab">{{Cloze}}</span> ({{KeyMeaning}})</div>
+{{Conjugations}}
+''',
+            },
+            # Card 3: Vocabulary cloze (JS blanking)
+            {
+                'name': 'Vocabulary',
+                'qfmt': '''<div class="card-type">Vocabulary</div>
+<div id="sentence" class="sentence">{{Sentence}}</div>
+<div class="translation">{{Translation}}</div>
+<div class="category">{{Category}}</div>
+<script>
+(function() {
+    var el = document.getElementById('sentence');
+    var cloze = '{{Cloze}}';
+    el.innerHTML = el.textContent.split(cloze).join('<span class="blank">\uff3f\uff3f\uff3f</span>');
+})();
+</script>
+''',
+                'afmt': '''<div class="card-type">Vocabulary</div>
+<div id="sentence" class="sentence">{{Sentence}}</div>
+<div class="audio">{{Audio}}</div>
+<div class="translation">{{Translation}}</div>
+<div class="category">{{Category}}</div>
+<hr id="answer">
+<div class="pronunciation">{{Pronunciation}}</div>
+{{Conjugations}}
+<script>
+(function() {
+    var el = document.getElementById('sentence');
+    var cloze = '{{Cloze}}';
+    el.innerHTML = el.textContent.split(cloze).join('<span class="cloze-answer">' + cloze + '</span>');
+})();
+</script>
+''',
+            },
+            # Card 4: Keigo drill (verbs only - suppressed when Conjugations is empty)
+            {
+                'name': 'Keigo',
+                'qfmt': '''{{#Conjugations}}<div class="card-type">Keigo</div>
+<div class="translation">{{Translation}}</div>
+<div class="category">{{Category}}</div>
+<div class="prompt">Your action - humble form?</div>
+{{/Conjugations}}
+''',
+                'afmt': '''{{#Conjugations}}<div class="card-type">Keigo</div>
 <div class="translation">{{Translation}}</div>
 <hr id="answer">
 <div class="sentence">{{Sentence}}</div>
-<div class="audio">{{Audio}}</div>
-<div class="pronunciation">{{Pronunciation}}</div>
+{{Conjugations}}
+{{/Conjugations}}
 ''',
             },
         ],
@@ -159,14 +218,30 @@ def create_model() -> genanki.Model:
     margin: 15px 0;
 }
 
-.hint {
-    font-size: 18px;
-    color: #666;
-    margin: 10px 0;
+.blank {
+    display: inline-block;
+    min-width: 4em;
+    border-bottom: 2px solid #333;
+    color: transparent;
+}
+
+.cloze-answer {
+    color: #2196F3;
+    font-weight: bold;
 }
 
 .audio {
     margin: 10px 0;
+}
+
+ruby {
+    ruby-align: center;
+}
+
+ruby rt {
+    font-size: 11px;
+    font-weight: normal;
+    color: #888;
 }
 
 hr#answer {
@@ -220,6 +295,20 @@ hr#answer {
     font-weight: 500;
 }
 
+.te-compounds {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.te-compounds summary {
+    cursor: pointer;
+    font-size: 13px;
+    color: #888;
+    padding: 6px;
+    background: #f8f8f8;
+    border-radius: 4px;
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     .card {
@@ -236,13 +325,18 @@ hr#answer {
     }
     .key-vocab { color: #aaa; }
     .vocab { color: #64b5f6; }
+    .cloze-answer { color: #64b5f6; }
     .prompt { color: #888; }
-    .hint { color: #999; }
+    .blank { border-bottom-color: #aaa; }
     hr#answer { border-top-color: #444; }
-    /* Conjugation table dark mode */
+    ruby rt { color: #aaa; }
     .conjugation-section summary {
         background: #2a2a2a;
         color: #aaa;
+    }
+    .te-compounds summary {
+        background: #2a2a2a;
+        color: #999;
     }
     .conjugation-table th {
         background: #333;
@@ -314,7 +408,7 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
                 row['Sentence'],
                 row['Translation'],
                 row['Cloze'],
-                row['Pronunciation'],
+                to_ruby_html(row['Pronunciation']),
                 row['Note'],
                 audio_ref,
                 hint,
@@ -339,8 +433,8 @@ Examples:
   uv run python scripts/create_deck.py --tier 1 --no-audio
         """
     )
-    parser.add_argument("--tier", type=int, choices=[1, 2, 3, 4, 5, 6],
-                        help="Tier number to create (1-6)")
+    parser.add_argument("--tier", type=int, choices=list(range(1, 9)),
+                        help="Tier number to create (1-8)")
     parser.add_argument("--all", action="store_true",
                         help="Create decks for all tiers")
     parser.add_argument("--combined", action="store_true",
@@ -416,7 +510,7 @@ Examples:
                         row['Sentence'],
                         row['Translation'],
                         row['Cloze'],
-                        row['Pronunciation'],
+                        to_ruby_html(row['Pronunciation']),
                         row['Note'],
                         audio_ref,
                         hint,
@@ -439,7 +533,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Total notes: {total_notes}")
-        print(f"Total cards: {total_notes * 2} (2 cards per note)")
+        print(f"Total cards: {total_notes * 3}+ (3 cards per note, 4 for verbs)")
         print(f"Media files: {len(all_media)}")
 
     elif args.all:
@@ -452,7 +546,7 @@ Examples:
             package.media_files = media_files
             package.write_to_file(output)
 
-            print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files)")
+            print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3+ cards/note)")
     else:
         # Single tier
         tier = args.tier
@@ -465,7 +559,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Notes: {len(deck.notes)}")
-        print(f"Cards: {len(deck.notes) * 2} (2 cards per note)")
+        print(f"Cards: {len(deck.notes) * 3}+ (3 cards per note, 4 for verbs)")
         print(f"Media files: {len(media_files)}")
 
         if not include_audio:

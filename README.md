@@ -78,9 +78,7 @@ uv run python scripts/create_deck.py --combined --female
 | `generate_conjugations.py` | Generate verb/adjective conjugation tables |
 | `create_deck.py` | Create Anki .apkg files |
 | `validate.py` | Validate CSVs and audio files |
-| `pronunciation.py` | Furigana extraction, English→katakana, を comma |
-| `fix_ga_commas.py` | Add commas after が subject marker |
-| `fix_adverb_commas.py` | Add commas after introductory adverbs |
+| `pronunciation.py` | Furigana extraction, English→katakana conversion |
 | `add_key_meanings.py` | Generate English meanings for key words |
 | `test_tts.py` | Quick TTS test for specific sentences |
 
@@ -103,25 +101,6 @@ uv run python scripts/create_deck.py --combined --female
 **Add vocabulary** — Edit `tier{N}-vocabulary.csv`, regenerate audio and deck
 
 ## Known Limitations
-
-### TTS Particle Pauses
-
-TTS engines sometimes link particles to the following word instead of the preceding word, making audio sound slightly unnatural. Mitigations:
-
-- **を (object marker)**: Automatically handled. A comma is inserted after を (`を、`) for natural pauses.
-- **が (subject marker)**: Handled by `scripts/fix_ga_commas.py`. Automatically adds comma after が when used as subject marker (e.g., `バグが、発生しました`). Run this script after adding new sentences.
-- **に...を (location + object)**: Handled by `scripts/fix_ni_wo_commas.py`. Adds comma after both particles in `[X]に[Y]を[verb]` patterns (e.g., `夜間に、バッチ処理を、してください`).
-- **への (direction + possessive)**: Handled by `scripts/fix_heno_commas.py`. Adds comma after `への` when preceded by long katakana words (≥6 morae) (e.g., `ステージングデータベースへの、アクセス`).
-- **は, で**: Sound natural without modification.
-- **Introductory adverbs** (まず, 次に, 例えば, etc.): Handled by `scripts/fix_adverb_commas.py`. Adds comma after sentence-initial adverbs for natural pauses.
-
-When adding new sentences, run:
-```bash
-uv run python scripts/fix_ga_commas.py --apply
-uv run python scripts/fix_ni_wo_commas.py --apply
-uv run python scripts/fix_heno_commas.py --apply
-uv run python scripts/fix_adverb_commas.py --apply
-```
 
 ### Testing TTS Changes
 

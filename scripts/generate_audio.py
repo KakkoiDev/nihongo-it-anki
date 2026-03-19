@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Generate audio files for vocabulary sentences using Edge TTS.
 
-Uses the TTSPronunciation field with preprocessing to ensure accurate readings:
+Uses the Sentence field with preprocessing to ensure accurate readings:
 - Extracts furigana: 昼食【ちゅうしょく】 → ちゅうしょく
 - Converts acronyms: API → エーピーアイ
-- Preserves TTS pause commas: が、, まず、, を、
 """
 
 import argparse
@@ -79,8 +78,7 @@ async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = 
     print(f"Voice: {voice}\n")
 
     for idx, row in enumerate(sentences):
-        tts_pronunciation = row['TTSPronunciation']
-        tts_input = preprocess_for_tts(tts_pronunciation)
+        tts_input = preprocess_for_tts(row['Pronunciation'])
         num = idx + 1
 
         output_path = output_dir / f"tier{tier}_{num:03d}.mp3"

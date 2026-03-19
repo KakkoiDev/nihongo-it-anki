@@ -75,7 +75,7 @@ def main():
             row = sentences[row_num - 1]
             print(f"\nRow {row_num}: {row['Sentence']}")
             output_path = Path(f"test_tier{args.tier}_{row_num:03d}.mp3")
-            asyncio.run(generate_single(row['TTSPronunciation'], output_path))
+            asyncio.run(generate_single(row['Sentence'], output_path))
 
 
 if __name__ == "__main__":
