@@ -196,6 +196,6 @@ JSONファイルをパースしてください。,Parse the JSON file.,JSON,JSON
 XMLをJSONに変換してください。,Convert XML to JSON.,XML,XMLをJSONに変換【へんかん】してください。,XMLをJSONに変換【へんかん】してください。,Data - Format,polite,XML,"<span class=""vocab"">XML</span>",
 データを正規化してください。,Normalize the data.,正規化,データを正規化【せいきか】してください。,データを正規化【せいきか】してください。,Data - Normalization,polite,normalize,"<ruby class=""vocab"">正規化<rt>せいきか</rt></ruby>",
 クエリ用に非正規化してください。,Denormalize for queries.,非正規化,クエリ用【よう】に非正規化【ひせいきか】してください。,クエリ用【よう】に非正規化【ひせいきか】してください。,Data - Denormalization,polite,normalize,"<ruby class=""vocab"">非正規化<rt>ひせいきか</rt></ruby>",
-レコードの重複を排除してください。,Dedup the records.,重複排除,レコードの重複【じゅうふく】を排除【はいじょ】してください。,レコードの重複【じゅうふく】を排除【はいじょ】してください。,Data - Deduplication,polite,dedup,"<span class=""vocab"">重複排除</span>",
+レコードの重複を排除してください。,Dedup the records.,重複排除,レコードの重複【じゅうふく】を排除【はいじょ】してください。,レコードの重複【じゅうふく】を排除【はいじょ】してください。,Data - Deduplication,polite,dedup,"<ruby class=""vocab"">重複排除<rt>じゅうふくはいじょ</rt></ruby>",
 データ品質を検証してください。,Validate data quality.,データ品質,データ品質【ひんしつ】を検証【けんしょう】してください。,データ品質【ひんしつ】を検証【けんしょう】してください。,Data - Quality,polite,data,"<ruby class=""vocab"">データ品質<rt>ひんしつ</rt></ruby>",
 データセットをクレンジングしてください。,Clean the dataset.,クレンジング,データセットをクレンジングしてください。,データセットをクレンジングしてください。,Data - Cleansing,polite,range,"<ruby class=""vocab"">クレンジング<rt><span class=""pitch-l"">く</span><span class=""pitch-h"">れ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">じ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">ぐ</span></rt></ruby>",

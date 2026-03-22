@@ -87,7 +87,7 @@ def parse_pronunciation(text: str) -> list[tuple[str, str]]:
     parts = []
     pos = 0
     while pos < len(text):
-        m = re.match(r'([\u4e00-\u9fff\u3400-\u4dbf]+)【([^】]+)】', text[pos:])
+        m = re.match(r'([\u4e00-\u9fff\u3400-\u4dbf\u3005]+)【([^】]+)】', text[pos:])
         if m:
             parts.append((m.group(1), m.group(2)))
             pos += m.end()
@@ -110,32 +110,79 @@ def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
         return m.group(1)
 
     # No kanji in cloze - it IS the kana reading
-    if not re.search(r'[\u4e00-\u9fff]', cloze):
+    if not re.search(r'[\u4e00-\u9fff\u3005]', cloze):
         return kata_to_hira(cloze)
 
-    # Compound case: parse and match parts
+    # Contiguous case: parse pronunciation and match the cloze word directly
     parts = parse_pronunciation(pronunciation)
     surface_str = ''.join(s for s, _ in parts)
     idx = surface_str.find(cloze)
-    if idx < 0:
-        return None
-
-    reading = []
-    surface_pos = 0
-    for s, r in parts:
-        part_end = surface_pos + len(s)
-        if part_end <= idx:
+    if idx >= 0:
+        reading = []
+        surface_pos = 0
+        for s, r in parts:
+            part_end = surface_pos + len(s)
+            if part_end <= idx:
+                surface_pos = part_end
+                continue
+            if surface_pos >= idx + len(cloze):
+                break
+            if surface_pos >= idx and part_end <= idx + len(cloze):
+                reading.append(r)
+            else:
+                reading = []
+                break
             surface_pos = part_end
-            continue
-        if surface_pos >= idx + len(cloze):
-            break
-        if surface_pos >= idx and part_end <= idx + len(cloze):
-            reading.append(r)
-        else:
-            return None
-        surface_pos = part_end
+        if reading:
+            return ''.join(reading)
 
-    return ''.join(reading) if reading else None
+    # Segment case: cloze word not contiguous in pronunciation (dictionary form
+    # vs inflected form). Break cloze into kanji/non-kanji segments and look up
+    # each kanji segment's reading individually.
+    # e.g. cloze=協力する, pronunciation has 協力【きょうりょく】して
+    #      -> segments: [協力, する] -> [きょうりょく, する] -> きょうりょくする
+    kanji_re = re.compile(r'[\u4e00-\u9fff\u3400-\u4dbf\u3005]+')
+    segments = re.findall(
+        r'[\u4e00-\u9fff\u3400-\u4dbf\u3005]+|[^\u4e00-\u9fff\u3400-\u4dbf]+', cloze
+    )
+    reading_parts = []
+    for seg in segments:
+        if kanji_re.match(seg):
+            seg_pattern = re.compile(re.escape(seg) + r'【([^】]+)】')
+            seg_m = seg_pattern.search(pronunciation)
+            if seg_m:
+                reading_parts.append(seg_m.group(1))
+            else:
+                # Kanji block may span multiple annotations (e.g. 重複排除
+                # annotated as 重複【じゅうふく】を排除【はいじょ】).
+                # Greedily match longest annotated prefixes.
+                sub_reading = _decompose_kanji(seg, pronunciation)
+                if sub_reading:
+                    reading_parts.append(sub_reading)
+                else:
+                    return None
+        else:
+            reading_parts.append(kata_to_hira(seg))
+    return ''.join(reading_parts) if reading_parts else None
+
+
+def _decompose_kanji(kanji_seg: str, pronunciation: str) -> str | None:
+    """Find readings for a kanji segment spanning multiple annotations."""
+    readings = []
+    remaining = kanji_seg
+    while remaining:
+        found = False
+        for length in range(len(remaining), 0, -1):
+            prefix = remaining[:length]
+            m = re.search(re.escape(prefix) + r'【([^】]+)】', pronunciation)
+            if m:
+                readings.append(m.group(1))
+                remaining = remaining[length:]
+                found = True
+                break
+        if not found:
+            return None
+    return ''.join(readings)
 
 
 def has_katakana(text: str) -> bool:
@@ -155,7 +202,7 @@ def pitch_html(cloze: str, kana: str, atype: int) -> str:
         for m, p in zip(moras, pattern)
     )
 
-    has_kanji = bool(re.search(r'[\u4e00-\u9fff]', cloze))
+    has_kanji = bool(re.search(r'[\u4e00-\u9fff\u3005]', cloze))
     if has_kanji or has_katakana(cloze):
         return f'<ruby class="vocab">{cloze}<rt>{colored_rt}</rt></ruby>'
     else:
@@ -164,7 +211,7 @@ def pitch_html(cloze: str, kana: str, atype: int) -> str:
 
 def fallback_html(cloze: str, kana: str | None) -> str:
     """Generate plain ruby HTML (no pitch coloring) as fallback."""
-    has_kanji = bool(re.search(r'[\u4e00-\u9fff]', cloze))
+    has_kanji = bool(re.search(r'[\u4e00-\u9fff\u3005]', cloze))
     if has_kanji and kana:
         return f'<ruby class="vocab">{cloze}<rt>{kana}</rt></ruby>'
     return f'<span class="vocab">{cloze}</span>'

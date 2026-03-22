@@ -177,6 +177,117 @@ ACRONYM_MAP = {
     'webhook': 'ウェブフック',
     'websocket': 'ウェブソケット',
     'WebSocket': 'ウェブソケット',
+    # HTTP methods
+    'GET': 'ゲット',
+    'POST': 'ポスト',
+    'PUT': 'プット',
+    'PATCH': 'パッチ',
+    'DELETE': 'デリート',
+    'HEAD': 'ヘッド',
+    'OK': 'オーケー',
+    'HTTP': 'エイチティーティーピー',
+    'HTTPS': 'エイチティーティーピーエス',
+    'URL': 'ユーアールエル',
+    # SQL keywords
+    'SELECT': 'セレクト',
+    'INSERT': 'インサート',
+    'UPDATE': 'アップデート',
+    'DELETE': 'デリート',
+    'WHERE': 'ウェア',
+    'ORDER': 'オーダー',
+    'GROUP': 'グループ',
+    'LIMIT': 'リミット',
+    'BY': 'バイ',
+    # Git terms
+    'main': 'メイン',
+    'origin': 'オリジン',
+    'blame': 'ブレーム',
+    'upstream': 'アップストリーム',
+    'HEAD': 'ヘッド',
+    'changelog': 'チェンジログ',
+    'install': 'インストール',
+    # Code keywords
+    'null': 'ナル',
+    'true': 'トゥルー',
+    'false': 'フォールス',
+    'undefined': 'アンデファインド',
+    'boolean': 'ブーリアン',
+    'default': 'デフォルト',
+    'promise': 'プロミス',
+    'console': 'コンソール',
+    'log': 'ログ',
+    'try': 'トライ',
+    'catch': 'キャッチ',
+    'save': 'セーブ',
+    'limit': 'リミット',
+    'id': 'アイディー',
+    'env': 'エンブ',
+    'components': 'コンポーネンツ',
+    'utils': 'ユーティルズ',
+    'users': 'ユーザーズ',
+    'user': 'ユーザー',
+    'isActive': 'イズアクティブ',
+    # Tech products and frameworks
+    'Safari': 'サファリ',
+    'GraphQL': 'グラフキューエル',
+    'Express': 'エクスプレス',
+    'NoSQL': 'ノーエスキューエル',
+    'ConfigMap': 'コンフィグマップ',
+    'ElastiCache': 'エラスティキャッシュ',
+    'lodash': 'ロダッシュ',
+    'bcrypt': 'ビークリプト',
+    # Abbreviations
+    'TODO': 'トゥードゥー',
+    'FIXME': 'フィックスミー',
+    'E2E': 'イーツーイー',
+    'IaC': 'アイエーシー',
+    'for': 'フォー',
+    'if': 'イフ',
+    'else': 'エルス',
+    'at': 'アット',
+    'created': 'クリエイテッド',
+    'User': 'ユーザー',
+    'Secrets': 'シークレッツ',
+    'Cookie': 'クッキー',
+    'Grid': 'グリッド',
+    'Blob': 'ブロブ',
+    # AWS service components
+    'Route': 'ルート',
+    'Gateway': 'ゲートウェイ',
+    'Ray': 'レイ',
+    'Manager': 'マネージャー',
+    'Parameter': 'パラメーター',
+    'Store': 'ストア',
+    'Step': 'ステップ',
+    'Functions': 'ファンクションズ',
+    'Cost': 'コスト',
+    'Explorer': 'エクスプローラー',
+    'New': 'ニュー',
+    'Relic': 'レリック',
+    'DTO': 'ディーティーオー',
+    'API': 'エーピーアイ',
+    'SDK': 'エスディーケー',
+    'CSV': 'シーエスブイ',
+    'XML': 'エックスエムエル',
+    'UI': 'ユーアイ',
+    'UX': 'ユーエックス',
+    'QA': 'キューエー',
+    'PR': 'ピーアール',
+    'CI': 'シーアイ',
+    'CD': 'シーディー',
+    'DB': 'ディービー',
+    'IP': 'アイピー',
+    'ID': 'アイディー',
+    'TDD': 'ティーディーディー',
+    'APM': 'エーピーエム',
+    'SLA': 'エスエルエー',
+    'SLO': 'エスエルオー',
+    'SLI': 'エスエルアイ',
+    'OKR': 'オーケーアール',
+    'KPI': 'ケーピーアイ',
+    'ETA': 'イーティーエー',
+    'DM': 'ディーエム',
+    'AES': 'エーイーエス',
     # Alphanumeric abbreviations
     'K8s': 'クバネティス',
     'a11y': 'アクセシビリティ',
@@ -219,7 +330,7 @@ def extract_furigana(text: str) -> str:
     Note: Irregular counter words (2日=ふつか) should use kana directly
     in TTSPronunciation instead of digit+kanji+furigana format.
     """
-    pattern = r'([0-9]*)([\u4e00-\u9fff]+)【([^】]+)】'
+    pattern = r'([0-9]*)([\u4e00-\u9fff\u3005]+)【([^】]+)】'
 
     def replace_with_reading(match):
         digits, _kanji, reading = match.group(1), match.group(2), match.group(3)
@@ -275,7 +386,8 @@ def preprocess_for_tts(text: str) -> str:
     # Step 1: Symbol substitutions
     text = text.replace('%', 'パーセント')
     # v2.0.0 style version strings: keep the number, drop the "v"
-    text = re.sub(r'\bv(\d)', r'バージョン\1', text)
+    # Can't use \b - doesn't work at Japanese/ASCII boundary
+    text = re.sub(r'(?<![A-Za-z])v(\d)', r'バージョン\1', text)
 
     # Step 2: Extract furigana
     text = extract_furigana(text)

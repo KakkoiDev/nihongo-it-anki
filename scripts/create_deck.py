@@ -32,7 +32,7 @@ DECK_BASE_ID = 2059400110  # Random but stable
 def to_ruby_html(text: str) -> str:
     """Convert 漢字【かんじ】 to <ruby>漢字<rt>かんじ</rt></ruby>."""
     return re.sub(
-        r'([\u4e00-\u9fff\u3400-\u4dbf]+)【([^】]+)】',
+        r'([\u4e00-\u9fff\u3400-\u4dbf\u3005]+)【([^】]+)】',
         r'<ruby>\1<rt>\2</rt></ruby>',
         text,
     )
