@@ -2,10 +2,9 @@
 """Create Anki deck from vocabulary CSV and audio files.
 
 This script generates Anki decks with a 3-card design:
-- Card 1 (Listening): Audio only → Japanese + Furigana + English
-- Card 2 (Reading): Japanese text → Furigana + English + Conjugations
-- Card 3 (Vocabulary): Blanked sentence → Full sentence + Audio + Conjugations
-- Card 4 (Keigo): English situation → Conjugations (verbs only)
+- Card 1 (Listening): Play button → Japanese + Furigana + English
+- Card 2 (Reading): Japanese text → Furigana + English
+- Card 3 (Vocabulary): Blanked sentence → Full sentence + Audio
 
 Prerequisites:
 - Audio files must be generated first: uv run python scripts/generate_audio.py --tier N
@@ -26,7 +25,7 @@ ROOT = Path(__file__).parent.parent
 
 # Stable IDs for Anki (generated once, keep consistent)
 # These ensure deck identity persists across regenerations
-MODEL_ID = 1607392322  # v2.2 - added Register field
+MODEL_ID = 1607392323  # v3.0 - big play button, no conjugations, no keigo
 DECK_BASE_ID = 2059400110  # Random but stable
 
 
@@ -47,10 +46,9 @@ def get_deck_id(tier: int) -> int:
 def create_model() -> genanki.Model:
     """Create the 3-card Anki model.
 
-    Card 1 (Listening): Audio only → Japanese + Furigana + English + Conjugations
-    Card 2 (Reading): Japanese text → Furigana + English + Conjugations
-    Card 3 (Vocabulary): Blanked sentence + English → Full sentence + Audio + Conjugations
-    Card 4 (Keigo): English situation → Conjugation table (verbs only)
+    Card 1 (Listening): Big play button → Japanese + Furigana + English
+    Card 2 (Reading): Japanese text → Furigana + English
+    Card 3 (Vocabulary): Blanked sentence + English → Full sentence + Audio
     """
     return genanki.Model(
         MODEL_ID,
@@ -66,24 +64,22 @@ def create_model() -> genanki.Model:
             {'name': 'Register'},       # Speech register: casual/polite/formal/keigo
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
-            {'name': 'Conjugations'},   # HTML conjugation table
+            {'name': 'Conjugations'},   # Kept for compatibility (unused)
         ],
         templates=[
-            # Card 1: Listening (audio-only front)
+            # Card 1: Listening (big play button front, everything else on back)
             {
                 'name': 'Listening',
                 'qfmt': '''<div class="card-type">Listening</div>
+<div class="play-button">&#9654;</div>
 <div class="audio">{{Audio}}</div>
-<div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 ''',
                 'afmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
 <div class="sentence">{{Pronunciation}}</div>
-<div class="category">{{Category}}</div>
-<hr id="answer">
 <div class="translation">{{Translation}}</div>
+<div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 <div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
-{{Conjugations}}
 ''',
             },
             # Card 2: Reading (text-only front, no audio)
@@ -95,11 +91,9 @@ def create_model() -> genanki.Model:
 ''',
                 'afmt': '''<div class="card-type">Reading</div>
 <div class="sentence">{{Pronunciation}}</div>
-<div class="category">{{Category}}</div>
 <hr id="answer">
 <div class="translation">{{Translation}}</div>
 <div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
-{{Conjugations}}
 ''',
             },
             # Card 3: Vocabulary cloze (JS blanking)
@@ -121,10 +115,8 @@ def create_model() -> genanki.Model:
 <div id="sentence" class="sentence">{{Sentence}}</div>
 <div class="audio">{{Audio}}</div>
 <div class="translation">{{Translation}}</div>
-<div class="category">{{Category}}</div>
 <hr id="answer">
 <div class="pronunciation">{{Pronunciation}}</div>
-{{Conjugations}}
 <script>
 (function() {
     var el = document.getElementById('sentence');
@@ -132,23 +124,6 @@ def create_model() -> genanki.Model:
     el.innerHTML = el.textContent.split(cloze).join('<span class="cloze-answer">' + cloze + '</span>');
 })();
 </script>
-''',
-            },
-            # Card 4: Keigo drill (verbs only - suppressed when Conjugations is empty)
-            {
-                'name': 'Keigo',
-                'qfmt': '''{{#Conjugations}}<div class="card-type">Keigo</div>
-<div class="translation">{{Translation}}</div>
-<div class="category">{{Category}}</div>
-<div class="prompt">Your action - humble form?</div>
-{{/Conjugations}}
-''',
-                'afmt': '''{{#Conjugations}}<div class="card-type">Keigo</div>
-<div class="translation">{{Translation}}</div>
-<hr id="answer">
-<div class="sentence">{{Pronunciation}}</div>
-{{Conjugations}}
-{{/Conjugations}}
 ''',
             },
         ],
@@ -234,6 +209,13 @@ def create_model() -> genanki.Model:
     margin: 10px 0;
 }
 
+.play-button {
+    font-size: 80px;
+    color: #2196F3;
+    margin: 40px 0;
+    line-height: 1;
+}
+
 ruby {
     ruby-align: center;
 }
@@ -248,51 +230,6 @@ hr#answer {
     border: none;
     border-top: 1px solid #ddd;
     margin: 20px 0;
-}
-
-/* Conjugation table styles */
-.conjugation-section {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.conjugation-section summary {
-    cursor: pointer;
-    font-size: 14px;
-    color: #666;
-    padding: 8px;
-    background: #f0f0f0;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.conjugation-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.conjugation-table th {
-    background: #e8e8e8;
-    padding: 8px;
-    text-align: left;
-    font-weight: bold;
-    color: #444;
-}
-
-.conjugation-table td {
-    padding: 6px 8px;
-    border-bottom: 1px solid #eee;
-}
-
-.conjugation-table td:first-child {
-    color: #666;
-    width: 45%;
-}
-
-.conjugation-table td:last-child {
-    font-weight: 500;
 }
 
 .register {
@@ -339,24 +276,10 @@ hr#answer {
     .register-keigo   { background: #2a1a2a; color: #ce93d8; }
     .pitch-h { color: #81c784; }
     .pitch-l { color: #e57373; }
+    .play-button { color: #64b5f6; }
     .blank { border-bottom-color: #aaa; }
     hr#answer { border-top-color: #444; }
     ruby rt { color: #aaa; }
-    .conjugation-section summary {
-        background: #2a2a2a;
-        color: #aaa;
-    }
-    .conjugation-table th {
-        background: #333;
-        color: #ddd;
-    }
-    .conjugation-table td {
-        border-color: #444;
-        color: #ccc;
-    }
-    .conjugation-table td:first-child {
-        color: #888;
-    }
 }
 '''
     )
@@ -547,7 +470,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Total notes: {total_notes}")
-        print(f"Total cards: {total_notes * 3}+ (3 cards per note, 4 for verbs)")
+        print(f"Total cards: {total_notes * 3} (3 cards per note)")
         print(f"Media files: {len(all_media)}")
 
     elif args.all:
@@ -560,7 +483,7 @@ Examples:
             package.media_files = media_files
             package.write_to_file(output)
 
-            print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3+ cards/note)")
+            print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3 cards/note)")
     else:
         # Single tier
         tier = args.tier
@@ -573,7 +496,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Notes: {len(deck.notes)}")
-        print(f"Cards: {len(deck.notes) * 3}+ (3 cards per note, 4 for verbs)")
+        print(f"Cards: {len(deck.notes) * 3} (3 cards per note)")
         print(f"Media files: {len(media_files)}")
 
         if not include_audio:

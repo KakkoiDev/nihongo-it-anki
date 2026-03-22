@@ -215,8 +215,10 @@ def extract_furigana(text: str) -> str:
 
     Pattern: [digits]kanji【reading】 → [digits]reading
     All other text is preserved as-is.
+
+    Note: Irregular counter words (2日=ふつか) should use kana directly
+    in TTSPronunciation instead of digit+kanji+furigana format.
     """
-    # Capture optional leading digits separately so they are preserved
     pattern = r'([0-9]*)([\u4e00-\u9fff]+)【([^】]+)】'
 
     def replace_with_reading(match):

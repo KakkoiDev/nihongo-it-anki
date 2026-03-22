@@ -78,12 +78,32 @@ def accent_pattern(num_moras: int, atype: int) -> list[str]:
     return result
 
 
+def parse_pronunciation(text: str) -> list[tuple[str, str]]:
+    """Parse annotated text into (surface, reading) pairs.
+
+    Input: 実【じつ】はもっと
+    Output: [('実', 'じつ'), ('は', 'は'), ('も', 'も'), ...]
+    """
+    parts = []
+    pos = 0
+    while pos < len(text):
+        m = re.match(r'([\u4e00-\u9fff\u3400-\u4dbf]+)【([^】]+)】', text[pos:])
+        if m:
+            parts.append((m.group(1), m.group(2)))
+            pos += m.end()
+        else:
+            parts.append((text[pos], text[pos]))
+            pos += 1
+    return parts
+
+
 def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
     """Extract hiragana reading of cloze from Pronunciation field furigana.
 
-    Falls back to cloze itself (hiragana/katakana) if no annotation found.
+    Handles compound cloze words by parsing the pronunciation annotations
+    and matching against the surface text.
     """
-    # Try 漢字【よみ】 annotation
+    # Simple case: exact match with annotation
     pattern = re.compile(re.escape(cloze) + r'【([^】]+)】')
     m = pattern.search(pronunciation)
     if m:
@@ -93,7 +113,34 @@ def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
     if not re.search(r'[\u4e00-\u9fff]', cloze):
         return kata_to_hira(cloze)
 
-    return None
+    # Compound case: parse and match parts
+    parts = parse_pronunciation(pronunciation)
+    surface_str = ''.join(s for s, _ in parts)
+    idx = surface_str.find(cloze)
+    if idx < 0:
+        return None
+
+    reading = []
+    surface_pos = 0
+    for s, r in parts:
+        part_end = surface_pos + len(s)
+        if part_end <= idx:
+            surface_pos = part_end
+            continue
+        if surface_pos >= idx + len(cloze):
+            break
+        if surface_pos >= idx and part_end <= idx + len(cloze):
+            reading.append(r)
+        else:
+            return None
+        surface_pos = part_end
+
+    return ''.join(reading) if reading else None
+
+
+def has_katakana(text: str) -> bool:
+    """Check if text contains katakana characters."""
+    return bool(re.search(r'[\u30A0-\u30FF]', text))
 
 
 def pitch_html(cloze: str, kana: str, atype: int) -> str:
@@ -109,41 +156,46 @@ def pitch_html(cloze: str, kana: str, atype: int) -> str:
     )
 
     has_kanji = bool(re.search(r'[\u4e00-\u9fff]', cloze))
-    if has_kanji:
+    if has_kanji or has_katakana(cloze):
         return f'<ruby class="vocab">{cloze}<rt>{colored_rt}</rt></ruby>'
     else:
         return f'<span class="vocab">{colored_rt}</span>'
 
 
+def fallback_html(cloze: str, kana: str | None) -> str:
+    """Generate plain ruby HTML (no pitch coloring) as fallback."""
+    has_kanji = bool(re.search(r'[\u4e00-\u9fff]', cloze))
+    if has_kanji and kana:
+        return f'<ruby class="vocab">{cloze}<rt>{kana}</rt></ruby>'
+    return f'<span class="vocab">{cloze}</span>'
+
+
 def get_pitch_html(cloze: str, pronunciation: str) -> str:
-    """Return pitch-colored HTML for cloze word, or '' if not available."""
+    """Return pitch-colored HTML for cloze word, or plain furigana fallback."""
+    kana_from_pron = get_kana_reading(cloze, pronunciation)
     tokens = list(tagger(cloze))
 
-    # Only handle single-token words for reliable pitch data
-    if len(tokens) != 1:
-        return ''
+    # Try to get pitch accent data from single-token words
+    if len(tokens) == 1:
+        token = tokens[0]
+        atype_raw = token.feature.aType if hasattr(token.feature, 'aType') else ''
 
-    token = tokens[0]
-    atype_raw = token.feature.aType if hasattr(token.feature, 'aType') else ''
+        if atype_raw and atype_raw != '*':
+            try:
+                atype = int(atype_raw.split(',')[0])
+            except (ValueError, AttributeError):
+                atype = None
+            else:
+                kana = kana_from_pron
+                if not kana:
+                    raw_kana = token.feature.kana if hasattr(token.feature, 'kana') else ''
+                    if raw_kana and raw_kana != '*':
+                        kana = kata_to_hira(raw_kana)
+                if kana:
+                    return pitch_html(cloze, kana, atype)
 
-    if not atype_raw or atype_raw == '*':
-        return ''
-
-    # Take first value if multiple variants listed (e.g. '1,0')
-    try:
-        atype = int(atype_raw.split(',')[0])
-    except (ValueError, AttributeError):
-        return ''
-
-    kana = get_kana_reading(cloze, pronunciation)
-    if not kana:
-        # Fall back to UniDic kana field
-        raw_kana = token.feature.kana if hasattr(token.feature, 'kana') else ''
-        if not raw_kana or raw_kana == '*':
-            return ''
-        kana = kata_to_hira(raw_kana)
-
-    return pitch_html(cloze, kana, atype)
+    # Fallback: plain furigana without pitch coloring
+    return fallback_html(cloze, kana_from_pron)
 
 
 def process_csv(tier: int) -> None:

@@ -78,7 +78,8 @@ async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = 
     print(f"Voice: {voice}\n")
 
     for idx, row in enumerate(sentences):
-        tts_input = preprocess_for_tts(row['Pronunciation'])
+        tts_text = row.get('TTSPronunciation') or row['Pronunciation']
+        tts_input = preprocess_for_tts(tts_text)
         num = idx + 1
 
         output_path = output_dir / f"tier{tier}_{num:03d}.mp3"
