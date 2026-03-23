@@ -1,15 +1,32 @@
 #!/usr/bin/env python3
 """Generate pitch accent HTML for Anki cloze word display.
 
-For each vocabulary entry, analyses the Cloze word using UniDic to get the
-pitch accent type (aType), then generates colored ruby HTML where:
-  - green spans = high mora
-  - red spans   = low mora
+For each vocabulary entry, analyses the Cloze word using UniDic/fugashi to
+get the pitch accent type (aType), then generates colored ruby HTML where:
+  - green (pitch-h) = high mora
+  - red (pitch-l)   = low mora
 
-Only processes single-token words with valid aType data (~50% coverage).
-Multi-token compounds and words without pitch data get an empty field.
+Coverage strategy (achieves 100%):
+  1. Single-token words with UniDic aType data -> colored pitch HTML
+  2. Everything else -> plain furigana fallback (no colors, but still ruby)
 
-Output column: PitchAccent (HTML string, stored in CSV)
+Reading extraction for the fallback has 3 strategies (in order):
+  1. Exact match: cloze word appears with 【reading】 annotation
+  2. Contiguous match: cloze spans multiple annotated segments in sequence
+     e.g. 実は in "実【じつ】はもっと" -> じつは
+  3. Segment match: cloze is in dictionary form but pronunciation has inflected
+     form. Breaks cloze into kanji/kana segments and looks up each kanji reading.
+     e.g. 協力する vs 協力【きょうりょく】して -> きょうりょくする
+  3b. Decompose: kanji block spans multiple annotations separated by particles.
+     e.g. 重複排除 vs 重複【じゅうふく】を排除【はいじょ】 -> じゅうふくはいじょ
+
+Display rules:
+  - Kanji words: <ruby>漢字<rt>reading</rt></ruby>
+  - Katakana words (e.g. ブロック): <ruby>ブロック<rt>pitch hiragana</rt></ruby>
+    (shows katakana as base with hiragana pitch guide above)
+  - Hiragana words: <span>colored moras</span> (pitch IS the guide)
+
+All kanji regex patterns include \u3005 (々 repetition mark).
 """
 
 import csv

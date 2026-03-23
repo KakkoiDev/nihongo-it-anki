@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """Generate audio files for vocabulary sentences using Edge TTS.
 
-Uses the Sentence field with preprocessing to ensure accurate readings:
-- Extracts furigana: 昼食【ちゅうしょく】 → ちゅうしょく
-- Converts acronyms: API → エーピーアイ
+Reads the Pronunciation field from CSV, preprocesses it via pronunciation.py,
+then generates MP3 files using Microsoft Edge TTS (KeitaNeural voice).
+
+IMPORTANT: Uses the Pronunciation field, NOT TTSPronunciation.
+The TTSPronunciation column has artificial commas that cause unnatural pauses
+in Edge TTS output. The Pronunciation field is clean and produces natural speech.
+See pronunciation.py docstring for the full preprocessing pipeline.
+
+Audio files are named tier{N}_{NNN}.mp3 and stored in tier{N}-audio/.
+The --force flag regenerates all files (needed after pronunciation fixes).
 """
 
 import argparse

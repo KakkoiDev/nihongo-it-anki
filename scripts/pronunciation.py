@@ -2,10 +2,28 @@
 """Pronunciation preprocessing for accurate TTS audio generation.
 
 This module prepares Japanese text for Edge TTS (KeitaNeural/NanamiNeural).
+It converts the Pronunciation field from the CSV into clean kana+katakana
+text that Edge TTS can read correctly.
 
-Handles:
-1. Furigana extraction: 昼食【ちゅうしょく】 → ちゅうしょく
-2. English acronyms: API → エーピーアイ
+Pipeline (preprocess_for_tts):
+  1. Symbol substitutions (%, version strings)
+  2. Furigana extraction: 昼食【ちゅうしょく】 -> ちゅうしょく
+  3. English term conversion: API -> エーピーアイ
+  4. Cleanup leftover brackets
+
+IMPORTANT lessons learned:
+- Edge TTS reads the Pronunciation field, NOT TTSPronunciation.
+  The TTSPronunciation column had artificial commas that caused unnatural
+  pauses (e.g. "が、できました"). Never use it for audio generation.
+- Katakana loanwords (レビュー etc.) are left as-is for TTS. Edge TTS
+  handles them natively. But when preceded by spelled-out acronyms
+  (ピーアール), TTS can merge them. Fix with a reading comma in the
+  Pronunciation field (e.g. "PRは、レビュー...").
+- Irregular counter words like 2日=ふつか must use kana directly in the
+  Pronunciation field. The digit "2" gets read as "ni" by TTS, producing
+  "ni futsuka" instead of just "futsuka".
+- \b word boundary doesn't work at Japanese/ASCII boundaries. Use
+  negative lookbehind (?<![A-Za-z]) instead.
 """
 
 import re
@@ -40,8 +58,11 @@ LETTER_MAP = {
     'Z': 'ゼット',
 }
 
-# Common acronyms with special/preferred pronunciations
-# (overrides letter-by-letter conversion)
+# Common acronyms with special/preferred pronunciations.
+# Words here are matched EXACTLY (case-sensitive) before the letter-by-letter
+# fallback. The fallback only handles 2-5 uppercase letters (e.g. CI -> シーアイ)
+# and LETTER+DIGIT patterns (e.g. EC2 -> イーシーツー).
+# Words 6+ uppercase letters (DELETE, SELECT) MUST be here or they pass through raw.
 ACRONYM_MAP = {
     'JSON': 'ジェイソン',
     'REST': 'レスト',
@@ -327,9 +348,15 @@ def extract_furigana(text: str) -> str:
     Pattern: [digits]kanji【reading】 → [digits]reading
     All other text is preserved as-is.
 
-    Note: Irregular counter words (2日=ふつか) should use kana directly
-    in TTSPronunciation instead of digit+kanji+furigana format.
+    GOTCHA: Digits before kanji are preserved (5分 -> 5ふん, TTS reads "go fun").
+    This breaks for irregular counters where the reading includes the number
+    (2日=ふつか -> "2ふつか" -> TTS says "ni futsuka"). For those, write the
+    Pronunciation field with kana directly: おそらくふつかかかる instead of
+    おそらく2日【ふつか】かかる.
+
+    The \u3005 in the regex is the 々 repetition mark (e.g. 徐々【じょじょ】).
     """
+    # [optional digits][kanji+々]【reading】 -> [digits]reading
     pattern = r'([0-9]*)([\u4e00-\u9fff\u3005]+)【([^】]+)】'
 
     def replace_with_reading(match):
