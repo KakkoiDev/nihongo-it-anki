@@ -71,8 +71,7 @@ def create_model() -> genanki.Model:
             {
                 'name': 'Listening',
                 'qfmt': '''<div class="card-type">Listening</div>
-<div class="play-button">&#9654;</div>
-<div class="audio">{{Audio}}</div>
+<div class="audio listening-front">{{Audio}}</div>
 ''',
                 'afmt': '''<div class="card-type">Listening</div>
 <div class="audio">{{Audio}}</div>
@@ -209,11 +208,15 @@ def create_model() -> genanki.Model:
     margin: 10px 0;
 }
 
-.play-button {
-    font-size: 80px;
-    color: #2196F3;
+.listening-front .replay-button svg,
+.listening-front .replay-button img,
+.listening-front .replay-button {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.listening-front {
     margin: 40px 0;
-    line-height: 1;
 }
 
 ruby {
@@ -276,7 +279,6 @@ hr#answer {
     .register-keigo   { background: #2a1a2a; color: #ce93d8; }
     .pitch-h { color: #81c784; }
     .pitch-l { color: #e57373; }
-    .play-button { color: #64b5f6; }
     .blank { border-bottom-color: #aaa; }
     hr#answer { border-top-color: #444; }
     ruby rt { color: #aaa; }
