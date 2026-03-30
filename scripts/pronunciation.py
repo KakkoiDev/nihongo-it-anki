@@ -402,13 +402,42 @@ def convert_english_terms(text: str) -> str:
     return re.sub(pattern, convert_acronym, text)
 
 
+def replace_particles_with_phonetic(text: str) -> str:
+    """Replace particle は/へ/を with their phonetic equivalents わ/え/お.
+
+    Must run BEFORE extract_furigana(), on the raw Pronunciation field where
+    brackets still disambiguate word readings from particles:
+      - 話【はな】せますか -> は inside brackets = word reading, untouched
+      - 差分【さぶん】は -> は outside brackets = particle, replaced with わ
+
+    Particles are pronounced differently from their base kana:
+      - は (particle) = "wa" not "ha"
+      - へ (particle) = "e" not "he"
+      - を (particle) = "o" not "wo"
+
+    Replacing them with わ/え/お forces Edge TTS to use the correct reading.
+    """
+    # Split text into bracket segments and non-bracket segments.
+    # Only replace particles in non-bracket segments.
+    parts = re.split(r'(【[^】]*】)', text)
+    for i, part in enumerate(parts):
+        if not part.startswith('【'):
+            part = part.replace('は', 'わ')
+            part = part.replace('へ', 'え')
+            part = part.replace('を', 'お')
+            parts[i] = part
+    return ''.join(parts)
+
+
 def preprocess_for_tts(text: str) -> str:
     """Preprocessing pipeline for TTS input.
 
     1. Substitute symbols Edge TTS can't pronounce (%, version strings)
-    2. Extract furigana readings
-    3. Convert English terms to katakana
-    4. Clean up any remaining brackets
+    2. Replace particles with phonetic kana (は->わ, へ->え, を->お)
+       Must happen before furigana extraction while brackets still disambiguate.
+    3. Extract furigana readings
+    4. Convert English terms to katakana
+    5. Clean up any remaining brackets
     """
     # Step 1: Symbol substitutions
     text = text.replace('%', 'パーセント')
@@ -416,13 +445,16 @@ def preprocess_for_tts(text: str) -> str:
     # Can't use \b - doesn't work at Japanese/ASCII boundary
     text = re.sub(r'(?<![A-Za-z])v(\d)', r'バージョン\1', text)
 
-    # Step 2: Extract furigana
+    # Step 2: Replace particles with phonetic equivalents (before furigana extraction)
+    text = replace_particles_with_phonetic(text)
+
+    # Step 3: Extract furigana
     text = extract_furigana(text)
 
-    # Step 3: Convert English terms
+    # Step 4: Convert English terms
     text = convert_english_terms(text)
 
-    # Step 4: Clean up
+    # Step 5: Clean up
     text = text.replace('「', '').replace('」', '')
     text = re.sub(r'【[^】]*】', '', text)
     text = ' '.join(text.split())
