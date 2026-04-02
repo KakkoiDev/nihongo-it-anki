@@ -7,9 +7,10 @@ text that Edge TTS can read correctly.
 
 Pipeline (preprocess_for_tts):
   1. Symbol substitutions (%, version strings)
-  2. Furigana extraction: 昼食【ちゅうしょく】 -> ちゅうしょく
-  3. English term conversion: API -> エーピーアイ
-  4. Cleanup leftover brackets
+  2. Particle は -> わ (while brackets still disambiguate)
+  3. Strip furigana brackets, keep kanji: 昼食【ちゅうしょく】 -> 昼食
+  4. English term conversion: API -> エーピーアイ
+  5. Cleanup leftover brackets
 
 IMPORTANT lessons learned:
 - Edge TTS reads the Pronunciation field, NOT TTSPronunciation.
@@ -340,30 +341,29 @@ NUMBER_MAP = {
 
 
 def extract_furigana(text: str) -> str:
-    """Extract furigana readings from annotated text.
+    """Strip furigana brackets, keeping kanji for Edge TTS.
 
-    Converts: 昼食【ちゅうしょく】前【まえ】に → ちゅうしょくまえに
-    Converts: 5分間【ふんかん】 → 5ふんかん (digits preserved)
+    Converts: 昼食【ちゅうしょく】前【まえ】に → 昼食前に
+    Converts: 5分間【ふんかん】 → 5分間 (digits preserved)
 
-    Pattern: [digits]kanji【reading】 → [digits]reading
-    All other text is preserved as-is.
+    Edge TTS handles standard kanji readings correctly and produces better
+    pronunciation than all-hiragana input (e.g. 話せます vs はなせますか
+    where TTS misreads は as the particle). Keep kanji, just drop the
+    bracket annotations.
 
-    GOTCHA: Digits before kanji are preserved (5分 -> 5ふん, TTS reads "go fun").
-    This breaks for irregular counters where the reading includes the number
-    (2日=ふつか -> "2ふつか" -> TTS says "ni futsuka"). For those, write the
-    Pronunciation field with kana directly: おそらくふつかかかる instead of
-    おそらく2日【ふつか】かかる.
+    For irregular readings Edge TTS gets wrong, write kana directly in the
+    Pronunciation field instead of using brackets.
 
     The \u3005 in the regex is the 々 repetition mark (e.g. 徐々【じょじょ】).
     """
-    # [optional digits][kanji+々]【reading】 -> [digits]reading
+    # [optional digits][kanji+々]【reading】 -> [digits]kanji
     pattern = r'([0-9]*)([\u4e00-\u9fff\u3005]+)【([^】]+)】'
 
-    def replace_with_reading(match):
-        digits, _kanji, reading = match.group(1), match.group(2), match.group(3)
-        return digits + reading
+    def keep_kanji(match):
+        digits, kanji, _reading = match.group(1), match.group(2), match.group(3)
+        return digits + kanji
 
-    return re.sub(pattern, replace_with_reading, text)
+    return re.sub(pattern, keep_kanji, text)
 
 
 def convert_acronym(match: re.Match) -> str:
