@@ -7,7 +7,7 @@ Japanese IT/Software Engineering Vocabulary With Audio
 
 ## Tags
 ```
-japanese jlpt vocab sentences audio it software programming
+japanese jlpt vocab sentences audio it software programming keigo interview pitch-accent
 ```
 
 ## Support Page
@@ -20,21 +20,37 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```markdown
 <img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
 
-**1075 IT vocabulary sentences** with AI-generated Japanese audio (Microsoft Edge TTS), furigana with pitch accent coloring, verb conjugation tables, and 4 card types designed for real workplace skill building. Fully open source.
+**1075 IT vocabulary sentences** with AI-generated Japanese audio (Microsoft Edge TTS), furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
+
+## Upgrading from a Previous Version
+
+v3.3 is a complete overhaul from the original Kokoro TTS release. The card architecture, audio engine, and teaching methodology all changed. Installing this version will replace the old deck and **scheduling progress will reset**.
+
+**Why it resets:** The note type changed entirely - different card templates, different fields, different model. Anki cannot map old scheduling data to the new cards.
+
+**What to do:**
+- New users: just install, nothing to worry about.
+- Existing users: the new audio-first approach means even sentences you knew before will challenge you differently. Starting fresh is recommended. If you want to skip tiers you already mastered, install the deck, then browse by tier and suspend those cards.
+
+## What Changed
+
+- **Audio engine**: Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
+- **Teaching method**: Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to understand what was said before seeing the answer. This mirrors real workplace conditions - meetings, standups, pair programming - where you hear Japanese before you read it.
+- **3 focused card types**: Listening, Reading, and Vocabulary Cloze. Each targets a different skill without overlap.
+- **Interview section**: Tier 7 with 30 keigo sentences covering self-introduction, technical skills, achievements, and motivation for job interviews at Japanese companies.
+- **Pitch accent**: Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
+- **Register badges**: Each card shows its formality level (polite/keigo) so you know when to use each expression.
 
 ## Card Types
 
 - **Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings and standups.
 - **Reading** - Japanese text front. No audio. Trains reading for Slack, PRs, and documentation.
 - **Vocabulary Cloze** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
-- **Keigo Drill** - Humble form prompt (verbs only). Builds formal register for presentations and client meetings.
 
 ## Features
 
 - **Pitch Accent** - Green (high) / red (low) coloring on key word furigana. Learn correct Tokyo accent from the start.
 - **Register Badges** - Each card shows polite/keigo badge so you know when to use each sentence.
-- **IT-Optimized Conjugations** - 11 forms that matter at work. Includes ている progressive (critical for standups), polite ません/ました, and keigo forms. Removed: causative, imperative, and other forms you won't use in an office.
-- **Te-form Compound Reference** - Collapsible reference showing common patterns (ておく, ていただく, てしまう, etc.)
 - **Furigana** - Ruby text readings for all kanji on answer cards.
 - **100% Audio** - Neural TTS for every sentence (Microsoft Edge ja-JP-KeitaNeural).
 - **Dark Mode** - Automatic system theme detection.
@@ -72,27 +88,25 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 - Anyone learning technical Japanese for IT industry
 - Engineers who need keigo for presentations, interviews, and client meetings
 
-**Total: 1075 notes / 3225+ cards / 1075 audio files**
+**Total: 1075 notes / 3225 cards / 1075 audio files**
 
 ## Changelog
 
-**v2.0.0** (Mar 2026)
-- New 4-card architecture: Listening, Reading, Vocabulary Cloze, Keigo Drill
+**v3.3** (Apr 2026)
+- Complete overhaul from original release
+- Switched from Kokoro TTS to Microsoft Edge TTS for significantly better audio
+- New audio-first teaching methodology: Listening cards play audio with no text
+- Streamlined to 3 card types: Listening, Reading, Vocabulary Cloze
 - Pitch accent display with green/red furigana coloring
 - Register badges (polite/keigo) on card fronts
-- Conjugation tables redesigned: added ている progressive, polite ません/ました forms, te-form compound reference
-- Removed 5 low-value conjugation forms (causative, imperative, etc.)
 - New Tier 7: Job Interview (30 keigo sentences)
 - New Tier 8: Problem-Solving Discussion (30 sentences)
 - 15 formal presentation sentences added to Tier 6
-- Switched TTS to Microsoft Edge TTS (KeitaNeural) for better prosody
 - Full audio regeneration with improved pronunciation pipeline
-
-**v1.2.0** (Jan 2026)
-- Improved audio naturalness with better pause timing
+- Note: installing this version resets progress from previous versions.
 
 **v1.1.0** (Jan 2026)
-- Initial public release
+- Initial public release (Kokoro TTS)
 
 If you find this useful, please rate and comment!
 ```
