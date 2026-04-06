@@ -386,7 +386,7 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
                 row.get('Register', ''),
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
-                row.get('Conjugations', ''),
+                '',  # Conjugations - field kept for Anki compatibility
             ],
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
         )
@@ -502,7 +502,7 @@ Examples:
                         row.get('Register', ''),
                         row['KeyMeaning'],
                         row.get('PitchAccent', ''),
-                        row.get('Conjugations', ''),
+                        '',  # Conjugations - field kept for Anki compatibility
                     ],
                     tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
                 )
