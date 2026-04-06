@@ -31,11 +31,11 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 
 ## Card Types
 
-Each card type targets a different skill without overlap:
+Every sentence generates 3 cards, each targeting a different skill:
 
-- **Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings, standups, and pair programming.
-- **Reading** - Japanese text front. No audio. Trains reading for Slack, PRs, and documentation.
-- **Vocabulary Cloze** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
+- **Listening** - Front plays audio with no text visible. You hear the sentence and must understand it before flipping. Trains for meetings, standups, and pair programming where you hear Japanese before you read it.
+- **Reading** - Front shows raw Japanese text with no furigana and no audio. You read and parse the sentence yourself. Trains for Slack messages, pull requests, and documentation.
+- **Vocabulary** - Front shows the sentence with one key word blanked out, plus the English translation as context. You identify the missing word. Builds vocabulary one word at a time instead of testing full sentence recall.
 
 ## Features
 
