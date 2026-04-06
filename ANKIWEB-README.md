@@ -99,11 +99,16 @@ Installing this version will replace the old deck and **scheduling progress will
 
 ## Changelog
 
+**v3.4** (Apr 2026)
+- Restructured AnkiWeb listing for new users
+- Improved card type descriptions
+- Removed unused conjugation data from deck preview
+
 **v3.3** (Apr 2026)
 - Complete overhaul from original release
 - Switched from Kokoro TTS to Microsoft Edge TTS for significantly better audio
 - New audio-first teaching methodology: Listening cards play audio with no text
-- Streamlined to 3 card types: Listening, Reading, Vocabulary Cloze
+- Streamlined to 3 card types: Listening, Reading, Vocabulary
 - Pitch accent display with green/red furigana coloring
 - Register badges (polite/keigo) on card fronts
 - New Tier 7: Job Interview (30 keigo sentences)
