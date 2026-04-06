@@ -17,7 +17,7 @@ Generates .apkg files with a 3-card-per-note design:
     Back:  Sentence with cloze highlighted in blue, audio, pronunciation.
 
 Removed in v3.0: conjugation tables, Keigo drill card, <hr> on Listening.
-Conjugations field kept in model for Anki backwards compatibility (empty).
+Removed in v3.4: Hint and Conjugations fields.
 
 CSV columns used:
   Sentence, Translation, Cloze, Pronunciation, Note (category),
@@ -82,11 +82,9 @@ def create_model() -> genanki.Model:
             {'name': 'Pronunciation'},  # Japanese with furigana
             {'name': 'Category'},       # Category/context
             {'name': 'Audio'},          # Audio file reference
-            {'name': 'Hint'},           # Kept for compatibility (unused)
             {'name': 'Register'},       # Speech register: casual/polite/formal/keigo
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
-            {'name': 'Conjugations'},   # Kept for compatibility (unused)
         ],
         templates=[
             # Card 1: Listening (big play button front, everything else on back)
@@ -369,10 +367,6 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
         else:
             audio_ref = "[No audio]"
 
-        # Create hint (first 1-2 characters)
-        sentence = row['Sentence']
-        hint = sentence[:2] + "..." if len(sentence) > 2 else sentence
-
         note = genanki.Note(
             model=model,
             fields=[
@@ -382,11 +376,9 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
                 to_ruby_html(row['Pronunciation']),
                 row['Note'],
                 audio_ref,
-                hint,
                 row.get('Register', ''),
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
-                '',  # Conjugations - field kept for Anki compatibility
             ],
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
         )
@@ -486,9 +478,6 @@ Examples:
                 else:
                     audio_ref = "[No audio]"
 
-                sentence = row['Sentence']
-                hint = sentence[:2] + "..." if len(sentence) > 2 else sentence
-
                 note = genanki.Note(
                     model=model,
                     fields=[
@@ -498,11 +487,9 @@ Examples:
                         to_ruby_html(row['Pronunciation']),
                         row['Note'],
                         audio_ref,
-                        hint,
                         row.get('Register', ''),
                         row['KeyMeaning'],
                         row.get('PitchAccent', ''),
-                        '',  # Conjugations - field kept for Anki compatibility
                     ],
                     tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
                 )
