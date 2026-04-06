@@ -103,6 +103,7 @@ Installing this version will replace the old deck and **scheduling progress will
 - Restructured AnkiWeb listing for new users
 - Improved card type descriptions
 - Removed unused conjugation data from deck preview
+- Fixed furigana readings in compounds (時じ, 高こう, 低てい)
 
 **v3.3** (Apr 2026)
 - Complete overhaul from original release

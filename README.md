@@ -10,6 +10,13 @@ Japanese IT vocabulary for Anki. 1075 sentences with AI-generated audio, pitch a
 
 **[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** - manual download
 
+## What Changed in v3.4
+
+- Restructured AnkiWeb listing for new users
+- Improved card type descriptions
+- Removed unused conjugation data from deck preview
+- Fixed furigana readings in compounds (時じ, 高こう, 低てい)
+
 ## What Changed in v3.3
 
 v3.3 is a complete overhaul from the original Kokoro TTS release.
