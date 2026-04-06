@@ -83,7 +83,7 @@ v3.3 is a complete overhaul from the original Kokoro TTS release. The card archi
 
 - **Audio engine**: Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
 - **Teaching method**: Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to understand what was said before seeing the answer.
-- **3 focused card types**: Listening, Reading, and Vocabulary Cloze replace the previous card layout.
+- **3 focused card types**: Listening, Reading, and Vocabulary replace the previous card layout.
 - **Pitch accent**: Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
 - **Register badges**: Each card shows its formality level (polite/keigo) so you know when to use each expression.
 - **New tiers**: Tier 7 (Job Interview, 30 keigo sentences) and Tier 8 (Problem-Solving Discussion, 30 sentences).

@@ -16,7 +16,7 @@ v3.3 is a complete overhaul from the original Kokoro TTS release.
 
 - **Audio engine** - Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
 - **Teaching method** - Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to parse spoken Japanese before seeing the answer. This mirrors real workplace conditions where you hear Japanese before you read it.
-- **3 focused card types** - Listening, Reading, and Vocabulary Cloze. Each targets a different skill without overlap. Removed the Keigo Drill card type.
+- **3 focused card types** - Listening, Reading, and Vocabulary. Each targets a different skill without overlap. Removed the Keigo Drill card type.
 - **Interview section** - Tier 7 with 30 keigo sentences covering self-introduction, technical skills, achievements, and motivation for job interviews at Japanese companies.
 - **Pitch accent** - Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
 - **Register badges** - Each card shows its formality level (polite/keigo) so you know when to use each expression.
@@ -25,7 +25,7 @@ v3.3 is a complete overhaul from the original Kokoro TTS release.
 ## What's Included
 
 - 1075 IT vocabulary sentences across 8 tiers
-- 3225 cards (Listening + Reading + Vocabulary Cloze)
+- 3225 cards (Listening + Reading + Vocabulary)
 - AI-generated Japanese audio (Microsoft Edge TTS KeitaNeural)
 - Pitch accent display with green (high) / red (low) furigana coloring
 - Register badges (polite/keigo) on card fronts
@@ -38,7 +38,7 @@ v3.3 is a complete overhaul from the original Kokoro TTS release.
 
 **Reading** - Japanese text front, no audio. Trains reading for Slack, PRs, and documentation.
 
-**Vocabulary Cloze** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
+**Vocabulary** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
 
 ## Features
 
