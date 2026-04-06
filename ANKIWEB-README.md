@@ -20,30 +20,20 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```markdown
 <img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
 
-**1075 IT vocabulary sentences** with AI-generated Japanese audio (Microsoft Edge TTS), furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
+**1075 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
 
-## Upgrading from a Previous Version
+## Who Is This For?
 
-v3.3 is a complete overhaul from the original Kokoro TTS release. The card architecture, audio engine, and teaching methodology all changed. Installing this version will replace the old deck and **scheduling progress will reset**.
-
-**Why it resets:** The note type changed entirely - different card templates, different fields, different model. Anki cannot map old scheduling data to the new cards.
-
-**What to do:**
-- New users: just install, nothing to worry about.
-- Existing users: the new audio-first approach means even sentences you knew before will challenge you differently. Starting fresh is recommended. If you want to skip tiers you already mastered, install the deck, then browse by tier and suspend those cards.
-
-## What Changed
-
-- **Audio engine**: Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
-- **Teaching method**: Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to understand what was said before seeing the answer. This mirrors real workplace conditions - meetings, standups, pair programming - where you hear Japanese before you read it.
-- **3 focused card types**: Listening, Reading, and Vocabulary Cloze. Each targets a different skill without overlap.
-- **Interview section**: Tier 7 with 30 keigo sentences covering self-introduction, technical skills, achievements, and motivation for job interviews at Japanese companies.
-- **Pitch accent**: Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
-- **Register badges**: Each card shows its formality level (polite/keigo) so you know when to use each expression.
+- Software engineers working with Japanese teams
+- Developers preparing for jobs at Japanese tech companies
+- Anyone learning technical Japanese for IT industry
+- Engineers who need keigo for presentations, interviews, and client meetings
 
 ## Card Types
 
-- **Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings and standups.
+Each card type targets a different skill without overlap:
+
+- **Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings, standups, and pair programming.
 - **Reading** - Japanese text front. No audio. Trains reading for Slack, PRs, and documentation.
 - **Vocabulary Cloze** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
 
@@ -81,14 +71,31 @@ v3.3 is a complete overhaul from the original Kokoro TTS release. The card archi
 > メモリリークが発生していると考えられます。
 > *It is thought that a memory leak is occurring.*
 
-## Who Is This For?
-
-- Software engineers working with Japanese teams
-- Developers preparing for jobs at Japanese tech companies
-- Anyone learning technical Japanese for IT industry
-- Engineers who need keigo for presentations, interviews, and client meetings
-
 **Total: 1075 notes / 3225 cards / 1075 audio files**
+
+## For Existing Users
+
+If you are upgrading from a previous version, please read this section.
+
+### What Changed in v3.3
+
+v3.3 is a complete overhaul from the original Kokoro TTS release. The card architecture, audio engine, and teaching methodology all changed.
+
+- **Audio engine**: Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
+- **Teaching method**: Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to understand what was said before seeing the answer.
+- **3 focused card types**: Listening, Reading, and Vocabulary Cloze replace the previous card layout.
+- **Pitch accent**: Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
+- **Register badges**: Each card shows its formality level (polite/keigo) so you know when to use each expression.
+- **New tiers**: Tier 7 (Job Interview, 30 keigo sentences) and Tier 8 (Problem-Solving Discussion, 30 sentences).
+- **15 formal presentation sentences** added to Tier 6.
+
+### Upgrading Notes
+
+Installing this version will replace the old deck and **scheduling progress will reset**.
+
+**Why it resets:** The note type changed entirely - different card templates, different fields, different model. Anki cannot map old scheduling data to the new cards.
+
+**What to do:** The new audio-first approach means even sentences you knew before will challenge you differently. Starting fresh is recommended. If you want to skip tiers you already mastered, install the deck, then browse by tier and suspend those cards.
 
 ## Changelog
 
@@ -103,7 +110,6 @@ v3.3 is a complete overhaul from the original Kokoro TTS release. The card archi
 - New Tier 8: Problem-Solving Discussion (30 sentences)
 - 15 formal presentation sentences added to Tier 6
 - Full audio regeneration with improved pronunciation pipeline
-- Note: installing this version resets progress from previous versions.
 
 **v1.1.0** (Jan 2026)
 - Initial public release (Kokoro TTS)
