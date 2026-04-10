@@ -22,10 +22,11 @@ IMPORTANT lessons learned:
   Edge TTS. Do NOT add artificial commas to the Pronunciation field.
 - Edge TTS misreads certain kanji even with correct furigana, because
   preprocessing strips furigana and feeds bare kanji to TTS. Known cases:
-    - 提出 read as ていしつ (drops しゅ -> し). Fix: write ていしゅつ.
-    - 型 read as がた instead of かた in isolation. Fix: write かた.
-  For any word where TTS misreads kanji, write kana directly in the
-  Pronunciation field instead of using 漢字【reading】 brackets.
+    - 提出 read as ていしつ (drops しゅ -> し)
+    - 型 read as がた instead of かた in isolation
+  These are listed in TTS_KANJI_OVERRIDES. extract_furigana() substitutes
+  the bracketed reading for these kanji, so the CSV keeps kanji+furigana
+  for card display while TTS receives correct kana.
 - English loanwords (webhook, README) should be written as katakana
   directly in the Pronunciation field (ウェブフック, リードミー) rather
   than relying on ACRONYM_MAP conversion, to avoid TTS garbling.
@@ -351,30 +352,44 @@ NUMBER_MAP = {
 }
 
 
+# Kanji that Edge TTS misreads. For these, extract_furigana() substitutes
+# the bracketed reading instead of keeping the kanji. The Pronunciation
+# field keeps kanji+furigana (提出【ていしゅつ】) so the card displays
+# correctly, but TTS receives the kana reading (ていしゅつ).
+#
+# Known misreadings:
+#   提出 -> ていしつ (Edge TTS drops しゅ to し)
+#   型   -> がた      (Edge TTS reads がた instead of かた in isolation)
+TTS_KANJI_OVERRIDES = {'提出', '型'}
+
+
 def extract_furigana(text: str) -> str:
     """Strip furigana brackets, keeping kanji for Edge TTS.
 
-    Converts: 昼食【ちゅうしょく】前【まえ】に → 昼食前に
-    Converts: 5分間【ふんかん】 → 5分間 (digits preserved)
+    Converts: 昼食【ちゅうしょく】前【まえ】に -> 昼食前に
+    Converts: 5分間【ふんかん】 -> 5分間 (digits preserved)
+
+    Exception: kanji in TTS_KANJI_OVERRIDES are replaced with their
+    furigana reading instead of being kept, because Edge TTS misreads
+    them. E.g. 提出【ていしゅつ】 -> ていしゅつ (not 提出).
 
     Edge TTS handles standard kanji readings correctly and produces better
     pronunciation than all-hiragana input (e.g. 話せます vs はなせますか
     where TTS misreads は as the particle). Keep kanji, just drop the
     bracket annotations.
 
-    For irregular readings Edge TTS gets wrong, write kana directly in the
-    Pronunciation field instead of using brackets.
-
-    The \u3005 in the regex is the 々 repetition mark (e.g. 徐々【じょじょ】).
+    The \\u3005 in the regex is the 々 repetition mark (e.g. 徐々【じょじょ】).
     """
-    # [optional digits][kanji+々]【reading】 -> [digits]kanji
+    # [optional digits][kanji+々]【reading】 -> [digits]kanji or [digits]reading
     pattern = r'([0-9]*)([\u4e00-\u9fff\u3005]+)【([^】]+)】'
 
-    def keep_kanji(match):
-        digits, kanji, _reading = match.group(1), match.group(2), match.group(3)
+    def keep_kanji_or_override(match):
+        digits, kanji, reading = match.group(1), match.group(2), match.group(3)
+        if kanji in TTS_KANJI_OVERRIDES:
+            return digits + reading
         return digits + kanji
 
-    return re.sub(pattern, keep_kanji, text)
+    return re.sub(pattern, keep_kanji_or_override, text)
 
 
 def convert_acronym(match: re.Match) -> str:
