@@ -197,6 +197,8 @@ ACRONYM_MAP = {
     'monolith': 'モノリス',
     'serverless': 'サーバーレス',
     'webhook': 'ウェブフック',
+    'AI': 'エーアイ',
+    'README': 'リードミー',
     'websocket': 'ウェブソケット',
     'WebSocket': 'ウェブソケット',
     # HTTP methods

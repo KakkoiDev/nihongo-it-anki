@@ -398,8 +398,8 @@ Examples:
   uv run python scripts/create_deck.py --tier 1 --no-audio
         """
     )
-    parser.add_argument("--tier", type=int, choices=list(range(1, 9)),
-                        help="Tier number to create (1-8)")
+    parser.add_argument("--tier", type=int, choices=list(range(1, 10)),
+                        help="Tier number to create (1-9)")
     parser.add_argument("--all", action="store_true",
                         help="Create decks for all tiers")
     parser.add_argument("--combined", action="store_true",
@@ -445,13 +445,14 @@ Examples:
             6: "Tier 6 - Expert",
             7: "Tier 7 - Job Interview",
             8: "Tier 8 - Problem Solving",
+            9: "Tier 9 - AI & Documentation",
         }
 
         all_decks = []
         all_media = []
         total_notes = 0
 
-        for tier in range(1, 9):
+        for tier in range(1, 10):
             # Create subdeck with :: notation
             subdeck_name = f"Japanese IT Vocabulary{voice_label}::{tier_names[tier]}"
             subdeck = genanki.Deck(
@@ -512,7 +513,7 @@ Examples:
 
     elif args.all:
         # Create separate deck for each tier
-        for tier in range(1, 9):
+        for tier in range(1, 10):
             deck, media_files = create_deck(tier, include_audio, args.female)
             output = f"nihongo-it-vocab-tier{tier}{suffix}.apkg"
 
