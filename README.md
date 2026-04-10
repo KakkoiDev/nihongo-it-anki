@@ -10,6 +10,13 @@ Japanese IT vocabulary for Anki. 1120 sentences with AI-generated audio, pitch a
 
 **[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** - manual download
 
+## What Changed in v3.5
+
+- **Tier 9: AI, Documentation & Engineering Culture** (45 sentences) - vocabulary for AI agents (harness, hooks, slop, vibe coding), technical documentation (spec, ADR, changelog, draft), and engineering culture (customer value, outcome, feature creep)
+- **TTS pronunciation fixes** - webhook (ウェブフック), 型 reading (かた not がた), removed artificial commas
+- **31 automated tests** for pronunciation pipeline and CSV validation
+- Updated vocabulary reference to 1105 words across 9 tiers
+
 ## What Changed in v3.4
 
 - Restructured AnkiWeb listing for new users

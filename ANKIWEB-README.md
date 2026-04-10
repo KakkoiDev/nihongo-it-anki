@@ -82,6 +82,12 @@ Every sentence generates 3 cards, each targeting a different skill:
 
 If you are upgrading from a previous version, please read this section.
 
+### What Changed in v3.5
+
+- **Tier 9: AI, Documentation & Engineering Culture** (45 sentences) - vocabulary for AI coding agents (harness, hooks, slop, vibe coding), technical documentation (spec, ADR, changelog, draft), and engineering culture (customer value, outcome, feature creep).
+- **TTS pronunciation fixes** - webhook, 型 reading, removed artificial commas.
+- Total deck is now 1120 notes / 3360 cards.
+
 ### What Changed in v3.3
 
 v3.3 is a complete overhaul from the original Kokoro TTS release. The card architecture, audio engine, and teaching methodology all changed.
