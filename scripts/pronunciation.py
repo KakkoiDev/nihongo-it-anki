@@ -17,9 +17,18 @@ IMPORTANT lessons learned:
   The TTSPronunciation column had artificial commas that caused unnatural
   pauses (e.g. "が、できました"). Never use it for audio generation.
 - Katakana loanwords (レビュー etc.) are left as-is for TTS. Edge TTS
-  handles them natively. But when preceded by spelled-out acronyms
-  (ピーアール), TTS can merge them. Fix with a reading comma in the
-  Pronunciation field (e.g. "PRは、レビュー...").
+  handles them natively. Acronym-to-katakana merging (e.g. ピーアール
+  running into レビュー) no longer requires a comma workaround in current
+  Edge TTS. Do NOT add artificial commas to the Pronunciation field.
+- Edge TTS misreads certain kanji even with correct furigana, because
+  preprocessing strips furigana and feeds bare kanji to TTS. Known cases:
+    - 提出 read as ていしつ (drops しゅ -> し). Fix: write ていしゅつ.
+    - 型 read as がた instead of かた in isolation. Fix: write かた.
+  For any word where TTS misreads kanji, write kana directly in the
+  Pronunciation field instead of using 漢字【reading】 brackets.
+- English loanwords (webhook, README) should be written as katakana
+  directly in the Pronunciation field (ウェブフック, リードミー) rather
+  than relying on ACRONYM_MAP conversion, to avoid TTS garbling.
 - Irregular counter words like 2日=ふつか must use kana directly in the
   Pronunciation field. The digit "2" gets read as "ni" by TTS, producing
   "ni futsuka" instead of just "futsuka".

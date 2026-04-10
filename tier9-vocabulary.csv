@@ -1,5 +1,5 @@
 Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent
-AIエージェントがコードを自動生成する時代になりました。,We've entered an era where AI agents auto-generate code.,自動生成,AI、エージェントがコードを自動生成【じどうせいせい】する時代【じだい】になりました。,AI - Generation,polite,auto-generate,"<ruby class=""vocab"">自動生成<rt>じどうせいせい</rt></ruby>"
+AIエージェントがコードを自動生成する時代になりました。,We've entered an era where AI agents auto-generate code.,自動生成,AIエージェントがコードを自動生成【じどうせいせい】する時代【じだい】になりました。,AI - Generation,polite,auto-generate,"<ruby class=""vocab"">自動生成<rt>じどうせいせい</rt></ruby>"
 このモデルの推論精度を評価してください。,Please evaluate the inference accuracy of this model.,推論,このモデルの推論【すいろん】精度【せいど】を評価【ひょうか】してください。,AI - Inference,polite,inference/reasoning,"<ruby class=""vocab"">推論<rt><span class=""pitch-l"">す</span><span class=""pitch-h"">い</span><span class=""pitch-h"">ろ</span><span class=""pitch-h"">ん</span></rt></ruby>"
 プロンプトを改善してエージェントの出力を安定させましょう。,Let's improve the prompt to stabilize the agent's output.,プロンプト,プロンプトを改善【かいぜん】してエージェントの出力【しゅつりょく】を安定【あんてい】させましょう。,AI - Prompt,polite,prompt,"<span class=""vocab"">プロンプト</span>"
 コンテキストの長さがモデルの上限を超えています。,The context length exceeds the model's upper limit.,コンテキスト,コンテキストの長【なが】さがモデルの上限【じょうげん】を超【こ】えています。,AI - Context,polite,context,"<span class=""vocab"">コンテキスト</span>"

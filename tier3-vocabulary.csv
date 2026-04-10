@@ -47,7 +47,7 @@ URLをハードコードしないでください。,Don't hardcode the URL.,ハ�
 エッジケースはどうですか？,What about edge cases?,エッジケース,エッジケースはどうですか？,Testing - Edge Case,polite,edge case,"<span class=""vocab"">エッジケース</span>"
 ここにnullチェックを追加してください。,Add a null check here.,nullチェック,ここにnullチェックを追加【ついか】してください。,Code Quality - Validation,polite,null check,"<span class=""vocab"">nullチェック</span>"
 エラーハンドリングを改善してください。,Improve error handling.,エラーハンドリング,エラーハンドリングを改善【かいぜん】してください。,Code Quality - Error Handling,polite,error handling,"<span class=""vocab"">エラーハンドリング</span>"
-これは型安全性を向上させます。,This improves type safety.,型安全性,これは型【かた】安全性【あんぜんせい】を向上【こうじょう】させます。,Code Quality - Type Safety,polite,type safe,"<ruby class=""vocab"">型安全性<rt>かたあんぜんせい</rt></ruby>"
+これは型安全性を向上させます。,This improves type safety.,型安全性,これはかた安全性【あんぜんせい】を向上【こうじょう】させます。,Code Quality - Type Safety,polite,type safe,"<ruby class=""vocab"">型安全性<rt>かたあんぜんせい</rt></ruby>"
 これはベストプラクティスに従っています。,This follows best practices.,ベストプラクティス,これはベストプラクティスに従【したが】っています。,Code Quality - Best Practice,polite,best practice,"<span class=""vocab"">ベストプラクティス</span>"
 まずアーキテクチャについて話し合いましょう。,Let's discuss the architecture first.,アーキテクチャ,まずアーキテクチャについて話【はな】し合【あ】いましょう。,Architecture - General,polite,architecture,"<ruby class=""vocab"">アーキテクチャ<rt><span class=""pitch-l"">あ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">き</span><span class=""pitch-h"">て</span><span class=""pitch-l"">く</span><span class=""pitch-l"">ちゃ</span></rt></ruby>"
 設計にはもっと検討が必要です。,The design needs more thought.,設計,設計【せっけい】にはもっと検討【けんとう】が必要【ひつよう】です。,Architecture - Design,polite,design,"<ruby class=""vocab"">設計<rt><span class=""pitch-l"">せ</span><span class=""pitch-h"">っ</span><span class=""pitch-h"">け</span><span class=""pitch-h"">い</span></rt></ruby>"
