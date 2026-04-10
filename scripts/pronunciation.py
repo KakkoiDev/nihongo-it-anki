@@ -378,9 +378,10 @@ NUMBER_MAP = {
 # is shown on cards with furigana. Replacing kanji breaks card display.
 #
 # Known misreadings:
-#   提出 -> ていしつ (Edge TTS drops しゅ to し)
+#   提出 -> ていしつ (Edge TTS drops しゅつ to しつ)
+#   抽出 -> ちゅうしつ (same しゅつ -> しつ pattern)
 #   型   -> がた      (Edge TTS reads がた instead of かた in isolation)
-TTS_KANJI_OVERRIDES = {'提出', '型'}
+TTS_KANJI_OVERRIDES = {'提出', '抽出', '型'}
 
 
 def extract_furigana(text: str) -> str:
