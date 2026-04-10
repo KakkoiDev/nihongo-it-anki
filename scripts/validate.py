@@ -21,7 +21,7 @@ ROOT = Path(__file__).parent.parent
 REQUIRED_COLUMNS = {'Sentence', 'Translation', 'Cloze', 'Pronunciation', 'Note', 'KeyMeaning'}
 
 # Expected row counts per tier
-TIER_SIZES = {1: 150, 2: 200, 3: 250, 4: 200, 5: 100, 6: 115, 7: 30, 8: 30, 9: 30}
+TIER_SIZES = {1: 150, 2: 200, 3: 250, 4: 200, 5: 100, 6: 115, 7: 30, 8: 30, 9: 45}
 
 # Hiragana range for validating furigana readings
 HIRAGANA_PATTERN = re.compile(r'^[\u3040-\u309F\u30A0-\u30FFー・]+$')
