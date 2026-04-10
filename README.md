@@ -2,7 +2,7 @@
 
 <img src="demo.png" alt="Anki deck demo" width="600">
 
-Japanese IT vocabulary for Anki. 1075 sentences with AI-generated audio, pitch accent coloring, and 3 card types designed for real workplace skill building. Open source.
+Japanese IT vocabulary for Anki. 1120 sentences with AI-generated audio, pitch accent coloring, and 3 card types designed for real workplace skill building. Open source.
 
 ## Download
 
@@ -31,8 +31,8 @@ v3.3 is a complete overhaul from the original Kokoro TTS release.
 
 ## What's Included
 
-- 1075 IT vocabulary sentences across 8 tiers
-- 3225 cards (Listening + Reading + Vocabulary)
+- 1120 IT vocabulary sentences across 9 tiers
+- 3360 cards (Listening + Reading + Vocabulary)
 - AI-generated Japanese audio (Microsoft Edge TTS KeitaNeural)
 - Pitch accent display with green (high) / red (low) furigana coloring
 - Register badges (polite/keigo) on card fronts
@@ -67,6 +67,7 @@ v3.3 is a complete overhaul from the original Kokoro TTS release.
 | 6 | 115 | Presentations (including formal keigo) |
 | 7 | 30 | Job interview (full keigo register) |
 | 8 | 30 | Problem-solving discussions |
+| 9 | 45 | AI agents, documentation, engineering culture |
 
 ## Build From Source
 

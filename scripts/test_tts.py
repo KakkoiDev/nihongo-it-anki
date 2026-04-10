@@ -46,8 +46,8 @@ async def generate_single(text: str, output_path: Path):
 
 def main():
     parser = argparse.ArgumentParser(description="Test TTS for specific sentences")
-    parser.add_argument("--tier", type=int, choices=[1, 2, 3, 4, 5, 6],
-                        help="Tier number")
+    parser.add_argument("--tier", type=int, choices=list(range(1, 10)),
+                        help="Tier number (1-9)")
     parser.add_argument("--row", type=str,
                         help="Row number(s) to test, comma-separated (1-indexed)")
     parser.add_argument("--text", type=str,

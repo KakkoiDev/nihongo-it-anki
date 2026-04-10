@@ -304,7 +304,7 @@ def process_csv(tier: int) -> None:
 
 def main() -> None:
     print('Generating pitch accent data...')
-    for tier in range(1, 9):
+    for tier in range(1, 10):
         process_csv(tier)
     print('\nDone. Run create_deck.py to rebuild.')
 

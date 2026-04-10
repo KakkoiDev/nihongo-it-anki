@@ -149,7 +149,7 @@ JSONシリアライゼーションを処理してください。,Handle JSON ser
 リクエストボディをデシリアライズしてください。,Deserialize the request body.,デシリアライズ,リクエストボディをデシリアライズしてください。,Backend - Serialization,polite,deserialize,"<span class=""vocab"">デシリアライズ</span>"
 ORMとしてPrismaを使ってください。,Use Prisma as ORM.,Prisma,ORMとしてPrismaを使【つか】ってください。,Database - Orm,polite,Prisma,"<span class=""vocab"">Prisma</span>"
 クエリビルダーを使ってください。,Use the query builder.,クエリビルダー,クエリビルダーを使【つか】ってください。,Database - Query Builder,polite,query,"<span class=""vocab"">クエリビルダー</span>"
-生のSQLクエリを書いてください。,Write a raw SQL query.,生のSQL,なまのSQLクエリを書【か】いてください。,Database - Sql,polite,SQL,"<ruby class=""vocab"">生のSQL<rt>なまのSQL</rt></ruby>"
+生のSQLクエリを書いてください。,Write a raw SQL query.,生のSQL,なまのSQLクエリを書【か】いてください。,Database - Sql,polite,SQL,"<span class=""vocab"">生のSQL</span>"
 データベース接続をプールしてください。,Pool database connections.,プール,データベース接続【せつぞく】をプールしてください。,Database - Connection Pool,polite,pool,"<ruby class=""vocab"">プール<rt><span class=""pitch-h"">ぷ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">る</span></rt></ruby>"
 コネクションプールを設定してください。,Configure connection pool.,コネクションプール,コネクションプールを設定【せってい】してください。,Database - Connection Pool,polite,connection pool,"<span class=""vocab"">コネクションプール</span>"
 これにはトランザクションを使ってください。,Use a transaction for this.,トランザクション,これにはトランザクションを使【つか】ってください。,Database - Transaction,polite,transaction,"<ruby class=""vocab"">トランザクション<rt><span class=""pitch-l"">と</span><span class=""pitch-h"">ら</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">ざ</span><span class=""pitch-l"">く</span><span class=""pitch-l"">しょ</span><span class=""pitch-l"">ん</span></rt></ruby>"

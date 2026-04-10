@@ -20,7 +20,7 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```markdown
 <img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
 
-**1075 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
+**1120 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
 
 ## Who Is This For?
 
@@ -46,7 +46,7 @@ Every sentence generates 3 cards, each targeting a different skill:
 - **Dark Mode** - Automatic system theme detection.
 - **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Build your own deck with the same tools</a>
 
-## 8 Tiers
+## 9 Tiers
 
 - **Tier 1** (150 sentences) - Daily essentials, git, basic actions
 - **Tier 2** (200 sentences) - Agile, APIs, databases, testing
@@ -56,6 +56,7 @@ Every sentence generates 3 cards, each targeting a different skill:
 - **Tier 6** (115 sentences) - Presentations (including formal keigo openings/closings)
 - **Tier 7** (30 sentences) - Job interview (full keigo register: self-intro, skills, achievements, motivation, questions)
 - **Tier 8** (30 sentences) - Problem-solving discussions (investigation, hypothesis, tradeoffs, post-mortem)
+- **Tier 9** (45 sentences) - AI agents, documentation, engineering culture (harness, hooks, slop, vibe coding, customer value)
 
 ## Example Sentences
 
@@ -71,7 +72,11 @@ Every sentence generates 3 cards, each targeting a different skill:
 > メモリリークが発生していると考えられます。
 > *It is thought that a memory leak is occurring.*
 
-**Total: 1075 notes / 3225 cards / 1075 audio files**
+**Tier 9 - AI & Engineering Culture:**
+> バイブコーディングではなくテストを書いて品質を担保しましょう。
+> *Let's write tests to ensure quality instead of vibe coding.*
+
+**Total: 1120 notes / 3360 cards / 1120 audio files**
 
 ## For Existing Users
 
@@ -98,6 +103,12 @@ Installing this version will replace the old deck and **scheduling progress will
 **What to do:** The new audio-first approach means even sentences you knew before will challenge you differently. Starting fresh is recommended. If you want to skip tiers you already mastered, install the deck, then browse by tier and suspend those cards.
 
 ## Changelog
+
+**v3.5** (Apr 2026)
+- New Tier 9: AI agents, documentation, engineering culture (45 sentences)
+- Vocabulary for harness engineering, vibe coding, slop, quality gates, customer value
+- Fixed TTS pronunciation: webhook now katakana, 型 reading override, removed artificial commas
+- TTS_KANJI_OVERRIDES system for fixing Edge TTS misreadings without breaking card display
 
 **v3.4** (Apr 2026)
 - Restructured AnkiWeb listing for new users
