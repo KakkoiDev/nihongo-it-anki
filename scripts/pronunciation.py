@@ -12,24 +12,37 @@ Pipeline (preprocess_for_tts):
   4. English term conversion: API -> エーピーアイ
   5. Cleanup leftover brackets
 
-IMPORTANT lessons learned:
+CRITICAL: The Pronunciation field serves DUAL purpose:
+  1. Card display: create_deck.py renders it with to_ruby_html() for
+     furigana ruby annotations shown to the learner.
+  2. TTS input: this module's preprocess_for_tts() processes it into
+     text that Edge TTS reads aloud.
+
+  NEVER replace kanji with kana directly in the CSV Pronunciation field
+  to fix TTS issues. This destroys the kanji+furigana display on cards.
+  Instead, add the kanji to TTS_KANJI_OVERRIDES so extract_furigana()
+  substitutes the reading only in the TTS pipeline, while the CSV keeps
+  漢字【reading】 format for card display.
+
+  WRONG: Change CSV from 提出【ていしゅつ】 to ていしゅつ
+  RIGHT: Add '提出' to TTS_KANJI_OVERRIDES, keep CSV as 提出【ていしゅつ】
+
+Lessons learned:
 - Edge TTS reads the Pronunciation field, NOT TTSPronunciation.
   The TTSPronunciation column had artificial commas that caused unnatural
   pauses (e.g. "が、できました"). Never use it for audio generation.
-- Katakana loanwords (レビュー etc.) are left as-is for TTS. Edge TTS
-  handles them natively. Acronym-to-katakana merging (e.g. ピーアール
-  running into レビュー) no longer requires a comma workaround in current
-  Edge TTS. Do NOT add artificial commas to the Pronunciation field.
+- Do NOT add artificial commas (、) to the Pronunciation field for TTS
+  workarounds. They appear on the card. Acronym-to-katakana merging
+  (e.g. ピーアール running into レビュー) does not need comma separation
+  in current Edge TTS.
 - Edge TTS misreads certain kanji even with correct furigana, because
-  preprocessing strips furigana and feeds bare kanji to TTS. Known cases:
-    - 提出 read as ていしつ (drops しゅ -> し)
-    - 型 read as がた instead of かた in isolation
-  These are listed in TTS_KANJI_OVERRIDES. extract_furigana() substitutes
-  the bracketed reading for these kanji, so the CSV keeps kanji+furigana
-  for card display while TTS receives correct kana.
+  preprocessing strips furigana and feeds bare kanji to TTS. Known cases
+  are listed in TTS_KANJI_OVERRIDES. extract_furigana() substitutes
+  the bracketed reading for these kanji automatically.
 - English loanwords (webhook, README) should be written as katakana
   directly in the Pronunciation field (ウェブフック, リードミー) rather
   than relying on ACRONYM_MAP conversion, to avoid TTS garbling.
+  This also improves card display (learner sees katakana pronunciation).
 - Irregular counter words like 2日=ふつか must use kana directly in the
   Pronunciation field. The digit "2" gets read as "ni" by TTS, producing
   "ni futsuka" instead of just "futsuka".
@@ -352,10 +365,17 @@ NUMBER_MAP = {
 }
 
 
-# Kanji that Edge TTS misreads. For these, extract_furigana() substitutes
-# the bracketed reading instead of keeping the kanji. The Pronunciation
-# field keeps kanji+furigana (提出【ていしゅつ】) so the card displays
-# correctly, but TTS receives the kana reading (ていしゅつ).
+# Kanji that Edge TTS misreads. extract_furigana() substitutes the
+# bracketed reading instead of keeping the kanji for these entries.
+#
+# HOW TO FIX A TTS MISREADING:
+#   1. Add the kanji to this set.
+#   2. Keep the CSV Pronunciation field as 漢字【reading】 (do NOT edit CSV).
+#   3. Regenerate audio.
+#   That's it. The override handles TTS while preserving card display.
+#
+# DO NOT edit the CSV to replace kanji with kana. The Pronunciation field
+# is shown on cards with furigana. Replacing kanji breaks card display.
 #
 # Known misreadings:
 #   提出 -> ていしつ (Edge TTS drops しゅ to し)
