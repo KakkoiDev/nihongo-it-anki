@@ -1,0 +1,18 @@
+[deck]
+slug = "tech-wenyan"
+name = "Tech Wenyan"
+model_id = 1708493424
+deck_base_id = 2160501211
+
+[tiers]
+count = 3
+
+[tiers.names]
+1 = "Tier 1 - Grammar"
+2 = "Tier 2 - Actions"
+3 = "Tier 3 - Nouns, Descriptors & Patterns"
+
+[tiers.sizes]
+1 = 27
+2 = 24
+3 = 38
