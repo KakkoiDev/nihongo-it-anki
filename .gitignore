@@ -3,6 +3,7 @@
 !README.md
 !ANKIWEB-README.md
 !experiments/**/*.md
+!skills/**/*.md
 
 # Backup files
 *.bak
