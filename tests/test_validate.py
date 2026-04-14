@@ -1,68 +1,79 @@
-"""Tests for validate.py CSV validation."""
+"""Tests for validate.py CSV validation across all decks."""
 
 import csv
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts" / "lib"))
 
-from config import load_deck_config
+from config import list_decks, load_deck_config
 from validate import REQUIRED_COLUMNS, validate_tier
 
-CONFIG = load_deck_config("it-vocab")
+ALL_DECKS = list_decks()
+ALL_CONFIGS = {slug: load_deck_config(slug) for slug in ALL_DECKS}
+
+
+@pytest.fixture(params=ALL_DECKS)
+def deck_config(request):
+    return ALL_CONFIGS[request.param]
 
 
 class TestTierSizes:
     """Tier sizes in config match actual CSV row counts."""
 
-    def test_all_tiers_listed(self):
-        for tier in CONFIG.tier_range():
-            assert tier in CONFIG.tier_sizes, f"Tier {tier} missing from tier_sizes"
+    def test_all_tiers_listed(self, deck_config):
+        for tier in deck_config.tier_range():
+            assert tier in deck_config.tier_sizes, \
+                f"{deck_config.slug} tier {tier} missing from tier_sizes"
 
-    def test_csv_row_counts_match(self):
-        for tier, expected in CONFIG.tier_sizes.items():
-            csv_path = CONFIG.csv_path(tier)
+    def test_csv_row_counts_match(self, deck_config):
+        for tier, expected in deck_config.tier_sizes.items():
+            csv_path = deck_config.csv_path(tier)
             if csv_path.exists():
                 with open(csv_path, 'r', encoding='utf-8') as f:
                     actual = len(list(csv.DictReader(f)))
-                assert actual == expected, f"Tier {tier}: expected {expected} rows, got {actual}"
+                assert actual == expected, \
+                    f"{deck_config.slug} tier {tier}: expected {expected} rows, got {actual}"
 
 
 class TestValidateTier:
     """Integration tests for full tier validation."""
 
-    def test_all_tiers_pass(self):
-        for tier in CONFIG.tier_range():
-            result = validate_tier(CONFIG, tier)
-            assert not result.has_errors, f"Tier {tier} has errors: {result.errors[:3]}"
+    def test_all_tiers_pass(self, deck_config):
+        for tier in deck_config.tier_range():
+            result = validate_tier(deck_config, tier)
+            assert not result.has_errors, \
+                f"{deck_config.slug} tier {tier} has errors: {result.errors[:3]}"
 
-    def test_all_tiers_have_required_columns(self):
-        for tier in CONFIG.tier_range():
-            result = validate_tier(CONFIG, tier)
-            assert result.csv_valid, f"Tier {tier} CSV invalid"
+    def test_all_tiers_have_required_columns(self, deck_config):
+        for tier in deck_config.tier_range():
+            result = validate_tier(deck_config, tier)
+            assert result.csv_valid, f"{deck_config.slug} tier {tier} CSV invalid"
 
-    def test_all_furigana_valid(self):
-        for tier in CONFIG.tier_range():
-            result = validate_tier(CONFIG, tier)
+    def test_all_furigana_valid(self, deck_config):
+        for tier in deck_config.tier_range():
+            result = validate_tier(deck_config, tier)
             assert result.furigana_valid == result.furigana_total, \
-                f"Tier {tier}: {result.furigana_total - result.furigana_valid} invalid furigana"
+                f"{deck_config.slug} tier {tier}: {result.furigana_total - result.furigana_valid} invalid furigana"
 
-    def test_all_key_meanings_translated(self):
-        for tier in CONFIG.tier_range():
-            result = validate_tier(CONFIG, tier)
+    def test_all_key_meanings_translated(self, deck_config):
+        for tier in deck_config.tier_range():
+            result = validate_tier(deck_config, tier)
             assert result.key_meaning_valid == result.key_meaning_total, \
-                f"Tier {tier}: {result.key_meaning_total - result.key_meaning_valid} untranslated"
+                f"{deck_config.slug} tier {tier}: {result.key_meaning_total - result.key_meaning_valid} untranslated"
 
 
 class TestRequiredColumns:
     """Required columns match what CSVs actually have."""
 
-    def test_required_columns_present_in_csvs(self):
-        for tier in CONFIG.tier_range():
-            csv_path = CONFIG.csv_path(tier)
+    def test_required_columns_present_in_csvs(self, deck_config):
+        for tier in deck_config.tier_range():
+            csv_path = deck_config.csv_path(tier)
             with open(csv_path, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 columns = set(reader.fieldnames or [])
             missing = REQUIRED_COLUMNS - columns
-            assert not missing, f"Tier {tier} missing columns: {missing}"
+            assert not missing, f"{deck_config.slug} tier {tier} missing columns: {missing}"

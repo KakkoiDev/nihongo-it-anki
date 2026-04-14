@@ -4,6 +4,7 @@
 !ANKIWEB-README.md
 !experiments/**/*.md
 !skills/**/*.md
+!decks/**/REFERENCE.md
 
 # Backup files
 *.bak

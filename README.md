@@ -2,67 +2,13 @@
 
 <img src="demo.png" alt="Anki deck demo" width="600">
 
-Japanese IT vocabulary for Anki. 1120 sentences with AI-generated audio, pitch accent coloring, and 3 card types designed for real workplace skill building. Open source.
+Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent coloring, and 3 card types designed for real workplace skill building. Open source.
 
-## Download
+## Decks
 
-**[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install directly from Anki app
+### IT Vocabulary (`it-vocab`)
 
-**[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** - manual download
-
-## What Changed in v3.5
-
-- **Tier 9: AI, Documentation & Engineering Culture** (45 sentences) - vocabulary for AI agents (harness, hooks, slop, vibe coding), technical documentation (spec, ADR, changelog, draft), and engineering culture (customer value, outcome, feature creep)
-- **TTS pronunciation fixes** - webhook (ウェブフック), 型 reading (かた not がた), removed artificial commas
-- **31 automated tests** for pronunciation pipeline and CSV validation
-- Updated vocabulary reference to 1105 words across 9 tiers
-
-## What Changed in v3.4
-
-- Restructured AnkiWeb listing for new users
-- Improved card type descriptions
-- Removed unused conjugation data from deck preview
-- Fixed furigana readings in compounds (時じ, 高こう, 低てい)
-
-## What Changed in v3.3
-
-v3.3 is a complete overhaul from the original Kokoro TTS release.
-
-- **Audio engine** - Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
-- **Teaching method** - Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to parse spoken Japanese before seeing the answer. This mirrors real workplace conditions where you hear Japanese before you read it.
-- **3 focused card types** - Listening, Reading, and Vocabulary. Each targets a different skill without overlap. Removed the Keigo Drill card type.
-- **Interview section** - Tier 7 with 30 keigo sentences covering self-introduction, technical skills, achievements, and motivation for job interviews at Japanese companies.
-- **Pitch accent** - Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
-- **Register badges** - Each card shows its formality level (polite/keigo) so you know when to use each expression.
-- **Progress resets on upgrade** - The note type changed entirely. Anki cannot map old scheduling data to the new cards.
-
-## What's Included
-
-- 1120 IT vocabulary sentences across 9 tiers
-- 3360 cards (Listening + Reading + Vocabulary)
-- AI-generated Japanese audio (Microsoft Edge TTS KeitaNeural)
-- Pitch accent display with green (high) / red (low) furigana coloring
-- Register badges (polite/keigo) on card fronts
-- Furigana readings for all kanji
-- Dark mode support
-
-## Card Types
-
-**Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings and standups.
-
-**Reading** - Japanese text front, no audio. Trains reading for Slack, PRs, and documentation.
-
-**Vocabulary** - Key word blanked in sentence with English hint. Tests one word at a time, not full sentence recall.
-
-## Features
-
-**Pitch Accent** - Green (high) / red (low) coloring on key word furigana. Learn correct Tokyo accent from the start.
-
-**Register Badges** - Each card shows polite or keigo badge so you know when to use each sentence.
-
-**100% Audio** - Neural TTS for every sentence (Microsoft Edge ja-JP-KeitaNeural).
-
-## Tiers
+1265 sentences across 10 tiers. Polite/keigo workplace Japanese for software engineers.
 
 | Tier | Count | Focus |
 |------|-------|-------|
@@ -74,78 +20,122 @@ v3.3 is a complete overhaul from the original Kokoro TTS release.
 | 6 | 115 | Presentations (including formal keigo) |
 | 7 | 30 | Job interview (full keigo register) |
 | 8 | 30 | Problem-solving discussions |
-| 9 | 45 | AI agents, documentation, engineering culture |
+| 9 | 50 | AI & Agents |
+| 10 | 51 | Documentation & Engineering Culture |
+
+### IT Kundoku (`it-kundoku`)
+
+89 sentences across 3 tiers. Compressed single-kanji Japanese for token-efficient AI conversation.
+
+| Tier | Count | Focus |
+|------|-------|-------|
+| 1 | 27 | Grammar - particles, connectors, conditionals |
+| 2 | 24 | Actions - single-kanji verbs for code operations |
+| 3 | 38 | Nouns, Descriptors & Patterns |
+
+## Download
+
+**[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install IT Vocabulary directly from Anki app
+
+**[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** - manual download
+
+## Project Structure
+
+```
+decks/
+  it-vocab/           # IT Vocabulary deck (10 tiers, 1265 sentences)
+    deck.toml         # Deck config (name, IDs, tier definitions)
+    translations.py   # Cloze word translations
+    tier{1-10}-vocabulary.csv
+  it-kundoku/         # IT Kundoku deck (3 tiers, 89 sentences)
+    deck.toml
+    translations.py
+    tier{1-3}-vocabulary.csv
+scripts/
+  lib/config.py       # DeckConfig dataclass + loader
+  create_deck.py      # Create Anki .apkg files
+  generate_audio.py   # Generate TTS audio
+  generate_pitch_accent.py  # Pitch accent from UniDic
+  validate.py         # Validate CSVs and audio
+  pronunciation.py    # TTS preprocessing (shared)
+  add_key_meanings.py # Generate English meanings
+  test_tts.py         # Quick TTS test
+skills/
+  it-kundoku/         # Claude Code skill for IT Kundoku mode
+tests/
+```
+
+## Card Types
+
+**Listening** - Audio-only front. No text. Forces pure listening comprehension for meetings and standups.
+
+**Reading** - Japanese text front, no audio. Trains reading for Slack, PRs, and documentation.
+
+**Vocabulary** - Key word blanked in sentence with English hint. Tests one word at a time.
+
+## Features
+
+- Pitch accent coloring (green=high, red=low) on key vocabulary
+- Register badges (polite/keigo) on card fronts
+- Neural TTS audio (Microsoft Edge ja-JP-KeitaNeural)
+- Dark mode support
+- Multi-deck support with shared pipeline
 
 ## Build From Source
 
 Requires Python 3.13+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-# Clone and setup
 git clone https://github.com/KakkoiDev/nihongo-it-anki.git
 cd nihongo-it-anki
 uv sync
 
-# Generate audio
-uv run python scripts/generate_audio.py --all
+# List available decks
+uv run python scripts/create_deck.py --list-decks
 
-# Or generate with female voice
-uv run python scripts/generate_audio.py --all --female
+# Generate audio for a deck
+uv run python scripts/generate_audio.py --deck it-vocab --all
 
 # Create deck
-uv run python scripts/create_deck.py --combined
+uv run python scripts/create_deck.py --deck it-vocab --combined
 
-# Or create deck with female voice audio
-uv run python scripts/create_deck.py --combined --female
+# Female voice
+uv run python scripts/generate_audio.py --deck it-vocab --all --female
+uv run python scripts/create_deck.py --deck it-vocab --combined --female
 ```
+
+All scripts accept `--deck <slug>` (defaults to `it-vocab`).
 
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
-| `generate_audio.py` | Generate TTS audio for sentences |
-| `generate_conjugations.py` | Generate verb/adjective conjugation tables |
-| `generate_pitch_accent.py` | Generate pitch accent data from UniDic |
 | `create_deck.py` | Create Anki .apkg files |
+| `generate_audio.py` | Generate TTS audio for sentences |
+| `generate_pitch_accent.py` | Generate pitch accent data from UniDic |
 | `validate.py` | Validate CSVs and audio files |
 | `pronunciation.py` | Furigana extraction, English-to-katakana conversion |
 | `add_key_meanings.py` | Generate English meanings for key words |
 | `test_tts.py` | Quick TTS test for specific sentences |
 
-## Customization
+## Skills
 
-**Use female voice** — Add `--female` flag to commands
+### IT Kundoku
 
-```bash
-uv run python scripts/generate_audio.py --all --female
-uv run python scripts/create_deck.py --combined --female
-```
-
-| Voice | Type | Flag |
-|-------|------|------|
-| `ja-JP-KeitaNeural` | Male | Default |
-| `ja-JP-NanamiNeural` | Female | `--female` |
-
-**Modify cards** — Edit CSS in `scripts/create_deck.py`
-
-**Add vocabulary** — Edit `tier{N}-vocabulary.csv`, regenerate audio and deck
-
-## Known Limitations
-
-### Testing TTS Changes
-
-Use `test_tts.py` to quickly test pronunciation changes without regenerating all audio:
+Claude Code skill for compressed IT Japanese communication. Install:
 
 ```bash
-# Test specific row(s) from a tier CSV
-uv run python scripts/test_tts.py --tier 1 --row 5
-uv run python scripts/test_tts.py --tier 1 --row 5,7,10
-
-# Test arbitrary text with furigana
-uv run python scripts/test_tts.py --text "問題【もんだい】を、見【み】つけました"
+ln -sf "$(pwd)/skills/it-kundoku" ~/.claude/skills/it-kundoku
 ```
 
-Output files are saved to the project root (`test_tier1_005.mp3` or `test_tts.mp3`).
+Trigger with `/it-kundoku`. Uses single-kanji vocabulary with Japanese readings and minimal grammar for token-efficient technical discussion.
+
+## Adding a New Deck
+
+1. Create `decks/<slug>/deck.toml` with unique `model_id` and `deck_base_id`
+2. Add `tier{N}-vocabulary.csv` files
+3. Add `translations.py` for KeyMeaning
+4. Run: `uv run python scripts/create_deck.py --deck <slug> --combined`
 
 ## Credits
 
