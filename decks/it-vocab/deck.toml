@@ -5,7 +5,7 @@ model_id = 1607392323
 deck_base_id = 2059400110
 
 [tiers]
-count = 9
+count = 10
 
 [tiers.names]
 1 = "Tier 1 - Foundational"
@@ -16,7 +16,8 @@ count = 9
 6 = "Tier 6 - Expert"
 7 = "Tier 7 - Job Interview"
 8 = "Tier 8 - Problem Solving"
-9 = "Tier 9 - AI & Documentation"
+9 = "Tier 9 - AI & Agents"
+10 = "Tier 10 - Documentation & Engineering Culture"
 
 [tiers.sizes]
 1 = 150
@@ -27,4 +28,5 @@ count = 9
 6 = 115
 7 = 30
 8 = 30
-9 = 45
+9 = 50
+10 = 51
