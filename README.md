@@ -106,6 +106,27 @@ uv run python scripts/create_deck.py --deck it-vocab --combined --female
 
 All scripts accept `--deck <slug>` (defaults to `it-vocab`).
 
+### Releasing
+
+Each deck is released independently with its own version tag (`{deck}/{version}`):
+
+```bash
+# Preview what will be released
+uv run python scripts/release.py --deck it-vocab --version v4.0 --dry-run
+
+# Create releases
+uv run python scripts/release.py --deck it-vocab --version v4.0 --title "Tier 9/10 split"
+uv run python scripts/release.py --deck it-kundoku --version v1.0 --title "Initial release"
+
+# Draft release (not published)
+uv run python scripts/release.py --deck it-kundoku --version v1.0 --draft
+
+# Release notes from file
+uv run python scripts/release.py --deck it-vocab --version v4.0 --notes-file RELEASE.md
+```
+
+Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files.
+
 ## Scripts
 
 | Script | Purpose |
@@ -117,6 +138,7 @@ All scripts accept `--deck <slug>` (defaults to `it-vocab`).
 | `pronunciation.py` | Furigana extraction, English-to-katakana conversion |
 | `add_key_meanings.py` | Generate English meanings for key words |
 | `test_tts.py` | Quick TTS test for specific sentences |
+| `release.py` | Create GitHub releases per deck |
 
 ## Skills
 
