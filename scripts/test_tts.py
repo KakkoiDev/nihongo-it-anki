@@ -17,7 +17,9 @@ import edge_tts
 
 from pronunciation import preprocess_for_tts
 
-ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import load_deck_config
+
 VOICE = 'ja-JP-KeitaNeural'
 DELAY_BETWEEN_REQUESTS = 0.3
 MAX_RETRIES = 3
@@ -46,8 +48,10 @@ async def generate_single(text: str, output_path: Path):
 
 def main():
     parser = argparse.ArgumentParser(description="Test TTS for specific sentences")
-    parser.add_argument("--tier", type=int, choices=list(range(1, 10)),
-                        help="Tier number (1-9)")
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
+    parser.add_argument("--tier", type=int,
+                        help="Tier number")
     parser.add_argument("--row", type=str,
                         help="Row number(s) to test, comma-separated (1-indexed)")
     parser.add_argument("--text", type=str,
@@ -62,7 +66,8 @@ def main():
     if args.text:
         asyncio.run(generate_single(args.text, Path("test_tts.mp3")))
     else:
-        csv_path = ROOT / f"tier{args.tier}-vocabulary.csv"
+        config = load_deck_config(args.deck)
+        csv_path = config.csv_path(args.tier)
         with open(csv_path, 'r', encoding='utf-8') as f:
             sentences = list(csv.DictReader(f))
 

@@ -21,6 +21,8 @@ venv/
 
 # Audio output (large files)
 tier*-audio/
+decks/*/tier*-audio/
+decks/*/tier*-audio-female/
 test_*.mp3
 
 # Anki output

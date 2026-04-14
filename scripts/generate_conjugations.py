@@ -7,13 +7,16 @@ HTML conjugation tables for verbs and い-adjectives.
 Uses fugashi for morphological analysis to identify word types.
 """
 
+import argparse
 import csv
 import re
+import sys
 from pathlib import Path
 
 import fugashi
 
-ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import load_deck_config
 
 # Initialize tagger
 tagger = fugashi.Tagger()
@@ -338,10 +341,8 @@ def get_conjugations_for_word(word: str) -> str:
     return generate_conjugation_html(word, conjugations, info['type'])
 
 
-def process_csv(tier: int) -> None:
+def process_csv(csv_path: Path, tier: int) -> None:
     """Process a tier CSV file and add conjugations column."""
-    csv_path = ROOT / f"tier{tier}-vocabulary.csv"
-
     if not csv_path.exists():
         print(f"  Skipping tier {tier}: file not found")
         return
@@ -350,7 +351,7 @@ def process_csv(tier: int) -> None:
     with open(csv_path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         rows = list(reader)
-        fieldnames = reader.fieldnames or []
+        fieldnames = list(reader.fieldnames or [])
 
     # Add Conjugations field if not present
     if 'Conjugations' not in fieldnames:
@@ -379,10 +380,16 @@ def process_csv(tier: int) -> None:
 
 def main():
     """Process all tier CSV files."""
-    print("Generating conjugation tables...")
+    parser = argparse.ArgumentParser(description="Generate conjugation tables for vocabulary tiers")
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
+    args = parser.parse_args()
 
-    for tier in range(1, 9):
-        process_csv(tier)
+    config = load_deck_config(args.deck)
+    print(f"Generating conjugation tables for {config.name}...")
+
+    for tier in config.tier_range():
+        process_csv(config.csv_path(tier), tier)
 
     print("\nDone! Run create_deck.py to rebuild the deck with conjugations.")
 

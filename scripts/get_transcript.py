@@ -40,7 +40,8 @@ from pathlib import Path
 
 from pronunciation import preprocess_for_tts
 
-ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import load_deck_config
 WHISPER_CLI = Path.home() / "Code/skool-live-transcript/vendor/whisper.cpp/build/bin/whisper-cli"
 MODEL_DIR = WHISPER_CLI.parent.parent.parent / "models"
 DOWNLOAD_SCRIPT = MODEL_DIR / "download-ggml-model.sh"
@@ -117,13 +118,13 @@ def normalize(text: str) -> str:
     return text
 
 
-def check_row(tier: int, row_num: int, sentences: list[dict]) -> dict:
+def check_row(tier: int, row_num: int, sentences: list[dict], audio_dir: Path) -> dict:
     """Transcribe one tier row and compare against expected pronunciation."""
     if row_num < 1 or row_num > len(sentences):
         return {"row": row_num, "error": f"out of range (1-{len(sentences)})"}
 
     row = sentences[row_num - 1]
-    audio_path = ROOT / f"tier{tier}-audio/tier{tier}_{row_num:03d}.mp3"
+    audio_path = audio_dir / f"tier{tier}_{row_num:03d}.mp3"
 
     if not audio_path.exists():
         return {"row": row_num, "error": "audio file missing"}
@@ -163,9 +164,11 @@ def main():
     parser = argparse.ArgumentParser(
         description="Transcribe audio with whisper.cpp to verify TTS accuracy"
     )
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
     parser.add_argument("--audio", type=Path, help="Audio file to transcribe")
     parser.add_argument("--language", default="ja", help="Language code (default: ja)")
-    parser.add_argument("--tier", type=int, choices=range(1, 9), help="Tier number")
+    parser.add_argument("--tier", type=int, help="Tier number")
     parser.add_argument("--row", type=str, help="Row number(s), comma-separated")
     parser.add_argument("--all", action="store_true", help="Check all rows in tier")
     parser.add_argument(
@@ -196,7 +199,10 @@ def main():
         parser.print_help()
         sys.exit(1)
 
-    csv_path = ROOT / f"tier{args.tier}-vocabulary.csv"
+    config = load_deck_config(args.deck)
+    csv_path = config.csv_path(args.tier)
+    audio_dir = config.audio_dir(args.tier)
+
     if not csv_path.exists():
         print(f"Error: {csv_path} not found")
         sys.exit(1)
@@ -213,13 +219,12 @@ def main():
         sys.exit(1)
 
     mismatches = []
-    total = len(list(rows))
-    rows = range(1, len(sentences) + 1) if args.all else [int(r.strip()) for r in args.row.split(",")]
+    rows = list(range(1, len(sentences) + 1)) if args.all else [int(r.strip()) for r in args.row.split(",")]
 
     print(f"Tier {args.tier}: checking {len(rows)} row(s)\n")
 
     for row_num in rows:
-        result = check_row(args.tier, row_num, sentences)
+        result = check_row(args.tier, row_num, sentences, audio_dir)
         print_result(result)
         if not result.get("match", True) and "error" not in result:
             mismatches.append(result)

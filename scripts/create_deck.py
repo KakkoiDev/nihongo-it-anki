@@ -34,21 +34,14 @@ Prerequisites:
 import argparse
 import csv
 import hashlib
-import random
 import re
 import sys
 from pathlib import Path
 
 import genanki
 
-# Project root
-ROOT = Path(__file__).parent.parent
-
-# Stable IDs for Anki (generated once, keep consistent).
-# Changing MODEL_ID creates a new note type in Anki (existing cards won't update).
-# Use --force-style to offset MODEL_ID by CSS hash and force Anki to pick up new styles.
-MODEL_ID = 1607392323  # v3.0 - 3 cards, no conjugations, no keigo
-DECK_BASE_ID = 2059400110  # Random but stable
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import DeckConfig, list_decks, load_deck_config
 
 
 def to_ruby_html(text: str) -> str:
@@ -60,21 +53,17 @@ def to_ruby_html(text: str) -> str:
     )
 
 
-def get_deck_id(tier: int) -> int:
-    """Generate stable deck ID for a tier."""
-    return DECK_BASE_ID + tier
-
-
-def create_model() -> genanki.Model:
+def create_model(config: DeckConfig) -> genanki.Model:
     """Create the 3-card Anki model.
 
-    Card 1 (Listening): Big play button → Japanese + Furigana + English
-    Card 2 (Reading): Japanese text → Furigana + English
-    Card 3 (Vocabulary): Blanked sentence + English → Full sentence + Audio
+    Card 1 (Listening): Big play button -> Japanese + Furigana + English
+    Card 2 (Reading): Japanese text -> Furigana + English
+    Card 3 (Vocabulary): Blanked sentence + English -> Full sentence + Audio
     """
+    model_name = f'{config.name} (3-Card)'
     return genanki.Model(
-        MODEL_ID,
-        'Japanese IT Vocabulary (3-Card)',
+        config.model_id,
+        model_name,
         fields=[
             {'name': 'Sentence'},       # Japanese sentence
             {'name': 'Translation'},    # English translation
@@ -323,19 +312,20 @@ hr#answer { border: none; border-top: 3px solid #BC002D; margin: 20px 0; }
     )
 
 
-def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> tuple[genanki.Deck, list[str]]:
+def create_deck(config: DeckConfig, tier: int, include_audio: bool = True, female: bool = False) -> tuple[genanki.Deck, list[str]]:
     """Create Anki deck for a specific tier.
 
     Args:
-        tier: Tier number (1-6)
+        config: Deck configuration
+        tier: Tier number
         include_audio: Whether to include audio files
         female: If True, use audio from tier*-audio-female/ directory
 
     Returns:
         Tuple of (deck, list of media files)
     """
-    csv_path = ROOT / f"tier{tier}-vocabulary.csv"
-    audio_dir = ROOT / f"tier{tier}-audio-female" if female else ROOT / f"tier{tier}-audio"
+    csv_path = config.csv_path(tier)
+    audio_dir = config.audio_dir(tier, female)
 
     if not csv_path.exists():
         print(f"Error: {csv_path} not found")
@@ -348,11 +338,11 @@ def create_deck(tier: int, include_audio: bool = True, female: bool = False) -> 
 
     # Create deck
     deck = genanki.Deck(
-        get_deck_id(tier),
-        f'Japanese IT Vocabulary - Tier {tier}'
+        config.get_deck_id(tier),
+        f'{config.name} - Tier {tier}'
     )
 
-    model = create_model()
+    model = create_model(config)
     media_files = []
 
     for idx, row in enumerate(sentences):
@@ -395,11 +385,16 @@ def main():
 Examples:
   uv run python scripts/create_deck.py --tier 1
   uv run python scripts/create_deck.py --all
-  uv run python scripts/create_deck.py --tier 1 --no-audio
+  uv run python scripts/create_deck.py --deck it-vocab --combined
+  uv run python scripts/create_deck.py --list-decks
         """
     )
-    parser.add_argument("--tier", type=int, choices=list(range(1, 10)),
-                        help="Tier number to create (1-9)")
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
+    parser.add_argument("--list-decks", action="store_true",
+                        help="List available decks and exit")
+    parser.add_argument("--tier", type=int,
+                        help="Tier number to create")
     parser.add_argument("--all", action="store_true",
                         help="Create decks for all tiers")
     parser.add_argument("--combined", action="store_true",
@@ -415,60 +410,60 @@ Examples:
 
     args = parser.parse_args()
 
+    if args.list_decks:
+        decks = list_decks()
+        if decks:
+            print("Available decks:")
+            for slug in decks:
+                cfg = load_deck_config(slug)
+                print(f"  {slug}: {cfg.name} ({cfg.tier_count} tiers)")
+        else:
+            print("No decks found in decks/")
+        sys.exit(0)
+
+    config = load_deck_config(args.deck)
+
+    if args.tier and args.tier not in config.tier_range():
+        print(f"Error: tier {args.tier} not in range 1-{config.tier_count}")
+        sys.exit(1)
+
     if not args.tier and not args.all and not args.combined:
         parser.print_help()
         sys.exit(1)
 
     if args.force_style:
-        # Offset MODEL_ID by CSS hash so Anki creates a new model with updated styles
-        model = create_model()
+        model = create_model(config)
         css_hash = int(hashlib.sha256(model.css.encode()).hexdigest()[:6], 16)
-        global MODEL_ID
-        MODEL_ID += css_hash
-        print(f"--force-style: MODEL_ID offset by {css_hash} (CSS hash)")
+        config.model_id += css_hash
+        print(f"--force-style: model_id offset by {css_hash} (CSS hash)")
 
     include_audio = not args.no_audio
     suffix = "-female" if args.female else ""
 
     if args.combined:
-        # Create combined deck with subdecks for each tier
         voice_label = " (Female)" if args.female else ""
         print(f"Creating combined deck with tier subdecks{voice_label}...")
-
-        # Tier names for subdecks
-        tier_names = {
-            1: "Tier 1 - Foundational",
-            2: "Tier 2 - Basic Development",
-            3: "Tier 3 - Intermediate",
-            4: "Tier 4 - Advanced",
-            5: "Tier 5 - Communication",
-            6: "Tier 6 - Expert",
-            7: "Tier 7 - Job Interview",
-            8: "Tier 8 - Problem Solving",
-            9: "Tier 9 - AI & Documentation",
-        }
 
         all_decks = []
         all_media = []
         total_notes = 0
 
-        for tier in range(1, 10):
-            # Create subdeck with :: notation
-            subdeck_name = f"Japanese IT Vocabulary{voice_label}::{tier_names[tier]}"
+        for tier in config.tier_range():
+            subdeck_name = f"{config.name}{voice_label}::{config.tier_names[tier]}"
             subdeck = genanki.Deck(
-                DECK_BASE_ID + tier + (100 if args.female else 0),
+                config.deck_base_id + tier + (100 if args.female else 0),
                 subdeck_name
             )
 
-            _, media_files = create_deck(tier, include_audio, args.female)
-            csv_path = ROOT / f"tier{tier}-vocabulary.csv"
-            audio_dir = ROOT / f"tier{tier}-audio-female" if args.female else ROOT / f"tier{tier}-audio"
+            _, media_files = create_deck(config, tier, include_audio, args.female)
+            csv_path = config.csv_path(tier)
+            audio_dir = config.audio_dir(tier, args.female)
 
             with open(csv_path, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 sentences = list(reader)
 
-            model = create_model()
+            model = create_model(config)
             for idx, row in enumerate(sentences):
                 num = idx + 1
                 audio_file = f"tier{tier}_{num:03d}.mp3"
@@ -499,9 +494,9 @@ Examples:
             all_decks.append(subdeck)
             all_media.extend(media_files)
             total_notes += len(sentences)
-            print(f"  Added {tier_names[tier]}: {len(sentences)} notes")
+            print(f"  Added {config.tier_names[tier]}: {len(sentences)} notes")
 
-        output = args.output or f"nihongo-it-vocab-complete{suffix}.apkg"
+        output = args.output or f"{config.slug}-complete{suffix}.apkg"
         package = genanki.Package(all_decks)
         package.media_files = all_media
         package.write_to_file(output)
@@ -512,10 +507,9 @@ Examples:
         print(f"Media files: {len(all_media)}")
 
     elif args.all:
-        # Create separate deck for each tier
-        for tier in range(1, 10):
-            deck, media_files = create_deck(tier, include_audio, args.female)
-            output = f"nihongo-it-vocab-tier{tier}{suffix}.apkg"
+        for tier in config.tier_range():
+            deck, media_files = create_deck(config, tier, include_audio, args.female)
+            output = f"{config.slug}-tier{tier}{suffix}.apkg"
 
             package = genanki.Package(deck)
             package.media_files = media_files
@@ -523,10 +517,9 @@ Examples:
 
             print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3 cards/note)")
     else:
-        # Single tier
         tier = args.tier
-        deck, media_files = create_deck(tier, include_audio, args.female)
-        output = args.output or f"nihongo-it-vocab-tier{tier}{suffix}.apkg"
+        deck, media_files = create_deck(config, tier, include_audio, args.female)
+        output = args.output or f"{config.slug}-tier{tier}{suffix}.apkg"
 
         package = genanki.Package(deck)
         package.media_files = media_files
@@ -539,7 +532,7 @@ Examples:
 
         if not include_audio:
             print("\nNote: Audio files not included. Generate them first with:")
-            print(f"  uv run python scripts/generate_audio.py --tier {tier}")
+            print(f"  uv run python scripts/generate_audio.py --deck {config.slug} --tier {tier}")
 
 
 if __name__ == "__main__":

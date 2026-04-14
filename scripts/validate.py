@@ -15,13 +15,11 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import DeckConfig, load_deck_config
 
 # Expected CSV columns
 REQUIRED_COLUMNS = {'Sentence', 'Translation', 'Cloze', 'Pronunciation', 'Note', 'KeyMeaning'}
-
-# Expected row counts per tier
-TIER_SIZES = {1: 150, 2: 200, 3: 250, 4: 200, 5: 100, 6: 115, 7: 30, 8: 30, 9: 45}
 
 # Hiragana range for validating furigana readings
 HIRAGANA_PATTERN = re.compile(r'^[\u3040-\u309F\u30A0-\u30FFー・]+$')
@@ -57,7 +55,7 @@ class ValidationResult:
         return len(self.errors) > 0
 
 
-def validate_csv_structure(csv_path: Path, result: ValidationResult) -> list[dict] | None:
+def validate_csv_structure(csv_path: Path, result: ValidationResult, tier_sizes: dict[int, int]) -> list[dict] | None:
     """Validate CSV exists and has required columns."""
     if not csv_path.exists():
         result.add_error(f"CSV file not found: {csv_path}")
@@ -77,7 +75,7 @@ def validate_csv_structure(csv_path: Path, result: ValidationResult) -> list[dic
         result.row_count = len(rows)
 
         # Check row count
-        expected = TIER_SIZES.get(result.tier, 0)
+        expected = tier_sizes.get(result.tier, 0)
         if result.row_count != expected:
             result.add_warning(f"Row count {result.row_count} differs from expected {expected}")
 
@@ -93,8 +91,8 @@ def validate_furigana(rows: list[dict], result: ValidationResult, verbose: bool 
         pronunciation = row.get('Pronunciation', '')
 
         # Check bracket matching
-        open_count = pronunciation.count('【')
-        close_count = pronunciation.count('】')
+        open_count = pronunciation.count('\u3010')
+        close_count = pronunciation.count('\u3011')
 
         if open_count != close_count:
             result.add_error(f"Row {idx}: Unmatched brackets in '{pronunciation[:50]}...'")
@@ -108,7 +106,7 @@ def validate_furigana(rows: list[dict], result: ValidationResult, verbose: bool 
             # Allow hiragana, katakana, and common punctuation
             if reading and not HIRAGANA_PATTERN.match(reading):
                 # Allow mixed readings with numbers/letters for edge cases
-                if not re.match(r'^[\u3040-\u309F\u30A0-\u30FF0-9A-Za-zー・]+$', reading):
+                if not re.match(r'^[\u3040-\u309F\u30A0-\u30FF0-9A-Za-z\u30FC\u30FB]+$', reading):
                     result.add_error(f"Row {idx}: Invalid reading '{reading}' (not hiragana/katakana)")
                     valid = False
                     break
@@ -144,9 +142,9 @@ def validate_key_meaning(rows: list[dict], result: ValidationResult, verbose: bo
         result.key_meaning_valid += 1
 
 
-def validate_audio(tier: int, row_count: int, result: ValidationResult, verbose: bool = False, female: bool = False):
+def validate_audio(config: DeckConfig, tier: int, row_count: int, result: ValidationResult, verbose: bool = False, female: bool = False):
     """Validate audio files exist and are not empty."""
-    audio_dir = ROOT / f"tier{tier}-audio-female" if female else ROOT / f"tier{tier}-audio"
+    audio_dir = config.audio_dir(tier, female)
     result.audio_total = row_count
 
     if not audio_dir.exists():
@@ -169,13 +167,13 @@ def validate_audio(tier: int, row_count: int, result: ValidationResult, verbose:
         result.audio_valid += 1
 
 
-def validate_tier(tier: int, check_audio: bool = False, verbose: bool = False, female: bool = False) -> ValidationResult:
+def validate_tier(config: DeckConfig, tier: int, check_audio: bool = False, verbose: bool = False, female: bool = False) -> ValidationResult:
     """Validate a single tier."""
     result = ValidationResult(tier)
-    csv_path = ROOT / f"tier{tier}-vocabulary.csv"
+    csv_path = config.csv_path(tier)
 
     # Step 1: CSV structure
-    rows = validate_csv_structure(csv_path, result)
+    rows = validate_csv_structure(csv_path, result, config.tier_sizes)
     if rows is None:
         return result
 
@@ -187,7 +185,7 @@ def validate_tier(tier: int, check_audio: bool = False, verbose: bool = False, f
 
     # Step 4: Audio (optional)
     if check_audio:
-        validate_audio(tier, len(rows), result, verbose, female)
+        validate_audio(config, tier, len(rows), result, verbose, female)
 
     return result
 
@@ -198,23 +196,23 @@ def print_result(result: ValidationResult, verbose: bool = False):
 
     # CSV
     if result.csv_valid:
-        print(f"  CSV: {result.row_count} rows, {len(REQUIRED_COLUMNS)} columns ✓")
+        print(f"  CSV: {result.row_count} rows, {len(REQUIRED_COLUMNS)} columns OK")
     else:
-        print(f"  CSV: ✗")
+        print(f"  CSV: FAIL")
 
     # Furigana
     if result.furigana_total > 0:
-        status = "✓" if result.furigana_valid == result.furigana_total else "✗"
+        status = "OK" if result.furigana_valid == result.furigana_total else "FAIL"
         print(f"  Furigana: {result.furigana_valid}/{result.furigana_total} valid {status}")
 
     # KeyMeaning
     if result.key_meaning_total > 0:
-        status = "✓" if result.key_meaning_valid == result.key_meaning_total else "✗"
+        status = "OK" if result.key_meaning_valid == result.key_meaning_total else "FAIL"
         print(f"  KeyMeaning: {result.key_meaning_valid}/{result.key_meaning_total} translated {status}")
 
     # Audio
     if result.audio_total > 0:
-        status = "✓" if result.audio_valid == result.audio_total else "✗"
+        status = "OK" if result.audio_valid == result.audio_total else "FAIL"
         print(f"  Audio: {result.audio_valid}/{result.audio_total} files exist {status}")
 
     # Errors
@@ -242,11 +240,13 @@ def main():
 Examples:
   uv run python scripts/validate.py              # Validate all tiers
   uv run python scripts/validate.py --tier 1     # Validate tier 1 only
-  uv run python scripts/validate.py --check-audio # Include audio validation
+  uv run python scripts/validate.py --deck it-vocab --check-audio
   uv run python scripts/validate.py --verbose    # Show all errors/warnings
         """
     )
-    parser.add_argument("--tier", type=int, choices=list(range(1, 10)),
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
+    parser.add_argument("--tier", type=int,
                         help="Validate specific tier only")
     parser.add_argument("--check-audio", action="store_true",
                         help="Also validate audio files")
@@ -256,18 +256,23 @@ Examples:
                         help="Show detailed errors and warnings")
 
     args = parser.parse_args()
+    config = load_deck_config(args.deck)
+
+    if args.tier and args.tier not in config.tier_range():
+        print(f"Error: tier {args.tier} not in range 1-{config.tier_count}")
+        sys.exit(1)
 
     # Determine tiers to validate
-    tiers = [args.tier] if args.tier else range(1, 10)
+    tiers = [args.tier] if args.tier else config.tier_range()
 
     voice_label = " (Female)" if args.female else ""
     print("=" * 50)
-    print(f"Vocabulary & Audio Validation{voice_label}")
+    print(f"Vocabulary & Audio Validation - {config.name}{voice_label}")
     print("=" * 50)
 
     all_results = []
     for tier in tiers:
-        result = validate_tier(tier, args.check_audio, args.verbose, args.female)
+        result = validate_tier(config, tier, args.check_audio, args.verbose, args.female)
         all_results.append(result)
         print_result(result, args.verbose)
 

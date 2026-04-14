@@ -1,0 +1,30 @@
+[deck]
+slug = "it-vocab"
+name = "Japanese IT Vocabulary"
+model_id = 1607392323
+deck_base_id = 2059400110
+
+[tiers]
+count = 9
+
+[tiers.names]
+1 = "Tier 1 - Foundational"
+2 = "Tier 2 - Basic Development"
+3 = "Tier 3 - Intermediate"
+4 = "Tier 4 - Advanced"
+5 = "Tier 5 - Communication"
+6 = "Tier 6 - Expert"
+7 = "Tier 7 - Job Interview"
+8 = "Tier 8 - Problem Solving"
+9 = "Tier 9 - AI & Documentation"
+
+[tiers.sizes]
+1 = 150
+2 = 200
+3 = 250
+4 = 200
+5 = 100
+6 = 115
+7 = 30
+8 = 30
+9 = 45

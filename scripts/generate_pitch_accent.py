@@ -29,13 +29,16 @@ Display rules:
 All kanji regex patterns include \u3005 (々 repetition mark).
 """
 
+import argparse
 import csv
 import re
+import sys
 from pathlib import Path
 
 import fugashi
 
-ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import load_deck_config
 
 tagger = fugashi.Tagger()
 
@@ -262,9 +265,8 @@ def get_pitch_html(cloze: str, pronunciation: str) -> str:
     return fallback_html(cloze, kana_from_pron)
 
 
-def process_csv(tier: int) -> None:
+def process_csv(csv_path: Path, tier: int) -> None:
     """Add PitchAccent column to a tier CSV."""
-    csv_path = ROOT / f'tier{tier}-vocabulary.csv'
     if not csv_path.exists():
         print(f'  Skipping tier {tier}: file not found')
         return
@@ -303,9 +305,15 @@ def process_csv(tier: int) -> None:
 
 
 def main() -> None:
-    print('Generating pitch accent data...')
-    for tier in range(1, 10):
-        process_csv(tier)
+    parser = argparse.ArgumentParser(description="Generate pitch accent data for vocabulary tiers")
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
+    args = parser.parse_args()
+
+    config = load_deck_config(args.deck)
+    print(f'Generating pitch accent data for {config.name}...')
+    for tier in config.tier_range():
+        process_csv(config.csv_path(tier), tier)
     print('\nDone. Run create_deck.py to rebuild.')
 
 

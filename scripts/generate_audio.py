@@ -9,7 +9,7 @@ The TTSPronunciation column has artificial commas that cause unnatural pauses
 in Edge TTS output. The Pronunciation field is clean and produces natural speech.
 See pronunciation.py docstring for the full preprocessing pipeline.
 
-Audio files are named tier{N}_{NNN}.mp3 and stored in tier{N}-audio/.
+Audio files are named tier{N}_{NNN}.mp3 and stored in the deck's audio directory.
 The --force flag regenerates all files (needed after pronunciation fixes).
 """
 
@@ -23,8 +23,8 @@ import edge_tts
 
 from pronunciation import preprocess_for_tts
 
-# Project root
-ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from config import load_deck_config
 
 # Japanese Edge TTS voices
 VOICE_MALE = 'ja-JP-KeitaNeural'
@@ -52,22 +52,24 @@ async def tts_generate(text: str, voice: str, output_path: Path, retries: int = 
                 raise
 
 
-async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False, female: bool = False):
+async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False, female: bool = False, deck: str = "it-vocab"):
     """Generate audio files for a specific tier.
 
     Args:
-        tier: Tier number (1-6)
+        tier: Tier number
         voice: Edge TTS voice to use
         force: If True, regenerate even if files exist
         female: If True, use female voice and separate output directory
+        deck: Deck slug to load config from
     """
-    csv_path = ROOT / f"tier{tier}-vocabulary.csv"
+    config = load_deck_config(deck)
+    csv_path = config.csv_path(tier)
 
     if female:
-        output_dir = ROOT / f"tier{tier}-audio-female"
+        output_dir = config.audio_dir(tier, female=True)
         voice = VOICE_FEMALE
     else:
-        output_dir = ROOT / f"tier{tier}-audio"
+        output_dir = config.audio_dir(tier)
 
     if not csv_path.exists():
         print(f"Error: {csv_path} not found")
@@ -110,8 +112,10 @@ async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = 
 
 def main():
     parser = argparse.ArgumentParser(description="Generate audio for vocabulary tiers")
-    parser.add_argument("--tier", type=int, choices=list(range(1, 10)),
-                        help="Tier number to generate (1-9)")
+    parser.add_argument("--deck", type=str, default="it-vocab",
+                        help="Deck slug (default: it-vocab)")
+    parser.add_argument("--tier", type=int,
+                        help="Tier number to generate")
     parser.add_argument("--all", action="store_true",
                         help="Generate audio for all tiers")
     parser.add_argument("--female", action="store_true",
@@ -122,12 +126,17 @@ def main():
                         help="Regenerate audio even if files exist")
 
     args = parser.parse_args()
+    config = load_deck_config(args.deck)
+
+    if args.tier and args.tier not in config.tier_range():
+        print(f"Error: tier {args.tier} not in range 1-{config.tier_count}")
+        sys.exit(1)
 
     if args.all:
-        for tier in range(1, 10):
-            asyncio.run(generate_tier_audio(tier, args.voice, args.force, args.female))
+        for tier in config.tier_range():
+            asyncio.run(generate_tier_audio(tier, args.voice, args.force, args.female, args.deck))
     elif args.tier:
-        asyncio.run(generate_tier_audio(args.tier, args.voice, args.force, args.female))
+        asyncio.run(generate_tier_audio(args.tier, args.voice, args.force, args.female, args.deck))
     else:
         parser.print_help()
         sys.exit(1)
