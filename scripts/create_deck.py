@@ -86,6 +86,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
 <div class="audio">{{Audio}}</div>
 <div class="sentence">{{Pronunciation}}</div>
 <div class="translation">{{Translation}}</div>
+<hr id="answer">
 <div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 <div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
 ''',
@@ -98,6 +99,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
 <div class="category">{{Category}}</div>{{#Register}}<span class="register register-{{Register}}">{{Register}}</span>{{/Register}}
 ''',
                 'afmt': '''<div class="card-type">Reading</div>
+<div class="audio">{{Audio}}</div>
 <div class="sentence">{{Pronunciation}}</div>
 <hr id="answer">
 <div class="translation">{{Translation}}</div>
@@ -370,6 +372,7 @@ def create_deck(config: DeckConfig, tier: int, include_audio: bool = True, femal
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
             ],
+            guid=genanki.guid_for(row['Sentence']),
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
         )
         deck.add_note(note)
@@ -487,6 +490,7 @@ Examples:
                         row['KeyMeaning'],
                         row.get('PitchAccent', ''),
                     ],
+                    guid=genanki.guid_for(row['Sentence']),
                     tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
                 )
                 subdeck.add_note(note)
