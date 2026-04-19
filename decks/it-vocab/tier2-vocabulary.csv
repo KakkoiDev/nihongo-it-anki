@@ -70,7 +70,7 @@ APIは200 OKを返しました。,The API returned 200 OK.,200,APIは200 OKを�
 401はトークンが無効であることを意味します。,401 means the token is invalid.,401,401はトークンが無効【むこう】であることを意味【いみ】します。,Http - Status Code,polite,401 (Unauthorized),"<span class=""vocab"">401</span>"
 403は権限がないことを意味します。,403 means you don't have permission.,403,403は権限【けんげん】がないことを意味【いみ】します。,Http - Status Code,polite,403 (Forbidden),"<span class=""vocab"">403</span>"
 ユーザーが存在しない場合は404を返してください。,Return 404 if the user doesn't exist.,404,ユーザーが存在【そんざい】しない場合【ばあい】は404を返【かえ】してください。,Http - Status Code,polite,404 (Not Found),"<span class=""vocab"">404</span>"
-ユーザーに500エラーが表示されています。,Users are seeing 500 errors.,500,ユーザーに500エラーが表示【ひょうじ】されています。,Http - Status Code,polite,500 (Server Error),"<span class=""vocab"">500</span>"
+APIエンドポイントが500を返しています。,The API endpoint is returning 500.,500,APIエンドポイントが500を返【かえ】しています。,Http - Status Code,polite,500 (Server Error),"<span class=""vocab"">500</span>"
 リクエストは30秒後にタイムアウトしました。,The request timed out after 30 seconds.,タイムアウト,リクエストは30秒【びょう】後【ご】にタイムアウトしました。,Http - Timeout,polite,timeout,"<span class=""vocab"">タイムアウト</span>"
 指数バックオフでリクエストをリトライしてください。,Retry the request with exponential backoff.,リトライ,指数【しすう】バックオフでリクエストをリトライしてください。,Http - Retry,polite,retry,"<span class=""vocab"">リトライ</span>"
 APIのレート制限に達しました。,We hit the API rate limit.,レート制限,APIのレート制限【せいげん】に達【たっ】しました。,Http - Rate Limit,polite,rate,"<ruby class=""vocab"">レート制限<rt>せいげん</rt></ruby>"
