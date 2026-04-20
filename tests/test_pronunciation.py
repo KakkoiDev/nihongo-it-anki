@@ -10,7 +10,6 @@ from pronunciation import (
     convert_english_terms,
     extract_furigana,
     preprocess_for_tts,
-    replace_particle_ha,
 )
 
 
@@ -43,26 +42,6 @@ class TestExtractFurigana:
         assert result == "修正します。"
 
 
-class TestReplaceParticleHa:
-    """Replaces particle は with わ outside brackets."""
-
-    def test_particle_replaced(self):
-        assert replace_particle_ha("タスクは完了") == "タスクわ完了"
-
-    def test_inside_brackets_preserved(self):
-        assert replace_particle_ha("話【はな】せますか") == "話【はな】せますか"
-
-    def test_multiple_particles(self):
-        result = replace_particle_ha("テストは嘘【うそ】をつけません")
-        assert result == "テストわ嘘【うそ】をつけません"
-
-    def test_mixed_bracket_and_particle(self):
-        result = replace_particle_ha("腐敗【ふはい】しやすいですがテストは嘘【うそ】をつけません")
-        # は inside brackets preserved, は after テスト replaced
-        assert "腐敗【ふはい】" in result
-        assert "テストわ" in result
-
-
 class TestConvertEnglishTerms:
     """Converts English acronyms and terms to katakana."""
 
@@ -93,10 +72,10 @@ class TestPreprocessForTts:
         result = preprocess_for_tts("昼食【ちゅうしょく】前【まえ】にこのバグを修正【しゅうせい】します。")
         assert result == "昼食前にこのバグを修正します。"
 
-    def test_particle_ha_and_furigana(self):
+    def test_particle_ha_preserved(self):
         result = preprocess_for_tts("PRはレビュー準備【じゅんび】ができています。")
         assert "ピーアール" in result
-        assert "わ" in result
+        assert "は" in result
         assert "レビュー準備ができています" in result
 
     def test_tts_override_in_pipeline(self):

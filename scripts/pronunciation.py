@@ -7,10 +7,9 @@ text that Edge TTS can read correctly.
 
 Pipeline (preprocess_for_tts):
   1. Symbol substitutions (%, version strings)
-  2. Particle は -> わ (while brackets still disambiguate)
-  3. Strip furigana brackets, keep kanji: 昼食【ちゅうしょく】 -> 昼食
-  4. English term conversion: API -> エーピーアイ
-  5. Cleanup leftover brackets
+  2. Strip furigana brackets, keep kanji: 昼食【ちゅうしょく】 -> 昼食
+  3. English term conversion: API -> エーピーアイ
+  4. Cleanup leftover brackets
 
 CRITICAL: The Pronunciation field serves DUAL purpose:
   1. Card display: create_deck.py renders it with to_ruby_html() for
@@ -452,37 +451,17 @@ def convert_english_terms(text: str) -> str:
     return re.sub(pattern, convert_acronym, text)
 
 
-def replace_particle_ha(text: str) -> str:
-    """Replace particle は with わ so Edge TTS reads it as "wa" not "ha".
-
-    Must run BEFORE extract_furigana(), on the raw Pronunciation field where
-    brackets still disambiguate word readings from particles:
-      - 話【はな】せますか -> は inside brackets = word reading, untouched
-      - 差分【さぶん】は -> は outside brackets = particle, replaced with わ
-
-    Edge TTS handles へ and を correctly, so only は needs this fix.
-
-    CAVEAT: Hiragana words starting with は (はず, はじめ, はっきり) would be
-    wrongly replaced if written outside brackets. Currently no such words
-    exist in the data. If one is added, wrap it in brackets or add it as
-    an exception here.
-    """
-    parts = re.split(r'(【[^】]*】)', text)
-    for i, part in enumerate(parts):
-        if not part.startswith('【'):
-            parts[i] = part.replace('は', 'わ')
-    return ''.join(parts)
-
-
 def preprocess_for_tts(text: str) -> str:
     """Preprocessing pipeline for TTS input.
 
     1. Substitute symbols Edge TTS can't pronounce (%, version strings)
-    2. Replace particle は with わ (Edge TTS reads は as "ha" not "wa")
-       Must happen before furigana extraction while brackets still disambiguate.
-    3. Extract furigana readings
-    4. Convert English terms to katakana
-    5. Clean up any remaining brackets
+    2. Extract furigana readings
+    3. Convert English terms to katakana
+    4. Clean up any remaining brackets
+
+    Edge TTS now correctly reads particle は as "wa" without replacement.
+    Earlier versions required a は->わ workaround that caused "wa-subete" to
+    elide the す; keeping は as-is avoids that.
     """
     # Step 1: Symbol substitutions
     text = text.replace('%', 'パーセント')
@@ -490,19 +469,21 @@ def preprocess_for_tts(text: str) -> str:
     # Can't use \b - doesn't work at Japanese/ASCII boundary
     text = re.sub(r'(?<![A-Za-z])v(\d)', r'バージョン\1', text)
 
-    # Step 2: Replace particle は with わ (before furigana extraction)
-    text = replace_particle_ha(text)
-
-    # Step 3: Extract furigana
+    # Step 2: Extract furigana
     text = extract_furigana(text)
 
-    # Step 4: Convert English terms
+    # Step 3: Convert English terms
     text = convert_english_terms(text)
 
-    # Step 5: Clean up
+    # Step 4: Clean up
     text = text.replace('「', '').replace('」', '')
     text = re.sub(r'【[^】]*】', '', text)
     text = ' '.join(text.split())
+
+    # Edge TTS elides す in particle-は + すべて (reads "wa-bete"). Insert a
+    # comma to force a pause, so subete is pronounced clearly. TTS-only;
+    # CSV Pronunciation field stays clean for card display.
+    text = text.replace('はすべて', 'は、すべて')
 
     # Ensure ends with punctuation for clean TTS delivery
     if text and text[-1] not in '。！？、':
