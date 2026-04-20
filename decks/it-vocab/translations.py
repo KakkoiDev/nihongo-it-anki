@@ -208,6 +208,7 @@ TRANSLATIONS = {
     'デフォルト': 'default',
     'デプロイメント': 'deployment',
     'トラブルシューティング': 'troubleshooting',
+    'トラブルシュート': 'troubleshoot',
     'トランスパイル': 'transpile',
     'トリガー': 'trigger',
     'トレードオフ': 'trade-off',
