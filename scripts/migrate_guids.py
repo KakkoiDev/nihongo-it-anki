@@ -29,6 +29,7 @@ Usage:
 import argparse
 import shutil
 import sqlite3
+import subprocess
 import sys
 import tempfile
 import zipfile
@@ -36,6 +37,8 @@ from pathlib import Path
 
 import genanki
 
+# anki21b: zstd-compressed sqlite (Anki 2.1.50+)
+# anki21/anki2: raw sqlite (older exports)
 ANKI_DB_NAMES = ("collection.anki21b", "collection.anki21", "collection.anki2")
 
 
@@ -46,6 +49,25 @@ def find_db(unpack_dir: Path) -> Path:
             return candidate
     raise FileNotFoundError(
         f"No Anki database found in {unpack_dir} (expected one of {ANKI_DB_NAMES})"
+    )
+
+
+def is_zstd(path: Path) -> bool:
+    """Anki 2.1.50+ stores the collection as zstd-compressed sqlite in
+    collection.anki21b. Detect by the zstd magic number."""
+    with open(path, "rb") as f:
+        return f.read(4) == b"\x28\xb5\x2f\xfd"
+
+
+def zstd_decompress(src: Path, dst: Path) -> None:
+    subprocess.run(
+        ["zstd", "-d", "-q", "-f", str(src), "-o", str(dst)], check=True
+    )
+
+
+def zstd_compress(src: Path, dst: Path) -> None:
+    subprocess.run(
+        ["zstd", "-q", "-f", str(src), "-o", str(dst)], check=True
     )
 
 
@@ -78,6 +100,10 @@ def migrate(db_path: Path, dry_run: bool = False) -> dict:
     """Rewrite note GUIDs in-place. Returns a stats dict."""
     conn = sqlite3.connect(db_path)
     conn.execute("PRAGMA foreign_keys = OFF")
+    # Anki defines a 'unicase' collation in its binary; without it, VACUUM
+    # and any index touch on collated columns fails. Register a dummy that
+    # falls back to case-insensitive comparison.
+    conn.create_collation("unicase", lambda a, b: (a.lower() > b.lower()) - (a.lower() < b.lower()))
 
     rows = conn.execute("SELECT id, guid, flds FROM notes").fetchall()
     stats = {
@@ -201,6 +227,13 @@ def main() -> int:
         print(f"Input:    {args.input}")
         print(f"Database: {db_path.name}")
 
+        compressed_path = None
+        if is_zstd(db_path):
+            compressed_path = db_path
+            db_path = unpack_dir / (db_path.name + ".sqlite")
+            zstd_decompress(compressed_path, db_path)
+            print(f"Decompressed zstd -> {db_path.name}")
+
         stats = migrate(db_path, dry_run=args.dry_run)
 
         print()
@@ -215,6 +248,10 @@ def main() -> int:
         if args.dry_run:
             print("\n(dry run, no output written)")
             return 0
+
+        if compressed_path is not None:
+            zstd_compress(db_path, compressed_path)
+            db_path.unlink()
 
         repack(unpack_dir, output)
 
