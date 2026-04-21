@@ -96,13 +96,19 @@ def pick_winner(conn: sqlite3.Connection, nids: list[int]) -> int:
     return best_nid
 
 
-def retarget_model(conn: sqlite3.Connection, target_mid: int) -> tuple[int, int]:
+def retarget_model(
+    conn: sqlite3.Connection, target_mid: int, source_mid: int | None = None
+) -> tuple[int, int]:
     """Rewrite the note type id so it matches a deck built with the given
     model_id (e.g. genanki config.model_id). Required when reimporting on
     top of a migrated deck: if model ids differ, Anki creates a new note
     type and new cards, losing scheduling on the old cards.
 
-    Returns (old_mid, target_mid). No-op if single model already matches.
+    source_mid: id of the note type to retarget. Required when the db has
+    multiple note types (e.g. a live Anki collection with other decks).
+    If None, infers the single note type.
+
+    Returns (old_mid, target_mid). No-op if source already equals target.
     New-format dbs have notetypes/fields/templates tables; old-format dbs
     keep the model list in col.models JSON.
     """
@@ -110,30 +116,60 @@ def retarget_model(conn: sqlite3.Connection, target_mid: int) -> tuple[int, int]
         "SELECT name FROM sqlite_master WHERE type='table' AND name='notetypes'"
     ).fetchone() is not None
 
-    if has_notetypes:
+    if not has_notetypes:
+        raise RuntimeError(
+            "Old-format (col.models JSON) retargeting not implemented. "
+            "Export from a recent Anki (2.1.50+) to get notetypes tables."
+        )
+
+    if source_mid is None:
         ids = [r[0] for r in conn.execute("SELECT id FROM notetypes").fetchall()]
         if len(ids) != 1:
             raise RuntimeError(
                 f"Expected a single note type, found {len(ids)}: {ids}. "
-                f"Refusing to retarget to avoid ambiguity."
+                f"Pass --source-mid to pick which one to retarget."
             )
-        old = ids[0]
-        if old == target_mid:
-            return old, target_mid
-        conn.execute("UPDATE notetypes SET id = ? WHERE id = ?", (target_mid, old))
-        conn.execute("UPDATE fields SET ntid = ? WHERE ntid = ?", (target_mid, old))
-        conn.execute("UPDATE templates SET ntid = ? WHERE ntid = ?", (target_mid, old))
-        conn.execute("UPDATE notes SET mid = ? WHERE mid = ?", (target_mid, old))
-        return old, target_mid
+        source_mid = ids[0]
 
-    raise RuntimeError(
-        "Old-format (col.models JSON) retargeting not implemented. "
-        "Export from a recent Anki (2.1.50+) to get notetypes tables."
-    )
+    if source_mid == target_mid:
+        return source_mid, target_mid
+
+    existing = conn.execute(
+        "SELECT id FROM notetypes WHERE id = ?", (target_mid,)
+    ).fetchone()
+    if existing is not None:
+        # Target id already exists (e.g. orphan notetype from old imports).
+        # Drop it if it has no notes, otherwise refuse.
+        note_count = conn.execute(
+            "SELECT COUNT(*) FROM notes WHERE mid = ?", (target_mid,)
+        ).fetchone()[0]
+        if note_count > 0:
+            raise RuntimeError(
+                f"Target mid {target_mid} already owns {note_count} notes. "
+                f"Refusing to merge distinct note types."
+            )
+        conn.execute("DELETE FROM fields WHERE ntid = ?", (target_mid,))
+        conn.execute("DELETE FROM templates WHERE ntid = ?", (target_mid,))
+        conn.execute("DELETE FROM notetypes WHERE id = ?", (target_mid,))
+
+    conn.execute("UPDATE notetypes SET id = ? WHERE id = ?", (target_mid, source_mid))
+    conn.execute("UPDATE fields SET ntid = ? WHERE ntid = ?", (target_mid, source_mid))
+    conn.execute("UPDATE templates SET ntid = ? WHERE ntid = ?", (target_mid, source_mid))
+    conn.execute("UPDATE notes SET mid = ? WHERE mid = ?", (target_mid, source_mid))
+    return source_mid, target_mid
 
 
-def migrate(db_path: Path, dry_run: bool = False, target_mid: int | None = None) -> dict:
-    """Rewrite note GUIDs in-place. Returns a stats dict."""
+def migrate(
+    db_path: Path,
+    dry_run: bool = False,
+    target_mid: int | None = None,
+    source_mid: int | None = None,
+) -> dict:
+    """Rewrite note GUIDs in-place. Returns a stats dict.
+
+    source_mid: only process notes with this model id. Required when the
+    db has other decks (e.g. running on a live Anki collection).
+    """
     conn = sqlite3.connect(db_path)
     conn.execute("PRAGMA foreign_keys = OFF")
     # Anki defines a 'unicase' collation in its binary; without it, VACUUM
@@ -141,7 +177,12 @@ def migrate(db_path: Path, dry_run: bool = False, target_mid: int | None = None)
     # falls back to case-insensitive comparison.
     conn.create_collation("unicase", lambda a, b: (a.lower() > b.lower()) - (a.lower() < b.lower()))
 
-    rows = conn.execute("SELECT id, guid, flds FROM notes").fetchall()
+    if source_mid is not None:
+        rows = conn.execute(
+            "SELECT id, guid, flds FROM notes WHERE mid = ?", (source_mid,)
+        ).fetchall()
+    else:
+        rows = conn.execute("SELECT id, guid, flds FROM notes").fetchall()
     stats = {
         "total_notes": len(rows),
         "already_stable": 0,
@@ -217,7 +258,7 @@ def migrate(db_path: Path, dry_run: bool = False, target_mid: int | None = None)
             stats["notes_deleted"] = len(deletions)
 
     if target_mid is not None and not dry_run:
-        old, new = retarget_model(conn, target_mid)
+        old, new = retarget_model(conn, target_mid, source_mid=source_mid)
         stats["model_retarget"] = f"{old} -> {new}"
         conn.commit()
 
@@ -255,11 +296,49 @@ def main() -> int:
              "of a deck built with the same model_id updates in place "
              "instead of creating new cards (losing scheduling).",
     )
+    parser.add_argument(
+        "--source-mid", type=int, default=None,
+        help="Only process notes with this model id. Required when running "
+             "against a live Anki collection that contains other decks.",
+    )
+    parser.add_argument(
+        "--in-place", action="store_true",
+        help="Treat INPUT as a raw sqlite db (e.g. ~/.local/share/Anki2/User 1/"
+             "collection.anki2) and migrate in place. No zip or repack.",
+    )
     args = parser.parse_args()
 
     if not args.input.exists():
         print(f"Error: input file not found: {args.input}", file=sys.stderr)
         return 1
+
+    if args.in_place:
+        print(f"Input (in-place): {args.input}")
+        if args.source_mid is None:
+            print(
+                "Warning: --source-mid not set; will process ALL notes. "
+                "Ctrl-C now if the db has other decks.",
+                file=sys.stderr,
+            )
+        stats = migrate(
+            args.input,
+            dry_run=args.dry_run,
+            target_mid=args.model_id,
+            source_mid=args.source_mid,
+        )
+        print()
+        print(f"Total notes:        {stats['total_notes']}")
+        print(f"Already stable:     {stats['already_stable']}")
+        print(f"GUIDs to rewrite:   {stats['guid_updated']}")
+        print(f"Duplicate groups:   {stats['duplicate_groups']}")
+        print(f"Notes to delete:    {stats['notes_deleted']}")
+        print(f"Cards to delete:    {stats['cards_deleted']}")
+        print(f"Revlog to delete:   {stats['revlog_deleted']}")
+        if "model_retarget" in stats:
+            print(f"Model retarget:     {stats['model_retarget']}")
+        if args.dry_run:
+            print("\n(dry run, no changes written)")
+        return 0
 
     output = args.output or args.input.with_name(
         args.input.stem + "-migrated.apkg"
@@ -281,7 +360,12 @@ def main() -> int:
             zstd_decompress(compressed_path, db_path)
             print(f"Decompressed zstd -> {db_path.name}")
 
-        stats = migrate(db_path, dry_run=args.dry_run, target_mid=args.model_id)
+        stats = migrate(
+            db_path,
+            dry_run=args.dry_run,
+            target_mid=args.model_id,
+            source_mid=args.source_mid,
+        )
 
         print()
         print(f"Total notes:        {stats['total_notes']}")
