@@ -96,7 +96,43 @@ def pick_winner(conn: sqlite3.Connection, nids: list[int]) -> int:
     return best_nid
 
 
-def migrate(db_path: Path, dry_run: bool = False) -> dict:
+def retarget_model(conn: sqlite3.Connection, target_mid: int) -> tuple[int, int]:
+    """Rewrite the note type id so it matches a deck built with the given
+    model_id (e.g. genanki config.model_id). Required when reimporting on
+    top of a migrated deck: if model ids differ, Anki creates a new note
+    type and new cards, losing scheduling on the old cards.
+
+    Returns (old_mid, target_mid). No-op if single model already matches.
+    New-format dbs have notetypes/fields/templates tables; old-format dbs
+    keep the model list in col.models JSON.
+    """
+    has_notetypes = conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='notetypes'"
+    ).fetchone() is not None
+
+    if has_notetypes:
+        ids = [r[0] for r in conn.execute("SELECT id FROM notetypes").fetchall()]
+        if len(ids) != 1:
+            raise RuntimeError(
+                f"Expected a single note type, found {len(ids)}: {ids}. "
+                f"Refusing to retarget to avoid ambiguity."
+            )
+        old = ids[0]
+        if old == target_mid:
+            return old, target_mid
+        conn.execute("UPDATE notetypes SET id = ? WHERE id = ?", (target_mid, old))
+        conn.execute("UPDATE fields SET ntid = ? WHERE ntid = ?", (target_mid, old))
+        conn.execute("UPDATE templates SET ntid = ? WHERE ntid = ?", (target_mid, old))
+        conn.execute("UPDATE notes SET mid = ? WHERE mid = ?", (target_mid, old))
+        return old, target_mid
+
+    raise RuntimeError(
+        "Old-format (col.models JSON) retargeting not implemented. "
+        "Export from a recent Anki (2.1.50+) to get notetypes tables."
+    )
+
+
+def migrate(db_path: Path, dry_run: bool = False, target_mid: int | None = None) -> dict:
     """Rewrite note GUIDs in-place. Returns a stats dict."""
     conn = sqlite3.connect(db_path)
     conn.execute("PRAGMA foreign_keys = OFF")
@@ -180,6 +216,11 @@ def migrate(db_path: Path, dry_run: bool = False) -> dict:
             )
             stats["notes_deleted"] = len(deletions)
 
+    if target_mid is not None and not dry_run:
+        old, new = retarget_model(conn, target_mid)
+        stats["model_retarget"] = f"{old} -> {new}"
+        conn.commit()
+
     conn.execute("VACUUM")
     conn.close()
     return stats
@@ -208,6 +249,12 @@ def main() -> int:
         "--dry-run", action="store_true",
         help="Report what would change without writing output",
     )
+    parser.add_argument(
+        "--model-id", type=int, default=None,
+        help="Rewrite the note type id to this value so a follow-up import "
+             "of a deck built with the same model_id updates in place "
+             "instead of creating new cards (losing scheduling).",
+    )
     args = parser.parse_args()
 
     if not args.input.exists():
@@ -234,7 +281,7 @@ def main() -> int:
             zstd_decompress(compressed_path, db_path)
             print(f"Decompressed zstd -> {db_path.name}")
 
-        stats = migrate(db_path, dry_run=args.dry_run)
+        stats = migrate(db_path, dry_run=args.dry_run, target_mid=args.model_id)
 
         print()
         print(f"Total notes:        {stats['total_notes']}")
@@ -244,6 +291,8 @@ def main() -> int:
         print(f"Notes to delete:    {stats['notes_deleted']}")
         print(f"Cards to delete:    {stats['cards_deleted']}")
         print(f"Revlog to delete:   {stats['revlog_deleted']}")
+        if "model_retarget" in stats:
+            print(f"Model retarget:     {stats['model_retarget']}")
 
         if args.dry_run:
             print("\n(dry run, no output written)")
