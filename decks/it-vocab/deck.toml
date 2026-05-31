@@ -8,15 +8,15 @@ deck_base_id = 2059400110
 count = 10
 
 [tiers.names]
-1 = "Tier 1 - Foundational"
-2 = "Tier 2 - Basic Development"
-3 = "Tier 3 - Intermediate"
-4 = "Tier 4 - Advanced"
-5 = "Tier 5 - Communication"
-6 = "Tier 6 - Expert"
-7 = "Tier 7 - Job Interview"
-8 = "Tier 8 - Problem Solving"
-9 = "Tier 9 - AI & Agents"
+1 = "Tier 01 - Foundational"
+2 = "Tier 02 - Basic Development"
+3 = "Tier 03 - Intermediate"
+4 = "Tier 04 - Advanced"
+5 = "Tier 05 - Communication"
+6 = "Tier 06 - Expert"
+7 = "Tier 07 - Job Interview"
+8 = "Tier 08 - Problem Solving"
+9 = "Tier 09 - AI & Agents"
 10 = "Tier 10 - Documentation & Engineering Culture"
 
 [tiers.sizes]

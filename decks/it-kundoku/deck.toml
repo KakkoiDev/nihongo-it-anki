@@ -8,9 +8,9 @@ deck_base_id = 2160501211
 count = 3
 
 [tiers.names]
-1 = "Tier 1 - Grammar"
-2 = "Tier 2 - Actions"
-3 = "Tier 3 - Nouns, Descriptors & Patterns"
+1 = "Tier 01 - Grammar"
+2 = "Tier 02 - Actions"
+3 = "Tier 03 - Nouns, Descriptors & Patterns"
 
 [tiers.sizes]
 1 = 27

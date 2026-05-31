@@ -211,3 +211,53 @@ uv run python scripts/migrate_guids.py \
 # 5. Preferences -> Syncing -> force upload -> Sync.
 # 6. Phone: sync, download from AnkiWeb.
 ```
+
+## Subdeck Name Migration (Tier 1 -> Tier 01)
+
+Separate one-time fix from the GUID migration above. The deck's tier
+subdeck names were renamed from `"Tier N - ..."` to `"Tier 0N - ..."`
+so Anki sorts them numerically instead of as `1, 10, 2, 3`.
+
+### Why a script is needed
+
+Anki does NOT auto-rename existing decks on `.apkg` import. It matches
+decks by full name path. When an updated apkg ships with
+`"Japanese IT Vocabulary::Tier 01 - Foundational"` and the user's
+collection has `"Japanese IT Vocabulary::Tier 1 - Foundational"`, Anki
+creates a NEW empty `"Tier 01"` subdeck and leaves the existing cards
+in `"Tier 1"`. Result: duplicate-looking subdecks, half empty.
+
+`scripts/migrate_deck_names.py` rewrites the `decks.name` rows directly
+so future imports map to the same subdecks. Card history is untouched:
+cards reference decks via `cards.did` (deck ID), which is unchanged by
+a name rename.
+
+### Procedure (per user)
+
+1. **Close Anki.**
+2. **Safety backup** (see step 1 of the GUID procedure above).
+3. **Dry run:**
+   ```
+   uv run python scripts/migrate_deck_names.py \
+     "$HOME/.local/share/Anki2/User 1/collection.anki2" \
+     --deck it-vocab --dry-run
+   ```
+   Expect 9 planned renames (Tier 1..9). Tier 10 already correct.
+4. **Real run:** drop `--dry-run`. Repeat for `--deck it-kundoku`.
+5. **Open Anki.** Subdecks should now show `Tier 01..Tier 10` in order.
+6. **Force-upload to AnkiWeb** (same as pitfall #7 above): direct DB
+   edits don't bump `usn`. First sync after this will fail with "use
+   Check Database again". Then Preferences -> Syncing -> force changes
+   one direction -> Upload.
+
+### Idempotency and edge cases
+
+- Rerunning after success is a no-op (matches new names, reports
+  "already correct").
+- If a user has manually renamed a subdeck to something else, the regex
+  match falls through and that subdeck is left alone.
+- Script only touches rows in the `decks` table whose name matches the
+  configured deck's parent prefix. Other decks (Minihongo, Yomitan,
+  etc.) are not affected.
+- Handles zstd-compressed `collection.anki21b` the same way as
+  `migrate_guids.py`.
