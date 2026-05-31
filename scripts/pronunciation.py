@@ -10,6 +10,8 @@ Pipeline (preprocess_for_tts):
   2. Strip furigana brackets, keep kanji: 昼食【ちゅうしょく】 -> 昼食
   3. English term conversion: API -> エーピーアイ
   4. Cleanup leftover brackets
+  5. Post-particle-は comma fix (force pause so first mora isn't elided)
+  6. Targeted katakana-after-conjugation fix (えばドキュメント)
 
 CRITICAL: The Pronunciation field serves DUAL purpose:
   1. Card display: create_deck.py renders it with to_ruby_html() for
@@ -26,27 +28,86 @@ CRITICAL: The Pronunciation field serves DUAL purpose:
   WRONG: Change CSV from 提出【ていしゅつ】 to ていしゅつ
   RIGHT: Add '提出' to TTS_KANJI_OVERRIDES, keep CSV as 提出【ていしゅつ】
 
-Lessons learned:
-- Edge TTS reads the Pronunciation field, NOT TTSPronunciation.
-  The TTSPronunciation column had artificial commas that caused unnatural
-  pauses (e.g. "が、できました"). Never use it for audio generation.
-- Do NOT add artificial commas (、) to the Pronunciation field for TTS
-  workarounds. They appear on the card. Acronym-to-katakana merging
-  (e.g. ピーアール running into レビュー) does not need comma separation
-  in current Edge TTS.
-- Edge TTS misreads certain kanji even with correct furigana, because
-  preprocessing strips furigana and feeds bare kanji to TTS. Known cases
-  are listed in TTS_KANJI_OVERRIDES. extract_furigana() substitutes
-  the bracketed reading for these kanji automatically.
-- English loanwords (webhook, README) should be written as katakana
-  directly in the Pronunciation field (ウェブフック, リードミー) rather
-  than relying on ACRONYM_MAP conversion, to avoid TTS garbling.
-  This also improves card display (learner sees katakana pronunciation).
-- Irregular counter words like 2日=ふつか must use kana directly in the
-  Pronunciation field. The digit "2" gets read as "ni" by TTS, producing
-  "ni futsuka" instead of just "futsuka".
-- \b word boundary doesn't work at Japanese/ASCII boundaries. Use
+----------------------------------------------------------------------
+HOW TO FIX A TTS BUG
+----------------------------------------------------------------------
+
+Workflow:
+  1. Reproduce: `uv run python scripts/test_tts.py --tier N --row M`
+     The script reads CSV row M's Pronunciation field, runs it through
+     preprocess_for_tts(), and writes test_tier{N}_{MMM}.mp3. Listen.
+  2. Read the printed "TTS input:" line. That is the exact string Edge
+     TTS receives. If it's already wrong (e.g. missing a mora), the
+     bug is upstream of TTS (CSV or preprocessing). If it looks right
+     but the audio is wrong, the bug is in Edge TTS itself.
+  3. Classify the bug (see below), apply the matching fix, re-run
+     test_tts.py. Compare hashes with the on-disk file:
+        sha256sum test_tier{N}_{MMM}.mp3 \\
+                  decks/it-vocab/tier{N}-audio/tier{N}_{MMM}.mp3
+     Identical hashes mean Edge TTS produces the same audio: your fix
+     hasn't changed the input, or the on-disk file was already fixed.
+  4. When the audio is good, regenerate the affected tier with --force
+     and rebuild the .apkg. See CLAUDE.md "Full Rebuild Example".
+
+Bug classes and where to fix:
+
+  A. KANJI MISREADING (Edge TTS reads the wrong kana for a known kanji).
+     Symptom: a kanji is read in isolation or with a wrong pitch.
+     Examples: 型 -> がた (should be かた), 既存 -> そん (drops き).
+     Fix: add the kanji (or whole compound) to TTS_KANJI_OVERRIDES.
+     extract_furigana() will substitute the bracketed reading in the
+     TTS pipeline. CSV stays unchanged. See TTS_KANJI_OVERRIDES below.
+
+  B. POST-PARTICLE-は PROSODIC ELISION (Edge TTS weakens or drops the
+     first mora of any hiragana word immediately after particle は).
+     Symptom: は + すべて -> "wa-bete", は + どの -> faint do,
+              は + きそん -> "wa-son", は + もじれつ -> "wa-jiretsu".
+     Fix: ALREADY HANDLED by the regex in preprocess_for_tts (search for
+     "post-particle-は"). Inserts a comma when は is preceded by a
+     content word (kanji/katakana) and followed by hiragana. No action
+     needed for new sentences matching this pattern. If you find a case
+     not covered (e.g. は preceded by hiragana like それは + word),
+     extend the lookbehind class rather than adding a narrow replace.
+
+  C. NEW PROSODIC GLITCH NOT COVERED BY (B). E.g. えばドキュメント -> ド
+     elided. Treatment: targeted text.replace() at the end of
+     preprocess_for_tts(), with a comment quoting the symptom. Keep
+     these narrow: a broad regex risks regressing other sentences.
+
+  D. ENGLISH/ACRONYM GARBLE. Symptom: an English word reads weirdly
+     (e.g. SDK as "ess-deck"). Fix: add an entry to ACRONYM_MAP with
+     the correct katakana. If the loanword should display as katakana
+     on the card too (webhook -> ウェブフック), write katakana directly
+     in the CSV Pronunciation field instead.
+
+  E. DIGIT IRREGULARITY (counter words). Symptom: 2日 reads "ni futsuka"
+     because "2" gets read as "ni" but the kanji is already irregular.
+     Fix: write the kana directly in the CSV (ふつか), not 2日【ふつか】.
+
+What to AVOID:
+- Do NOT add commas (、) directly to the CSV Pronunciation field for
+  TTS workarounds. They appear on the card. TTS-only commas go in
+  preprocess_for_tts() via text.replace() or regex.
+- Do NOT replace kanji with kana in the CSV. That breaks card display.
+  Use TTS_KANJI_OVERRIDES.
+- Do NOT use the TTSPronunciation column. It has artificial commas that
+  cause unnatural pauses ("が、できました"). Audio gen reads Pronunciation.
+- \\b word boundary doesn't work at Japanese/ASCII boundaries. Use a
   negative lookbehind (?<![A-Za-z]) instead.
+
+Lessons learned (running log):
+- Edge TTS handles particle は as "wa" without the old は->わ workaround.
+  Commit 38567bd removed the workaround. The post-particle-は elision
+  is a separate prosodic phenomenon, fixed by the comma regex.
+- The 文字列 -> "jiretsu" bug initially looked like a kanji misreading
+  (class A), but the underlying problem was actually post-は elision
+  (class B). The kanji override gave us もじれつ, but Edge TTS still
+  dropped the も because of particle は before it. Keep both fixes as
+  defense-in-depth: override gets the right phonemes, comma forces the
+  pause.
+- The same root-cause confusion happened for 既存. If a kanji-override
+  fix doesn't resolve a missing-first-mora bug, check if particle は
+  precedes the word.
 """
 
 import re
@@ -378,12 +439,14 @@ NUMBER_MAP = {
 #
 # Known misreadings:
 #   型 -> がた (Edge TTS reads がた instead of かた in isolation)
+#   既存 -> そん (Edge TTS drops the き, reads as just "son")
+#   文字列 -> じれつ (Edge TTS drops the も, reads as just "jiretsu")
 #
 # NOT overridden (TTS limitation, override doesn't help):
 #   提出 -> ていしつ (Edge TTS drops しゅつ to しつ, but kana input
 #           sounds identical. Keeping kanji preserves correct pitch.)
 #   抽出 -> ちゅうしつ (same しゅつ pattern, same TTS limitation)
-TTS_KANJI_OVERRIDES = {'型'}
+TTS_KANJI_OVERRIDES = {'型', '既存', '文字列'}
 
 
 def extract_furigana(text: str) -> str:
@@ -455,13 +518,18 @@ def preprocess_for_tts(text: str) -> str:
     """Preprocessing pipeline for TTS input.
 
     1. Substitute symbols Edge TTS can't pronounce (%, version strings)
-    2. Extract furigana readings
+    2. Extract furigana readings (applies TTS_KANJI_OVERRIDES)
     3. Convert English terms to katakana
-    4. Clean up any remaining brackets
+    4. Clean up any remaining brackets and excess whitespace
+    5. Insert a comma after particle は to prevent first-mora elision
+       on the following hiragana word (class B in the module docstring)
+    6. Apply any narrow string fixes for prosodic glitches that are not
+       particle-は (currently: えばドキュメント -> えば、ドキュメント)
 
-    Edge TTS now correctly reads particle は as "wa" without replacement.
-    Earlier versions required a は->わ workaround that caused "wa-subete" to
-    elide the す; keeping は as-is avoids that.
+    Edge TTS reads particle は as "wa" correctly without a は->わ
+    substitution. The post-particle-は comma fix below (step 5) addresses
+    a separate prosodic bug where the first mora of the next hiragana
+    word is elided or weakened.
     """
     # Step 1: Symbol substitutions
     text = text.replace('%', 'パーセント')
@@ -480,10 +548,23 @@ def preprocess_for_tts(text: str) -> str:
     text = re.sub(r'【[^】]*】', '', text)
     text = ' '.join(text.split())
 
-    # Edge TTS elides す in particle-は + すべて (reads "wa-bete"). Insert a
-    # comma to force a pause, so subete is pronounced clearly. TTS-only;
-    # CSV Pronunciation field stays clean for card display.
-    text = text.replace('はすべて', 'は、すべて')
+    # Edge TTS weakens or elides the first mora of a hiragana word
+    # immediately after particle は. Observed: はすべて -> "wa-bete",
+    # はどの -> "wa-(faint)ono", はきそん -> "wa-son", はもじれつ ->
+    # "wa-jiretsu". Insert a comma after は (TTS-only) when は is preceded
+    # by a content word (kanji, katakana, or 々 repetition mark) and
+    # followed by hiragana. This forces a pause so the next mora is
+    # articulated. CSV Pronunciation field stays clean for card display.
+    text = re.sub(
+        r'(?<=[一-鿿々゠-ヿ])は(?=[ぁ-ゖ])',
+        'は、',
+        text,
+    )
+
+    # Edge TTS elides ド in 使えばドキュメント (reads "tsukaeba-kyumento"
+    # instead of "tsukaeba-dokyumento"). Same comma-pause workaround, but
+    # not a particle-は case so handled separately.
+    text = text.replace('えばドキュメント', 'えば、ドキュメント')
 
     # Ensure ends with punctuation for clean TTS delivery
     if text and text[-1] not in '。！？、':
@@ -508,6 +589,16 @@ if __name__ == '__main__':
         'ハッピーパスをテストしてください。',
         'データベースをバックアップしてください。',
         'コードレビューをお願いします。',
+        # Post-particle-は fix: expect 'は、' after content-word + は + hiragana
+        'このモジュールはすべてのデータベース操作【そうさ】を処理【しょり】します。',
+        'この変更【へんこう】は既存【きそん】の機能【きのう】を壊【こわ】すかもしれません。',
+        'IDは文字列【もじれつ】ではなく数値【すうち】であるべきです。',
+        'このパラメータはどの型【かた】であるべきですか？',
+        # No fix expected: は preceded by hiragana (それは) or followed by kanji
+        'それはまだ確定【かくてい】していません。',
+        'これは新【あたら】しい機能【きのう】です。',
+        # えばドキュメント narrow fix
+        'テンプレートを使【つか】えばドキュメントの品質【ひんしつ】を均一【きんいつ】にできます。',
     ]
 
     print("Pronunciation Preprocessing Test\n")
