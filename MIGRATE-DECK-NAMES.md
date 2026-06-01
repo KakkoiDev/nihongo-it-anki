@@ -30,6 +30,11 @@ correct names directly.
    detects the change.
 5. Bumps `col.mod` so Anki sees the collection as modified.
 6. Verifies each rename by `SELECT`ing the row back.
+7. Detects orphan subdecks (under the same parent but not in current
+   `deck.toml`). Reports them by default. With `--delete-orphans`,
+   also removes them (cards, dependent-only notes, revlog, deck row)
+   with `graves` tombstones for sync. Refuses if any orphan has
+   `reviews > 0`.
 
 Before any write, it copies your collection to a `.bak-<timestamp>`
 sibling and refuses to proceed if the backup fails.
@@ -121,6 +126,34 @@ uv run python scripts/migrate_deck_names.py \
 ```
 
 Expect 3 planned renames for the `IT Kundoku` decks.
+
+### 4a. Optional: clean up orphan subdecks
+
+If a previous `deck.toml` revision had different tier names (e.g.
+`Tier 9 - AI & Documentation` was split into the current
+`Tier 09 - AI & Agents` plus `Tier 10 - Documentation & Engineering Culture`),
+your collection may still hold the old subdeck as a dangling row with
+its own GUIDs.
+
+The rename run reports these as `Orphans detected`. Decide:
+
+- **Skip** if those decks contain content you still want as-is, OR if
+  they have reviews you don't want to lose.
+- **Delete** with `--delete-orphans`:
+
+  ```bash
+  uv run python scripts/migrate_deck_names.py \
+    "$HOME/.local/share/Anki2/User 1/collection.anki2" \
+    --deck it-vocab --delete-orphans
+  ```
+
+  This removes the orphan deck, its cards, dependent-only notes
+  (notes shared with other decks are preserved), and any revlog rows.
+  Writes `graves` tombstones so AnkiWeb sync propagates the deletion.
+
+  The script **refuses** if any orphan has `reviews > 0`. Move those
+  cards in Anki UI first (`Browse -> select -> Change Deck`), then
+  delete the empty stub or re-run with `--delete-orphans`.
 
 ### 5. Open Anki and verify
 

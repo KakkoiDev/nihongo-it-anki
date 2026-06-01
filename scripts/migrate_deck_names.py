@@ -19,9 +19,9 @@ What this script does:
     derives the OLD un-padded names by regex (Tier 0N -> Tier N), and
     runs UPDATE on the decks table in collection.anki2. Updates
     decks.mtime_secs, decks.usn, and col.mod so AnkiWeb sync detects
-    the change. Does not touch cards, notes, revlog, or media. Card
-    deck assignments (cards.did) point to deck IDs, which are
-    unchanged. Review history is preserved.
+    the change. Does not touch cards, notes, revlog, or media for the
+    renamed decks. Card deck assignments (cards.did) point to deck
+    IDs, which are unchanged. Review history is preserved.
 
     Auto-backs up the collection to a .bak-<timestamp> sibling before
     any write. Refuses to proceed if backup fails.
@@ -30,6 +30,14 @@ What this script does:
     the NEW deck (empty stub from a previous botched import) already
     exist, the unique index on decks.name would block the rename.
     Detected up-front and reported; user resolves manually.
+
+    Detects orphan subdecks: decks under the same parent whose tier
+    portion is neither in the current deck.toml nor in the pending
+    rename map (typically leftovers from a previous deck.toml revision
+    where a tier was renamed or split). Reports by default. Pass
+    --delete-orphans to also remove them, with revlog tombstones in
+    the graves table so AnkiWeb sync propagates the deletion. Refuses
+    to delete any orphan with reviews > 0; resolve those manually.
 
     Handles zstd-compressed collections (Anki 2.1.50+, collection.anki21b)
     the same way migrate_guids.py does.
@@ -122,6 +130,133 @@ def build_rename_map(slug: str) -> dict[str, str]:
     return rename
 
 
+def find_orphans(
+    existing: list[tuple[int, str]],
+    slug: str,
+    rename: dict[str, str],
+) -> list[tuple[int, str]]:
+    """Return [(deck_id, internal_name), ...] for orphan subdecks.
+
+    An orphan is a direct child of the parent deck (name starts with
+    parent\\x1f) whose tier portion is neither in the current
+    deck.toml tier_names nor in the pending rename's OLD names.
+    Deeper-nested subdecks (>1 level under parent) are skipped to
+    avoid touching user-created decks.
+    """
+    config = load_deck_config(slug)
+    parent_prefix = f"{config.name}{DECK_SEPARATOR}"
+    current_tiers = set(config.tier_names.values())
+    old_tier_parts = {
+        old[len(parent_prefix):] for old in rename
+        if old.startswith(parent_prefix)
+    }
+
+    orphans: list[tuple[int, str]] = []
+    for did, name in existing:
+        if not name.startswith(parent_prefix):
+            continue
+        tier_part = name[len(parent_prefix):]
+        if DECK_SEPARATOR in tier_part:
+            continue  # nested >1 level, leave alone
+        if tier_part in current_tiers or tier_part in old_tier_parts:
+            continue
+        orphans.append((did, name))
+    return orphans
+
+
+def orphan_metadata(
+    conn: sqlite3.Connection, orphans: list[tuple[int, str]]
+) -> dict[int, dict]:
+    """Return per-orphan {card_ids, note_ids, reviews}."""
+    meta: dict[int, dict] = {}
+    for did, _ in orphans:
+        card_rows = conn.execute(
+            "SELECT id, nid FROM cards WHERE did = ?", (did,)
+        ).fetchall()
+        card_ids = [r[0] for r in card_rows]
+        note_ids = {r[1] for r in card_rows}
+        reviews = 0
+        if card_ids:
+            placeholders = ",".join("?" for _ in card_ids)
+            reviews = conn.execute(
+                f"SELECT COUNT(*) FROM revlog WHERE cid IN ({placeholders})",
+                card_ids,
+            ).fetchone()[0]
+        meta[did] = {
+            "card_ids": card_ids,
+            "note_ids": note_ids,
+            "reviews": reviews,
+        }
+    return meta
+
+
+def delete_orphan_decks(
+    conn: sqlite3.Connection,
+    orphans: list[tuple[int, str]],
+    meta: dict[int, dict],
+) -> dict[str, int]:
+    """Delete orphan decks: cards, dependent-only notes, revlog, deck row.
+
+    Inserts graves tombstones (type 0=card, 1=note, 2=deck, usn=-1)
+    so AnkiWeb sync propagates the deletion instead of restoring it.
+
+    A note is deleted only if it has no cards in non-orphan decks.
+    This keeps notes shared with other decks intact.
+    """
+    orphan_dids = {did for did, _ in orphans}
+    deleted = {"cards": 0, "notes": 0, "revlog": 0, "decks": 0}
+
+    for did, _ in orphans:
+        m = meta[did]
+        card_ids = m["card_ids"]
+        note_ids = m["note_ids"]
+
+        if card_ids:
+            cph = ",".join("?" for _ in card_ids)
+            rev_deleted = conn.execute(
+                f"DELETE FROM revlog WHERE cid IN ({cph})", card_ids
+            ).rowcount
+            deleted["revlog"] += rev_deleted
+            conn.executemany(
+                "INSERT OR IGNORE INTO graves (oid, type, usn) "
+                "VALUES (?, 0, -1)",
+                [(cid,) for cid in card_ids],
+            )
+            conn.execute(f"DELETE FROM cards WHERE id IN ({cph})", card_ids)
+            deleted["cards"] += len(card_ids)
+
+        if note_ids:
+            nph = ",".join("?" for _ in note_ids)
+            still_used = {
+                row[0] for row in conn.execute(
+                    f"SELECT DISTINCT nid FROM cards WHERE nid IN ({nph})",
+                    list(note_ids),
+                )
+            }
+            to_delete = note_ids - still_used
+            if to_delete:
+                dph = ",".join("?" for _ in to_delete)
+                conn.executemany(
+                    "INSERT OR IGNORE INTO graves (oid, type, usn) "
+                    "VALUES (?, 1, -1)",
+                    [(nid,) for nid in to_delete],
+                )
+                conn.execute(
+                    f"DELETE FROM notes WHERE id IN ({dph})",
+                    list(to_delete),
+                )
+                deleted["notes"] += len(to_delete)
+
+        conn.execute("DELETE FROM decks WHERE id = ?", (did,))
+        conn.execute(
+            "INSERT OR IGNORE INTO graves (oid, type, usn) VALUES (?, 2, -1)",
+            (did,),
+        )
+        deleted["decks"] += 1
+
+    return deleted
+
+
 def backup_collection(path: Path) -> Path:
     """Copy `path` to a sibling `.bak-<timestamp>` and return the new path.
 
@@ -136,8 +271,15 @@ def backup_collection(path: Path) -> Path:
     return backup
 
 
-def migrate(db_path: Path, rename: dict[str, str], dry_run: bool) -> dict:
-    """Apply rename map to decks table.
+def migrate(
+    db_path: Path,
+    rename: dict[str, str],
+    slug: str,
+    *,
+    dry_run: bool,
+    delete_orphans: bool,
+) -> dict:
+    """Apply rename map to decks table; optionally delete orphan subdecks.
 
     Bumps decks.mtime_secs (seconds), sets decks.usn = -1 (needs sync),
     and bumps col.mod (milliseconds) so Anki and AnkiWeb sync recognize
@@ -147,6 +289,12 @@ def migrate(db_path: Path, rename: dict[str, str], dry_run: bool) -> dict:
     whose target collides with an existing row. Detected up-front by
     comparing each target against the existing name set; conflicts are
     skipped and reported (we cannot safely guess merge intent).
+
+    Orphan handling: subdecks under the parent that are neither in
+    deck.toml nor pending rename are reported. With delete_orphans=True,
+    they are removed (cards, dependent-only notes, revlog, deck row)
+    with graves tombstones written for sync. Refuses if any orphan has
+    reviews > 0.
 
     Verifies each rename by SELECTing the row back after commit.
     """
@@ -179,6 +327,9 @@ def migrate(db_path: Path, rename: dict[str, str], dry_run: bool) -> dict:
         else:
             untouched += 1
 
+    orphans = find_orphans(existing, slug, rename)
+    o_meta = orphan_metadata(conn, orphans)
+
     stats = {
         "total_decks": len(existing),
         "plan": plan,
@@ -186,22 +337,46 @@ def migrate(db_path: Path, rename: dict[str, str], dry_run: bool) -> dict:
         "already_correct": already_correct,
         "untouched": untouched,
         "verified": 0,
+        "orphans": orphans,
+        "orphan_meta": o_meta,
+        "orphans_deleted": None,  # set after deletion
     }
 
-    if dry_run or not plan:
+    if dry_run or (not plan and not (delete_orphans and orphans)):
         conn.close()
         return stats
+
+    if delete_orphans:
+        unsafe = [
+            (did, name) for did, name in orphans
+            if o_meta[did]["reviews"] > 0
+        ]
+        if unsafe:
+            conn.close()
+            raise RuntimeError(
+                "Cannot --delete-orphans: the following have reviews > 0. "
+                "Move cards or delete manually in Anki UI first.\n"
+                + "\n".join(
+                    f"  {display(name)!r}: {o_meta[did]['reviews']} reviews"
+                    for did, name in unsafe
+                )
+            )
 
     now_secs = int(time.time())
     now_ms = now_secs * 1000
 
     try:
         with conn:
-            conn.executemany(
-                "UPDATE decks SET name = ?, mtime_secs = ?, usn = -1 "
-                "WHERE id = ?",
-                [(new, now_secs, did) for did, _, new in plan],
-            )
+            if plan:
+                conn.executemany(
+                    "UPDATE decks SET name = ?, mtime_secs = ?, usn = -1 "
+                    "WHERE id = ?",
+                    [(new, now_secs, did) for did, _, new in plan],
+                )
+            if delete_orphans and orphans:
+                stats["orphans_deleted"] = delete_orphan_decks(
+                    conn, orphans, o_meta
+                )
             conn.execute(
                 "UPDATE col SET mod = ?, usn = -1", (now_ms,)
             )
@@ -225,13 +400,14 @@ def migrate(db_path: Path, rename: dict[str, str], dry_run: bool) -> dict:
     return stats
 
 
-def print_stats(stats: dict, *, dry_run: bool) -> None:
+def print_stats(stats: dict, *, dry_run: bool, delete_orphans: bool) -> None:
     print(f"Total decks scanned:  {stats['total_decks']}")
     print(f"Planned renames:      {len(stats['plan'])}")
     if not dry_run:
         print(f"Verified after write: {stats['verified']}/{len(stats['plan'])}")
     print(f"Conflicts (skipped):  {len(stats['conflicts'])}")
     print(f"Already correct:      {len(stats['already_correct'])}")
+    print(f"Orphans detected:     {len(stats['orphans'])}")
     print(f"Untouched (other):    {stats['untouched']}")
 
     if stats["plan"]:
@@ -251,6 +427,33 @@ def print_stats(stats: dict, *, dry_run: bool) -> None:
             "\n  Resolve in Anki: right-click the empty duplicate "
             "subdeck and Delete, then re-run this script."
         )
+
+    if stats["orphans"]:
+        meta = stats["orphan_meta"]
+        heading = "Orphans deleted:" if (
+            stats["orphans_deleted"] is not None
+        ) else "Orphans detected (not deleted):"
+        print(f"\n{heading}")
+        for did, name in stats["orphans"]:
+            m = meta[did]
+            print(
+                f"  {display(name)!r}  "
+                f"(deck id {did}: {len(m['card_ids'])} cards, "
+                f"{len(m['note_ids'])} notes, {m['reviews']} reviews)"
+            )
+        if stats["orphans_deleted"] is not None:
+            d = stats["orphans_deleted"]
+            print(
+                f"\n  Removed: {d['cards']} cards, {d['notes']} notes, "
+                f"{d['revlog']} revlog rows, {d['decks']} deck rows. "
+                f"Graves written for AnkiWeb sync."
+            )
+        elif not delete_orphans:
+            print(
+                "\n  Re-run with --delete-orphans to remove them "
+                "(refused if any has reviews > 0).\n"
+                "  Skip if their content is unique to that deck."
+            )
 
 
 def main() -> int:
@@ -281,6 +484,13 @@ def main() -> int:
         help="Skip the automatic .bak-<timestamp> safety copy. Only set "
              "this if you have your own backup. Ignored under --dry-run.",
     )
+    parser.add_argument(
+        "--delete-orphans",
+        action="store_true",
+        help="Also delete orphan subdecks (under the same parent but not "
+             "in current deck.toml). Refused if any orphan has reviews > 0; "
+             "resolve those manually first.",
+    )
     args = parser.parse_args()
 
     if not args.collection.exists():
@@ -288,10 +498,11 @@ def main() -> int:
         return 1
 
     rename = build_rename_map(args.deck)
-    if not rename:
+    if not rename and not args.delete_orphans:
         print(
             f"No renames to apply: deck.toml for '{args.deck}' is not "
-            f"zero-padded (Tier 0N pattern not found)."
+            f"zero-padded (Tier 0N pattern not found). Pass --delete-orphans "
+            f"to scan for orphan subdecks anyway."
         )
         return 0
 
@@ -330,7 +541,11 @@ def main() -> int:
             print(f"Decompressed zstd -> {db_path}")
 
         try:
-            stats = migrate(db_path, rename, dry_run=args.dry_run)
+            stats = migrate(
+                db_path, rename, args.deck,
+                dry_run=args.dry_run,
+                delete_orphans=args.delete_orphans,
+            )
         except sqlite3.OperationalError as e:
             if "locked" in str(e).lower():
                 print(
@@ -341,7 +556,7 @@ def main() -> int:
                 return 1
             raise
 
-        print_stats(stats, dry_run=args.dry_run)
+        print_stats(stats, dry_run=args.dry_run, delete_orphans=args.delete_orphans)
 
         if not args.dry_run and compressed_path is not None:
             zstd_compress(db_path, compressed_path)
@@ -350,7 +565,11 @@ def main() -> int:
         if args.dry_run:
             print("\n(dry run, no changes written)")
 
-        if not stats["plan"] and not stats["already_correct"]:
+        if (
+            not stats["plan"]
+            and not stats["already_correct"]
+            and not stats["orphans"]
+        ):
             parent = load_deck_config(args.deck).name
             print(
                 "\nWarning: zero decks matched. Common causes:\n"
