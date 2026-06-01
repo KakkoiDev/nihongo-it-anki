@@ -43,7 +43,7 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 
 ```
 decks/
-  it-vocab/           # IT Vocabulary deck (10 tiers, 1265 sentences)
+  it-vocab/           # IT Vocabulary deck (10 tiers, 1176 sentences)
     deck.toml         # Deck config (name, IDs, tier definitions)
     translations.py   # Cloze word translations
     tier{1-10}-vocabulary.csv
@@ -112,17 +112,17 @@ Each deck is released independently with its own version tag (`{deck}/{version}`
 
 ```bash
 # Preview what will be released
-uv run python scripts/release.py --deck it-vocab --version v4.0 --dry-run
+uv run python scripts/release.py --deck it-vocab --version v4.1 --dry-run
 
 # Create releases
-uv run python scripts/release.py --deck it-vocab --version v4.0 --title "Tier 9/10 split"
+uv run python scripts/release.py --deck it-vocab --version v4.1 --title "Tier 9/10 split"
 uv run python scripts/release.py --deck it-kundoku --version v1.0 --title "Initial release"
 
 # Draft release (not published)
 uv run python scripts/release.py --deck it-kundoku --version v1.0 --draft
 
 # Release notes from file
-uv run python scripts/release.py --deck it-vocab --version v4.0 --notes-file RELEASE.md
+uv run python scripts/release.py --deck it-vocab --version v4.1 --notes-file RELEASE.md
 ```
 
 Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files.

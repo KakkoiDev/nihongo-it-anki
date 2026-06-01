@@ -66,7 +66,7 @@ To regenerate audio and rebuild for a single deck:
 ```bash
 uv run python scripts/generate_audio.py --deck it-vocab --all
 uv run python scripts/create_deck.py --deck it-vocab --combined --all
-uv run python scripts/release.py --deck it-vocab --version v4.0 --title "Description" --dry-run
+uv run python scripts/release.py --deck it-vocab --version v4.1 --title "Description" --dry-run
 ```
 
 If sentences in a tier changed (e.g. tier split), force-regenerate that tier's audio:
