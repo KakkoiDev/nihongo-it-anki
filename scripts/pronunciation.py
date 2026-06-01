@@ -438,18 +438,32 @@ NUMBER_MAP = {
 # is shown on cards with furigana. Replacing kanji breaks card display.
 #
 # Known misreadings:
-#   型   -> がた   (Edge TTS reads がた instead of かた in isolation)
-#   既存 -> そん   (drops the き, reads as just "son")
+#   型     -> がた   (Edge TTS reads がた instead of かた in isolation)
+#   既存   -> そん   (drops the き, reads as just "son")
 #   文字列 -> じれつ (drops the も, reads as just "jiretsu")
-#   一意 -> イ     (drops チイ; even with the comma-after-particle-は
-#                  fix in place, Edge TTS only voices the first kana
-#                  of 一意. Override fixes it cleanly.)
+#   一意   -> イ     (drops チイ; the post-は comma alone wasn't enough,
+#                    Edge TTS only voiced the first kana. Override fixes
+#                    it cleanly.)
+#   行     -> こう   (Edge TTS picks the こう/コウ reading when context
+#                    wants ぎょう ('database row/line'). The override
+#                    only affects standalone 行【...】; compounds like
+#                    銀行 / 移行 / 実行 are captured as multi-kanji
+#                    matches and stay untouched.)
+#   中     -> なか   (Edge TTS picks なか when context wants ちゅう
+#                    ('mid-progress', '内に'). Same single-kanji
+#                    scope rule: standalone 中【ちゅう】 only;
+#                    compounds like 集中 / 中国 are unaffected.)
+#   閾値   -> いきち (Edge TTS misreads the rare 閾 kanji. CSV has
+#                    閾値【しきいち】; override forces that reading.)
 #
 # NOT overridden (TTS limitation, override doesn't help):
 #   提出 -> ていしつ (Edge TTS drops しゅつ to しつ, but kana input
 #           sounds identical. Keeping kanji preserves correct pitch.)
 #   抽出 -> ちゅうしつ (same しゅつ pattern, same TTS limitation)
-TTS_KANJI_OVERRIDES = {'型', '既存', '文字列', '一意'}
+TTS_KANJI_OVERRIDES = {
+    '型', '既存', '文字列', '一意',
+    '行', '中', '閾値',
+}
 
 
 def extract_furigana(text: str) -> str:
