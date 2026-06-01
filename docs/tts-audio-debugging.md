@@ -429,6 +429,63 @@ they were already identical). If they differ, the fix produced
 different audio bytes; combined with the audit pass, you've
 confirmed the fix.
 
+### Step 6: Re-import the apkg into Anki
+
+**Do not copy files into `~/.local/share/Anki2/User 1/collection.media/`.**
+That is a no-op and will silently fail.
+
+Why: on apkg import, Anki content-addresses media filenames to
+avoid collisions. The plain `tier1_134.mp3` you packaged with
+genanki gets renamed in the media folder to
+`tier1_134-<sha1-of-content>.mp3`, and the card's field is
+rewritten from `[sound:tier1_134.mp3]` to
+`[sound:tier1_134-<sha1>.mp3]`. So when the audio bytes change,
+the SHA1 changes, the filename changes, and any plain-named files
+you drop in by hand are not referenced by any card. They look
+unused. `Tools -> Check Media -> Delete Unused` then moves them
+to `media.trash/`, and the card keeps playing the old SHA1-suffixed
+file that was there before.
+
+Symptoms of this gotcha:
+
+- You fixed and regenerated the audio, the file on disk sounds
+  right when played directly, but Anki still plays the broken
+  version.
+- After `Check Media -> Delete Unused`, your "fixed" files land
+  in `media.trash/` even though their filenames look correct.
+- `ls collection.media/ | grep tier1_NNN` shows
+  `tier1_NNN-<long hex>.mp3` instead of plain `tier1_NNN.mp3`.
+
+Correct flow after any audio fix:
+
+1. Build the apkgs:
+   ```bash
+   uv run python scripts/create_deck.py --deck it-vocab --combined --all
+   ```
+2. In Anki: File -> Import -> select
+   `it-vocab-complete.apkg` (or per-tier file).
+3. Genanki uses stable GUIDs via `guid_for(Sentence)`, so cards
+   are matched and **updated in place** rather than duplicated.
+   The new audio bytes land in `collection.media/` under a fresh
+   SHA1-suffixed filename, and each card's Audio field is rewritten
+   to reference the new filename.
+4. After import, optionally run `Tools -> Check Media -> Delete
+   Unused` to clean up orphaned old-SHA1 files from prior imports.
+   This is safe now because cards no longer reference them.
+
+How to confirm Anki is actually playing the new audio:
+
+```bash
+ls "/home/<user>/.local/share/Anki2/User 1/collection.media/" \
+    | grep "^tier1_134-"
+```
+
+The SHA1 in the filename should be the SHA1 of the file in your
+repo's `decks/it-vocab/tier1-audio/tier1_134.mp3`. Compute it
+with `sha1sum decks/it-vocab/tier1-audio/tier1_134.mp3` and
+compare. If they match, Anki is on the new audio. If they
+differ, you have not re-imported since the fix.
+
 ---
 
 ## False positives to filter
@@ -685,6 +742,21 @@ reading.
 This file (`docs/tts-audio-debugging.md`) is the long-form
 narrative. The inline docstring is the in-context reference.
 Both serve different purposes.
+
+### Anki uses content-addressed media filenames
+
+Cost me hours this session. The "obvious" sync workflow (copy
+fixed mp3s into `collection.media/`) is silently a no-op because
+Anki renames imported media to `<name>-<sha1>.mp3` and rewrites
+the card field to match. After audio bytes change, the SHA1
+changes, the filename changes, plain-named drops are orphans.
+
+The correct invalidation step is `File -> Import` of the rebuilt
+apkg. Anki manages the renaming and field rewriting itself; stable
+genanki GUIDs ensure cards update rather than duplicate.
+
+See Step 6 of the fix workflow for the diagnostic and the full
+recipe.
 
 ---
 
