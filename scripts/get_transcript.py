@@ -38,10 +38,16 @@ import sys
 import unicodedata
 from pathlib import Path
 
+import fugashi
+import jaconv
+
 from pronunciation import preprocess_for_tts
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import load_deck_config
+
+_tagger = fugashi.Tagger()
+_KATAKANA_RE = re.compile(r"[^゠-ヿ]+")
 WHISPER_CLI = Path.home() / "Code/skool-live-transcript/vendor/whisper.cpp/build/bin/whisper-cli"
 MODEL_DIR = WHISPER_CLI.parent.parent.parent / "models"
 DOWNLOAD_SCRIPT = MODEL_DIR / "download-ggml-model.sh"
@@ -118,29 +124,107 @@ def normalize(text: str) -> str:
     return text
 
 
+def to_kana(text: str) -> str:
+    """Convert mixed Japanese text to pure katakana.
+
+    Uses fugashi+unidic to look up the katakana reading for each
+    morpheme. Falls back to converting hiragana -> katakana for
+    surfaces fugashi can't read (punctuation, ASCII, numbers etc.).
+    Caller should follow with kana_only() to strip the non-katakana
+    leftovers before comparing.
+    """
+    parts: list[str] = []
+    for word in _tagger(text):
+        kana = getattr(word.feature, "kana", None)
+        if kana and kana != "*":
+            parts.append(kana)
+        else:
+            parts.append(jaconv.hira2kata(word.surface))
+    return "".join(parts)
+
+
+def kana_only(text: str) -> str:
+    """Strip everything but katakana (incl. ー and small kana).
+
+    Used to compare expected vs transcript at the kana level after
+    to_kana() normalization. Kanji choice, punctuation, and stray
+    ASCII/digits no longer cause false-positive mismatches.
+    """
+    return _KATAKANA_RE.sub("", text)
+
+
+def edit_distance(a: str, b: str) -> int:
+    """Levenshtein distance. Iterative two-row DP."""
+    if a == b:
+        return 0
+    if not a:
+        return len(b)
+    if not b:
+        return len(a)
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        curr = [i]
+        for j, cb in enumerate(b, 1):
+            curr.append(min(
+                curr[j - 1] + 1,
+                prev[j] + 1,
+                prev[j - 1] + (0 if ca == cb else 1),
+            ))
+        prev = curr
+    return prev[-1]
+
+
+def classify(distance: int, length_delta: int) -> str:
+    """Categorize a comparison result.
+
+    OK              distance == 0
+    LIKELY_ELISION  characters missing in transcript (delta >= 2)
+    MISMATCH        any other discrepancy
+    """
+    if distance == 0:
+        return "OK"
+    if length_delta >= 2:
+        return "LIKELY_ELISION"
+    return "MISMATCH"
+
+
 def check_row(tier: int, row_num: int, sentences: list[dict], audio_dir: Path) -> dict:
-    """Transcribe one tier row and compare against expected pronunciation."""
+    """Transcribe one tier row and compare against expected pronunciation.
+
+    Comparison is at the kana-only level (kanji-choice differences from
+    Whisper don't trigger false positives). Returns edit_distance and
+    length_delta so callers can rank by likelihood of real bug.
+    """
     if row_num < 1 or row_num > len(sentences):
-        return {"row": row_num, "error": f"out of range (1-{len(sentences)})"}
+        return {"tier": tier, "row": row_num, "error": f"out of range (1-{len(sentences)})"}
 
     row = sentences[row_num - 1]
     audio_path = audio_dir / f"tier{tier}_{row_num:03d}.mp3"
 
     if not audio_path.exists():
-        return {"row": row_num, "error": "audio file missing"}
+        return {"tier": tier, "row": row_num, "error": "audio file missing"}
 
     expected = preprocess_for_tts(row["Pronunciation"])
     transcript = transcribe(audio_path, "ja")
-    exp_norm = normalize(expected)
-    trans_norm = normalize(transcript)
-    match = exp_norm == trans_norm
+
+    kana_expected = kana_only(to_kana(normalize(expected)))
+    kana_transcript = kana_only(to_kana(normalize(transcript)))
+
+    dist = edit_distance(kana_expected, kana_transcript)
+    length_delta = len(kana_expected) - len(kana_transcript)
+    status = classify(dist, length_delta)
 
     return {
+        "tier": tier,
         "row": row_num,
         "sentence": row["Sentence"],
         "expected": expected,
         "transcript": transcript,
-        "match": match,
+        "kana_expected": kana_expected,
+        "kana_transcript": kana_transcript,
+        "edit_distance": dist,
+        "length_delta": length_delta,
+        "status": status,
     }
 
 
@@ -150,14 +234,34 @@ def print_result(r: dict):
         print(f"  Row {r['row']}: ERROR - {r['error']}")
         return
 
-    status = "OK" if r["match"] else "MISMATCH"
-    print(f"  Row {r['row']}: {status}")
-    print(f"    Sentence:   {r['sentence']}")
-    print(f"    Expected:   {r['expected']}")
-    print(f"    Transcript: {r['transcript']}")
-    if not r["match"]:
-        print(f"    Exp norm:   {normalize(r['expected'])}")
-        print(f"    Trans norm: {normalize(r['transcript'])}")
+    print(
+        f"  Row {r['row']}: {r['status']}  "
+        f"dist={r['edit_distance']}  delta={r['length_delta']:+d}"
+    )
+    if r["status"] != "OK":
+        print(f"    Sentence:    {r['sentence']}")
+        print(f"    Expected:    {r['expected']}")
+        print(f"    Transcript:  {r['transcript']}")
+        print(f"    Exp kana:    {r['kana_expected']}")
+        print(f"    Trans kana:  {r['kana_transcript']}")
+
+
+REPORT_FIELDS = [
+    "tier", "row", "sentence", "expected", "transcript",
+    "kana_expected", "kana_transcript",
+    "edit_distance", "length_delta", "status",
+]
+
+
+def write_report(path: Path, results: list[dict]) -> None:
+    """Write a CSV with one row per checked file. Skips error rows."""
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=REPORT_FIELDS)
+        writer.writeheader()
+        for r in results:
+            if "error" in r:
+                continue
+            writer.writerow({k: r.get(k, "") for k in REPORT_FIELDS})
 
 
 def main():
@@ -171,6 +275,18 @@ def main():
     parser.add_argument("--tier", type=int, help="Tier number")
     parser.add_argument("--row", type=str, help="Row number(s), comma-separated")
     parser.add_argument("--all", action="store_true", help="Check all rows in tier")
+    parser.add_argument(
+        "--all-tiers", action="store_true",
+        help="Audit every tier in the deck. Implies --all. Slow.",
+    )
+    parser.add_argument(
+        "--report", type=Path, default=None,
+        help="Write per-row results to this CSV path (sortable by edit_distance, length_delta).",
+    )
+    parser.add_argument(
+        "--quiet", action="store_true",
+        help="Suppress per-row stdout (still writes the CSV report).",
+    )
     parser.add_argument(
         "--download-model",
         nargs="?",
@@ -195,47 +311,59 @@ def main():
         return
 
     # Tier comparison mode
-    if not args.tier:
+    if not args.tier and not args.all_tiers:
         parser.print_help()
         sys.exit(1)
 
     config = load_deck_config(args.deck)
-    csv_path = config.csv_path(args.tier)
-    audio_dir = config.audio_dir(args.tier)
+    tiers = list(config.tier_range()) if args.all_tiers else [args.tier]
 
-    if not csv_path.exists():
-        print(f"Error: {csv_path} not found")
-        sys.exit(1)
+    all_results: list[dict] = []
+    counts = {"OK": 0, "LIKELY_ELISION": 0, "MISMATCH": 0, "error": 0}
 
-    with open(csv_path, "r", encoding="utf-8") as f:
-        sentences = list(csv.DictReader(f))
+    for tier in tiers:
+        csv_path = config.csv_path(tier)
+        audio_dir = config.audio_dir(tier)
+        if not csv_path.exists():
+            print(f"Error: {csv_path} not found", file=sys.stderr)
+            continue
 
-    if args.all:
-        rows = range(1, len(sentences) + 1)
-    elif args.row:
-        rows = [int(r.strip()) for r in args.row.split(",")]
-    else:
-        print("Error: specify --row or --all with --tier")
-        sys.exit(1)
+        with open(csv_path, "r", encoding="utf-8") as f:
+            sentences = list(csv.DictReader(f))
 
-    mismatches = []
-    rows = list(range(1, len(sentences) + 1)) if args.all else [int(r.strip()) for r in args.row.split(",")]
+        if args.all_tiers or args.all:
+            rows = list(range(1, len(sentences) + 1))
+        elif args.row:
+            rows = [int(r.strip()) for r in args.row.split(",")]
+        else:
+            print("Error: specify --row, --all, or --all-tiers", file=sys.stderr)
+            sys.exit(1)
 
-    print(f"Tier {args.tier}: checking {len(rows)} row(s)\n")
+        if not args.quiet:
+            print(f"Tier {tier}: checking {len(rows)} row(s)")
 
-    for row_num in rows:
-        result = check_row(args.tier, row_num, sentences, audio_dir)
-        print_result(result)
-        if not result.get("match", True) and "error" not in result:
-            mismatches.append(result)
-        print()
+        for row_num in rows:
+            result = check_row(tier, row_num, sentences, audio_dir)
+            all_results.append(result)
+            if "error" in result:
+                counts["error"] += 1
+            else:
+                counts[result["status"]] = counts.get(result["status"], 0) + 1
+            if not args.quiet:
+                print_result(result)
 
-    if mismatches:
-        print(f"\n{len(mismatches)} mismatch(es) found:")
-        for m in mismatches:
-            print(f"  Row {m['row']}: {m['sentence']}")
-    elif len(rows) > 1:
-        print(f"\nAll {len(rows)} rows match.")
+    print()
+    print("Summary:")
+    print(f"  OK              {counts['OK']}")
+    print(f"  LIKELY_ELISION  {counts['LIKELY_ELISION']}")
+    print(f"  MISMATCH        {counts['MISMATCH']}")
+    print(f"  errors          {counts['error']}")
+
+    if args.report:
+        write_report(args.report, all_results)
+        print(f"\nCSV written: {args.report}")
+        print("Sort with: sort -t, -k9,9 -n -r " + str(args.report) +
+              "  # by edit_distance desc")
 
 
 if __name__ == "__main__":
