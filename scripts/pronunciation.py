@@ -438,15 +438,18 @@ NUMBER_MAP = {
 # is shown on cards with furigana. Replacing kanji breaks card display.
 #
 # Known misreadings:
-#   型 -> がた (Edge TTS reads がた instead of かた in isolation)
-#   既存 -> そん (Edge TTS drops the き, reads as just "son")
-#   文字列 -> じれつ (Edge TTS drops the も, reads as just "jiretsu")
+#   型   -> がた   (Edge TTS reads がた instead of かた in isolation)
+#   既存 -> そん   (drops the き, reads as just "son")
+#   文字列 -> じれつ (drops the も, reads as just "jiretsu")
+#   一意 -> イ     (drops チイ; even with the comma-after-particle-は
+#                  fix in place, Edge TTS only voices the first kana
+#                  of 一意. Override fixes it cleanly.)
 #
 # NOT overridden (TTS limitation, override doesn't help):
 #   提出 -> ていしつ (Edge TTS drops しゅつ to しつ, but kana input
 #           sounds identical. Keeping kanji preserves correct pitch.)
 #   抽出 -> ちゅうしつ (same しゅつ pattern, same TTS limitation)
-TTS_KANJI_OVERRIDES = {'型', '既存', '文字列'}
+TTS_KANJI_OVERRIDES = {'型', '既存', '文字列', '一意'}
 
 
 def extract_furigana(text: str) -> str:
@@ -548,18 +551,26 @@ def preprocess_for_tts(text: str) -> str:
     text = re.sub(r'【[^】]*】', '', text)
     text = ' '.join(text.split())
 
-    # Edge TTS weakens or elides the first mora of a hiragana word
-    # immediately after particle は. Observed: はすべて -> "wa-bete",
-    # はどの -> "wa-(faint)ono", はきそん -> "wa-son", はもじれつ ->
-    # "wa-jiretsu". Insert a comma after は (TTS-only) when は is preceded
-    # by a content word (kanji, katakana, or 々 repetition mark) and
-    # followed by hiragana. This forces a pause so the next mora is
-    # articulated. CSV Pronunciation field stays clean for card display.
-    text = re.sub(
-        r'(?<=[一-鿿々゠-ヿ])は(?=[ぁ-ゖ])',
-        'は、',
-        text,
-    )
+    # Edge TTS weakens or elides the first mora of the next word
+    # immediately after particle は. Observed across an ASR audit of
+    # 200 sampled audio files:
+    #   は + hiragana: はすべて -> "wa-bete", はどの -> "wa-(faint)ono",
+    #                  はきそん -> "wa-son", はもじれつ -> "wa-jiretsu"
+    #   は + katakana: はユーザー -> "wa-zaa" (drops yu)
+    #   は + kanji:    は一意 -> "wa-chii" (drops i of ichii)
+    #   compound particles like には + content also affected:
+    #                  にはコグニート -> "ni-wa-uneeto" (drops kogu)
+    # Two passes handle this without false-positive on word-internal
+    # は (e.g. 'はじめ', 'はず'):
+    #   Pass A: は followed by katakana/kanji is unambiguous (no real
+    #           Japanese word straddles a hiragana-に-or-other into
+    #           katakana/kanji via は). Lookbehind is open.
+    #   Pass B: は followed by hiragana requires a content word
+    #           (kanji/katakana/々) before は to avoid splitting word-
+    #           internal は like 今日はじめます.
+    # CSV Pronunciation field stays clean for card display.
+    text = re.sub(r'は(?=[゠-ヿ一-鿿々])', 'は、', text)
+    text = re.sub(r'(?<=[一-鿿々゠-ヿ])は(?=[ぁ-ゖ])', 'は、', text)
 
     # Edge TTS elides ド in 使えばドキュメント (reads "tsukaeba-kyumento"
     # instead of "tsukaeba-dokyumento"). Same comma-pause workaround, but
@@ -589,12 +600,20 @@ if __name__ == '__main__':
         'ハッピーパスをテストしてください。',
         'データベースをバックアップしてください。',
         'コードレビューをお願いします。',
-        # Post-particle-は fix: expect 'は、' after content-word + は + hiragana
+        # Post-particle-は fix (now covers ANY next word, not just hiragana):
+        # was first observed as は + hiragana elision (subete, dono, kison),
+        # ASR audit later showed it also affects は + katakana and は + kanji.
         'このモジュールはすべてのデータベース操作【そうさ】を処理【しょり】します。',
         'この変更【へんこう】は既存【きそん】の機能【きのう】を壊【こわ】すかもしれません。',
         'IDは文字列【もじれつ】ではなく数値【すうち】であるべきです。',
         'このパラメータはどの型【かた】であるべきですか？',
-        # No fix expected: は preceded by hiragana (それは) or followed by kanji
+        # は + katakana (new case caught by extended regex):
+        'APIはユーザーデータをJSONで返【かえ】します。',
+        'ユーザー認証【にんしょう】にはCognitoを使【つか】ってください。',
+        # は + kanji (new case caught by extended regex):
+        'メールフィールドは一意【いちい】であるべきです。',
+        'リリースは金曜日【きんようび】に予定【よてい】されています。',
+        # No fix expected: は preceded by hiragana (それは, これは)
         'それはまだ確定【かくてい】していません。',
         'これは新【あたら】しい機能【きのう】です。',
         # えばドキュメント narrow fix
