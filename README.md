@@ -8,7 +8,7 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 
 ### IT Vocabulary (`it-vocab`)
 
-1265 sentences across 10 tiers. Polite/keigo workplace Japanese for software engineers.
+1176 sentences across 10 tiers. Polite/keigo workplace Japanese for software engineers.
 
 | Tier | Count | Focus |
 |------|-------|-------|
@@ -135,10 +135,19 @@ Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files
 | `generate_audio.py` | Generate TTS audio for sentences |
 | `generate_pitch_accent.py` | Generate pitch accent data from UniDic |
 | `validate.py` | Validate CSVs and audio files |
-| `pronunciation.py` | Furigana extraction, English-to-katakana conversion |
+| `pronunciation.py` | Furigana extraction, English-to-katakana conversion, TTS prosodic fixes |
 | `add_key_meanings.py` | Generate English meanings for key words |
-| `test_tts.py` | Quick TTS test for specific sentences |
+| `test_tts.py` | Generate audio for one or more rows to test pronunciation changes |
 | `release.py` | Create GitHub releases per deck |
+| `migrate_guids.py` | Migrate existing Anki collections from random GUIDs to stable sentence-based GUIDs. One-time fix for users who imported pre-stable-GUID builds. |
+| `migrate_deck_names.py` | Rename subdecks in `collection.anki2` from `Tier N` to `Tier 0N`. Detects orphan subdecks and can delete them with `--delete-orphans`. |
+
+## Migration Docs
+
+For users upgrading existing collections:
+
+- [`MIGRATE-DECK-NAMES.md`](MIGRATE-DECK-NAMES.md) - How to run `migrate_deck_names.py` to rename subdecks and clean up orphans from older `deck.toml` revisions.
+- [`REPORT-DECK-MIGRATION.md`](REPORT-DECK-MIGRATION.md) - GUID and model-id recovery procedure. Pitfalls encountered on the 2026-04-21 live recovery (zstd anki21b, unicase collation, orphan note types, AnkiWeb sync divergence).
 
 ## Skills
 

@@ -20,7 +20,7 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```markdown
 <img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
 
-**1120 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
+**1176 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
 
 ## Who Is This For?
 
@@ -46,96 +46,30 @@ Every sentence generates 3 cards, each targeting a different skill:
 - **Dark Mode** - Automatic system theme detection.
 - **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Build your own deck with the same tools</a>
 
-## 9 Tiers
+## 10 Tiers
 
-- **Tier 1** (150 sentences) - Daily essentials, git, basic actions
-- **Tier 2** (200 sentences) - Agile, APIs, databases, testing
-- **Tier 3** (250 sentences) - Code review, architecture, AWS
-- **Tier 4** (200 sentences) - Security, debugging, documentation
-- **Tier 5** (100 sentences) - Communication, soft skills
-- **Tier 6** (115 sentences) - Presentations (including formal keigo openings/closings)
-- **Tier 7** (30 sentences) - Job interview (full keigo register: self-intro, skills, achievements, motivation, questions)
-- **Tier 8** (30 sentences) - Problem-solving discussions (investigation, hypothesis, tradeoffs, post-mortem)
-- **Tier 9** (45 sentences) - AI agents, documentation, engineering culture (harness, hooks, slop, vibe coding, customer value)
+- **Tier 01** (150 sentences) - Daily essentials, git, basic actions
+- **Tier 02** (200 sentences) - Agile, APIs, databases, testing
+- **Tier 03** (250 sentences) - Code review, architecture, AWS
+- **Tier 04** (200 sentences) - Security, debugging, documentation
+- **Tier 05** (100 sentences) - Communication, soft skills
+- **Tier 06** (115 sentences) - Presentations (formal keigo openings/closings)
+- **Tier 07** (30 sentences) - Job interview (full keigo register)
+- **Tier 08** (30 sentences) - Problem-solving discussions
+- **Tier 09** (50 sentences) - AI & Agents (harness, hooks, slop, vibe coding)
+- **Tier 10** (51 sentences) - Documentation & Engineering Culture (spec, ADR, changelog, customer value)
 
-## Example Sentences
-
-**Tier 1 - Daily Essentials:**
-> 機能は完了しレビュー準備ができました。
-> *The feature is done and ready for review.*
-
-**Tier 7 - Job Interview (keigo):**
-> 御社の技術スタックと私のスキルが合致しており即戦力として貢献できると考えております。
-> *My skills align with your tech stack and I believe I can contribute immediately.*
-
-**Tier 8 - Problem Solving:**
-> メモリリークが発生していると考えられます。
-> *It is thought that a memory leak is occurring.*
-
-**Tier 9 - AI & Engineering Culture:**
-> バイブコーディングではなくテストを書いて品質を担保しましょう。
-> *Let's write tests to ensure quality instead of vibe coding.*
-
-**Total: 1120 notes / 3360 cards / 1120 audio files**
+**Total: 1176 notes / 3528 cards / 1176 audio files**
 
 ## For Existing Users
 
-If you are upgrading from a previous version, please read this section.
+If you are upgrading from a previous version, the per-release changelog and the migration guides live on GitHub so this page stays readable.
 
-### What Changed in v3.5
+- **Changelog (all releases)**: <a href="https://github.com/KakkoiDev/nihongo-it-anki/releases">github.com/KakkoiDev/nihongo-it-anki/releases</a>
+- **Subdeck name migration** (`Tier 1` to `Tier 01`, run once after upgrading): <a href="https://github.com/KakkoiDev/nihongo-it-anki/blob/master/MIGRATE-DECK-NAMES.md">MIGRATE-DECK-NAMES.md</a>
+- **GUID / model-id recovery** (older one-time fix, only if you imported pre-stable-GUID builds): <a href="https://github.com/KakkoiDev/nihongo-it-anki/blob/master/REPORT-DECK-MIGRATION.md">REPORT-DECK-MIGRATION.md</a>
 
-- **Tier 9: AI, Documentation & Engineering Culture** (45 sentences) - vocabulary for AI coding agents (harness, hooks, slop, vibe coding), technical documentation (spec, ADR, changelog, draft), and engineering culture (customer value, outcome, feature creep).
-- **TTS pronunciation fixes** - webhook, 型 reading, removed artificial commas.
-- Total deck is now 1120 notes / 3360 cards.
-
-### What Changed in v3.3
-
-v3.3 is a complete overhaul from the original Kokoro TTS release. The card architecture, audio engine, and teaching methodology all changed.
-
-- **Audio engine**: Switched from Kokoro TTS to Microsoft Edge TTS (KeitaNeural). Significantly more natural prosody and pronunciation.
-- **Teaching method**: Cards now train listening comprehension first. The Listening card plays audio with no text on the front, forcing you to understand what was said before seeing the answer.
-- **3 focused card types**: Listening, Reading, and Vocabulary replace the previous card layout.
-- **Pitch accent**: Green/red furigana coloring shows Tokyo pitch accent patterns on key vocabulary.
-- **Register badges**: Each card shows its formality level (polite/keigo) so you know when to use each expression.
-- **New tiers**: Tier 7 (Job Interview, 30 keigo sentences) and Tier 8 (Problem-Solving Discussion, 30 sentences).
-- **15 formal presentation sentences** added to Tier 6.
-
-### Upgrading Notes
-
-Installing this version will replace the old deck and **scheduling progress will reset**.
-
-**Why it resets:** The note type changed entirely - different card templates, different fields, different model. Anki cannot map old scheduling data to the new cards.
-
-**What to do:** The new audio-first approach means even sentences you knew before will challenge you differently. Starting fresh is recommended. If you want to skip tiers you already mastered, install the deck, then browse by tier and suspend those cards.
-
-## Changelog
-
-**v3.5** (Apr 2026)
-- New Tier 9: AI agents, documentation, engineering culture (45 sentences)
-- Vocabulary for harness engineering, vibe coding, slop, quality gates, customer value
-- Fixed TTS pronunciation: webhook now katakana, 型 reading override, removed artificial commas
-- TTS_KANJI_OVERRIDES system for fixing Edge TTS misreadings without breaking card display
-
-**v3.4** (Apr 2026)
-- Restructured AnkiWeb listing for new users
-- Improved card type descriptions
-- Removed unused conjugation data from deck preview
-- Fixed furigana readings in compounds (時じ, 高こう, 低てい)
-
-**v3.3** (Apr 2026)
-- Complete overhaul from original release
-- Switched from Kokoro TTS to Microsoft Edge TTS for significantly better audio
-- New audio-first teaching methodology: Listening cards play audio with no text
-- Streamlined to 3 card types: Listening, Reading, Vocabulary
-- Pitch accent display with green/red furigana coloring
-- Register badges (polite/keigo) on card fronts
-- New Tier 7: Job Interview (30 keigo sentences)
-- New Tier 8: Problem-Solving Discussion (30 sentences)
-- 15 formal presentation sentences added to Tier 6
-- Full audio regeneration with improved pronunciation pipeline
-
-**v1.1.0** (Jan 2026)
-- Initial public release (Kokoro TTS)
+Anki matches notes by stable sentence-based GUID, so importing a new release updates existing notes in place. Review history, intervals, and due dates are preserved.
 
 If you find this useful, please rate and comment!
 ```
