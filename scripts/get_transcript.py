@@ -42,7 +42,7 @@ from pathlib import Path
 import fugashi
 import jaconv
 
-from pronunciation import preprocess_for_tts
+from pronunciation import preprocess_for_tts, convert_english_terms
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import load_deck_config
@@ -208,8 +208,18 @@ def check_row(tier: int, row_num: int, sentences: list[dict], audio_dir: Path) -
     expected = preprocess_for_tts(row["Pronunciation"])
     transcript = transcribe(audio_path, "ja")
 
+    # Apply the same English->katakana conversion to the transcript that
+    # preprocess_for_tts applies to the expected text. Otherwise Whisper
+    # writing 'API' (Latin) where the audio says エーピーアイ would look
+    # like a 6-char elision when it's not. Same for %, version strings.
+    transcript_normalized = transcript.replace("%", "パーセント")
+    transcript_normalized = re.sub(
+        r"(?<![A-Za-z])v(\d)", r"バージョン\1", transcript_normalized
+    )
+    transcript_normalized = convert_english_terms(transcript_normalized)
+
     kana_expected = kana_only(to_kana(normalize(expected)))
-    kana_transcript = kana_only(to_kana(normalize(transcript)))
+    kana_transcript = kana_only(to_kana(normalize(transcript_normalized)))
 
     dist = edit_distance(kana_expected, kana_transcript)
     length_delta = len(kana_expected) - len(kana_transcript)
