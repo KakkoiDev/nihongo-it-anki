@@ -112,17 +112,17 @@ Each deck is released independently with its own version tag (`{deck}/{version}`
 
 ```bash
 # Preview what will be released
-uv run python scripts/release.py --deck it-vocab --version v4.1 --dry-run
+uv run python scripts/release.py --deck it-vocab --version v4.3 --dry-run
 
 # Create releases
-uv run python scripts/release.py --deck it-vocab --version v4.1 --title "Tier 9/10 split"
+uv run python scripts/release.py --deck it-vocab --version v4.3 --title "Tier 9/10 split"
 uv run python scripts/release.py --deck it-kundoku --version v1.0 --title "Initial release"
 
 # Draft release (not published)
 uv run python scripts/release.py --deck it-kundoku --version v1.0 --draft
 
 # Release notes from file
-uv run python scripts/release.py --deck it-vocab --version v4.1 --notes-file RELEASE.md
+uv run python scripts/release.py --deck it-vocab --version v4.3 --notes-file RELEASE.md
 ```
 
 Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files.
@@ -142,12 +142,13 @@ Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files
 | `migrate_guids.py` | Migrate existing Anki collections from random GUIDs to stable sentence-based GUIDs. One-time fix for users who imported pre-stable-GUID builds. |
 | `migrate_deck_names.py` | Rename subdecks in `collection.anki2` from `Tier N` to `Tier 0N`. Detects orphan subdecks and can delete them with `--delete-orphans`. |
 
-## Migration Docs
+## Documentation
 
-For users upgrading existing collections:
+Deeper docs live under [`docs/`](docs/):
 
-- [`MIGRATE-DECK-NAMES.md`](MIGRATE-DECK-NAMES.md) - How to run `migrate_deck_names.py` to rename subdecks and clean up orphans from older `deck.toml` revisions.
-- [`REPORT-DECK-MIGRATION.md`](REPORT-DECK-MIGRATION.md) - GUID and model-id recovery procedure. Pitfalls encountered on the 2026-04-21 live recovery (zstd anki21b, unicase collation, orphan note types, AnkiWeb sync divergence).
+- [`docs/tts-audio-debugging.md`](docs/tts-audio-debugging.md) - ASR-based audit methodology, Edge TTS bug taxonomy, fix workflow, false-positive filtering. Read this if you hear a card audio that sounds wrong.
+- [`docs/MIGRATE-DECK-NAMES.md`](docs/MIGRATE-DECK-NAMES.md) - DB-level Anki migration guide covering both `migrate_deck_names.py` (subdeck rename + orphan cleanup) and `migrate_guids.py` (GUID + model-id retarget). Read this if you're upgrading an existing Anki collection.
+- [`docs/REPORT-DECK-MIGRATION.md`](docs/REPORT-DECK-MIGRATION.md) - Postmortem of the 2026-04-21 GUID + model-id live recovery. Anki schema gotchas (zstd anki21b, unicase collation, orphan note types, AnkiWeb sync divergence).
 
 ## Skills
 

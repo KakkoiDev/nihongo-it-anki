@@ -3,8 +3,7 @@
 !README.md
 !CLAUDE.md
 !ANKIWEB-README.md
-!REPORT-DECK-MIGRATION.md
-!MIGRATE-DECK-NAMES.md
+!docs/**/*.md
 !experiments/**/*.md
 !skills/**/*.md
 !decks/**/REFERENCE.md

@@ -66,8 +66,8 @@ Every sentence generates 3 cards, each targeting a different skill:
 If you are upgrading from a previous version, the per-release changelog and the migration guides live on GitHub so this page stays readable.
 
 - **Changelog (all releases)**: <a href="https://github.com/KakkoiDev/nihongo-it-anki/releases">github.com/KakkoiDev/nihongo-it-anki/releases</a>
-- **Subdeck name migration** (`Tier 1` to `Tier 01`, run once after upgrading): <a href="https://github.com/KakkoiDev/nihongo-it-anki/blob/master/MIGRATE-DECK-NAMES.md">MIGRATE-DECK-NAMES.md</a>
-- **GUID / model-id recovery** (older one-time fix, only if you imported pre-stable-GUID builds): <a href="https://github.com/KakkoiDev/nihongo-it-anki/blob/master/REPORT-DECK-MIGRATION.md">REPORT-DECK-MIGRATION.md</a>
+- **Subdeck name migration** (`Tier 1` to `Tier 01`, run once after upgrading): <a href="https://github.com/KakkoiDev/nihongo-it-anki/blob/master/docs/MIGRATE-DECK-NAMES.md">docs/MIGRATE-DECK-NAMES.md</a>
+- **GUID / model-id recovery** (older one-time fix, only if you imported pre-stable-GUID builds): <a href="https://github.com/KakkoiDev/nihongo-it-anki/blob/master/docs/REPORT-DECK-MIGRATION.md">docs/REPORT-DECK-MIGRATION.md</a>
 
 Anki matches notes by stable sentence-based GUID, so importing a new release updates existing notes in place. Review history, intervals, and due dates are preserved.
 
