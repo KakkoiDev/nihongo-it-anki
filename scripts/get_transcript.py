@@ -32,6 +32,7 @@ Usage:
 
 import argparse
 import csv
+import random
 import re
 import subprocess
 import sys
@@ -253,15 +254,26 @@ REPORT_FIELDS = [
 ]
 
 
-def write_report(path: Path, results: list[dict]) -> None:
-    """Write a CSV with one row per checked file. Skips error rows."""
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=REPORT_FIELDS)
-        writer.writeheader()
-        for r in results:
-            if "error" in r:
-                continue
-            writer.writerow({k: r.get(k, "") for k in REPORT_FIELDS})
+def open_report(path: Path):
+    """Open an incremental CSV writer. Caller must close the file.
+
+    Writing per-row + flushing means we don't lose data if the audit is
+    killed midway through a long run. The previous batch-at-end pattern
+    would discard 12 hours of work on Ctrl-C.
+    """
+    f = open(path, "w", encoding="utf-8", newline="")
+    writer = csv.DictWriter(f, fieldnames=REPORT_FIELDS)
+    writer.writeheader()
+    f.flush()
+    return f, writer
+
+
+def append_row(file_handle, writer, result: dict) -> None:
+    """Append one result to the CSV and flush so partial data survives."""
+    if "error" in result:
+        return
+    writer.writerow({k: result.get(k, "") for k in REPORT_FIELDS})
+    file_handle.flush()
 
 
 def main():
@@ -282,6 +294,15 @@ def main():
     parser.add_argument(
         "--report", type=Path, default=None,
         help="Write per-row results to this CSV path (sortable by edit_distance, length_delta).",
+    )
+    parser.add_argument(
+        "--sample", type=int, default=None, metavar="N",
+        help="Randomly sample N rows across the selected tiers instead of "
+             "checking every row. Use with --all-tiers for a fast spot-check.",
+    )
+    parser.add_argument(
+        "--seed", type=int, default=42,
+        help="Random seed for --sample (default: 42, for reproducibility).",
     )
     parser.add_argument(
         "--quiet", action="store_true",
@@ -318,39 +339,76 @@ def main():
     config = load_deck_config(args.deck)
     tiers = list(config.tier_range()) if args.all_tiers else [args.tier]
 
-    all_results: list[dict] = []
-    counts = {"OK": 0, "LIKELY_ELISION": 0, "MISMATCH": 0, "error": 0}
-
+    # Preload sentences per tier so sampling is cheap.
+    sentences_by_tier: dict[int, list[dict]] = {}
     for tier in tiers:
         csv_path = config.csv_path(tier)
-        audio_dir = config.audio_dir(tier)
         if not csv_path.exists():
             print(f"Error: {csv_path} not found", file=sys.stderr)
             continue
-
         with open(csv_path, "r", encoding="utf-8") as f:
-            sentences = list(csv.DictReader(f))
+            sentences_by_tier[tier] = list(csv.DictReader(f))
 
-        if args.all_tiers or args.all:
-            rows = list(range(1, len(sentences) + 1))
-        elif args.row:
-            rows = [int(r.strip()) for r in args.row.split(",")]
-        else:
-            print("Error: specify --row, --all, or --all-tiers", file=sys.stderr)
-            sys.exit(1)
+    # Build (tier, row) work list.
+    work: list[tuple[int, int]] = []
+    if args.sample:
+        # Flat random sample across all selected tiers (stratified would
+        # underweight large tiers and overweight small ones; flat is fine).
+        for tier, sentences in sentences_by_tier.items():
+            work.extend((tier, r) for r in range(1, len(sentences) + 1))
+        rng = random.Random(args.seed)
+        if args.sample < len(work):
+            work = rng.sample(work, args.sample)
+        work.sort()  # process in tier-then-row order for predictable progress
+    elif args.all_tiers or args.all:
+        for tier, sentences in sentences_by_tier.items():
+            work.extend((tier, r) for r in range(1, len(sentences) + 1))
+    elif args.row:
+        rows = [int(r.strip()) for r in args.row.split(",")]
+        for tier in tiers:
+            work.extend((tier, r) for r in rows)
+    else:
+        print("Error: specify --row, --all, --all-tiers, or --sample", file=sys.stderr)
+        sys.exit(1)
 
-        if not args.quiet:
-            print(f"Tier {tier}: checking {len(rows)} row(s)")
+    if not args.quiet:
+        scope = (
+            f"sample of {len(work)}" if args.sample
+            else f"{len(work)} row(s)"
+        )
+        print(f"Auditing {scope} across tiers {sorted(set(t for t, _ in work))}")
 
-        for row_num in rows:
+    report_file = None
+    writer = None
+    if args.report:
+        report_file, writer = open_report(args.report)
+
+    counts = {"OK": 0, "LIKELY_ELISION": 0, "MISMATCH": 0, "error": 0}
+
+    try:
+        for i, (tier, row_num) in enumerate(work, 1):
+            sentences = sentences_by_tier[tier]
+            audio_dir = config.audio_dir(tier)
             result = check_row(tier, row_num, sentences, audio_dir)
-            all_results.append(result)
             if "error" in result:
                 counts["error"] += 1
             else:
                 counts[result["status"]] = counts.get(result["status"], 0) + 1
+            if writer:
+                append_row(report_file, writer, result)
             if not args.quiet:
                 print_result(result)
+            elif i % 10 == 0 or i == len(work):
+                # Heartbeat in --quiet so the user can see progress.
+                print(
+                    f"  [{i}/{len(work)}] OK={counts['OK']} "
+                    f"ELISION={counts['LIKELY_ELISION']} "
+                    f"MISMATCH={counts['MISMATCH']}",
+                    flush=True,
+                )
+    finally:
+        if report_file:
+            report_file.close()
 
     print()
     print("Summary:")
@@ -360,10 +418,11 @@ def main():
     print(f"  errors          {counts['error']}")
 
     if args.report:
-        write_report(args.report, all_results)
         print(f"\nCSV written: {args.report}")
-        print("Sort with: sort -t, -k9,9 -n -r " + str(args.report) +
-              "  # by edit_distance desc")
+        print(
+            "Sort by edit_distance desc:\n"
+            "  sort -t, -k9,9 -n -r " + str(args.report)
+        )
 
 
 if __name__ == "__main__":
