@@ -6,6 +6,19 @@ the inline bug taxonomy and per-class fix instructions live in
 `scripts/pronunciation.py`'s module docstring (HOW TO FIX A TTS BUG).
 Cross-reference both when working on audio.
 
+## Contents
+
+- [When you should read this](#when-you-should-read-this)
+- [Quick start: I have a bug right now](#quick-start-i-have-a-bug-right-now)
+- [The detection pipeline](#the-detection-pipeline)
+- [Running an audit](#running-an-audit)
+- [Bug taxonomy](#bug-taxonomy) (Classes A-E, with examples)
+- [The fix workflow](#the-fix-workflow) (Steps 1-6, end to end)
+- [False positives to filter](#false-positives-to-filter)
+- [Tools reference](#tools-reference)
+- [Concrete fixes shipped in v4.3](#concrete-fixes-shipped-in-v43)
+- [Lessons learned](#lessons-learned)
+
 ## When you should read this
 
 - You hear a card whose audio sounds wrong (missing syllable,
@@ -19,6 +32,46 @@ Cross-reference both when working on audio.
 
 Skip if you just want to regenerate audio that's already known to
 be wrong; the CLAUDE.md "Full Rebuild Example" covers that.
+
+---
+
+## Quick start: I have a bug right now
+
+You hear a specific card's audio sound wrong. The fastest path
+from "this sounds broken" to "fixed in your local Anki":
+
+1. **Identify the row.** Note the deck + tier + row index.
+2. **See what TTS actually received:**
+   ```bash
+   uv run python scripts/test_tts.py --tier N --row R
+   ```
+   Print is the exact string Edge TTS got. If that looks wrong,
+   the bug is upstream (CSV or preprocessing); see
+   [Step 1: Diagnose](#step-1-diagnose). If it looks right but
+   the audio sounds wrong, Edge TTS is the culprit.
+3. **Classify** against [Bug taxonomy](#bug-taxonomy) (Classes A-E).
+4. **Apply the matching fix** to `scripts/pronunciation.py` per
+   [Step 3](#step-3-apply-fix).
+5. **Regenerate only the affected row(s)** ([Step 4](#step-4-regenerate-only-affected-rows)),
+   verify the new audio ([Step 5](#step-5-verify)).
+6. **Re-import the apkg into Anki.** This is the step that
+   actually puts the fix in front of you. See
+   [Step 6](#step-6-re-import-the-apkg-into-anki).
+   **Copying mp3s into `collection.media/` directly does NOT work** -
+   Anki uses content-addressed filenames and your plain-named drops
+   are invisible to existing cards. Skipping this step is the
+   single most common reason "my fix didn't take".
+
+If you're not sure the bug is real (e.g. you only have one
+listener's report), run the audit on a sample first:
+
+```bash
+uv run python scripts/get_transcript.py \
+  --deck it-vocab --all-tiers --sample 200 --seed 42 \
+  --quiet --report audio-audit.csv
+```
+
+See [Running an audit](#running-an-audit) for details.
 
 ---
 

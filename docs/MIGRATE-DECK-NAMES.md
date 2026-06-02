@@ -6,6 +6,17 @@ database directly to fix state that can't be carried over by a plain
 (2026-04-21 GUID recovery, 2026-06-01 deck rename + orphan cleanup)
 and the procedure below reflects what actually worked.
 
+## Contents
+
+- [Decision flow](#decision-flow) (which script do I need?)
+- [Shared prerequisites](#shared-prerequisites)
+- [Find your collection path](#find-your-collection-path)
+- [Part 1: Subdeck rename + orphan cleanup (`migrate_deck_names.py`)](#part-1-subdeck-rename--orphan-cleanup-migrate_deck_namespy)
+- [Part 2: GUID + model-id migration (`migrate_guids.py`)](#part-2-guid--model-id-migration-migrate_guidspy)
+- [Troubleshooting (both scripts)](#troubleshooting-both-scripts)
+- [Why these scripts exist](#why-these-scripts-exist)
+- [See also](#see-also)
+
 | Script | What it migrates | When to run |
 |--------|------------------|-------------|
 | `scripts/migrate_deck_names.py` | Subdeck names (`Tier 1` -> `Tier 01`) + orphan subdecks from older `deck.toml` revisions | Once, after a release that zero-pads or renames tier names |
