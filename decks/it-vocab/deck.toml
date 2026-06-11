@@ -5,7 +5,7 @@ model_id = 1607392323
 deck_base_id = 2059400110
 
 [tiers]
-count = 10
+count = 12
 
 [tiers.names]
 1 = "Tier 01 - Foundational"
@@ -18,6 +18,8 @@ count = 10
 8 = "Tier 08 - Problem Solving"
 9 = "Tier 09 - AI & Agents"
 10 = "Tier 10 - Documentation & Engineering Culture"
+11 = "Tier 11 - Casual Chat"
+12 = "Tier 12 - Live Meetings"
 
 [tiers.sizes]
 1 = 150
@@ -30,3 +32,5 @@ count = 10
 8 = 30
 9 = 50
 10 = 51
+11 = 100
+12 = 100
