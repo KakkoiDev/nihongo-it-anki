@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import DeckConfig, load_deck_config
 
 # Expected CSV columns
-REQUIRED_COLUMNS = {'Sentence', 'Translation', 'Cloze', 'Pronunciation', 'Note', 'KeyMeaning'}
+REQUIRED_COLUMNS = {'Sentence', 'Translation', 'Cloze', 'Pronunciation', 'Note', 'Register', 'KeyMeaning', 'PitchAccent'}
 
 # Hiragana range for validating furigana readings
 HIRAGANA_PATTERN = re.compile(r'^[\u3040-\u309F\u30A0-\u30FFー・]+$')
