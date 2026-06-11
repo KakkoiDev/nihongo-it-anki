@@ -2831,4 +2831,12 @@ TRANSLATIONS = {
     '次のステップ': 'next step',
     '言い換えると': 'in other words',
     'メンティー': 'mentee',
+    '認識合わせ': 'alignment (of understanding)',
+    'メリット': 'merit / advantage',
+    'リアクション': 'reaction',
+    '欠席': 'absence / skip (meeting)',
+    '持ち帰って': 'take back (to consider)',
+    '腐る': 'rot / decay',
+    'データアクセス層': 'data access layer',
+    '役職': 'job title / position',
 }
