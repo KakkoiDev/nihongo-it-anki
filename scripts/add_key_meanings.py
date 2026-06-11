@@ -26,11 +26,6 @@ def get_translation(cloze: str, translations: dict[str, str]) -> str:
     if stripped in translations:
         return translations[stripped]
 
-    # For compound words, try to match parts
-    for jp, en in translations.items():
-        if jp in cloze and len(jp) > 2:
-            return en
-
     # Return the original for unknown terms (likely English tech terms)
     return cloze
 
@@ -40,16 +35,18 @@ def process_csv(config, tier: int, translations: dict[str, str]):
     input_path = config.csv_path(tier)
     output_path = input_path.parent / f"tier{tier}-vocabulary-new.csv"
 
-    with open(input_path, 'r', encoding='utf-8') as f:
+    with open(input_path, 'r', encoding='utf-8', newline='') as f:
         reader = csv.DictReader(f)
         rows = list(reader)
+        fieldnames = list(reader.fieldnames)
 
-    # Add KeyMeaning to each row
+    # Fill empty KeyMeaning only; existing values are hand-curated
     for row in rows:
-        row['KeyMeaning'] = get_translation(row['Cloze'], translations)
+        if not row.get('KeyMeaning'):
+            row['KeyMeaning'] = get_translation(row['Cloze'], translations)
 
-    # Write new CSV
-    fieldnames = ['Sentence', 'Translation', 'Cloze', 'Pronunciation', 'Note', 'KeyMeaning']
+    if 'KeyMeaning' not in fieldnames:
+        fieldnames.append('KeyMeaning')
     with open(output_path, 'w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
