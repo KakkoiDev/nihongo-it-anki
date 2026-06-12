@@ -4,6 +4,30 @@ Findings collected during the 2026-06-12 audit and remediation passes
 (KeyMeaning gloss fixes, sentence naturalness rewrite, てください
 diversification, tiers 11-12 authoring). Ordered by impact.
 
+STATUS 2026-06-12 (second pass): items 1-9 are RESOLVED. Each section
+keeps its original analysis with a status line. Resolutions:
+
+- 1: `scripts/migrate_sentences.py` + `guid-migration-map.csv` +
+  `tests/test_migrations.py` (headless Anki harness pins importer
+  semantics; history-preserving rewrite migration verified by test)
+- 2: `create_deck.py --combined --all` builds both
+- 3: digit/kanji-numeral normalization on both ASR sides, SHORT_CLIP
+  class; SOC 2 was a REAL TTS bug (audio said soku-ni), fixed via
+  ソックツー substitution and regenerated
+- 4: 121 duplicate keys removed (loaded dict verified identical);
+  validate.py warns on new duplicates
+- 5: validate.py prints the per-tier/total counts table
+- 6: validate.py errors on Japanese/empty/letterless Translation cells
+- 7: moved to audits/ with date prefix
+- 8: regex accepts /
+- 9: validate.py prints tekudasai density per tier
+
+New finding from the test harness: Anki's importer skips notes whose
+incoming mod equals the existing note's mod, even with update=ALWAYS;
+and media imports are reference-driven with checksum-renaming on
+conflict (cross-deck filename collisions are SAFE; no media
+namespacing needed). Pinned in tests/test_migrations.py.
+
 ## 1. Note GUIDs are derived from sentence text (review-history loss)
 
 `create_deck.py:375` uses `genanki.guid_for(row['Sentence'])`. Any edit to a
