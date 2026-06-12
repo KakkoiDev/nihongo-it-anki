@@ -4,6 +4,7 @@
 !CLAUDE.md
 !ANKIWEB-README.md
 !docs/**/*.md
+!audits/**/*.md
 !experiments/**/*.md
 !skills/**/*.md
 !decks/**/REFERENCE.md
