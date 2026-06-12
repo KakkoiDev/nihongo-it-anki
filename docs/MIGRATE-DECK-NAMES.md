@@ -13,6 +13,7 @@ and the procedure below reflects what actually worked.
 - [Find your collection path](#find-your-collection-path)
 - [Part 1: Subdeck rename + orphan cleanup (`migrate_deck_names.py`)](#part-1-subdeck-rename--orphan-cleanup-migrate_deck_namespy)
 - [Part 2: GUID + model-id migration (`migrate_guids.py`)](#part-2-guid--model-id-migration-migrate_guidspy)
+- [Part 3: Sentence-rewrite migration (`migrate_sentences.py`)](#part-3-sentence-rewrite-migration-migrate_sentencespy)
 - [Troubleshooting (both scripts)](#troubleshooting-both-scripts)
 - [Why these scripts exist](#why-these-scripts-exist)
 - [See also](#see-also)
@@ -21,6 +22,7 @@ and the procedure below reflects what actually worked.
 |--------|------------------|-------------|
 | `scripts/migrate_deck_names.py` | Subdeck names (`Tier 1` -> `Tier 01`) + orphan subdecks from older `deck.toml` revisions | Once, after a release that zero-pads or renames tier names |
 | `scripts/migrate_guids.py` | Note GUIDs (random -> stable sentence-based) + model/notetype id retargeting | Once, if your existing collection was first imported before stable GUIDs landed in `create_deck.py` (pre-`30ddf37`), OR if importing produces duplicates / orphan notetypes |
+| `scripts/migrate_sentences.py` | Note GUIDs across SENTENCE REWRITES (guid is derived from the sentence text, so a rewrite changes it) | Once per release that rewrites sentences; v5.0 rewrote 293 (see `guid-migration-map.csv`) |
 
 Both scripts:
 
@@ -56,7 +58,12 @@ Use this to pick the right script(s) for your situation:
    -> Run `migrate_guids.py`. Read `REPORT-DECK-MIGRATION.md` for the
    full postmortem on this class of bug.
 
-3. **Anki shows orphan tier subdecks** with weird old names (e.g. an
+3. **A release rewrote sentence text** (v5.0 naturalness pass: 293
+   sentences) and you want to keep review history on those cards.
+   -> Run `migrate_sentences.py` BEFORE importing the new `.apkg`
+   (Part 3).
+
+4. **Anki shows orphan tier subdecks** with weird old names (e.g. an
    old `Tier 9 - AI & Documentation` that doesn't match current
    `deck.toml`).
    -> Run `migrate_deck_names.py --delete-orphans` (it refuses if any
@@ -378,6 +385,48 @@ usage: migrate_guids.py INPUT [-o OUTPUT.apkg]
 ```
 
 ---
+
+## Part 3: Sentence-rewrite migration (`migrate_sentences.py`)
+
+`create_deck.py` derives note GUIDs from the Sentence text. When a
+release rewrites sentences (v5.0 rewrote 293 for naturalness), the
+rebuilt deck carries new GUIDs for those notes. Importing it without
+migration adds them as NEW cards; your review history stays behind on
+the old cards. Each such release ships `guid-migration-map.csv`
+(old_guid, new_guid, old/new sentence text).
+
+```bash
+# 1. In Anki: File -> Export -> Anki Collection Package (include scheduling)
+# 2. Rewrite the mapped GUIDs (map defaults to the repo's guid-migration-map.csv):
+uv run python scripts/migrate_sentences.py ~/exported.colpkg -o migrated.apkg
+
+# Dry run first to see what it would touch:
+uv run python scripts/migrate_sentences.py ~/exported.colpkg --dry-run
+```
+
+Then in Anki: delete the old deck, import `migrated.apkg`, and import
+the new release `.apkg`. Rewritten sentences update in place; reps,
+intervals, and revlog survive (covered by `tests/test_migrations.py`).
+
+If you already imported the new release and have duplicates (old
+sentence with history + new sentence without), the script resolves
+them: the note with review activity wins, the other is deleted.
+
+### Importer behaviors these scripts depend on (pinned by tests)
+
+`tests/test_migrations.py` runs toy decks through a real headless Anki
+collection and locks the importer semantics:
+
+- A note whose incoming `mod` equals the existing note's is silently
+  skipped even with update=Always. Two builds in the same second do not
+  update each other.
+- Decks are matched by NAME, not deck id: renaming a tier in
+  `deck.toml` forks a second deck on import (hence Part 1).
+- Only media referenced by imported notes is imported. Same-name
+  conflicts are stored checksum-renamed with note refs rewritten, so
+  the it-vocab / it-kundoku shared `tier{N}_{idx}.mp3` naming is safe,
+  and audio fixes land via rebuild + re-import (old files become
+  orphans; clean with Tools -> Check Media).
 
 ## Troubleshooting (both scripts)
 
