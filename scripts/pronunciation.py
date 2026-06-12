@@ -455,6 +455,9 @@ NUMBER_MAP = {
 #                    compounds like 集中 / 中国 are unaffected.)
 #   閾値   -> いきち (Edge TTS misreads the rare 閾 kanji. CSV has
 #                    閾値【しきいち】; override forces that reading.)
+#   生     -> せい   (Edge TTS picks せい when context wants なま
+#                    ('raw SQL/data'). Standalone 生【...】 only;
+#                    compounds like 発生 / 厚生 are unaffected.)
 #
 # NOT overridden (TTS limitation, override doesn't help):
 #   提出 -> ていしつ (Edge TTS drops しゅつ to しつ, but kana input
@@ -462,7 +465,7 @@ NUMBER_MAP = {
 #   抽出 -> ちゅうしつ (same しゅつ pattern, same TTS limitation)
 TTS_KANJI_OVERRIDES = {
     '型', '既存', '文字列', '一意',
-    '行', '中', '閾値',
+    '行', '中', '閾値', '生',
 }
 
 
