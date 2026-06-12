@@ -20,7 +20,7 @@ https://github.com/KakkoiDev/nihongo-it-anki/issues/new/choose
 ```markdown
 <img src="https://raw.githubusercontent.com/KakkoiDev/nihongo-it-anki/refs/heads/master/demo.png" width="600">
 
-**1376 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
+**1516 IT vocabulary sentences** with AI-generated Japanese audio, furigana with pitch accent coloring, and 3 card types designed for real workplace skill building. Fully open source.
 
 ## Who Is This For?
 
@@ -40,13 +40,13 @@ Every sentence generates 3 cards, each targeting a different skill:
 ## Features
 
 - **Pitch Accent** - Green (high) / red (low) coloring on key word furigana. Learn correct Tokyo accent from the start.
-- **Register Badges** - Each card shows a casual/polite/keigo badge so you know when to use each sentence.
+- **Register Badges** - Each card shows a casual/polite/formal/keigo badge so you know when to use each sentence.
 - **Furigana** - Ruby text readings for all kanji on answer cards.
 - **100% Audio** - Neural TTS for every sentence (Microsoft Edge ja-JP-KeitaNeural).
 - **Dark Mode** - Automatic system theme detection.
 - **Open Source** - <a href="https://github.com/KakkoiDev/nihongo-it-anki">Build your own deck with the same tools</a>
 
-## 12 Tiers
+## 15 Tiers
 
 - **Tier 01** (150 sentences) - Daily essentials, git, basic actions
 - **Tier 02** (200 sentences) - Agile, APIs, databases, testing
@@ -60,8 +60,11 @@ Every sentence generates 3 cards, each targeting a different skill:
 - **Tier 10** (51 sentences) - Documentation & Engineering Culture (spec, ADR, changelog, customer value)
 - **Tier 11** (100 sentences) - Casual Chat (plain-form Slack/huddle Japanese: 直しといた, コンフリってる, 詰んだ)
 - **Tier 12** (100 sentences) - Live Meetings (interrupting, clarifying, estimating: 1点いいですか, 持ち帰らせてください, 工数)
+- **Tier 13** (60 sentences) - Corporate Life (勤怠, 経費精算, 評価面談, 稟議, 1on1)
+- **Tier 14** (40 sentences) - Business Email (お世話になっております, ご査収, 何卒, お詫び)
+- **Tier 15** (40 sentences) - Written Tickets & Commits (再現手順, 影響範囲, 暫定対応, commit-message patterns)
 
-**Total: 1376 notes / 4128 cards / 1376 audio files**
+**Total: 1516 notes / 4548 cards / 1516 audio files**
 
 ## For Existing Users
 
