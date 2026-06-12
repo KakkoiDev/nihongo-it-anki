@@ -142,6 +142,36 @@ def validate_key_meaning(rows: list[dict], result: ValidationResult, verbose: bo
         result.key_meaning_valid += 1
 
 
+JAPANESE_PATTERN = re.compile(r'[぀-ヿ一-鿿]')
+
+
+def validate_translation(rows: list[dict], result: ValidationResult):
+    """Validate the English Translation field."""
+    for idx, row in enumerate(rows, 1):
+        translation = row.get('Translation', '')
+        if not translation.strip():
+            result.add_error(f"Row {idx}: Empty Translation")
+        elif JAPANESE_PATTERN.search(translation):
+            result.add_error(f"Row {idx}: Translation contains Japanese: '{translation[:40]}'")
+        elif not re.search(r'[A-Za-z]', translation):
+            result.add_error(f"Row {idx}: Translation has no English letters: '{translation[:40]}'")
+
+
+def validate_translations_file(config: DeckConfig) -> list[str]:
+    """Check the deck's translations.py for duplicate dict keys (last-wins is silent)."""
+    path = config.csv_path(1).parent / "translations.py"
+    if not path.exists():
+        return []
+    src = path.read_text(encoding='utf-8')
+    keys = re.findall(r"^\s+'([^']+)':", src, re.M)
+    seen, dups = set(), []
+    for k in keys:
+        if k in seen:
+            dups.append(k)
+        seen.add(k)
+    return dups
+
+
 def validate_audio(config: DeckConfig, tier: int, row_count: int, result: ValidationResult, verbose: bool = False, female: bool = False):
     """Validate audio files exist and are not empty."""
     audio_dir = config.audio_dir(tier, female)
@@ -183,7 +213,11 @@ def validate_tier(config: DeckConfig, tier: int, check_audio: bool = False, verb
     # Step 3: KeyMeaning
     validate_key_meaning(rows, result, verbose)
 
-    # Step 4: Audio (optional)
+    # Step 4: English translation
+    validate_translation(rows, result)
+    result.tekudasai = sum(1 for r in rows if r.get('Sentence', '').rstrip('。').endswith('てください'))
+
+    # Step 5: Audio (optional)
     if check_audio:
         validate_audio(config, tier, len(rows), result, verbose, female)
 
@@ -275,6 +309,21 @@ Examples:
         result = validate_tier(config, tier, args.check_audio, args.verbose, args.female)
         all_results.append(result)
         print_result(result, args.verbose)
+
+    # Deck counts table (paste into docs to avoid stale-count drift)
+    total_rows = sum(r.row_count for r in all_results)
+    total_teku = sum(getattr(r, 'tekudasai', 0) for r in all_results)
+    print("\nDeck counts:")
+    for r in all_results:
+        teku = getattr(r, 'tekudasai', 0)
+        pct = (100 * teku // r.row_count) if r.row_count else 0
+        print(f"  tier {r.tier}: {r.row_count} sentences ({teku} tekudasai, {pct}%)")
+    print(f"  TOTAL: {total_rows} sentences across {len(all_results)} tiers ({total_teku} tekudasai)")
+
+    dup_keys = validate_translations_file(config)
+    if dup_keys:
+        print(f"\nWARNING: translations.py has {len(dup_keys)} duplicate keys (last wins): "
+              f"{', '.join(dup_keys[:8])}{'...' if len(dup_keys) > 8 else ''}")
 
     # Summary
     total_errors = sum(len(r.errors) for r in all_results)

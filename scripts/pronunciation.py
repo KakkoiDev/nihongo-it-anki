@@ -553,6 +553,9 @@ def preprocess_for_tts(text: str) -> str:
     # v2.0.0 style version strings: keep the number, drop the "v"
     # Can't use \b - doesn't work at Japanese/ASCII boundary
     text = re.sub(r'(?<![A-Za-z])v(\d)', r'バージョン\1', text)
+    # Multi-token terms whose bare digit would otherwise fuse with the
+    # following kanji (SOC 2監査 -> ソック2監査 -> "sokuni kansa")
+    text = text.replace('SOC 2', 'ソックツー')
 
     # Step 2: Extract furigana
     text = extract_furigana(text)

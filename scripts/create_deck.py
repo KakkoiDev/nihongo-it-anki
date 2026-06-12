@@ -510,7 +510,7 @@ Examples:
         print(f"Total cards: {total_notes * 3} (3 cards per note)")
         print(f"Media files: {len(all_media)}")
 
-    elif args.all:
+    if args.all:
         for tier in config.tier_range():
             deck, media_files = create_deck(config, tier, include_audio, args.female)
             output = f"{config.slug}-tier{tier}{suffix}.apkg"
@@ -520,7 +520,7 @@ Examples:
             package.write_to_file(output)
 
             print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3 cards/note)")
-    else:
+    elif args.tier:
         tier = args.tier
         deck, media_files = create_deck(config, tier, include_audio, args.female)
         output = args.output or f"{config.slug}-tier{tier}{suffix}.apkg"

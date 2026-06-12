@@ -80,7 +80,7 @@ def main():
     # Report untranslated terms
     untranslated = set()
     for row in all_rows:
-        if row['KeyMeaning'] == row['Cloze'] and not re.match(r'^[A-Za-z0-9\s\-\.]+$', row['Cloze']):
+        if row['KeyMeaning'] == row['Cloze'] and not re.match(r'^[A-Za-z0-9\s\-\./]+$', row['Cloze']):
             untranslated.add(row['Cloze'])
 
     if untranslated:

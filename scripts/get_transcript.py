@@ -49,6 +49,13 @@ from config import load_deck_config
 
 _tagger = fugashi.Tagger()
 _KATAKANA_RE = re.compile(r"[^゠-ヿ]+")
+# Digit readings for surfaces fugashi can't parse (1 -> イチ); paired with
+# the kanji-numeral normalization in normalize() this gives both sides an
+# identical path (朝1 and 朝イチ both become アサイチ).
+_DIGIT_READINGS = str.maketrans({
+    '0': 'ゼロ', '1': 'イチ', '2': 'ニ', '3': 'サン', '4': 'ヨン',
+    '5': 'ゴ', '6': 'ロク', '7': 'ナナ', '8': 'ハチ', '9': 'キュウ',
+})
 WHISPER_CLI = Path.home() / "Code/skool-live-transcript/vendor/whisper.cpp/build/bin/whisper-cli"
 MODEL_DIR = WHISPER_CLI.parent.parent.parent / "models"
 DOWNLOAD_SCRIPT = MODEL_DIR / "download-ggml-model.sh"
@@ -122,6 +129,9 @@ def normalize(text: str) -> str:
     text = unicodedata.normalize("NFKC", text)
     for ch in "。、！？・「」『』（）(),.!? \t\n":
         text = text.replace(ch, "")
+    # Kanji numerals -> ASCII digits so both sides take the same path
+    # through to_kana (whisper writes 一点 where the CSV has 1点).
+    text = text.translate(str.maketrans("〇一二三四五六七八九", "0123456789"))
     return text
 
 
@@ -140,7 +150,8 @@ def to_kana(text: str) -> str:
         if kana and kana != "*":
             parts.append(kana)
         else:
-            parts.append(jaconv.hira2kata(word.surface))
+            surface = word.surface.translate(_DIGIT_READINGS)
+            parts.append(jaconv.hira2kata(surface))
     return "".join(parts)
 
 
@@ -175,15 +186,19 @@ def edit_distance(a: str, b: str) -> int:
     return prev[-1]
 
 
-def classify(distance: int, length_delta: int) -> str:
+def classify(distance: int, length_delta: int, expected_len: int = 0) -> str:
     """Categorize a comparison result.
 
     OK              distance == 0
+    SHORT_CLIP      expected under 4 kana - whisper has nothing to anchor
+                    on; verify by ear instead of trusting the transcript
     LIKELY_ELISION  characters missing in transcript (delta >= 2)
     MISMATCH        any other discrepancy
     """
     if distance == 0:
         return "OK"
+    if expected_len and expected_len < 4:
+        return "SHORT_CLIP"
     if length_delta >= 2:
         return "LIKELY_ELISION"
     return "MISMATCH"
@@ -223,7 +238,7 @@ def check_row(tier: int, row_num: int, sentences: list[dict], audio_dir: Path) -
 
     dist = edit_distance(kana_expected, kana_transcript)
     length_delta = len(kana_expected) - len(kana_transcript)
-    status = classify(dist, length_delta)
+    status = classify(dist, length_delta, len(kana_expected))
 
     return {
         "tier": tier,
