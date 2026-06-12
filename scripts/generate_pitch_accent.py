@@ -123,11 +123,14 @@ def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
     Handles compound cloze words by parsing the pronunciation annotations
     and matching against the surface text.
     """
-    # Simple case: exact match with annotation
-    pattern = re.compile(re.escape(cloze) + r'【([^】]+)】')
-    m = pattern.search(pronunciation)
-    if m:
-        return m.group(1)
+    # Simple case: exact match with annotation. Only valid for all-kanji
+    # clozes: an annotation covers just the kanji run before it, so for a
+    # mixed cloze like ブロック解除【かいじょ】 the match would drop ブロック.
+    if re.fullmatch(r'[一-鿿㐀-䶿々]+', cloze):
+        pattern = re.compile(re.escape(cloze) + r'【([^】]+)】')
+        m = pattern.search(pronunciation)
+        if m:
+            return m.group(1)
 
     # No kanji in cloze - it IS the kana reading
     if not re.search(r'[\u4e00-\u9fff\u3005]', cloze):
@@ -154,7 +157,7 @@ def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
                 break
             surface_pos = part_end
         if reading:
-            return ''.join(reading)
+            return kata_to_hira(''.join(reading))
 
     # Segment case: cloze word not contiguous in pronunciation (dictionary form
     # vs inflected form). Break cloze into kanji/non-kanji segments and look up
