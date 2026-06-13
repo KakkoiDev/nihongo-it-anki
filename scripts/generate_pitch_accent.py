@@ -127,7 +127,11 @@ def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
     # clozes: an annotation covers just the kanji run before it, so for a
     # mixed cloze like ブロック解除【かいじょ】 the match would drop ブロック.
     if re.fullmatch(r'[一-鿿㐀-䶿々]+', cloze):
-        pattern = re.compile(re.escape(cloze) + r'【([^】]+)】')
+        # Lookbehind: reject matches where the cloze is a kanji suffix of a
+        # larger annotated run (e.g. 分類 inside 自動分類【じどうぶんるい】),
+        # which would capture the whole compound reading. Such clozes fall
+        # through to the fugashi token-kana fallback in get_pitch_html.
+        pattern = re.compile(r'(?<![一-鿿㐀-䶿々])' + re.escape(cloze) + r'【([^】]+)】')
         m = pattern.search(pronunciation)
         if m:
             return m.group(1)
@@ -171,7 +175,7 @@ def get_kana_reading(cloze: str, pronunciation: str) -> str | None:
     reading_parts = []
     for seg in segments:
         if kanji_re.match(seg):
-            seg_pattern = re.compile(re.escape(seg) + r'【([^】]+)】')
+            seg_pattern = re.compile(r'(?<![一-鿿㐀-䶿々])' + re.escape(seg) + r'【([^】]+)】')
             seg_m = seg_pattern.search(pronunciation)
             if seg_m:
                 reading_parts.append(seg_m.group(1))
@@ -197,7 +201,7 @@ def _decompose_kanji(kanji_seg: str, pronunciation: str) -> str | None:
         found = False
         for length in range(len(remaining), 0, -1):
             prefix = remaining[:length]
-            m = re.search(re.escape(prefix) + r'【([^】]+)】', pronunciation)
+            m = re.search(r'(?<![一-鿿㐀-䶿々])' + re.escape(prefix) + r'【([^】]+)】', pronunciation)
             if m:
                 readings.append(m.group(1))
                 remaining = remaining[length:]
