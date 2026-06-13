@@ -3026,4 +3026,11 @@ TRANSLATIONS = {
     '維持した': 'maintained',
     '高速化': 'speedup',
     '追記': 'addendum / append',
+    '速く': 'fast',
+    '重複を排除': 'dedup',
+    '移り': 'move on',
+    '学び': 'learn',
+    '適応': 'adapt',
+    '聞いて': 'listen',
+    '腐り': 'rot / decay',
 }
