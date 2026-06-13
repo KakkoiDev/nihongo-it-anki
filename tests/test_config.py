@@ -61,6 +61,12 @@ class TestLoadDeckConfig:
         with pytest.raises(FileNotFoundError):
             load_deck_config("nonexistent-deck")
 
+    def test_cloze_in_sentence_defaults_true(self):
+        assert load_deck_config("it-vocab").check_cloze_in_sentence is True
+
+    def test_kundoku_cloze_check_disabled(self):
+        assert load_deck_config("it-kundoku").check_cloze_in_sentence is False
+
 
 class TestNoDuplicateIds:
     """No two decks share model_id or deck_base_id."""

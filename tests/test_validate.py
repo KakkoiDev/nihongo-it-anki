@@ -10,7 +10,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts" / "lib"))
 
 from config import list_decks, load_deck_config
-from validate import REQUIRED_COLUMNS, validate_tier
+from validate import (
+    ABBREV_EXPANSION_CLOZES,
+    REQUIRED_COLUMNS,
+    ValidationResult,
+    validate_cloze_in_sentence,
+    validate_tier,
+)
 
 ALL_DECKS = list_decks()
 ALL_CONFIGS = {slug: load_deck_config(slug) for slug in ALL_DECKS}
@@ -64,6 +70,29 @@ class TestValidateTier:
             result = validate_tier(deck_config, tier)
             assert result.key_meaning_valid == result.key_meaning_total, \
                 f"{deck_config.slug} tier {tier}: {result.key_meaning_total - result.key_meaning_valid} untranslated"
+
+
+class TestClozeInSentence:
+    """Cloze must be a substring of Sentence so Card 3 blanking works."""
+
+    def test_cloze_present_passes(self):
+        result = ValidationResult(1)
+        validate_cloze_in_sentence(
+            [{'Cloze': '協力', 'Sentence': '他のチームと協力してください。'}], result)
+        assert not result.has_errors
+
+    def test_cloze_absent_errors(self):
+        result = ValidationResult(1)
+        validate_cloze_in_sentence(
+            [{'Cloze': '協力する', 'Sentence': '他のチームと協力してください。'}], result)
+        assert result.has_errors
+
+    def test_abbreviation_expansion_whitelisted(self):
+        result = ValidationResult(1)
+        cloze = next(iter(ABBREV_EXPANSION_CLOZES))
+        validate_cloze_in_sentence(
+            [{'Cloze': cloze, 'Sentence': 'AZ をまたいで配置してください。'}], result)
+        assert not result.has_errors
 
 
 class TestRequiredColumns:

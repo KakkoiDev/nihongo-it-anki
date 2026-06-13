@@ -3,6 +3,9 @@ slug = "it-kundoku"
 name = "IT Kundoku"
 model_id = 1708493424
 deck_base_id = 2160501211
+# Disabled pending a kundoku cloze audit: 6 rows teach a wenyan kanji
+# absent from the example sentence (see docs/IMPROVEMENTS.md).
+check_cloze_in_sentence = false
 
 [tiers]
 count = 3

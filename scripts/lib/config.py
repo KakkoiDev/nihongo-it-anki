@@ -20,6 +20,7 @@ class DeckConfig:
     tier_count: int
     tier_names: dict[int, str]
     tier_sizes: dict[int, int]
+    check_cloze_in_sentence: bool = True
 
     @property
     def data_dir(self) -> Path:
@@ -63,6 +64,7 @@ def load_deck_config(slug: str) -> DeckConfig:
         tier_count=tiers["count"],
         tier_names=tier_names,
         tier_sizes=tier_sizes,
+        check_cloze_in_sentence=deck.get("check_cloze_in_sentence", True),
     )
 
 

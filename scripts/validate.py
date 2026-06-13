@@ -157,6 +157,25 @@ def validate_translation(rows: list[dict], result: ValidationResult):
             result.add_error(f"Row {idx}: Translation has no English letters: '{translation[:40]}'")
 
 
+# Clozes intentionally absent from their sentence (abbreviation-expansion
+# rows: sentence has AZ / P99 / Parameter Store, cloze is the spelled-out
+# form). See docs/IMPROVEMENTS.md.
+ABBREV_EXPANSION_CLOZES = {
+    'アベイラビリティゾーン',
+    'パーセンタイル',
+    'パラメータストア',
+}
+
+
+def validate_cloze_in_sentence(rows: list[dict], result: ValidationResult):
+    """Cloze must appear in Sentence, or Card 3 blanking is a silent no-op."""
+    for idx, row in enumerate(rows, 1):
+        cloze = row.get('Cloze', '')
+        sentence = row.get('Sentence', '')
+        if cloze and cloze not in sentence and cloze not in ABBREV_EXPANSION_CLOZES:
+            result.add_error(f"Row {idx}: Cloze '{cloze}' not in Sentence (Card 3 blank is a no-op)")
+
+
 def validate_translations_file(config: DeckConfig) -> list[str]:
     """Check the deck's translations.py for duplicate dict keys (last-wins is silent)."""
     path = config.csv_path(1).parent / "translations.py"
@@ -215,6 +234,8 @@ def validate_tier(config: DeckConfig, tier: int, check_audio: bool = False, verb
 
     # Step 4: English translation
     validate_translation(rows, result)
+    if config.check_cloze_in_sentence:
+        validate_cloze_in_sentence(rows, result)
     result.tekudasai = sum(1 for r in rows if r.get('Sentence', '').rstrip('。').endswith('てください'))
 
     # Step 5: Audio (optional)

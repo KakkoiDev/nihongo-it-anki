@@ -129,6 +129,27 @@ against the ~30% ceiling before generating audio.
 - Female-voice audio for tiers 11-12: no tier*-audio-female dirs exist for
   any tier; generate for all 12 at once if ever wanted.
 
+## 11. it-kundoku cloze-in-sentence (open)
+
+validate.py now errors when a Cloze is not a substring of its Sentence
+(Card 3 blanking is textContent.split(cloze), a silent no-op otherwise).
+The it-vocab instances of this class were fixed 2026-06-13. it-kundoku is
+exempted via `check_cloze_in_sentence = false` in its deck.toml pending
+its own audit: 6 rows teach a wenyan kanji that is absent from the example
+sentence, so their Card 3 does not blank.
+
+- t1:2 之 / エラーの原因を査す (sentence uses を)
+- t2:4 返 / 早期リターン用いる (sentence uses リターン)
+- t3:14 端 / 新エンドポイント加える (sentence uses エンドポイント)
+- t3:17 型 / 引数かたストリング (sentence writes かた in kana)
+- t3:18 型 / ジェネリックかた用いる (sentence writes かた in kana)
+- t3:37 先後 / 先にテスト書く. 後にコード実装す (split 先...後)
+
+The fix is to make each Sentence use the taught kanji (型 not かた, 之 not
+を). That is a Sentence edit on a released deck (it-kundoku/v1.0), so it
+needs the guid-migration-map + migrate_sentences flow, not a cloze-side
+edit.
+
 ## Audit decisions kept (so they are not re-litigated)
 
 - ページングされました (T3:245): kept; standard SRE-book Japanese. Only its
