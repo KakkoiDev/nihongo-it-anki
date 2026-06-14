@@ -8,7 +8,7 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 
 ### IT Vocabulary (`it-vocab`)
 
-1176 sentences across 10 tiers. Polite/keigo workplace Japanese for software engineers.
+1516 sentences across 15 tiers. Casual to keigo workplace Japanese for software engineers.
 
 | Tier | Count | Focus |
 |------|-------|-------|
@@ -22,6 +22,11 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 | 8 | 30 | Problem-solving discussions |
 | 9 | 50 | AI & Agents |
 | 10 | 51 | Documentation & Engineering Culture |
+| 11 | 100 | Casual chat (plain-form Slack/huddle) |
+| 12 | 100 | Live meetings (interrupting, clarifying, estimating) |
+| 13 | 60 | Corporate life (attendance, expenses, reviews, 1on1) |
+| 14 | 40 | Business email (keigo formulas) |
+| 15 | 40 | Written tickets, commits, PRs (formal written register) |
 
 ### IT Kundoku (`it-kundoku`)
 
@@ -37,16 +42,16 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 
 **[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install IT Vocabulary directly from Anki app
 
-**[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/nihongo-it-vocab-complete.apkg)** - manual download
+**[GitHub Release](https://github.com/KakkoiDev/nihongo-it-anki/releases/latest/download/it-vocab-complete.apkg)** - manual download
 
 ## Project Structure
 
 ```
 decks/
-  it-vocab/           # IT Vocabulary deck (10 tiers, 1176 sentences)
+  it-vocab/           # IT Vocabulary deck (15 tiers, 1516 sentences)
     deck.toml         # Deck config (name, IDs, tier definitions)
     translations.py   # Cloze word translations
-    tier{1-10}-vocabulary.csv
+    tier{1-15}-vocabulary.csv
   it-kundoku/         # IT Kundoku deck (3 tiers, 89 sentences)
     deck.toml
     translations.py
@@ -112,17 +117,17 @@ Each deck is released independently with its own version tag (`{deck}/{version}`
 
 ```bash
 # Preview what will be released
-uv run python scripts/release.py --deck it-vocab --version v4.3 --dry-run
+uv run python scripts/release.py --deck it-vocab --version v5.1 --dry-run
 
 # Create releases
-uv run python scripts/release.py --deck it-vocab --version v4.3 --title "Tier 9/10 split"
+uv run python scripts/release.py --deck it-vocab --version v5.1 --title "Tiers 13-15 + audit fixes"
 uv run python scripts/release.py --deck it-kundoku --version v1.0 --title "Initial release"
 
 # Draft release (not published)
 uv run python scripts/release.py --deck it-kundoku --version v1.0 --draft
 
 # Release notes from file
-uv run python scripts/release.py --deck it-vocab --version v4.3 --notes-file RELEASE.md
+uv run python scripts/release.py --deck it-vocab --version v5.1 --notes-file RELEASE.md
 ```
 
 Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files.
