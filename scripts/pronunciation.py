@@ -553,6 +553,9 @@ def preprocess_for_tts(text: str) -> str:
     """
     # Step 1: Symbol substitutions
     text = text.replace('%', 'パーセント')
+    # Grammar-template placeholder (e.g. 〜が作れるように): drop it so Edge TTS
+    # doesn't vocalize the wave dash. Cards keep 〜 for display.
+    text = text.replace('〜', '').replace('～', '')
     # v2.0.0 style version strings: keep the number, drop the "v"
     # Can't use \b - doesn't work at Japanese/ASCII boundary
     text = re.sub(r'(?<![A-Za-z])v(\d)', r'バージョン\1', text)

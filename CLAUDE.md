@@ -8,6 +8,7 @@ Multi-deck Anki generator for IT Japanese. Each deck lives under `decks/<slug>/`
 |------|------|-------|
 | `it-vocab` | Japanese IT Vocabulary | 15 (1516 sentences) |
 | `it-kundoku` | IT Kundoku | 3 (89 sentences) |
+| `jp-teaching` | Japanese Teaching Phrases | 3 (130 sentences) |
 
 ## Build Pipeline
 

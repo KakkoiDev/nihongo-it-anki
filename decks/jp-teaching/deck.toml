@@ -1,0 +1,18 @@
+[deck]
+slug = "jp-teaching"
+name = "Japanese Teaching Phrases"
+model_id = 1809594536
+deck_base_id = 2261602312
+
+[tiers]
+count = 3
+
+[tiers.names]
+1 = "Tier 01 - Teaching Scaffolding"
+2 = "Tier 02 - Concept Explanation"
+3 = "Tier 03 - Life Lessons"
+
+[tiers.sizes]
+1 = 33
+2 = 45
+3 = 52
