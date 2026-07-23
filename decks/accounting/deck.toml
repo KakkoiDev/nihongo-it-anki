@@ -1,0 +1,30 @@
+[deck]
+slug = "accounting"
+name = "会計・お金周り / Japanese Accounting"
+model_id = 1809594535
+deck_base_id = 2261602312
+
+[tiers]
+count = 9
+
+[tiers.names]
+1 = "Tier 1 - 業務フロー / Business Flow"
+2 = "Tier 2 - 計上・認識 / Recognition"
+3 = "Tier 3 - 仕訳・勘定科目 / Journals & Accounts"
+4 = "Tier 4 - 取引先・請求・入金 / Parties, Billing, Collection"
+5 = "Tier 5 - 残高・調整 / Balances & Adjustments"
+6 = "Tier 6 - 締め・会計期間 / Closing & Periods"
+7 = "Tier 7 - 会計基準・税・法 / Standards, Tax, Compliance"
+8 = "Tier 8 - 工事原価・在庫 / Construction Cost & Inventory"
+9 = "Tier 9 - 議論フレーズ / Discussion"
+
+[tiers.sizes]
+1 = 18
+2 = 11
+3 = 12
+4 = 16
+5 = 16
+6 = 14
+7 = 17
+8 = 13
+9 = 12

@@ -9,6 +9,7 @@ Multi-deck Anki generator for IT Japanese. Each deck lives under `decks/<slug>/`
 | `it-vocab` | Japanese IT Vocabulary | 15 (1516 sentences) |
 | `it-kundoku` | IT Kundoku | 3 (89 sentences) |
 | `jp-teaching` | Japanese Teaching Phrases | 3 (130 sentences) |
+| `accounting` | 会計・お金周り / Japanese Accounting | 9 (129 sentences) |
 
 ## Build Pipeline
 
@@ -82,6 +83,7 @@ uv run python scripts/generate_audio.py --deck it-vocab --tier 9 --force
 |--------|---------|
 | `generate_pitch_accent.py` | Fill PitchAccent column from UniDic |
 | `add_key_meanings.py` | Fill KeyMeaning column from translations.py |
+| `check_pronunciation.py` | Verify furigana readings against UniDic (standard pronunciation check; also run in advisory mode by `validate.py`). Whitelist legit divergences in `decks/<slug>/pronunciation_overrides.py` |
 | `validate.py` | Validate CSVs and audio files |
 | `test_tts.py` | Test TTS for specific rows or text |
 | `pronunciation.py` | Shared TTS preprocessing (furigana, katakana conversion) |

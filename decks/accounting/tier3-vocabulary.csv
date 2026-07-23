@@ -1,0 +1,13 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent
+経費の仕訳を入力しておきます。,I will enter the journal entry for the expense.,仕訳,経費【けいひ】の仕訳【しわけ】を入力【にゅうりょく】しておきます。,仕訳 - journal entry,polite,journal entry,
+仕訳明細を一行ずつ確認します。,I will check each journal line one by one.,仕訳明細,仕訳明細【しわけめいさい】を一行【いちぎょう】ずつ確認【かくにん】します。,仕訳 - journal line,polite,journal line,
+借方に現金を計上します。,We record cash on the debit side.,借方,借方【かりかた】に現金【げんきん】を計上【けいじょう】します。,仕訳 - debit,polite,debit,
+貸方に売上を計上します。,We record sales on the credit side.,貸方,貸方【かしかた】に売上【うりあげ】を計上【けいじょう】します。,仕訳 - credit,polite,credit,
+勘定科目を正しく選んでください。,Please select the correct account title.,勘定科目,勘定科目【かんじょうかもく】を正【ただ】しく選【えら】んでください。,仕訳 - account title,polite,account title,
+補助科目で取引先を分けます。,We separate business partners using sub-accounts.,補助科目,補助科目【ほじょかもく】で取引【とりひき】先【さき】を分【わ】けます。,仕訳 - sub-account,polite,sub-account,
+総勘定元帳で残高を確認します。,We check the balance in the general ledger.,総勘定元帳,総勘定元帳【そうかんじょうもとちょう】で残高【ざんだか】を確認【かくにん】します。,仕訳 - general ledger,polite,general ledger,
+月末に振替仕訳を起こします。,We create a transfer entry at month-end.,振替仕訳,月末【げつまつ】に振替仕訳【ふりかえしわけ】を起【お】こします。,仕訳 - transfer / adjusting entry,polite,transfer / adjusting entry,
+誤りは逆仕訳で取り消します。,We cancel the error with a reversing entry.,逆仕訳,誤【あやま】りは逆仕訳【ぎゃくしわけ】で取【と】り消【け】します。,仕訳 - reversing entry,polite,reversing entry,
+複合仕訳で複数の勘定をまとめて計上します。,We record multiple accounts together with a compound journal entry.,複合仕訳,複合仕訳【ふくごうしわけ】で複数【ふくすう】の勘定【かんじょう】をまとめて計上【けいじょう】します。,仕訳 - compound entry,polite,compound entry,
+請求書の明細を確認します。,We check the line items on the invoice.,明細,請求【せいきゅう】書【しょ】の明細【めいさい】を確認【かくにん】します。,仕訳 - line item,polite,line item,
+会計ソフトへ仕訳連携を行います。,We perform journal export to the accounting software.,仕訳連携,会計【かいけい】ソフトへ仕訳連携【しわけれんけい】を行【おこな】います。,仕訳 - journal integration / export,polite,journal integration / export,

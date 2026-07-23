@@ -350,6 +350,18 @@ Examples:
     total_errors = sum(len(r.errors) for r in all_results)
     total_warnings = sum(len(r.warnings) for r in all_results)
 
+    # Advisory: UniDic pronunciation check. Reports mismatches but never fails
+    # validate (some decks have intentional non-UniDic readings, e.g. wenyan).
+    print()
+    try:
+        from check_pronunciation import run as check_pron
+        _, pron_mismatch = check_pron(config.slug, args.tier, quiet=True)
+        if pron_mismatch:
+            print(f"  -> {pron_mismatch} pronunciation(s) differ from UniDic (advisory). "
+                  f"Details: uv run python scripts/check_pronunciation.py --deck {config.slug}")
+    except Exception as e:
+        print(f"(pronunciation check skipped: {e})")
+
     print("\n" + "=" * 50)
     if total_errors == 0:
         print(f"All validations passed! ({total_warnings} warnings)")

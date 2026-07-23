@@ -38,6 +38,22 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 | 2 | 24 | Actions - single-kanji verbs for code operations |
 | 3 | 38 | Nouns, Descriptors & Patterns |
 
+### Japanese Accounting (`accounting`)
+
+129 sentences across 9 tiers. Money/accounting vocabulary for a construction-industry ERP - enough to read and discuss the sales/cost/closing flow with Japanese colleagues. All readings verified against UniDic.
+
+| Tier | Count | Focus |
+|------|-------|-------|
+| 1 | 18 | Business flow - order, delivery, acceptance, billing |
+| 2 | 11 | Recognition - sales/cost recognition, bookkeeping |
+| 3 | 12 | Journals & accounts - debit/credit, ledgers, entries |
+| 4 | 16 | Parties, billing & collection - bill-to, reconciliation |
+| 5 | 16 | Balances & adjustments - AR/AP, offset, WIP |
+| 6 | 14 | Closing & periods - period lock, carry-over |
+| 7 | 17 | Standards, tax & compliance - recognition standard, invoice system |
+| 8 | 13 | Construction cost & inventory - WIP, cost allocation |
+| 9 | 12 | Discussion phrases - talking through the flow |
+
 ## Download
 
 **[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install IT Vocabulary directly from Anki app
@@ -56,6 +72,11 @@ decks/
     deck.toml
     translations.py
     tier{1-3}-vocabulary.csv
+  accounting/         # Japanese Accounting deck (9 tiers, 129 sentences)
+    deck.toml
+    translations.py
+    pronunciation_overrides.py   # readings that legitimately differ from UniDic
+    tier{1-9}-vocabulary.csv
 scripts/
   lib/config.py       # DeckConfig dataclass + loader
   create_deck.py      # Create Anki .apkg files
@@ -139,7 +160,8 @@ Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files
 | `create_deck.py` | Create Anki .apkg files |
 | `generate_audio.py` | Generate TTS audio for sentences |
 | `generate_pitch_accent.py` | Generate pitch accent data from UniDic |
-| `validate.py` | Validate CSVs and audio files |
+| `check_pronunciation.py` | Verify furigana readings against the UniDic dictionary (standard pronunciation check) |
+| `validate.py` | Validate CSVs and audio files (runs `check_pronunciation` in advisory mode) |
 | `pronunciation.py` | Furigana extraction, English-to-katakana conversion, TTS prosodic fixes |
 | `add_key_meanings.py` | Generate English meanings for key words |
 | `test_tts.py` | Generate audio for one or more rows to test pronunciation changes |
