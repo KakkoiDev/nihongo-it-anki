@@ -33,24 +33,117 @@ Prerequisites:
 
 import argparse
 import csv
-import hashlib
-import re
 import sys
 from pathlib import Path
 
 import genanki
+import jpanki
+from jpanki import furigana, theme
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import DeckConfig, list_decks, load_deck_config
 
+# The furigana renderer, the card CSS and the force-style trick used to live
+# here, in copies that had quietly drifted from minihongo's equivalents. They
+# belong to jpanki now - see that project's golden-file tests, which pin this
+# output against what both projects shipped before the extraction.
+to_ruby_html = furigana.to_ruby
 
-def to_ruby_html(text: str) -> str:
-    """Convert 漢字【かんじ】 to <ruby>漢字<rt>かんじ</rt></ruby>."""
-    return re.sub(
-        r'([\u4e00-\u9fff\u3400-\u4dbf\u3005]+)【([^】]+)】',
-        r'<ruby>\1<rt>\2</rt></ruby>',
-        text,
+
+def build_css() -> str:
+    """The shared design system, plus this deck's own components.
+
+    Everything in ``extra`` is specific to these three card types - the
+    pronunciation line, the JS cloze blank, the register badges, the pitch
+    accent colouring - and stays here. The layers above it are shared with
+    every other deck built on jpanki.
+    """
+    return theme.compose(
+        # 28px rather than the library default: these cards put a single
+        # sentence at the centre of attention, where minihongo's pair one with
+        # a headword. Both are right for their layout.
+        theme.base(sentence_size="28px", sentence_margin="20px 0"),
+        theme.chip(".category"),
+        theme.ruby(),
+        theme.replay(),
+        # The listening card's front is nothing but audio, so its button becomes
+        # the dominant element.
+        theme.replay(scope=".listening-front", size="5rem", icon_size="2.5rem",
+                     radius="1.25rem"),
+        theme.night(chip_selector=".category"),
+        extra=COMPONENT_CSS,
     )
+
+
+COMPONENT_CSS = '''
+.pronunciation {
+    font-size: 18px;
+    color: #666666;
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+.key-vocab {
+    font-size: 16px;
+    color: #666666;
+    margin-top: 15px;
+}
+
+.vocab {
+    font-weight: bold;
+    color: #2B70C9;
+}
+
+.blank {
+    display: inline-block;
+    min-width: 4em;
+    border-bottom: 2px solid #2B2B2B;
+    color: transparent;
+}
+
+.cloze-answer {
+    color: #2B70C9;
+    font-weight: bold;
+}
+
+.listening-front { margin: 40px 0; }
+
+.register {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 0.75rem;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+    border: 1px solid #E5E5E5;
+}
+.register-casual  { background: #F7F7F7; color: #666666; }
+.register-polite  { background: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
+.register-formal  { background: #fff3e0; color: #e65100; border-color: #ffe0b2; }
+.register-keigo   { background: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
+
+.pitch-h { color: #4caf50; }
+.pitch-l { color: #f44336; }
+
+.night_mode .translation { color: #E8E8E8; }
+.night_mode .pronunciation { color: #999999; }
+.night_mode .key-vocab { color: #999999; }
+.night_mode .vocab { color: #6DB3F2; }
+.night_mode .cloze-answer { color: #6DB3F2; }
+.night_mode .blank { border-bottom-color: #999999; }
+.night_mode .register { border-color: #333333; }
+.night_mode .register-casual  { background: #252525; color: #999999; }
+.night_mode .register-polite  { background: #1a2a3a; color: #64b5f6; border-color: #1a2a3a; }
+.night_mode .register-formal  { background: #2a1f0e; color: #ffb74d; border-color: #2a1f0e; }
+.night_mode .register-keigo   { background: #2a1a2a; color: #ce93d8; border-color: #2a1a2a; }
+.night_mode .pitch-h { color: #81c784; }
+.night_mode .pitch-l { color: #e57373; }
+'''
+
 
 
 def create_model(config: DeckConfig) -> genanki.Model:
@@ -137,180 +230,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
 ''',
             },
         ],
-        css='''
-.card {
-    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    color: #2B2B2B;
-    background: #FFFFFF;
-    padding: 24px;
-    line-height: 1.7;
-}
-
-.card-type {
-    font-size: 12px;
-    color: #666666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.sentence {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 20px 0;
-    line-height: 1.8;
-}
-
-.translation {
-    font-size: 22px;
-    margin: 15px 0;
-    line-height: 1.6;
-}
-
-.pronunciation {
-    font-size: 18px;
-    color: #666666;
-    margin: 15px 0;
-    line-height: 1.8;
-}
-
-.category {
-    display: inline-block;
-    background: #F7F7F7;
-    padding: 4px 12px;
-    border-radius: 0.75rem;
-    font-size: 12px;
-    color: #666666;
-    border: 1px solid #E5E5E5;
-    margin-top: 10px;
-}
-
-.key-vocab {
-    font-size: 16px;
-    color: #666666;
-    margin-top: 15px;
-}
-
-.vocab {
-    font-weight: bold;
-    color: #2B70C9;
-}
-
-.blank {
-    display: inline-block;
-    min-width: 4em;
-    border-bottom: 2px solid #2B2B2B;
-    color: transparent;
-}
-
-.cloze-answer {
-    color: #2B70C9;
-    font-weight: bold;
-}
-
-.audio { margin: 10px 0; }
-
-/* Replay button - match minihongo play-btn style */
-.replay-button, .replaybutton {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0 auto;
-    border: 2px solid #E5E5E5;
-    border-radius: 0.75rem;
-    background: #FFFFFF;
-    cursor: pointer;
-    text-decoration: none;
-}
-.replay-button *, .replaybutton * { display: none !important; }
-.replay-button::before, .replaybutton::before {
-    content: "";
-    flex-shrink: 0;
-    width: 1.2rem;
-    height: 1.2rem;
-    background: #2B70C9;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 8.5v7a4.47 4.47 0 002.5-3.5zM14 3.23v2.06a6.51 6.51 0 010 13.42v2.06A8.51 8.51 0 0014 3.23z'/%3E%3C/svg%3E") center / contain no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 8.5v7a4.47 4.47 0 002.5-3.5zM14 3.23v2.06a6.51 6.51 0 010 13.42v2.06A8.51 8.51 0 0014 3.23z'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-
-/* Listening card: larger play button as dominant element */
-.listening-front .replay-button,
-.listening-front .replaybutton {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 1.25rem;
-}
-.listening-front .replay-button::before,
-.listening-front .replaybutton::before {
-    width: 2.5rem;
-    height: 2.5rem;
-}
-.listening-front { margin: 40px 0; }
-
-ruby { ruby-align: center; }
-ruby rt { font-size: 12px; font-weight: normal; color: #666666; }
-
-hr#answer { border: none; border-top: 3px solid #BC002D; margin: 20px 0; }
-
-.register {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 0.75rem;
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 6px;
-    margin-left: 6px;
-    vertical-align: middle;
-    border: 1px solid #E5E5E5;
-}
-.register-casual  { background: #F7F7F7; color: #666666; }
-.register-polite  { background: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
-.register-formal  { background: #fff3e0; color: #e65100; border-color: #ffe0b2; }
-.register-keigo   { background: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
-
-.pitch-h { color: #4caf50; }
-.pitch-l { color: #f44336; }
-
-/* Dark mode via Anki's native .night_mode class */
-.night_mode .card {
-    background: #1A1A1A;
-    color: #E8E8E8;
-}
-.night_mode .card-type { color: #999999; }
-.night_mode .translation { color: #E8E8E8; }
-.night_mode .pronunciation { color: #999999; }
-.night_mode .category {
-    background: #252525;
-    border-color: #333333;
-    color: #999999;
-}
-.night_mode .key-vocab { color: #999999; }
-.night_mode .vocab { color: #6DB3F2; }
-.night_mode .cloze-answer { color: #6DB3F2; }
-.night_mode .blank { border-bottom-color: #999999; }
-.night_mode .register {
-    border-color: #333333;
-}
-.night_mode .register-casual  { background: #252525; color: #999999; }
-.night_mode .register-polite  { background: #1a2a3a; color: #64b5f6; border-color: #1a2a3a; }
-.night_mode .register-formal  { background: #2a1f0e; color: #ffb74d; border-color: #2a1f0e; }
-.night_mode .register-keigo   { background: #2a1a2a; color: #ce93d8; border-color: #2a1a2a; }
-.night_mode .pitch-h { color: #81c784; }
-.night_mode .pitch-l { color: #e57373; }
-.night_mode hr#answer { border-top-color: #BC002D; }
-.night_mode ruby rt { color: #999999; }
-.night_mode .replay-button,
-.night_mode .replaybutton {
-    border-color: #333333;
-    background: #1A1A1A;
-}
-'''
+        css=build_css(),
     )
 
 
@@ -326,40 +246,63 @@ def create_deck(config: DeckConfig, tier: int, include_audio: bool = True, femal
     Returns:
         Tuple of (deck, list of media files)
     """
-    csv_path = config.csv_path(tier)
-    audio_dir = config.audio_dir(tier, female)
-
-    if not csv_path.exists():
-        print(f"Error: {csv_path} not found")
-        sys.exit(1)
-
-    # Read vocabulary
-    with open(csv_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        sentences = list(reader)
-
-    # Create deck
     deck = genanki.Deck(
         config.get_deck_id(tier),
         f'{config.name} - Tier {tier}'
     )
+    notes, media_files = build_notes(config, tier, create_model(config),
+                                     include_audio, female)
+    for note in notes:
+        deck.add_note(note)
+    return deck, media_files
 
-    model = create_model(config)
-    media_files = []
 
-    for idx, row in enumerate(sentences):
-        num = idx + 1
-        audio_file = f"tier{tier}_{num:03d}.mp3"
+def read_tier(config: DeckConfig, tier: int) -> list[dict]:
+    """Read a tier's CSV, preserving row order.
+
+    Row order is load-bearing: audio filenames are positional, so inserting or
+    reordering a row rebinds every later clip. Documented in docs/IMPROVEMENTS.md.
+    """
+    csv_path = config.csv_path(tier)
+    if not csv_path.exists():
+        print(f"Error: {csv_path} not found")
+        sys.exit(1)
+    with open(csv_path, 'r', encoding='utf-8') as f:
+        return list(csv.DictReader(f))
+
+
+def build_notes(
+    config: DeckConfig,
+    tier: int,
+    model: genanki.Model,
+    include_audio: bool = True,
+    female: bool = False,
+) -> tuple[list[genanki.Note], list[str]]:
+    """Build one tier's notes, and the media they reference.
+
+    The single place notes are constructed. Both the per-tier and the --combined
+    build paths call this; they used to carry separate copies of the loop, and
+    the --combined one called create_deck() purely to harvest media_files before
+    rebuilding every note by hand.
+    """
+    audio_dir = config.audio_dir(tier, female)
+    notes: list[genanki.Note] = []
+    media_files: list[str] = []
+
+    for idx, row in enumerate(read_tier(config, tier)):
+        audio_file = f"tier{tier}_{idx + 1:03d}.mp3"
         audio_path = audio_dir / audio_file
 
-        # Check if audio exists
         if include_audio and audio_path.exists():
             audio_ref = f"[sound:{audio_file}]"
             media_files.append(str(audio_path))
         else:
+            # Not jpanki.sound_ref's empty string: these cards have shipped with
+            # this literal placeholder, and changing a field value changes
+            # nothing structurally but does alter what a learner sees.
             audio_ref = "[No audio]"
 
-        note = genanki.Note(
+        notes.append(genanki.Note(
             model=model,
             fields=[
                 row['Sentence'],
@@ -372,12 +315,13 @@ def create_deck(config: DeckConfig, tier: int, include_audio: bool = True, femal
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
             ],
+            # Keyed on the sentence. Editing one therefore orphans its review
+            # history, which is why scripts/migrate_guids.py exists.
             guid=genanki.guid_for(row['Sentence']),
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
-        )
-        deck.add_note(note)
+        ))
 
-    return deck, media_files
+    return notes, media_files
 
 
 def main():
@@ -435,10 +379,13 @@ Examples:
         sys.exit(1)
 
     if args.force_style:
-        model = create_model(config)
-        css_hash = int(hashlib.sha256(model.css.encode()).hexdigest()[:6], 16)
-        config.model_id += css_hash
-        print(f"--force-style: model_id offset by {css_hash} (CSS hash)")
+        # Presenting a new model is the only way to make Anki re-read card CSS,
+        # and it resets review history for every note using it. Deliberate, and
+        # deliberately not automatic.
+        original = config.model_id
+        config.model_id = jpanki.force_style(original, build_css())
+        print(f"--force-style: model_id {original} -> {config.model_id} "
+              f"(resets review history)")
 
     include_audio = not args.no_audio
     suffix = "-female" if args.female else ""
@@ -450,6 +397,7 @@ Examples:
         all_decks = []
         all_media = []
         total_notes = 0
+        model = create_model(config)
 
         for tier in config.tier_range():
             subdeck_name = f"{config.name}{voice_label}::{config.tier_names[tier]}"
@@ -458,47 +406,15 @@ Examples:
                 subdeck_name
             )
 
-            _, media_files = create_deck(config, tier, include_audio, args.female)
-            csv_path = config.csv_path(tier)
-            audio_dir = config.audio_dir(tier, args.female)
-
-            with open(csv_path, 'r', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
-                sentences = list(reader)
-
-            model = create_model(config)
-            for idx, row in enumerate(sentences):
-                num = idx + 1
-                audio_file = f"tier{tier}_{num:03d}.mp3"
-                audio_path = audio_dir / audio_file
-
-                if include_audio and audio_path.exists():
-                    audio_ref = f"[sound:{audio_file}]"
-                else:
-                    audio_ref = "[No audio]"
-
-                note = genanki.Note(
-                    model=model,
-                    fields=[
-                        row['Sentence'],
-                        row['Translation'],
-                        row['Cloze'],
-                        to_ruby_html(row['Pronunciation']),
-                        row['Note'],
-                        audio_ref,
-                        row.get('Register', ''),
-                        row['KeyMeaning'],
-                        row.get('PitchAccent', ''),
-                    ],
-                    guid=genanki.guid_for(row['Sentence']),
-                    tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
-                )
+            notes, media_files = build_notes(config, tier, model, include_audio,
+                                             args.female)
+            for note in notes:
                 subdeck.add_note(note)
 
             all_decks.append(subdeck)
             all_media.extend(media_files)
-            total_notes += len(sentences)
-            print(f"  Added {config.tier_names[tier]}: {len(sentences)} notes")
+            total_notes += len(notes)
+            print(f"  Added {config.tier_names[tier]}: {len(notes)} notes")
 
         output = args.output or f"{config.slug}-complete{suffix}.apkg"
         package = genanki.Package(all_decks)

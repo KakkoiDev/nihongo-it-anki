@@ -2,7 +2,13 @@
 slug = "jp-teaching"
 name = "Japanese Teaching Phrases"
 model_id = 1809594536
-deck_base_id = 2261602312
+# Was 2261602312 - the same base as `accounting`, whose tier decks 1-3 it
+# therefore collided with. Anki keys decks by ID, so importing both merged
+# jp-teaching's tiers into accounting's. Renumbering is the only fix; review
+# history lives on notes (whose GUIDs are unchanged), so scheduling survives,
+# but anyone who imported the old deck should delete the stale subdecks.
+# Registered in jpanki's ids.toml, which fails the build on a future collision.
+deck_base_id = 2362703413
 
 [tiers]
 count = 3

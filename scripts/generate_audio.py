@@ -19,37 +19,18 @@ import csv
 import sys
 from pathlib import Path
 
-import edge_tts
+from jpanki import tts
 
 from pronunciation import preprocess_for_tts
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import load_deck_config
 
-# Japanese Edge TTS voices
-VOICE_MALE = 'ja-JP-KeitaNeural'
-VOICE_FEMALE = 'ja-JP-NanamiNeural'
-
-# Rate limiting
-DELAY_BETWEEN_REQUESTS = 0.3  # seconds
-MAX_RETRIES = 3
-
-
-async def tts_generate(text: str, voice: str, output_path: Path, retries: int = MAX_RETRIES):
-    """Generate a single MP3 file using edge-tts with retry logic."""
-    for attempt in range(retries):
-        try:
-            communicate = edge_tts.Communicate(text, voice)
-            await communicate.save(str(output_path))
-            await asyncio.sleep(DELAY_BETWEEN_REQUESTS)
-            return
-        except Exception as e:
-            if attempt < retries - 1:
-                wait = 2 ** (attempt + 1)
-                print(f"    retry in {wait}s ({e})")
-                await asyncio.sleep(wait)
-            else:
-                raise
+# Voices, retry/backoff and rate limiting now come from jpanki.tts, which also
+# adds a content-hash cache and (where ffmpeg is available) sample-rate and
+# loudness levelling this script never had.
+VOICE_MALE = tts.VOICE_MALE
+VOICE_FEMALE = tts.VOICE_FEMALE
 
 
 async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = False, female: bool = False, deck: str = "it-vocab"):
@@ -86,23 +67,30 @@ async def generate_tier_audio(tier: int, voice: str = VOICE_MALE, force: bool = 
     print(f"Output: {output_dir}")
     print(f"Voice: {voice}\n")
 
-    for idx, row in enumerate(sentences):
-        tts_input = preprocess_for_tts(row['Pronunciation'])
-        num = idx + 1
+    # Filenames stay positional (tier{N}_{NNN}.mp3), so CSV row order remains
+    # load-bearing - see docs/IMPROVEMENTS.md.
+    jobs = [
+        tts.Job(
+            text=preprocess_for_tts(row['Pronunciation']),
+            output=output_dir / f"tier{tier}_{idx + 1:03d}.mp3",
+            voice=voice,
+        )
+        for idx, row in enumerate(sentences)
+    ]
 
-        output_path = output_dir / f"tier{tier}_{num:03d}.mp3"
+    if not tts.have_ffmpeg():
+        print("  note: ffmpeg not found, so clips keep Edge TTS's variable "
+              "sample rate and loudness. Install it and re-run with --force "
+              "to level them.\n")
 
-        if output_path.exists() and not force:
-            print(f"[{num}/{total}] Skipping (exists): {output_path.name}")
-            continue
+    def progress(index: int, count: int, job: tts.Job, skipped: bool) -> None:
+        if skipped:
+            print(f"[{index}/{count}] Skipping (exists): {job.output.name}")
+        else:
+            preview = job.text[:50] + ('...' if len(job.text) > 50 else '')
+            print(f"[{index}/{count}] {preview}")
 
-        print(f"[{num}/{total}] {tts_input[:50]}{'...' if len(tts_input) > 50 else ''}")
-
-        try:
-            await tts_generate(tts_input, voice, output_path)
-        except Exception as e:
-            print(f"    Error: {e}")
-            continue
+    await tts.synthesize_all(jobs, force=force, on_progress=progress)
 
     print(f"\nDone! Audio files saved to: {output_dir}")
 
