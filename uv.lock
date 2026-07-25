@@ -442,22 +442,10 @@ wheels = [
 [[package]]
 name = "jpanki"
 version = "0.1.0"
-source = { editable = "../jpanki" }
+source = { git = "https://github.com/KakkoiDev/jpanki?rev=fb583233d5bc414b0e2fe6d63f04154b9528606c#fb583233d5bc414b0e2fe6d63f04154b9528606c" }
 dependencies = [
     { name = "genanki" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "edge-tts", marker = "extra == 'audio'", specifier = ">=6.1.0" },
-    { name = "fugashi", marker = "extra == 'morphology'", specifier = ">=1.3.0" },
-    { name = "genanki", specifier = ">=0.13.1" },
-    { name = "unidic-lite", marker = "extra == 'morphology'", specifier = ">=1.0.8" },
-]
-provides-extras = ["audio", "morphology"]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.0" }]
 
 [[package]]
 name = "markdown"
@@ -583,7 +571,7 @@ requires-dist = [
     { name = "fugashi", specifier = ">=1.5.2" },
     { name = "genanki", specifier = ">=0.13.1" },
     { name = "jaconv", specifier = ">=0.4.1" },
-    { name = "jpanki", editable = "../jpanki" },
+    { name = "jpanki", git = "https://github.com/KakkoiDev/jpanki?rev=fb583233d5bc414b0e2fe6d63f04154b9528606c" },
     { name = "mojimoji", specifier = ">=0.0.13" },
     { name = "pyopenjtalk", specifier = ">=0.4.1" },
     { name = "soundfile", specifier = ">=0.13.1" },

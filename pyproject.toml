@@ -23,4 +23,7 @@ dev = [
 ]
 
 [tool.uv.sources]
-jpanki = { path = "../jpanki", editable = true }
+# Pinned to a revision rather than tracking main: a library change can alter
+# how cards render, and that should be a deliberate bump with a rebuild and a
+# deck comparison, never something a fresh `uv sync` picks up silently.
+jpanki = { git = "https://github.com/KakkoiDev/jpanki", rev = "fb583233d5bc414b0e2fe6d63f04154b9528606c" }
