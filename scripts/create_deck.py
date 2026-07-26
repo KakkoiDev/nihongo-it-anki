@@ -125,6 +125,11 @@ COMPONENT_CSS = '''
 .register-polite  { background: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
 .register-formal  { background: #fff3e0; color: #e65100; border-color: #ffe0b2; }
 .register-keigo   { background: #f3e5f5; color: #6a1b9a; border-color: #e1bee7; }
+/* Document and signage language, as opposed to anything anyone says aloud.
+   Introduced by the fudosan deck, where 54 of 180 cards come off contracts and
+   municipal forms. An unregistered value still renders as a neutral badge -
+   see it-kundoku's `wenyan` - but this one is too common to leave bare. */
+.register-written { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
 
 .pitch-h { color: #4caf50; }
 .pitch-l { color: #f44336; }
@@ -140,6 +145,7 @@ COMPONENT_CSS = '''
 .night_mode .register-polite  { background: #1a2a3a; color: #64b5f6; border-color: #1a2a3a; }
 .night_mode .register-formal  { background: #2a1f0e; color: #ffb74d; border-color: #2a1f0e; }
 .night_mode .register-keigo   { background: #2a1a2a; color: #ce93d8; border-color: #2a1a2a; }
+.night_mode .register-written { background: #16261a; color: #81c784; border-color: #16261a; }
 .night_mode .pitch-h { color: #81c784; }
 .night_mode .pitch-l { color: #e57373; }
 '''

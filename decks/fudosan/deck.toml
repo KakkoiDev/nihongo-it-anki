@@ -1,0 +1,39 @@
+[deck]
+slug = "fudosan"
+name = "不動産・住宅購入 / Japanese Home Ownership"
+model_id = 1904773261
+# Registered in jpanki's ids.toml as `fudosan`, reserving 2088314597 + 1..200.
+# The base sits in the gap below it-kundoku rather than above the newest entry;
+# the registry checks ranges, not ordering.
+deck_base_id = 2088314597
+
+[tiers]
+count = 12
+
+[tiers.names]
+1 = "Tier 1 - 電話・基礎 / Phone Basics"
+2 = "Tier 2 - 電話・応用 / Phone Advanced"
+3 = "Tier 3 - 物件情報・基礎 / Property Basics"
+4 = "Tier 4 - 物件情報・応用 / Property Advanced"
+5 = "Tier 5 - 法規制・基礎 / Regulation Basics"
+6 = "Tier 6 - 道路・法規制・応用 / Roads & Regulation Advanced"
+7 = "Tier 7 - 税金・基礎 / Tax Basics"
+8 = "Tier 8 - 税金・応用 / Tax Advanced"
+9 = "Tier 9 - 市役所・基礎 / City Hall Basics"
+10 = "Tier 10 - 市役所・応用 / City Hall Advanced"
+11 = "Tier 11 - 落とし穴・基礎 / Pitfalls Basics"
+12 = "Tier 12 - 落とし穴・応用 / Pitfalls Advanced"
+
+[tiers.sizes]
+1 = 15
+2 = 15
+3 = 15
+4 = 15
+5 = 15
+6 = 15
+7 = 15
+8 = 15
+9 = 15
+10 = 15
+11 = 15
+12 = 15

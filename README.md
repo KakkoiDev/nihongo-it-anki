@@ -54,6 +54,25 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 | 8 | 13 | Construction cost & inventory - WIP, cost allocation |
 | 9 | 12 | Discussion phrases - talking through the flow |
 
+### Japanese Home Ownership (`fudosan`)
+
+180 sentences across 12 tiers. 不動産・住宅購入 - the Japanese you need to buy land and build on it: phoning agents, reading listings, surviving the zoning and tax vocabulary, and asking city hall the right question. Mostly polite and keigo, with a written register for the language that only ever appears on contracts and municipal forms. All readings verified against UniDic.
+
+| Tier | Count | Focus |
+|------|-------|-------|
+| 1 | 15 | Phone basics - first call to an agent |
+| 2 | 15 | Phone advanced - zoning, road and utility questions |
+| 3 | 15 | Property listings - reading the basic figures |
+| 4 | 15 | Listings advanced - boundaries, title, buried obstacles |
+| 5 | 15 | Regulation basics - city planning areas, building standards |
+| 6 | 15 | Roads & regulation advanced - frontage, setback, forest law |
+| 7 | 15 | Tax basics - acquisition and fixed asset tax |
+| 8 | 15 | Tax advanced - reductions, filing, valuation |
+| 9 | 15 | City hall basics - reaching the right desk |
+| 10 | 15 | City hall advanced - asking for a ruling |
+| 11 | 15 | Pitfalls basics - the costs nobody quotes you |
+| 12 | 15 | Pitfalls advanced - unregistered buildings, common rights |
+
 ## Download
 
 **[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install IT Vocabulary directly from Anki app
@@ -77,6 +96,10 @@ decks/
     translations.py
     pronunciation_overrides.py   # readings that legitimately differ from UniDic
     tier{1-9}-vocabulary.csv
+  fudosan/            # Japanese Home Ownership deck (12 tiers, 180 sentences)
+    deck.toml
+    pronunciation_overrides.py   # compound readings UniDic splits and mis-reads
+    tier{1-12}-vocabulary.csv
 scripts/
   lib/config.py       # DeckConfig dataclass + loader
   create_deck.py      # Create Anki .apkg files

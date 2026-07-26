@@ -10,6 +10,7 @@ Multi-deck Anki generator for IT Japanese. Each deck lives under `decks/<slug>/`
 | `it-kundoku` | IT Kundoku | 3 (89 sentences) |
 | `jp-teaching` | Japanese Teaching Phrases | 3 (130 sentences) |
 | `accounting` | 会計・お金周り / Japanese Accounting | 9 (129 sentences) |
+| `fudosan` | 不動産・住宅購入 / Japanese Home Ownership | 12 (180 sentences) |
 
 ## Build Pipeline
 
@@ -107,7 +108,10 @@ sizes = {1 = 150, ...}
 
 ## Adding a New Deck
 
-1. Create `decks/<slug>/deck.toml` with unique `model_id` and `deck_base_id`
-2. Add `tier{N}-vocabulary.csv` files (columns: Sentence, Translation, Cloze, Pronunciation, Note, Register, KeyMeaning, PitchAccent)
-3. Add `translations.py` with `TRANSLATIONS` dict for KeyMeaning
-4. Run the build pipeline: generate audio, build decks, release
+1. Register the deck in [jpanki](https://github.com/KakkoiDev/jpanki)'s `src/jpanki/ids.toml`, with a `model_id` and a `deck_base_id` range no other entry claims. That file spans every project, not just this repo — two decks sharing a base ID silently merge in a user's collection, which has already happened once (see the `jp-teaching` comment there). Then bump the `jpanki` rev pinned in `pyproject.toml`.
+2. Create `decks/<slug>/deck.toml` with the IDs you just registered
+3. Add `tier{N}-vocabulary.csv` files (columns: Sentence, Translation, Cloze, Pronunciation, Note, Register, KeyMeaning, PitchAccent)
+4. Add `translations.py` with `TRANSLATIONS` dict for KeyMeaning — only if the CSVs don't already carry it; `fudosan` ships KeyMeaning filled in and has no `translations.py`
+5. Fill PitchAccent: `uv run python scripts/generate_pitch_accent.py --deck <slug>`
+6. Check readings: `uv run python scripts/check_pronunciation.py --deck <slug>`, whitelisting genuine divergences in `decks/<slug>/pronunciation_overrides.py`
+7. Run the build pipeline: generate audio, build decks, release
