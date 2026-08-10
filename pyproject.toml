@@ -22,8 +22,16 @@ dev = [
     "pytest>=9.0.2",
 ]
 
+[tool.uv]
+# The committed `uv.lock` is format `revision = 3` with per-entry `upload-time`
+# metadata. uv older than 0.8.4 writes `revision = 2` and silently rewrites the
+# whole file to drop that metadata, so refuse to run rather than let an old uv
+# reformat the lock. 0.8.4 is the first release whose `REVISION` constant is 3
+# (crates/uv-resolver/src/lock/mod.rs).
+required-version = ">=0.8.4"
+
 [tool.uv.sources]
 # Pinned to a revision rather than tracking main: a library change can alter
 # how cards render, and that should be a deliberate bump with a rebuild and a
 # deck comparison, never something a fresh `uv sync` picks up silently.
-jpanki = { git = "https://github.com/KakkoiDev/jpanki", rev = "7a35108c62737f936d6eaf9ec118a9a0acacb98b" }
+jpanki = { git = "https://github.com/KakkoiDev/jpanki", rev = "f73c0fdd035d124f0bb8bf946dda2436c8374105" }

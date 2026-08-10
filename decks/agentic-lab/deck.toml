@@ -2,10 +2,8 @@
 slug = "agentic-lab"
 name = "Agentic Lab Priority Path"
 model_id = 2011796738
-# NOT YET in jpanki's ids.toml - that file lives in another repo. These IDs were
-# checked against the pinned registry with jpanki.ids.assert_unique() and claim
-# 2564905615 + 1..200, a range no entry touches. Add the `agentic-lab` entry
-# there and bump the rev in pyproject.toml before anyone else mints an ID.
+# Registered in jpanki's ids.toml as `agentic-lab` (rev f73c0fd), reserving
+# 2564905615 + 1..200.
 deck_base_id = 2564905615
 
 # Every sentence here is also in it-vocab. GUIDs are keyed on the sentence, so

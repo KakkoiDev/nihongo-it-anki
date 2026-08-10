@@ -442,7 +442,7 @@ wheels = [
 [[package]]
 name = "jpanki"
 version = "0.1.0"
-source = { git = "https://github.com/KakkoiDev/jpanki?rev=7a35108c62737f936d6eaf9ec118a9a0acacb98b#7a35108c62737f936d6eaf9ec118a9a0acacb98b" }
+source = { git = "https://github.com/KakkoiDev/jpanki?rev=f73c0fdd035d124f0bb8bf946dda2436c8374105#f73c0fdd035d124f0bb8bf946dda2436c8374105" }
 dependencies = [
     { name = "genanki" },
 ]
@@ -571,7 +571,7 @@ requires-dist = [
     { name = "fugashi", specifier = ">=1.5.2" },
     { name = "genanki", specifier = ">=0.13.1" },
     { name = "jaconv", specifier = ">=0.4.1" },
-    { name = "jpanki", git = "https://github.com/KakkoiDev/jpanki?rev=7a35108c62737f936d6eaf9ec118a9a0acacb98b" },
+    { name = "jpanki", git = "https://github.com/KakkoiDev/jpanki?rev=f73c0fdd035d124f0bb8bf946dda2436c8374105" },
     { name = "mojimoji", specifier = ">=0.0.13" },
     { name = "pyopenjtalk", specifier = ">=0.4.1" },
     { name = "soundfile", specifier = ">=0.13.1" },
