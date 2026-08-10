@@ -30,9 +30,10 @@ namespacing needed). Pinned in tests/test_migrations.py.
 
 ## 1. Note GUIDs are derived from sentence text (review-history loss)
 
-`create_deck.py:375` uses `genanki.guid_for(row['Sentence'])`. Any edit to a
-sentence creates a brand-new note on import; the old note stays in the user's
-collection as an orphan holding the review history. The 2026-06-12 passes
+`DeckConfig.note_guid` (`scripts/lib/config.py`) keys the GUID on the sentence
+text. Any edit to a sentence creates a brand-new note on import; the old note
+stays in the user's collection as an orphan holding the review history.
+The 2026-06-12 passes
 changed 293 sentences; `guid-migration-map.csv` (repo root) maps
 `old_guid -> new_guid` with both sentence texts for all of them.
 

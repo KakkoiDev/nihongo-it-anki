@@ -321,9 +321,7 @@ def build_notes(
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
             ],
-            # Keyed on the sentence. Editing one therefore orphans its review
-            # history, which is why scripts/migrate_guids.py exists.
-            guid=genanki.guid_for(row['Sentence']),
+            guid=config.note_guid(row['Sentence']),
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
         ))
 
