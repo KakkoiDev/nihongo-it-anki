@@ -40,7 +40,7 @@ def test_agentic_lab_imports_alongside_it_vocab(tmp_path):
     """it-vocab first, because that is what the collection already has."""
     it_vocab = tmp_path / "it-vocab.apkg"
     agentic = tmp_path / "agentic-lab.apkg"
-    build_apkg("it-vocab", 12, it_vocab)   # 100 notes, 30 of them in agentic-lab
+    build_apkg("it-vocab", 12, it_vocab)   # 100 notes, 85 of them in agentic-lab
     build_apkg("agentic-lab", 1, agentic)  # 14 notes, all of them from it-vocab
 
     col = Collection(str(tmp_path / "collection.anki2"))

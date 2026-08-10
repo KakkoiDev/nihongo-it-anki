@@ -3,7 +3,7 @@
 Anki identifies a note by its GUID. Two decks that mint the same GUID under
 different model IDs do not merge and do not warn: the second import is rejected
 as a notetype conflict and lands with zero cards. Verified against a real
-collection in TestCrossDeckImport below.
+collection in tests/test_import_into_anki.py::test_agentic_lab_imports_alongside_it_vocab.
 """
 
 import csv
