@@ -236,10 +236,9 @@ Trigger with `/it-kundoku`. Uses single-kanji vocabulary with Japanese readings 
 
 ## Adding a New Deck
 
-1. Create `decks/<slug>/deck.toml` with unique `model_id` and `deck_base_id`
-2. Add `tier{N}-vocabulary.csv` files
-3. Add `translations.py` for KeyMeaning
-4. Run: `uv run python scripts/create_deck.py --deck <slug> --combined`
+See [Adding a New Deck](AGENTS.md#adding-a-new-deck) in `AGENTS.md` for the
+full procedure, including ID registration and the `guid_namespace` requirement
+for decks that re-use another deck's sentences.
 
 ## Credits
 

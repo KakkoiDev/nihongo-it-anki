@@ -277,6 +277,10 @@ scattered across them.
 (`genanki.guid_for(Sentence)`), so future builds update in place.
 But existing collections still carry the old random GUIDs.
 
+A deck whose `deck.toml` sets `guid_namespace` mixes the slug into that hash
+so it can coexist with the deck it copies sentences from; `migrate_guids.py`
+predates that and does not handle it (see "What it does NOT do").
+
 `migrate_guids.py`:
 
 1. Reads notes filtered by `--source-mid` (your current notetype id).
@@ -300,6 +304,11 @@ collation registration, and the safety backup as `migrate_deck_names.py`.
 - Does not touch `cards.did` (the deck a card belongs to is unchanged).
 - Does not delete review history of the winning note.
 - Does not modify decks not owned by the targeted `--source-mid`.
+- Does not understand `guid_namespace`. It is a one-off migration for the
+  random-GUID era, which only `it-vocab` lived through. Pointing it at the
+  notetype of a deck whose `deck.toml` sets `guid_namespace` would rewrite
+  that deck's GUIDs to the un-namespaced form and break in-place updates for
+  it. Do not run it on those decks.
 
 ### When to run
 
