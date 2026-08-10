@@ -1,0 +1,33 @@
+[deck]
+slug = "agentic-lab"
+name = "Agentic Lab Priority Path"
+model_id = 2011796738
+# NOT YET in jpanki's ids.toml - that file lives in another repo. These IDs were
+# checked against the pinned registry with jpanki.ids.assert_unique() and claim
+# 2564905615 + 1..200, a range no entry touches. Add the `agentic-lab` entry
+# there and bump the rev in pyproject.toml before anyone else mints an ID.
+deck_base_id = 2564905615
+
+# Every sentence here is also in it-vocab. GUIDs are keyed on the sentence, so
+# without a namespace the two decks mint identical GUIDs under different model
+# IDs, and Anki rejects the second import as a notetype conflict: the deck lands
+# with zero cards for anyone who already has it-vocab. Namespacing keeps the two
+# as separate notes with separate scheduling, which is the point of a study path.
+guid_namespace = "agentic-lab"
+
+[tiers]
+count = 5
+
+[tiers.names]
+1 = "Tier 1 - The Survival Set"
+2 = "Tier 2 - Meeting Structure"
+3 = "Tier 3 - Plain Form, Huddles and Slack"
+4 = "Tier 4 - Opinions, Blockers and Analysis"
+5 = "Tier 5 - Explaining and Deciding"
+
+[tiers.sizes]
+1 = 14
+2 = 44
+3 = 66
+4 = 28
+5 = 27

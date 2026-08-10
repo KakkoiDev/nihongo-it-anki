@@ -11,6 +11,7 @@ Multi-deck Anki generator for IT Japanese. Each deck lives under `decks/<slug>/`
 | `jp-teaching` | Japanese Teaching Phrases | 3 (130 sentences) |
 | `accounting` | 会計・お金周り / Japanese Accounting | 9 (129 sentences) |
 | `fudosan` | 不動産・住宅購入 / Japanese Home Ownership | 12 (180 sentences) |
+| `agentic-lab` | Agentic Lab Priority Path | 5 (179 sentences) |
 
 ## Build Pipeline
 
@@ -111,6 +112,7 @@ sizes = {1 = 150, ...}
 1. Register the deck in [jpanki](https://github.com/KakkoiDev/jpanki)'s `src/jpanki/ids.toml`, with a `model_id` and a `deck_base_id` range no other entry claims. That file spans every project, not just this repo — two decks sharing a base ID silently merge in a user's collection, which has already happened once (see the `jp-teaching` comment there). Then bump the `jpanki` rev pinned in `pyproject.toml`.
 2. Create `decks/<slug>/deck.toml` with the IDs you just registered
 3. Add `tier{N}-vocabulary.csv` files (columns: Sentence, Translation, Cloze, Pronunciation, Note, Register, KeyMeaning, PitchAccent)
+   - If any sentence also appears in another deck, set `guid_namespace = "<slug>"` in `deck.toml`. Note GUIDs are derived from the sentence, so without it both decks mint the same GUID under different model IDs, and Anki rejects the second import as a notetype conflict: deck present, zero cards, no error. See `tests/test_import_into_anki.py`.
 4. Add `translations.py` with `TRANSLATIONS` dict for KeyMeaning — only if the CSVs don't already carry it; `fudosan` ships KeyMeaning filled in and has no `translations.py`
 5. Fill PitchAccent: `uv run python scripts/generate_pitch_accent.py --deck <slug>`
 6. Check readings: `uv run python scripts/check_pronunciation.py --deck <slug>`, whitelisting genuine divergences in `decks/<slug>/pronunciation_overrides.py`

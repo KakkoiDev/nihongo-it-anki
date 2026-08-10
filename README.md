@@ -73,6 +73,25 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 | 11 | 15 | Pitfalls basics - the costs nobody quotes you |
 | 12 | 15 | Pitfalls advanced - unregistered buildings, common rights |
 
+### Agentic Lab Priority Path (`agentic-lab`)
+
+179 sentences across 5 tiers, every one of them re-used from `it-vocab`. A short
+runway into an all-Japanese engineering team: recovery phrases first, meeting
+structure second, the plain form you actually hear third, and subject-matter
+vocabulary deliberately last. The selection and its rationale live in
+[docs/PRIORITY-PATH-agentic-lab.md](docs/PRIORITY-PATH-agentic-lab.md).
+
+Note GUIDs are namespaced, so this deck and `it-vocab` can be installed together
+and scheduled independently.
+
+| Tier | Count | Focus |
+|------|-------|-------|
+| 1 | 14 | The survival set - keeping a conversation alive after comprehension fails |
+| 2 | 44 | Meeting structure - openings, progress, estimates, parking a topic |
+| 3 | 66 | Plain form, huddles and Slack - the register the polite tiers skip |
+| 4 | 28 | Opinions, blockers and analysis - contributing rather than following |
+| 5 | 27 | Explaining and deciding - structural connectives |
+
 ## Download
 
 **[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install IT Vocabulary directly from Anki app
@@ -100,6 +119,9 @@ decks/
     deck.toml
     pronunciation_overrides.py   # compound readings UniDic splits and mis-reads
     tier{1-12}-vocabulary.csv
+  agentic-lab/        # Agentic Lab Priority Path (5 tiers, 179 sentences)
+    deck.toml         # guid_namespace set: every sentence is also in it-vocab
+    tier{1-5}-vocabulary.csv
 scripts/
   lib/config.py       # DeckConfig dataclass + loader
   create_deck.py      # Create Anki .apkg files

@@ -5,6 +5,8 @@ import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
+import genanki
+
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DECKS_DIR = PROJECT_ROOT / "decks"
 
@@ -21,6 +23,7 @@ class DeckConfig:
     tier_names: dict[int, str]
     tier_sizes: dict[int, int]
     check_cloze_in_sentence: bool = True
+    guid_namespace: str | None = None
 
     @property
     def data_dir(self) -> Path:
@@ -38,6 +41,19 @@ class DeckConfig:
 
     def get_deck_id(self, tier: int) -> int:
         return self.deck_base_id + tier
+
+    def note_guid(self, sentence: str) -> str:
+        """The GUID Anki identifies a note by.
+
+        Keyed on the sentence, so editing one orphans its review history - see
+        scripts/migrate_guids.py. A deck that re-uses another deck's sentences
+        must also set ``guid_namespace``, or the two mint the same GUID under
+        different model IDs and Anki rejects the second import as a notetype
+        conflict, landing the deck with zero cards.
+        """
+        if self.guid_namespace:
+            return genanki.guid_for(self.guid_namespace, sentence)
+        return genanki.guid_for(sentence)
 
 
 def load_deck_config(slug: str) -> DeckConfig:
@@ -65,6 +81,7 @@ def load_deck_config(slug: str) -> DeckConfig:
         tier_names=tier_names,
         tier_sizes=tier_sizes,
         check_cloze_in_sentence=deck.get("check_cloze_in_sentence", True),
+        guid_namespace=deck.get("guid_namespace"),
     )
 
 
