@@ -75,11 +75,16 @@ Multi-deck Anki generator for IT Japanese. AI-generated audio, pitch accent colo
 
 ### Agentic Lab Priority Path (`agentic-lab`)
 
-179 sentences across 5 tiers, every one of them re-used from `it-vocab`. A short
-runway into an all-Japanese engineering team: recovery phrases first, meeting
-structure second, the plain form you actually hear third, and subject-matter
-vocabulary deliberately last. The selection and its rationale live in
-[docs/PRIORITY-PATH-agentic-lab.md](docs/PRIORITY-PATH-agentic-lab.md).
+554 sentences across 12 tiers. Tiers 1-5 are 179 sentences re-used from
+`it-vocab`: a short runway into an all-Japanese engineering team, with recovery
+phrases first, meeting structure second, the plain form you actually hear third,
+and subject-matter vocabulary deliberately last. That selection and its rationale
+live in [docs/PRIORITY-PATH-agentic-lab.md](docs/PRIORITY-PATH-agentic-lab.md).
+
+Tiers 6-12 are authored here rather than selected. Tiers 6-8 are a production
+set for a spoken self-introduction to a new team, graded by what you say when.
+Tiers 9-12 are a comprehension set of Sino-Japanese work vocabulary, graded by
+how often the word turns up in day-to-day team writing, commonest first.
 
 Note GUIDs are namespaced, so this deck and `it-vocab` can be installed together
 and scheduled independently.
@@ -91,6 +96,13 @@ and scheduled independently.
 | 3 | 66 | Plain form, huddles and Slack - the register the polite tiers skip |
 | 4 | 28 | Opinions, blockers and analysis - contributing rather than following |
 | 5 | 27 | Explaining and deciding - structural connectives |
+| 6 | 22 | Self-introduction: the frame - the nouns and the fixed opening and closing formulas |
+| 7 | 22 | Self-introduction: background and domain - what you built, and in what field |
+| 8 | 28 | Self-introduction: reading the room - what the team talks about, and stand-up ritual |
+| 9 | 49 | Team vocabulary: core - the words in the most messages |
+| 10 | 57 | Team vocabulary: common |
+| 11 | 90 | Team vocabulary: regular |
+| 12 | 107 | Team vocabulary: long tail |
 
 ## Download
 
@@ -119,13 +131,15 @@ decks/
     deck.toml
     pronunciation_overrides.py   # compound readings UniDic splits and mis-reads
     tier{1-12}-vocabulary.csv
-  agentic-lab/        # Agentic Lab Priority Path (5 tiers, 179 sentences)
-    deck.toml         # guid_namespace set: every sentence is also in it-vocab
-    tier{1-5}-vocabulary.csv
+  agentic-lab/        # Agentic Lab Priority Path (12 tiers, 554 sentences)
+    deck.toml         # guid_namespace set: tiers 1-5 are also in it-vocab
+    pronunciation_overrides.py   # readings UniDic loses when it re-tags a token alone
+    tier{1-12}-vocabulary.csv
 scripts/
   lib/config.py       # DeckConfig dataclass + loader
   create_deck.py      # Create Anki .apkg files
   generate_audio.py   # Generate TTS audio
+  generate_furigana.py      # Fill Pronunciation furigana from UniDic
   generate_pitch_accent.py  # Pitch accent from UniDic
   validate.py         # Validate CSVs and audio
   pronunciation.py    # TTS preprocessing (shared)
@@ -204,6 +218,7 @@ Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files
 |--------|---------|
 | `create_deck.py` | Create Anki .apkg files |
 | `generate_audio.py` | Generate TTS audio for sentences |
+| `generate_furigana.py` | Fill the Pronunciation column with 漢字【よみ】 furigana from UniDic |
 | `generate_pitch_accent.py` | Generate pitch accent data from UniDic |
 | `check_pronunciation.py` | Verify furigana readings against the UniDic dictionary (standard pronunciation check) |
 | `validate.py` | Validate CSVs and audio files (runs `check_pronunciation` in advisory mode) |

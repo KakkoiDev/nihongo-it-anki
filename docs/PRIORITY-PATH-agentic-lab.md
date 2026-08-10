@@ -1,6 +1,8 @@
 # Priority path - Agentic AI Lab entry (September 2026)
 
-Source deck: `it-vocab` (1516 sentences, 15 tiers). This file selects **179** of them.
+Source deck: `it-vocab` (1516 sentences, 15 tiers). This file selects **179** of them,
+which are tiers 1-5 of `agentic-lab`. Tiers 6-12 are authored in the deck itself - a
+self-introduction set and a team-vocabulary set - and this file does not specify them.
 
 ## Why this order
 

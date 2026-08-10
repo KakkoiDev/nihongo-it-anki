@@ -6,22 +6,34 @@ model_id = 2011796738
 # 2564905615 + 1..200.
 deck_base_id = 2564905615
 
-# Every sentence here is also in it-vocab. GUIDs are keyed on the sentence, so
-# without a namespace the two decks mint identical GUIDs under different model
-# IDs, and Anki rejects the second import as a notetype conflict: the deck lands
-# with zero cards for anyone who already has it-vocab. Namespacing keeps the two
-# as separate notes with separate scheduling, which is the point of a study path.
+# Tiers 1-5 are copied out of it-vocab sentence for sentence. GUIDs are keyed on
+# the sentence, so without a namespace the two decks mint identical GUIDs under
+# different model IDs, and Anki rejects the second import as a notetype conflict:
+# the deck lands with zero cards for anyone who already has it-vocab. Namespacing
+# keeps the two as separate notes with separate scheduling, which is the point of
+# a study path. Tiers 6-12 are authored here and share no sentence with it-vocab.
 guid_namespace = "agentic-lab"
 
 [tiers]
-count = 5
+count = 12
 
+# 1-5: copied from it-vocab, graded by situation.
+# 6-8: production set for a spoken self-introduction, graded by what you say when.
+# 9-12: comprehension set, graded by how many distinct team messages used the
+#       word - highest first, so the study order is the payoff order.
 [tiers.names]
 1 = "Tier 1 - The Survival Set"
 2 = "Tier 2 - Meeting Structure"
 3 = "Tier 3 - Plain Form, Huddles and Slack"
 4 = "Tier 4 - Opinions, Blockers and Analysis"
 5 = "Tier 5 - Explaining and Deciding"
+6 = "Tier 6 - Self-Introduction: The Frame"
+7 = "Tier 7 - Self-Introduction: Background and Domain"
+8 = "Tier 8 - Self-Introduction: Reading the Room"
+9 = "Tier 9 - Team Vocabulary: Core"
+10 = "Tier 10 - Team Vocabulary: Common"
+11 = "Tier 11 - Team Vocabulary: Regular"
+12 = "Tier 12 - Team Vocabulary: Long Tail"
 
 [tiers.sizes]
 1 = 14
@@ -29,3 +41,10 @@ count = 5
 3 = 66
 4 = 28
 5 = 27
+6 = 22
+7 = 22
+8 = 28
+9 = 49
+10 = 57
+11 = 90
+12 = 107
