@@ -113,6 +113,7 @@ sizes = {1 = 150, ...}
 2. Create `decks/<slug>/deck.toml` with the IDs you just registered
 3. Add `tier{N}-vocabulary.csv` files (columns: Sentence, Translation, Cloze, Pronunciation, Note, Register, KeyMeaning, PitchAccent)
    - If any sentence also appears in another deck, set `guid_namespace = "<slug>"` in `deck.toml`. Note GUIDs are derived from the sentence, so without it both decks mint the same GUID under different model IDs, and Anki rejects the second import as a notetype conflict: deck present, zero cards, no error. See `tests/test_import_into_anki.py`.
+   - Known exception: `jp-teaching` predates this rule and sets no namespace, so its one sentence shared with `it-vocab` (ここまでで質問はありますか？) still collides. Left as-is because its GUIDs are published; do not read the rule as universally enforced.
 4. Add `translations.py` with `TRANSLATIONS` dict for KeyMeaning — only if the CSVs don't already carry it; `fudosan` ships KeyMeaning filled in and has no `translations.py`
 5. Fill PitchAccent: `uv run python scripts/generate_pitch_accent.py --deck <slug>`
 6. Check readings: `uv run python scripts/check_pronunciation.py --deck <slug>`, whitelisting genuine divergences in `decks/<slug>/pronunciation_overrides.py`
