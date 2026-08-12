@@ -303,8 +303,10 @@ def process_csv(csv_path: Path, tier: int) -> None:
         else:
             row['PitchAccent'] = ''
 
+    # lineterminator: the committed CSVs are LF. csv defaults to CRLF, so
+    # without this every run rewrites every line of every tier it touches.
     with open(csv_path, 'w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 

@@ -25,9 +25,12 @@ dev = [
 [tool.uv]
 # The committed `uv.lock` is format `revision = 3` with per-entry `upload-time`
 # metadata. uv older than 0.8.4 writes `revision = 2` and silently rewrites the
-# whole file to drop that metadata, so refuse to run rather than let an old uv
-# reformat the lock. 0.8.4 is the first release whose `REVISION` constant is 3
-# (crates/uv-resolver/src/lock/mod.rs).
+# whole file to drop that metadata. 0.8.4 is the first release whose `REVISION`
+# constant is 3 (crates/uv-resolver/src/lock/mod.rs). This setting only stops
+# uv 0.5.14 and later, which is when uv started reading it; anything older -
+# 0.5.9 is what this machine has - prints `unknown field required-version` and
+# runs anyway. tests/test_lockfile_format.py reads the lock itself and is the
+# guard that holds whatever uv produced it.
 required-version = ">=0.8.4"
 
 [tool.uv.sources]

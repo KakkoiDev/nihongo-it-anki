@@ -11,7 +11,7 @@ Multi-deck Anki generator for IT Japanese. Each deck lives under `decks/<slug>/`
 | `jp-teaching` | Japanese Teaching Phrases | 3 (130 sentences) |
 | `accounting` | 会計・お金周り / Japanese Accounting | 9 (129 sentences) |
 | `fudosan` | 不動産・住宅購入 / Japanese Home Ownership | 12 (180 sentences) |
-| `agentic-lab` | Agentic Lab Priority Path | 5 (179 sentences) |
+| `agentic-lab` | Agentic Lab Priority Path | 12 (554 sentences) |
 
 ## Build Pipeline
 
@@ -83,9 +83,10 @@ uv run python scripts/generate_audio.py --deck it-vocab --tier 9 --force
 
 | Script | Purpose |
 |--------|---------|
+| `generate_furigana.py` | Fill Pronunciation column from UniDic, one 【】 group per kanji run. Fills only empty cells unless `--force`, and reports any token whose reading it could not align instead of guessing. Even with `--force` a non-empty cell is kept when a token in that row could not be aligned, and every other reading `--force` replaces is printed before and after. UniDic answers out of context, so read the generated readings before trusting them: it gets rendaku and counter readings wrong (`予定通り` as とおり, `30分` as ぶん) |
 | `generate_pitch_accent.py` | Fill PitchAccent column from UniDic |
 | `add_key_meanings.py` | Fill KeyMeaning column from translations.py |
-| `check_pronunciation.py` | Verify furigana readings against UniDic (standard pronunciation check; also run in advisory mode by `validate.py`). Whitelist legit divergences in `decks/<slug>/pronunciation_overrides.py` |
+| `check_pronunciation.py` | Verify furigana readings against UniDic (standard pronunciation check; also run in advisory mode by `validate.py`). Whitelist legit divergences in `decks/<slug>/pronunciation_overrides.py`. It re-tags each token's bare surface, so most of what it reports is context loss rather than a wrong card: alone, UniDic reads 一つ as いちつ, 化 as ばけ, 多 as さわ. An override key must never be a substring of a longer word in the deck - a key of `行` also cuts 実行 and 進行 in half |
 | `validate.py` | Validate CSVs and audio files |
 | `test_tts.py` | Test TTS for specific rows or text |
 | `pronunciation.py` | Shared TTS preprocessing (furigana, katakana conversion) |
@@ -115,9 +116,10 @@ sizes = {1 = 150, ...}
    - If any sentence also appears in another deck, set `guid_namespace = "<slug>"` in `deck.toml`. Note GUIDs are derived from the sentence, so without it both decks mint the same GUID under different model IDs, and Anki rejects the second import as a notetype conflict: deck present, zero cards, no error. See `tests/test_import_into_anki.py`.
    - Known exception: `jp-teaching` predates this rule and sets no namespace, so its one sentence shared with `it-vocab` (ここまでで質問はありますか？) still collides. Left as-is because its GUIDs are published; do not read the rule as universally enforced.
 4. Add `translations.py` with `TRANSLATIONS` dict for KeyMeaning — only if the CSVs don't already carry it; `fudosan` ships KeyMeaning filled in and has no `translations.py`
-5. Fill PitchAccent: `uv run python scripts/generate_pitch_accent.py --deck <slug>`
-6. Check readings: `uv run python scripts/check_pronunciation.py --deck <slug>`, whitelisting genuine divergences in `decks/<slug>/pronunciation_overrides.py`
-7. Run the build pipeline: generate audio, build decks, release
+5. Fill Pronunciation: `uv run python scripts/generate_furigana.py --deck <slug>`, then read the generated readings (see the script table above)
+6. Fill PitchAccent: `uv run python scripts/generate_pitch_accent.py --deck <slug>`
+7. Check readings: `uv run python scripts/check_pronunciation.py --deck <slug>`, whitelisting genuine divergences in `decks/<slug>/pronunciation_overrides.py`
+8. Run the build pipeline: generate audio, build decks, release
 
 ## Maintaining this file
 

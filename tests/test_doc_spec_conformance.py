@@ -1,8 +1,11 @@
-"""docs/PRIORITY-PATH-agentic-lab.md is the specification for the agentic-lab deck.
+"""docs/PRIORITY-PATH-agentic-lab.md is the specification for agentic-lab tiers 1-5.
 
-Five phases become five tiers in the same order, with the same sentences in the
-same order and the same readings. A re-selection or a re-ordering of the doc's
-179 rows is a spec violation no other test would catch.
+Five phases become the first five tiers in the same order, with the same
+sentences in the same order and the same readings. A re-selection or a
+re-ordering of the doc's 179 rows is a spec violation no other test would catch.
+
+Tiers 6+ are authored in this deck rather than selected from it-vocab, so the doc
+does not specify them and tier_count is only floored, not fixed, here.
 """
 
 import csv
@@ -47,9 +50,9 @@ def csv_rows(tier: int) -> list[dict[str, str]]:
         return list(csv.DictReader(f))
 
 
-def test_five_phases_become_five_tiers():
+def test_five_phases_become_the_first_five_tiers():
     assert sorted(DOC_PHASES) == [1, 2, 3, 4, 5]
-    assert CONFIG.tier_count == 5
+    assert CONFIG.tier_count >= 5
     assert sum(len(rows) for rows in DOC_PHASES.values()) == 179
 
 

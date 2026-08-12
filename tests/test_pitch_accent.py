@@ -1,5 +1,6 @@
 """Tests for generate_pitch_accent.py reading extraction."""
 
+import csv
 import re
 import sys
 from pathlib import Path
@@ -7,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts" / "lib"))
 
-from generate_pitch_accent import get_kana_reading, get_pitch_html
+from generate_pitch_accent import get_kana_reading, get_pitch_html, process_csv
 
 
 def _reading(html: str) -> str:
@@ -45,3 +46,22 @@ class TestReadingStillResolves:
     def test_decompose_split_annotation(self):
         # 重複排除 split as 重複【…】を排除【…】 still composes when clozed whole
         assert get_kana_reading("重複排除", "レコードの重複【じゅうふく】を排除【はいじょ】") == "じゅうふくはいじょ"
+
+
+class TestLineEndings:
+    """The committed CSVs are LF; csv defaults to CRLF, which rewrites every
+    line of every tier the script touches."""
+
+    def test_process_csv_keeps_lf(self, tmp_path):
+        path = tmp_path / "tier1-vocabulary.csv"
+        fields = ["Sentence", "Translation", "Cloze", "Pronunciation", "PitchAccent"]
+        with open(path, "w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+            writer.writeheader()
+            writer.writerow({"Sentence": "協力しています", "Translation": "", "Cloze": "協力",
+                             "Pronunciation": "協力【きょうりょく】しています", "PitchAccent": ""})
+            writer.writerow({"Sentence": "テストです", "Translation": "", "Cloze": "",
+                             "Pronunciation": "テストです", "PitchAccent": ""})
+
+        process_csv(path, 1)
+        assert b"\r\n" not in path.read_bytes()

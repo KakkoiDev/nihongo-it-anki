@@ -56,8 +56,8 @@ def test_no_duplicate_guids_within_deck(slug):
 
 
 def test_agentic_lab_does_not_collide_with_it_vocab():
-    """agentic-lab is 179 sentences copied out of it-vocab; only the namespace
-    keeps the two importable side by side."""
+    """179 of agentic-lab's sentences are copied out of it-vocab; only the
+    namespace keeps the two importable side by side."""
     shared = set(sentences("agentic-lab")) & set(sentences("it-vocab"))
     assert len(shared) == 179, f"expected all 179 to come from it-vocab, got {len(shared)}"
     assert not set(guids("agentic-lab")) & set(guids("it-vocab"))

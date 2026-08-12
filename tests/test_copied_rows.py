@@ -1,8 +1,12 @@
-"""agentic-lab rows are copies of it-vocab rows and must stay byte-identical.
+"""agentic-lab tiers 1-5 are copies of it-vocab rows and must stay byte-identical.
 
-Every agentic-lab sentence exists in it-vocab. Editing one side only - fixing a
-KeyMeaning or a PitchAccent in it-vocab - leaves the two decks teaching
+Every sentence in those five tiers exists in it-vocab. Editing one side only -
+fixing a KeyMeaning or a PitchAccent in it-vocab - leaves the two decks teaching
 different answers for the same sentence, with no other test noticing.
+
+Tiers 6+ are authored in this deck and have no it-vocab source, so they are out
+of scope here. That they stay disjoint from it-vocab is checked in
+tests/test_note_guids.py::test_agentic_lab_does_not_collide_with_it_vocab.
 """
 
 import csv
@@ -27,16 +31,19 @@ COLUMNS = [
 ]
 
 
-def rows(slug: str) -> list[dict[str, str]]:
+COPIED_TIERS = range(1, 6)
+
+
+def rows(slug: str, tiers=None) -> list[dict[str, str]]:
     config = load_deck_config(slug)
     out = []
-    for tier in config.tier_range():
+    for tier in tiers or config.tier_range():
         with open(config.csv_path(tier), encoding="utf-8") as f:
             out.extend(csv.DictReader(f))
     return out
 
 
-AGENTIC_ROWS = rows("agentic-lab")
+AGENTIC_ROWS = rows("agentic-lab", COPIED_TIERS)
 IT_VOCAB_ROWS = {row["Sentence"]: row for row in rows("it-vocab")}
 
 
