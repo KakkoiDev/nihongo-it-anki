@@ -98,7 +98,7 @@ and scheduled independently.
 | 5 | 27 | Explaining and deciding - structural connectives |
 | 6 | 22 | Self-introduction: the frame - the nouns and the fixed opening and closing formulas |
 | 7 | 22 | Self-introduction: background and domain - what you built, and in what field |
-| 8 | 28 | Self-introduction: reading the room - what the team talks about, and stand-up ritual |
+| 8 | 28 | Self-introduction: reading the room - how you work, what you work on, what you commit to, and stand-up ritual |
 | 9 | 49 | Team vocabulary: core - the words in the most messages |
 | 10 | 57 | Team vocabulary: common |
 | 11 | 90 | Team vocabulary: regular |
