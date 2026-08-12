@@ -13,7 +13,8 @@ surface is left unannotated and reported; those need a hand-written reading.
 Only empty Pronunciation cells are filled unless --force is given, because the
 column is the TTS input and editing it re-records audio. Even under --force a
 non-empty cell survives when a token in that row could not be aligned, so a
-hand-written reading is never traded for a partly unannotated one.
+hand-written reading is never traded for a partly unannotated one. Every other
+reading --force replaces is printed before and after, so no overwrite is silent.
 
 Usage:
     uv run python scripts/generate_furigana.py --deck agentic-lab
@@ -132,6 +133,9 @@ def fill_tier(config, tier: int, force: bool, dry_run: bool) -> tuple[int, int]:
             print(f"  Tier {tier} row {index}: no reading for {', '.join(failures)}{kept}")
             if existing:
                 continue
+        if existing and annotated != existing:
+            print(f"  Tier {tier} row {index}: replacing {existing}")
+            print(f"{' ' * len(f'  Tier {tier} row {index}: ')}with      {annotated}")
         row["Pronunciation"] = annotated
         filled += 1
 

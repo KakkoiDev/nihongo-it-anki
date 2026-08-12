@@ -85,6 +85,22 @@ class TestFillTier:
         assert (filled, unresolved) == (1, 0)
         assert read_rows(path)[0]["Pronunciation"] == "聞【き】き取【と】れません"
 
+    def test_force_prints_the_reading_it_replaces(self, tmp_path, capsys):
+        path = tmp_path / "tier1-vocabulary.csv"
+        write_csv(path, [{"Sentence": "話し合いをします", "Translation": "", "Cloze": "",
+                          "Pronunciation": "話【はなし】合【あ】いをします"}])
+        fill_tier(FakeConfig(path), 1, force=True, dry_run=False)
+        out = capsys.readouterr().out
+        assert "話【はなし】合【あ】いをします" in out
+        assert "話【はな】し合【あ】いをします" in out
+
+    def test_force_says_nothing_when_the_reading_is_unchanged(self, tmp_path, capsys):
+        path = tmp_path / "tier1-vocabulary.csv"
+        write_csv(path, [{"Sentence": "話し合いをします", "Translation": "", "Cloze": "",
+                          "Pronunciation": "話【はな】し合【あ】いをします"}])
+        fill_tier(FakeConfig(path), 1, force=True, dry_run=False)
+        assert "replacing" not in capsys.readouterr().out
+
     def test_empty_cell_on_unalignable_row_still_written(self, tmp_path):
         path = tmp_path / "tier1-vocabulary.csv"
         write_csv(path, [{"Sentence": "コード冗也", "Translation": "", "Cloze": "", "Pronunciation": ""}])
