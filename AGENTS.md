@@ -83,7 +83,7 @@ uv run python scripts/generate_audio.py --deck it-vocab --tier 9 --force
 
 | Script | Purpose |
 |--------|---------|
-| `generate_furigana.py` | Fill Pronunciation column from UniDic, one 【】 group per kanji run. Fills only empty cells unless `--force`, and reports any token whose reading it could not align instead of guessing. UniDic answers out of context, so read the generated readings before trusting them: it gets rendaku and counter readings wrong (`予定通り` as とおり, `30分` as ぶん) |
+| `generate_furigana.py` | Fill Pronunciation column from UniDic, one 【】 group per kanji run. Fills only empty cells unless `--force`, and reports any token whose reading it could not align instead of guessing. Even with `--force` a non-empty cell is kept when a token in that row could not be aligned. UniDic answers out of context, so read the generated readings before trusting them: it gets rendaku and counter readings wrong (`予定通り` as とおり, `30分` as ぶん) |
 | `generate_pitch_accent.py` | Fill PitchAccent column from UniDic |
 | `add_key_meanings.py` | Fill KeyMeaning column from translations.py |
 | `check_pronunciation.py` | Verify furigana readings against UniDic (standard pronunciation check; also run in advisory mode by `validate.py`). Whitelist legit divergences in `decks/<slug>/pronunciation_overrides.py`. It re-tags each token's bare surface, so most of what it reports is context loss rather than a wrong card: alone, UniDic reads 一つ as いちつ, 化 as ばけ, 多 as さわ. An override key must never be a substring of a longer word in the deck - a key of `行` also cuts 実行 and 進行 in half |

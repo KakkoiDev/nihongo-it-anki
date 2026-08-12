@@ -11,7 +11,9 @@ the checker by construction. A token whose reading cannot be aligned to its
 surface is left unannotated and reported; those need a hand-written reading.
 
 Only empty Pronunciation cells are filled unless --force is given, because the
-column is the TTS input and editing it re-records audio.
+column is the TTS input and editing it re-records audio. Even under --force a
+non-empty cell survives when a token in that row could not be aligned, so a
+hand-written reading is never traded for a partly unannotated one.
 
 Usage:
     uv run python scripts/generate_furigana.py --deck agentic-lab
@@ -120,12 +122,16 @@ def fill_tier(config, tier: int, force: bool, dry_run: bool) -> tuple[int, int]:
     filled = 0
     unresolved = 0
     for index, row in enumerate(rows, 1):
-        if row.get("Pronunciation", "").strip() and not force:
+        existing = row.get("Pronunciation", "").strip()
+        if existing and not force:
             continue
         annotated, failures = furigana(row["Sentence"])
         if failures:
             unresolved += 1
-            print(f"  Tier {tier} row {index}: no reading for {', '.join(failures)}")
+            kept = ", keeping the existing reading" if existing else ""
+            print(f"  Tier {tier} row {index}: no reading for {', '.join(failures)}{kept}")
+            if existing:
+                continue
         row["Pronunciation"] = annotated
         filled += 1
 
@@ -144,7 +150,9 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Fill Pronunciation furigana from UniDic")
     ap.add_argument("--deck", default="it-vocab", help="Deck slug (default: it-vocab)")
     ap.add_argument("--tier", type=int, help="Single tier only")
-    ap.add_argument("--force", action="store_true", help="Overwrite non-empty cells")
+    ap.add_argument("--force", action="store_true",
+                    help="Overwrite non-empty cells, except rows with a token "
+                         "whose reading cannot be aligned")
     ap.add_argument("--dry-run", action="store_true", help="Report without writing")
     args = ap.parse_args()
 
