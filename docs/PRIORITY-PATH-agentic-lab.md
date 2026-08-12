@@ -6,6 +6,8 @@ self-introduction set and a team-vocabulary set - and this file does not specify
 
 ## Why this order
 
+Tier numbers below are `it-vocab` tiers, not `agentic-lab` ones.
+
 The tempting move is to grind Tier 9 (AI & Agents) because it matches the new team's
 subject matter. That is the worst use of a short runway. Tier 9 is mostly katakana English
 you already read fluently: エージェント, プロンプト, モデル, コンテキスト, トークン,
