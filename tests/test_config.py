@@ -67,6 +67,19 @@ class TestLoadDeckConfig:
     def test_kundoku_cloze_check_disabled(self):
         assert load_deck_config("it-kundoku").check_cloze_in_sentence is False
 
+    def test_subdeck_names_are_padded_from_collection_size(self):
+        config = load_deck_config("it-vocab")
+        assert config.subdeck_name(2).endswith("::02 Basic Development")
+        assert config.subdeck_name(10).endswith(
+            "::10 Documentation & Engineering Culture"
+        )
+
+    def test_female_subdeck_uses_same_padding(self):
+        config = load_deck_config("it-vocab")
+        assert config.subdeck_name(2, female=True).startswith(
+            "Japanese IT Vocabulary (Female)::02 "
+        )
+
 
 class TestNoDuplicateIds:
     """No two decks share model_id or deck_base_id."""

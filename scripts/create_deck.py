@@ -404,7 +404,7 @@ Examples:
         model = create_model(config)
 
         for tier in config.tier_range():
-            subdeck_name = f"{config.name}{voice_label}::{config.tier_names[tier]}"
+            subdeck_name = config.subdeck_name(tier, female=args.female)
             subdeck = genanki.Deck(
                 config.deck_base_id + tier + (100 if args.female else 0),
                 subdeck_name

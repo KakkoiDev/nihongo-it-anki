@@ -1,11 +1,13 @@
 """Deck configuration loading and management."""
 
 import importlib.util
+import re
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
 
 import genanki
+import jpanki
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DECKS_DIR = PROJECT_ROOT / "decks"
@@ -41,6 +43,19 @@ class DeckConfig:
 
     def get_deck_id(self, tier: int) -> int:
         return self.deck_base_id + tier
+
+    def subdeck_name(self, tier: int, female: bool = False) -> str:
+        """Return an Anki-sortable subdeck name for this tier.
+
+        Configuration labels historically included their own unpadded tier
+        number. Strip that presentation prefix and let jpanki apply the single
+        collection-wide numbering policy.
+        """
+        label = re.sub(r"^Tier\s+\d+\s*-\s*", "", self.tier_names[tier])
+        voice_label = " (Female)" if female else ""
+        return jpanki.subdeck(
+            f"{self.name}{voice_label}", tier, label, total=self.tier_count
+        )
 
     def note_guid(self, sentence: str) -> str:
         """The GUID Anki identifies a note by.
