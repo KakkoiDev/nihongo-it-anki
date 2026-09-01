@@ -458,6 +458,8 @@ NUMBER_MAP = {
 #   生     -> せい   (Edge TTS picks せい when context wants なま
 #                    ('raw SQL/data'). Standalone 生【...】 only;
 #                    compounds like 発生 / 厚生 are unaffected.)
+#   力技   -> ちからぎ (Edge TTS chooses the wrong reading for 技;
+#                      CSV has 力技【ちからわざ】.)
 #
 # NOT overridden (TTS limitation, override doesn't help):
 #   提出 -> ていしつ (Edge TTS drops しゅつ to しつ, but kana input
@@ -465,7 +467,7 @@ NUMBER_MAP = {
 #   抽出 -> ちゅうしつ (same しゅつ pattern, same TTS limitation)
 TTS_KANJI_OVERRIDES = {
     '型', '既存', '文字列', '一意',
-    '行', '中', '閾値', '生',
+    '行', '中', '閾値', '生', '力技',
 }
 
 
@@ -543,8 +545,8 @@ def preprocess_for_tts(text: str) -> str:
     4. Clean up any remaining brackets and excess whitespace
     5. Insert a comma after particle は to prevent first-mora elision
        on the following hiragana word (class B in the module docstring)
-    6. Apply any narrow string fixes for prosodic glitches that are not
-       particle-は (currently: えばドキュメント -> えば、ドキュメント)
+    6. Apply narrow string fixes for synthesis glitches that are not
+       particle-は.
 
     Edge TTS reads particle は as "wa" correctly without a は->わ
     substitution. The post-particle-は comma fix below (step 5) addresses
@@ -599,6 +601,10 @@ def preprocess_for_tts(text: str) -> str:
     # instead of "tsukaeba-dokyumento"). Same comma-pause workaround, but
     # not a particle-は case so handled separately.
     text = text.replace('えばドキュメント', 'えば、ドキュメント')
+
+    # Edge TTS voices the slang verb ググる as ブブる. Hiragana forces the
+    # intended pronunciation while leaving the katakana spelling on cards.
+    text = text.replace('ググって', 'ぐぐって')
 
     # Ensure ends with punctuation for clean TTS delivery
     if text and text[-1] not in '。！？、':

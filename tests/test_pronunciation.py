@@ -83,6 +83,14 @@ class TestPreprocessForTts:
         assert result.startswith("かた")
         assert "型" not in result
 
+    def test_chikarawaza_uses_furigana_reading(self):
+        result = preprocess_for_tts("力技【ちからわざ】で解決【かいけつ】した。")
+        assert result == "ちからわざで解決した。"
+
+    def test_gugutte_uses_hiragana_for_tts(self):
+        result = preprocess_for_tts("ググってみる。")
+        assert result == "ぐぐってみる。"
+
     def test_version_string(self):
         result = preprocess_for_tts("v2.0.0をリリースしました。")
         assert "バージョン" in result
