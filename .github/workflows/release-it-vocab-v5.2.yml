@@ -1,5 +1,7 @@
 name: Release it-vocab v5.2
 
+# The push path makes the release self-starting while workflow_dispatch permits recovery.
+
 on:
   workflow_dispatch:
   push:
