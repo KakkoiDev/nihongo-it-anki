@@ -1,0 +1,90 @@
+name: Release it-vocab v5.2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/release-it-vocab-v5.2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.8.4"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Restore v5.1 audio baseline
+        run: |
+          curl -L --fail --retry 3 \
+            -o /tmp/it-vocab-v5.1.apkg \
+            "https://github.com/KakkoiDev/nihongo-it-anki/releases/download/it-vocab%2Fv5.1/it-vocab-complete.apkg"
+          unzip -q /tmp/it-vocab-v5.1.apkg -d /tmp/it-vocab-v5.1
+          jq -r 'to_entries[] | select(.value | test("^tier[0-9]+_[0-9]+\\.mp3$")) | [.key,.value] | @tsv' \
+            /tmp/it-vocab-v5.1/media |
+          while IFS=$'\t' read -r stored filename; do
+            tier="${filename#tier}"
+            tier="${tier%%_*}"
+            mkdir -p "decks/it-vocab/tier${tier}-audio"
+            cp "/tmp/it-vocab-v5.1/${stored}" \
+              "decks/it-vocab/tier${tier}-audio/${filename}"
+          done
+          test "$(find decks/it-vocab -path '*-audio/*.mp3' | wc -l)" -eq 1516
+
+      - name: Regenerate corrected recordings
+        run: |
+          uv run python scripts/test_tts.py \
+            --deck it-vocab --tier 11 --row 70,95
+          mv test_tier11_070.mp3 \
+            decks/it-vocab/tier11-audio/tier11_070.mp3
+          mv test_tier11_095.mp3 \
+            decks/it-vocab/tier11-audio/tier11_095.mp3
+
+      - name: Test and build
+        run: |
+          uv run pytest -q
+          uv run python scripts/create_deck.py \
+            --deck it-vocab --combined --all
+
+      - name: Verify padded subdeck names
+        run: |
+          mkdir -p /tmp/verify-v5.2
+          unzip -q it-vocab-complete.apkg -d /tmp/verify-v5.2
+          uv run python - <<'PY'
+          import json
+          import sqlite3
+
+          connection = sqlite3.connect("/tmp/verify-v5.2/collection.anki2")
+          decks = json.loads(connection.execute("select decks from col").fetchone()[0])
+          names = {deck["name"] for deck in decks.values()}
+          expected = {
+              "Japanese IT Vocabulary::01 Foundational",
+              "Japanese IT Vocabulary::09 AI & Agents",
+              "Japanese IT Vocabulary::10 Documentation & Engineering Culture",
+              "Japanese IT Vocabulary::15 Written Tickets & Commits",
+          }
+          missing = expected - names
+          if missing:
+              raise SystemExit(f"missing padded subdeck names: {sorted(missing)}")
+          PY
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "it-vocab/v5.2" \
+            it-vocab-complete.apkg it-vocab-tier*.apkg \
+            --title "Japanese IT Vocabulary v5.2" \
+            --notes "Corrects the TTS readings of 力技 (ちからわざ) and ググって (ぐぐって). Subdecks now use zero-padded numeric prefixes (01-15) for stable Anki sidebar ordering."
