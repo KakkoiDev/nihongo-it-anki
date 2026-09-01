@@ -1,0 +1,94 @@
+name: Release agentic-lab v1.2
+
+# The push path makes the release self-starting while workflow_dispatch permits recovery.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/release-agentic-lab-v1.2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.8.4"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Restore v1.1 audio baseline
+        run: |
+          curl -L --fail --retry 3 \
+            -o /tmp/agentic-lab-v1.1.apkg \
+            "https://github.com/KakkoiDev/nihongo-it-anki/releases/download/agentic-lab%2Fv1.1/agentic-lab-complete.apkg"
+          unzip -q /tmp/agentic-lab-v1.1.apkg -d /tmp/agentic-lab-v1.1
+          jq -r 'to_entries[] | select(.value | test("^tier[0-9]+_[0-9]+\\.mp3$")) | [.key,.value] | @tsv' \
+            /tmp/agentic-lab-v1.1/media |
+          while IFS=$'\t' read -r stored filename; do
+            tier="${filename#tier}"
+            tier="${tier%%_*}"
+            mkdir -p "decks/agentic-lab/tier${tier}-audio"
+            cp "/tmp/agentic-lab-v1.1/${stored}" \
+              "decks/agentic-lab/tier${tier}-audio/${filename}"
+          done
+          test "$(find decks/agentic-lab -path '*-audio/*.mp3' | wc -l)" -eq 554
+
+      - name: Regenerate corrected recordings
+        run: |
+          uv run python scripts/test_tts.py \
+            --deck agentic-lab --tier 3 --row 8,12
+          mv test_tier3_008.mp3 \
+            decks/agentic-lab/tier3-audio/tier3_008.mp3
+          mv test_tier3_012.mp3 \
+            decks/agentic-lab/tier3-audio/tier3_012.mp3
+
+      - name: Test and build
+        run: |
+          uv run pytest -q
+          uv run python scripts/create_deck.py \
+            --deck agentic-lab --combined --all
+
+      - name: Verify padded subdeck names
+        run: |
+          mkdir -p /tmp/verify-agentic-lab-v1.2
+          unzip -q agentic-lab-complete.apkg -d /tmp/verify-agentic-lab-v1.2
+          uv run python - <<'PY'
+          import json
+          import sqlite3
+
+          connection = sqlite3.connect(
+              "/tmp/verify-agentic-lab-v1.2/collection.anki2"
+          )
+          decks = json.loads(connection.execute("select decks from col").fetchone()[0])
+          names = {deck["name"] for deck in decks.values()}
+          expected = {
+              "Agentic Lab Priority Path::01 The Survival Set",
+              "Agentic Lab Priority Path::09 Team Vocabulary: Core",
+              "Agentic Lab Priority Path::10 Team Vocabulary: Common",
+              "Agentic Lab Priority Path::12 Team Vocabulary: Long Tail",
+          }
+          missing = expected - names
+          if missing:
+              raise SystemExit(f"missing padded subdeck names: {sorted(missing)}")
+          PY
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "agentic-lab/v1.2" \
+            agentic-lab-complete.apkg agentic-lab-tier*.apkg \
+            --title "Agentic Lab Priority Path v1.2" \
+            --notes "Corrects the TTS readings of 力技 (ちからわざ) and ググって (ぐぐって). Subdecks now use zero-padded numeric prefixes (01-12) for stable Anki sidebar ordering."
