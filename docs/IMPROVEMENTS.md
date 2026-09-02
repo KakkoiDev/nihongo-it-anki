@@ -123,9 +123,12 @@ against the ~30% ceiling before generating audio.
 
 ## 10. Deliberately NOT proposed
 
-- CI pipelines, semantic-similarity validation, dict/CSV sync enforcement:
+- Semantic-similarity validation, dict/CSV sync enforcement:
   dual-maintenance busywork for a single-maintainer repo; the
   fill-only-empty script change already removed the regression vector.
+  CI pipelines were also listed here; superseded 2026-09-02 by
+  `.github/workflows/test.yml`, which runs the test suite on every pull
+  request and on pushes to master.
 - Rewriting the kundoku deck's register: its kanbun style is the point.
 - Female-voice audio for tiers 11-12: no tier*-audio-female dirs exist for
   any tier; generate for all 12 at once if ever wanted.
