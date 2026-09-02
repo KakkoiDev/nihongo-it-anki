@@ -109,9 +109,12 @@ and scheduled independently.
 830 sentences across 21 tiers, built from the
 [minihongo](https://github.com/KakkoiDev/minihongo) core set by
 `scripts/import_minihongo_speak.py`. The other decks test whether you understand
-Japanese; this one tests whether you can say it. Every note carries the
-**Production** card described under [Card Types](#card-types), and no other deck
-does.
+Japanese; this one tests whether you can say it. It is the only deck with the
+**Production** card described under [Card Types](#card-types). Where two rows
+would share an identical English front, only the core-word paraphrase gets the
+Production and Vocabulary cards; the other row keeps Listening and Reading, and
+its surface is listed beside the paraphrase on the back. See
+`decks/minihongo-speak/REFERENCE.md`.
 
 Tiers are minihongo's own can-do goals rather than word frequency, and the six
 work can-dos come first: standup, incident, system explanation, demo, task
@@ -129,7 +132,7 @@ Note GUIDs are namespaced, so this deck installs and schedules alongside
 | Tier | Count | Can-do |
 |------|-------|--------|
 | 1 | 23 | 朝会で進捗を共有できる / I can give a standup update |
-| 2 | 25 | 障害を報告できる / I can report an incident |
+| 2 | 24 | 障害を報告できる / I can report an incident |
 | 3 | 31 | システムの仕組みを説明できる / I can explain a system |
 | 4 | 13 | 技術デモができる / I can run a technical demo |
 | 5 | 14 | タスクを計画できる / I can plan a task |
