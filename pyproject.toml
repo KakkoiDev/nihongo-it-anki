@@ -37,4 +37,4 @@ required-version = ">=0.8.4"
 # Pinned to a revision rather than tracking main: a library change can alter
 # how cards render, and that should be a deliberate bump with a rebuild and a
 # deck comparison, never something a fresh `uv sync` picks up silently.
-jpanki = { git = "https://github.com/KakkoiDev/jpanki", rev = "8610f2780312475ad98c168461ca8fb1dbbd69c0" }
+jpanki = { git = "https://github.com/KakkoiDev/jpanki", rev = "c96886b150ecc43e45180d8a29c486a905431bbd" }

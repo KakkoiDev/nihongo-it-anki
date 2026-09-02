@@ -1,0 +1,25 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+サーバーが止まっています。,The server is down.,サーバー,サーバーが止【と】まっています。,Incident Report,polite,server,"<ruby class=""vocab"">サーバー<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ば</span><span class=""pitch-h"">ー</span></rt></ruby>",サーバーが停止しています。,y
+いつからですか。,Since when?,いつからですか,いつからですか。,Incident Report,polite,since when?,"<span class=""vocab"">いつからですか</span>",,y
+十分前からです。,For ten minutes.,から,十【じゅう】分【ぷん】前【まえ】からです。,Incident Report,polite,"from, because","<span class=""vocab""><span class=""pitch-h"">か</span><span class=""pitch-l"">ら</span></span>",10分前からです。,y
+今、前の物にします。,I am rolling back now.,物,今【いま】、前【まえ】の物【もの】にします。,Incident Report,polite,thing (concrete),"<ruby class=""vocab"">物<rt><span class=""pitch-l"">も</span><span class=""pitch-h"">の</span></rt></ruby>",今、ロールバックします。,y
+したい事ができなかった事,"failure, mistake",したい事ができなかった事,したい事【こと】ができなかった事【こと】,Work & School,,"failure, mistake","<ruby class=""vocab"">したい事ができなかった事<rt>したいことができなかったこと</rt></ruby>",失敗,y
+した後に起こる事,"result, outcome",した後に起こる事,した後【あと】に起【お】こる事【こと】,Work & School,,"result, outcome","<ruby class=""vocab"">した後に起こる事<rt>したあとにおこること</rt></ruby>",結果,y
+なぜかの事,"reason, cause",なぜかの事,なぜかの事【こと】,Work & School,,"reason, cause","<ruby class=""vocab"">なぜかの事<rt>なぜかのこと</rt></ruby>",理由,y
+良くない事が起こっている,"problem, question, issue",良くない事が起こっている,良【よ】くない事【こと】が起【お】こっている,Work & School,,"problem, question, issue","<ruby class=""vocab"">良くない事が起こっている<rt>よくないことがおこっている</rt></ruby>",問題,y
+悪い事を良くする事,"solution, resolution",悪い事を良くする事,悪【わる】い事【こと】を良【よ】くする事【こと】,Work & School,,"solution, resolution","<ruby class=""vocab"">悪い事を良くする事<rt>わるいことをよくすること</rt></ruby>",解決,y
+しなければならない事,"responsibility, duty",しなければならない事,しなければならない事【こと】,Work & School,,"responsibility, duty","<ruby class=""vocab"">しなければならない事<rt>しなければならないこと</rt></ruby>",責任,y
+止まっている,stopped,止まっている,止【と】まっている,How it behaves,,stopped,"<ruby class=""vocab"">止まっている<rt>とまっている</rt></ruby>",停止している,y
+動いている,running,動いている,動【うご】いている,How it behaves,,running,"<ruby class=""vocab"">動いている<rt>うごいている</rt></ruby>",動作している,y
+前と違う,changed behavior,前と違う,前【まえ】と違【ちが】う,How it behaves,,changed behavior,"<ruby class=""vocab"">前と違う<rt>まえとちがう</rt></ruby>",以前と挙動が違う,y
+何も出ない,no output,何も出ない,何【なに】も出【で】ない,How it behaves,,no output,"<ruby class=""vocab"">何も出ない<rt>なにもでない</rt></ruby>",何も出力されない,y
+時によって変わる,intermittent,時によって変わる,時【とき】によって変【か】わる,How it behaves,,intermittent,"<ruby class=""vocab"">時によって変わる<rt>ときによってかわる</rt></ruby>",時によって挙動が変わる,y
+何が起こりましたか,what happened?,何が起こりましたか,何【なに】が起【お】こりましたか,Talking about a problem,,what happened?,"<ruby class=""vocab"">何が起こりましたか<rt>なにがおこりましたか</rt></ruby>",何が起きましたか,y
+今これを見ています,investigating,今これを見ています,今【いま】これを見【み】ています,Talking about a problem,,investigating,"<ruby class=""vocab"">今これを見ています<rt>いまこれをみています</rt></ruby>",現在調査中です,y
+私にも同じ事が起こります,reproduced,私にも同じ事が起こります,私【わたし】にも同【おな】じ事【こと】が起【お】こります,Talking about a problem,,reproduced,"<ruby class=""vocab"">私にも同じ事が起こります<rt>わたしにもおなじことがおこります</rt></ruby>",こちらでも再現します,y
+どの時に起こりますか,under what condition?,どの時に起こりますか,どの時【とき】に起【お】こりますか,Talking about a problem,,under what condition?,"<ruby class=""vocab"">どの時に起こりますか<rt>どのときにおこりますか</rt></ruby>",どの条件で起きますか,y
+バグ,bug,バグ,バグ,Operations and incidents,,bug,"<ruby class=""vocab"">バグ<rt><span class=""pitch-h"">ば</span><span class=""pitch-l"">ぐ</span></rt></ruby>",,y
+エラー,error,エラー,エラー,Operations and incidents,,error,"<ruby class=""vocab"">エラー<rt><span class=""pitch-h"">え</span><span class=""pitch-l"">ら</span><span class=""pitch-l"">ー</span></rt></ruby>",,y
+ログ,log,ログ,ログ,Operations and incidents,,log,"<ruby class=""vocab"">ログ<rt><span class=""pitch-h"">ろ</span><span class=""pitch-l"">ぐ</span></rt></ruby>",,y
+サーバー,server,サーバー,サーバー,Operations and incidents,,server,"<ruby class=""vocab"">サーバー<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ば</span><span class=""pitch-h"">ー</span></rt></ruby>",,y
+データベース,database,データベース,データベース,Operations and incidents,,database,"<ruby class=""vocab"">データベース<rt><span class=""pitch-l"">で</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">た</span><span class=""pitch-h"">べ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",,y

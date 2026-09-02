@@ -16,6 +16,12 @@ Generates .apkg files with a 3-card-per-note design:
     Front: Sentence with cloze word blanked (JS replacement), translation.
     Back:  Sentence with cloze highlighted in blue, audio, pronunciation.
 
+  Card 4 (Production), only for decks with production_card = true and only on
+  rows whose Produce column is set - which on those decks gates card 3 too:
+    Front: English meaning and the situation cue. No Japanese, no audio.
+    Back:  Sentence with furigana, audio, pitch accent, and the real Japanese
+           beside the minihongo construction.
+
 Removed in v3.0: conjugation tables, Keigo drill card, <hr> on Listening.
 Removed in v3.4: Hint and Conjugations fields.
 
@@ -50,14 +56,20 @@ from config import DeckConfig, list_decks, load_deck_config
 to_ruby_html = furigana.to_ruby
 
 
-def build_css() -> str:
+def build_css(production: bool = False) -> str:
     """The shared design system, plus this deck's own components.
 
-    Everything in ``extra`` is specific to these three card types - the
-    pronunciation line, the JS cloze blank, the register badges, the pitch
-    accent colouring - and stays here. The layers above it are shared with
-    every other deck built on jpanki.
+    Everything in ``extra`` is specific to these card types - the pronunciation
+    line, the JS cloze blank, the register badges, the pitch accent colouring -
+    and stays here. The layers above it are shared with every other deck built
+    on jpanki.
+
+    ``production`` appends the fourth card type's rules. Decks without it get
+    the byte-identical stylesheet they have always shipped, which matters
+    because Anki only re-reads CSS behind --force-style, and that resets review
+    history.
     """
+    extra = COMPONENT_CSS + PRODUCTION_CSS if production else COMPONENT_CSS
     return theme.compose(
         # 28px rather than the library default: these cards put a single
         # sentence at the centre of attention, where minihongo's pair one with
@@ -71,7 +83,7 @@ def build_css() -> str:
         theme.replay(scope=".listening-front", size="5rem", icon_size="2.5rem",
                      radius="1.25rem"),
         theme.night(chip_selector=".category"),
-        extra=COMPONENT_CSS,
+        extra=extra,
     )
 
 
@@ -151,15 +163,116 @@ COMPONENT_CSS = '''
 '''
 
 
+PRODUCTION_CSS = '''
+/* Production card. The front is deliberately bare: an English meaning and a
+   situation, and nothing a learner could read aloud instead of recalling. */
+.production-prompt {
+    font-size: 26px;
+    margin: 30px 0 10px;
+}
+
+.real-japanese {
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.real-label {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 0.75rem;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    margin-right: 6px;
+    background: #F7F7F7;
+    color: #666666;
+    border: 1px solid #E5E5E5;
+}
+
+.night_mode .real-label {
+    background: #252525;
+    color: #999999;
+    border-color: #333333;
+}
+'''
+
+
+VOCABULARY_QFMT = '''<div class="card-type">Vocabulary</div>
+<div id="sentence" class="sentence">{{Sentence}}</div>
+<div class="translation">{{Translation}}</div>
+<div class="category">{{Category}}</div>
+<script>
+(function() {
+    var el = document.getElementById('sentence');
+    var cloze = '{{Cloze}}';
+    el.innerHTML = el.textContent.split(cloze).join('<span class="blank">\uff3f\uff3f\uff3f</span>');
+})();
+</script>
+'''
+
+
+def vocabulary_qfmt(production: bool) -> str:
+    """The cloze front, gated on Produce for decks that carry the field.
+
+    Blanking a cloze that is the whole sentence leaves nothing but the English
+    gloss, so two rows sharing a gloss ask one question with two answers. The
+    row that is not the canonical one for that front drops the card, the same
+    way it drops the Production card and for the same reason. The gate can only
+    be written on a deck whose notetype has the field: referencing Produce from
+    a nine-field model is an Anki template error, and it would change templates
+    the other six decks have already shipped.
+    """
+    if not production:
+        return VOCABULARY_QFMT
+    return "{{#Produce}}" + VOCABULARY_QFMT + "{{/Produce}}"
+
+
+PRODUCTION_TEMPLATE = {
+    'name': 'Production',
+    # Nothing here may render Japanese, furigana or audio. The whole point of
+    # the card is that the learner produces the sentence aloud from the meaning
+    # alone; one readable kanji and the card tests recognition again.
+    'qfmt': '''{{#Produce}}<div class="card-type">Production</div>
+<div class="translation production-prompt">{{Translation}}</div>
+{{#Category}}<div class="category">{{Category}}</div>{{/Category}}
+{{/Produce}}''',
+    'afmt': '''<div class="card-type">Production</div>
+<div class="sentence">{{Pronunciation}}</div>
+<div class="audio">{{Audio}}</div>
+<hr id="answer">
+<div class="translation">{{Translation}}</div>
+{{#RealJapanese}}<div class="real-japanese"><span class="real-label">Real</span>{{RealJapanese}}</div>{{/RealJapanese}}
+<div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
+''',
+}
+
+# The Production template reads both, so a deck that opts in carries two more
+# fields than the three-card decks do. Produce marks the canonical row for a
+# front: Anki generates no card for a template whose question renders empty, so
+# a row with an empty Produce grows neither a Production nor a Vocabulary card
+# and keeps only Listening and Reading. Both those fronts reduce to the English
+# gloss and the category once the cloze covers the whole sentence, so two rows
+# sharing that pair would otherwise ask one question with two answers.
+PRODUCTION_FIELDS = [{'name': 'RealJapanese'}, {'name': 'Produce'}]
+
 
 def create_model(config: DeckConfig) -> genanki.Model:
-    """Create the 3-card Anki model.
+    """Create the Anki model: three cards, or four when the deck opts in.
 
     Card 1 (Listening): Big play button -> Japanese + Furigana + English
     Card 2 (Reading): Japanese text -> Furigana + English
     Card 3 (Vocabulary): Blanked sentence + English -> Full sentence + Audio
+    Card 4 (Production): English + situation -> Japanese, audio, real word
+
+    Cards 3 and 4 exist only on rows carrying a Produce flag, and card 4 only
+    under ``production_card = true``. A deck without it gets
+    the same nine fields, three templates and stylesheet it has always shipped -
+    see tests/test_production_card.py, which pins that.
     """
-    model_name = f'{config.name} (3-Card)'
+    card_count = 4 if config.production_card else 3
+    model_name = f'{config.name} ({card_count}-Card)'
     return genanki.Model(
         config.model_id,
         model_name,
@@ -173,6 +286,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
             {'name': 'Register'},       # Speech register: casual/polite/formal/keigo
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
+            *(PRODUCTION_FIELDS if config.production_card else []),
         ],
         templates=[
             # Card 1: Listening (big play button front, everything else on back)
@@ -208,18 +322,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
             # Card 3: Vocabulary cloze (JS blanking)
             {
                 'name': 'Vocabulary',
-                'qfmt': '''<div class="card-type">Vocabulary</div>
-<div id="sentence" class="sentence">{{Sentence}}</div>
-<div class="translation">{{Translation}}</div>
-<div class="category">{{Category}}</div>
-<script>
-(function() {
-    var el = document.getElementById('sentence');
-    var cloze = '{{Cloze}}';
-    el.innerHTML = el.textContent.split(cloze).join('<span class="blank">\uff3f\uff3f\uff3f</span>');
-})();
-</script>
-''',
+                'qfmt': vocabulary_qfmt(config.production_card),
                 'afmt': '''<div class="card-type">Vocabulary</div>
 <div id="sentence" class="sentence">{{Sentence}}</div>
 <div class="audio">{{Audio}}</div>
@@ -235,9 +338,21 @@ def create_model(config: DeckConfig) -> genanki.Model:
 </script>
 ''',
             },
+            *([PRODUCTION_TEMPLATE] if config.production_card else []),
         ],
-        css=build_css(),
+        css=build_css(config.production_card),
     )
+
+
+def cards_of(config: DeckConfig, note: genanki.Note) -> int:
+    """How many cards Anki generates for this note.
+
+    A gated front that renders empty produces no card, so a note whose Produce
+    is empty is worth two rather than four.
+    """
+    if not config.production_card:
+        return 3
+    return 4 if note.fields[-1] else 2
 
 
 def create_deck(config: DeckConfig, tier: int, include_audio: bool = True, female: bool = False) -> tuple[genanki.Deck, list[str]]:
@@ -320,6 +435,8 @@ def build_notes(
                 row.get('Register', ''),
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
+                *([row.get('RealJapanese', ''), row.get('Produce', '')]
+                  if config.production_card else []),
             ],
             guid=config.note_guid(row['Sentence']),
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
@@ -387,12 +504,15 @@ Examples:
         # and it resets review history for every note using it. Deliberate, and
         # deliberately not automatic.
         original = config.model_id
-        config.model_id = jpanki.force_style(original, build_css())
+        config.model_id = jpanki.force_style(original, build_css(config.production_card))
         print(f"--force-style: model_id {original} -> {config.model_id} "
               f"(resets review history)")
 
     include_audio = not args.no_audio
     suffix = "-female" if args.female else ""
+
+    def card_total(notes) -> int:
+        return sum(cards_of(config, note) for note in notes)
 
     if args.combined:
         voice_label = " (Female)" if args.female else ""
@@ -427,7 +547,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Total notes: {total_notes}")
-        print(f"Total cards: {total_notes * 3} (3 cards per note)")
+        print(f"Total cards: {card_total(n for d in all_decks for n in d.notes)}")
         print(f"Media files: {len(all_media)}")
 
     if args.all:
@@ -439,7 +559,9 @@ Examples:
             package.media_files = media_files
             package.write_to_file(output)
 
-            print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3 cards/note)")
+            print(f"Created: {output} ({len(deck.notes)} notes, "
+                  f"{len(media_files)} audio files, "
+                  f"{card_total(deck.notes)} cards)")
     elif args.tier:
         tier = args.tier
         deck, media_files = create_deck(config, tier, include_audio, args.female)
@@ -451,7 +573,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Notes: {len(deck.notes)}")
-        print(f"Cards: {len(deck.notes) * 3} (3 cards per note)")
+        print(f"Cards: {card_total(deck.notes)}")
         print(f"Media files: {len(media_files)}")
 
         if not include_audio:

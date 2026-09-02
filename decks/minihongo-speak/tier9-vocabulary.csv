@@ -1,0 +1,90 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+何人ですか。,How many people?,人,何【なん】人【にん】ですか。,At a Restaurant,polite,"person, people","<ruby class=""vocab"">人<rt><span class=""pitch-l"">に</span><span class=""pitch-h"">ん</span></rt></ruby>",何名様ですか。,y
+二りの人です。,Two people.,人,二【ふた】りの人【ひと】です。,At a Restaurant,polite,"person, people","<ruby class=""vocab"">人<rt><span class=""pitch-l"">ひ</span><span class=""pitch-h"">と</span></rt></ruby>",二人です。,y
+どうぞ、こちらに座ってください。,"Please, sit here.",ください,どうぞ、こちらに座【すわ】ってください。,At a Restaurant,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",どうぞ、こちらにお座りください。,y
+すみません。この食べ物の中に何がありますか。,Excuse me. What is in this dish?,すみません,すみません。この食【た】べ物【もの】の中【なか】に何【なに】がありますか。,At a Restaurant,polite,excuse me,"<span class=""vocab"">すみません</span>",すみません。この料理の中に何が入っていますか。,y
+草と肉です。体が悪くなる食べ物はありますか。,Vegetables and meat. Do you have any food allergies?,なる,草【くさ】と肉【にく】です。体【からだ】が悪【わる】くなる食【た】べ物【もの】はありますか。,At a Restaurant,polite,become,"<span class=""vocab""><span class=""pitch-h"">な</span><span class=""pitch-l"">る</span></span>",野菜とお肉です。アレルギーはありますか。,y
+はい。卵で体が悪くなります。,Yes. Eggs make me feel bad.,はい,はい。卵【たまご】で体【からだ】が悪【わる】くなります。,At a Restaurant,polite,yes,"<span class=""vocab""><span class=""pitch-h"">は</span><span class=""pitch-l"">い</span></span>",はい。卵でアレルギーが出ます。,y
+分かりました。この食べ物には卵は入っていません。,I understand. This dish has no eggs.,この,分【わ】かりました。この食【た】べ物【もの】には卵【たまご】は入【はい】っていません。,At a Restaurant,polite,this (+noun),"<span class=""vocab""><span class=""pitch-l"">こ</span><span class=""pitch-h"">の</span></span>",分かりました。この料理には卵は入っていません。,y
+では、これをください。,Then I'll have this.,ください,では、これをください。,At a Restaurant,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",,y
+すみません。お金を全部ください。,Excuse me. The bill please.,すみません,すみません。お金【かね】を全部【ぜんぶ】ください。,At a Restaurant,polite,excuse me,"<span class=""vocab"">すみません</span>",すみません。お会計をお願いします。,y
+火で作った食べ物,"cooking, dish",火で作った食べ物,火【ひ】で作【つく】った食【た】べ物【もの】,Food & Drink,,"cooking, dish","<ruby class=""vocab"">火で作った食べ物<rt>ひでつくったたべもの</rt></ruby>",料理,y
+食べる事,meal,食べる事,食【た】べる事【こと】,Food & Drink,,meal,"<ruby class=""vocab"">食べる事<rt>たべること</rt></ruby>",食事,y
+日の始まりに食べる物,breakfast,日の始まりに食べる物,日【にち】の始【はじ】まりに食【た】べる物【もの】,Food & Drink,,breakfast,"<ruby class=""vocab"">日の始まりに食べる物<rt>にちのはじまりにたべるもの</rt></ruby>",朝食,y
+日の中の時に食べる物,lunch,日の中の時に食べる物,日【にち】の中【なか】の時【とき】に食【た】べる物【もの】,Food & Drink,,lunch,"<ruby class=""vocab"">日の中の時に食べる物<rt>にちのなかのときにたべるもの</rt></ruby>",昼食、ランチ,y
+夜に食べる物,dinner,夜に食べる物,夜【よる】に食【た】べる物【もの】,Food & Drink,,dinner,"<ruby class=""vocab"">夜に食べる物<rt>よるにたべるもの</rt></ruby>",夕食,y
+外で食べるために作った食べ物,packed lunch,外で食べるために作った食べ物,外【そと】で食【た】べるために作【つく】った食【た】べ物【もの】,Food & Drink,,packed lunch,"<ruby class=""vocab"">外で食べるために作った食べ物<rt>そとでたべるためにつくったたべもの</rt></ruby>",弁当,y
+子供が好きな食べ物,"sweets, snacks",子供が好きな食べ物,子供【こども】が好【す】きな食【た】べ物【もの】,Food & Drink,,"sweets, snacks","<ruby class=""vocab"">子供が好きな食べ物<rt>こどもがすきなたべもの</rt></ruby>",お菓子,y
+草から作った白い食べ物,bread,草から作った白い食べ物,草【くさ】から作【つく】った白【しろ】い食【た】べ物【もの】,Food & Drink,,bread,"<ruby class=""vocab"">草から作った白い食べ物<rt>くさからつくったしろいたべもの</rt></ruby>",パン,y
+日ほんで多く食べる白い食べ物,rice (uncooked),日ほんで多く食べる白い食べ物,日【に】ほんで多【おお】く食【た】べる白【しろ】い食【た】べ物【もの】,Food & Drink,,rice (uncooked),"<ruby class=""vocab"">日ほんで多く食べる白い食べ物<rt>にほんでおおくたべるしろいたべもの</rt></ruby>",米,y
+水で作った白い草の食べ物,"cooked rice, meal",水で作った白い草の食べ物,水【みず】で作【つく】った白【しろ】い草【くさ】の食【た】べ物【もの】,Food & Drink,,"cooked rice, meal","<ruby class=""vocab"">水で作った白い草の食べ物<rt>みずでつくったしろいくさのたべもの</rt></ruby>",ご飯,y
+土から出る食べる草,vegetables,土から出る食べる草,土【つち】から出【で】る食【た】べる草【くさ】,Food & Drink,,vegetables,"<ruby class=""vocab"">土から出る食べる草<rt>つちからでるたべるくさ</rt></ruby>",野菜,y
+木からもらう食べ物,fruit,木からもらう食べ物,木【き】からもらう食【た】べ物【もの】,Food & Drink,,fruit,"<ruby class=""vocab"">木からもらう食べ物<rt>きからもらうたべもの</rt></ruby>",果物、フルーツ,y
+海の水から作る白い物,salt,海の水から作る白い物,海【うみ】の水【みず】から作【つく】る白【しろ】い物【もの】,Food & Drink,,salt,"<ruby class=""vocab"">海の水から作る白い物<rt>うみのみずからつくるしろいもの</rt></ruby>",塩,y
+食べ物を良い感じにする白い物,sugar,食べ物を良い感じにする白い物,食【た】べ物【もの】を良【よ】い感【かん】じにする白【しろ】い物【もの】,Food & Drink,,sugar,"<ruby class=""vocab"">食べ物を良い感じにする白い物<rt>たべものをよいかんじにするしろいもの</rt></ruby>",砂糖,y
+黒い色の食べ物に使う水,soy sauce,黒い色の食べ物に使う水,黒【くろ】い色【いろ】の食【た】べ物【もの】に使【つか】う水【みず】,Food & Drink,,soy sauce,"<ruby class=""vocab"">黒い色の食べ物に使う水<rt>くろいいろのたべものにつかうみず</rt></ruby>",醤油,y
+口で感じる事,"taste, flavor",口で感じる事,口【くち】で感【かん】じる事【こと】,Food & Drink,,"taste, flavor","<ruby class=""vocab"">口で感じる事<rt>くちでかんじること</rt></ruby>",味,y
+鼻で感じる事,"smell, scent",鼻で感じる事,鼻【はな】で感【かん】じる事【こと】,Food & Drink,,"smell, scent","<ruby class=""vocab"">鼻で感じる事<rt>はなでかんじること</rt></ruby>",匂い,y
+飲むと体が変になる水,"alcohol, sake",飲むと体が変になる水,飲【の】むと体【からだ】が変【へん】になる水【みず】,Food & Drink,,"alcohol, sake","<ruby class=""vocab"">飲むと体が変になる水<rt>のむとからだがへんになるみず</rt></ruby>",酒,y
+草から作った飲み物,tea,草から作った飲み物,草【くさ】から作【つく】った飲【の】み物【もの】,Food & Drink,,tea,"<ruby class=""vocab"">草から作った飲み物<rt>くさからつくったのみもの</rt></ruby>",お茶,y
+木の食べ物から出る水,juice,木の食べ物から出る水,木【き】の食【た】べ物【もの】から出【で】る水【みず】,Food & Drink,,juice,"<ruby class=""vocab"">木の食べ物から出る水<rt>きのたべものからでるみず</rt></ruby>",ジュース,y
+動物の体から出る白い飲み物,milk,動物の体から出る白い飲み物,動【どう】物【ぶつ】の体【からだ】から出【で】る白【しろ】い飲【の】み物【もの】,Food & Drink,,milk,"<ruby class=""vocab"">動物の体から出る白い飲み物<rt>どうぶつのからだからでるしろいのみもの</rt></ruby>",牛乳、ミルク,y
+黒い飲み物,coffee,黒い飲み物,黒【くろ】い飲【の】み物【もの】,Food & Drink,,coffee,"<ruby class=""vocab"">黒い飲み物<rt>くろいのみもの</rt></ruby>",コーヒー,y
+食べ物を上に入れる物,"plate, dish",食べ物を上に入れる物,食【た】べ物【もの】を上【うえ】に入【い】れる物【もの】,Food & Drink,,"plate, dish","<ruby class=""vocab"">食べ物を上に入れる物<rt>たべものをうえにいれるもの</rt></ruby>",皿,y
+食べる時に使う二本の木,chopsticks,食べる時に使う二本の木,食【た】べる時【とき】に使【つか】う二【に】本【ほん】の木【き】,Food & Drink,,chopsticks,"<ruby class=""vocab"">食べる時に使う二本の木<rt>たべるときにつかうにほんのき</rt></ruby>",箸,y
+飲み物を入れる物,"cup, glass",飲み物を入れる物,飲【の】み物【もの】を入【い】れる物【もの】,Food & Drink,,"cup, glass","<ruby class=""vocab"">飲み物を入れる物<rt>のみものをいれるもの</rt></ruby>",コップ,y
+水や飲み物を入れる物,bottle,水や飲み物を入れる物,水【みず】や飲【の】み物【もの】を入【い】れる物【もの】,Food & Drink,,bottle,"<ruby class=""vocab"">水や飲み物を入れる物<rt>みずやのみものをいれるもの</rt></ruby>",瓶,y
+火で食べ物を作る物,"pot, pan",火で食べ物を作る物,火【ひ】で食【た】べ物【もの】を作【つく】る物【もの】,Food & Drink,,"pot, pan","<ruby class=""vocab"">火で食べ物を作る物<rt>ひでたべものをつくるもの</rt></ruby>",鍋,y
+食べ物を切る物,kitchen knife,食べ物を切る物,食【た】べ物【もの】を切【き】る物【もの】,Food & Drink,,kitchen knife,"<ruby class=""vocab"">食べ物を切る物<rt>たべものをきるもの</rt></ruby>",包丁,y
+食べ物を寒くして入れる物,refrigerator,食べ物を寒くして入れる物,食【た】べ物【もの】を寒【さむ】くして入【い】れる物【もの】,Food & Drink,,refrigerator,"<ruby class=""vocab"">食べ物を寒くして入れる物<rt>たべものをさむくしていれるもの</rt></ruby>",冷蔵庫,y
+とても寒くなった水,ice,とても寒くなった水,とても寒【さむ】くなった水【みず】,Food & Drink,,ice,"<ruby class=""vocab"">とても寒くなった水<rt>とてもさむくなったみず</rt></ruby>",氷,y
+食べ物を火で作る時に使う物,oil,食べ物を火で作る時に使う物,食【た】べ物【もの】を火【ひ】で作【つく】る時【とき】に使【つか】う物【もの】,Food & Drink,,oil,"<ruby class=""vocab"">食べ物を火で作る時に使う物<rt>たべものをひでつくるときにつかうもの</rt></ruby>",油,y
+水で作った暑い食べ物,soup,水で作った暑い食べ物,水【みず】で作【つく】った暑【あつ】い食【た】べ物【もの】,Food & Drink,,soup,"<ruby class=""vocab"">水で作った暑い食べ物<rt>みずでつくったあついたべもの</rt></ruby>",スープ,y
+切った草の食べ物,salad,切った草の食べ物,切【き】った草【くさ】の食【た】べ物【もの】,Food & Drink,,salad,"<ruby class=""vocab"">切った草の食べ物<rt>きったくさのたべもの</rt></ruby>",サラダ,y
+食べて口で良い感じ,sweet,食べて口で良い感じ,食【た】べて口【くち】で良【よ】い感【かん】じ,Food & Drink,,sweet,"<ruby class=""vocab"">食べて口で良い感じ<rt>たべてくちでよいかんじ</rt></ruby>",甘い,y
+食べて口で悪い感じ,bitter,食べて口で悪い感じ,食【た】べて口【くち】で悪【わる】い感【かん】じ,Food & Drink,,bitter,"<ruby class=""vocab"">食べて口で悪い感じ<rt>たべてくちでわるいかんじ</rt></ruby>",苦い,y
+口に強い感じがする食べ物の事,"spicy, hot",口に強い感じがする食べ物の事,口【くち】に強【つよ】い感【かん】じがする食【た】べ物【もの】の事【こと】,Food & Drink,,"spicy, hot","<ruby class=""vocab"">口に強い感じがする食べ物の事<rt>くちにつよいかんじがするたべもののこと</rt></ruby>",辛い,y
+口がとても変に感じる食べ物の事,sour,口がとても変に感じる食べ物の事,口【くち】がとても変【へん】に感【かん】じる食【た】べ物【もの】の事【こと】,Food & Drink,,sour,"<ruby class=""vocab"">口がとても変に感じる食べ物の事<rt>くちがとてもへんにかんじるたべもののこと</rt></ruby>",酸っぱい,y
+食べ物が口で良い感じがする,delicious,食べ物が口で良い感じがする,食【た】べ物【もの】が口【くち】で良【よ】い感【かん】じがする,Food & Drink,,delicious,"<ruby class=""vocab"">食べ物が口で良い感じがする<rt>たべものがくちでよいかんじがする</rt></ruby>",美味しい,y
+食べ物の口の感じが悪い,bad-tasting,食べ物の口の感じが悪い,食【た】べ物【もの】の口【くち】の感【かん】じが悪【わる】い,Food & Drink,,bad-tasting,"<ruby class=""vocab"">食べ物の口の感じが悪い<rt>たべもののくちのかんじがわるい</rt></ruby>",まずい,y
+火で食べ物を作る,"to grill, to bake",火で食べ物を作る,火【ひ】で食【た】べ物【もの】を作【つく】る,Food & Drink,,"to grill, to bake","<ruby class=""vocab"">火で食べ物を作る<rt>ひでたべものをつくる</rt></ruby>",焼く,y
+水と火で食べ物を作る,"to boil, to simmer",水と火で食べ物を作る,水【みず】と火【ひ】で食【た】べ物【もの】を作【つく】る,Food & Drink,,"to boil, to simmer","<ruby class=""vocab"">水と火で食べ物を作る<rt>みずとひでたべものをつくる</rt></ruby>",煮る,y
+暑い水のような物で食べ物を作る,to deep-fry,暑い水のような物で食べ物を作る,暑【あつ】い水【みず】のような物【もの】で食【た】べ物【もの】を作【つく】る,Food & Drink,,to deep-fry,"<ruby class=""vocab"">暑い水のような物で食べ物を作る<rt>あついみずのようなものでたべものをつくる</rt></ruby>",揚げる,y
+食べ物が欲しくなる,to get hungry,食べ物が欲しくなる,食【た】べ物【もの】が欲【ほ】しくなる,Food & Drink,,to get hungry,"<ruby class=""vocab"">食べ物が欲しくなる<rt>たべものがほしくなる</rt></ruby>",腹が減る,y
+飲み物が欲しくなる,to get thirsty,飲み物が欲しくなる,飲【の】み物【もの】が欲【ほ】しくなる,Food & Drink,,to get thirsty,"<ruby class=""vocab"">飲み物が欲しくなる<rt>のみものがほしくなる</rt></ruby>",喉が渇く,y
+コーヒー,coffee,コーヒー,コーヒー,Food & Drink,,coffee,"<ruby class=""vocab"">コーヒー<rt><span class=""pitch-l"">こ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ひ</span><span class=""pitch-l"">ー</span></rt></ruby>",,
+ビール,beer,ビール,ビール,Food & Drink,,beer,"<ruby class=""vocab"">ビール<rt><span class=""pitch-h"">び</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">る</span></rt></ruby>",,y
+ワイン,wine,ワイン,ワイン,Food & Drink,,wine,"<ruby class=""vocab"">ワイン<rt><span class=""pitch-h"">わ</span><span class=""pitch-l"">い</span><span class=""pitch-l"">ん</span></rt></ruby>",,y
+ジュース,juice,ジュース,ジュース,Food & Drink,,juice,"<ruby class=""vocab"">ジュース<rt><span class=""pitch-h"">じゅ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",,
+ミルク,milk,ミルク,ミルク,Food & Drink,,milk,"<ruby class=""vocab"">ミルク<rt><span class=""pitch-h"">み</span><span class=""pitch-l"">る</span><span class=""pitch-l"">く</span></rt></ruby>",,
+パン,bread,パン,パン,Food & Drink,,bread,"<ruby class=""vocab"">パン<rt><span class=""pitch-h"">ぱ</span><span class=""pitch-l"">ん</span></rt></ruby>",,
+バター,butter,バター,バター,Food & Drink,,butter,"<ruby class=""vocab"">バター<rt><span class=""pitch-h"">ば</span><span class=""pitch-l"">た</span><span class=""pitch-l"">ー</span></rt></ruby>",,y
+チーズ,cheese,チーズ,チーズ,Food & Drink,,cheese,"<ruby class=""vocab"">チーズ<rt><span class=""pitch-h"">ち</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ず</span></rt></ruby>",,y
+サラダ,salad,サラダ,サラダ,Food & Drink,,salad,"<ruby class=""vocab"">サラダ<rt><span class=""pitch-h"">さ</span><span class=""pitch-l"">ら</span><span class=""pitch-l"">だ</span></rt></ruby>",,
+スープ,soup,スープ,スープ,Food & Drink,,soup,"<ruby class=""vocab"">スープ<rt><span class=""pitch-h"">す</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ぷ</span></rt></ruby>",,
+カレー,curry,カレー,カレー,Food & Drink,,curry,"<ruby class=""vocab"">カレー<rt><span class=""pitch-l"">か</span><span class=""pitch-h"">れ</span><span class=""pitch-h"">ー</span></rt></ruby>",,y
+ケーキ,cake,ケーキ,ケーキ,Food & Drink,,cake,"<ruby class=""vocab"">ケーキ<rt><span class=""pitch-h"">け</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">き</span></rt></ruby>",,y
+アイスクリーム,ice cream,アイスクリーム,アイスクリーム,Food & Drink,,ice cream,"<span class=""vocab"">アイスクリーム</span>",,y
+チョコレート,chocolate,チョコレート,チョコレート,Food & Drink,,chocolate,"<ruby class=""vocab"">チョコレート<rt><span class=""pitch-l"">ちょ</span><span class=""pitch-h"">こ</span><span class=""pitch-h"">れ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+メニュー,menu,メニュー,メニュー,Food & Drink,,menu,"<ruby class=""vocab"">メニュー<rt><span class=""pitch-h"">め</span><span class=""pitch-l"">にゅ</span><span class=""pitch-l"">ー</span></rt></ruby>",,y
+ランチ,lunch,ランチ,ランチ,Food & Drink,,lunch,"<ruby class=""vocab"">ランチ<rt><span class=""pitch-h"">ら</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">ち</span></rt></ruby>",,
+ピザ,pizza,ピザ,ピザ,Food & Drink,,pizza,"<ruby class=""vocab"">ピザ<rt><span class=""pitch-h"">ぴ</span><span class=""pitch-l"">ざ</span></rt></ruby>",,y
+ハンバーガー,hamburger,ハンバーガー,ハンバーガー,Food & Drink,,hamburger,"<ruby class=""vocab"">ハンバーガー<rt><span class=""pitch-l"">は</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">ば</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">が</span><span class=""pitch-l"">ー</span></rt></ruby>",,y
+サンドイッチ,sandwich,サンドイッチ,サンドイッチ,Food & Drink,,sandwich,"<ruby class=""vocab"">サンドイッチ<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">ど</span><span class=""pitch-h"">い</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">ち</span></rt></ruby>",,y
+トマト,tomato,トマト,トマト,Food & Drink,,tomato,"<ruby class=""vocab"">トマト<rt><span class=""pitch-h"">と</span><span class=""pitch-l"">ま</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+バナナ,banana,バナナ,バナナ,Food & Drink,,banana,"<ruby class=""vocab"">バナナ<rt><span class=""pitch-h"">ば</span><span class=""pitch-l"">な</span><span class=""pitch-l"">な</span></rt></ruby>",,y
+レモン,lemon,レモン,レモン,Food & Drink,,lemon,"<ruby class=""vocab"">レモン<rt><span class=""pitch-h"">れ</span><span class=""pitch-l"">も</span><span class=""pitch-l"">ん</span></rt></ruby>",,y
+オレンジ,orange,オレンジ,オレンジ,Food & Drink,,orange,"<ruby class=""vocab"">オレンジ<rt><span class=""pitch-l"">お</span><span class=""pitch-h"">れ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">じ</span></rt></ruby>",,y
+メロン,melon,メロン,メロン,Food & Drink,,melon,"<ruby class=""vocab"">メロン<rt><span class=""pitch-h"">め</span><span class=""pitch-l"">ろ</span><span class=""pitch-l"">ん</span></rt></ruby>",,y
+ヨーグルト,yogurt,ヨーグルト,ヨーグルト,Food & Drink,,yogurt,"<ruby class=""vocab"">ヨーグルト<rt><span class=""pitch-l"">よ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ぐ</span><span class=""pitch-l"">る</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+ステーキ,steak,ステーキ,ステーキ,Food & Drink,,steak,"<ruby class=""vocab"">ステーキ<rt><span class=""pitch-l"">す</span><span class=""pitch-h"">て</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">き</span></rt></ruby>",,y
+トースト,toast,トースト,トースト,Food & Drink,,toast,"<ruby class=""vocab"">トースト<rt><span class=""pitch-h"">と</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+ジャム,jam,ジャム,ジャム,Food & Drink,,jam,"<ruby class=""vocab"">ジャム<rt><span class=""pitch-h"">じゃ</span><span class=""pitch-l"">む</span></rt></ruby>",,y
+ソース,sauce,ソース,ソース,Food & Drink,,sauce,"<ruby class=""vocab"">ソース<rt><span class=""pitch-h"">そ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",,y
+パスタ,pasta,パスタ,パスタ,Food & Drink,,pasta,"<ruby class=""vocab"">パスタ<rt><span class=""pitch-h"">ぱ</span><span class=""pitch-l"">す</span><span class=""pitch-l"">た</span></rt></ruby>",,y
+ポテト,potato / fries,ポテト,ポテト,Food & Drink,,potato / fries,"<ruby class=""vocab"">ポテト<rt><span class=""pitch-h"">ぽ</span><span class=""pitch-l"">て</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+コーラ,cola,コーラ,コーラ,Food & Drink,,cola,"<ruby class=""vocab"">コーラ<rt><span class=""pitch-h"">こ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ら</span></rt></ruby>",,y
+デザート,dessert,デザート,デザート,Food & Drink,,dessert,"<ruby class=""vocab"">デザート<rt><span class=""pitch-l"">で</span><span class=""pitch-h"">ざ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+フルーツ,fruit,フルーツ,フルーツ,Food & Drink,,fruit,"<ruby class=""vocab"">フルーツ<rt><span class=""pitch-l"">ふ</span><span class=""pitch-h"">る</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">つ</span></rt></ruby>",,
+ドーナツ,donut,ドーナツ,ドーナツ,Food & Drink,,donut,"<ruby class=""vocab"">ドーナツ<rt><span class=""pitch-h"">ど</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">な</span><span class=""pitch-l"">つ</span></rt></ruby>",,y
+ポップコーン,popcorn,ポップコーン,ポップコーン,Food & Drink,,popcorn,"<ruby class=""vocab"">ポップコーン<rt><span class=""pitch-l"">ぽ</span><span class=""pitch-h"">っ</span><span class=""pitch-h"">ぷ</span><span class=""pitch-h"">こ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ん</span></rt></ruby>",,y

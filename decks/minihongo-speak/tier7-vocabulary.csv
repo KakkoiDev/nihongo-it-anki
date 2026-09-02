@@ -1,0 +1,58 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+こんにちは。ここに新しく来ました。私はたなかです。,Hello. I just moved here. I'm Tanaka.,こんにちは,こんにちは。ここに新【あたら】しく来【き】ました。私【わたし】はたなかです。,Introducing Yourself,polite,hello,"<span class=""vocab""><span class=""pitch-l"">こ</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">に</span><span class=""pitch-h"">ち</span><span class=""pitch-h"">は</span></span>",こんにちは。ここに引っ越してきました。田中です。,y
+こんにちは。私はやまもとです。家が近い人です。,Hello. I'm Yamamoto. I'm your neighbor.,家が近い人,こんにちは。私【わたし】はやまもとです。家【いえ】が近【ちか】い人【ひと】です。,Introducing Yourself,polite,neighbor,"<ruby class=""vocab"">家が近い人<rt>いえがちかいひと</rt></ruby>",こんにちは。山本です。お隣の者です。,y
+よろしくください。私は他の国から来ました。,Nice to meet you. I came from another country.,ください,よろしくください。私【わたし】は他【ほか】の国【くに】から来【き】ました。,Introducing Yourself,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",よろしくお願いします。外国から来ました。,y
+そうですか。この国の言葉がとても良いですね。,Is that so? Your Japanese is very good.,とても良い,そうですか。この国【くに】の言葉【ことば】がとても良【よ】いですね。,Introducing Yourself,casual,wonderful / splendid,"<ruby class=""vocab"">とても良い<rt>とてもよい</rt></ruby>",そうですか。日本語がとてもお上手ですね。,y
+ありがとう。まだ少しだけです。,Thank you. I only know a little.,ありがとう,ありがとう。まだ少【すこ】しだけです。,Introducing Yourself,polite,thank you,"<span class=""vocab""><span class=""pitch-l"">あ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">が</span><span class=""pitch-l"">と</span><span class=""pitch-l"">う</span></span>",ありがとうございます。まだ少しだけです。,y
+何か分からない事があったら、言ってください。,"If there's anything you don't understand, please tell me.",ください,何【なに】か分【わ】からない事【こと】があったら、言【い】ってください。,Introducing Yourself,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",何か分からないことがあったら、言ってください。,y
+ありがとう。とても助かります。,Thank you. That helps a lot.,ありがとう,ありがとう。とても助【たす】かります。,Introducing Yourself,polite,thank you,"<span class=""vocab""><span class=""pitch-l"">あ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">が</span><span class=""pitch-l"">と</span><span class=""pitch-l"">う</span></span>",ありがとうございます。とても助かります。,y
+家の人たち,family,家の人たち,家【いえ】の人【ひと】たち,People & Relationships,,family,"<ruby class=""vocab"">家の人たち<rt>いえのひとたち</rt></ruby>",家族,y
+男の上の子供,older brother,男の上の子供,男【おとこ】の上【うえ】の子供【こども】,People & Relationships,,older brother,"<ruby class=""vocab"">男の上の子供<rt>おとこのうえのこども</rt></ruby>",兄,y
+男の下の子供,younger brother,男の下の子供,男【おとこ】の下【した】の子供【こども】,People & Relationships,,younger brother,"<ruby class=""vocab"">男の下の子供<rt>おとこのしたのこども</rt></ruby>",弟,y
+女の上の子供,older sister,女の上の子供,女【おんな】の上【うえ】の子供【こども】,People & Relationships,,older sister,"<ruby class=""vocab"">女の上の子供<rt>おんなのうえのこども</rt></ruby>",姉,y
+女の下の子供,younger sister,女の下の子供,女【おんな】の下【した】の子供【こども】,People & Relationships,,younger sister,"<ruby class=""vocab"">女の下の子供<rt>おんなのしたのこども</rt></ruby>",妹,y
+女の人の男,husband,女の人の男,女【おんな】の人【ひと】の男【おとこ】,People & Relationships,,husband,"<ruby class=""vocab"">女の人の男<rt>おんなのひとのおとこ</rt></ruby>",夫,y
+男の人の女,wife,男の人の女,男【おとこ】の人【ひと】の女【おんな】,People & Relationships,,wife,"<ruby class=""vocab"">男の人の女<rt>おとこのひとのおんな</rt></ruby>",妻,y
+私の男の子供,son,私の男の子供,私【わたし】の男【おとこ】の子供【こども】,People & Relationships,,son,"<ruby class=""vocab"">私の男の子供<rt>わたしのおとこのこども</rt></ruby>",息子,y
+私の女の子供,daughter,私の女の子供,私【わたし】の女【おんな】の子供【こども】,People & Relationships,,daughter,"<ruby class=""vocab"">私の女の子供<rt>わたしのおんなのこども</rt></ruby>",娘,y
+子供の父または母,parent,子供の父または母,子供【こども】の父【ちち】または母【はは】,People & Relationships,,parent,"<ruby class=""vocab"">子供の父または母<rt>こどものちちまたははは</rt></ruby>",親,y
+父の父,grandfather,父の父,父【ちち】の父【ちち】,People & Relationships,,grandfather,"<ruby class=""vocab"">父の父<rt>ちちのちち</rt></ruby>",祖父,y
+父の母,grandmother,父の母,父【ちち】の母【はは】,People & Relationships,,grandmother,"<ruby class=""vocab"">父の母<rt>ちちのはは</rt></ruby>",祖母,y
+子供の子供,grandchild,子供の子供,子供【こども】の子供【こども】,People & Relationships,,grandchild,"<ruby class=""vocab"">子供の子供<rt>こどものこども</rt></ruby>",孫,y
+よく会う好きな人,friend,よく会う好きな人,よく会【あ】う好【す】きな人【ひと】,People & Relationships,,friend,"<ruby class=""vocab"">よく会う好きな人<rt>よくあうすきなひと</rt></ruby>",友達,y
+とても好きな人,romantic partner,とても好きな人,とても好【す】きな人【ひと】,People & Relationships,,romantic partner,"<ruby class=""vocab"">とても好きな人<rt>とてもすきなひと</rt></ruby>",恋人,y
+あの男の人,he / boyfriend,あの男の人,あの男【おとこ】の人【ひと】,People & Relationships,,he / boyfriend,"<ruby class=""vocab"">あの男の人<rt>あのおとこのひと</rt></ruby>",彼,y
+あの女の人,she / girlfriend,あの女の人,あの女【おんな】の人【ひと】,People & Relationships,,she / girlfriend,"<ruby class=""vocab"">あの女の人<rt>あのおんなのひと</rt></ruby>",彼女,y
+前からいる人,senior / upperclassman,前からいる人,前【まえ】からいる人【ひと】,People & Relationships,,senior / upperclassman,"<ruby class=""vocab"">前からいる人<rt>まえからいるひと</rt></ruby>",先輩,y
+後から来た人,junior / underclassman,後から来た人,後【あと】から来【き】た人【ひと】,People & Relationships,,junior / underclassman,"<ruby class=""vocab"">後から来た人<rt>あとからきたひと</rt></ruby>",後輩,y
+よく会う人たち,companion / fellow member,よく会う人たち,よく会【あ】う人【ひと】たち,People & Relationships,,companion / fellow member,"<ruby class=""vocab"">よく会う人たち<rt>よくあうひとたち</rt></ruby>",仲間,y
+近くにいる人,neighbor,近くにいる人,近【ちか】くにいる人【ひと】,People & Relationships,,neighbor,"<ruby class=""vocab"">近くにいる人<rt>ちかくにいるひと</rt></ruby>",隣人,y
+会っている人,partner / opponent,会っている人,会【あ】っている人【ひと】,People & Relationships,,partner / opponent,"<ruby class=""vocab"">会っている人<rt>あっているひと</rt></ruby>",相手,y
+全部の人,everyone,全部の人,全部【ぜんぶ】の人【ひと】,People & Relationships,,everyone,"<ruby class=""vocab"">全部の人<rt>ぜんぶのひと</rt></ruby>",皆,y
+まだ大きくなっていない子供,baby,まだ大きくなっていない子供,まだ大【おお】きくなっていない子供【こども】,People & Relationships,,baby,"<ruby class=""vocab"">まだ大きくなっていない子供<rt>まだおおきくなっていないこども</rt></ruby>",赤ちゃん,y
+年が少しの人,young person,年が少しの人,年【とし】が少【すこ】しの人【ひと】,People & Relationships,,young person,"<ruby class=""vocab"">年が少しの人<rt>としがすこしのひと</rt></ruby>",若者,y
+年が多い人,elderly person,年が多い人,年【とし】が多【おお】い人【ひと】,People & Relationships,,elderly person,"<ruby class=""vocab"">年が多い人<rt>としがおおいひと</rt></ruby>",老人,y
+大きくなった人,adult,大きくなった人,大【おお】きくなった人【ひと】,People & Relationships,,adult,"<ruby class=""vocab"">大きくなった人<rt>おおきくなったひと</rt></ruby>",大人,y
+教える人,teacher,教える人,教【おし】える人【ひと】,People & Relationships,,teacher,"<ruby class=""vocab"">教える人<rt>おしえるひと</rt></ruby>",先生,y
+体を助ける人,doctor,体を助ける人,体【からだ】を助【たす】ける人【ひと】,People & Relationships,,doctor,"<ruby class=""vocab"">体を助ける人<rt>からだをたすけるひと</rt></ruby>",医者,y
+悪いことをする人を止める人,police,悪いことをする人を止める人,悪【わる】いことをする人【ひと】を止【と】める人【ひと】,People & Relationships,,police,"<ruby class=""vocab"">悪いことをする人を止める人<rt>わるいことをするひとをとめるひと</rt></ruby>",警察,y
+戦う人,soldier,戦う人,戦【たたか】う人【ひと】,People & Relationships,,soldier,"<ruby class=""vocab"">戦う人<rt>たたかうひと</rt></ruby>",兵士,y
+国で高い人,king,国で高い人,国【くに】で高【たか】い人【ひと】,People & Relationships,,king,"<ruby class=""vocab"">国で高い人<rt>くにでたかいひと</rt></ruby>",王,y
+とても強い上にいる人,god / deity,とても強い上にいる人,とても強【つよ】い上【うえ】にいる人【ひと】,People & Relationships,,god / deity,"<ruby class=""vocab"">とても強い上にいる人<rt>とてもつよいうえにいるひと</rt></ruby>",神,y
+その国にいる人,citizen,その国にいる人,その国【くに】にいる人【ひと】,People & Relationships,,citizen,"<ruby class=""vocab"">その国にいる人<rt>そのくににいるひと</rt></ruby>",市民,y
+その国の全部の人,nationals / people of a country,その国の全部の人,その国【くに】の全部【ぜんぶ】の人【ひと】,People & Relationships,,nationals / people of a country,"<ruby class=""vocab"">その国の全部の人<rt>そのくにのぜんぶのひと</rt></ruby>",国民,y
+戦う悪い人,enemy,戦う悪い人,戦【たたか】う悪【わる】い人【ひと】,People & Relationships,,enemy,"<ruby class=""vocab"">戦う悪い人<rt>たたかうわるいひと</rt></ruby>",敵,y
+よく助けてくれる人,ally,よく助けてくれる人,よく助【たす】けてくれる人【ひと】,People & Relationships,,ally,"<ruby class=""vocab"">よく助けてくれる人<rt>よくたすけてくれるひと</rt></ruby>",味方,y
+悪いことをされた人,victim,悪いことをされた人,悪【わる】いことをされた人【ひと】,People & Relationships,,victim,"<ruby class=""vocab"">悪いことをされた人<rt>わるいことをされたひと</rt></ruby>",被害者,y
+悪いことをした人,criminal / culprit,悪いことをした人,悪【わる】いことをした人【ひと】,People & Relationships,,criminal / culprit,"<ruby class=""vocab"">悪いことをした人<rt>わるいことをしたひと</rt></ruby>",犯人,y
+外の国から来た人,foreigner,外の国から来た人,外【そと】の国【くに】から来【き】た人【ひと】,People & Relationships,,foreigner,"<ruby class=""vocab"">外の国から来た人<rt>そとのくにからきたひと</rt></ruby>",外国人,y
+その所を見に来た人,tourist,その所を見に来た人,その所【ところ】を見【み】に来【き】た人【ひと】,People & Relationships,,tourist,"<ruby class=""vocab"">その所を見に来た人<rt>そのところをみにきたひと</rt></ruby>",観光客,y
+動く物の中にいる人,passenger,動く物の中にいる人,動【うご】く物【もの】の中【なか】にいる人【ひと】,People & Relationships,,passenger,"<ruby class=""vocab"">動く物の中にいる人<rt>うごくもののなかにいるひと</rt></ruby>",乗客,y
+体が悪い人,patient (medical),体が悪い人,体【からだ】が悪【わる】い人【ひと】,People & Relationships,,patient (medical),"<ruby class=""vocab"">体が悪い人<rt>からだがわるいひと</rt></ruby>",患者,y
+選ばれた人,athlete / player,選ばれた人,選【えら】ばれた人【ひと】,People & Relationships,,athlete / player,"<ruby class=""vocab"">選ばれた人<rt>えらばれたひと</rt></ruby>",選手,y
+口から音を出す人,singer,口から音を出す人,口【くち】から音【おと】を出【だ】す人【ひと】,People & Relationships,,singer,"<ruby class=""vocab"">口から音を出す人<rt>くちからおとをだすひと</rt></ruby>",歌手,y
+本を作る人,author / writer,本を作る人,本【ほん】を作【つく】る人【ひと】,People & Relationships,,author / writer,"<ruby class=""vocab"">本を作る人<rt>ほんをつくるひと</rt></ruby>",作家,y
+きれいな物を作る人,painter / artist,きれいな物を作る人,きれいな物【もの】を作【つく】る人【ひと】,People & Relationships,,painter / artist,"<ruby class=""vocab"">きれいな物を作る人<rt>きれいなものをつくるひと</rt></ruby>",画家,y
+上にいる人,boss / superior,上にいる人,上【うえ】にいる人【ひと】,People & Relationships,,boss / superior,"<ruby class=""vocab"">上にいる人<rt>うえにいるひと</rt></ruby>",上司,y
+下にいる人,subordinate,下にいる人,下【した】にいる人【ひと】,People & Relationships,,subordinate,"<ruby class=""vocab"">下にいる人<rt>したにいるひと</rt></ruby>",部下,y
+来た人,customer / guest,来た人,来【き】た人【ひと】,People & Relationships,,customer / guest,"<ruby class=""vocab"">来た人<rt>きたひと</rt></ruby>",客,y

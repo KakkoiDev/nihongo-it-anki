@@ -1,0 +1,15 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+どのタスクを始めにしますか。,Which task should we do first?,タスク,どのタスクを始【はじ】めにしますか。,Task Planning,polite,task,"<ruby class=""vocab"">タスク<rt><span class=""pitch-h"">た</span><span class=""pitch-l"">す</span><span class=""pitch-l"">く</span></rt></ruby>",どのタスクを優先しますか。,y
+このバグを始めにする必要があります。,We need to do this bug first.,バグ,このバグを始【はじ】めにする必要【ひつよう】があります。,Task Planning,polite,bug,"<ruby class=""vocab"">バグ<rt><span class=""pitch-h"">ば</span><span class=""pitch-l"">ぐ</span></rt></ruby>",このバグを先に直す必要があります。,y
+いつまでにできますか。,When can it be done?,まで,いつまでにできますか。,Task Planning,polite,"until, to","<span class=""vocab"">まで</span>",,y
+たぶん明までにできます。,Probably by tomorrow.,たぶん,たぶん明【あす】までにできます。,Task Planning,polite,maybe,"<span class=""vocab""><span class=""pitch-h"">た</span><span class=""pitch-l"">ぶ</span><span class=""pitch-l"">ん</span></span>",たぶん明日までにできます。,y
+人と「する」と書いた物,"contract, agreement",人と「する」と書いた物,人【ひと】と「する」と書【か】いた物【もの】,Work & School,,"contract, agreement","<ruby class=""vocab"">人と「する」と書いた物<rt>ひとと「する」とかいたもの</rt></ruby>",契約,y
+良くなるためにとても強くする事,"effort, hard work",良くなるためにとても強くする事,良【よ】くなるためにとても強【つよ】くする事【こと】,Work & School,,"effort, hard work","<ruby class=""vocab"">良くなるためにとても強くする事<rt>よくなるためにとてもつよくすること</rt></ruby>",努力,y
+したい事の所,"goal, target, objective",したい事の所,したい事【こと】の所【ところ】,Work & School,,"goal, target, objective","<ruby class=""vocab"">したい事の所<rt>したいことのところ</rt></ruby>",目標,y
+しなければならない事と、してはいけない事,"rule, regulation",しなければならない事と、してはいけない事,しなければならない事【こと】と、してはいけない事【こと】,Work & School,,"rule, regulation","<ruby class=""vocab"">しなければならない事と、してはいけない事<rt>しなければならないことと、してはいけないこと</rt></ruby>",規則,y
+「していい」と言う事,"permission, approval",「していい」と言う事,「していい」と言【い】う事【こと】,Work & School,,"permission, approval","<ruby class=""vocab"">「していい」と言う事<rt>「していい」ということ</rt></ruby>",許可,y
+タスク,task,タスク,タスク,Planning and teamwork,,task,"<ruby class=""vocab"">タスク<rt><span class=""pitch-h"">た</span><span class=""pitch-l"">す</span><span class=""pitch-l"">く</span></rt></ruby>",,y
+チケット,ticket,チケット,チケット,Planning and teamwork,,ticket,"<ruby class=""vocab"">チケット<rt><span class=""pitch-h"">ち</span><span class=""pitch-l"">け</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+スプリント,sprint,スプリント,スプリント,Planning and teamwork,,sprint,"<ruby class=""vocab"">スプリント<rt><span class=""pitch-l"">す</span><span class=""pitch-h"">ぷ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+スタンドアップ,standup,スタンドアップ,スタンドアップ,Planning and teamwork,,standup,"<span class=""vocab"">スタンドアップ</span>",デイリースクラム,y
+デモ,demo,デモ,デモ,Planning and teamwork,,demo,"<ruby class=""vocab"">デモ<rt><span class=""pitch-h"">で</span><span class=""pitch-l"">も</span></rt></ruby>",,y
