@@ -1,0 +1,84 @@
+name: Release agentic-lab v1.3
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/release-agentic-lab-v1.3.yml
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.8.4"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Restore corrected v1.2 audio
+        run: |
+          curl -L --fail --retry 3 \
+            -o /tmp/agentic-lab-v1.2.apkg \
+            "https://github.com/KakkoiDev/nihongo-it-anki/releases/download/agentic-lab%2Fv1.2/agentic-lab-complete.apkg"
+          unzip -q /tmp/agentic-lab-v1.2.apkg -d /tmp/agentic-lab-v1.2
+          jq -r 'to_entries[] | select(.value | test("^tier[0-9]+_[0-9]+\\.mp3$")) | [.key,.value] | @tsv' \
+            /tmp/agentic-lab-v1.2/media |
+          while IFS=$'\t' read -r stored filename; do
+            tier="${filename#tier}"
+            tier="${tier%%_*}"
+            mkdir -p "decks/agentic-lab/tier${tier}-audio"
+            cp "/tmp/agentic-lab-v1.2/${stored}" \
+              "decks/agentic-lab/tier${tier}-audio/${filename}"
+          done
+          test "$(find decks/agentic-lab -path '*-audio/*.mp3' | wc -l)" -eq 554
+
+      - name: Test and build
+        run: |
+          uv run pytest -q
+          uv run python scripts/create_deck.py \
+            --deck agentic-lab --combined --all
+
+      - name: Verify upgrade-compatible subdeck names
+        run: |
+          mkdir -p /tmp/verify-agentic-v1.3
+          unzip -q agentic-lab-complete.apkg -d /tmp/verify-agentic-v1.3
+          uv run python - <<'PY'
+          import json
+          import sqlite3
+
+          connection = sqlite3.connect("/tmp/verify-agentic-v1.3/collection.anki2")
+          decks = json.loads(connection.execute("select decks from col").fetchone()[0])
+          names = {deck["name"] for deck in decks.values()}
+          expected = {
+              "Agentic Lab Priority Path::Tier 01 - The Survival Set",
+              "Agentic Lab Priority Path::Tier 09 - Team Vocabulary: Core",
+              "Agentic Lab Priority Path::Tier 10 - Team Vocabulary: Common",
+              "Agentic Lab Priority Path::Tier 12 - Team Vocabulary: Long Tail",
+          }
+          missing = expected - names
+          broken = {name for name in names if name.startswith("Agentic Lab Priority Path::0")}
+          if missing or broken:
+              raise SystemExit(
+                  f"invalid subdeck names; missing={sorted(missing)}, broken={sorted(broken)}"
+              )
+          PY
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "agentic-lab/v1.3" \
+            agentic-lab-complete.apkg agentic-lab-tier*.apkg \
+            --title "Agentic Lab Priority Path v1.3" \
+            --notes "Fixes the v1.2 upgrade regression by preserving the published Tier 01 - Label subdeck format. Includes the corrected 力技 (ちからわざ) and ググって (ぐぐって) audio from v1.2. If v1.2 created empty 01 Label subdecks, they can be deleted after importing v1.3."
