@@ -1,0 +1,27 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
+このタスクは何のためですか。,What is this task for?,タスク,このタスクは何【なに】のためですか。,Requirement Clarification,polite,task,"<ruby class=""vocab"">タスク<rt><span class=""pitch-h"">た</span><span class=""pitch-l"">す</span><span class=""pitch-l"">く</span></rt></ruby>",
+使う人が速く探すためです。,So users can search faster.,使う,使【つか】う人【ひと】が速【はや】く探【さが】すためです。,Requirement Clarification,polite,use,"<ruby class=""vocab"">使う<rt><span class=""pitch-l"">つ</span><span class=""pitch-h"">か</span><span class=""pitch-h"">う</span></rt></ruby>",利用者が速く検索できるようにするためです。
+どの時に必要ですか。,In which case is it needed?,必要,どの時【とき】に必要【ひつよう】ですか。,Requirement Clarification,polite,necessary,"<ruby class=""vocab"">必要<rt><span class=""pitch-l"">ひ</span><span class=""pitch-h"">つ</span><span class=""pitch-h"">よ</span><span class=""pitch-h"">う</span></rt></ruby>",どの場合に必要ですか。
+物が多い時に必要です。,It is needed when there are many items.,必要,物【もの】が多【おお】い時【とき】に必要【ひつよう】です。,Requirement Clarification,polite,necessary,"<ruby class=""vocab"">必要<rt><span class=""pitch-l"">ひ</span><span class=""pitch-h"">つ</span><span class=""pitch-h"">よ</span><span class=""pitch-h"">う</span></rt></ruby>",項目が多い時に必要です。
+する事をする所,"company, business",する事をする所,する事【こと】をする所【ところ】,Work & School,,"company, business","<ruby class=""vocab"">する事をする所<rt>することをするところ</rt></ruby>",会社
+する事の所で一つだけ上の人,"company president, CEO",する事の所で一つだけ上の人,する事【こと】の所【ところ】で一【ひと】つだけ上【うえ】の人【ひと】,Work & School,,"company president, CEO","<ruby class=""vocab"">する事の所で一つだけ上の人<rt>することのところでひとつだけうえのひと</rt></ruby>",社長
+する事の所でする事をする人,company employee,する事の所でする事をする人,する事【こと】の所【ところ】でする事【こと】をする人【ひと】,Work & School,,company employee,"<ruby class=""vocab"">する事の所でする事をする人<rt>することのところですることをするひと</rt></ruby>",社員
+する事の所の中の大きい所の上の人,"department head, director",する事の所の中の大きい所の上の人,する事【こと】の所【ところ】の中【なか】の大【おお】きい所【ところ】の上【うえ】の人【ひと】,Work & School,,"department head, director","<ruby class=""vocab"">する事の所の中の大きい所の上の人<rt>することのところのなかのおおきいところのうえのひと</rt></ruby>",部長
+来る人,"customer, guest, visitor",来る人,来【く】る人【ひと】,Work & School,,"customer, guest, visitor","<ruby class=""vocab"">来る人<rt>くるひと</rt></ruby>",客
+人と違う考えを言う事,"debate, argument, discussion",人と違う考えを言う事,人【ひと】と違【ちが】う考【かんが】えを言【い】う事【こと】,Work & School,,"debate, argument, discussion","<ruby class=""vocab"">人と違う考えを言う事<rt>ひととちがうかんがえをいうこと</rt></ruby>",議論
+する事をしてもらうお金,"salary, wages, pay",する事をしてもらうお金,する事【こと】をしてもらうお金【かね】,Work & School,,"salary, wages, pay","<ruby class=""vocab"">する事をしてもらうお金<rt>することをしてもらうおかね</rt></ruby>",給料
+私が思う事,"opinion, view",私が思う事,私【わたし】が思【おも】う事【こと】,Work & School,,"opinion, view","<ruby class=""vocab"">私が思う事<rt>わたしがおもうこと</rt></ruby>",意見
+インターネット,internet,インターネット,インターネット,Work & School,,internet,"<ruby class=""vocab"">インターネット<rt><span class=""pitch-l"">い</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">た</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ね</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">と</span></rt></ruby>",
+メール,email,メール,メール,Work & School,,email,"<ruby class=""vocab"">メール<rt><span class=""pitch-h"">め</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">る</span></rt></ruby>",
+パソコン,personal computer,パソコン,パソコン,Work & School,,personal computer,"<ruby class=""vocab"">パソコン<rt><span class=""pitch-l"">ぱ</span><span class=""pitch-h"">そ</span><span class=""pitch-h"">こ</span><span class=""pitch-h"">ん</span></rt></ruby>",
+スマホ,smartphone,スマホ,スマホ,Work & School,,smartphone,"<span class=""vocab"">スマホ</span>",
+ノート,notebook,ノート,ノート,Work & School,,notebook,"<ruby class=""vocab"">ノート<rt><span class=""pitch-h"">の</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">と</span></rt></ruby>",
+ペン,pen,ペン,ペン,Work & School,,pen,"<ruby class=""vocab"">ペン<rt><span class=""pitch-h"">ぺ</span><span class=""pitch-l"">ん</span></rt></ruby>",
+ミーティング,meeting,ミーティング,ミーティング,Work & School,,meeting,"<ruby class=""vocab"">ミーティング<rt><span class=""pitch-l"">み</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">てぃ</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">ぐ</span></rt></ruby>",
+スケジュール,schedule,スケジュール,スケジュール,Work & School,,schedule,"<ruby class=""vocab"">スケジュール<rt><span class=""pitch-l"">す</span><span class=""pitch-h"">け</span><span class=""pitch-l"">じゅ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">る</span></rt></ruby>",
+コピー,copy,コピー,コピー,Work & School,,copy,"<ruby class=""vocab"">コピー<rt><span class=""pitch-h"">こ</span><span class=""pitch-l"">ぴ</span><span class=""pitch-l"">ー</span></rt></ruby>",
+ビジネス,business,ビジネス,ビジネス,Work & School,,business,"<ruby class=""vocab"">ビジネス<rt><span class=""pitch-h"">び</span><span class=""pitch-l"">じ</span><span class=""pitch-l"">ね</span><span class=""pitch-l"">す</span></rt></ruby>",
+チーム,team,チーム,チーム,Work & School,,team,"<ruby class=""vocab"">チーム<rt><span class=""pitch-h"">ち</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">む</span></rt></ruby>",
+メンバー,member,メンバー,メンバー,Work & School,,member,"<ruby class=""vocab"">メンバー<rt><span class=""pitch-h"">め</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">ば</span><span class=""pitch-l"">ー</span></rt></ruby>",
+レポート,report,レポート,レポート,Work & School,,report,"<ruby class=""vocab"">レポート<rt><span class=""pitch-l"">れ</span><span class=""pitch-h"">ぽ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">と</span></rt></ruby>",
+バイト,part-time job,バイト,バイト,Work & School,,part-time job,"<ruby class=""vocab"">バイト<rt><span class=""pitch-l"">ば</span><span class=""pitch-h"">い</span><span class=""pitch-h"">と</span></rt></ruby>",

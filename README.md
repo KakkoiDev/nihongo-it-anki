@@ -104,6 +104,52 @@ and scheduled independently.
 | 11 | 90 | Team vocabulary: regular |
 | 12 | 107 | Team vocabulary: long tail |
 
+### Minihongo Production (`minihongo-speak`)
+
+831 sentences across 21 tiers, built from the
+[minihongo](https://github.com/KakkoiDev/minihongo) core set by
+`scripts/import_minihongo_speak.py`. The other decks test whether you understand
+Japanese; this one tests whether you can say it. Every note carries the
+**Production** card described under [Card Types](#card-types), and no other deck
+does.
+
+Tiers are minihongo's own can-do goals rather than word frequency, and the six
+work can-dos come first: standup, incident, system explanation, demo, task
+planning, requirement clarification. Each tier opens with the dialog lines for
+that can-do and continues with the vocabulary those lines are built from.
+
+Comprehension wide, production narrow: what you are asked to produce is the
+minihongo paraphrase, assembled from 231 core words, and the real Japanese word
+sits beside it on the back for recognition only. 会議 is there to be understood;
+多【おお】くの人【ひと】が来【き】て考【かんが】える事【こと】 is there to be said.
+
+Note GUIDs are namespaced, so this deck installs and schedules alongside
+`it-vocab` and `agentic-lab` even where a sentence is shared.
+
+| Tier | Count | Can-do |
+|------|-------|--------|
+| 1 | 23 | 朝会で進捗を共有できる / I can give a standup update |
+| 2 | 25 | 障害を報告できる / I can report an incident |
+| 3 | 31 | システムの仕組みを説明できる / I can explain a system |
+| 4 | 13 | 技術デモができる / I can run a technical demo |
+| 5 | 14 | タスクを計画できる / I can plan a task |
+| 6 | 26 | 要件を確認できる / I can clarify a requirement |
+| 7 | 57 | 自己紹介ができる / I can introduce myself |
+| 8 | 46 | 店で買い物ができる / I can buy things at a shop |
+| 9 | 89 | レストランで注文できる / I can order at a restaurant |
+| 10 | 58 | 道を尋ねられる / I can ask for directions |
+| 11 | 65 | 切符を買って電車に乗れる / I can buy a ticket and take the train |
+| 12 | 54 | 医者に痛みを伝えられる / I can describe pain to a doctor |
+| 13 | 12 | 薬局で薬を買える / I can buy medicine at a pharmacy |
+| 14 | 8 | 緊急時に助けを求められる / I can ask for help in an emergency |
+| 15 | 6 | 電話で予約できる / I can make an appointment by phone |
+| 16 | 59 | 市役所で住所を届け出られる / I can register my address at city hall |
+| 17 | 7 | 聞き返すことができる / I can ask someone to repeat or slow down |
+| 18 | 65 | 近所の人に挨拶できる / I can greet my neighbors |
+| 19 | 106 | 天気の話ができる / I can make small talk about the weather |
+| 20 | 23 | 円の値段が分かって言える / I can understand and say prices in yen |
+| 21 | 44 | 時刻が言える / I can tell the time |
+
 ## Download
 
 **[AnkiWeb](https://ankiweb.net/shared/info/698107537)** - install IT Vocabulary directly from Anki app
@@ -135,6 +181,11 @@ decks/
     deck.toml         # guid_namespace set: tiers 1-5 are also in it-vocab
     pronunciation_overrides.py   # readings UniDic loses when it re-tags a token alone
     tier{1-12}-vocabulary.csv
+  minihongo-speak/    # Minihongo Production (21 tiers, 831 sentences)
+    deck.toml         # production_card set: the only deck with the fourth card
+    REFERENCE.md      # which minihongo rows feed which can-do tier
+    pronunciation_overrides.py   # minihongo readings UniDic answers out of context
+    tier{1-21}-vocabulary.csv
 scripts/
   lib/config.py       # DeckConfig dataclass + loader
   create_deck.py      # Create Anki .apkg files
@@ -157,6 +208,8 @@ tests/
 **Reading** - Japanese text front, no audio. Trains reading for Slack, PRs, and documentation.
 
 **Vocabulary** - Key word blanked in sentence with English hint. Tests one word at a time.
+
+**Production** - English meaning and situation on the front, nothing else: no Japanese, no furigana, no audio. You say the sentence aloud, then turn the card over for the furigana, the audio, the pitch accent, and the real Japanese word beside the minihongo construction. Opt-in per deck via `production_card = true`; only `minihongo-speak` uses it.
 
 ## Features
 
@@ -225,6 +278,7 @@ Assets attached: `{slug}-complete.apkg` + individual `{slug}-tier{N}.apkg` files
 | `pronunciation.py` | Furigana extraction, English-to-katakana conversion, TTS prosodic fixes |
 | `add_key_meanings.py` | Generate English meanings for key words |
 | `test_tts.py` | Generate audio for one or more rows to test pronunciation changes |
+| `import_minihongo_speak.py` | Rebuild the `minihongo-speak` CSVs from a read-only minihongo checkout |
 | `release.py` | Create GitHub releases per deck |
 | `migrate_guids.py` | Migrate existing Anki collections from random GUIDs to stable sentence-based GUIDs. One-time fix for users who imported pre-stable-GUID builds. |
 | `migrate_deck_names.py` | Rename subdecks in `collection.anki2` from `Tier N` to `Tier 0N`. Detects orphan subdecks and can delete them with `--delete-orphans`. |

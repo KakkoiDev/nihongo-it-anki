@@ -60,3 +60,44 @@ def test_agentic_lab_imports_alongside_it_vocab(tmp_path):
         assert len(col.decks.cids(deck_id)) == 14 * 3
     finally:
         col.close()
+
+
+def test_minihongo_speak_note_makes_four_cards(tmp_path):
+    """The Production card is real only if Anki generates it.
+
+    A template whose front renders empty is silently dropped, so counting
+    templates in the model proves nothing; counting cards in a collection does.
+    """
+    apkg = tmp_path / "minihongo-speak.apkg"
+    build_apkg("minihongo-speak", 1, apkg)
+
+    col = Collection(str(tmp_path / "collection.anki2"))
+    try:
+        log = import_apkg(col, apkg)
+        assert not log.conflicting
+        notes = len(log.new)
+        assert notes == load_deck_config("minihongo-speak").tier_sizes[1]
+
+        config = load_deck_config("minihongo-speak")
+        deck_id = col.decks.id_for_name(f"{config.name}::{config.tier_names[1]}")
+        assert deck_id is not None
+        assert len(col.decks.cids(deck_id)) == notes * 4
+    finally:
+        col.close()
+
+
+def test_minihongo_speak_imports_alongside_it_vocab(tmp_path):
+    """Two notetypes, two schedules, no conflicts - what the namespace buys."""
+    it_vocab = tmp_path / "it-vocab.apkg"
+    speak = tmp_path / "minihongo-speak.apkg"
+    build_apkg("it-vocab", 1, it_vocab)
+    build_apkg("minihongo-speak", 1, speak)
+
+    col = Collection(str(tmp_path / "collection.anki2"))
+    try:
+        assert not import_apkg(col, it_vocab).conflicting
+        log = import_apkg(col, speak)
+        assert not log.conflicting
+        assert len(log.new) == load_deck_config("minihongo-speak").tier_sizes[1]
+    finally:
+        col.close()

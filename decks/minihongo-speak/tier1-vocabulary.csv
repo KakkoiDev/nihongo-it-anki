@@ -1,0 +1,24 @@
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
+前の日は何をしましたか。,What did you do yesterday?,前の日,前【まえ】の日【にち】は何【なに】をしましたか。,Daily Standup,polite,yesterday,"<ruby class=""vocab"">前の日<rt>まえのにち</rt></ruby>",昨日は何をしましたか。
+バグを探して、テストを作りました。,I found the bug and wrote tests.,テスト,バグを探【さが】して、テストを作【つく】りました。,Daily Standup,polite,test,"<ruby class=""vocab"">テスト<rt><span class=""pitch-h"">て</span><span class=""pitch-l"">す</span><span class=""pitch-l"">と</span></rt></ruby>",バグを調べて、テストを作りました。
+今の日は何をしますか。,What will you do today?,今の日,今【いま】の日【にち】は何【なに】をしますか。,Daily Standup,polite,today,"<ruby class=""vocab"">今の日<rt>いまのにち</rt></ruby>",今日は何をしますか。
+コードを書いて、レビューをお願いします。,I will write code and ask for review.,お願いします,コードを書【か】いて、レビューをお願【ねが】いします。,Daily Standup,polite,please (request),"<ruby class=""vocab"">お願いします<rt>おねがいします</rt></ruby>",
+する事,"work, job, occupation",する事,する事【こと】,Work & School,,"work, job, occupation","<ruby class=""vocab"">する事<rt>すること</rt></ruby>",仕事
+する事で上にいる人,"superior, boss",する事で上にいる人,する事【こと】で上【うえ】にいる人【ひと】,Work & School,,"superior, boss","<ruby class=""vocab"">する事で上にいる人<rt>することでうえにいるひと</rt></ruby>",上司
+する事で下にいる人,"subordinate, staff under one",する事で下にいる人,する事【こと】で下【した】にいる人【ひと】,Work & School,,"subordinate, staff under one","<ruby class=""vocab"">する事で下にいる人<rt>することでしたにいるひと</rt></ruby>",部下
+する事の所でする事をする他の人,"colleague, coworker",する事の所でする事をする他の人,する事【こと】の所【ところ】でする事【こと】をする他【ほか】の人【ひと】,Work & School,,"colleague, coworker","<ruby class=""vocab"">する事の所でする事をする他の人<rt>することのところですることをするほかのひと</rt></ruby>",同僚
+多くの人が来て考える事,"meeting, conference",多くの人が来て考える事,多【おお】くの人【ひと】が来【き】て考【かんが】える事【こと】,Work & School,,"meeting, conference","<ruby class=""vocab"">多くの人が来て考える事<rt>おおくのひとがきてかんがえること</rt></ruby>",会議
+する事に使う書いた物,"materials, documents, data",する事に使う書いた物,する事【こと】に使【つか】う書【か】いた物【もの】,Work & School,,"materials, documents, data","<ruby class=""vocab"">する事に使う書いた物<rt>することにつかうかいたもの</rt></ruby>",資料
+した事を上の人に言う事,"report, notification",した事を上の人に言う事,した事【こと】を上【うえ】の人【ひと】に言【い】う事【こと】,Work & School,,"report, notification","<ruby class=""vocab"">した事を上の人に言う事<rt>したことをうえのひとにいうこと</rt></ruby>",報告
+時が終わった後もする事,overtime work,時が終わった後もする事,時【とき】が終【お】わった後【あと】もする事【こと】,Work & School,,overtime work,"<ruby class=""vocab"">時が終わった後もする事<rt>ときがおわったあともすること</rt></ruby>",残業
+する事で他の所に行く事,business trip,する事で他の所に行く事,する事【こと】で他【ほか】の所【ところ】に行【い】く事【こと】,Work & School,,business trip,"<ruby class=""vocab"">する事で他の所に行く事<rt>することでほかのところにいくこと</rt></ruby>",出張
+悪い所を探す,debug,悪い所を探す,悪【わる】い所【ところ】を探【さが】す,What we do,,debug,"<ruby class=""vocab"">悪い所を探す<rt>わるいところをさがす</rt></ruby>",デバッグする
+書いた物を見る,review code,書いた物を見る,書【か】いた物【もの】を見【み】る,What we do,,review code,"<ruby class=""vocab"">書いた物を見る<rt>かいたものをみる</rt></ruby>",コードをレビューする
+良いか見る,test,良いか見る,良【よ】いか見【み】る,What we do,,test,"<ruby class=""vocab"">良いか見る<rt>よいかみる</rt></ruby>",テストする
+前の物にする,roll back,前の物にする,前【まえ】の物【もの】にする,What we do,,roll back,"<ruby class=""vocab"">前の物にする<rt>まえのものにする</rt></ruby>",以前の状態に戻す
+一つにする,merge,一つにする,一【ひと】つにする,What we do,,merge,"<ruby class=""vocab"">一つにする<rt>ひとつにする</rt></ruby>",統合する
+この事をする人,owner,この事をする人,この事【こと】をする人【ひと】,People and time,,owner,"<ruby class=""vocab"">この事をする人<rt>このことをするひと</rt></ruby>",担当者
+いつまでに必要ですか,deadline question,いつまでに必要ですか,いつまでに必要【ひつよう】ですか,People and time,,deadline question,"<ruby class=""vocab"">いつまでに必要ですか<rt>いつまでにひつようですか</rt></ruby>",
+どの事を始めにしますか,priority question,どの事を始めにしますか,どの事【こと】を始【はじ】めにしますか,People and time,,priority question,"<ruby class=""vocab"">どの事を始めにしますか<rt>どのことをはじめにしますか</rt></ruby>",どれを優先しますか
+もう終わりました,done,もう終わりました,もう終【お】わりました,People and time,,done,"<ruby class=""vocab"">もう終わりました<rt>もうおわりました</rt></ruby>",完了しました
+他の人を待っています,blocked,他の人を待っています,他【ほか】の人【ひと】を待【ま】っています,People and time,,blocked,"<ruby class=""vocab"">他の人を待っています<rt>ほかのひとをまっています</rt></ruby>",他の人の対応待ちです
