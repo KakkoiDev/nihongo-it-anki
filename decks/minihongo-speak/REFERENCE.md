@@ -39,7 +39,11 @@ no column for them:
   `casual`. Vocabulary rows are not utterances and carry no badge.
 - **Cloze / KeyMeaning** - the longest core word or expression the line
   contains, with minihongo's own gloss for it. A vocabulary row is its own
-  cloze.
+  cloze, except where that would make its blanked front identical to another
+  row's: the row that keeps the Production front takes its last noun as the
+  cloze instead, so 黒い飲み物 blanks to 黒い＿＿＿ rather than to ＿＿＿.
+  KeyMeaning and PitchAccent stay on the whole paraphrase - 食べ物 does not
+  mean "bread", and the compound heads have no gloss in minihongo to copy.
 - **RealJapanese** - the row's `japanese` column, blank when it already equals
   the sentence, so the back never prints the same string twice.
 - **Produce** - set on every row except one whose Production front, the
@@ -63,7 +67,8 @@ invented one. Card 3 therefore blanks the entire sentence, which makes it ask
 almost what card 4 asks: English in, Japanese out. Left as it is rather than
 fixed with a heuristic - the alternative is guessing at a head word, and the
 duplicate is at least a correct card. Dialog rows are unaffected; their cloze is
-a single core word.
+a single core word, and so is the cloze of the eight paraphrases that had to be
+told apart from a loanword sharing their gloss.
 
 ## Tier sources
 

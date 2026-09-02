@@ -32,8 +32,12 @@ import re
 import sys
 from pathlib import Path
 
+import fugashi
+
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import DECKS_DIR
+
+tagger = fugashi.Tagger()
 
 SLUG = "minihongo-speak"
 FURIGANA = re.compile(r"【[^】]*】")
@@ -276,6 +280,19 @@ def dedupe(tiers: dict[str, list[dict[str, str]]]) -> dict[str, list[dict[str, s
     return tiers
 
 
+def head_word(sentence: str) -> str:
+    """The sentence's last noun, per the UniDic tagger the other scripts use.
+
+    Empty when the sentence has no noun, or when the noun is the whole sentence
+    and blanking it would say no more than blanking the line.
+    """
+    nouns = [token.surface for token in tagger(sentence)
+             if token.feature.pos1 == "名詞"]
+    if not nouns or nouns[-1] == sentence:
+        return ""
+    return nouns[-1]
+
+
 def resolve_production(
     tiers: dict[str, list[dict[str, str]]],
 ) -> dict[str, list[dict[str, str]]]:
@@ -296,6 +313,13 @@ def resolve_production(
     フルーツ and ミルク are still met by a learner who is never asked to produce
     them. Derived rather than listed: the next such pair is marked without a
     code change.
+
+    The Vocabulary front collides for the same reason and needs its own answer:
+    a paraphrase row's cloze is the whole paraphrase, so blanking it leaves a
+    bare ＿＿＿ beside the same gloss the loanword row blanks to. The survivor
+    is given its head word as the cloze instead, which leaves 黒い＿＿＿ against
+    コーヒー's ＿＿＿. Only the cloze moves: PitchAccent and KeyMeaning still
+    describe the whole paraphrase, and 食べ物 does not mean "bread".
     """
     groups: dict[tuple[str, str], list[dict[str, str]]] = {}
     for cando in CANDO_TIERS:
@@ -307,14 +331,17 @@ def resolve_production(
         if len(rows) == 1:
             continue
         winner = next((r for r in rows if r["RealJapanese"]), rows[0])
+        real = [winner["RealJapanese"]] if winner["RealJapanese"] else []
         for row in rows:
             if row is winner:
                 continue
             row["Produce"] = ""
-            real = [w for w in winner["RealJapanese"].split("、") if w]
             if row["Sentence"] not in real:
                 real.append(row["Sentence"])
-            winner["RealJapanese"] = "、".join(real)
+        winner["RealJapanese"] = "、".join(real)
+        head = head_word(winner["Sentence"])
+        if head:
+            winner["Cloze"] = head
     return tiers
 
 
