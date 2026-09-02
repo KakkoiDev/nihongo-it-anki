@@ -2,9 +2,6 @@ name: Release agentic-lab v1.3
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/release-agentic-lab-v1.3.yml
 
 permissions:
   contents: write

@@ -4,9 +4,6 @@ name: Release it-vocab v5.2
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/release-it-vocab-v5.2.yml
 
 permissions:
   contents: write
