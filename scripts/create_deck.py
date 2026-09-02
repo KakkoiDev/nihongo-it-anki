@@ -16,6 +16,11 @@ Generates .apkg files with a 3-card-per-note design:
     Front: Sentence with cloze word blanked (JS replacement), translation.
     Back:  Sentence with cloze highlighted in blue, audio, pronunciation.
 
+  Card 4 (Production), only for decks with production_card = true:
+    Front: English meaning and the situation cue. No Japanese, no audio.
+    Back:  Sentence with furigana, audio, pitch accent, and the real Japanese
+           beside the minihongo construction.
+
 Removed in v3.0: conjugation tables, Keigo drill card, <hr> on Listening.
 Removed in v3.4: Hint and Conjugations fields.
 
@@ -50,14 +55,20 @@ from config import DeckConfig, list_decks, load_deck_config
 to_ruby_html = furigana.to_ruby
 
 
-def build_css() -> str:
+def build_css(production: bool = False) -> str:
     """The shared design system, plus this deck's own components.
 
-    Everything in ``extra`` is specific to these three card types - the
-    pronunciation line, the JS cloze blank, the register badges, the pitch
-    accent colouring - and stays here. The layers above it are shared with
-    every other deck built on jpanki.
+    Everything in ``extra`` is specific to these card types - the pronunciation
+    line, the JS cloze blank, the register badges, the pitch accent colouring -
+    and stays here. The layers above it are shared with every other deck built
+    on jpanki.
+
+    ``production`` appends the fourth card type's rules. Decks without it get
+    the byte-identical stylesheet they have always shipped, which matters
+    because Anki only re-reads CSS behind --force-style, and that resets review
+    history.
     """
+    extra = COMPONENT_CSS + PRODUCTION_CSS if production else COMPONENT_CSS
     return theme.compose(
         # 28px rather than the library default: these cards put a single
         # sentence at the centre of attention, where minihongo's pair one with
@@ -71,7 +82,7 @@ def build_css() -> str:
         theme.replay(scope=".listening-front", size="5rem", icon_size="2.5rem",
                      radius="1.25rem"),
         theme.night(chip_selector=".category"),
-        extra=COMPONENT_CSS,
+        extra=extra,
     )
 
 
@@ -151,15 +162,80 @@ COMPONENT_CSS = '''
 '''
 
 
+PRODUCTION_CSS = '''
+/* Production card. The front is deliberately bare: an English meaning and a
+   situation, and nothing a learner could read aloud instead of recalling. */
+.production-prompt {
+    font-size: 26px;
+    margin: 30px 0 10px;
+}
+
+.real-japanese {
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.real-label {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 0.75rem;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    margin-right: 6px;
+    background: #F7F7F7;
+    color: #666666;
+    border: 1px solid #E5E5E5;
+}
+
+.night_mode .real-label {
+    background: #252525;
+    color: #999999;
+    border-color: #333333;
+}
+'''
+
+
+PRODUCTION_TEMPLATE = {
+    'name': 'Production',
+    # Nothing here may render Japanese, furigana or audio. The whole point of
+    # the card is that the learner produces the sentence aloud from the meaning
+    # alone; one readable kanji and the card tests recognition again.
+    'qfmt': '''<div class="card-type">Production</div>
+<div class="translation production-prompt">{{Translation}}</div>
+{{#Category}}<div class="category">{{Category}}</div>{{/Category}}
+''',
+    'afmt': '''<div class="card-type">Production</div>
+<div class="sentence">{{Pronunciation}}</div>
+<div class="audio">{{Audio}}</div>
+<hr id="answer">
+<div class="translation">{{Translation}}</div>
+{{#RealJapanese}}<div class="real-japanese"><span class="real-label">Real</span>{{RealJapanese}}</div>{{/RealJapanese}}
+<div class="key-vocab">Key: {{#PitchAccent}}{{PitchAccent}}{{/PitchAccent}}{{^PitchAccent}}<span class="vocab">{{Cloze}}</span>{{/PitchAccent}} ({{KeyMeaning}})</div>
+''',
+}
+
+# The Production template reads it, so a deck that opts in carries one more
+# field than the three-card decks do.
+PRODUCTION_FIELD = {'name': 'RealJapanese'}
+
 
 def create_model(config: DeckConfig) -> genanki.Model:
-    """Create the 3-card Anki model.
+    """Create the Anki model: three cards, or four when the deck opts in.
 
     Card 1 (Listening): Big play button -> Japanese + Furigana + English
     Card 2 (Reading): Japanese text -> Furigana + English
     Card 3 (Vocabulary): Blanked sentence + English -> Full sentence + Audio
+    Card 4 (Production): English + situation -> Japanese, audio, real word
+
+    Card 4 exists only under ``production_card = true``. A deck without it gets
+    the same nine fields, three templates and stylesheet it has always shipped -
+    see tests/test_production_card.py, which pins that.
     """
-    model_name = f'{config.name} (3-Card)'
+    card_count = 4 if config.production_card else 3
+    model_name = f'{config.name} ({card_count}-Card)'
     return genanki.Model(
         config.model_id,
         model_name,
@@ -173,6 +249,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
             {'name': 'Register'},       # Speech register: casual/polite/formal/keigo
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
+            *([PRODUCTION_FIELD] if config.production_card else []),
         ],
         templates=[
             # Card 1: Listening (big play button front, everything else on back)
@@ -235,8 +312,9 @@ def create_model(config: DeckConfig) -> genanki.Model:
 </script>
 ''',
             },
+            *([PRODUCTION_TEMPLATE] if config.production_card else []),
         ],
-        css=build_css(),
+        css=build_css(config.production_card),
     )
 
 
@@ -320,6 +398,7 @@ def build_notes(
                 row.get('Register', ''),
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
+                *([row.get('RealJapanese', '')] if config.production_card else []),
             ],
             guid=config.note_guid(row['Sentence']),
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]
@@ -387,12 +466,13 @@ Examples:
         # and it resets review history for every note using it. Deliberate, and
         # deliberately not automatic.
         original = config.model_id
-        config.model_id = jpanki.force_style(original, build_css())
+        config.model_id = jpanki.force_style(original, build_css(config.production_card))
         print(f"--force-style: model_id {original} -> {config.model_id} "
               f"(resets review history)")
 
     include_audio = not args.no_audio
     suffix = "-female" if args.female else ""
+    cards_per_note = 4 if config.production_card else 3
 
     if args.combined:
         voice_label = " (Female)" if args.female else ""
@@ -427,7 +507,8 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Total notes: {total_notes}")
-        print(f"Total cards: {total_notes * 3} (3 cards per note)")
+        print(f"Total cards: {total_notes * cards_per_note} "
+              f"({cards_per_note} cards per note)")
         print(f"Media files: {len(all_media)}")
 
     if args.all:
@@ -439,7 +520,8 @@ Examples:
             package.media_files = media_files
             package.write_to_file(output)
 
-            print(f"Created: {output} ({len(deck.notes)} notes, {len(media_files)} audio files, 3 cards/note)")
+            print(f"Created: {output} ({len(deck.notes)} notes, "
+                  f"{len(media_files)} audio files, {cards_per_note} cards/note)")
     elif args.tier:
         tier = args.tier
         deck, media_files = create_deck(config, tier, include_audio, args.female)
@@ -451,7 +533,8 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Notes: {len(deck.notes)}")
-        print(f"Cards: {len(deck.notes) * 3} (3 cards per note)")
+        print(f"Cards: {len(deck.notes) * cards_per_note} "
+              f"({cards_per_note} cards per note)")
         print(f"Media files: {len(media_files)}")
 
         if not include_audio:

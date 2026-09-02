@@ -26,6 +26,7 @@ class DeckConfig:
     tier_sizes: dict[int, int]
     check_cloze_in_sentence: bool = True
     guid_namespace: str | None = None
+    production_card: bool = False
 
     @property
     def data_dir(self) -> Path:
@@ -97,6 +98,7 @@ def load_deck_config(slug: str) -> DeckConfig:
         tier_sizes=tier_sizes,
         check_cloze_in_sentence=deck.get("check_cloze_in_sentence", True),
         guid_namespace=deck.get("guid_namespace"),
+        production_card=deck.get("production_card", False),
     )
 
 
