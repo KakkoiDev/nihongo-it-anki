@@ -106,7 +106,7 @@ and scheduled independently.
 
 ### Minihongo Production (`minihongo-speak`)
 
-831 sentences across 21 tiers, built from the
+830 sentences across 21 tiers, built from the
 [minihongo](https://github.com/KakkoiDev/minihongo) core set by
 `scripts/import_minihongo_speak.py`. The other decks test whether you understand
 Japanese; this one tests whether you can say it. Every note carries the
@@ -181,7 +181,7 @@ decks/
     deck.toml         # guid_namespace set: tiers 1-5 are also in it-vocab
     pronunciation_overrides.py   # readings UniDic loses when it re-tags a token alone
     tier{1-12}-vocabulary.csv
-  minihongo-speak/    # Minihongo Production (21 tiers, 831 sentences)
+  minihongo-speak/    # Minihongo Production (21 tiers, 830 sentences)
     deck.toml         # production_card set: the only deck with the fourth card
     REFERENCE.md      # which minihongo rows feed which can-do tier
     pronunciation_overrides.py   # minihongo readings UniDic answers out of context

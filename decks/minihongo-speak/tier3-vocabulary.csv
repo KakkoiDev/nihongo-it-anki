@@ -1,32 +1,32 @@
-Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
-この物はどう動きますか。,How does this system work?,どう,この物【もの】はどう動【うご】きますか。,System Explanation,polite,how,"<span class=""vocab""><span class=""pitch-h"">ど</span><span class=""pitch-l"">う</span></span>",これはどう動きますか。
-始めにデータがサーバーに入ります。,First data enters the server.,サーバー,始【はじ】めにデータがサーバーに入【はい】ります。,System Explanation,polite,server,"<ruby class=""vocab"">サーバー<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ば</span><span class=""pitch-h"">ー</span></rt></ruby>",最初にデータがサーバーに入ります。
-それからデータベースに書きます。,Then it writes to the database.,データベース,それからデータベースに書【か】きます。,System Explanation,polite,database,"<ruby class=""vocab"">データベース<rt><span class=""pitch-l"">で</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">た</span><span class=""pitch-h"">べ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",それからデータベースに書き込みます。
-なぜ二つの所を使いますか。,Why do we use two places?,なぜ,なぜ二【ふた】つの所【ところ】を使【つか】いますか。,System Explanation,polite,why,"<span class=""vocab""><span class=""pitch-h"">な</span><span class=""pitch-l"">ぜ</span></span>",なぜ二つの場所を使いますか。
-知らない人に言葉で教える事,"explanation, description",知らない人に言葉で教える事,知【し】らない人【ひと】に言葉【ことば】で教【おし】える事【こと】,Work & School,,"explanation, description","<ruby class=""vocab"">知らない人に言葉で教える事<rt>しらないひとにことばでおしえること</rt></ruby>",説明
-まだ知らない事を探す事,"research, study, investigation",まだ知らない事を探す事,まだ知【し】らない事【こと】を探【さが】す事【こと】,Work & School,,"research, study, investigation","<ruby class=""vocab"">まだ知らない事を探す事<rt>まだしらないことをさがすこと</rt></ruby>",研究
-知るために物を使ってみる事,"experiment, test",知るために物を使ってみる事,知【し】るために物【もの】を使【つか】ってみる事【こと】,Work & School,,"experiment, test","<ruby class=""vocab"">知るために物を使ってみる事<rt>しるためにものをつかってみること</rt></ruby>",実験
-物を作ったり使ったりできる事,"technology, technique, skill",物を作ったり使ったりできる事,物【もの】を作【つく】ったり使【つか】ったりできる事【こと】,Work & School,,"technology, technique, skill","<ruby class=""vocab"">物を作ったり使ったりできる事<rt>ものをつくったりつかったりできること</rt></ruby>",技術
-できる事,"ability, capability, talent",できる事,できる事【こと】,Work & School,,"ability, capability, talent","<ruby class=""vocab"">できる事<rt>できること</rt></ruby>",能力
-どうするかの事,"method, way, means",どうするかの事,どうするかの事【こと】,Work & School,,"method, way, means","<ruby class=""vocab"">どうするかの事<rt>どうするかのこと</rt></ruby>",方法
-ネット,the internet,ネット,ネット,Technology & Media,,the internet,"<ruby class=""vocab"">ネット<rt><span class=""pitch-h"">ね</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">と</span></rt></ruby>",
-サイト,website,サイト,サイト,Technology & Media,,website,"<ruby class=""vocab"">サイト<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">い</span><span class=""pitch-h"">と</span></rt></ruby>",
-データ,data,データ,データ,Technology & Media,,data,"<ruby class=""vocab"">データ<rt><span class=""pitch-h"">で</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">た</span></rt></ruby>",
-ニュース,news,ニュース,ニュース,Technology & Media,,news,"<ruby class=""vocab"">ニュース<rt><span class=""pitch-h"">にゅ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",
-ラジオ,radio,ラジオ,ラジオ,Technology & Media,,radio,"<ruby class=""vocab"">ラジオ<rt><span class=""pitch-h"">ら</span><span class=""pitch-l"">じ</span><span class=""pitch-l"">お</span></rt></ruby>",
-ビデオ,video,ビデオ,ビデオ,Technology & Media,,video,"<ruby class=""vocab"">ビデオ<rt><span class=""pitch-h"">び</span><span class=""pitch-l"">で</span><span class=""pitch-l"">お</span></rt></ruby>",
-ページ,page,ページ,ページ,Technology & Media,,page,"<ruby class=""vocab"">ページ<rt><span class=""pitch-l"">ぺ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">じ</span></rt></ruby>",
-メッセージ,message,メッセージ,メッセージ,Technology & Media,,message,"<ruby class=""vocab"">メッセージ<rt><span class=""pitch-h"">め</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">せ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">じ</span></rt></ruby>",
-パスワード,password,パスワード,パスワード,Technology & Media,,password,"<ruby class=""vocab"">パスワード<rt><span class=""pitch-l"">ぱ</span><span class=""pitch-h"">す</span><span class=""pitch-h"">わ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ど</span></rt></ruby>",
-ダウンロード,download,ダウンロード,ダウンロード,Technology & Media,,download,"<ruby class=""vocab"">ダウンロード<rt><span class=""pitch-l"">だ</span><span class=""pitch-h"">う</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">ろ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ど</span></rt></ruby>",
-アプリ,app,アプリ,アプリ,Technology & Media,,app,"<ruby class=""vocab"">アプリ<rt><span class=""pitch-h"">あ</span><span class=""pitch-l"">ぷ</span><span class=""pitch-l"">り</span></rt></ruby>",
-多くの物を持つ所,database,多くの物を持つ所,多【おお】くの物【もの】を持【も】つ所【ところ】,Where it is,,database,"<ruby class=""vocab"">多くの物を持つ所<rt>おおくのものをもつところ</rt></ruby>",データベース
-他の人が使う物,server,他の人が使う物,他【ほか】の人【ひと】が使【つか】う物【もの】,Where it is,,server,"<ruby class=""vocab"">他の人が使う物<rt>ほかのひとがつかうもの</rt></ruby>",サーバー
-目で見る所,screen,目で見る所,目【め】で見【み】る所【ところ】,Where it is,,screen,"<ruby class=""vocab"">目で見る所<rt>めでみるところ</rt></ruby>",画面
-物が動く道,network,物が動く道,物【もの】が動【うご】く道【みち】,Where it is,,network,"<ruby class=""vocab"">物が動く道<rt>ものがうごくみち</rt></ruby>",ネットワーク
-中に入る所,input,中に入る所,中【なか】に入【はい】る所【ところ】,Where it is,,input,"<ruby class=""vocab"">中に入る所<rt>なかにはいるところ</rt></ruby>",入力
-コード,code,コード,コード,Code and structure,,code,"<ruby class=""vocab"">コード<rt><span class=""pitch-h"">こ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ど</span></rt></ruby>",
-ブランチ,branch,ブランチ,ブランチ,Code and structure,,branch,"<ruby class=""vocab"">ブランチ<rt><span class=""pitch-l"">ぶ</span><span class=""pitch-h"">ら</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">ち</span></rt></ruby>",
-コミット,commit,コミット,コミット,Code and structure,,commit,"<ruby class=""vocab"">コミット<rt><span class=""pitch-l"">こ</span><span class=""pitch-h"">み</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">と</span></rt></ruby>",
-マージ,merge,マージ,マージ,Code and structure,,merge,"<ruby class=""vocab"">マージ<rt><span class=""pitch-h"">ま</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">じ</span></rt></ruby>",
-レビュー,review,レビュー,レビュー,Code and structure,,review,"<ruby class=""vocab"">レビュー<rt><span class=""pitch-h"">れ</span><span class=""pitch-l"">びゅ</span><span class=""pitch-l"">ー</span></rt></ruby>",
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+この物はどう動きますか。,How does this system work?,どう,この物【もの】はどう動【うご】きますか。,System Explanation,polite,how,"<span class=""vocab""><span class=""pitch-h"">ど</span><span class=""pitch-l"">う</span></span>",これはどう動きますか。,y
+始めにデータがサーバーに入ります。,First data enters the server.,サーバー,始【はじ】めにデータがサーバーに入【はい】ります。,System Explanation,polite,server,"<ruby class=""vocab"">サーバー<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">ば</span><span class=""pitch-h"">ー</span></rt></ruby>",最初にデータがサーバーに入ります。,y
+それからデータベースに書きます。,Then it writes to the database.,データベース,それからデータベースに書【か】きます。,System Explanation,polite,database,"<ruby class=""vocab"">データベース<rt><span class=""pitch-l"">で</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">た</span><span class=""pitch-h"">べ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",それからデータベースに書き込みます。,y
+なぜ二つの所を使いますか。,Why do we use two places?,なぜ,なぜ二【ふた】つの所【ところ】を使【つか】いますか。,System Explanation,polite,why,"<span class=""vocab""><span class=""pitch-h"">な</span><span class=""pitch-l"">ぜ</span></span>",なぜ二つの場所を使いますか。,y
+知らない人に言葉で教える事,"explanation, description",知らない人に言葉で教える事,知【し】らない人【ひと】に言葉【ことば】で教【おし】える事【こと】,Work & School,,"explanation, description","<ruby class=""vocab"">知らない人に言葉で教える事<rt>しらないひとにことばでおしえること</rt></ruby>",説明,y
+まだ知らない事を探す事,"research, study, investigation",まだ知らない事を探す事,まだ知【し】らない事【こと】を探【さが】す事【こと】,Work & School,,"research, study, investigation","<ruby class=""vocab"">まだ知らない事を探す事<rt>まだしらないことをさがすこと</rt></ruby>",研究,y
+知るために物を使ってみる事,"experiment, test",知るために物を使ってみる事,知【し】るために物【もの】を使【つか】ってみる事【こと】,Work & School,,"experiment, test","<ruby class=""vocab"">知るために物を使ってみる事<rt>しるためにものをつかってみること</rt></ruby>",実験,y
+物を作ったり使ったりできる事,"technology, technique, skill",物を作ったり使ったりできる事,物【もの】を作【つく】ったり使【つか】ったりできる事【こと】,Work & School,,"technology, technique, skill","<ruby class=""vocab"">物を作ったり使ったりできる事<rt>ものをつくったりつかったりできること</rt></ruby>",技術,y
+できる事,"ability, capability, talent",できる事,できる事【こと】,Work & School,,"ability, capability, talent","<ruby class=""vocab"">できる事<rt>できること</rt></ruby>",能力,y
+どうするかの事,"method, way, means",どうするかの事,どうするかの事【こと】,Work & School,,"method, way, means","<ruby class=""vocab"">どうするかの事<rt>どうするかのこと</rt></ruby>",方法,y
+ネット,the internet,ネット,ネット,Technology & Media,,the internet,"<ruby class=""vocab"">ネット<rt><span class=""pitch-h"">ね</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+サイト,website,サイト,サイト,Technology & Media,,website,"<ruby class=""vocab"">サイト<rt><span class=""pitch-l"">さ</span><span class=""pitch-h"">い</span><span class=""pitch-h"">と</span></rt></ruby>",,y
+データ,data,データ,データ,Technology & Media,,data,"<ruby class=""vocab"">データ<rt><span class=""pitch-h"">で</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">た</span></rt></ruby>",,y
+ニュース,news,ニュース,ニュース,Technology & Media,,news,"<ruby class=""vocab"">ニュース<rt><span class=""pitch-h"">にゅ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">す</span></rt></ruby>",,y
+ラジオ,radio,ラジオ,ラジオ,Technology & Media,,radio,"<ruby class=""vocab"">ラジオ<rt><span class=""pitch-h"">ら</span><span class=""pitch-l"">じ</span><span class=""pitch-l"">お</span></rt></ruby>",,y
+ビデオ,video,ビデオ,ビデオ,Technology & Media,,video,"<ruby class=""vocab"">ビデオ<rt><span class=""pitch-h"">び</span><span class=""pitch-l"">で</span><span class=""pitch-l"">お</span></rt></ruby>",,y
+ページ,page,ページ,ページ,Technology & Media,,page,"<ruby class=""vocab"">ページ<rt><span class=""pitch-l"">ぺ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">じ</span></rt></ruby>",,y
+メッセージ,message,メッセージ,メッセージ,Technology & Media,,message,"<ruby class=""vocab"">メッセージ<rt><span class=""pitch-h"">め</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">せ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">じ</span></rt></ruby>",,y
+パスワード,password,パスワード,パスワード,Technology & Media,,password,"<ruby class=""vocab"">パスワード<rt><span class=""pitch-l"">ぱ</span><span class=""pitch-h"">す</span><span class=""pitch-h"">わ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ど</span></rt></ruby>",,y
+ダウンロード,download,ダウンロード,ダウンロード,Technology & Media,,download,"<ruby class=""vocab"">ダウンロード<rt><span class=""pitch-l"">だ</span><span class=""pitch-h"">う</span><span class=""pitch-h"">ん</span><span class=""pitch-h"">ろ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ど</span></rt></ruby>",,y
+アプリ,app,アプリ,アプリ,Technology & Media,,app,"<ruby class=""vocab"">アプリ<rt><span class=""pitch-h"">あ</span><span class=""pitch-l"">ぷ</span><span class=""pitch-l"">り</span></rt></ruby>",,y
+多くの物を持つ所,database,多くの物を持つ所,多【おお】くの物【もの】を持【も】つ所【ところ】,Where it is,,database,"<ruby class=""vocab"">多くの物を持つ所<rt>おおくのものをもつところ</rt></ruby>",データベース,y
+他の人が使う物,server,他の人が使う物,他【ほか】の人【ひと】が使【つか】う物【もの】,Where it is,,server,"<ruby class=""vocab"">他の人が使う物<rt>ほかのひとがつかうもの</rt></ruby>",サーバー,y
+目で見る所,screen,目で見る所,目【め】で見【み】る所【ところ】,Where it is,,screen,"<ruby class=""vocab"">目で見る所<rt>めでみるところ</rt></ruby>",画面,y
+物が動く道,network,物が動く道,物【もの】が動【うご】く道【みち】,Where it is,,network,"<ruby class=""vocab"">物が動く道<rt>ものがうごくみち</rt></ruby>",ネットワーク,y
+中に入る所,input,中に入る所,中【なか】に入【はい】る所【ところ】,Where it is,,input,"<ruby class=""vocab"">中に入る所<rt>なかにはいるところ</rt></ruby>",入力,y
+コード,code,コード,コード,Code and structure,,code,"<ruby class=""vocab"">コード<rt><span class=""pitch-h"">こ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">ど</span></rt></ruby>",,y
+ブランチ,branch,ブランチ,ブランチ,Code and structure,,branch,"<ruby class=""vocab"">ブランチ<rt><span class=""pitch-l"">ぶ</span><span class=""pitch-h"">ら</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">ち</span></rt></ruby>",,y
+コミット,commit,コミット,コミット,Code and structure,,commit,"<ruby class=""vocab"">コミット<rt><span class=""pitch-l"">こ</span><span class=""pitch-h"">み</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+マージ,merge,マージ,マージ,Code and structure,,merge,"<ruby class=""vocab"">マージ<rt><span class=""pitch-h"">ま</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">じ</span></rt></ruby>",,y
+レビュー,review,レビュー,レビュー,Code and structure,,review,"<ruby class=""vocab"">レビュー<rt><span class=""pitch-h"">れ</span><span class=""pitch-l"">びゅ</span><span class=""pitch-l"">ー</span></rt></ruby>",,y

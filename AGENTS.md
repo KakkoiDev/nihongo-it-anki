@@ -12,14 +12,18 @@ Multi-deck Anki generator for IT Japanese. Each deck lives under `decks/<slug>/`
 | `accounting` | 会計・お金周り / Japanese Accounting | 9 (129 sentences) |
 | `fudosan` | 不動産・住宅購入 / Japanese Home Ownership | 12 (180 sentences) |
 | `agentic-lab` | Agentic Lab Priority Path | 12 (554 sentences) |
-| `minihongo-speak` | minihongo 話す / Minihongo Production | 21 (831 sentences) |
+| `minihongo-speak` | minihongo 話す / Minihongo Production | 21 (830 sentences) |
 
 ## Card Types
 
 Three per note - Listening, Reading, Vocabulary - defined in
 `scripts/create_deck.py`. A deck may opt into a fourth, **Production**, with
-`production_card = true` in its `deck.toml`; that adds the `RealJapanese` field,
-the `Production` template and its CSS, and nothing else changes. Every other
+`production_card = true` in its `deck.toml`; that adds the `RealJapanese` and
+`Produce` fields, the `Production` template and its CSS, and nothing else
+changes. The `Production` front renders only inside `{{#Produce}}`, so a row
+with an empty `Produce` keeps its three recognition cards and grows no fourth -
+that is how two rows that would share an identical English-only front are kept
+from asking one question with two answers. Every other
 deck must keep the exact nine fields, three templates and stylesheet it already
 shipped, because Anki keys scheduling on the model and only re-reads CSS behind
 `--force-style`, which resets review history. `tests/test_production_card.py`
@@ -28,7 +32,7 @@ pins both halves of that.
 `minihongo-speak` is generated, not authored: `scripts/import_minihongo_speak.py`
 builds its CSVs from a read-only `~/Code/minihongo` checkout, and
 `decks/minihongo-speak/REFERENCE.md` records which source rows feed which tier
-and which three values are derived rather than copied.
+and which four values are derived rather than copied.
 
 ## Build Pipeline
 

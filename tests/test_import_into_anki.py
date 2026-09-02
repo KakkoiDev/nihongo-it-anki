@@ -19,7 +19,7 @@ from anki.collection import Collection  # noqa: E402
 from anki.import_export_pb2 import ImportAnkiPackageRequest  # noqa: E402
 
 from config import load_deck_config  # noqa: E402
-from create_deck import build_notes, create_model  # noqa: E402
+from create_deck import build_notes, create_model, read_tier  # noqa: E402
 
 
 def build_apkg(slug: str, tier: int, path: Path) -> None:
@@ -82,6 +82,33 @@ def test_minihongo_speak_note_makes_four_cards(tmp_path):
         deck_id = col.decks.id_for_name(f"{config.name}::{config.tier_names[1]}")
         assert deck_id is not None
         assert len(col.decks.cids(deck_id)) == notes * 4
+    finally:
+        col.close()
+
+
+def test_a_row_without_produce_keeps_only_its_three_cards(tmp_path):
+    """Anki generates no card for a template whose front renders empty. Tier 9
+    is where the loanword rows that lost the Production front live, so its card
+    count is the proof that they kept the other three."""
+    config = load_deck_config("minihongo-speak")
+    rows = read_tier(config, 9)
+    demoted = [r for r in rows if not r["Produce"]]
+    assert demoted, "tier 9 no longer has a row without Produce"
+
+    apkg = tmp_path / "minihongo-speak-t9.apkg"
+    build_apkg("minihongo-speak", 9, apkg)
+
+    col = Collection(str(tmp_path / "collection.anki2"))
+    try:
+        log = import_apkg(col, apkg)
+        assert not log.conflicting
+        deck_id = col.decks.id_for_name(f"{config.name}::{config.tier_names[9]}")
+        assert len(col.decks.cids(deck_id)) == len(rows) * 4 - len(demoted)
+
+        for row in demoted:
+            note_ids = col.find_notes(f'"Sentence:{row["Sentence"]}"')
+            assert len(note_ids) == 1
+            assert len(col.card_ids_of_note(note_ids[0])) == 3
     finally:
         col.close()
 

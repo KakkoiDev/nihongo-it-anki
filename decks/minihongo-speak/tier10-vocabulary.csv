@@ -1,59 +1,59 @@
-Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
-すみません。大きい大きい家はどこですか。,Excuse me. Where is the big building?,すみません,すみません。大【おお】きい大【おお】きい家【いえ】はどこですか。,Asking for Directions,polite,excuse me,"<span class=""vocab"">すみません</span>",すみません。大きい建物はどこですか。
-ここから近くないです。,It's not close from here.,ここ,ここから近【ちか】くないです。,Asking for Directions,polite,here,"<span class=""vocab""><span class=""pitch-l"">こ</span><span class=""pitch-h"">こ</span></span>",ここからは近くないですよ。
-どう行ったらいいですか。,How should I get there?,どう,どう行【い】ったらいいですか。,Asking for Directions,polite,how,"<span class=""vocab""><span class=""pitch-h"">ど</span><span class=""pitch-l"">う</span></span>",
-この道を行ってください。大きい木の前で右に入ってください。,"Please go along this road. At the big tree, turn right.",ください,この道【みち】を行【い】ってください。大【おお】きい木【き】の前【まえ】で右【みぎ】に入【はい】ってください。,Asking for Directions,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",この道をまっすぐ行ってください。大きな木のところで右に曲がってください。
-木の前で右だね。その後は？,Right at the tree. And after that?,その,木【き】の前【まえ】で右【みぎ】だね。その後【あと】は？,Asking for Directions,casual,that (+noun),"<span class=""vocab""><span class=""pitch-l"">そ</span><span class=""pitch-h"">の</span></span>",木のところで右ですね。その後は？
-大きい家を見ることができます。それです。,You can see the building. That's it.,大きい,大【おお】きい家【いえ】を見【み】ることができます。それです。,Asking for Directions,polite,big,"<ruby class=""vocab"">大きい<rt><span class=""pitch-l"">お</span><span class=""pitch-h"">お</span><span class=""pitch-h"">き</span><span class=""pitch-l"">い</span></rt></ruby>",建物が見えます。それです。
-歩いて行けますか。,Can I go on foot?,歩いて行けますか,歩【ある】いて行【い】けますか。,Asking for Directions,polite,Can I go on foot?,"<ruby class=""vocab"">歩いて行けますか<rt>あるいていけますか</rt></ruby>",
-はい、歩いて行けます。近くないです。でも良い道です。,"Yes, you can go on foot. It's not close, but it's a good road.",良い,はい、歩【ある】いて行【い】けます。近【ちか】くないです。でも良【よ】い道【みち】です。,Asking for Directions,polite,good,"<ruby class=""vocab"">良い<rt><span class=""pitch-h"">よ</span><span class=""pitch-l"">い</span></rt></ruby>",はい、歩いて行けます。近くはないですが、いい道ですよ。
-ありがとう！,Thank you!,ありがとう,ありがとう！,Asking for Directions,casual,thank you,"<span class=""vocab""><span class=""pitch-l"">あ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">が</span><span class=""pitch-l"">と</span><span class=""pitch-l"">う</span></span>",ありがとうございます！
-多くの人がいる所,town,多くの人がいる所,多【おお】くの人【ひと】がいる所【ところ】,Places & Buildings,,town,"<ruby class=""vocab"">多くの人がいる所<rt>おおくのひとがいるところ</rt></ruby>",町
-とても多くの人がいる大きい所,city,とても多くの人がいる大きい所,とても多【おお】くの人【ひと】がいる大【おお】きい所【ところ】,Places & Buildings,,city,"<ruby class=""vocab"">とても多くの人がいる大きい所<rt>とてもおおくのひとがいるおおきいところ</rt></ruby>",市
-人が少しだけいる所,village,人が少しだけいる所,人【ひと】が少【すこ】しだけいる所【ところ】,Places & Buildings,,village,"<ruby class=""vocab"">人が少しだけいる所<rt>ひとがすこしだけいるところ</rt></ruby>",村
-人が来る物を待つ所,station,人が来る物を待つ所,人【ひと】が来【く】る物【もの】を待【ま】つ所【ところ】,Places & Buildings,,station,"<ruby class=""vocab"">人が来る物を待つ所<rt>ひとがくるものをまつところ</rt></ruby>",駅
-物を買う所,shop/store,物を買う所,物【もの】を買【か】う所【ところ】,Places & Buildings,,shop/store,"<ruby class=""vocab"">物を買う所<rt>ものをかうところ</rt></ruby>",店
-体が悪い人を助ける所,hospital,体が悪い人を助ける所,体【からだ】が悪【わる】い人【ひと】を助【たす】ける所【ところ】,Places & Buildings,,hospital,"<ruby class=""vocab"">体が悪い人を助ける所<rt>からだがわるいひとをたすけるところ</rt></ruby>",病院
-お金を守る所,bank,お金を守る所,お金【かね】を守【まも】る所【ところ】,Places & Buildings,,bank,"<ruby class=""vocab"">お金を守る所<rt>おかねをまもるところ</rt></ruby>",銀行
-書いた物を他の人に与える所,post office,書いた物を他の人に与える所,書【か】いた物【もの】を他【ほか】の人【ひと】に与【あた】える所【ところ】,Places & Buildings,,post office,"<ruby class=""vocab"">書いた物を他の人に与える所<rt>かいたものをほかのひとにあたえるところ</rt></ruby>",郵便局
-本を読む所,library,本を読む所,本【ほん】を読【よ】む所【ところ】,Places & Buildings,,library,"<ruby class=""vocab"">本を読む所<rt>ほんをよむところ</rt></ruby>",図書館
-きれいな物を見る所,art museum,きれいな物を見る所,きれいな物【もの】を見【み】る所【ところ】,Places & Buildings,,art museum,"<ruby class=""vocab"">きれいな物を見る所<rt>きれいなものをみるところ</rt></ruby>",美術館
-国の物を見る所,museum,国の物を見る所,国【くに】の物【もの】を見【み】る所【ところ】,Places & Buildings,,museum,"<ruby class=""vocab"">国の物を見る所<rt>くにのものをみるところ</rt></ruby>",博物館
-人が見せる事をする所,theater,人が見せる事をする所,人【ひと】が見【み】せる事【こと】をする所【ところ】,Places & Buildings,,theater,"<ruby class=""vocab"">人が見せる事をする所<rt>ひとがみせることをするところ</rt></ruby>",劇場
-大きい光の物を見る所,cinema/movie theater,大きい光の物を見る所,大【おお】きい光【ひかり】の物【もの】を見【み】る所【ところ】,Places & Buildings,,cinema/movie theater,"<ruby class=""vocab"">大きい光の物を見る所<rt>おおきいひかりのものをみるところ</rt></ruby>",映画館
-外で楽しくいられる所,park,外で楽しくいられる所,外【そと】で楽【たの】しくいられる所【ところ】,Places & Buildings,,park,"<ruby class=""vocab"">外で楽しくいられる所<rt>そとでたのしくいられるところ</rt></ruby>",公園
-多くの人が来る外の所,plaza/square,多くの人が来る外の所,多【おお】くの人【ひと】が来【く】る外【そと】の所【ところ】,Places & Buildings,,plaza/square,"<ruby class=""vocab"">多くの人が来る外の所<rt>おおくのひとがくるそとのところ</rt></ruby>",広場
-水の上を行く道,bridge,水の上を行く道,水【みず】の上【うえ】を行【い】く道【みち】,Places & Buildings,,bridge,"<ruby class=""vocab"">水の上を行く道<rt>みずのうえをいくみち</rt></ruby>",橋
-高くて長い物,tower,高くて長い物,高【たか】くて長【なが】い物【もの】,Places & Buildings,,tower,"<ruby class=""vocab"">高くて長い物<rt>たかくてながいもの</rt></ruby>",塔
-強い人が守る大きい家,castle,強い人が守る大きい家,強【つよ】い人【ひと】が守【まも】る大【おお】きい家【いえ】,Places & Buildings,,castle,"<ruby class=""vocab"">強い人が守る大きい家<rt>つよいひとがまもるおおきいいえ</rt></ruby>",城
-人が心の事を考える所,Buddhist temple,人が心の事を考える所,人【ひと】が心【こころ】の事【こと】を考【かんが】える所【ところ】,Places & Buildings,,Buddhist temple,"<ruby class=""vocab"">人が心の事を考える所<rt>ひとがこころのことをかんがえるところ</rt></ruby>",寺
-この国の心に言う所,Shinto shrine,この国の心に言う所,この国【くに】の心【こころ】に言【い】う所【ところ】,Places & Buildings,,Shinto shrine,"<ruby class=""vocab"">この国の心に言う所<rt>このくにのこころにいうところ</rt></ruby>",神社
-人が心に良いことを聞く所,church,人が心に良いことを聞く所,人【ひと】が心【こころ】に良【よ】いことを聞【き】く所【ところ】,Places & Buildings,,church,"<ruby class=""vocab"">人が心に良いことを聞く所<rt>ひとがこころによいことをきくところ</rt></ruby>",教会
-物を作る所,factory,物を作る所,物【もの】を作【つく】る所【ところ】,Places & Buildings,,factory,"<ruby class=""vocab"">物を作る所<rt>ものをつくるところ</rt></ruby>",工場
-物を中に入れて守る所,warehouse,物を中に入れて守る所,物【もの】を中【なか】に入【い】れて守【まも】る所【ところ】,Places & Buildings,,warehouse,"<ruby class=""vocab"">物を中に入れて守る所<rt>ものをなかにいれてまもるところ</rt></ruby>",倉庫
-海を動く物が来る所,harbor/port,海を動く物が来る所,海【うみ】を動【うご】く物【もの】が来【く】る所【ところ】,Places & Buildings,,harbor/port,"<ruby class=""vocab"">海を動く物が来る所<rt>うみをうごくものがくるところ</rt></ruby>",港
-空を動く物が出る所,airport,空を動く物が出る所,空【そら】を動【うご】く物【もの】が出【で】る所【ところ】,Places & Buildings,,airport,"<ruby class=""vocab"">空を動く物が出る所<rt>そらをうごくものがでるところ</rt></ruby>",空港
-物が速く動く道,road,物が速く動く道,物【もの】が速【はや】く動【うご】く道【みち】,Places & Buildings,,road,"<ruby class=""vocab"">物が速く動く道<rt>ものがはやくうごくみち</rt></ruby>",道路
-道と道が会う所,intersection,道と道が会う所,道【みち】と道【みち】が会【あ】う所【ところ】,Places & Buildings,,intersection,"<ruby class=""vocab"">道と道が会う所<rt>みちとみちがあうところ</rt></ruby>",交差点
-赤と青の光で動くのを止める物,traffic light,赤と青の光で動くのを止める物,赤【あか】と青【あお】の光【ひかり】で動【うご】くのを止【と】める物【もの】,Places & Buildings,,traffic light,"<ruby class=""vocab"">赤と青の光で動くのを止める物<rt>あかとあおのひかりでうごくのをとめるもの</rt></ruby>",信号
-上に行くための道,stairs,上に行くための道,上【うえ】に行【い】くための道【みち】,Places & Buildings,,stairs,"<ruby class=""vocab"">上に行くための道<rt>うえにいくためのみち</rt></ruby>",階段
-中に入るための所,entrance,中に入るための所,中【なか】に入【はい】るための所【ところ】,Places & Buildings,,entrance,"<ruby class=""vocab"">中に入るための所<rt>なかにはいるためのところ</rt></ruby>",入口
-外に出るための所,exit,外に出るための所,外【そと】に出【で】るための所【ところ】,Places & Buildings,,exit,"<ruby class=""vocab"">外に出るための所<rt>そとにでるためのところ</rt></ruby>",出口
-家にあって外が見えるもの,window,家にあって外が見えるもの,家【いえ】にあって外【そと】が見【み】えるもの,Places & Buildings,,window,"<ruby class=""vocab"">家にあって外が見えるもの<rt>いえにあってそとがみえるもの</rt></ruby>",窓
-開いたり閉めたりする物,door,開いたり閉めたりする物,開【あ】いたり閉【し】めたりする物【もの】,Places & Buildings,,door,"<ruby class=""vocab"">開いたり閉めたりする物<rt>あいたりしめたりするもの</rt></ruby>",扉
-外と中の入り口にある大きい物,gate,外と中の入り口にある大きい物,外【そと】と中【なか】の入【い】り口【ぐち】にある大【おお】きい物【もの】,Places & Buildings,,gate,"<ruby class=""vocab"">外と中の入り口にある大きい物<rt>そととなかのいりぐちにあるおおきいもの</rt></ruby>",門
-家の一ばん上にある物,roof,家の一ばん上にある物,家【いえ】の一【いち】ばん上【うえ】にある物【もの】,Places & Buildings,,roof,"<ruby class=""vocab"">家の一ばん上にある物<rt>いえのいちばんうえにあるもの</rt></ruby>",屋根
-家の外にある石や木でできた物,wall,家の外にある石や木でできた物,家【いえ】の外【そと】にある石【いし】や木【き】でできた物【もの】,Places & Buildings,,wall,"<ruby class=""vocab"">家の外にある石や木でできた物<rt>いえのそとにあるいしやきでできたもの</rt></ruby>",壁
-家の中で足が上にある下の物,floor,家の中で足が上にある下の物,家【いえ】の中【なか】で足【あし】が上【うえ】にある下【した】の物【もの】,Places & Buildings,,floor,"<ruby class=""vocab"">家の中で足が上にある下の物<rt>いえのなかであしがうえにあるしたのもの</rt></ruby>",床
-家の中の一ばん上,ceiling,家の中の一ばん上,家【いえ】の中【なか】の一【いち】ばん上【うえ】,Places & Buildings,,ceiling,"<ruby class=""vocab"">家の中の一ばん上<rt>いえのなかのいちばんうえ</rt></ruby>",天井
-家の外にある草の所,garden/yard,家の外にある草の所,家【いえ】の外【そと】にある草【くさ】の所【ところ】,Places & Buildings,,garden/yard,"<ruby class=""vocab"">家の外にある草の所<rt>いえのそとにあるくさのところ</rt></ruby>",庭
-家の中で食べ物を作る所,kitchen,家の中で食べ物を作る所,家【いえ】の中【なか】で食【た】べ物【もの】を作【つく】る所【ところ】,Places & Buildings,,kitchen,"<ruby class=""vocab"">家の中で食べ物を作る所<rt>いえのなかでたべものをつくるところ</rt></ruby>",台所
-家の中で人が楽しくいる所,living room,家の中で人が楽しくいる所,家【いえ】の中【なか】で人【ひと】が楽【たの】しくいる所【ところ】,Places & Buildings,,living room,"<ruby class=""vocab"">家の中で人が楽しくいる所<rt>いえのなかでひとがたのしくいるところ</rt></ruby>",居間
-家の中で寝る所,bedroom,家の中で寝る所,家【いえ】の中【なか】で寝【ね】る所【ところ】,Places & Buildings,,bedroom,"<ruby class=""vocab"">家の中で寝る所<rt>いえのなかでねるところ</rt></ruby>",寝室
-土の下,underground/basement,土の下,土【つち】の下【した】,Places & Buildings,,underground/basement,"<ruby class=""vocab"">土の下<rt>つちのした</rt></ruby>",地下
-土の上,above ground,土の上,土【つち】の上【うえ】,Places & Buildings,,above ground,"<ruby class=""vocab"">土の上<rt>つちのうえ</rt></ruby>",地上
-海の中にある土の所,island,海の中にある土の所,海【うみ】の中【なか】にある土【つち】の所【ところ】,Places & Buildings,,island,"<ruby class=""vocab"">海の中にある土の所<rt>うみのなかにあるつちのところ</rt></ruby>",島
-水がなくて暑い所,desert,水がなくて暑い所,水【みず】がなくて暑【あつ】い所【ところ】,Places & Buildings,,desert,"<ruby class=""vocab"">水がなくて暑い所<rt>みずがなくてあついところ</rt></ruby>",砂漠
-木が多くある所,forest,木が多くある所,木【き】が多【おお】くある所【ところ】,Places & Buildings,,forest,"<ruby class=""vocab"">木が多くある所<rt>きがおおくあるところ</rt></ruby>",森
-山と山の下にある所,valley,山と山の下にある所,山【やま】と山【やま】の下【した】にある所【ところ】,Places & Buildings,,valley,"<ruby class=""vocab"">山と山の下にある所<rt>やまとやまのしたにあるところ</rt></ruby>",谷
-山から海へ水が動く道,river,山から海へ水が動く道,山【やま】から海【うみ】へ水【みず】が動【うご】く道【みち】,Places & Buildings,,river,"<ruby class=""vocab"">山から海へ水が動く道<rt>やまからうみへみずがうごくみち</rt></ruby>",川
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+すみません。大きい大きい家はどこですか。,Excuse me. Where is the big building?,すみません,すみません。大【おお】きい大【おお】きい家【いえ】はどこですか。,Asking for Directions,polite,excuse me,"<span class=""vocab"">すみません</span>",すみません。大きい建物はどこですか。,y
+ここから近くないです。,It's not close from here.,ここ,ここから近【ちか】くないです。,Asking for Directions,polite,here,"<span class=""vocab""><span class=""pitch-l"">こ</span><span class=""pitch-h"">こ</span></span>",ここからは近くないですよ。,y
+どう行ったらいいですか。,How should I get there?,どう,どう行【い】ったらいいですか。,Asking for Directions,polite,how,"<span class=""vocab""><span class=""pitch-h"">ど</span><span class=""pitch-l"">う</span></span>",,y
+この道を行ってください。大きい木の前で右に入ってください。,"Please go along this road. At the big tree, turn right.",ください,この道【みち】を行【い】ってください。大【おお】きい木【き】の前【まえ】で右【みぎ】に入【はい】ってください。,Asking for Directions,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",この道をまっすぐ行ってください。大きな木のところで右に曲がってください。,y
+木の前で右だね。その後は？,Right at the tree. And after that?,その,木【き】の前【まえ】で右【みぎ】だね。その後【あと】は？,Asking for Directions,casual,that (+noun),"<span class=""vocab""><span class=""pitch-l"">そ</span><span class=""pitch-h"">の</span></span>",木のところで右ですね。その後は？,y
+大きい家を見ることができます。それです。,You can see the building. That's it.,大きい,大【おお】きい家【いえ】を見【み】ることができます。それです。,Asking for Directions,polite,big,"<ruby class=""vocab"">大きい<rt><span class=""pitch-l"">お</span><span class=""pitch-h"">お</span><span class=""pitch-h"">き</span><span class=""pitch-l"">い</span></rt></ruby>",建物が見えます。それです。,y
+歩いて行けますか。,Can I go on foot?,歩いて行けますか,歩【ある】いて行【い】けますか。,Asking for Directions,polite,Can I go on foot?,"<ruby class=""vocab"">歩いて行けますか<rt>あるいていけますか</rt></ruby>",,y
+はい、歩いて行けます。近くないです。でも良い道です。,"Yes, you can go on foot. It's not close, but it's a good road.",良い,はい、歩【ある】いて行【い】けます。近【ちか】くないです。でも良【よ】い道【みち】です。,Asking for Directions,polite,good,"<ruby class=""vocab"">良い<rt><span class=""pitch-h"">よ</span><span class=""pitch-l"">い</span></rt></ruby>",はい、歩いて行けます。近くはないですが、いい道ですよ。,y
+ありがとう！,Thank you!,ありがとう,ありがとう！,Asking for Directions,casual,thank you,"<span class=""vocab""><span class=""pitch-l"">あ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">が</span><span class=""pitch-l"">と</span><span class=""pitch-l"">う</span></span>",ありがとうございます！,y
+多くの人がいる所,town,多くの人がいる所,多【おお】くの人【ひと】がいる所【ところ】,Places & Buildings,,town,"<ruby class=""vocab"">多くの人がいる所<rt>おおくのひとがいるところ</rt></ruby>",町,y
+とても多くの人がいる大きい所,city,とても多くの人がいる大きい所,とても多【おお】くの人【ひと】がいる大【おお】きい所【ところ】,Places & Buildings,,city,"<ruby class=""vocab"">とても多くの人がいる大きい所<rt>とてもおおくのひとがいるおおきいところ</rt></ruby>",市,y
+人が少しだけいる所,village,人が少しだけいる所,人【ひと】が少【すこ】しだけいる所【ところ】,Places & Buildings,,village,"<ruby class=""vocab"">人が少しだけいる所<rt>ひとがすこしだけいるところ</rt></ruby>",村,y
+人が来る物を待つ所,station,人が来る物を待つ所,人【ひと】が来【く】る物【もの】を待【ま】つ所【ところ】,Places & Buildings,,station,"<ruby class=""vocab"">人が来る物を待つ所<rt>ひとがくるものをまつところ</rt></ruby>",駅,y
+物を買う所,shop/store,物を買う所,物【もの】を買【か】う所【ところ】,Places & Buildings,,shop/store,"<ruby class=""vocab"">物を買う所<rt>ものをかうところ</rt></ruby>",店,y
+体が悪い人を助ける所,hospital,体が悪い人を助ける所,体【からだ】が悪【わる】い人【ひと】を助【たす】ける所【ところ】,Places & Buildings,,hospital,"<ruby class=""vocab"">体が悪い人を助ける所<rt>からだがわるいひとをたすけるところ</rt></ruby>",病院,y
+お金を守る所,bank,お金を守る所,お金【かね】を守【まも】る所【ところ】,Places & Buildings,,bank,"<ruby class=""vocab"">お金を守る所<rt>おかねをまもるところ</rt></ruby>",銀行,y
+書いた物を他の人に与える所,post office,書いた物を他の人に与える所,書【か】いた物【もの】を他【ほか】の人【ひと】に与【あた】える所【ところ】,Places & Buildings,,post office,"<ruby class=""vocab"">書いた物を他の人に与える所<rt>かいたものをほかのひとにあたえるところ</rt></ruby>",郵便局,y
+本を読む所,library,本を読む所,本【ほん】を読【よ】む所【ところ】,Places & Buildings,,library,"<ruby class=""vocab"">本を読む所<rt>ほんをよむところ</rt></ruby>",図書館,y
+きれいな物を見る所,art museum,きれいな物を見る所,きれいな物【もの】を見【み】る所【ところ】,Places & Buildings,,art museum,"<ruby class=""vocab"">きれいな物を見る所<rt>きれいなものをみるところ</rt></ruby>",美術館,y
+国の物を見る所,museum,国の物を見る所,国【くに】の物【もの】を見【み】る所【ところ】,Places & Buildings,,museum,"<ruby class=""vocab"">国の物を見る所<rt>くにのものをみるところ</rt></ruby>",博物館,y
+人が見せる事をする所,theater,人が見せる事をする所,人【ひと】が見【み】せる事【こと】をする所【ところ】,Places & Buildings,,theater,"<ruby class=""vocab"">人が見せる事をする所<rt>ひとがみせることをするところ</rt></ruby>",劇場,y
+大きい光の物を見る所,cinema/movie theater,大きい光の物を見る所,大【おお】きい光【ひかり】の物【もの】を見【み】る所【ところ】,Places & Buildings,,cinema/movie theater,"<ruby class=""vocab"">大きい光の物を見る所<rt>おおきいひかりのものをみるところ</rt></ruby>",映画館,y
+外で楽しくいられる所,park,外で楽しくいられる所,外【そと】で楽【たの】しくいられる所【ところ】,Places & Buildings,,park,"<ruby class=""vocab"">外で楽しくいられる所<rt>そとでたのしくいられるところ</rt></ruby>",公園,y
+多くの人が来る外の所,plaza/square,多くの人が来る外の所,多【おお】くの人【ひと】が来【く】る外【そと】の所【ところ】,Places & Buildings,,plaza/square,"<ruby class=""vocab"">多くの人が来る外の所<rt>おおくのひとがくるそとのところ</rt></ruby>",広場,y
+水の上を行く道,bridge,水の上を行く道,水【みず】の上【うえ】を行【い】く道【みち】,Places & Buildings,,bridge,"<ruby class=""vocab"">水の上を行く道<rt>みずのうえをいくみち</rt></ruby>",橋,y
+高くて長い物,tower,高くて長い物,高【たか】くて長【なが】い物【もの】,Places & Buildings,,tower,"<ruby class=""vocab"">高くて長い物<rt>たかくてながいもの</rt></ruby>",塔,y
+強い人が守る大きい家,castle,強い人が守る大きい家,強【つよ】い人【ひと】が守【まも】る大【おお】きい家【いえ】,Places & Buildings,,castle,"<ruby class=""vocab"">強い人が守る大きい家<rt>つよいひとがまもるおおきいいえ</rt></ruby>",城,y
+人が心の事を考える所,Buddhist temple,人が心の事を考える所,人【ひと】が心【こころ】の事【こと】を考【かんが】える所【ところ】,Places & Buildings,,Buddhist temple,"<ruby class=""vocab"">人が心の事を考える所<rt>ひとがこころのことをかんがえるところ</rt></ruby>",寺,y
+この国の心に言う所,Shinto shrine,この国の心に言う所,この国【くに】の心【こころ】に言【い】う所【ところ】,Places & Buildings,,Shinto shrine,"<ruby class=""vocab"">この国の心に言う所<rt>このくにのこころにいうところ</rt></ruby>",神社,y
+人が心に良いことを聞く所,church,人が心に良いことを聞く所,人【ひと】が心【こころ】に良【よ】いことを聞【き】く所【ところ】,Places & Buildings,,church,"<ruby class=""vocab"">人が心に良いことを聞く所<rt>ひとがこころによいことをきくところ</rt></ruby>",教会,y
+物を作る所,factory,物を作る所,物【もの】を作【つく】る所【ところ】,Places & Buildings,,factory,"<ruby class=""vocab"">物を作る所<rt>ものをつくるところ</rt></ruby>",工場,y
+物を中に入れて守る所,warehouse,物を中に入れて守る所,物【もの】を中【なか】に入【い】れて守【まも】る所【ところ】,Places & Buildings,,warehouse,"<ruby class=""vocab"">物を中に入れて守る所<rt>ものをなかにいれてまもるところ</rt></ruby>",倉庫,y
+海を動く物が来る所,harbor/port,海を動く物が来る所,海【うみ】を動【うご】く物【もの】が来【く】る所【ところ】,Places & Buildings,,harbor/port,"<ruby class=""vocab"">海を動く物が来る所<rt>うみをうごくものがくるところ</rt></ruby>",港,y
+空を動く物が出る所,airport,空を動く物が出る所,空【そら】を動【うご】く物【もの】が出【で】る所【ところ】,Places & Buildings,,airport,"<ruby class=""vocab"">空を動く物が出る所<rt>そらをうごくものがでるところ</rt></ruby>",空港,y
+物が速く動く道,road,物が速く動く道,物【もの】が速【はや】く動【うご】く道【みち】,Places & Buildings,,road,"<ruby class=""vocab"">物が速く動く道<rt>ものがはやくうごくみち</rt></ruby>",道路,y
+道と道が会う所,intersection,道と道が会う所,道【みち】と道【みち】が会【あ】う所【ところ】,Places & Buildings,,intersection,"<ruby class=""vocab"">道と道が会う所<rt>みちとみちがあうところ</rt></ruby>",交差点,y
+赤と青の光で動くのを止める物,traffic light,赤と青の光で動くのを止める物,赤【あか】と青【あお】の光【ひかり】で動【うご】くのを止【と】める物【もの】,Places & Buildings,,traffic light,"<ruby class=""vocab"">赤と青の光で動くのを止める物<rt>あかとあおのひかりでうごくのをとめるもの</rt></ruby>",信号,y
+上に行くための道,stairs,上に行くための道,上【うえ】に行【い】くための道【みち】,Places & Buildings,,stairs,"<ruby class=""vocab"">上に行くための道<rt>うえにいくためのみち</rt></ruby>",階段,y
+中に入るための所,entrance,中に入るための所,中【なか】に入【はい】るための所【ところ】,Places & Buildings,,entrance,"<ruby class=""vocab"">中に入るための所<rt>なかにはいるためのところ</rt></ruby>",入口,y
+外に出るための所,exit,外に出るための所,外【そと】に出【で】るための所【ところ】,Places & Buildings,,exit,"<ruby class=""vocab"">外に出るための所<rt>そとにでるためのところ</rt></ruby>",出口,y
+家にあって外が見えるもの,window,家にあって外が見えるもの,家【いえ】にあって外【そと】が見【み】えるもの,Places & Buildings,,window,"<ruby class=""vocab"">家にあって外が見えるもの<rt>いえにあってそとがみえるもの</rt></ruby>",窓,y
+開いたり閉めたりする物,door,開いたり閉めたりする物,開【あ】いたり閉【し】めたりする物【もの】,Places & Buildings,,door,"<ruby class=""vocab"">開いたり閉めたりする物<rt>あいたりしめたりするもの</rt></ruby>",扉,y
+外と中の入り口にある大きい物,gate,外と中の入り口にある大きい物,外【そと】と中【なか】の入【い】り口【ぐち】にある大【おお】きい物【もの】,Places & Buildings,,gate,"<ruby class=""vocab"">外と中の入り口にある大きい物<rt>そととなかのいりぐちにあるおおきいもの</rt></ruby>",門,y
+家の一ばん上にある物,roof,家の一ばん上にある物,家【いえ】の一【いち】ばん上【うえ】にある物【もの】,Places & Buildings,,roof,"<ruby class=""vocab"">家の一ばん上にある物<rt>いえのいちばんうえにあるもの</rt></ruby>",屋根,y
+家の外にある石や木でできた物,wall,家の外にある石や木でできた物,家【いえ】の外【そと】にある石【いし】や木【き】でできた物【もの】,Places & Buildings,,wall,"<ruby class=""vocab"">家の外にある石や木でできた物<rt>いえのそとにあるいしやきでできたもの</rt></ruby>",壁,y
+家の中で足が上にある下の物,floor,家の中で足が上にある下の物,家【いえ】の中【なか】で足【あし】が上【うえ】にある下【した】の物【もの】,Places & Buildings,,floor,"<ruby class=""vocab"">家の中で足が上にある下の物<rt>いえのなかであしがうえにあるしたのもの</rt></ruby>",床,y
+家の中の一ばん上,ceiling,家の中の一ばん上,家【いえ】の中【なか】の一【いち】ばん上【うえ】,Places & Buildings,,ceiling,"<ruby class=""vocab"">家の中の一ばん上<rt>いえのなかのいちばんうえ</rt></ruby>",天井,y
+家の外にある草の所,garden/yard,家の外にある草の所,家【いえ】の外【そと】にある草【くさ】の所【ところ】,Places & Buildings,,garden/yard,"<ruby class=""vocab"">家の外にある草の所<rt>いえのそとにあるくさのところ</rt></ruby>",庭,y
+家の中で食べ物を作る所,kitchen,家の中で食べ物を作る所,家【いえ】の中【なか】で食【た】べ物【もの】を作【つく】る所【ところ】,Places & Buildings,,kitchen,"<ruby class=""vocab"">家の中で食べ物を作る所<rt>いえのなかでたべものをつくるところ</rt></ruby>",台所,y
+家の中で人が楽しくいる所,living room,家の中で人が楽しくいる所,家【いえ】の中【なか】で人【ひと】が楽【たの】しくいる所【ところ】,Places & Buildings,,living room,"<ruby class=""vocab"">家の中で人が楽しくいる所<rt>いえのなかでひとがたのしくいるところ</rt></ruby>",居間,y
+家の中で寝る所,bedroom,家の中で寝る所,家【いえ】の中【なか】で寝【ね】る所【ところ】,Places & Buildings,,bedroom,"<ruby class=""vocab"">家の中で寝る所<rt>いえのなかでねるところ</rt></ruby>",寝室,y
+土の下,underground/basement,土の下,土【つち】の下【した】,Places & Buildings,,underground/basement,"<ruby class=""vocab"">土の下<rt>つちのした</rt></ruby>",地下,y
+土の上,above ground,土の上,土【つち】の上【うえ】,Places & Buildings,,above ground,"<ruby class=""vocab"">土の上<rt>つちのうえ</rt></ruby>",地上,y
+海の中にある土の所,island,海の中にある土の所,海【うみ】の中【なか】にある土【つち】の所【ところ】,Places & Buildings,,island,"<ruby class=""vocab"">海の中にある土の所<rt>うみのなかにあるつちのところ</rt></ruby>",島,y
+水がなくて暑い所,desert,水がなくて暑い所,水【みず】がなくて暑【あつ】い所【ところ】,Places & Buildings,,desert,"<ruby class=""vocab"">水がなくて暑い所<rt>みずがなくてあついところ</rt></ruby>",砂漠,y
+木が多くある所,forest,木が多くある所,木【き】が多【おお】くある所【ところ】,Places & Buildings,,forest,"<ruby class=""vocab"">木が多くある所<rt>きがおおくあるところ</rt></ruby>",森,y
+山と山の下にある所,valley,山と山の下にある所,山【やま】と山【やま】の下【した】にある所【ところ】,Places & Buildings,,valley,"<ruby class=""vocab"">山と山の下にある所<rt>やまとやまのしたにあるところ</rt></ruby>",谷,y
+山から海へ水が動く道,river,山から海へ水が動く道,山【やま】から海【うみ】へ水【みず】が動【うご】く道【みち】,Places & Buildings,,river,"<ruby class=""vocab"">山から海へ水が動く道<rt>やまからうみへみずがうごくみち</rt></ruby>",川,y

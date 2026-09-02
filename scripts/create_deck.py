@@ -16,7 +16,8 @@ Generates .apkg files with a 3-card-per-note design:
     Front: Sentence with cloze word blanked (JS replacement), translation.
     Back:  Sentence with cloze highlighted in blue, audio, pronunciation.
 
-  Card 4 (Production), only for decks with production_card = true:
+  Card 4 (Production), only for decks with production_card = true and only on
+  rows whose Produce column is set:
     Front: English meaning and the situation cue. No Japanese, no audio.
     Back:  Sentence with furigana, audio, pitch accent, and the real Japanese
            beside the minihongo construction.
@@ -203,10 +204,10 @@ PRODUCTION_TEMPLATE = {
     # Nothing here may render Japanese, furigana or audio. The whole point of
     # the card is that the learner produces the sentence aloud from the meaning
     # alone; one readable kanji and the card tests recognition again.
-    'qfmt': '''<div class="card-type">Production</div>
+    'qfmt': '''{{#Produce}}<div class="card-type">Production</div>
 <div class="translation production-prompt">{{Translation}}</div>
 {{#Category}}<div class="category">{{Category}}</div>{{/Category}}
-''',
+{{/Produce}}''',
     'afmt': '''<div class="card-type">Production</div>
 <div class="sentence">{{Pronunciation}}</div>
 <div class="audio">{{Audio}}</div>
@@ -217,9 +218,13 @@ PRODUCTION_TEMPLATE = {
 ''',
 }
 
-# The Production template reads it, so a deck that opts in carries one more
-# field than the three-card decks do.
-PRODUCTION_FIELD = {'name': 'RealJapanese'}
+# The Production template reads both, so a deck that opts in carries two more
+# fields than the three-card decks do. Produce gates the front: Anki generates
+# no card for a template whose question renders empty, so a row with an empty
+# Produce keeps its three recognition cards and is never asked to be spoken.
+# It exists because the front is only the English gloss and the category, and
+# two rows sharing that pair would otherwise ask one question with two answers.
+PRODUCTION_FIELDS = [{'name': 'RealJapanese'}, {'name': 'Produce'}]
 
 
 def create_model(config: DeckConfig) -> genanki.Model:
@@ -230,7 +235,8 @@ def create_model(config: DeckConfig) -> genanki.Model:
     Card 3 (Vocabulary): Blanked sentence + English -> Full sentence + Audio
     Card 4 (Production): English + situation -> Japanese, audio, real word
 
-    Card 4 exists only under ``production_card = true``. A deck without it gets
+    Card 4 exists only under ``production_card = true``, and then only on rows
+    carrying a Produce flag. A deck without it gets
     the same nine fields, three templates and stylesheet it has always shipped -
     see tests/test_production_card.py, which pins that.
     """
@@ -249,7 +255,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
             {'name': 'Register'},       # Speech register: casual/polite/formal/keigo
             {'name': 'KeyMeaning'},     # English meaning of key word
             {'name': 'PitchAccent'},    # Pitch-colored ruby HTML for cloze word
-            *([PRODUCTION_FIELD] if config.production_card else []),
+            *(PRODUCTION_FIELDS if config.production_card else []),
         ],
         templates=[
             # Card 1: Listening (big play button front, everything else on back)
@@ -398,7 +404,8 @@ def build_notes(
                 row.get('Register', ''),
                 row['KeyMeaning'],
                 row.get('PitchAccent', ''),
-                *([row.get('RealJapanese', '')] if config.production_card else []),
+                *([row.get('RealJapanese', ''), row.get('Produce', '')]
+                  if config.production_card else []),
             ],
             guid=config.note_guid(row['Sentence']),
             tags=[f'tier{tier}', row['Note'].replace(' ', '_').replace('-', '_')]

@@ -1,7 +1,7 @@
-Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
-もしもし。体を助ける所ですか。,Hello. Is this the clinic?,体を助ける所,もしもし。体【からだ】を助【たす】ける所【ところ】ですか。,Making a Phone Appointment,polite,hospital,"<ruby class=""vocab"">体を助ける所<rt>からだをたすけるところ</rt></ruby>",もしもし。病院ですか。
-はい。何のためですか。,Yes. What is it for?,はい,はい。何【なに】のためですか。,Making a Phone Appointment,polite,yes,"<span class=""vocab""><span class=""pitch-h"">は</span><span class=""pitch-l"">い</span></span>",はい。どうされましたか。
-体を助ける人に会いたいです。いつが良いですか。,I would like to see a doctor. When is good?,体を助ける人,体【からだ】を助【たす】ける人【ひと】に会【あ】いたいです。いつが良【よ】いですか。,Making a Phone Appointment,polite,doctor,"<ruby class=""vocab"">体を助ける人<rt>からだをたすけるひと</rt></ruby>",医者に会いたいです。いつが良いですか。
-後の日の十の時はどうですか。,How about tomorrow at ten?,後の日,後【あと】の日【にち】の十【じゅう】の時【とき】はどうですか。,Making a Phone Appointment,polite,tomorrow,"<ruby class=""vocab"">後の日<rt>あとのにち</rt></ruby>",明日の十時はどうですか。
-良いです。私の名前はたなかです。,That's good. My name is Tanaka.,良い,良【よ】いです。私【わたし】の名前【なまえ】はたなかです。,Making a Phone Appointment,polite,good,"<ruby class=""vocab"">良い<rt><span class=""pitch-h"">よ</span><span class=""pitch-l"">い</span></rt></ruby>",大丈夫です。私の名前は田中です。
-たなかさんですね。後の日の十の時です。待っています。,Tanaka-san. Tomorrow at ten. We'll be expecting you.,後の日,たなかさんですね。後【あと】の日【にち】の十【じゅう】の時【とき】です。待【ま】っています。,Making a Phone Appointment,polite,tomorrow,"<ruby class=""vocab"">後の日<rt>あとのにち</rt></ruby>",田中さんですね。明日の十時です。お待ちしています。
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+もしもし。体を助ける所ですか。,Hello. Is this the clinic?,体を助ける所,もしもし。体【からだ】を助【たす】ける所【ところ】ですか。,Making a Phone Appointment,polite,hospital,"<ruby class=""vocab"">体を助ける所<rt>からだをたすけるところ</rt></ruby>",もしもし。病院ですか。,y
+はい。何のためですか。,Yes. What is it for?,はい,はい。何【なに】のためですか。,Making a Phone Appointment,polite,yes,"<span class=""vocab""><span class=""pitch-h"">は</span><span class=""pitch-l"">い</span></span>",はい。どうされましたか。,y
+体を助ける人に会いたいです。いつが良いですか。,I would like to see a doctor. When is good?,体を助ける人,体【からだ】を助【たす】ける人【ひと】に会【あ】いたいです。いつが良【よ】いですか。,Making a Phone Appointment,polite,doctor,"<ruby class=""vocab"">体を助ける人<rt>からだをたすけるひと</rt></ruby>",医者に会いたいです。いつが良いですか。,y
+後の日の十の時はどうですか。,How about tomorrow at ten?,後の日,後【あと】の日【にち】の十【じゅう】の時【とき】はどうですか。,Making a Phone Appointment,polite,tomorrow,"<ruby class=""vocab"">後の日<rt>あとのにち</rt></ruby>",明日の十時はどうですか。,y
+良いです。私の名前はたなかです。,That's good. My name is Tanaka.,良い,良【よ】いです。私【わたし】の名前【なまえ】はたなかです。,Making a Phone Appointment,polite,good,"<ruby class=""vocab"">良い<rt><span class=""pitch-h"">よ</span><span class=""pitch-l"">い</span></rt></ruby>",大丈夫です。私の名前は田中です。,y
+たなかさんですね。後の日の十の時です。待っています。,Tanaka-san. Tomorrow at ten. We'll be expecting you.,後の日,たなかさんですね。後【あと】の日【にち】の十【じゅう】の時【とき】です。待【ま】っています。,Making a Phone Appointment,polite,tomorrow,"<ruby class=""vocab"">後の日<rt>あとのにち</rt></ruby>",田中さんですね。明日の十時です。お待ちしています。,y

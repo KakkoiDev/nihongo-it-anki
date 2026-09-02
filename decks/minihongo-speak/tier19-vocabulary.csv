@@ -1,107 +1,107 @@
-Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
-今の日は空がとてもきれいですね。,The sky is very beautiful today.,今の日,今【いま】の日【にち】は空【そら】がとてもきれいですね。,Weather Small Talk,casual,today,"<ruby class=""vocab"">今の日<rt>いまのにち</rt></ruby>",今日は空がとてもきれいですね。
-そうですね。太陽が出ていて、風も良いです。,"Yes. The sun is out, and the wind is nice.",太陽,そうですね。太陽【たいよう】が出【で】ていて、風【かぜ】も良【よ】いです。,Weather Small Talk,polite,sun,"<ruby class=""vocab"">太陽<rt><span class=""pitch-h"">た</span><span class=""pitch-l"">い</span><span class=""pitch-l"">よ</span><span class=""pitch-l"">う</span></rt></ruby>",そうですね。太陽が出ていて、風も気持ちいいです。
-でも後から雨が来ると聞きました。,But I heard it will rain later.,来る,でも後【あと】から雨【あめ】が来【く】ると聞【き】きました。,Weather Small Talk,polite,come,"<ruby class=""vocab"">来る<rt><span class=""pitch-h"">く</span><span class=""pitch-l"">る</span></rt></ruby>",でも後から雨が降ると聞きました。
-本当ですか。雨の物を持った方がいいですね。,Really? We should bring an umbrella.,雨の物,本当【ほんとう】ですか。雨【あめ】の物【もの】を持【も】った方【ほう】がいいですね。,Weather Small Talk,casual,umbrella,"<ruby class=""vocab"">雨の物<rt>あめのもの</rt></ruby>",本当ですか。傘を持った方がいいですね。
-雨の前に外を歩きたいです。,I want to walk outside before the rain.,外,雨【あめ】の前【まえ】に外【そと】を歩【ある】きたいです。,Weather Small Talk,polite,outside,"<ruby class=""vocab"">外<rt><span class=""pitch-h"">そ</span><span class=""pitch-l"">と</span></rt></ruby>",
-良いですね。良い日にしましょう。,That's nice. Let's make it a good day.,良い,良【よ】いですね。良【よ】い日【にち】にしましょう。,Weather Small Talk,polite,good,"<ruby class=""vocab"">良い<rt><span class=""pitch-h"">よ</span><span class=""pitch-l"">い</span></rt></ruby>",いいですね。良い一日にしましょう。
-一りで悲しい,lonely,一りで悲しい,一【ひと】りで悲【かな】しい,Emotions & Personality,,lonely,"<ruby class=""vocab"">一りで悲しい<rt>ひとりでかなしい</rt></ruby>",寂しい
-人に見られたくない心,embarrassed / shy,人に見られたくない心,人【ひと】に見【み】られたくない心【こころ】,Emotions & Personality,,embarrassed / shy,"<ruby class=""vocab"">人に見られたくない心<rt>ひとにみられたくないこころ</rt></ruby>",恥ずかしい
-体も心もとても悪い,painful / agonizing,体も心もとても悪い,体【からだ】も心【こころ】もとても悪【わる】い,Emotions & Personality,,painful / agonizing,"<ruby class=""vocab"">体も心もとても悪い<rt>からだもこころもとてもわるい</rt></ruby>",苦しい
-とても悲しくて悪い,hard / tough / painful,とても悲しくて悪い,とても悲【かな】しくて悪【わる】い,Emotions & Personality,,hard / tough / painful,"<ruby class=""vocab"">とても悲しくて悪い<rt>とてもかなしくてわるい</rt></ruby>",辛い
-人に良くする心がある,kind / gentle,人に良くする心がある,人【ひと】に良【よ】くする心【こころ】がある,Emotions & Personality,,kind / gentle,"<ruby class=""vocab"">人に良くする心がある<rt>ひとによくするこころがある</rt></ruby>",優しい
-とても強くて悪いことを止める,strict / harsh,とても強くて悪いことを止める,とても強【つよ】くて悪【わる】いことを止【と】める,Emotions & Personality,,strict / harsh,"<ruby class=""vocab"">とても強くて悪いことを止める<rt>とてもつよくてわるいことをとめる</rt></ruby>",厳しい
-変なことをしない良い心,honest / obedient,変なことをしない良い心,変【へん】なことをしない良【よ】い心【こころ】,Emotions & Personality,,honest / obedient,"<ruby class=""vocab"">変なことをしない良い心<rt>へんなことをしないよいこころ</rt></ruby>",素直
-良くしようと考える人,serious / diligent,良くしようと考える人,良【よ】くしようと考【かんが】える人【ひと】,Emotions & Personality,,serious / diligent,"<ruby class=""vocab"">良くしようと考える人<rt>よくしようとかんがえるひと</rt></ruby>",真面目
-体も心も良い,energetic / well,体も心も良い,体【からだ】も心【こころ】も良【よ】い,Emotions & Personality,,energetic / well,"<ruby class=""vocab"">体も心も良い<rt>からだもこころもよい</rt></ruby>",元気
-良いことが多くある心,happiness / fortune,良いことが多くある心,良【よ】いことが多【おお】くある心【こころ】,Emotions & Personality,,happiness / fortune,"<ruby class=""vocab"">良いことが多くある心<rt>よいことがおおくあるこころ</rt></ruby>",幸せ
-これから悪いことが来るかもしれないと思う心,anxiety / unease,これから悪いことが来るかもしれないと思う心,これから悪【わる】いことが来【く】るかもしれないと思【おも】う心【こころ】,Emotions & Personality,,anxiety / unease,"<ruby class=""vocab"">これから悪いことが来るかもしれないと思う心<rt>これからわるいことがくるかもしれないとおもうこころ</rt></ruby>",不安
-悪いことが起こるかもと考える,worry / concern,悪いことが起こるかもと考える,悪【わる】いことが起【お】こるかもと考【かんが】える,Emotions & Personality,,worry / concern,"<ruby class=""vocab"">悪いことが起こるかもと考える<rt>わるいことがおこるかもとかんがえる</rt></ruby>",心配
-怖くて体が動きにくい,nervousness / tension,怖くて体が動きにくい,怖【こわ】くて体【からだ】が動【うご】きにくい,Emotions & Personality,,nervousness / tension,"<ruby class=""vocab"">怖くて体が動きにくい<rt>こわくてからだがうごきにくい</rt></ruby>",緊張
-心が大きく動く,being moved / deeply touched,心が大きく動く,心【こころ】が大【おお】きく動【うご】く,Emotions & Personality,,being moved / deeply touched,"<ruby class=""vocab"">心が大きく動く<rt>こころがおおきくうごく</rt></ruby>",感動
-ありがとうと思う心,gratitude / thanks,ありがとうと思う心,ありがとうと思【おも】う心【こころ】,Emotions & Personality,,gratitude / thanks,"<ruby class=""vocab"">ありがとうと思う心<rt>ありがとうとおもうこころ</rt></ruby>",感謝
-前にしたことが悪かったと思う,regret,前にしたことが悪かったと思う,前【まえ】にしたことが悪【わる】かったと思【おも】う,Emotions & Personality,,regret,"<ruby class=""vocab"">前にしたことが悪かったと思う<rt>まえにしたことがわるかったとおもう</rt></ruby>",後悔
-私は良いと思う強い心,self-confidence,私は良いと思う強い心,私【わたし】は良【よ】いと思【おも】う強【つよ】い心【こころ】,Emotions & Personality,,self-confidence,"<ruby class=""vocab"">私は良いと思う強い心<rt>わたしはよいとおもうつよいこころ</rt></ruby>",自信
-良いことが来ると思って待つ,expectation / anticipation,良いことが来ると思って待つ,良【よ】いことが来【く】ると思【おも】って待【ま】つ,Emotions & Personality,,expectation / anticipation,"<ruby class=""vocab"">良いことが来ると思って待つ<rt>よいことがくるとおもってまつ</rt></ruby>",期待
-良いことが起こってほしいと思う,hope / wish,良いことが起こってほしいと思う,良【よ】いことが起【お】こってほしいと思【おも】う,Emotions & Personality,,hope / wish,"<ruby class=""vocab"">良いことが起こってほしいと思う<rt>よいことがおこってほしいとおもう</rt></ruby>",希望
-良いことはないと思う,despair,良いことはないと思う,良【よ】いことはないと思【おも】う,Emotions & Personality,,despair,"<ruby class=""vocab"">良いことはないと思う<rt>よいことはないとおもう</rt></ruby>",絶望
-もっと知りたいと思う心,interest / curiosity,もっと知りたいと思う心,もっと知【し】りたいと思【おも】う心【こころ】,Emotions & Personality,,interest / curiosity,"<ruby class=""vocab"">もっと知りたいと思う心<rt>もっとしりたいとおもうこころ</rt></ruby>",興味
-楽しいことが何もない,boredom,楽しいことが何もない,楽【たの】しいことが何【なに】もない,Emotions & Personality,,boredom,"<ruby class=""vocab"">楽しいことが何もない<rt>たのしいことがなにもない</rt></ruby>",退屈
-知らなかったことが起こって感じる,to be surprised,知らなかったことが起こって感じる,知【し】らなかったことが起【お】こって感【かん】じる,Emotions & Personality,,to be surprised,"<ruby class=""vocab"">知らなかったことが起こって感じる<rt>しらなかったことがおこってかんじる</rt></ruby>",驚く
-どうすればいいか思えなくて悪い,to be troubled,どうすればいいか思えなくて悪い,どうすればいいか思【おも】えなくて悪【わる】い,Emotions & Personality,,to be troubled,"<ruby class=""vocab"">どうすればいいか思えなくて悪い<rt>どうすればいいかおもえなくてわるい</rt></ruby>",困る
-どれを選ぶかと考えて止まる,to hesitate / be lost,どれを選ぶかと考えて止まる,どれを選【えら】ぶかと考【かんが】えて止【と】まる,Emotions & Personality,,to hesitate / be lost,"<ruby class=""vocab"">どれを選ぶかと考えて止まる<rt>どれをえらぶかとかんがえてとまる</rt></ruby>",迷う
-速くしなければと思って怖い,to be impatient / flustered,速くしなければと思って怖い,速【はや】くしなければと思【おも】って怖【こわ】い,Emotions & Personality,,to be impatient / flustered,"<ruby class=""vocab"">速くしなければと思って怖い<rt>はやくしなければとおもってこわい</rt></ruby>",焦る
-悪くても止まらずにいること,endurance / patience,悪くても止まらずにいること,悪【わる】くても止【と】まらずにいること,Emotions & Personality,,endurance / patience,"<ruby class=""vocab"">悪くても止まらずにいること<rt>わるくてもとまらずにいること</rt></ruby>",我慢
-悪いことをした人を良いと言う,to forgive / permit,悪いことをした人を良いと言う,悪【わる】いことをした人【ひと】を良【よ】いと言【い】う,Emotions & Personality,,to forgive / permit,"<ruby class=""vocab"">悪いことをした人を良いと言う<rt>わるいことをしたひとをよいという</rt></ruby>",許す
-本当だと思う,to believe / trust,本当だと思う,本当【ほんとう】だと思【おも】う,Emotions & Personality,,to believe / trust,"<ruby class=""vocab"">本当だと思う<rt>ほんとうだとおもう</rt></ruby>",信じる
-本当かどうかと思う,to doubt / suspect,本当かどうかと思う,本当【ほんとう】かどうかと思【おも】う,Emotions & Personality,,to doubt / suspect,"<ruby class=""vocab"">本当かどうかと思う<rt>ほんとうかどうかとおもう</rt></ruby>",疑う
-とても良い人だと思う,respect,とても良い人だと思う,とても良【よ】い人【ひと】だと思【おも】う,Emotions & Personality,,respect,"<ruby class=""vocab"">とても良い人だと思う<rt>とてもよいひとだとおもう</rt></ruby>",尊敬
-とても悪い人だと思う,contempt / scorn,とても悪い人だと思う,とても悪【わる】い人【ひと】だと思【おも】う,Emotions & Personality,,contempt / scorn,"<ruby class=""vocab"">とても悪い人だと思う<rt>とてもわるいひとだとおもう</rt></ruby>",軽蔑
-悲しい人の心を感じる,sympathy / compassion,悲しい人の心を感じる,悲【かな】しい人【ひと】の心【こころ】を感【かん】じる,Emotions & Personality,,sympathy / compassion,"<ruby class=""vocab"">悲しい人の心を感じる<rt>かなしいひとのこころをかんじる</rt></ruby>",同情
-他の人が持っているものを欲しいと思う,jealousy / envy,他の人が持っているものを欲しいと思う,他【ほか】の人【ひと】が持【も】っているものを欲【ほ】しいと思【おも】う,Emotions & Personality,,jealousy / envy,"<ruby class=""vocab"">他の人が持っているものを欲しいと思う<rt>ほかのひとがもっているものをほしいとおもう</rt></ruby>",嫉妬
-悪いことをされてまだ怒る,to resent / bear a grudge,悪いことをされてまだ怒る,悪【わる】いことをされてまだ怒【おこ】る,Emotions & Personality,,to resent / bear a grudge,"<ruby class=""vocab"">悪いことをされてまだ怒る<rt>わるいことをされてまだおこる</rt></ruby>",恨む
-あの人のようになりたいと思う,to admire / yearn for,あの人のようになりたいと思う,あの人【ひと】のようになりたいと思【おも】う,Emotions & Personality,,to admire / yearn for,"<ruby class=""vocab"">あの人のようになりたいと思う<rt>あのひとのようになりたいとおもう</rt></ruby>",憧れる
-もう良いと感じる,satisfaction / contentment,もう良いと感じる,もう良【よ】いと感【かん】じる,Emotions & Personality,,satisfaction / contentment,"<ruby class=""vocab"">もう良いと感じる<rt>もうよいとかんじる</rt></ruby>",満足
-まだ良くないと思う,dissatisfaction / discontent,まだ良くないと思う,まだ良【よ】くないと思【おも】う,Emotions & Personality,,dissatisfaction / discontent,"<ruby class=""vocab"">まだ良くないと思う<rt>まだよくないとおもう</rt></ruby>",不満
-一りしかいなくて悲しい,loneliness / isolation,一りしかいなくて悲しい,一【ひと】りしかいなくて悲【かな】しい,Emotions & Personality,,loneliness / isolation,"<ruby class=""vocab"">一りしかいなくて悲しい<rt>ひとりしかいなくてかなしい</rt></ruby>",孤独
-怖くても前に行く強い心,courage / bravery,怖くても前に行く強い心,怖【こわ】くても前【まえ】に行【い】く強【つよ】い心【こころ】,Emotions & Personality,,courage / bravery,"<ruby class=""vocab"">怖くても前に行く強い心<rt>こわくてもまえにいくつよいこころ</rt></ruby>",勇気
-私は良いと感じる強い心,pride,私は良いと感じる強い心,私【わたし】は良【よ】いと感【かん】じる強【つよ】い心【こころ】,Emotions & Personality,,pride,"<ruby class=""vocab"">私は良いと感じる強い心<rt>わたしはよいとかんじるつよいこころ</rt></ruby>",誇り
-ある人がとても好きになる心,romantic love / crush,ある人がとても好きになる心,ある人【ひと】がとても好【す】きになる心【こころ】,Emotions & Personality,,romantic love / crush,"<ruby class=""vocab"">ある人がとても好きになる心<rt>あるひとがとてもすきになるこころ</rt></ruby>",恋
-ある人をとても良くしたい強い心,love,ある人をとても良くしたい強い心,ある人【ひと】をとても良【よ】くしたい強【つよ】い心【こころ】,Emotions & Personality,,love,"<ruby class=""vocab"">ある人をとても良くしたい強い心<rt>あるひとをとてもよくしたいつよいこころ</rt></ruby>",愛
-悪いことが起こって怒る心,anger,悪いことが起こって怒る心,悪【わる】いことが起【お】こって怒【おこ】る心【こころ】,Emotions & Personality,,anger,"<ruby class=""vocab"">悪いことが起こって怒る心<rt>わるいことがおこっておこるこころ</rt></ruby>",怒り
-良いことが起こって笑いたい心,joy / delight,良いことが起こって笑いたい心,良【よ】いことが起【お】こって笑【わら】いたい心【こころ】,Emotions & Personality,,joy / delight,"<ruby class=""vocab"">良いことが起こって笑いたい心<rt>よいことがおこってわらいたいこころ</rt></ruby>",喜び
-知らなかったことを見たり聞いたりした心,surprise / astonishment,知らなかったことを見たり聞いたりした心,知【し】らなかったことを見【み】たり聞【き】いたりした心【こころ】,Emotions & Personality,,surprise / astonishment,"<ruby class=""vocab"">知らなかったことを見たり聞いたりした心<rt>しらなかったことをみたりきいたりしたこころ</rt></ruby>",驚き
-とても怖い心,fear / terror,とても怖い心,とても怖【こわ】い心【こころ】,Emotions & Personality,,fear / terror,"<ruby class=""vocab"">とても怖い心<rt>とてもこわいこころ</rt></ruby>",恐怖
-怒らないで良く考える,calm / composed,怒らないで良く考える,怒【おこ】らないで良【よ】く考【かんが】える,Emotions & Personality,,calm / composed,"<ruby class=""vocab"">怒らないで良く考える<rt>おこらないでよくかんがえる</rt></ruby>",冷静
-他の人の良いものを欲しいと思う,to envy,他の人の良いものを欲しいと思う,他【ほか】の人【ひと】の良【よ】いものを欲【ほ】しいと思【おも】う,Emotions & Personality,,to envy,"<ruby class=""vocab"">他の人の良いものを欲しいと思う<rt>ほかのひとのよいものをほしいとおもう</rt></ruby>",羨む
-空から白くて寒い水が来ること,snow,空から白くて寒い水が来ること,空【そら】から白【しろ】くて寒【さむ】い水【みず】が来【く】ること,Nature & Weather,,snow,"<ruby class=""vocab"">空から白くて寒い水が来ること<rt>そらからしろくてさむいみずがくること</rt></ruby>",雪
-寒くなった水,ice,寒くなった水,寒【さむ】くなった水【みず】,Nature & Weather,,ice,"<ruby class=""vocab"">寒くなった水<rt>さむくなったみず</rt></ruby>",氷
-白い風で何も見えなくなること,fog/mist,白い風で何も見えなくなること,白【しろ】い風【かぜ】で何【なに】も見【み】えなくなること,Nature & Weather,,fog/mist,"<ruby class=""vocab"">白い風で何も見えなくなること<rt>しろいかぜでなにもみえなくなること</rt></ruby>",霧
-雨の後に空に出る色の光,rainbow,雨の後に空に出る色の光,雨【あめ】の後【あと】に空【そら】に出【で】る色【いろ】の光【ひかり】,Nature & Weather,,rainbow,"<ruby class=""vocab"">雨の後に空に出る色の光<rt>あめのあとにそらにでるいろのひかり</rt></ruby>",虹
-空で大きい音と光が起こること,thunder/lightning,空で大きい音と光が起こること,空【そら】で大【おお】きい音【おと】と光【ひかり】が起【お】こること,Nature & Weather,,thunder/lightning,"<ruby class=""vocab"">空で大きい音と光が起こること<rt>そらでおおきいおととひかりがおこること</rt></ruby>",雷
-強い風と雨が来ること,typhoon,強い風と雨が来ること,強【つよ】い風【かぜ】と雨【あめ】が来【く】ること,Nature & Weather,,typhoon,"<ruby class=""vocab"">強い風と雨が来ること<rt>つよいかぜとあめがくること</rt></ruby>",台風
-土が動くこと,earthquake,土が動くこと,土【つち】が動【うご】くこと,Nature & Weather,,earthquake,"<ruby class=""vocab"">土が動くこと<rt>つちがうごくこと</rt></ruby>",地震
-水が多くなって所が水の中に入ること,flood,水が多くなって所が水の中に入ること,水【みず】が多【おお】くなって所【ところ】が水【みず】の中【なか】に入【はい】ること,Nature & Weather,,flood,"<ruby class=""vocab"">水が多くなって所が水の中に入ること<rt>みずがおおくなってところがみずのなかにはいること</rt></ruby>",洪水
-外で起こる悪いこと,disaster,外で起こる悪いこと,外【そと】で起【お】こる悪【わる】いこと,Nature & Weather,,disaster,"<ruby class=""vocab"">外で起こる悪いこと<rt>そとでおこるわるいこと</rt></ruby>",災害
-山や土の中にある大きい水,lake,山や土の中にある大きい水,山【やま】や土【つち】の中【なか】にある大【おお】きい水【みず】,Nature & Weather,,lake,"<ruby class=""vocab"">山や土の中にある大きい水<rt>やまやつちのなかにあるおおきいみず</rt></ruby>",湖
-山や土の中にある水,pond,山や土の中にある水,山【やま】や土【つち】の中【なか】にある水【みず】,Nature & Weather,,pond,"<ruby class=""vocab"">山や土の中にある水<rt>やまやつちのなかにあるみず</rt></ruby>",池
-高い所から水が下に出てくること,waterfall,高い所から水が下に出てくること,高【たか】い所【ところ】から水【みず】が下【した】に出【で】てくること,Nature & Weather,,waterfall,"<ruby class=""vocab"">高い所から水が下に出てくること<rt>たかいところからみずがしたにでてくること</rt></ruby>",滝
-土の中から水が出てくる所,spring/fountain,土の中から水が出てくる所,土【つち】の中【なか】から水【みず】が出【で】てくる所【ところ】,Nature & Weather,,spring/fountain,"<ruby class=""vocab"">土の中から水が出てくる所<rt>つちのなかからみずがでてくるところ</rt></ruby>",泉
-食べ物を作る土の所,field/farmland,食べ物を作る土の所,食【た】べ物【もの】を作【つく】る土【つち】の所【ところ】,Nature & Weather,,field/farmland,"<ruby class=""vocab"">食べ物を作る土の所<rt>たべものをつくるつちのところ</rt></ruby>",畑
-水を使って食べ物を作る所,rice paddy,水を使って食べ物を作る所,水【みず】を使【つか】って食【た】べ物【もの】を作【つく】る所【ところ】,Nature & Weather,,rice paddy,"<ruby class=""vocab"">水を使って食べ物を作る所<rt>みずをつかってたべものをつくるところ</rt></ruby>",田んぼ
-海や山にある石でできた物,sand,海や山にある石でできた物,海【うみ】や山【やま】にある石【いし】でできた物【もの】,Nature & Weather,,sand,"<ruby class=""vocab"">海や山にある石でできた物<rt>うみややまにあるいしでできたもの</rt></ruby>",砂
-草や木にある色のある物,flower,草や木にある色のある物,草【くさ】や木【き】にある色【いろ】のある物【もの】,Nature & Weather,,flower,"<ruby class=""vocab"">草や木にある色のある物<rt>くさやきにあるいろのあるもの</rt></ruby>",花
-白や赤の色の木の物,cherry blossom,白や赤の色の木の物,白【しろ】や赤【あか】の色【いろ】の木【き】の物【もの】,Nature & Weather,,cherry blossom,"<ruby class=""vocab"">白や赤の色の木の物<rt>しろやあかのいろのきのもの</rt></ruby>",桜
-木の緑の物,leaf,木の緑の物,木【き】の緑【みどり】の物【もの】,Nature & Weather,,leaf,"<ruby class=""vocab"">木の緑の物<rt>きのみどりのもの</rt></ruby>",葉
-木や草の土の中にある物,root,木や草の土の中にある物,木【き】や草【くさ】の土【つち】の中【なか】にある物【もの】,Nature & Weather,,root,"<ruby class=""vocab"">木や草の土の中にある物<rt>きやくさのつちのなかにあるもの</rt></ruby>",根
-草や木になる前の物,seed,草や木になる前の物,草【くさ】や木【き】になる前【まえ】の物【もの】,Nature & Weather,,seed,"<ruby class=""vocab"">草や木になる前の物<rt>くさやきになるまえのもの</rt></ruby>",種
-木にある食べられる物,fruit/berry,木にある食べられる物,木【き】にある食【た】べられる物【もの】,Nature & Weather,,fruit/berry,"<ruby class=""vocab"">木にある食べられる物<rt>きにあるたべられるもの</rt></ruby>",実
-足が多い動物,insect/bug,足が多い動物,足【あし】が多【おお】い動物【どうぶつ】,Nature & Weather,,insect/bug,"<ruby class=""vocab"">足が多い動物<rt>あしがおおいどうぶつ</rt></ruby>",虫
-家にいる動物,cat,家にいる動物,家【いえ】にいる動物【どうぶつ】,Nature & Weather,,cat,"<ruby class=""vocab"">家にいる動物<rt>いえにいるどうぶつ</rt></ruby>",猫
-大きくて強い動物で人が上に座るもの,horse,大きくて強い動物で人が上に座るもの,大【おお】きくて強【つよ】い動物【どうぶつ】で人【ひと】が上【うえ】に座【すわ】るもの,Nature & Weather,,horse,"<ruby class=""vocab"">大きくて強い動物で人が上に座るもの<rt>おおきくてつよいどうぶつでひとがうえにすわるもの</rt></ruby>",馬
-白と黒の大きい動物,cow,白と黒の大きい動物,白【しろ】と黒【くろ】の大【おお】きい動物【どうぶつ】,Nature & Weather,,cow,"<ruby class=""vocab"">白と黒の大きい動物<rt>しろとくろのおおきいどうぶつ</rt></ruby>",牛
-足がなくて長い動物,snake,足がなくて長い動物,足【あし】がなくて長【なが】い動物【どうぶつ】,Nature & Weather,,snake,"<ruby class=""vocab"">足がなくて長い動物<rt>あしがなくてながいどうぶつ</rt></ruby>",蛇
-大きくて強くて怖い動物,bear,大きくて強くて怖い動物,大【おお】きくて強【つよ】くて怖【こわ】い動物【どうぶつ】,Nature & Weather,,bear,"<ruby class=""vocab"">大きくて強くて怖い動物<rt>おおきくてつよくてこわいどうぶつ</rt></ruby>",熊
-空を動く動物が使う物,feather/wing,空を動く動物が使う物,空【そら】を動【うご】く動物【どうぶつ】が使【つか】う物【もの】,Nature & Weather,,feather/wing,"<ruby class=""vocab"">空を動く動物が使う物<rt>そらをうごくどうぶつがつかうもの</rt></ruby>",羽
-年の中で暑さや寒さが変わる時,season,年の中で暑さや寒さが変わる時,年【とし】の中【なか】で暑【あつ】さや寒【さむ】さが変【か】わる時【とき】,Nature & Weather,,season,"<ruby class=""vocab"">年の中で暑さや寒さが変わる時<rt>としのなかであつさやさむさがかわるとき</rt></ruby>",季節
-寒い時の後で暑くなる前の時,spring,寒い時の後で暑くなる前の時,寒【さむ】い時【とき】の後【あと】で暑【あつ】くなる前【まえ】の時【とき】,Nature & Weather,,spring,"<ruby class=""vocab"">寒い時の後で暑くなる前の時<rt>さむいときのあとであつくなるまえのとき</rt></ruby>",春
-年で一ばん暑い時,summer,年で一ばん暑い時,年【とし】で一【いち】ばん暑【あつ】い時【とき】,Nature & Weather,,summer,"<ruby class=""vocab"">年で一ばん暑い時<rt>としでいちばんあついとき</rt></ruby>",夏
-暑い時の後で寒くなる前の時,autumn/fall,暑い時の後で寒くなる前の時,暑【あつ】い時【とき】の後【あと】で寒【さむ】くなる前【まえ】の時【とき】,Nature & Weather,,autumn/fall,"<ruby class=""vocab"">暑い時の後で寒くなる前の時<rt>あついときのあとでさむくなるまえのとき</rt></ruby>",秋
-年で一ばん寒い時,winter,年で一ばん寒い時,年【とし】で一【いち】ばん寒【さむ】い時【とき】,Nature & Weather,,winter,"<ruby class=""vocab"">年で一ばん寒い時<rt>としでいちばんさむいとき</rt></ruby>",冬
-太陽が空に出てくること,sunrise,太陽が空に出てくること,太陽【たいよう】が空【そら】に出【で】てくること,Nature & Weather,,sunrise,"<ruby class=""vocab"">太陽が空に出てくること<rt>たいようがそらにでてくること</rt></ruby>",日の出
-太陽が下に入ること,sunset,太陽が下に入ること,太陽【たいよう】が下【した】に入【はい】ること,Nature & Weather,,sunset,"<ruby class=""vocab"">太陽が下に入ること<rt>たいようがしたにはいること</rt></ruby>",日の入り
-太陽が出てきた後の時,morning,太陽が出てきた後の時,太陽【たいよう】が出【で】てきた後【あと】の時【とき】,Nature & Weather,,morning,"<ruby class=""vocab"">太陽が出てきた後の時<rt>たいようがでてきたあとのとき</rt></ruby>",朝
-海の水が上に来たり下に行ったりすること,tide,海の水が上に来たり下に行ったりすること,海【うみ】の水【みず】が上【うえ】に来【く】たり下【した】に行【い】ったりすること,Nature & Weather,,tide,"<ruby class=""vocab"">海の水が上に来たり下に行ったりすること<rt>うみのみずがうえにくたりしたにいったりすること</rt></ruby>",潮
-海の水が動くこと,wave,海の水が動くこと,海【うみ】の水【みず】が動【うご】くこと,Nature & Weather,,wave,"<ruby class=""vocab"">海の水が動くこと<rt>うみのみずがうごくこと</rt></ruby>",波
-スポーツ,sports,スポーツ,スポーツ,Leisure & Sports,,sports,"<ruby class=""vocab"">スポーツ<rt><span class=""pitch-l"">す</span><span class=""pitch-h"">ぽ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">つ</span></rt></ruby>",
-ゲーム,game,ゲーム,ゲーム,Leisure & Sports,,game,"<ruby class=""vocab"">ゲーム<rt><span class=""pitch-h"">げ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">む</span></rt></ruby>",
-サッカー,soccer,サッカー,サッカー,Leisure & Sports,,soccer,"<ruby class=""vocab"">サッカー<rt><span class=""pitch-h"">さ</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">か</span><span class=""pitch-l"">ー</span></rt></ruby>",
-テニス,tennis,テニス,テニス,Leisure & Sports,,tennis,"<ruby class=""vocab"">テニス<rt><span class=""pitch-h"">て</span><span class=""pitch-l"">に</span><span class=""pitch-l"">す</span></rt></ruby>",
-ダンス,dance,ダンス,ダンス,Leisure & Sports,,dance,"<ruby class=""vocab"">ダンス<rt><span class=""pitch-h"">だ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">す</span></rt></ruby>",
-コンサート,concert,コンサート,コンサート,Leisure & Sports,,concert,"<ruby class=""vocab"">コンサート<rt><span class=""pitch-h"">こ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">さ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">と</span></rt></ruby>",
-パーティー,party,パーティー,パーティー,Leisure & Sports,,party,"<ruby class=""vocab"">パーティー<rt><span class=""pitch-h"">ぱ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">てぃ</span><span class=""pitch-l"">ー</span></rt></ruby>",
-プール,pool,プール,プール,Leisure & Sports,,pool,"<ruby class=""vocab"">プール<rt><span class=""pitch-h"">ぷ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">る</span></rt></ruby>",
-ジム,gym,ジム,ジム,Leisure & Sports,,gym,"<ruby class=""vocab"">ジム<rt><span class=""pitch-h"">じ</span><span class=""pitch-l"">む</span></rt></ruby>",
-ボール,ball,ボール,ボール,Leisure & Sports,,ball,"<ruby class=""vocab"">ボール<rt><span class=""pitch-l"">ぼ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">る</span></rt></ruby>",
-カラオケ,karaoke,カラオケ,カラオケ,Leisure & Sports,,karaoke,"<ruby class=""vocab"">カラオケ<rt><span class=""pitch-l"">か</span><span class=""pitch-h"">ら</span><span class=""pitch-h"">お</span><span class=""pitch-h"">け</span></rt></ruby>",
-アニメ,anime,アニメ,アニメ,Leisure & Sports,,anime,"<ruby class=""vocab"">アニメ<rt><span class=""pitch-h"">あ</span><span class=""pitch-l"">に</span><span class=""pitch-l"">め</span></rt></ruby>",
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+今の日は空がとてもきれいですね。,The sky is very beautiful today.,今の日,今【いま】の日【にち】は空【そら】がとてもきれいですね。,Weather Small Talk,casual,today,"<ruby class=""vocab"">今の日<rt>いまのにち</rt></ruby>",今日は空がとてもきれいですね。,y
+そうですね。太陽が出ていて、風も良いです。,"Yes. The sun is out, and the wind is nice.",太陽,そうですね。太陽【たいよう】が出【で】ていて、風【かぜ】も良【よ】いです。,Weather Small Talk,polite,sun,"<ruby class=""vocab"">太陽<rt><span class=""pitch-h"">た</span><span class=""pitch-l"">い</span><span class=""pitch-l"">よ</span><span class=""pitch-l"">う</span></rt></ruby>",そうですね。太陽が出ていて、風も気持ちいいです。,y
+でも後から雨が来ると聞きました。,But I heard it will rain later.,来る,でも後【あと】から雨【あめ】が来【く】ると聞【き】きました。,Weather Small Talk,polite,come,"<ruby class=""vocab"">来る<rt><span class=""pitch-h"">く</span><span class=""pitch-l"">る</span></rt></ruby>",でも後から雨が降ると聞きました。,y
+本当ですか。雨の物を持った方がいいですね。,Really? We should bring an umbrella.,雨の物,本当【ほんとう】ですか。雨【あめ】の物【もの】を持【も】った方【ほう】がいいですね。,Weather Small Talk,casual,umbrella,"<ruby class=""vocab"">雨の物<rt>あめのもの</rt></ruby>",本当ですか。傘を持った方がいいですね。,y
+雨の前に外を歩きたいです。,I want to walk outside before the rain.,外,雨【あめ】の前【まえ】に外【そと】を歩【ある】きたいです。,Weather Small Talk,polite,outside,"<ruby class=""vocab"">外<rt><span class=""pitch-h"">そ</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+良いですね。良い日にしましょう。,That's nice. Let's make it a good day.,良い,良【よ】いですね。良【よ】い日【にち】にしましょう。,Weather Small Talk,polite,good,"<ruby class=""vocab"">良い<rt><span class=""pitch-h"">よ</span><span class=""pitch-l"">い</span></rt></ruby>",いいですね。良い一日にしましょう。,y
+一りで悲しい,lonely,一りで悲しい,一【ひと】りで悲【かな】しい,Emotions & Personality,,lonely,"<ruby class=""vocab"">一りで悲しい<rt>ひとりでかなしい</rt></ruby>",寂しい,y
+人に見られたくない心,embarrassed / shy,人に見られたくない心,人【ひと】に見【み】られたくない心【こころ】,Emotions & Personality,,embarrassed / shy,"<ruby class=""vocab"">人に見られたくない心<rt>ひとにみられたくないこころ</rt></ruby>",恥ずかしい,y
+体も心もとても悪い,painful / agonizing,体も心もとても悪い,体【からだ】も心【こころ】もとても悪【わる】い,Emotions & Personality,,painful / agonizing,"<ruby class=""vocab"">体も心もとても悪い<rt>からだもこころもとてもわるい</rt></ruby>",苦しい,y
+とても悲しくて悪い,hard / tough / painful,とても悲しくて悪い,とても悲【かな】しくて悪【わる】い,Emotions & Personality,,hard / tough / painful,"<ruby class=""vocab"">とても悲しくて悪い<rt>とてもかなしくてわるい</rt></ruby>",辛い,y
+人に良くする心がある,kind / gentle,人に良くする心がある,人【ひと】に良【よ】くする心【こころ】がある,Emotions & Personality,,kind / gentle,"<ruby class=""vocab"">人に良くする心がある<rt>ひとによくするこころがある</rt></ruby>",優しい,y
+とても強くて悪いことを止める,strict / harsh,とても強くて悪いことを止める,とても強【つよ】くて悪【わる】いことを止【と】める,Emotions & Personality,,strict / harsh,"<ruby class=""vocab"">とても強くて悪いことを止める<rt>とてもつよくてわるいことをとめる</rt></ruby>",厳しい,y
+変なことをしない良い心,honest / obedient,変なことをしない良い心,変【へん】なことをしない良【よ】い心【こころ】,Emotions & Personality,,honest / obedient,"<ruby class=""vocab"">変なことをしない良い心<rt>へんなことをしないよいこころ</rt></ruby>",素直,y
+良くしようと考える人,serious / diligent,良くしようと考える人,良【よ】くしようと考【かんが】える人【ひと】,Emotions & Personality,,serious / diligent,"<ruby class=""vocab"">良くしようと考える人<rt>よくしようとかんがえるひと</rt></ruby>",真面目,y
+体も心も良い,energetic / well,体も心も良い,体【からだ】も心【こころ】も良【よ】い,Emotions & Personality,,energetic / well,"<ruby class=""vocab"">体も心も良い<rt>からだもこころもよい</rt></ruby>",元気,y
+良いことが多くある心,happiness / fortune,良いことが多くある心,良【よ】いことが多【おお】くある心【こころ】,Emotions & Personality,,happiness / fortune,"<ruby class=""vocab"">良いことが多くある心<rt>よいことがおおくあるこころ</rt></ruby>",幸せ,y
+これから悪いことが来るかもしれないと思う心,anxiety / unease,これから悪いことが来るかもしれないと思う心,これから悪【わる】いことが来【く】るかもしれないと思【おも】う心【こころ】,Emotions & Personality,,anxiety / unease,"<ruby class=""vocab"">これから悪いことが来るかもしれないと思う心<rt>これからわるいことがくるかもしれないとおもうこころ</rt></ruby>",不安,y
+悪いことが起こるかもと考える,worry / concern,悪いことが起こるかもと考える,悪【わる】いことが起【お】こるかもと考【かんが】える,Emotions & Personality,,worry / concern,"<ruby class=""vocab"">悪いことが起こるかもと考える<rt>わるいことがおこるかもとかんがえる</rt></ruby>",心配,y
+怖くて体が動きにくい,nervousness / tension,怖くて体が動きにくい,怖【こわ】くて体【からだ】が動【うご】きにくい,Emotions & Personality,,nervousness / tension,"<ruby class=""vocab"">怖くて体が動きにくい<rt>こわくてからだがうごきにくい</rt></ruby>",緊張,y
+心が大きく動く,being moved / deeply touched,心が大きく動く,心【こころ】が大【おお】きく動【うご】く,Emotions & Personality,,being moved / deeply touched,"<ruby class=""vocab"">心が大きく動く<rt>こころがおおきくうごく</rt></ruby>",感動,y
+ありがとうと思う心,gratitude / thanks,ありがとうと思う心,ありがとうと思【おも】う心【こころ】,Emotions & Personality,,gratitude / thanks,"<ruby class=""vocab"">ありがとうと思う心<rt>ありがとうとおもうこころ</rt></ruby>",感謝,y
+前にしたことが悪かったと思う,regret,前にしたことが悪かったと思う,前【まえ】にしたことが悪【わる】かったと思【おも】う,Emotions & Personality,,regret,"<ruby class=""vocab"">前にしたことが悪かったと思う<rt>まえにしたことがわるかったとおもう</rt></ruby>",後悔,y
+私は良いと思う強い心,self-confidence,私は良いと思う強い心,私【わたし】は良【よ】いと思【おも】う強【つよ】い心【こころ】,Emotions & Personality,,self-confidence,"<ruby class=""vocab"">私は良いと思う強い心<rt>わたしはよいとおもうつよいこころ</rt></ruby>",自信,y
+良いことが来ると思って待つ,expectation / anticipation,良いことが来ると思って待つ,良【よ】いことが来【く】ると思【おも】って待【ま】つ,Emotions & Personality,,expectation / anticipation,"<ruby class=""vocab"">良いことが来ると思って待つ<rt>よいことがくるとおもってまつ</rt></ruby>",期待,y
+良いことが起こってほしいと思う,hope / wish,良いことが起こってほしいと思う,良【よ】いことが起【お】こってほしいと思【おも】う,Emotions & Personality,,hope / wish,"<ruby class=""vocab"">良いことが起こってほしいと思う<rt>よいことがおこってほしいとおもう</rt></ruby>",希望,y
+良いことはないと思う,despair,良いことはないと思う,良【よ】いことはないと思【おも】う,Emotions & Personality,,despair,"<ruby class=""vocab"">良いことはないと思う<rt>よいことはないとおもう</rt></ruby>",絶望,y
+もっと知りたいと思う心,interest / curiosity,もっと知りたいと思う心,もっと知【し】りたいと思【おも】う心【こころ】,Emotions & Personality,,interest / curiosity,"<ruby class=""vocab"">もっと知りたいと思う心<rt>もっとしりたいとおもうこころ</rt></ruby>",興味,y
+楽しいことが何もない,boredom,楽しいことが何もない,楽【たの】しいことが何【なに】もない,Emotions & Personality,,boredom,"<ruby class=""vocab"">楽しいことが何もない<rt>たのしいことがなにもない</rt></ruby>",退屈,y
+知らなかったことが起こって感じる,to be surprised,知らなかったことが起こって感じる,知【し】らなかったことが起【お】こって感【かん】じる,Emotions & Personality,,to be surprised,"<ruby class=""vocab"">知らなかったことが起こって感じる<rt>しらなかったことがおこってかんじる</rt></ruby>",驚く,y
+どうすればいいか思えなくて悪い,to be troubled,どうすればいいか思えなくて悪い,どうすればいいか思【おも】えなくて悪【わる】い,Emotions & Personality,,to be troubled,"<ruby class=""vocab"">どうすればいいか思えなくて悪い<rt>どうすればいいかおもえなくてわるい</rt></ruby>",困る,y
+どれを選ぶかと考えて止まる,to hesitate / be lost,どれを選ぶかと考えて止まる,どれを選【えら】ぶかと考【かんが】えて止【と】まる,Emotions & Personality,,to hesitate / be lost,"<ruby class=""vocab"">どれを選ぶかと考えて止まる<rt>どれをえらぶかとかんがえてとまる</rt></ruby>",迷う,y
+速くしなければと思って怖い,to be impatient / flustered,速くしなければと思って怖い,速【はや】くしなければと思【おも】って怖【こわ】い,Emotions & Personality,,to be impatient / flustered,"<ruby class=""vocab"">速くしなければと思って怖い<rt>はやくしなければとおもってこわい</rt></ruby>",焦る,y
+悪くても止まらずにいること,endurance / patience,悪くても止まらずにいること,悪【わる】くても止【と】まらずにいること,Emotions & Personality,,endurance / patience,"<ruby class=""vocab"">悪くても止まらずにいること<rt>わるくてもとまらずにいること</rt></ruby>",我慢,y
+悪いことをした人を良いと言う,to forgive / permit,悪いことをした人を良いと言う,悪【わる】いことをした人【ひと】を良【よ】いと言【い】う,Emotions & Personality,,to forgive / permit,"<ruby class=""vocab"">悪いことをした人を良いと言う<rt>わるいことをしたひとをよいという</rt></ruby>",許す,y
+本当だと思う,to believe / trust,本当だと思う,本当【ほんとう】だと思【おも】う,Emotions & Personality,,to believe / trust,"<ruby class=""vocab"">本当だと思う<rt>ほんとうだとおもう</rt></ruby>",信じる,y
+本当かどうかと思う,to doubt / suspect,本当かどうかと思う,本当【ほんとう】かどうかと思【おも】う,Emotions & Personality,,to doubt / suspect,"<ruby class=""vocab"">本当かどうかと思う<rt>ほんとうかどうかとおもう</rt></ruby>",疑う,y
+とても良い人だと思う,respect,とても良い人だと思う,とても良【よ】い人【ひと】だと思【おも】う,Emotions & Personality,,respect,"<ruby class=""vocab"">とても良い人だと思う<rt>とてもよいひとだとおもう</rt></ruby>",尊敬,y
+とても悪い人だと思う,contempt / scorn,とても悪い人だと思う,とても悪【わる】い人【ひと】だと思【おも】う,Emotions & Personality,,contempt / scorn,"<ruby class=""vocab"">とても悪い人だと思う<rt>とてもわるいひとだとおもう</rt></ruby>",軽蔑,y
+悲しい人の心を感じる,sympathy / compassion,悲しい人の心を感じる,悲【かな】しい人【ひと】の心【こころ】を感【かん】じる,Emotions & Personality,,sympathy / compassion,"<ruby class=""vocab"">悲しい人の心を感じる<rt>かなしいひとのこころをかんじる</rt></ruby>",同情,y
+他の人が持っているものを欲しいと思う,jealousy / envy,他の人が持っているものを欲しいと思う,他【ほか】の人【ひと】が持【も】っているものを欲【ほ】しいと思【おも】う,Emotions & Personality,,jealousy / envy,"<ruby class=""vocab"">他の人が持っているものを欲しいと思う<rt>ほかのひとがもっているものをほしいとおもう</rt></ruby>",嫉妬,y
+悪いことをされてまだ怒る,to resent / bear a grudge,悪いことをされてまだ怒る,悪【わる】いことをされてまだ怒【おこ】る,Emotions & Personality,,to resent / bear a grudge,"<ruby class=""vocab"">悪いことをされてまだ怒る<rt>わるいことをされてまだおこる</rt></ruby>",恨む,y
+あの人のようになりたいと思う,to admire / yearn for,あの人のようになりたいと思う,あの人【ひと】のようになりたいと思【おも】う,Emotions & Personality,,to admire / yearn for,"<ruby class=""vocab"">あの人のようになりたいと思う<rt>あのひとのようになりたいとおもう</rt></ruby>",憧れる,y
+もう良いと感じる,satisfaction / contentment,もう良いと感じる,もう良【よ】いと感【かん】じる,Emotions & Personality,,satisfaction / contentment,"<ruby class=""vocab"">もう良いと感じる<rt>もうよいとかんじる</rt></ruby>",満足,y
+まだ良くないと思う,dissatisfaction / discontent,まだ良くないと思う,まだ良【よ】くないと思【おも】う,Emotions & Personality,,dissatisfaction / discontent,"<ruby class=""vocab"">まだ良くないと思う<rt>まだよくないとおもう</rt></ruby>",不満,y
+一りしかいなくて悲しい,loneliness / isolation,一りしかいなくて悲しい,一【ひと】りしかいなくて悲【かな】しい,Emotions & Personality,,loneliness / isolation,"<ruby class=""vocab"">一りしかいなくて悲しい<rt>ひとりしかいなくてかなしい</rt></ruby>",孤独,y
+怖くても前に行く強い心,courage / bravery,怖くても前に行く強い心,怖【こわ】くても前【まえ】に行【い】く強【つよ】い心【こころ】,Emotions & Personality,,courage / bravery,"<ruby class=""vocab"">怖くても前に行く強い心<rt>こわくてもまえにいくつよいこころ</rt></ruby>",勇気,y
+私は良いと感じる強い心,pride,私は良いと感じる強い心,私【わたし】は良【よ】いと感【かん】じる強【つよ】い心【こころ】,Emotions & Personality,,pride,"<ruby class=""vocab"">私は良いと感じる強い心<rt>わたしはよいとかんじるつよいこころ</rt></ruby>",誇り,y
+ある人がとても好きになる心,romantic love / crush,ある人がとても好きになる心,ある人【ひと】がとても好【す】きになる心【こころ】,Emotions & Personality,,romantic love / crush,"<ruby class=""vocab"">ある人がとても好きになる心<rt>あるひとがとてもすきになるこころ</rt></ruby>",恋,y
+ある人をとても良くしたい強い心,love,ある人をとても良くしたい強い心,ある人【ひと】をとても良【よ】くしたい強【つよ】い心【こころ】,Emotions & Personality,,love,"<ruby class=""vocab"">ある人をとても良くしたい強い心<rt>あるひとをとてもよくしたいつよいこころ</rt></ruby>",愛,y
+悪いことが起こって怒る心,anger,悪いことが起こって怒る心,悪【わる】いことが起【お】こって怒【おこ】る心【こころ】,Emotions & Personality,,anger,"<ruby class=""vocab"">悪いことが起こって怒る心<rt>わるいことがおこっておこるこころ</rt></ruby>",怒り,y
+良いことが起こって笑いたい心,joy / delight,良いことが起こって笑いたい心,良【よ】いことが起【お】こって笑【わら】いたい心【こころ】,Emotions & Personality,,joy / delight,"<ruby class=""vocab"">良いことが起こって笑いたい心<rt>よいことがおこってわらいたいこころ</rt></ruby>",喜び,y
+知らなかったことを見たり聞いたりした心,surprise / astonishment,知らなかったことを見たり聞いたりした心,知【し】らなかったことを見【み】たり聞【き】いたりした心【こころ】,Emotions & Personality,,surprise / astonishment,"<ruby class=""vocab"">知らなかったことを見たり聞いたりした心<rt>しらなかったことをみたりきいたりしたこころ</rt></ruby>",驚き,y
+とても怖い心,fear / terror,とても怖い心,とても怖【こわ】い心【こころ】,Emotions & Personality,,fear / terror,"<ruby class=""vocab"">とても怖い心<rt>とてもこわいこころ</rt></ruby>",恐怖,y
+怒らないで良く考える,calm / composed,怒らないで良く考える,怒【おこ】らないで良【よ】く考【かんが】える,Emotions & Personality,,calm / composed,"<ruby class=""vocab"">怒らないで良く考える<rt>おこらないでよくかんがえる</rt></ruby>",冷静,y
+他の人の良いものを欲しいと思う,to envy,他の人の良いものを欲しいと思う,他【ほか】の人【ひと】の良【よ】いものを欲【ほ】しいと思【おも】う,Emotions & Personality,,to envy,"<ruby class=""vocab"">他の人の良いものを欲しいと思う<rt>ほかのひとのよいものをほしいとおもう</rt></ruby>",羨む,y
+空から白くて寒い水が来ること,snow,空から白くて寒い水が来ること,空【そら】から白【しろ】くて寒【さむ】い水【みず】が来【く】ること,Nature & Weather,,snow,"<ruby class=""vocab"">空から白くて寒い水が来ること<rt>そらからしろくてさむいみずがくること</rt></ruby>",雪,y
+寒くなった水,ice,寒くなった水,寒【さむ】くなった水【みず】,Nature & Weather,,ice,"<ruby class=""vocab"">寒くなった水<rt>さむくなったみず</rt></ruby>",氷,y
+白い風で何も見えなくなること,fog/mist,白い風で何も見えなくなること,白【しろ】い風【かぜ】で何【なに】も見【み】えなくなること,Nature & Weather,,fog/mist,"<ruby class=""vocab"">白い風で何も見えなくなること<rt>しろいかぜでなにもみえなくなること</rt></ruby>",霧,y
+雨の後に空に出る色の光,rainbow,雨の後に空に出る色の光,雨【あめ】の後【あと】に空【そら】に出【で】る色【いろ】の光【ひかり】,Nature & Weather,,rainbow,"<ruby class=""vocab"">雨の後に空に出る色の光<rt>あめのあとにそらにでるいろのひかり</rt></ruby>",虹,y
+空で大きい音と光が起こること,thunder/lightning,空で大きい音と光が起こること,空【そら】で大【おお】きい音【おと】と光【ひかり】が起【お】こること,Nature & Weather,,thunder/lightning,"<ruby class=""vocab"">空で大きい音と光が起こること<rt>そらでおおきいおととひかりがおこること</rt></ruby>",雷,y
+強い風と雨が来ること,typhoon,強い風と雨が来ること,強【つよ】い風【かぜ】と雨【あめ】が来【く】ること,Nature & Weather,,typhoon,"<ruby class=""vocab"">強い風と雨が来ること<rt>つよいかぜとあめがくること</rt></ruby>",台風,y
+土が動くこと,earthquake,土が動くこと,土【つち】が動【うご】くこと,Nature & Weather,,earthquake,"<ruby class=""vocab"">土が動くこと<rt>つちがうごくこと</rt></ruby>",地震,y
+水が多くなって所が水の中に入ること,flood,水が多くなって所が水の中に入ること,水【みず】が多【おお】くなって所【ところ】が水【みず】の中【なか】に入【はい】ること,Nature & Weather,,flood,"<ruby class=""vocab"">水が多くなって所が水の中に入ること<rt>みずがおおくなってところがみずのなかにはいること</rt></ruby>",洪水,y
+外で起こる悪いこと,disaster,外で起こる悪いこと,外【そと】で起【お】こる悪【わる】いこと,Nature & Weather,,disaster,"<ruby class=""vocab"">外で起こる悪いこと<rt>そとでおこるわるいこと</rt></ruby>",災害,y
+山や土の中にある大きい水,lake,山や土の中にある大きい水,山【やま】や土【つち】の中【なか】にある大【おお】きい水【みず】,Nature & Weather,,lake,"<ruby class=""vocab"">山や土の中にある大きい水<rt>やまやつちのなかにあるおおきいみず</rt></ruby>",湖,y
+山や土の中にある水,pond,山や土の中にある水,山【やま】や土【つち】の中【なか】にある水【みず】,Nature & Weather,,pond,"<ruby class=""vocab"">山や土の中にある水<rt>やまやつちのなかにあるみず</rt></ruby>",池,y
+高い所から水が下に出てくること,waterfall,高い所から水が下に出てくること,高【たか】い所【ところ】から水【みず】が下【した】に出【で】てくること,Nature & Weather,,waterfall,"<ruby class=""vocab"">高い所から水が下に出てくること<rt>たかいところからみずがしたにでてくること</rt></ruby>",滝,y
+土の中から水が出てくる所,spring/fountain,土の中から水が出てくる所,土【つち】の中【なか】から水【みず】が出【で】てくる所【ところ】,Nature & Weather,,spring/fountain,"<ruby class=""vocab"">土の中から水が出てくる所<rt>つちのなかからみずがでてくるところ</rt></ruby>",泉,y
+食べ物を作る土の所,field/farmland,食べ物を作る土の所,食【た】べ物【もの】を作【つく】る土【つち】の所【ところ】,Nature & Weather,,field/farmland,"<ruby class=""vocab"">食べ物を作る土の所<rt>たべものをつくるつちのところ</rt></ruby>",畑,y
+水を使って食べ物を作る所,rice paddy,水を使って食べ物を作る所,水【みず】を使【つか】って食【た】べ物【もの】を作【つく】る所【ところ】,Nature & Weather,,rice paddy,"<ruby class=""vocab"">水を使って食べ物を作る所<rt>みずをつかってたべものをつくるところ</rt></ruby>",田んぼ,y
+海や山にある石でできた物,sand,海や山にある石でできた物,海【うみ】や山【やま】にある石【いし】でできた物【もの】,Nature & Weather,,sand,"<ruby class=""vocab"">海や山にある石でできた物<rt>うみややまにあるいしでできたもの</rt></ruby>",砂,y
+草や木にある色のある物,flower,草や木にある色のある物,草【くさ】や木【き】にある色【いろ】のある物【もの】,Nature & Weather,,flower,"<ruby class=""vocab"">草や木にある色のある物<rt>くさやきにあるいろのあるもの</rt></ruby>",花,y
+白や赤の色の木の物,cherry blossom,白や赤の色の木の物,白【しろ】や赤【あか】の色【いろ】の木【き】の物【もの】,Nature & Weather,,cherry blossom,"<ruby class=""vocab"">白や赤の色の木の物<rt>しろやあかのいろのきのもの</rt></ruby>",桜,y
+木の緑の物,leaf,木の緑の物,木【き】の緑【みどり】の物【もの】,Nature & Weather,,leaf,"<ruby class=""vocab"">木の緑の物<rt>きのみどりのもの</rt></ruby>",葉,y
+木や草の土の中にある物,root,木や草の土の中にある物,木【き】や草【くさ】の土【つち】の中【なか】にある物【もの】,Nature & Weather,,root,"<ruby class=""vocab"">木や草の土の中にある物<rt>きやくさのつちのなかにあるもの</rt></ruby>",根,y
+草や木になる前の物,seed,草や木になる前の物,草【くさ】や木【き】になる前【まえ】の物【もの】,Nature & Weather,,seed,"<ruby class=""vocab"">草や木になる前の物<rt>くさやきになるまえのもの</rt></ruby>",種,y
+木にある食べられる物,fruit/berry,木にある食べられる物,木【き】にある食【た】べられる物【もの】,Nature & Weather,,fruit/berry,"<ruby class=""vocab"">木にある食べられる物<rt>きにあるたべられるもの</rt></ruby>",実,y
+足が多い動物,insect/bug,足が多い動物,足【あし】が多【おお】い動物【どうぶつ】,Nature & Weather,,insect/bug,"<ruby class=""vocab"">足が多い動物<rt>あしがおおいどうぶつ</rt></ruby>",虫,y
+家にいる動物,cat,家にいる動物,家【いえ】にいる動物【どうぶつ】,Nature & Weather,,cat,"<ruby class=""vocab"">家にいる動物<rt>いえにいるどうぶつ</rt></ruby>",猫,y
+大きくて強い動物で人が上に座るもの,horse,大きくて強い動物で人が上に座るもの,大【おお】きくて強【つよ】い動物【どうぶつ】で人【ひと】が上【うえ】に座【すわ】るもの,Nature & Weather,,horse,"<ruby class=""vocab"">大きくて強い動物で人が上に座るもの<rt>おおきくてつよいどうぶつでひとがうえにすわるもの</rt></ruby>",馬,y
+白と黒の大きい動物,cow,白と黒の大きい動物,白【しろ】と黒【くろ】の大【おお】きい動物【どうぶつ】,Nature & Weather,,cow,"<ruby class=""vocab"">白と黒の大きい動物<rt>しろとくろのおおきいどうぶつ</rt></ruby>",牛,y
+足がなくて長い動物,snake,足がなくて長い動物,足【あし】がなくて長【なが】い動物【どうぶつ】,Nature & Weather,,snake,"<ruby class=""vocab"">足がなくて長い動物<rt>あしがなくてながいどうぶつ</rt></ruby>",蛇,y
+大きくて強くて怖い動物,bear,大きくて強くて怖い動物,大【おお】きくて強【つよ】くて怖【こわ】い動物【どうぶつ】,Nature & Weather,,bear,"<ruby class=""vocab"">大きくて強くて怖い動物<rt>おおきくてつよくてこわいどうぶつ</rt></ruby>",熊,y
+空を動く動物が使う物,feather/wing,空を動く動物が使う物,空【そら】を動【うご】く動物【どうぶつ】が使【つか】う物【もの】,Nature & Weather,,feather/wing,"<ruby class=""vocab"">空を動く動物が使う物<rt>そらをうごくどうぶつがつかうもの</rt></ruby>",羽,y
+年の中で暑さや寒さが変わる時,season,年の中で暑さや寒さが変わる時,年【とし】の中【なか】で暑【あつ】さや寒【さむ】さが変【か】わる時【とき】,Nature & Weather,,season,"<ruby class=""vocab"">年の中で暑さや寒さが変わる時<rt>としのなかであつさやさむさがかわるとき</rt></ruby>",季節,y
+寒い時の後で暑くなる前の時,spring,寒い時の後で暑くなる前の時,寒【さむ】い時【とき】の後【あと】で暑【あつ】くなる前【まえ】の時【とき】,Nature & Weather,,spring,"<ruby class=""vocab"">寒い時の後で暑くなる前の時<rt>さむいときのあとであつくなるまえのとき</rt></ruby>",春,y
+年で一ばん暑い時,summer,年で一ばん暑い時,年【とし】で一【いち】ばん暑【あつ】い時【とき】,Nature & Weather,,summer,"<ruby class=""vocab"">年で一ばん暑い時<rt>としでいちばんあついとき</rt></ruby>",夏,y
+暑い時の後で寒くなる前の時,autumn/fall,暑い時の後で寒くなる前の時,暑【あつ】い時【とき】の後【あと】で寒【さむ】くなる前【まえ】の時【とき】,Nature & Weather,,autumn/fall,"<ruby class=""vocab"">暑い時の後で寒くなる前の時<rt>あついときのあとでさむくなるまえのとき</rt></ruby>",秋,y
+年で一ばん寒い時,winter,年で一ばん寒い時,年【とし】で一【いち】ばん寒【さむ】い時【とき】,Nature & Weather,,winter,"<ruby class=""vocab"">年で一ばん寒い時<rt>としでいちばんさむいとき</rt></ruby>",冬,y
+太陽が空に出てくること,sunrise,太陽が空に出てくること,太陽【たいよう】が空【そら】に出【で】てくること,Nature & Weather,,sunrise,"<ruby class=""vocab"">太陽が空に出てくること<rt>たいようがそらにでてくること</rt></ruby>",日の出,y
+太陽が下に入ること,sunset,太陽が下に入ること,太陽【たいよう】が下【した】に入【はい】ること,Nature & Weather,,sunset,"<ruby class=""vocab"">太陽が下に入ること<rt>たいようがしたにはいること</rt></ruby>",日の入り,y
+太陽が出てきた後の時,morning,太陽が出てきた後の時,太陽【たいよう】が出【で】てきた後【あと】の時【とき】,Nature & Weather,,morning,"<ruby class=""vocab"">太陽が出てきた後の時<rt>たいようがでてきたあとのとき</rt></ruby>",朝,y
+海の水が上に来たり下に行ったりすること,tide,海の水が上に来たり下に行ったりすること,海【うみ】の水【みず】が上【うえ】に来【く】たり下【した】に行【い】ったりすること,Nature & Weather,,tide,"<ruby class=""vocab"">海の水が上に来たり下に行ったりすること<rt>うみのみずがうえにくたりしたにいったりすること</rt></ruby>",潮,y
+海の水が動くこと,wave,海の水が動くこと,海【うみ】の水【みず】が動【うご】くこと,Nature & Weather,,wave,"<ruby class=""vocab"">海の水が動くこと<rt>うみのみずがうごくこと</rt></ruby>",波,y
+スポーツ,sports,スポーツ,スポーツ,Leisure & Sports,,sports,"<ruby class=""vocab"">スポーツ<rt><span class=""pitch-l"">す</span><span class=""pitch-h"">ぽ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">つ</span></rt></ruby>",,y
+ゲーム,game,ゲーム,ゲーム,Leisure & Sports,,game,"<ruby class=""vocab"">ゲーム<rt><span class=""pitch-h"">げ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">む</span></rt></ruby>",,y
+サッカー,soccer,サッカー,サッカー,Leisure & Sports,,soccer,"<ruby class=""vocab"">サッカー<rt><span class=""pitch-h"">さ</span><span class=""pitch-l"">っ</span><span class=""pitch-l"">か</span><span class=""pitch-l"">ー</span></rt></ruby>",,y
+テニス,tennis,テニス,テニス,Leisure & Sports,,tennis,"<ruby class=""vocab"">テニス<rt><span class=""pitch-h"">て</span><span class=""pitch-l"">に</span><span class=""pitch-l"">す</span></rt></ruby>",,y
+ダンス,dance,ダンス,ダンス,Leisure & Sports,,dance,"<ruby class=""vocab"">ダンス<rt><span class=""pitch-h"">だ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">す</span></rt></ruby>",,y
+コンサート,concert,コンサート,コンサート,Leisure & Sports,,concert,"<ruby class=""vocab"">コンサート<rt><span class=""pitch-h"">こ</span><span class=""pitch-l"">ん</span><span class=""pitch-l"">さ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">と</span></rt></ruby>",,y
+パーティー,party,パーティー,パーティー,Leisure & Sports,,party,"<ruby class=""vocab"">パーティー<rt><span class=""pitch-h"">ぱ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">てぃ</span><span class=""pitch-l"">ー</span></rt></ruby>",,y
+プール,pool,プール,プール,Leisure & Sports,,pool,"<ruby class=""vocab"">プール<rt><span class=""pitch-h"">ぷ</span><span class=""pitch-l"">ー</span><span class=""pitch-l"">る</span></rt></ruby>",,y
+ジム,gym,ジム,ジム,Leisure & Sports,,gym,"<ruby class=""vocab"">ジム<rt><span class=""pitch-h"">じ</span><span class=""pitch-l"">む</span></rt></ruby>",,y
+ボール,ball,ボール,ボール,Leisure & Sports,,ball,"<ruby class=""vocab"">ボール<rt><span class=""pitch-l"">ぼ</span><span class=""pitch-h"">ー</span><span class=""pitch-h"">る</span></rt></ruby>",,y
+カラオケ,karaoke,カラオケ,カラオケ,Leisure & Sports,,karaoke,"<ruby class=""vocab"">カラオケ<rt><span class=""pitch-l"">か</span><span class=""pitch-h"">ら</span><span class=""pitch-h"">お</span><span class=""pitch-h"">け</span></rt></ruby>",,y
+アニメ,anime,アニメ,アニメ,Leisure & Sports,,anime,"<ruby class=""vocab"">アニメ<rt><span class=""pitch-h"">あ</span><span class=""pitch-l"">に</span><span class=""pitch-l"">め</span></rt></ruby>",,y

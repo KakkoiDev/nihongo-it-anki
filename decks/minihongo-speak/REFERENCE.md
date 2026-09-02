@@ -32,7 +32,7 @@ surface freely across categories.
 
 ## Derived, not copied
 
-Three values are computed rather than taken from a column, because minihongo has
+Four values are computed rather than taken from a column, because minihongo has
 no column for them:
 
 - **Register** - `polite` when the utterance ends in a polite form, else
@@ -42,6 +42,14 @@ no column for them:
   cloze.
 - **RealJapanese** - the row's `japanese` column, blank when it already equals
   the sentence, so the back never prints the same string twice.
+- **Produce** - set on every row except one whose Production front, the
+  `(Translation, Note)` pair, another row already claims. minihongo pairs a
+  core-word paraphrase with the loanword it paraphrases eight times in Food &
+  Drink - 黒い飲み物 and コーヒー are both "coffee" - and the Production front
+  carries no Japanese to tell them apart. The paraphrase wins the flag, being
+  the core-set construction the deck exists to drill; the loanword keeps its
+  three recognition cards and its surface is appended to the paraphrase's
+  RealJapanese, which is where ランチ, フルーツ and ミルク still live.
 
 One value is corrected: minihongo writes `お金【おかね】` twelve times and
 `お金【かね】` four, and the first repeats the honorific inside the reading, so

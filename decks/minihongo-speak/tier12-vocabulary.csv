@@ -1,55 +1,55 @@
-Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese
-すみません。体が悪いです。,Excuse me. I feel unwell.,すみません,すみません。体【からだ】が悪【わる】いです。,At the Doctor,polite,excuse me,"<span class=""vocab"">すみません</span>",すみません。体の調子が悪いです。
-どこが悪いですか。,Where does it feel bad?,悪い,どこが悪【わる】いですか。,At the Doctor,polite,bad,"<ruby class=""vocab"">悪い<rt><span class=""pitch-l"">わ</span><span class=""pitch-h"">る</span><span class=""pitch-l"">い</span></rt></ruby>",
-頭が悪い感じです。体も暑いです。,My head hurts. My body is also hot.,悪い感じ,頭【あたま】が悪【わる】い感【かん】じです。体【からだ】も暑【あつ】いです。,At the Doctor,polite,pain,"<ruby class=""vocab"">悪い感じ<rt>わるいかんじ</rt></ruby>",頭が痛いです。体も熱いです。
-いつから悪いですか。,Since when have you felt bad?,悪い,いつから悪【わる】いですか。,At the Doctor,polite,bad,"<ruby class=""vocab"">悪い<rt><span class=""pitch-l"">わ</span><span class=""pitch-h"">る</span><span class=""pitch-l"">い</span></rt></ruby>",いつからですか。
-前の日からです。夜も寝られませんでした。,Since yesterday. I couldn't sleep last night either.,前の日,前【まえ】の日【にち】からです。夜【よる】も寝【ね】られませんでした。,At the Doctor,polite,yesterday,"<ruby class=""vocab"">前の日<rt>まえのにち</rt></ruby>",昨日からです。夜も眠れませんでした。
-口を開けてください。体を見ます。,Please open your mouth. I will examine you.,ください,口【くち】を開【あ】けてください。体【からだ】を見【み】ます。,At the Doctor,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",口を開けてください。体を診ます。
-体を良くする物を飲んでください。よく寝てください。,Please take medicine. Please sleep well.,体を良くする物,体【からだ】を良【よ】くする物【もの】を飲【の】んでください。よく寝【ね】てください。,At the Doctor,polite,medicine,"<ruby class=""vocab"">体を良くする物<rt>からだをよくするもの</rt></ruby>",薬を飲んでください。よく寝てください。
-三つの日の後に良くならないなら、また来てください。,"If you don't feel better in three days, please come back.",ください,三【みっ】つの日【にち】の後【あと】に良【よ】くならないなら、また来【き】てください。,At the Doctor,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",三日後に良くならなかったら、また来てください。
-分かりました。ありがとう。,I understand. Thank you very much.,ありがとう,分【わ】かりました。ありがとう。,At the Doctor,casual,thank you,"<span class=""vocab""><span class=""pitch-l"">あ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">が</span><span class=""pitch-l"">と</span><span class=""pitch-l"">う</span></span>",分かりました。ありがとうございます。
-体が悪い時,"illness, disease",体が悪い時,体【からだ】が悪【わる】い時【とき】,Body & Health,,"illness, disease","<ruby class=""vocab"">体が悪い時<rt>からだがわるいとき</rt></ruby>",病気
-体を良くするために飲む物,medicine,体を良くするために飲む物,体【からだ】を良【よ】くするために飲【の】む物【もの】,Body & Health,,medicine,"<ruby class=""vocab"">体を良くするために飲む物<rt>からだをよくするためにのむもの</rt></ruby>",薬
-体が悪くなった事,injury,体が悪くなった事,体【からだ】が悪【わる】くなった事【こと】,Body & Health,,injury,"<ruby class=""vocab"">体が悪くなった事<rt>からだがわるくなったこと</rt></ruby>",怪我
-体がとても暑くなる事,fever,体がとても暑くなる事,体【からだ】がとても暑【あつ】くなる事【こと】,Body & Health,,fever,"<ruby class=""vocab"">体がとても暑くなる事<rt>からだがとてもあつくなること</rt></ruby>",熱
-体が悪くて暑くなる事,cold (illness),体が悪くて暑くなる事,体【からだ】が悪【わる】くて暑【あつ】くなる事【こと】,Body & Health,,cold (illness),"<ruby class=""vocab"">体が悪くて暑くなる事<rt>からだがわるくてあつくなること</rt></ruby>",風邪
-口から強く空気が出る事,cough,口から強く空気が出る事,口【くち】から強【つよ】く空【くう】気【き】が出【で】る事【こと】,Body & Health,,cough,"<ruby class=""vocab"">口から強く空気が出る事<rt>くちからつよくくうきがでること</rt></ruby>",咳
-体を動かす物,muscle,体を動かす物,体【からだ】を動【うご】かす物【もの】,Body & Health,,muscle,"<ruby class=""vocab"">体を動かす物<rt>からだをうごかすもの</rt></ruby>",筋肉
-口の中で食べ物を切る白い物,"tooth, teeth",口の中で食べ物を切る白い物,口【くち】の中【なか】で食【た】べ物【もの】を切【き】る白【しろ】い物【もの】,Body & Health,,"tooth, teeth","<ruby class=""vocab"">口の中で食べ物を切る白い物<rt>くちのなかでたべものをきるしろいもの</rt></ruby>",歯
-手や足の終わりの長い所,"finger, toe",手や足の終わりの長い所,手【て】や足【あし】の終【お】わりの長【なが】い所【ところ】,Body & Health,,"finger, toe","<ruby class=""vocab"">手や足の終わりの長い所<rt>てやあしのおわりのながいところ</rt></ruby>",指
-頭の下、手の上にある体の所,shoulder,頭の下、手の上にある体の所,頭【あたま】の下【した】、手【て】の上【うえ】にある体【からだ】の所【ところ】,Body & Health,,shoulder,"<ruby class=""vocab"">頭の下、手の上にある体の所<rt>あたまのした、てのうえにあるからだのところ</rt></ruby>",肩
-体の中ほどにある所,"lower back, hips",体の中ほどにある所,体【からだ】の中【なか】ほどにある所【ところ】,Body & Health,,"lower back, hips","<ruby class=""vocab"">体の中ほどにある所<rt>からだのなかほどにあるところ</rt></ruby>",腰
-体の後ろにある所,back (of body),体の後ろにある所,体【からだ】の後【うし】ろにある所【ところ】,Body & Health,,back (of body),"<ruby class=""vocab"">体の後ろにある所<rt>からだのうしろにあるところ</rt></ruby>",背中
-頭と体の中の所,neck,頭と体の中の所,頭【あたま】と体【からだ】の中【なか】の所【ところ】,Body & Health,,neck,"<ruby class=""vocab"">頭と体の中の所<rt>あたまとからだのなかのところ</rt></ruby>",首
-体の前の上の所,chest,体の前の上の所,体【からだ】の前【まえ】の上【うえ】の所【ところ】,Body & Health,,chest,"<ruby class=""vocab"">体の前の上の所<rt>からだのまえのうえのところ</rt></ruby>",胸
-体の前の中ほどの所,"abdomen, belly",体の前の中ほどの所,体【からだ】の前【まえ】の中【なか】ほどの所【ところ】,Body & Health,,"abdomen, belly","<ruby class=""vocab"">体の前の中ほどの所<rt>からだのまえのなかほどのところ</rt></ruby>",腹
-頭の前の所,face,頭の前の所,頭【あたま】の前【まえ】の所【ところ】,Body & Health,,face,"<ruby class=""vocab"">頭の前の所<rt>あたまのまえのところ</rt></ruby>",顔
-手や足の終わりにある強い物,nail (finger/toe),手や足の終わりにある強い物,手【て】や足【あし】の終【お】わりにある強【つよ】い物【もの】,Body & Health,,nail (finger/toe),"<ruby class=""vocab"">手や足の終わりにある強い物<rt>てやあしのおわりにあるつよいもの</rt></ruby>",爪
-口の外の赤い所,lips,口の外の赤い所,口【くち】の外【そと】の赤【あか】い所【ところ】,Body & Health,,lips,"<ruby class=""vocab"">口の外の赤い所<rt>くちのそとのあかいところ</rt></ruby>",唇
-口の中で食べ物を感じる物,tongue,口の中で食べ物を感じる物,口【くち】の中【なか】で食【た】べ物【もの】を感【かん】じる物【もの】,Body & Health,,tongue,"<ruby class=""vocab"">口の中で食べ物を感じる物<rt>くちのなかでたべものをかんじるもの</rt></ruby>",舌
-悲しい時に目から出る水,tears,悲しい時に目から出る水,悲【かな】しい時【とき】に目【め】から出【で】る水【みず】,Body & Health,,tears,"<ruby class=""vocab"">悲しい時に目から出る水<rt>かなしいときにめからでるみず</rt></ruby>",涙
-暑い時に体から出る水,"sweat, perspiration",暑い時に体から出る水,暑【あつ】い時【とき】に体【からだ】から出【で】る水【みず】,Body & Health,,"sweat, perspiration","<ruby class=""vocab"">暑い時に体から出る水<rt>あついときにからだからでるみず</rt></ruby>",汗
-口から出る音,voice,口から出る音,口【くち】から出【で】る音【おと】,Body & Health,,voice,"<ruby class=""vocab"">口から出る音<rt>くちからでるおと</rt></ruby>",声
-口や鼻から出る空気,breath,口や鼻から出る空気,口【くち】や鼻【はな】から出【で】る空【くう】気【き】,Body & Health,,breath,"<ruby class=""vocab"">口や鼻から出る空気<rt>くちやはなからでるくうき</rt></ruby>",息
-空気を体の中に入れたり出したりする事,"breathing, respiration",空気を体の中に入れたり出したりする事,空【くう】気【き】を体【からだ】の中【なか】に入【い】れたり出【だ】したりする事【こと】,Body & Health,,"breathing, respiration","<ruby class=""vocab"">空気を体の中に入れたり出したりする事<rt>くうきをからだのなかにいれたりだしたりすること</rt></ruby>",呼吸
-体の中の赤い水が動く音,pulse,体の中の赤い水が動く音,体【からだ】の中【なか】の赤【あか】い水【みず】が動【うご】く音【おと】,Body & Health,,pulse,"<ruby class=""vocab"">体の中の赤い水が動く音<rt>からだのなかのあかいみずがうごくおと</rt></ruby>",脈
-体が良い時,health,体が良い時,体【からだ】が良【よ】い時【とき】,Body & Health,,health,"<ruby class=""vocab"">体が良い時<rt>からだがよいとき</rt></ruby>",健康
-体も心も良い時,"energetic, healthy",体も心も良い時,体【からだ】も心【こころ】も良【よ】い時【とき】,Body & Health,,"energetic, healthy","<ruby class=""vocab"">体も心も良い時<rt>からだもこころもよいとき</rt></ruby>",元気
-体や心が動けなくなる,to get tired,体や心が動けなくなる,体【からだ】や心【こころ】が動【うご】けなくなる,Body & Health,,to get tired,"<ruby class=""vocab"">体や心が動けなくなる<rt>からだやこころがうごけなくなる</rt></ruby>",疲れる
-寝たいと感じる,sleepy,寝たいと感じる,寝【ね】たいと感【かん】じる,Body & Health,,sleepy,"<ruby class=""vocab"">寝たいと感じる<rt>ねたいとかんじる</rt></ruby>",眠い
-寝ている時から出る,to wake up,寝ている時から出る,寝【ね】ている時【とき】から出【で】る,Body & Health,,to wake up,"<ruby class=""vocab"">寝ている時から出る<rt>ねているときからでる</rt></ruby>",起きる
-体の悪い人を助ける人,"doctor, physician",体の悪い人を助ける人,体【からだ】の悪【わる】い人【ひと】を助【たす】ける人【ひと】,Body & Health,,"doctor, physician","<ruby class=""vocab"">体の悪い人を助ける人<rt>からだのわるいひとをたすけるひと</rt></ruby>",医者
-体を切って中を良くする事,"surgery, operation",体を切って中を良くする事,体【からだ】を切【き】って中【なか】を良【よ】くする事【こと】,Body & Health,,"surgery, operation","<ruby class=""vocab"">体を切って中を良くする事<rt>からだをきってなかをよくすること</rt></ruby>",手術
-体の中に物を入れる事,"injection, shot",体の中に物を入れる事,体【からだ】の中【なか】に物【もの】を入【い】れる事【こと】,Body & Health,,"injection, shot","<ruby class=""vocab"">体の中に物を入れる事<rt>からだのなかにものをいれること</rt></ruby>",注射
-体がとても悪くて家を出てどこかに入る事,hospitalization,体がとても悪くて家を出てどこかに入る事,体【からだ】がとても悪【わる】くて家【いえ】を出【で】てどこかに入【はい】る事【こと】,Body & Health,,hospitalization,"<ruby class=""vocab"">体がとても悪くて家を出てどこかに入る事<rt>からだがとてもわるくていえをでてどこかにはいること</rt></ruby>",入院
-体が良くなって出る事,hospital discharge,体が良くなって出る事,体【からだ】が良【よ】くなって出【で】る事【こと】,Body & Health,,hospital discharge,"<ruby class=""vocab"">体が良くなって出る事<rt>からだがよくなってでること</rt></ruby>",退院
-体の中を見る事,"examination, test",体の中を見る事,体【からだ】の中【なか】を見【み】る事【こと】,Body & Health,,"examination, test","<ruby class=""vocab"">体の中を見る事<rt>からだのなかをみること</rt></ruby>",検査
-体が悪い時に出る変な事,symptom,体が悪い時に出る変な事,体【からだ】が悪【わる】い時【とき】に出【で】る変【へん】な事【こと】,Body & Health,,symptom,"<ruby class=""vocab"">体が悪い時に出る変な事<rt>からだがわるいときにでるへんなこと</rt></ruby>",症状
-体が悪い時から良くなる,"to heal, to recover",体が悪い時から良くなる,体【からだ】が悪【わる】い時【とき】から良【よ】くなる,Body & Health,,"to heal, to recover","<ruby class=""vocab"">体が悪い時から良くなる<rt>からだがわるいときからよくなる</rt></ruby>",治る
-体を良くする事,"to cure, to fix",体を良くする事,体【からだ】を良【よ】くする事【こと】,Body & Health,,"to cure, to fix","<ruby class=""vocab"">体を良くする事<rt>からだをよくすること</rt></ruby>",治す
-体が大きく重くなる,to gain weight,体が大きく重くなる,体【からだ】が大【おお】きく重【おも】くなる,Body & Health,,to gain weight,"<ruby class=""vocab"">体が大きく重くなる<rt>からだがおおきくおもくなる</rt></ruby>",太る
-体が重くなくなる,to lose weight,体が重くなくなる,体【からだ】が重【おも】くなくなる,Body & Health,,to lose weight,"<ruby class=""vocab"">体が重くなくなる<rt>からだがおもくなくなる</rt></ruby>",痩せる
-女の体の中に子供がいる時,pregnancy,女の体の中に子供がいる時,女【おんな】の体【からだ】の中【なか】に子供【こども】がいる時【とき】,Body & Health,,pregnancy,"<ruby class=""vocab"">女の体の中に子供がいる時<rt>おんなのからだのなかにこどもがいるとき</rt></ruby>",妊娠
-体から子供が出る事,childbirth,体から子供が出る事,体【からだ】から子【こ】供【ども】が出【で】る事【こと】,Body & Health,,childbirth,"<ruby class=""vocab"">体から子供が出る事<rt>からだからこどもがでること</rt></ruby>",出産
-ある物に体が悪く変わる事,allergy,ある物に体が悪く変わる事,ある物【もの】に体【からだ】が悪【わる】く変【か】わる事【こと】,Body & Health,,allergy,"<ruby class=""vocab"">ある物に体が悪く変わる事<rt>あるものにからだがわるくかわること</rt></ruby>",アレルギー
-体が切れた所,"wound, scar",体が切れた所,体【からだ】が切【き】れた所【ところ】,Body & Health,,"wound, scar","<ruby class=""vocab"">体が切れた所<rt>からだがきれたところ</rt></ruby>",傷
+Sentence,Translation,Cloze,Pronunciation,Note,Register,KeyMeaning,PitchAccent,RealJapanese,Produce
+すみません。体が悪いです。,Excuse me. I feel unwell.,すみません,すみません。体【からだ】が悪【わる】いです。,At the Doctor,polite,excuse me,"<span class=""vocab"">すみません</span>",すみません。体の調子が悪いです。,y
+どこが悪いですか。,Where does it feel bad?,悪い,どこが悪【わる】いですか。,At the Doctor,polite,bad,"<ruby class=""vocab"">悪い<rt><span class=""pitch-l"">わ</span><span class=""pitch-h"">る</span><span class=""pitch-l"">い</span></rt></ruby>",,y
+頭が悪い感じです。体も暑いです。,My head hurts. My body is also hot.,悪い感じ,頭【あたま】が悪【わる】い感【かん】じです。体【からだ】も暑【あつ】いです。,At the Doctor,polite,pain,"<ruby class=""vocab"">悪い感じ<rt>わるいかんじ</rt></ruby>",頭が痛いです。体も熱いです。,y
+いつから悪いですか。,Since when have you felt bad?,悪い,いつから悪【わる】いですか。,At the Doctor,polite,bad,"<ruby class=""vocab"">悪い<rt><span class=""pitch-l"">わ</span><span class=""pitch-h"">る</span><span class=""pitch-l"">い</span></rt></ruby>",いつからですか。,y
+前の日からです。夜も寝られませんでした。,Since yesterday. I couldn't sleep last night either.,前の日,前【まえ】の日【にち】からです。夜【よる】も寝【ね】られませんでした。,At the Doctor,polite,yesterday,"<ruby class=""vocab"">前の日<rt>まえのにち</rt></ruby>",昨日からです。夜も眠れませんでした。,y
+口を開けてください。体を見ます。,Please open your mouth. I will examine you.,ください,口【くち】を開【あ】けてください。体【からだ】を見【み】ます。,At the Doctor,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",口を開けてください。体を診ます。,y
+体を良くする物を飲んでください。よく寝てください。,Please take medicine. Please sleep well.,体を良くする物,体【からだ】を良【よ】くする物【もの】を飲【の】んでください。よく寝【ね】てください。,At the Doctor,polite,medicine,"<ruby class=""vocab"">体を良くする物<rt>からだをよくするもの</rt></ruby>",薬を飲んでください。よく寝てください。,y
+三つの日の後に良くならないなら、また来てください。,"If you don't feel better in three days, please come back.",ください,三【みっ】つの日【にち】の後【あと】に良【よ】くならないなら、また来【き】てください。,At the Doctor,polite,please (give me),"<span class=""vocab""><span class=""pitch-l"">く</span><span class=""pitch-h"">だ</span><span class=""pitch-h"">さ</span><span class=""pitch-l"">い</span></span>",三日後に良くならなかったら、また来てください。,y
+分かりました。ありがとう。,I understand. Thank you very much.,ありがとう,分【わ】かりました。ありがとう。,At the Doctor,casual,thank you,"<span class=""vocab""><span class=""pitch-l"">あ</span><span class=""pitch-h"">り</span><span class=""pitch-l"">が</span><span class=""pitch-l"">と</span><span class=""pitch-l"">う</span></span>",分かりました。ありがとうございます。,y
+体が悪い時,"illness, disease",体が悪い時,体【からだ】が悪【わる】い時【とき】,Body & Health,,"illness, disease","<ruby class=""vocab"">体が悪い時<rt>からだがわるいとき</rt></ruby>",病気,y
+体を良くするために飲む物,medicine,体を良くするために飲む物,体【からだ】を良【よ】くするために飲【の】む物【もの】,Body & Health,,medicine,"<ruby class=""vocab"">体を良くするために飲む物<rt>からだをよくするためにのむもの</rt></ruby>",薬,y
+体が悪くなった事,injury,体が悪くなった事,体【からだ】が悪【わる】くなった事【こと】,Body & Health,,injury,"<ruby class=""vocab"">体が悪くなった事<rt>からだがわるくなったこと</rt></ruby>",怪我,y
+体がとても暑くなる事,fever,体がとても暑くなる事,体【からだ】がとても暑【あつ】くなる事【こと】,Body & Health,,fever,"<ruby class=""vocab"">体がとても暑くなる事<rt>からだがとてもあつくなること</rt></ruby>",熱,y
+体が悪くて暑くなる事,cold (illness),体が悪くて暑くなる事,体【からだ】が悪【わる】くて暑【あつ】くなる事【こと】,Body & Health,,cold (illness),"<ruby class=""vocab"">体が悪くて暑くなる事<rt>からだがわるくてあつくなること</rt></ruby>",風邪,y
+口から強く空気が出る事,cough,口から強く空気が出る事,口【くち】から強【つよ】く空【くう】気【き】が出【で】る事【こと】,Body & Health,,cough,"<ruby class=""vocab"">口から強く空気が出る事<rt>くちからつよくくうきがでること</rt></ruby>",咳,y
+体を動かす物,muscle,体を動かす物,体【からだ】を動【うご】かす物【もの】,Body & Health,,muscle,"<ruby class=""vocab"">体を動かす物<rt>からだをうごかすもの</rt></ruby>",筋肉,y
+口の中で食べ物を切る白い物,"tooth, teeth",口の中で食べ物を切る白い物,口【くち】の中【なか】で食【た】べ物【もの】を切【き】る白【しろ】い物【もの】,Body & Health,,"tooth, teeth","<ruby class=""vocab"">口の中で食べ物を切る白い物<rt>くちのなかでたべものをきるしろいもの</rt></ruby>",歯,y
+手や足の終わりの長い所,"finger, toe",手や足の終わりの長い所,手【て】や足【あし】の終【お】わりの長【なが】い所【ところ】,Body & Health,,"finger, toe","<ruby class=""vocab"">手や足の終わりの長い所<rt>てやあしのおわりのながいところ</rt></ruby>",指,y
+頭の下、手の上にある体の所,shoulder,頭の下、手の上にある体の所,頭【あたま】の下【した】、手【て】の上【うえ】にある体【からだ】の所【ところ】,Body & Health,,shoulder,"<ruby class=""vocab"">頭の下、手の上にある体の所<rt>あたまのした、てのうえにあるからだのところ</rt></ruby>",肩,y
+体の中ほどにある所,"lower back, hips",体の中ほどにある所,体【からだ】の中【なか】ほどにある所【ところ】,Body & Health,,"lower back, hips","<ruby class=""vocab"">体の中ほどにある所<rt>からだのなかほどにあるところ</rt></ruby>",腰,y
+体の後ろにある所,back (of body),体の後ろにある所,体【からだ】の後【うし】ろにある所【ところ】,Body & Health,,back (of body),"<ruby class=""vocab"">体の後ろにある所<rt>からだのうしろにあるところ</rt></ruby>",背中,y
+頭と体の中の所,neck,頭と体の中の所,頭【あたま】と体【からだ】の中【なか】の所【ところ】,Body & Health,,neck,"<ruby class=""vocab"">頭と体の中の所<rt>あたまとからだのなかのところ</rt></ruby>",首,y
+体の前の上の所,chest,体の前の上の所,体【からだ】の前【まえ】の上【うえ】の所【ところ】,Body & Health,,chest,"<ruby class=""vocab"">体の前の上の所<rt>からだのまえのうえのところ</rt></ruby>",胸,y
+体の前の中ほどの所,"abdomen, belly",体の前の中ほどの所,体【からだ】の前【まえ】の中【なか】ほどの所【ところ】,Body & Health,,"abdomen, belly","<ruby class=""vocab"">体の前の中ほどの所<rt>からだのまえのなかほどのところ</rt></ruby>",腹,y
+頭の前の所,face,頭の前の所,頭【あたま】の前【まえ】の所【ところ】,Body & Health,,face,"<ruby class=""vocab"">頭の前の所<rt>あたまのまえのところ</rt></ruby>",顔,y
+手や足の終わりにある強い物,nail (finger/toe),手や足の終わりにある強い物,手【て】や足【あし】の終【お】わりにある強【つよ】い物【もの】,Body & Health,,nail (finger/toe),"<ruby class=""vocab"">手や足の終わりにある強い物<rt>てやあしのおわりにあるつよいもの</rt></ruby>",爪,y
+口の外の赤い所,lips,口の外の赤い所,口【くち】の外【そと】の赤【あか】い所【ところ】,Body & Health,,lips,"<ruby class=""vocab"">口の外の赤い所<rt>くちのそとのあかいところ</rt></ruby>",唇,y
+口の中で食べ物を感じる物,tongue,口の中で食べ物を感じる物,口【くち】の中【なか】で食【た】べ物【もの】を感【かん】じる物【もの】,Body & Health,,tongue,"<ruby class=""vocab"">口の中で食べ物を感じる物<rt>くちのなかでたべものをかんじるもの</rt></ruby>",舌,y
+悲しい時に目から出る水,tears,悲しい時に目から出る水,悲【かな】しい時【とき】に目【め】から出【で】る水【みず】,Body & Health,,tears,"<ruby class=""vocab"">悲しい時に目から出る水<rt>かなしいときにめからでるみず</rt></ruby>",涙,y
+暑い時に体から出る水,"sweat, perspiration",暑い時に体から出る水,暑【あつ】い時【とき】に体【からだ】から出【で】る水【みず】,Body & Health,,"sweat, perspiration","<ruby class=""vocab"">暑い時に体から出る水<rt>あついときにからだからでるみず</rt></ruby>",汗,y
+口から出る音,voice,口から出る音,口【くち】から出【で】る音【おと】,Body & Health,,voice,"<ruby class=""vocab"">口から出る音<rt>くちからでるおと</rt></ruby>",声,y
+口や鼻から出る空気,breath,口や鼻から出る空気,口【くち】や鼻【はな】から出【で】る空【くう】気【き】,Body & Health,,breath,"<ruby class=""vocab"">口や鼻から出る空気<rt>くちやはなからでるくうき</rt></ruby>",息,y
+空気を体の中に入れたり出したりする事,"breathing, respiration",空気を体の中に入れたり出したりする事,空【くう】気【き】を体【からだ】の中【なか】に入【い】れたり出【だ】したりする事【こと】,Body & Health,,"breathing, respiration","<ruby class=""vocab"">空気を体の中に入れたり出したりする事<rt>くうきをからだのなかにいれたりだしたりすること</rt></ruby>",呼吸,y
+体の中の赤い水が動く音,pulse,体の中の赤い水が動く音,体【からだ】の中【なか】の赤【あか】い水【みず】が動【うご】く音【おと】,Body & Health,,pulse,"<ruby class=""vocab"">体の中の赤い水が動く音<rt>からだのなかのあかいみずがうごくおと</rt></ruby>",脈,y
+体が良い時,health,体が良い時,体【からだ】が良【よ】い時【とき】,Body & Health,,health,"<ruby class=""vocab"">体が良い時<rt>からだがよいとき</rt></ruby>",健康,y
+体も心も良い時,"energetic, healthy",体も心も良い時,体【からだ】も心【こころ】も良【よ】い時【とき】,Body & Health,,"energetic, healthy","<ruby class=""vocab"">体も心も良い時<rt>からだもこころもよいとき</rt></ruby>",元気,y
+体や心が動けなくなる,to get tired,体や心が動けなくなる,体【からだ】や心【こころ】が動【うご】けなくなる,Body & Health,,to get tired,"<ruby class=""vocab"">体や心が動けなくなる<rt>からだやこころがうごけなくなる</rt></ruby>",疲れる,y
+寝たいと感じる,sleepy,寝たいと感じる,寝【ね】たいと感【かん】じる,Body & Health,,sleepy,"<ruby class=""vocab"">寝たいと感じる<rt>ねたいとかんじる</rt></ruby>",眠い,y
+寝ている時から出る,to wake up,寝ている時から出る,寝【ね】ている時【とき】から出【で】る,Body & Health,,to wake up,"<ruby class=""vocab"">寝ている時から出る<rt>ねているときからでる</rt></ruby>",起きる,y
+体の悪い人を助ける人,"doctor, physician",体の悪い人を助ける人,体【からだ】の悪【わる】い人【ひと】を助【たす】ける人【ひと】,Body & Health,,"doctor, physician","<ruby class=""vocab"">体の悪い人を助ける人<rt>からだのわるいひとをたすけるひと</rt></ruby>",医者,y
+体を切って中を良くする事,"surgery, operation",体を切って中を良くする事,体【からだ】を切【き】って中【なか】を良【よ】くする事【こと】,Body & Health,,"surgery, operation","<ruby class=""vocab"">体を切って中を良くする事<rt>からだをきってなかをよくすること</rt></ruby>",手術,y
+体の中に物を入れる事,"injection, shot",体の中に物を入れる事,体【からだ】の中【なか】に物【もの】を入【い】れる事【こと】,Body & Health,,"injection, shot","<ruby class=""vocab"">体の中に物を入れる事<rt>からだのなかにものをいれること</rt></ruby>",注射,y
+体がとても悪くて家を出てどこかに入る事,hospitalization,体がとても悪くて家を出てどこかに入る事,体【からだ】がとても悪【わる】くて家【いえ】を出【で】てどこかに入【はい】る事【こと】,Body & Health,,hospitalization,"<ruby class=""vocab"">体がとても悪くて家を出てどこかに入る事<rt>からだがとてもわるくていえをでてどこかにはいること</rt></ruby>",入院,y
+体が良くなって出る事,hospital discharge,体が良くなって出る事,体【からだ】が良【よ】くなって出【で】る事【こと】,Body & Health,,hospital discharge,"<ruby class=""vocab"">体が良くなって出る事<rt>からだがよくなってでること</rt></ruby>",退院,y
+体の中を見る事,"examination, test",体の中を見る事,体【からだ】の中【なか】を見【み】る事【こと】,Body & Health,,"examination, test","<ruby class=""vocab"">体の中を見る事<rt>からだのなかをみること</rt></ruby>",検査,y
+体が悪い時に出る変な事,symptom,体が悪い時に出る変な事,体【からだ】が悪【わる】い時【とき】に出【で】る変【へん】な事【こと】,Body & Health,,symptom,"<ruby class=""vocab"">体が悪い時に出る変な事<rt>からだがわるいときにでるへんなこと</rt></ruby>",症状,y
+体が悪い時から良くなる,"to heal, to recover",体が悪い時から良くなる,体【からだ】が悪【わる】い時【とき】から良【よ】くなる,Body & Health,,"to heal, to recover","<ruby class=""vocab"">体が悪い時から良くなる<rt>からだがわるいときからよくなる</rt></ruby>",治る,y
+体を良くする事,"to cure, to fix",体を良くする事,体【からだ】を良【よ】くする事【こと】,Body & Health,,"to cure, to fix","<ruby class=""vocab"">体を良くする事<rt>からだをよくすること</rt></ruby>",治す,y
+体が大きく重くなる,to gain weight,体が大きく重くなる,体【からだ】が大【おお】きく重【おも】くなる,Body & Health,,to gain weight,"<ruby class=""vocab"">体が大きく重くなる<rt>からだがおおきくおもくなる</rt></ruby>",太る,y
+体が重くなくなる,to lose weight,体が重くなくなる,体【からだ】が重【おも】くなくなる,Body & Health,,to lose weight,"<ruby class=""vocab"">体が重くなくなる<rt>からだがおもくなくなる</rt></ruby>",痩せる,y
+女の体の中に子供がいる時,pregnancy,女の体の中に子供がいる時,女【おんな】の体【からだ】の中【なか】に子供【こども】がいる時【とき】,Body & Health,,pregnancy,"<ruby class=""vocab"">女の体の中に子供がいる時<rt>おんなのからだのなかにこどもがいるとき</rt></ruby>",妊娠,y
+体から子供が出る事,childbirth,体から子供が出る事,体【からだ】から子【こ】供【ども】が出【で】る事【こと】,Body & Health,,childbirth,"<ruby class=""vocab"">体から子供が出る事<rt>からだからこどもがでること</rt></ruby>",出産,y
+ある物に体が悪く変わる事,allergy,ある物に体が悪く変わる事,ある物【もの】に体【からだ】が悪【わる】く変【か】わる事【こと】,Body & Health,,allergy,"<ruby class=""vocab"">ある物に体が悪く変わる事<rt>あるものにからだがわるくかわること</rt></ruby>",アレルギー,y
+体が切れた所,"wound, scar",体が切れた所,体【からだ】が切【き】れた所【ところ】,Body & Health,,"wound, scar","<ruby class=""vocab"">体が切れた所<rt>からだがきれたところ</rt></ruby>",傷,y

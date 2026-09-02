@@ -120,7 +120,7 @@ CAT51_TIERS = {
 
 COLUMNS = [
     "Sentence", "Translation", "Cloze", "Pronunciation", "Note",
-    "Register", "KeyMeaning", "PitchAccent", "RealJapanese",
+    "Register", "KeyMeaning", "PitchAccent", "RealJapanese", "Produce",
 ]
 
 
@@ -248,7 +248,7 @@ def collect(source: Path) -> dict[str, list[dict[str, str]]]:
             "RealJapanese": row["japanese"] if row["japanese"] != sentence else "",
         })
 
-    return dedupe(tiers)
+    return resolve_production(dedupe(tiers))
 
 
 def dedupe(tiers: dict[str, list[dict[str, str]]]) -> dict[str, list[dict[str, str]]]:
@@ -273,6 +273,48 @@ def dedupe(tiers: dict[str, list[dict[str, str]]]) -> dict[str, list[dict[str, s
             seen.add(key)
             kept.append(row)
         tiers[cando] = kept
+    return tiers
+
+
+def resolve_production(
+    tiers: dict[str, list[dict[str, str]]],
+) -> dict[str, list[dict[str, str]]]:
+    """Mark which rows may be asked for production, and merge the rest away.
+
+    The Production front is the English gloss and the category, and nothing
+    else - by design, since anything Japanese on it would be the answer. Two
+    rows sharing that pair therefore ask one question with two right answers,
+    and a self-graded card whose grade is arbitrary corrupts the scheduling of
+    both notes. minihongo produces such a pair whenever a category carries both
+    a core-word paraphrase and the loanword it paraphrases: 黒い飲み物 and
+    コーヒー are both "coffee" under Food & Drink.
+
+    The paraphrase is the production target - it is the construction from the
+    231-word core set - and the loanword belongs on the recognition side, so it
+    keeps its Listening, Reading and Vocabulary cards and loses only the fourth.
+    Its surface moves onto the survivor's RealJapanese, which is why ランチ,
+    フルーツ and ミルク are still met by a learner who is never asked to produce
+    them. Derived rather than listed: the next such pair is marked without a
+    code change.
+    """
+    groups: dict[tuple[str, str], list[dict[str, str]]] = {}
+    for cando in CANDO_TIERS:
+        for row in tiers[cando]:
+            row["Produce"] = "y"
+            groups.setdefault((row["Translation"], row["Note"]), []).append(row)
+
+    for rows in groups.values():
+        if len(rows) == 1:
+            continue
+        winner = next((r for r in rows if r["RealJapanese"]), rows[0])
+        for row in rows:
+            if row is winner:
+                continue
+            row["Produce"] = ""
+            real = [w for w in winner["RealJapanese"].split("、") if w]
+            if row["Sentence"] not in real:
+                real.append(row["Sentence"])
+            winner["RealJapanese"] = "、".join(real)
     return tiers
 
 
@@ -301,7 +343,7 @@ def main() -> None:
             continue
         with open(out_dir / f"tier{number}-vocabulary.csv", "w", encoding="utf-8",
                   newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=COLUMNS)
+            writer = csv.DictWriter(f, fieldnames=COLUMNS, lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
 

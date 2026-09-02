@@ -91,7 +91,7 @@ class TestProductionDeck:
     def test_real_japanese_field_is_appended(self, slug):
         """Appended, not inserted: genanki writes fields positionally."""
         assert field_names(create_model(load_deck_config(slug))) == \
-            THREE_CARD_FIELDS + ["RealJapanese"]
+            THREE_CARD_FIELDS + ["RealJapanese", "Produce"]
 
     @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
     def test_model_name_says_four_card(self, slug):
@@ -131,11 +131,57 @@ class TestProductionDeck:
         assert ".real-label" in css
 
     @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
-    def test_notes_carry_the_tenth_field(self, slug):
+    def test_notes_carry_the_extra_fields(self, slug):
         config = load_deck_config(slug)
         notes, _ = build_notes(config, 1, create_model(config), include_audio=False)
         assert notes
-        assert all(len(note.fields) == 10 for note in notes)
+        assert all(len(note.fields) == 11 for note in notes)
+
+    @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
+    def test_front_is_gated_on_produce(self, slug):
+        """A row without the flag must render an empty question, which is how
+        Anki is told not to generate the card at all."""
+        front = template(create_model(load_deck_config(slug)), "Production")["qfmt"]
+        assert front.startswith("{{#Produce}}")
+        assert front.endswith("{{/Produce}}")
+
+    @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
+    def test_no_two_production_rows_share_a_front(self, slug):
+        """The front is the English gloss and the category and nothing else, so
+        two production rows sharing that pair ask one question with two right
+        answers and the learner's self-grade becomes arbitrary."""
+        config = load_deck_config(slug)
+        model = create_model(config)
+        index = {f["name"]: i for i, f in enumerate(model.fields)}
+        seen: dict[tuple[str, str], str] = {}
+        for tier in config.tier_range():
+            for note in build_notes(config, tier, model, include_audio=False)[0]:
+                if not note.fields[index["Produce"]]:
+                    continue
+                front = (note.fields[index["Translation"]],
+                         note.fields[index["Category"]])
+                assert front not in seen, (
+                    f"{front} is the Production front of both "
+                    f"{seen[front]} and {note.fields[index['Sentence']]}")
+                seen[front] = note.fields[index["Sentence"]]
+
+    @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
+    def test_a_demoted_row_survives_on_the_winner_back(self, slug):
+        """Dropping the fourth card must not drop the word: whatever lost the
+        front is still met as a recognition-only answer on the row that kept
+        it."""
+        config = load_deck_config(slug)
+        model = create_model(config)
+        index = {f["name"]: i for i, f in enumerate(model.fields)}
+        rows = [n.fields for tier in config.tier_range()
+                for n in build_notes(config, tier, model, include_audio=False)[0]]
+        produced = {(r[index["Translation"]], r[index["Category"]]): r
+                    for r in rows if r[index["Produce"]]}
+        demoted = [r for r in rows if not r[index["Produce"]]]
+        assert demoted, f"{slug} has no demoted row to check"
+        for row in demoted:
+            winner = produced[(row[index["Translation"]], row[index["Category"]])]
+            assert row[index["Sentence"]] in winner[index["RealJapanese"]].split("、")
 
     @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
     def test_guid_ignores_the_card_type(self, slug):
