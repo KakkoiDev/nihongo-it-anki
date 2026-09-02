@@ -48,14 +48,19 @@ class DeckConfig:
     def subdeck_name(self, tier: int, female: bool = False) -> str:
         """Return an Anki-sortable subdeck name for this tier.
 
-        Configuration labels historically included their own unpadded tier
-        number. Strip that presentation prefix and let jpanki apply the single
-        collection-wide numbering policy.
+        Configuration labels historically include ``Tier N -``. Preserve that
+        published format while letting jpanki apply the collection-wide
+        padding policy to N.
         """
         label = re.sub(r"^Tier\s+\d+\s*-\s*", "", self.tier_names[tier])
         voice_label = " (Female)" if female else ""
         return jpanki.subdeck(
-            f"{self.name}{voice_label}", tier, label, total=self.tier_count
+            f"{self.name}{voice_label}",
+            tier,
+            label,
+            total=self.tier_count,
+            number_prefix="Tier ",
+            separator=" - ",
         )
 
     def note_guid(self, sentence: str) -> str:

@@ -69,15 +69,21 @@ class TestLoadDeckConfig:
 
     def test_subdeck_names_are_padded_from_collection_size(self):
         config = load_deck_config("it-vocab")
-        assert config.subdeck_name(2).endswith("::02 Basic Development")
+        assert config.subdeck_name(2).endswith("::Tier 02 - Basic Development")
         assert config.subdeck_name(10).endswith(
-            "::10 Documentation & Engineering Culture"
+            "::Tier 10 - Documentation & Engineering Culture"
         )
 
     def test_female_subdeck_uses_same_padding(self):
         config = load_deck_config("it-vocab")
         assert config.subdeck_name(2, female=True).startswith(
-            "Japanese IT Vocabulary (Female)::02 "
+            "Japanese IT Vocabulary (Female)::Tier 02 - "
+        )
+
+    def test_agentic_subdeck_keeps_published_tier_prefix(self):
+        config = load_deck_config("agentic-lab")
+        assert config.subdeck_name(1) == (
+            "Agentic Lab Priority Path::Tier 01 - The Survival Set"
         )
 
 
