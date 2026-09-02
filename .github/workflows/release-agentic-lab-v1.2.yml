@@ -60,6 +60,10 @@ jobs:
           uv run python scripts/create_deck.py \
             --deck agentic-lab --combined --all
 
+      - name: Guard published deck identities
+        run: |
+          uv run python -c 'from pathlib import Path; from jpanki.release import assert_deck_names_compatible; assert_deck_names_compatible(Path("/tmp/agentic-lab-v1.1.apkg"), Path("agentic-lab-complete.apkg"))'
+
       - name: Verify padded subdeck names
         run: |
           mkdir -p /tmp/verify-agentic-lab-v1.2

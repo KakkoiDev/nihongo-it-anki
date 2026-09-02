@@ -60,6 +60,10 @@ jobs:
           uv run python scripts/create_deck.py \
             --deck it-vocab --combined --all
 
+      - name: Guard published deck identities
+        run: |
+          uv run python -c 'from pathlib import Path; from jpanki.release import assert_deck_names_compatible; assert_deck_names_compatible(Path("/tmp/it-vocab-v5.1.apkg"), Path("it-vocab-complete.apkg"))'
+
       - name: Verify padded subdeck names
         run: |
           mkdir -p /tmp/verify-v5.2
