@@ -39,21 +39,21 @@ no column for them:
   `casual`. Vocabulary rows are not utterances and carry no badge.
 - **Cloze / KeyMeaning** - the longest core word or expression the line
   contains, with minihongo's own gloss for it. A vocabulary row is its own
-  cloze, except where that would make its blanked front identical to another
-  row's: the row that keeps the Production front takes its last noun as the
-  cloze instead, so 黒い飲み物 blanks to 黒い＿＿＿ rather than to ＿＿＿.
-  KeyMeaning and PitchAccent stay on the whole paraphrase - 食べ物 does not
-  mean "bread", and the compound heads have no gloss in minihongo to copy.
+  cloze. PitchAccent is derived from the Cloze downstream, so nothing may
+  narrow it after the fact: a head-word cloze of 食べ物 would make the Key line
+  read 食べ物 (bread) the next time the pitch script runs.
 - **RealJapanese** - the row's `japanese` column, blank when it already equals
   the sentence, so the back never prints the same string twice.
-- **Produce** - set on every row except one whose Production front, the
-  `(Translation, Note)` pair, another row already claims. minihongo pairs a
+- **Produce** - the canonical row for a front, and the gate on both cards whose
+  question is English only: Production and Vocabulary. minihongo pairs a
   core-word paraphrase with the loanword it paraphrases eight times in Food &
-  Drink - 黒い飲み物 and コーヒー are both "coffee" - and the Production front
-  carries no Japanese to tell them apart. The paraphrase wins the flag, being
-  the core-set construction the deck exists to drill; the loanword keeps its
-  three recognition cards and its surface is appended to the paraphrase's
-  RealJapanese, which is where ランチ, フルーツ and ミルク still live.
+  Drink - 黒い飲み物 and コーヒー are both "coffee" - and neither front carries
+  Japanese to tell the two apart, because a vocabulary row's cloze is its whole
+  sentence and blanking it leaves the gloss standing alone. The paraphrase wins
+  the flag, being the core-set construction the deck exists to drill. The
+  loanword keeps Listening and Reading, which show the Japanese, and its
+  surface is appended to the paraphrase's RealJapanese, which is where ランチ,
+  フルーツ and ミルク still live.
 
 One value is corrected: minihongo writes `お金【おかね】` twelve times and
 `お金【かね】` four, and the first repeats the honorific inside the reading, so
@@ -64,11 +64,13 @@ both the ruby and the TTS come out おおかね. Normalised on import.
 On a vocabulary row the cloze is the whole paraphrase, because a minihongo
 paraphrase is compositional and any sub-word chosen as the key would be an
 invented one. Card 3 therefore blanks the entire sentence, which makes it ask
-almost what card 4 asks: English in, Japanese out. Left as it is rather than
-fixed with a heuristic - the alternative is guessing at a head word, and the
-duplicate is at least a correct card. Dialog rows are unaffected; their cloze is
-a single core word, and so is the cloze of the eight paraphrases that had to be
-told apart from a loanword sharing their gloss.
+almost what card 4 asks: English in, Japanese out. Left as it is - a head-word
+cloze was tried and reverted, because PitchAccent is derived from the Cloze and
+the documented rebuild would have printed 食べ物 (bread) on three card backs.
+The redundancy is why a row that is not the canonical one for its front loses
+card 3 rather than getting a narrower blank: with the same gloss and the same
+bare ＿＿＿, two such rows ask one question with two right answers. Dialog rows
+are unaffected; their cloze is a single core word.
 
 ## Tier sources
 

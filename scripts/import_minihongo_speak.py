@@ -32,12 +32,8 @@ import re
 import sys
 from pathlib import Path
 
-import fugashi
-
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import DECKS_DIR
-
-tagger = fugashi.Tagger()
 
 SLUG = "minihongo-speak"
 FURIGANA = re.compile(r"【[^】]*】")
@@ -280,23 +276,10 @@ def dedupe(tiers: dict[str, list[dict[str, str]]]) -> dict[str, list[dict[str, s
     return tiers
 
 
-def head_word(sentence: str) -> str:
-    """The sentence's last noun, per the UniDic tagger the other scripts use.
-
-    Empty when the sentence has no noun, or when the noun is the whole sentence
-    and blanking it would say no more than blanking the line.
-    """
-    nouns = [token.surface for token in tagger(sentence)
-             if token.feature.pos1 == "名詞"]
-    if not nouns or nouns[-1] == sentence:
-        return ""
-    return nouns[-1]
-
-
 def resolve_production(
     tiers: dict[str, list[dict[str, str]]],
 ) -> dict[str, list[dict[str, str]]]:
-    """Mark which rows may be asked for production, and merge the rest away.
+    """Mark the canonical row for each front, and merge the rest away.
 
     The Production front is the English gloss and the category, and nothing
     else - by design, since anything Japanese on it would be the answer. Two
@@ -308,18 +291,19 @@ def resolve_production(
 
     The paraphrase is the production target - it is the construction from the
     231-word core set - and the loanword belongs on the recognition side, so it
-    keeps its Listening, Reading and Vocabulary cards and loses only the fourth.
+    keeps its Listening and Reading cards, which show the Japanese.
     Its surface moves onto the survivor's RealJapanese, which is why ランチ,
     フルーツ and ミルク are still met by a learner who is never asked to produce
     them. Derived rather than listed: the next such pair is marked without a
     code change.
 
-    The Vocabulary front collides for the same reason and needs its own answer:
-    a paraphrase row's cloze is the whole paraphrase, so blanking it leaves a
-    bare ＿＿＿ beside the same gloss the loanword row blanks to. The survivor
-    is given its head word as the cloze instead, which leaves 黒い＿＿＿ against
-    コーヒー's ＿＿＿. Only the cloze moves: PitchAccent and KeyMeaning still
-    describe the whole paraphrase, and 食べ物 does not mean "bread".
+    The Vocabulary front collides the same way, because a vocabulary row's cloze
+    is its whole sentence and blanking it leaves the English gloss standing
+    alone. So the flag gates that card too: a demoted row keeps Listening and
+    Reading, which show the Japanese and were never ambiguous. Giving the
+    survivor a head-word cloze instead was tried and reverted - PitchAccent is
+    derived from the Cloze by generate_pitch_accent.py, so the documented
+    rebuild would have turned the Key line into 食べ物 (bread).
     """
     groups: dict[tuple[str, str], list[dict[str, str]]] = {}
     for cando in CANDO_TIERS:
@@ -339,9 +323,6 @@ def resolve_production(
             if row["Sentence"] not in real:
                 real.append(row["Sentence"])
         winner["RealJapanese"] = "、".join(real)
-        head = head_word(winner["Sentence"])
-        if head:
-            winner["Cloze"] = head
     return tiers
 
 

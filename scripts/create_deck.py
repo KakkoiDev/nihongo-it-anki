@@ -17,7 +17,7 @@ Generates .apkg files with a 3-card-per-note design:
     Back:  Sentence with cloze highlighted in blue, audio, pronunciation.
 
   Card 4 (Production), only for decks with production_card = true and only on
-  rows whose Produce column is set:
+  rows whose Produce column is set - which on those decks gates card 3 too:
     Front: English meaning and the situation cue. No Japanese, no audio.
     Back:  Sentence with furigana, audio, pitch accent, and the real Japanese
            beside the minihongo construction.
@@ -199,6 +199,36 @@ PRODUCTION_CSS = '''
 '''
 
 
+VOCABULARY_QFMT = '''<div class="card-type">Vocabulary</div>
+<div id="sentence" class="sentence">{{Sentence}}</div>
+<div class="translation">{{Translation}}</div>
+<div class="category">{{Category}}</div>
+<script>
+(function() {
+    var el = document.getElementById('sentence');
+    var cloze = '{{Cloze}}';
+    el.innerHTML = el.textContent.split(cloze).join('<span class="blank">\uff3f\uff3f\uff3f</span>');
+})();
+</script>
+'''
+
+
+def vocabulary_qfmt(production: bool) -> str:
+    """The cloze front, gated on Produce for decks that carry the field.
+
+    Blanking a cloze that is the whole sentence leaves nothing but the English
+    gloss, so two rows sharing a gloss ask one question with two answers. The
+    row that is not the canonical one for that front drops the card, the same
+    way it drops the Production card and for the same reason. The gate can only
+    be written on a deck whose notetype has the field: referencing Produce from
+    a nine-field model is an Anki template error, and it would change templates
+    the other six decks have already shipped.
+    """
+    if not production:
+        return VOCABULARY_QFMT
+    return "{{#Produce}}" + VOCABULARY_QFMT + "{{/Produce}}"
+
+
 PRODUCTION_TEMPLATE = {
     'name': 'Production',
     # Nothing here may render Japanese, furigana or audio. The whole point of
@@ -219,11 +249,12 @@ PRODUCTION_TEMPLATE = {
 }
 
 # The Production template reads both, so a deck that opts in carries two more
-# fields than the three-card decks do. Produce gates the front: Anki generates
-# no card for a template whose question renders empty, so a row with an empty
-# Produce keeps its three recognition cards and is never asked to be spoken.
-# It exists because the front is only the English gloss and the category, and
-# two rows sharing that pair would otherwise ask one question with two answers.
+# fields than the three-card decks do. Produce marks the canonical row for a
+# front: Anki generates no card for a template whose question renders empty, so
+# a row with an empty Produce grows neither a Production nor a Vocabulary card
+# and keeps only Listening and Reading. Both those fronts reduce to the English
+# gloss and the category once the cloze covers the whole sentence, so two rows
+# sharing that pair would otherwise ask one question with two answers.
 PRODUCTION_FIELDS = [{'name': 'RealJapanese'}, {'name': 'Produce'}]
 
 
@@ -235,8 +266,8 @@ def create_model(config: DeckConfig) -> genanki.Model:
     Card 3 (Vocabulary): Blanked sentence + English -> Full sentence + Audio
     Card 4 (Production): English + situation -> Japanese, audio, real word
 
-    Card 4 exists only under ``production_card = true``, and then only on rows
-    carrying a Produce flag. A deck without it gets
+    Cards 3 and 4 exist only on rows carrying a Produce flag, and card 4 only
+    under ``production_card = true``. A deck without it gets
     the same nine fields, three templates and stylesheet it has always shipped -
     see tests/test_production_card.py, which pins that.
     """
@@ -291,18 +322,7 @@ def create_model(config: DeckConfig) -> genanki.Model:
             # Card 3: Vocabulary cloze (JS blanking)
             {
                 'name': 'Vocabulary',
-                'qfmt': '''<div class="card-type">Vocabulary</div>
-<div id="sentence" class="sentence">{{Sentence}}</div>
-<div class="translation">{{Translation}}</div>
-<div class="category">{{Category}}</div>
-<script>
-(function() {
-    var el = document.getElementById('sentence');
-    var cloze = '{{Cloze}}';
-    el.innerHTML = el.textContent.split(cloze).join('<span class="blank">\uff3f\uff3f\uff3f</span>');
-})();
-</script>
-''',
+                'qfmt': vocabulary_qfmt(config.production_card),
                 'afmt': '''<div class="card-type">Vocabulary</div>
 <div id="sentence" class="sentence">{{Sentence}}</div>
 <div class="audio">{{Audio}}</div>
@@ -322,6 +342,17 @@ def create_model(config: DeckConfig) -> genanki.Model:
         ],
         css=build_css(config.production_card),
     )
+
+
+def cards_of(config: DeckConfig, note: genanki.Note) -> int:
+    """How many cards Anki generates for this note.
+
+    A gated front that renders empty produces no card, so a note whose Produce
+    is empty is worth two rather than four.
+    """
+    if not config.production_card:
+        return 3
+    return 4 if note.fields[-1] else 2
 
 
 def create_deck(config: DeckConfig, tier: int, include_audio: bool = True, female: bool = False) -> tuple[genanki.Deck, list[str]]:
@@ -479,7 +510,9 @@ Examples:
 
     include_audio = not args.no_audio
     suffix = "-female" if args.female else ""
-    cards_per_note = 4 if config.production_card else 3
+
+    def card_total(notes) -> int:
+        return sum(cards_of(config, note) for note in notes)
 
     if args.combined:
         voice_label = " (Female)" if args.female else ""
@@ -514,8 +547,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Total notes: {total_notes}")
-        print(f"Total cards: {total_notes * cards_per_note} "
-              f"({cards_per_note} cards per note)")
+        print(f"Total cards: {card_total(n for d in all_decks for n in d.notes)}")
         print(f"Media files: {len(all_media)}")
 
     if args.all:
@@ -528,7 +560,8 @@ Examples:
             package.write_to_file(output)
 
             print(f"Created: {output} ({len(deck.notes)} notes, "
-                  f"{len(media_files)} audio files, {cards_per_note} cards/note)")
+                  f"{len(media_files)} audio files, "
+                  f"{card_total(deck.notes)} cards)")
     elif args.tier:
         tier = args.tier
         deck, media_files = create_deck(config, tier, include_audio, args.female)
@@ -540,8 +573,7 @@ Examples:
 
         print(f"\nCreated: {output}")
         print(f"Notes: {len(deck.notes)}")
-        print(f"Cards: {len(deck.notes) * cards_per_note} "
-              f"({cards_per_note} cards per note)")
+        print(f"Cards: {card_total(deck.notes)}")
         print(f"Media files: {len(media_files)}")
 
         if not include_audio:

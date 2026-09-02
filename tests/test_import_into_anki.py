@@ -81,15 +81,17 @@ def test_minihongo_speak_note_makes_four_cards(tmp_path):
         config = load_deck_config("minihongo-speak")
         deck_id = col.decks.id_for_name(f"{config.name}::{config.tier_names[1]}")
         assert deck_id is not None
-        assert len(col.decks.cids(deck_id)) == notes * 4
+        produced = sum(1 for row in read_tier(config, 1) if row["Produce"])
+        assert len(col.decks.cids(deck_id)) == produced * 4 + (notes - produced) * 2
     finally:
         col.close()
 
 
-def test_a_row_without_produce_keeps_only_its_three_cards(tmp_path):
-    """Anki generates no card for a template whose front renders empty. Tier 9
-    is where the loanword rows that lost the Production front live, so its card
-    count is the proof that they kept the other three."""
+def test_a_row_without_produce_keeps_only_its_two_japanese_cards(tmp_path):
+    """Anki generates no card for a template whose front renders empty. Both
+    English-only fronts, Production and Vocabulary, are gated on Produce, so a
+    demoted row is left with Listening and Reading. Tier 9 is where those rows
+    live, and its card count is the proof."""
     config = load_deck_config("minihongo-speak")
     rows = read_tier(config, 9)
     demoted = [r for r in rows if not r["Produce"]]
@@ -103,12 +105,12 @@ def test_a_row_without_produce_keeps_only_its_three_cards(tmp_path):
         log = import_apkg(col, apkg)
         assert not log.conflicting
         deck_id = col.decks.id_for_name(f"{config.name}::{config.tier_names[9]}")
-        assert len(col.decks.cids(deck_id)) == len(rows) * 4 - len(demoted)
+        assert len(col.decks.cids(deck_id)) == len(rows) * 4 - len(demoted) * 2
 
         for row in demoted:
             note_ids = col.find_notes(f'"Sentence:{row["Sentence"]}"')
             assert len(note_ids) == 1
-            assert len(col.card_ids_of_note(note_ids[0])) == 3
+            assert len(col.card_ids_of_note(note_ids[0])) == 2
     finally:
         col.close()
 

@@ -33,6 +33,12 @@ THREE_CARD_FIELDS = [
 ]
 THREE_CARD_TEMPLATES = ["Listening", "Reading", "Vocabulary"]
 
+# The Vocabulary question these decks have already shipped, byte for byte. Anki
+# keys scheduling on the notetype, so a deck that did not opt in must keep the
+# template it is scheduled against - gating the card on Produce is only legal
+# where the notetype has that field.
+SHIPPED_VOCABULARY_QFMT = '<div class="card-type">Vocabulary</div>\n<div id="sentence" class="sentence">{{Sentence}}</div>\n<div class="translation">{{Translation}}</div>\n<div class="category">{{Category}}</div>\n<script>\n(function() {\n    var el = document.getElementById(\'sentence\');\n    var cloze = \'{{Cloze}}\';\n    el.innerHTML = el.textContent.split(cloze).join(\'<span class="blank">＿＿＿</span>\');\n})();\n</script>\n'
+
 # Anything that could put Japanese, furigana or a replay button on a card front.
 ANSWER_FIELDS = ["Sentence", "Pronunciation", "Audio", "RealJapanese", "Cloze"]
 
@@ -61,6 +67,11 @@ class TestExistingDecksAreUntouched:
     def test_model_name_still_says_three_card(self, slug):
         config = load_deck_config(slug)
         assert create_model(config).name == f"{config.name} (3-Card)"
+
+    @pytest.mark.parametrize("slug", THREE_CARD_DECKS)
+    def test_vocabulary_question_is_unchanged(self, slug):
+        model = create_model(load_deck_config(slug))
+        assert template(model, "Vocabulary")["qfmt"] == SHIPPED_VOCABULARY_QFMT
 
     def test_stylesheet_is_unchanged(self):
         """Anki only re-reads CSS behind --force-style, which resets review
@@ -138,12 +149,18 @@ class TestProductionDeck:
         assert all(len(note.fields) == 11 for note in notes)
 
     @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
-    def test_front_is_gated_on_produce(self, slug):
+    @pytest.mark.parametrize("card", ["Production", "Vocabulary"])
+    def test_front_is_gated_on_produce(self, slug, card):
         """A row without the flag must render an empty question, which is how
         Anki is told not to generate the card at all."""
-        front = template(create_model(load_deck_config(slug)), "Production")["qfmt"]
+        front = template(create_model(load_deck_config(slug)), card)["qfmt"]
         assert front.startswith("{{#Produce}}")
         assert front.endswith("{{/Produce}}")
+
+    @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
+    def test_gated_vocabulary_question_is_otherwise_unchanged(self, slug):
+        front = template(create_model(load_deck_config(slug)), "Vocabulary")["qfmt"]
+        assert front == "{{#Produce}}" + SHIPPED_VOCABULARY_QFMT + "{{/Produce}}"
 
     @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
     def test_no_two_production_rows_share_a_front(self, slug):
@@ -181,7 +198,8 @@ class TestProductionDeck:
         assert demoted, f"{slug} has no demoted row to check"
         for row in demoted:
             winner = produced[(row[index["Translation"]], row[index["Category"]])]
-            assert row[index["Sentence"]] in winner[index["RealJapanese"]].split("、")
+            real = winner[index["RealJapanese"]]
+            assert row[index["Sentence"]] in real
 
     @pytest.mark.parametrize("slug", PRODUCTION_DECKS)
     def test_guid_ignores_the_card_type(self, slug):

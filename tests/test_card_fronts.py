@@ -39,10 +39,13 @@ def rows_of(slug):
 def test_no_two_notes_share_a_vocabulary_front(slug):
     """The Vocabulary front is the sentence with every occurrence of the cloze
     blanked, plus the translation and the category - that substitution is what
-    the template's script does in the browser."""
-    _, rows = rows_of(slug)
+    the template's script does in the browser. Rows whose Produce is empty
+    generate no Vocabulary card at all, so they ask no question to collide."""
+    config, rows = rows_of(slug)
     seen: dict[tuple[str, str, str], str] = {}
     for row in rows:
+        if config.production_card and not row["Produce"]:
+            continue
         front = (row["Sentence"].replace(row["Cloze"], BLANK),
                  row["Translation"], row["Category"])
         assert front not in seen, (
@@ -60,15 +63,16 @@ def test_cloze_is_a_substring_of_its_sentence():
         assert row["Cloze"] in row["Sentence"], row["Sentence"]
 
 
-def test_a_demoted_row_keeps_its_three_recognition_cards():
-    """Losing the Production front must not cost a row its cloze card: its
-    cloze stays its own surface, which is what the Vocabulary card blanks."""
+def test_a_demoted_row_still_shows_the_japanese_on_two_cards():
+    """Losing the two English-only fronts must not cost the row its word: the
+    Listening and Reading cards show the Japanese and were never ambiguous, so
+    they need a sentence, its reading and its audio like any other row."""
     config = load_deck_config("minihongo-speak")
     demoted = [row for tier in config.tier_range()
                for row in read_tier(config, tier) if not row["Produce"]]
     assert demoted
     for row in demoted:
-        assert row["Cloze"] and row["Cloze"] in row["Sentence"]
+        assert row["Sentence"] and row["Pronunciation"] and row["Translation"]
 
 
 def test_merging_a_real_word_does_not_split_on_sentence_punctuation():

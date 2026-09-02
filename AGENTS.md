@@ -20,10 +20,13 @@ Three per note - Listening, Reading, Vocabulary - defined in
 `scripts/create_deck.py`. A deck may opt into a fourth, **Production**, with
 `production_card = true` in its `deck.toml`; that adds the `RealJapanese` and
 `Produce` fields, the `Production` template and its CSS, and nothing else
-changes. The `Production` front renders only inside `{{#Produce}}`, so a row
-with an empty `Produce` keeps its three recognition cards and grows no fourth -
-that is how two rows that would share an identical English-only front are kept
-from asking one question with two answers. Every other
+changes. On such a deck both English-only fronts, `Production` and
+`Vocabulary`, render only inside `{{#Produce}}`, so a row with an empty
+`Produce` keeps Listening and Reading alone - that is how two rows that would
+share an identical English-only front are kept from asking one question with
+two answers. The `Vocabulary` question is built per deck for that reason:
+referencing `Produce` from the nine-field model would be an Anki template
+error and would change a template those decks are already scheduled against. Every other
 deck must keep the exact nine fields, three templates and stylesheet it already
 shipped, because Anki keys scheduling on the model and only re-reads CSS behind
 `--force-style`, which resets review history. `tests/test_production_card.py`
