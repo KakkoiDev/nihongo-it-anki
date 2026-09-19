@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import genanki
-import jp_core
+from jp_core import anki
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DECKS_DIR = PROJECT_ROOT / "decks"
@@ -54,7 +54,7 @@ class DeckConfig:
         """
         label = re.sub(r"^Tier\s+\d+\s*-\s*", "", self.tier_names[tier])
         voice_label = " (Female)" if female else ""
-        return jp_core.subdeck(
+        return anki.subdeck(
             f"{self.name}{voice_label}",
             tier,
             label,
