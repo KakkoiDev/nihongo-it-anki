@@ -43,8 +43,7 @@ import sys
 from pathlib import Path
 
 import genanki
-import jp_core
-from jp_core import furigana, theme
+from jp_core import anki, furigana, theme
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import DeckConfig, list_decks, load_deck_config
@@ -504,7 +503,7 @@ Examples:
         # and it resets review history for every note using it. Deliberate, and
         # deliberately not automatic.
         original = config.model_id
-        config.model_id = jp_core.force_style(original, build_css(config.production_card))
+        config.model_id = anki.force_style(original, build_css(config.production_card))
         print(f"--force-style: model_id {original} -> {config.model_id} "
               f"(resets review history)")
 
