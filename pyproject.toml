@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "jpanki",
+    "jp-core",
     "edge-tts>=6.1.0",
     "fugashi>=1.5.2",
     "genanki>=0.13.1",
@@ -37,4 +37,4 @@ required-version = ">=0.8.4"
 # Pinned to a revision rather than tracking main: a library change can alter
 # how cards render, and that should be a deliberate bump with a rebuild and a
 # deck comparison, never something a fresh `uv sync` picks up silently.
-jpanki = { git = "https://github.com/KakkoiDev/jpanki", rev = "7c50dd2dc8ddcd206e0d98dff7a05b9699fee0f4" }
+"jp-core" = { git = "https://github.com/KakkoiDev/jp-core", rev = "ba0ba55401c5925e4d817c27c91d699f579e77ee" }

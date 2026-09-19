@@ -1,6 +1,6 @@
-"""Every deck.toml must agree with jpanki's ID registry.
+"""Every deck.toml must agree with jp_core's ID registry.
 
-The registry spans every project that builds on jpanki, so it - not this repo -
+The registry spans every project that builds on jp_core, so it - not this repo -
 is the source of truth for which integers a deck owns. `accounting` and
 `jp-teaching` once shipped with the same `deck_base_id`, which silently merged
 one deck's subdecks into the other in users' collections. `test_config.py` only
@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 import pytest
-from jpanki import ids
+from jp_core import ids
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts" / "lib"))
 
@@ -30,7 +30,7 @@ def test_registry_is_internally_consistent():
 class TestDeckMatchesRegistry:
     def test_deck_is_registered(self, slug):
         assert slug in REGISTRY, (
-            f"{slug} is not in jpanki's ids.toml; register it there and bump the "
+            f"{slug} is not in jp_core's ids.toml; register it there and bump the "
             f"pinned rev in pyproject.toml before building"
         )
 

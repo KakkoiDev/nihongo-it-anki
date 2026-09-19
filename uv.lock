@@ -440,9 +440,9 @@ wheels = [
 ]
 
 [[package]]
-name = "jpanki"
+name = "jp-core"
 version = "0.1.0"
-source = { git = "https://github.com/KakkoiDev/jpanki?rev=7c50dd2dc8ddcd206e0d98dff7a05b9699fee0f4#7c50dd2dc8ddcd206e0d98dff7a05b9699fee0f4" }
+source = { git = "https://github.com/KakkoiDev/jp-core?rev=ba0ba55401c5925e4d817c27c91d699f579e77ee#ba0ba55401c5925e4d817c27c91d699f579e77ee" }
 dependencies = [
     { name = "genanki" },
 ]
@@ -552,7 +552,7 @@ dependencies = [
     { name = "fugashi" },
     { name = "genanki" },
     { name = "jaconv" },
-    { name = "jpanki" },
+    { name = "jp-core" },
     { name = "mojimoji" },
     { name = "pyopenjtalk" },
     { name = "soundfile" },
@@ -571,7 +571,7 @@ requires-dist = [
     { name = "fugashi", specifier = ">=1.5.2" },
     { name = "genanki", specifier = ">=0.13.1" },
     { name = "jaconv", specifier = ">=0.4.1" },
-    { name = "jpanki", git = "https://github.com/KakkoiDev/jpanki?rev=7c50dd2dc8ddcd206e0d98dff7a05b9699fee0f4" },
+    { name = "jp-core", git = "https://github.com/KakkoiDev/jp-core?rev=ba0ba55401c5925e4d817c27c91d699f579e77ee" },
     { name = "mojimoji", specifier = ">=0.0.13" },
     { name = "pyopenjtalk", specifier = ">=0.4.1" },
     { name = "soundfile", specifier = ">=0.13.1" },

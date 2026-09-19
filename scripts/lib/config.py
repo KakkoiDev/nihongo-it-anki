@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import genanki
-import jpanki
+import jp_core
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DECKS_DIR = PROJECT_ROOT / "decks"
@@ -49,12 +49,12 @@ class DeckConfig:
         """Return an Anki-sortable subdeck name for this tier.
 
         Configuration labels historically include ``Tier N -``. Preserve that
-        published format while letting jpanki apply the collection-wide
+        published format while letting jp_core apply the collection-wide
         padding policy to N.
         """
         label = re.sub(r"^Tier\s+\d+\s*-\s*", "", self.tier_names[tier])
         voice_label = " (Female)" if female else ""
-        return jpanki.subdeck(
+        return jp_core.subdeck(
             f"{self.name}{voice_label}",
             tier,
             label,

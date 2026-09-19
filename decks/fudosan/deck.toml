@@ -2,7 +2,7 @@
 slug = "fudosan"
 name = "不動産・住宅購入 / Japanese Home Ownership"
 model_id = 1904773261
-# Registered in jpanki's ids.toml as `fudosan`, reserving 2088314597 + 1..200.
+# Registered in jp_core's ids.toml as `fudosan`, reserving 2088314597 + 1..200.
 # The base sits in the gap below it-kundoku rather than above the newest entry;
 # the registry checks ranges, not ordering.
 deck_base_id = 2088314597

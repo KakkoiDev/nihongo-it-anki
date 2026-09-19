@@ -1,4 +1,4 @@
-"""Every publishing workflow must run jpanki's deck identity guard."""
+"""Every publishing workflow must run jp_core's deck identity guard."""
 
 from pathlib import Path
 

@@ -7,7 +7,7 @@ model_id = 1809594536
 # jp-teaching's tiers into accounting's. Renumbering is the only fix; review
 # history lives on notes (whose GUIDs are unchanged), so scheduling survives,
 # but anyone who imported the old deck should delete the stale subdecks.
-# Registered in jpanki's ids.toml, which fails the build on a future collision.
+# Registered in jp_core's ids.toml, which fails the build on a future collision.
 deck_base_id = 2362703413
 
 [tiers]

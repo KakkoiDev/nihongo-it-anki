@@ -2,7 +2,7 @@
 slug = "agentic-lab"
 name = "Agentic Lab Priority Path"
 model_id = 2011796738
-# Registered in jpanki's ids.toml as `agentic-lab` (rev f73c0fd), reserving
+# Registered in jp_core's ids.toml as `agentic-lab` (rev f73c0fd), reserving
 # 2564905615 + 1..200.
 deck_base_id = 2564905615
 

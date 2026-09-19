@@ -2,7 +2,7 @@
 slug = "minihongo-speak"
 name = "minihongo 話す / Minihongo Production"
 model_id = 2112897839
-# Registered in jpanki's ids.toml as `minihongo-speak`, reserving
+# Registered in jp_core's ids.toml as `minihongo-speak`, reserving
 # 2666006716 + 1..200.
 deck_base_id = 2666006716
 

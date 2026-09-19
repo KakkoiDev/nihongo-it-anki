@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compare two .apkg files by content, to prove a refactor changed nothing.
 
-Written for the jpanki migration, and worth keeping: any change to the build
+Written for the jp_core migration, and worth keeping: any change to the build
 pipeline can be checked against a deck built before it.
 
 Compares what a learner's collection actually keys on — note GUIDs, field

@@ -43,15 +43,15 @@ import sys
 from pathlib import Path
 
 import genanki
-import jpanki
-from jpanki import furigana, theme
+import jp_core
+from jp_core import furigana, theme
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import DeckConfig, list_decks, load_deck_config
 
 # The furigana renderer, the card CSS and the force-style trick used to live
 # here, in copies that had quietly drifted from minihongo's equivalents. They
-# belong to jpanki now - see that project's golden-file tests, which pin this
+# belong to jp_core now - see that project's golden-file tests, which pin this
 # output against what both projects shipped before the extraction.
 to_ruby_html = furigana.to_ruby
 
@@ -62,7 +62,7 @@ def build_css(production: bool = False) -> str:
     Everything in ``extra`` is specific to these card types - the pronunciation
     line, the JS cloze blank, the register badges, the pitch accent colouring -
     and stays here. The layers above it are shared with every other deck built
-    on jpanki.
+    on jp_core.
 
     ``production`` appends the fourth card type's rules. Decks without it get
     the byte-identical stylesheet they have always shipped, which matters
@@ -418,7 +418,7 @@ def build_notes(
             audio_ref = f"[sound:{audio_file}]"
             media_files.append(str(audio_path))
         else:
-            # Not jpanki.sound_ref's empty string: these cards have shipped with
+            # Not jp_core.sound_ref's empty string: these cards have shipped with
             # this literal placeholder, and changing a field value changes
             # nothing structurally but does alter what a learner sees.
             audio_ref = "[No audio]"
@@ -504,7 +504,7 @@ Examples:
         # and it resets review history for every note using it. Deliberate, and
         # deliberately not automatic.
         original = config.model_id
-        config.model_id = jpanki.force_style(original, build_css(config.production_card))
+        config.model_id = jp_core.force_style(original, build_css(config.production_card))
         print(f"--force-style: model_id {original} -> {config.model_id} "
               f"(resets review history)")
 

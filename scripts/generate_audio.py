@@ -19,14 +19,14 @@ import csv
 import sys
 from pathlib import Path
 
-from jpanki import tts
+from jp_core import tts
 
 from pronunciation import preprocess_for_tts
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from config import load_deck_config
 
-# Voices, retry/backoff and rate limiting now come from jpanki.tts, which also
+# Voices, retry/backoff and rate limiting now come from jp_core.tts, which also
 # adds a content-hash cache and (where ffmpeg is available) sample-rate and
 # loudness levelling this script never had.
 VOICE_MALE = tts.VOICE_MALE

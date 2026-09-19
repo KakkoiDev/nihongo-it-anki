@@ -35,7 +35,7 @@ def test_revision_is_at_least_3(lock):
 
 def test_registry_packages_carry_upload_time(lock):
     """Every sdist and wheel entry of a registry package carries it. The
-    git-pinned jpanki and the virtual root package have no PyPI upload timestamp
+    git-pinned jp_core and the virtual root package have no PyPI upload timestamp
     to record, so they are excluded; `anki` ships wheels only and three packages
     ship an sdist only, hence the per-entry rather than per-package check."""
     missing = [
