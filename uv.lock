@@ -441,8 +441,8 @@ wheels = [
 
 [[package]]
 name = "jp-core"
-version = "0.1.0"
-source = { git = "https://github.com/KakkoiDev/jp-core?rev=ba0ba55401c5925e4d817c27c91d699f579e77ee#ba0ba55401c5925e4d817c27c91d699f579e77ee" }
+version = "0.2.0"
+source = { git = "https://github.com/KakkoiDev/jp-core?rev=211c0b079bbc18925b3ba2976f78c74b15cf1cc7#211c0b079bbc18925b3ba2976f78c74b15cf1cc7" }
 dependencies = [
     { name = "genanki" },
 ]
@@ -571,7 +571,7 @@ requires-dist = [
     { name = "fugashi", specifier = ">=1.5.2" },
     { name = "genanki", specifier = ">=0.13.1" },
     { name = "jaconv", specifier = ">=0.4.1" },
-    { name = "jp-core", git = "https://github.com/KakkoiDev/jp-core?rev=ba0ba55401c5925e4d817c27c91d699f579e77ee" },
+    { name = "jp-core", git = "https://github.com/KakkoiDev/jp-core?rev=211c0b079bbc18925b3ba2976f78c74b15cf1cc7" },
     { name = "mojimoji", specifier = ">=0.0.13" },
     { name = "pyopenjtalk", specifier = ">=0.4.1" },
     { name = "soundfile", specifier = ">=0.13.1" },
