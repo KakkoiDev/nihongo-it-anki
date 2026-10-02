@@ -1,0 +1,4 @@
+// Run from the repository root: node scripts/export_echo.mjs
+import {csv,sentence,stripFurigana,output} from './echo-export-lib.mjs';
+const records=[];for(let tier=1;tier<=12;tier++){const path=`decks/agentic-lab/tier${tier}-vocabulary.csv`;for(const [index,row] of csv(path).entries()){const plain=s=>stripFurigana(s).replace(/\s+/g,'');const target=row.Pronunciation&&plain(row.Pronunciation)===plain(row.Sentence)?row.Pronunciation:row.Sentence;records.push(sentence(row.Translation,target,{project:'Nihongo IT Anki',deck:'Agentic Lab Priority Path',path,row:index+2,tier,register:row.Register,note:row.Note,keyMeaning:row.KeyMeaning,cloze:row.Cloze}))}}
+output('imports/agentic-lab-jp-echo.json',records,{title:'Agentic Lab Priority Path',sourceURL:'https://github.com/KakkoiDev/nihongo-it-anki/tree/master/decks/agentic-lab',description:'One authored sentence per note; Listening, Reading and Vocabulary templates are not duplicated.'});
